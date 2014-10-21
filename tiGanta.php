@@ -93,10 +93,10 @@ $samp = array(); // creating an array where we can store whethere samprasAraNa h
 // rest of the variables will be defined at their particular occurence in the code.
 
 /* a for loop for entering all sup pratyayas one by one. Sambuddhi is at the last after sup. */
-$sup1= array("su!","O","jas","am","Ow","Sas","wA","ByAm","Bis","Ne","ByAm","Byas","Nasi!","ByAm","Byas","Nas","os","Am","Ni","os","sup","su!","O","jas"); // the last three members are for sambodhana forms.
-for ($w=0;$w<count($sup1);$w++) // running the loop till $sup1 is exhausted.
+//$sup1= array("su!","O","jas","am","Ow","Sas","wA","ByAm","Bis","Ne","ByAm","Byas","Nasi!","ByAm","Byas","Nas","os","Am","Ni","os","sup","su!","O","jas"); // the last three members are for sambodhana forms.
+for ($w=0;$w<count($tis);$w++) // running the loop till $sup1 is exhausted.
 {
-$second=$sup1[$w];    // defining the second word as su!, O, jas etc.
+$second=$tis[$w];    // defining the second word as su!, O, jas etc.
 
 /* Code for converting from IAST to SLP1 */
 // defining IAST letters.
@@ -4344,7 +4344,7 @@ if (sub(array("o+"),$sarvanamasthana,blank(0),0) && !in_array($so,array("am","Sa
     }
 } else {$Nidvat1 =0; }
 /* aco JNiti (7.2.115) */ 
-if ((arr($text,'/['.flat($ac).'][+][JR]/')||arr($text,'/[a][+][*][JR]$/')||$Nidvat===1||$Nidvat1===1) && arr($text,'/['.pc('ac').'][+]/') )
+if ((arr($text,'/['.flat($ac).'][+][YR]/')||arr($text,'/[a][+][*][YR]$/')||$Nidvat===1||$Nidvat1===1) && arr($text,'/['.pc('ac').'][+]/') )
 { 
     $text = two($ac,array("+"),vriddhi($ac),array("+"),0);
     echo "<p class = sa >By aco JNiti (7.2.115) :</p>";
@@ -4776,14 +4776,15 @@ if (((arr($text,'/[+][lSkKgGN]/'))||$sarva2===1||$purva===1) && $taddhita === 0 
     display(0);
 }
 /* na vibhaktau tusmAH (1.3.4) */
-if (arr($text,'/[tTdDnsm]$/') && $pada=== "pratyaya" && in_array($so,array("jas","am","Sas","ByAm","Bis","Byas","os","Am","Ni")) && $wa === 0 && $wa1 === 0)
+$navibhaktau=array("jas","am","Sas","ByAm","Bis","Byas","os","Am","Ni","tas","Tas","vas","mas","AtAm","TAs","ATAm","Dvam","","","","","","","","");
+if (arr($text,'/[tTdDnsm]$/') && $pada=== "pratyaya" && in_array($so,$navibhaktau) && $wa === 0 && $wa1 === 0)
 {
     echo "<p class = pa >By na vibhaktau tusmAH (1.3.4)  :</p>";
     echo "<p class = pa >न विभक्तौ तुस्माः (१.३.४) :</p>";
     display(0);
 }
 /* halantyam (1.3.3) and tasya lopaH */
-if ((arr($text,'/['.flat($hl).']$/') && $pada=== "pratyaya" && !in_array($so,$sup)) || (in_array($so,$sup) && !arr($text,'/[tTdDnsm]$/') && arr($text,'/['.pc('hl').']$/')))
+elseif ((arr($text,'/['.flat($hl).']$/') && $pada=== "pratyaya" && !in_array($so,$sup)) || (in_array($so,$sup) && !arr($text,'/[tTdDnsm]$/') && arr($text,'/['.pc('hl').']$/')) )
 {
     itprat('/(['.flat($hl).']$)/');
     echo "<p class = pa >By halantyam (1.3.3) :</p>";

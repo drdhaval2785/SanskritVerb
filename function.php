@@ -99,6 +99,9 @@ $kvanipwords=array("prAtaritvan","DIvan","pIvan","suDIvan","supIvan","BUridAvan"
 $Gvanipwords=array("sutvan","yajvan"); // also hrasva-tvan combination.
 $vanipwords=array("DIvan","pIvan","suDIvan","supIvan","snAvan","nadvan","padvan","arvan","parvan","Sakvan","BUridAvan","GftapAvan","vijAvan","agregAvan");
 $vanoracawords= array_merge($kvanipwords,$Gvanipwords,$vanipwords);
+$tiG=array("tip","tas","Ja","sip","Tas","Ta","mip","vas","mas","ta","AtAm","Ja","TAs","ATAm","Dvam","iw","vahi","mahiN");
+$tis=array("tip","tas","Ja","sip","Tas","Ta","mip","vas","mas",);
+$taG=array("ta","AtAm","Ja","TAs","ATAm","Dvam","iw","vahi","mahiN");
 /* Function to find pratyAhAra from given two letters */ 
 // Enter your letters in the arguments like prat('Jl') will mean pratyAhAra jhal.
 function prat($text)  // prat for pratyAhAra
