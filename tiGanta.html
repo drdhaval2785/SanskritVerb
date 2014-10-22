@@ -28,11 +28,17 @@
 <input type="radio" name="lakAra" value="liN">लिङ्‌
 <input type="radio" name="lakAra" value="luN">लुङ्‌
 <input type="radio" name="lakAra" value="lfN">लृङ्‌
-</br>
+<br>
+<!--... Defining vAcya. Default is kartR. -->
+<input type="radio" name="vAcya" value="kartR">कर्तृवाच्य
+<input type="radio" name="vAcya" value="karma">कर्मवाच्य
+<input type="radio" name="vAcya" value="bhAva">भाववाच्य
+<br>    
 <!--... Defining transliteration of the word. Default is kept as Devanagari. User may change it according to his wish. -->
 <input type="radio" name="tran" value="Devanagari" checked>Devanagari
 <input type="radio" name="tran" value="IAST">IAST
-<input type="radio" name="tran" value="SLP1">SLP1<br>
+<input type="radio" name="tran" value="SLP1">SLP1
+<br>
 <!--... Divs to record the output from ajax.php. step1, step2, step3 etc are the levels. see ajax.php to decide where ajax will send its output. Maximum user feedback level for our coding was 6. So, kept it 6. It can be easily added if need be. -->
 <div id="response">
     <div id="step1" class="innerStep"></div>

@@ -268,7 +268,7 @@ $(document).ready(function() {
 	$( document ).on( "click", "input:radio[name=gender]", function() {
 		if($('input:radio[name=gender]:checked').val() === "n"){
 			$('#step').val('3');
-			$.getData();
+		 	$.getData();
 			//$('.innerStep').html('');
 			$('#step1').html(response);
 		}
@@ -287,6 +287,14 @@ $(document).ready(function() {
 			$('#step3').html(response);
                 }
 	});
-        
+
+ /* verb */      
+	$( document ).on( "click", "input:radio[name=vAcya]", function() {
+		if($('input:radio[name=vAcya]:checked').val() === "kartR"){
+			$('#step').val('11');
+		 	$.getData();
+			$('#step1').html(response);
+		}
+  	});
         
 });

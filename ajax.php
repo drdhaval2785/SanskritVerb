@@ -735,6 +735,16 @@ if ( $_POST['step']==='3_3_2_1')
             $html .= '</div>';        
 }
 
+
+/* verbs */
+if($_POST['step']==='11')
+{
+            $html .= '<div id="step11">';
+            $html .= '<input type="radio" value="1" name="cond11_1" > कर्मव्यतिहार है ';
+            $html .= '<input type="radio" value="2" name="cond11_2" > नहीं ';
+            $html .= '</div>';            
+}
+
 //display the output
 echo $html;
 exit;
