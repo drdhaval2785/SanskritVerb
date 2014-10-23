@@ -104,174 +104,8 @@ if ( in_array($vAcya,array("karma","bhAva")) && $pada==="pratyaya" && $lakAra!==
     echo "<hr>";
     $atmanepada=1;
 }
-/* na gatihiMsArthebhyH (1.3.15) */
-elseif ( $_GET['cond11_1']==='1')
-{
-    $suffix=$tis;
-    echo "<p class = st >By na gatihiMsArthebhyH (1.3.15) :</p>"; 
-    echo "<p class = st >न गतिहिंसार्थेभ्यः (१.३.१५) :</p>";
-    echo "<hr>";
-    $parasmaipada=1;
-}
-/* itaretarAnyo'nyopapadAcca (1.3.16) */
-// parasparopapadAcceti vaktavyam is implicitly included in it. If need be, a user feedback has to be increased.
-elseif ( $_GET['cond11_1']==='2')
-{
-    $suffix=$tis;
-    echo "<p class = st >By itaretarAnyo'nyopapadAcca (1.3.16) :</p>"; 
-    echo "<p class = st >इतरेतरान्योऽन्योपपदाच्च (१.३.१६) :</p>";
-    echo "<hr>";
-    $parasmaipada=1;
-}
-/* kartari karmavyatihAre (1.3.14) */
-elseif ( $_GET['cond11_1']==='3')
-{
-    $suffix=array_merge($taG,array("SAnac","kAnac"));
-    echo "<p class = st >By kartari karmavyatihAre (1.3.14) :</p>"; 
-    echo "<p class = st >कर्तरि कर्मव्यतिहारे (१.३.१४) :</p>";
-    echo "<hr>";
-    $atmanepada=1;
-}
-/* AGo do'nAsyaviharaNe (1.3.20) */
-elseif ( $_GET['cond14']==="2" )
-{
-    $suffix=array_merge($taG,array("SAnac","kAnac"));
-    echo "<p class = st >By AGo do'nAsyaviharaNe (1.3.20) :</p>"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>";
-    echo "<p class = st >आङो दोऽनास्यविहरणे (१.३.२०) :</p>";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>";
-    echo "<hr>";                    
-    $atmanepada=1;
-}
-/* parAGgakarmakAnna niSedhaH (vA 903) */
-elseif ( $_GET['cond14_1']==="2" )
-{
-    $suffix=array_merge($taG,array("SAnac","kAnac"));
-    echo "<p class = st >By parAGgakarmakAnna niSedhaH (vA 903) :</p>"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>";
-    echo "<p class = st >पराङ्गकर्मकान्न निषेधः (वा ९०३) :</p>";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>";
-    echo "<hr>";                    
-    $atmanepada=1;
-}
-/* prakAzanastheyAkhyayozca (1.3.23) */
-elseif ( $_GET['cond15']==="1" )
-{
-    $suffix=array_merge($taG,array("SAnac","kAnac"));
-    echo "<p class = st >By prakAzanastheyAkhyayozca (1.3.23) :</p>"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>";
-    echo "<p class = st >प्रकाशनस्थेयाख्ययोश्च (१.३.२३) :</p>";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>";
-    echo "<hr>";                    
-    $atmanepada=1;
-}
-/* udo'nUrdhvakarmaNi (1.3.24) */
-elseif ( $_GET['cond16']==="2" )
-{
-    $suffix=array_merge($taG,array("SAnac","kAnac"));
-    echo "<p class = st >By udo'nUrdhvakarmaNi (1.3.24) :</p>"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>";
-    echo "<p class = st >उदोऽनूर्ध्वकर्मणि (१.३.२४) :</p>";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>";
-    echo "<hr>";                    
-    $atmanepada=1;
-}
-/* upAnmantrakaraNe (1.3.25) */
-elseif ( $_GET['cond17']==="1" )
-{
-    $suffix=array_merge($taG,array("SAnac","kAnac"));
-    echo "<p class = st >By upAnmantrakaraNe (1.3.25) :</p>"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>";
-    echo "<p class = st >उपान्मन्त्रकरणे (१.३.२५) :</p>";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>";
-    echo "<hr>";                    
-    $atmanepada=1;
-}
-/* akarmakAcca (1.3.26) */
-elseif ( $_GET['cond17']==="2" )
-{
-    $suffix=array_merge($taG,array("SAnac","kAnac"));
-    echo "<p class = st >By akarmakAcca (1.3.26) :</p>"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>";
-    echo "<p class = st >अकर्मकाच्च (१.३.२६) :</p>";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>";
-    echo "<hr>";                    
-    $atmanepada=1;
-}
-/* spardhAyAmAGaH (1.3.31) */
-elseif ( $_GET['cond18']==="1" )
-{
-    $suffix=array_merge($taG,array("SAnac","kAnac"));
-    echo "<p class = st >By spardhAyAmAGaH (1.3.31) :</p>"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>";
-    echo "<p class = st >स्पर्धायामाङः (१.३.३१) :</p>";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>";
-    echo "<hr>";                    
-    $atmanepada=1;
-}
-/* gandhanAvakSepaNasevanasAhasikyapratiyatnaprakathanopayogeSu kRJaH (1.3.32) */
-elseif ( $_GET['cond19']==="1" )
-{
-    $suffix=array_merge($taG,array("SAnac","kAnac"));
-    echo "<p class = st >By gandhanAvakSepaNasevanasAhasikyapratiyatnaprakathanopayogeSu kRJaH (1.3.32) :</p>"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>";
-    echo "<p class = st >गन्धनावक्षेपणसेवनसाहसिक्यप्रतियत्नप्रकथनोपयोगेषु कृञः (१.३.३२) :</p>";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>";
-    echo "<hr>";                    
-    $atmanepada=1;
-}
-/* adheH prahasane (1.3.33) */
-elseif ( $_GET['cond20']==="1" )
-{
-    $suffix=array_merge($taG,array("SAnac","kAnac"));
-    echo "<p class = st >By adheH prahasane (1.3.33) :</p>"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>";
-    echo "<p class = st >अधेः प्रहसने (१.३.३३) :</p>";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>";
-    echo "<hr>";                    
-    $atmanepada=1;
-}
-/* veH zabdakarmaNaH (1.3.34) */
-elseif ( $_GET['cond21']==="1" )
-{
-    $suffix=array_merge($taG,array("SAnac","kAnac"));
-    echo "<p class = st >By veH zabdakarmaNaH (1.3.34) :</p>"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>";
-    echo "<p class = st >वेः शब्दकर्मणः (१.३.३४) :</p>";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>";
-    echo "<hr>";                    
-    $atmanepada=1;
-}
-/* akarmakAcca (1.3.35) */
-elseif ( $_GET['cond21']==="2" )
-{
-    $suffix=array_merge($taG,array("SAnac","kAnac"));
-    echo "<p class = st >By akarmakAcca (1.3.35) :</p>"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>";
-    echo "<p class = st >अकर्मकाच्च (१.३.३५) :</p>";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>";
-    echo "<hr>";                    
-    $atmanepada=1;
-}
-/* nervizaH (1.3.47), parivyavebhyaH kriyaH (1.3.18), viparAbhyAM jeH (1.3.19), krIDo'nusaMparibhyazca (1.3.21), samavaparivibhyaH sthaH (1.3.22), udvibhyAM tapaH (1.3.27), AGo yamahanaH (1.3.28), samo gamyRcCipracCisvarAyartishruvidibhyaH (1.3.29), nisamupavibhyo hvaH (1.3.30), */
-elseif ( in_array($first,$toatmane) )
-{
-    $suffix=array_merge($taG,array("SAnac","kAnac"));
-    for($i=0;$i<count($toatmane);$i++)
-    {
-        if($first===$toatmane[$i])
-        {
-            echo "<p class = st >By ".$sutraenglish[$i]." :</p>"; 
-            echo "<p class = hn >This sUtra mandates Atmanepadam. </p>";
-            echo "<p class = st >".$sutradeva[$i]." :</p>";
-            echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>";
-            echo "<hr>";                    
-        }
-    }
-    $atmanepada=1;
-}
 /* anudAttaGita Atmanepadam (1.3.12) */
-elseif ( (ends(array($first),$anudAttetverbs,4) || ends(array($first),$Gitverbs,4) ) && $pada==="pratyaya" && $lakAra!=="")
+elseif ( (in_array($first,$anudAttetverbs) || in_array($first,$Gitverbs) ) && $pada==="pratyaya" && $lakAra!=="")
 {
     $suffix=array_merge($taG,array("SAnac","kAnac"));
     echo "<p class = st >By anudAttaGita Atmanepadam (1.3.12) :</p>"; 
@@ -280,7 +114,7 @@ elseif ( (ends(array($first),$anudAttetverbs,4) || ends(array($first),$Gitverbs,
     $atmanepada=1;
 }
 /* svaritaJitaH kartrabhiprAye kriyAphale (1.3.78) */
-elseif ( ends(array($first),$ubhaya,4) && $pada==="pratyaya" && $lakAra!=="")
+elseif ( in_array($first,$ubhaya) && $pada==="pratyaya" && $lakAra!=="")
 {
     $suffix=array_merge($tiG,array("SAnac","kAnac"));
     echo "<p class = st >By svaritaJitaH kartrabhiprAye kriyAphale (1.3.78) :</p>"; 
@@ -1197,8 +1031,8 @@ if (sub(array("beBid","cecCid","pipaWiz"),blank(0),blank(0),0))
 if ( sub(array("DvaMs","sraMs"),array("+"),blank(0),0) )
 {
     $text = two(array("DvaMs","sraMs"),array("+"),array("DvaMsu!","sraMsu!"),array("+"),0);
-    echo "<p class = pa >This is an udit dhAtu.</p>";
-    echo "<p class = pa >यह एक उदित्‌ धातु है ।</p>";
+    echo "<p class = pa >This is an udit word.</p>";
+    echo "<p class = pa >यह एक उदित्‌ शब्द है ।</p>";
     display(0);
 }
 /* strIliGga definitions */
@@ -1476,13 +1310,13 @@ if ($gender === "f" && ( sub($ugitprAtipadika,array("+"),blank(count($ugitprAtip
     $text = one(array("+"),array("+NIp+"),0);
     echo "<p class = st >By ugitazca (4.1.6) :</p>";
     echo "<p class = st >उगितश्च (४.१.६) :</p>";        
-    display(0);
+    display(3);
     $GIp=1;
 }
-if ($gender==="f" && sub(array("DvaMsu!","sraMsu!"),array("+"),blank(0),0))
+if ($gender==="f" && sub(array("Bavat","pacat","DvaMsu!","sraMsu!"),array("+"),blank(0),0))
 {
     echo "<p class = pa >dhAtozcedugitkAryaM tarhyaJcatereva (vA) :</p>";
-    echo "<p class = pa >धातोश्चेदुगित्कार्यं तर्ह्यञ्चतेरेव (वा) इति नियम्यते । :</p>";        
+    echo "<p class = pa >धातोश्चेदुगित्कार्यं तर्ह्यञ्चतेरेवे (वा) इति नियम्यते । :</p>";        
     display(0);    
 }
 /* antarvatpativatornuk (4.1.32) */
@@ -8428,18 +8262,10 @@ if (arr($text,'/[aAiIuUfFxX]$/'))
     echo "<p class = sa >अणोऽप्रगृह्यस्यानुनासिकः (८.३.५७) :</p>";
 display(0);
 }
-/* anusvArasya yayi parasavarNaH (8.4.58) */
+/* anusvArasya yayi parasavarNaH (8.4.58) and vA padAntasya (8.4.59) */
 $mm = array("My","Mv","Mr","Ml","MY","Mm","MN","MR","Mn","MJ","MB","MG","MQ","MD","Mj","Mb","Mg","Mq","Md","MK","MP","MC","MW","MT","Mc","Mw","Mt","Mk","Mp"); // anusvAra+yay.
 $pa = array("!yy","!vv","!rr","!ll","YY","mm","NN","RR","nn","YJ","mB","NG","RQ","nD","Yj","mb","Ng","Rq","nd","NK","mP","YC","RW","nT","Yc","Rw","nt","Nk","mp"); // its replacement.
-if (sub(array("M"),prat('yy'),blank(0),0) && in_array(1,$num))
-{
-$text = one($mm,$pa,0);
-echo "<p class = sa >By anusvArasya yayi parasavarNaH (8.4.58) :</p>";
-echo "<p class = sa >अनुस्वारस्य ययि परसवर्णः (८.४.५८) :</p>";
-display(0);
-}
-/* anusvArasya yayi parasavarNaH (8.4.58) and vA padAntasya (8.4.59) */
-elseif (sub(array("M"),prat('yy'),blank(0),0))
+if (sub(array("M"),prat('yy'),blank(0),0))
 {
 $text = one($mm,$pa,1);
 echo "<p class = sa >By anusvArasya yayi parasavarNaH (8.4.58) and vA padAntasya (8.4.59) :</p>
