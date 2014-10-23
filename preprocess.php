@@ -63,7 +63,7 @@ $e=implode('","',$c);
 echo $e;*/
 
 /* method to find anudAttet and Git verbs */
-$a=file('allverbs.txt');
+/*$a=file('allverbs.txt');
 $a=array_map('trim',$a);
 $b=array_map('convert1',$a);
 $c=array_map('trim',$b);
@@ -78,6 +78,34 @@ for($i=0;$i<count($c);$i++)
 print_r($d);
 $d=array_map('removeaccent',$d);
 $e=implode('","',$d);
-echo $e;
+echo $e;*/
+
+/* making a list of upasarga combinations */
+$upasarga = array("pra","prati","api","parA","apa","upa","pari","anu","ava","vi","saM","su","ati","ni","nir","ut","aDi","dur","aBi"); // upasargas
+foreach ($upasarga as $val1)
+{
+    $pre[]= $val1;
+    foreach ($upasarga as $val2)
+    {
+        if ($val2!==$val1)
+        {
+               $pre[]= $val1.$val2;
+        }
+        foreach ($upasarga as $val3)
+        {
+            if($val2!==$val1 && $val3!==$val1 && $val2!==$val3)
+            {
+                $pre[]= $val1.$val2.$val3;                
+            }
+        }
+    }
+}
+foreach ($pre as $value)
+{
+    $a=array("aa","Aa","aA","AA","ia","iA","iu","ua","uA","uu","uta","utA","utu","au","Au");
+    $b=array("A","A","A","A","ya","yA","yu","va","vA","U","uda","udA","udu","o","o");
+    $pre1[]=str_replace($a,$b,$value);
+}
+
 
 ?>

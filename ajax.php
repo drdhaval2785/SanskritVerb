@@ -5,6 +5,7 @@ include "function.php";
 include "slp-dev.php";
 // including dev-slp.php for devanAgarI->SLP1 conversion to process data entered in Devanagari.
 include "dev-slp.php";
+error_reporting(0);
 
 //post element
 $word = $_POST['first'];
@@ -740,8 +741,81 @@ if ( $_POST['step']==='3_3_2_1')
 if($_POST['step']==='11')
 {
             $html .= '<div id="step11">';
-            $html .= '<input type="radio" value="1" name="cond11_1" > कर्मव्यतिहार है ';
-            $html .= '<input type="radio" value="2" name="cond11_2" > नहीं ';
+            $html .= '<input type="radio" value="1" name="cond11" > कर्मव्यतिहार है ';
+            $html .= '<input type="radio" value="2" name="cond11" > नहीं ';
+            $html .= '</div>';            
+}
+if($_POST['step']==='11_1')
+{
+            $html .= '<div id="step22">';
+            $html .= '<input type="radio" value="1" name="cond11_1" > गत्यर्थक या हिंसार्थक है ';
+            $html .= '<input type="radio" value="2" name="cond11_1" > इतरेतर, अन्योन्य या परस्पर के समीप में है ';
+            $html .= '<input type="radio" value="3" name="cond11_1" > उपर में से कोई नहीं ';
+            $html .= '</div>';            
+}
+if($_POST['step']==='11' && ends($arrWord,array("AdAY"),2))
+{
+            $html .= '<div id="step33">';
+            $html .= '<input type="radio" value="1" name="cond14" > विहरण ';
+            $html .= '<input type="radio" value="2" name="cond14" > अविहरण ';
+            $html .= '</div>';            
+}
+if($_POST['step']==='14_1')
+{
+            $html .= '<div id="step33">';
+            $html .= '<input type="radio" value="1" name="cond14_1" > स्वाङ्गविहरण ';
+            $html .= '<input type="radio" value="2" name="cond14_1" > पराङ्गविहरण ';
+            $html .= '</div>';            
+}
+if($_POST['step']==='11' && ends($arrWord,array("zWA"),2))
+{
+            $html .= '<div id="step33">';
+            $html .= '<input type="radio" value="1" name="cond15" > प्रकाशन या स्थेय के अर्थ में प्रयुक्त है ';
+            $html .= '<input type="radio" value="2" name="cond15" > नहीं ';
+            $html .= '</div>';            
+}
+if($_POST['step']==='11' && ends($arrWord,array("utsTA"),2))
+{
+            $html .= '<div id="step33">';
+            $html .= '<input type="radio" value="1" name="cond16" > ऊर्ध्वकर्म में प्रयुक्त है ';
+            $html .= '<input type="radio" value="2" name="cond16" > नहीं ';
+            $html .= '</div>';            
+}
+if($_POST['step']==='11' && ends($arrWord,array("upasTA"),2))
+{
+            $html .= '<div id="step33">';
+            $html .= '<input type="radio" value="1" name="cond17" > मन्त्रकरण है ';
+            $html .= '<input type="radio" value="2" name="cond17" > अकर्मक है ';
+            $html .= '<input type="radio" value="3" name="cond17" > उपर में से कोई नहीं ';
+            $html .= '</div>';            
+}
+if($_POST['step']==='11' && ends($arrWord,array("AhveY"),2))
+{
+            $html .= '<div id="step33">';
+            $html .= '<input type="radio" value="1" name="cond18" > स्पर्धा के अर्थ में है ';
+            $html .= '<input type="radio" value="2" name="cond18" > नहीं ';
+            $html .= '</div>';            
+}
+if($_POST['step']==='11' && ends($arrWord,array("kfY"),1) && !ends($arrWord,array("aDikfY","vikfY"),2) )
+{
+            $html .= '<div id="step33">';
+            $html .= '<input type="radio" value="1" name="cond19" > गन्धन, अवक्षेपण, सेवन, साहसिक्य, प्रतियत्न, प्रकथन या उपयोग के अर्थ में प्रयुक्त है ';
+            $html .= '<input type="radio" value="2" name="cond19" > नहीं ';
+            $html .= '</div>';            
+}
+if($_POST['step']==='11' && ends($arrWord,array("aDikfY"),2) )
+{
+            $html .= '<div id="step33">';
+            $html .= '<input type="radio" value="1" name="cond20" > प्रहसन ';
+            $html .= '<input type="radio" value="2" name="cond20" > नहीं ';
+            $html .= '</div>';            
+}
+if($_POST['step']==='11' && ends($arrWord,array("vikfY"),2) )
+{
+            $html .= '<div id="step33">';
+            $html .= '<input type="radio" value="1" name="cond21" > शब्दकर्म ';
+            $html .= '<input type="radio" value="2" name="cond21" > अकर्मक ';
+            $html .= '<input type="radio" value="3" name="cond21" > उपर में से कोई नहीं ';
             $html .= '</div>';            
 }
 

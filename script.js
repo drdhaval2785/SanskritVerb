@@ -296,5 +296,19 @@ $(document).ready(function() {
 			$('#step1').html(response);
 		}
   	});
+	$( document ).on( "click", "input:radio[name=cond11]", function() {
+		if($('input:radio[name=cond11]:checked').val() == '1'){
+			$('#step').val('11_1');
+			$.getData();
+			$('#step2').html(response);
+                }
+	});
+	$( document ).on( "click", "input:radio[name=cond14]", function() {
+		if($('input:radio[name=cond14]:checked').val() == '1'){
+			$('#step').val('14_1');
+			$.getData();
+			$('#step2').html(response);
+                }
+	});
         
 });

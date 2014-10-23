@@ -45,7 +45,7 @@ $hrasva = array("a","i","u","f","x"); // hrasva letters
 $guna = array ("e","o"); // guNa letters
 $vruddhi = array("E","O"); // vRddhi letters
 $aa = array("a","A"); // a, A
-$upasarga = array("pra","prati","api","parA","apa","upa","pari","anu","ava","vi","saM","su","ati","ni","nir","ut","adhi","dur","abhi"); // upasargas
+$upasarga = array("pra","prati","api","parA","apa","upa","pari","anu","ava","vi","saM","su","ati","ni","nir","ut","aDi","dur","aBi","A"); // upasargas
 $verbs_ru = array("fkz","fc","fC","fj","fYj","fR","ft","fd","fD","fn","fP","fBukz","fmP","fS","fz","fh"); // verbs starging with R.
 $verbs_changed = array("kz","c","C","j","Yj","R","t","d","D","n","P","Bukz","mP","S","z","h"); // verbs with removal of R.
 $ku = array("k","K","g","G","N"); // kavarga letters
@@ -123,7 +123,10 @@ $noaccentsanubandha=array_map('removeaccent',$sanubandhaverb);
 $noaccentsanubandhaslp=array_map('trim',$noaccentsanubandha);
 $noaccentwithoutanusvar=array_map('removeanusvar',$noaccentsanubandhaslp);
 $noaccentniranubandhaslp=array_map('verbprocess',$noaccentsanubandhaslp);
-
+/* changing the pada of verb in case of upasargas */
+$toatmane=array("niviSa!","parikrIY","vikrIY","avakrIY","viji","parAji","AkrIqf!","anukrIqf!","saMkrIqf!","parikrIqf!","saMsTA","avasTA","prasTA","visTA","uttapa!","vitapa!","Ayama!","Ahana!","saMgamlx!","saMfcCa!","saMpracCa!","saMsvf","saMf","saMzru","saMvidx!","nihveY","saMhveY","upahveY","vihveY",);
+$sutraenglish=array("nerviSaH (1.3.17)","parivyavebhyaH kriyaH (1.3.18)","parivyavebhyaH kriyaH (1.3.18)","parivyavebhyaH kriyaH (1.3.18)","viparAbhyAM jeH (1.3.19)","viparAbhyAM jeH (1.3.19)","krIDo'nusaMparibhyazca (1.3.21)","krIDo'nusaMparibhyazca (1.3.21)","krIDo'nusaMparibhyazca (1.3.21)","krIDo'nusaMparibhyazca (1.3.21)","samavaparivibhyaH sthaH (1.3.22)","samavaparivibhyaH sthaH (1.3.22)","samavaparivibhyaH sthaH (1.3.22)","samavaparivibhyaH sthaH (1.3.22)","udvibhyAM tapaH (1.3.27)","udvibhyAM tapaH (1.3.27)","AGo yamahanaH (1.3.28)","AGo yamahanaH (1.3.28)","samo gamyRcCipracCisvarAyartishruvidibhyaH (1.3.29)","samo gamyRcCipracCisvarAyartishruvidibhyaH (1.3.29)","samo gamyRcCipracCisvarAyartishruvidibhyaH (1.3.29)","samo gamyRcCipracCisvarAyartishruvidibhyaH (1.3.29)","samo gamyRcCipracCisvarAyartishruvidibhyaH (1.3.29)","samo gamyRcCipracCisvarAyartishruvidibhyaH (1.3.29)","samo gamyRcCipracCisvarAyartishruvidibhyaH (1.3.29)","nisamupavibhyo hvaH (1.3.30)","nisamupavibhyo hvaH (1.3.30)","nisamupavibhyo hvaH (1.3.30)","nisamupavibhyo hvaH (1.3.30)",);
+$sutradeva=array("नेर्विशः (१.३.१७)","परिव्यवेभ्यः क्रियः (१.३.१८)","परिव्यवेभ्यः क्रियः (१.३.१८)","परिव्यवेभ्यः क्रियः (१.३.१८)","विपराभ्यां जेः (१.३.१९)","विपराभ्यां जेः (१.३.१९)","क्रीडोऽनुसंपरिभ्यश्च (१.३.२०)","क्रीडोऽनुसंपरिभ्यश्च (१.३.२०)","क्रीडोऽनुसंपरिभ्यश्च (१.३.२०)","क्रीडोऽनुसंपरिभ्यश्च (१.३.२०)","समवप्रविभ्यः स्थः (१.३.२२)","समवप्रविभ्यः स्थः (१.३.२२)","समवप्रविभ्यः स्थः (१.३.२२)","समवप्रविभ्यः स्थः (१.३.२२)","उद्विभ्यां तपः (१.३.२७)","उद्विभ्यां तपः (१.३.२७)","आङो यमहनः (१.३.२८)","आङो यमहनः (१.३.२८)","समो गम्यृच्छिप्रच्छिस्वरत्यर्तिश्रुविदिभ्यः (१.३.२९)","समो गम्यृच्छिप्रच्छिस्वरत्यर्तिश्रुविदिभ्यः (१.३.२९)","समो गम्यृच्छिप्रच्छिस्वरत्यर्तिश्रुविदिभ्यः (१.३.२९)","समो गम्यृच्छिप्रच्छिस्वरत्यर्तिश्रुविदिभ्यः (१.३.२९)","समो गम्यृच्छिप्रच्छिस्वरत्यर्तिश्रुविदिभ्यः (१.३.२९)","समो गम्यृच्छिप्रच्छिस्वरत्यर्तिश्रुविदिभ्यः (१.३.२९)","समो गम्यृच्छिप्रच्छिस्वरत्यर्तिश्रुविदिभ्यः (१.३.२९)","निसमुपविभ्यो ह्वः (१.३.३०)","निसमुपविभ्यो ह्वः (१.३.३०)","निसमुपविभ्यो ह्वः (१.३.३०)","निसमुपविभ्यो ह्वः (१.३.३०)",);
 /* Function to find pratyAhAra from given two letters */ 
 // Enter your letters in the arguments like prat('Jl') will mean pratyAhAra jhal.
 function prat($text)  // prat for pratyAhAra
@@ -907,9 +910,12 @@ function anekAca($a)
 }
 /* ends function */
 // to find if there is any member of array which end in a particular member of another array.
-// 0 -> doesn't start with but ends with it. 1 -> ends with it or is equal to it. 2 -> is equal to it., 3 -> starts with it but doesn't end with it.
+// 0 -> doesn't start with but ends with it. 1 -> ends with it or is equal to it. 2 -> is equal to it., 3 -> starts with it but doesn't end with it. 4 -> ends in verb (upasargas don't bother)
 function ends($a,$b,$n)
 {
+    $upasarga = array("pra","prati","api","parA","apa","upa","pari","anu","ava","vi","saM","su","ati","ni","nir","ut","aDi","dur","aBi","A"); 
+    $pattern=array("pra","prA","pro","prati","praty","api","apy","parA","paro","apa","apA","apo","upa","upA","upo","pari","pary","anu","anU","anv","ava","avA","avo","vi","vy","saM","sam","san","su","sU","sv","ati","aty","ni","ny","nir","niH","nis","niz","ut","ud","aDi","aDy","dur","duH","dus","duz","aBi","aBy","A",);
+    
     foreach ($a as $aa)
     {
         foreach ($b as $bb)
@@ -960,6 +966,25 @@ function ends($a,$b,$n)
                     $can[] = 0;
                 }                
             }
+            if ($n===4) 
+            {
+                    foreach ($pattern as $one)
+                    {
+                        if (strpos($aa,$one)!==false)
+                        {
+                            $prat[]=1;
+                        }
+                    }
+                if (strpos($aa,$bb)>0 && in_array(1,$prat)) 
+                {
+                    $can[] = 1;
+                }
+                else
+                {
+                    $can[] = 0;
+                }                
+            }
+
         }
     }
     if (in_array(1,$can))
