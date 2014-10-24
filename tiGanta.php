@@ -467,9 +467,20 @@ elseif ( $first==="anujijYA")
 {
     $suffix=$tis;
     echo "<p class = st >By nAnorjJaH (1.3.58) :</p>"; 
-            echo "<p class = hn >This sUtra mandates parasmaipadam. </p>";
+    echo "<p class = hn >This sUtra mandates parasmaipadam. </p>";
     echo "<p class = st >नानोर्ज्ञः (१.३.५८) :</p>";
-            echo "<p class = hn >अनेन सूत्रेण परस्मैपदं विधीयते । </p>";
+    echo "<p class = hn >अनेन सूत्रेण परस्मैपदं विधीयते । </p>";
+    echo "<hr>";                    
+    $parasmaipada=1;
+}
+/* pratyAGbhyAM zruvaH (1.3.59) */
+elseif ( in_array($first,array("pratiSuSru","ASuSru",)))
+{
+    $suffix=$tis;
+    echo "<p class = st >By pratyAGbhyAM zruvaH (1.3.59) :</p>"; 
+    echo "<p class = hn >This sUtra mandates parasmaipadam. </p>";
+    echo "<p class = st >प्रत्याङ्भ्यां श्रुवः (१.३.५९) :</p>";
+    echo "<p class = hn >अनेन सूत्रेण परस्मैपदं विधीयते । </p>";
     echo "<hr>";                    
     $parasmaipada=1;
 }
@@ -484,6 +495,34 @@ elseif ( $_GET['cond37']==="1")
     echo "<hr>";                    
     $atmanepada=1;
 }
+/* zadeH zitaH (1.3.60) */
+// I have taken these five lakAras because they have vikaraNa pratyaya 'zap' which qualifies for this sUtra.
+elseif ( in_array($first,array("Sadlz!")) && in_array($lakAra,array("law","low","laN","viDiliN","sArvaDAtukalew")))
+{
+    $suffix=$tis;
+    echo "<p class = st >By zadeH zitaH (1.3.60) :</p>"; 
+    echo "<p class = hn >This sUtra mandates parasmaipadam. </p>";
+    echo "<p class = st >शदेः शितः (१.३.६०) :</p>";
+    echo "<p class = hn >अनेन सूत्रेण परस्मैपदं विधीयते । </p>";
+    echo "<hr>";                    
+    $parasmaipada=1;
+}
+/* mriyaterluGliGozca (1.3.61) */
+elseif ( in_array($first,array("mfN")) && in_array($lakAra,array("law","low","laN","viDiliN","sArvaDAtukalew","ASIrliN","luN")))
+{
+    $suffix=$tis;
+    echo "<p class = st >By mriyaterluGliGozca (1.3.61) :</p>"; 
+    echo "<p class = hn >This sUtra mandates parasmaipadam. </p>";
+    echo "<p class = st >म्रियतेर्लुङ्लिङोश्च (१.३.६१) :</p>";
+    echo "<p class = hn >अनेन सूत्रेण परस्मैपदं विधीयते । </p>";
+    echo "<hr>";                    
+    $parasmaipada=1;
+}
+/* pUrvavatsanaH (1.3.62) */
+// Pending. san is not taught yet. So difficult to code right now. san will be treated later on.
+/* Ampratyayavat kRJo'nuprayogasya (1.3.63) */
+// Pending. Right now focus is on bare verbs. Am etc will be dealt with later.
+
 /* nervizaH (1.3.47), parivyavebhyaH kriyaH (1.3.18), viparAbhyAM jeH (1.3.19), krIDo'nusaMparibhyazca (1.3.21), samavaparivibhyaH sthaH (1.3.22), udvibhyAM tapaH (1.3.27), AGo yamahanaH (1.3.28), samo gamyRcCipracCisvarAyartishruvidibhyaH (1.3.29), nisamupavibhyo hvaH (1.3.30), avAdgraH (1.3.51), jJAzRsmRdRzAM sanaH (1.3.57) */
 elseif ( in_array($first,$toatmane) )
 {
@@ -502,7 +541,7 @@ elseif ( in_array($first,$toatmane) )
     $atmanepada=1;
 }
 /* anudAttaGita Atmanepadam (1.3.12) */
-elseif ( (ends(array($first),$anudAttetverbs,4) || ends(array($first),$Gitverbs,4) ) && $pada==="pratyaya" && $lakAra!=="")
+elseif ( (ends(array($first),$anudAttetverbs,1) || ends(array($first),$Gitverbs,1) ) && $pada==="pratyaya" && $lakAra!=="")
 {
     $suffix=array_merge($taG,array("SAnac","kAnac"));
     echo "<p class = st >By anudAttaGita Atmanepadam (1.3.12) :</p>"; 
@@ -513,7 +552,7 @@ elseif ( (ends(array($first),$anudAttetverbs,4) || ends(array($first),$Gitverbs,
     $atmanepada=1;
 }
 /* svaritaJitaH kartrabhiprAye kriyAphale (1.3.78) */
-elseif ( ends(array($first),$ubhaya,4) && $pada==="pratyaya" && $lakAra!=="")
+elseif ( ends(array($first),$ubhaya,1) && $pada==="pratyaya" && $lakAra!=="")
 {
     $suffix=array_merge($tiG,array("SAnac","kAnac"));
     echo "<p class = st >By svaritaJitaH kartrabhiprAye kriyAphale (1.3.78) :</p>"; 
