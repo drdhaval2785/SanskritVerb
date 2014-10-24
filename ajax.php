@@ -796,7 +796,7 @@ if($_POST['step']==='11' && ends($arrWord,array("AhveY"),2))
             $html .= '<input type="radio" value="2" name="cond18" > नहीं ';
             $html .= '</div>';            
 }
-if($_POST['step']==='11' && ends($arrWord,array("kfY"),1) && !ends($arrWord,array("aDikfY","vikfY"),2) )
+if($_POST['step']==='11' && ends($arrWord,array("kfY"),4) && !ends($arrWord,array("aDikfY","vikfY"),2) )
 {
             $html .= '<div id="step33">';
             $html .= '<input type="radio" value="1" name="cond19" > गन्धन, अवक्षेपण, सेवन, साहसिक्य, प्रतियत्न, प्रकथन या उपयोग के अर्थ में प्रयुक्त है ';
@@ -816,6 +816,79 @@ if($_POST['step']==='11' && ends($arrWord,array("vikfY"),2) )
             $html .= '<input type="radio" value="1" name="cond21" > शब्दकर्म ';
             $html .= '<input type="radio" value="2" name="cond21" > अकर्मक ';
             $html .= '<input type="radio" value="3" name="cond21" > उपर में से कोई नहीं ';
+            $html .= '</div>';            
+}
+if($_POST['step']==='11' && ends($arrWord,array("vinIY"),2) )
+{
+            $html .= '<div id="step33">';
+            $html .= '<input type="radio" value="1" name="cond23" > दूर करने की क्रिया शरीर से भिन्न है (अशरीरे कर्मणि) ';
+            $html .= '<input type="radio" value="2" name="cond23" > नहीं ';
+            $html .= '</div>';            
+}
+elseif($_POST['step']==='11' && ends($arrWord,array("nIY","RIY"),4) )
+{
+            $html .= '<div id="step33">';
+            $html .= '<input type="radio" value="1" name="cond22" > सम्मानन, उत्सञ्जन, आचार्यकरण, ज्ञान, भृति, विगणन या व्यय के अर्थ में प्रयुक्त है ';
+            $html .= '<input type="radio" value="2" name="cond22" > नहीं ';
+            $html .= '</div>';            
+}
+if($_POST['step']==='11' && ends($arrWord,array("kramu!","parAkramu!","upakramu!"),2) )
+{
+            $html .= '<div id="step33">';
+            $html .= '<input type="radio" value="1" name="cond24" > वृत्ति, सर्ग या तायन के अर्थ में प्रयुक्त है ';
+            $html .= '<input type="radio" value="2" name="cond24" > नहीं ';
+            $html .= '</div>';            
+}
+if($_POST['step']==='11' && ends($arrWord,array("Akramu!"),2) )
+{
+            $html .= '<div id="step33">';
+            $html .= '<input type="radio" value="1" name="cond25" > उद्गमन ';
+            $html .= '<input type="radio" value="2" name="cond25" > नहीं ';
+            $html .= '</div>';            
+}
+if($_POST['step']==='11' && ends($arrWord,array("vikramu!"),2) )
+{
+            $html .= '<div id="step33">';
+            $html .= '<input type="radio" value="1" name="cond26" > पादविहरण ';
+            $html .= '<input type="radio" value="2" name="cond26" > नहीं ';
+            $html .= '</div>';            
+}
+if($_POST['step']==='11' && ends($arrWord,array("saMjYA","pratijYA"),2) )
+{
+            $html .= '<div id="step33">';
+            $html .= '<input type="radio" value="1" name="cond28" > अनाध्यान ';
+            $html .= '<input type="radio" value="2" name="cond28" > नहीं ';
+            $html .= '</div>';            
+}
+elseif($_POST['step']==='11' && ends($arrWord,array("jYA"),4) )
+{
+            $html .= '<div id="step33">';
+            $html .= '<input type="radio" value="1" name="cond27" > अपह्नव ';
+            $html .= '<input type="radio" value="2" name="cond27" > अकर्मक ';
+            $html .= '<input type="radio" value="3" name="cond27" > अन्य ';
+            $html .= '</div>';            
+}
+if($_POST['step']==='11' && ends($arrWord,array("anuvada!"),2) )
+{
+            $html .= '<div id="step33">';
+            $html .= '<input type="radio" value="1" name="cond30" > स्पष्ट वाणी वालो का सहोच्चारण है और अकर्मक है ';
+            $html .= '<input type="radio" value="2" name="cond30" > अन्य ';
+            $html .= '</div>';            
+}
+elseif($_POST['step']==='11' && ends($arrWord,array("vada!"),4) )
+{
+            $html .= '<div id="step33">';
+            $html .= '<input type="radio" value="1" name="cond29" > भासन, उपसम्भाषा, ज्ञान, यत्न, विमति या उपमन्त्रण के अर्थ में है ';
+            $html .= '<input type="radio" value="2" name="cond29" > स्पष्ट वाणी वालों का सहोच्चारण ';
+            $html .= '<input type="radio" value="3" name="cond29" > स्पष्ट वाणी वालों का सहोच्चारण विप्रलाप में है ';
+            $html .= '<input type="radio" value="4" name="cond29" > अन्य ';
+            $html .= '</div>';            
+}
+if($_POST['step']==='11' && ends($arrWord,array("prakramu!","upakramu!"),2) )
+{
+            $html .= '<div id="step33">';
+            $html .= '<input type="radio" value="1" name="cond31" > आदिकर्म ';
+            $html .= '<input type="radio" value="2" name="cond31" > अन्य ';
             $html .= '</div>';            
 }
 
