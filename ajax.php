@@ -891,6 +891,41 @@ if($_POST['step']==='11' && ends($arrWord,array("prakramu!","upakramu!"),2) )
             $html .= '<input type="radio" value="2" name="cond31" > अन्य ';
             $html .= '</div>';            
 }
+if($_POST['step']==='11' && ends($arrWord,array("samgf","saMgf","saNgf"),2) )
+{
+            $html .= '<div id="step33">';
+            $html .= '<input type="radio" value="1" name="cond32" > प्रतिज्ञान ';
+            $html .= '<input type="radio" value="2" name="cond32" > अन्य ';
+            $html .= '</div>';            
+}
+if($_POST['step']==='11' && ends($arrWord,array("utcara!","uccara!"),2) )
+{
+            $html .= '<div id="step33">';
+            $html .= '<input type="radio" value="1" name="cond33" > सकर्मक ';
+            $html .= '<input type="radio" value="2" name="cond33" > नहीं ';
+            $html .= '</div>';            
+}
+if($_POST['step']==='11' && ends($arrWord,array("saMcara!","saYcara!","samcara!"),2) )
+{
+            $html .= '<div id="step33">';
+            $html .= '<input type="radio" value="1" name="cond34" > तृतीयायुक्त है ';
+            $html .= '<input type="radio" value="2" name="cond34" > नहीं ';
+            $html .= '</div>';            
+}
+if($_POST['step']==='11' && ends($arrWord,array("sampradAR","saMpradAR"),2) )
+{
+            $html .= '<div id="step33">';
+            $html .= '<input type="radio" value="1" name="cond35" > तृतीयायुक्त है और चतुर्थी के अर्थ में प्रयुक्त है ';
+            $html .= '<input type="radio" value="2" name="cond35" > नहीं ';
+            $html .= '</div>';            
+}
+if($_POST['step']==='11' && ends($arrWord,array("upayama!"),2) )
+{
+            $html .= '<div id="step33">';
+            $html .= '<input type="radio" value="1" name="cond36" > स्वकरण ';
+            $html .= '<input type="radio" value="2" name="cond36" > नहीं ';
+            $html .= '</div>';            
+}
 
 //display the output
 echo $html;

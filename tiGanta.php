@@ -407,7 +407,84 @@ elseif ( $_GET['cond30']==="1")
     echo "<hr>";                    
     $atmanepada=1;
 }
-/* nervizaH (1.3.47), parivyavebhyaH kriyaH (1.3.18), viparAbhyAM jeH (1.3.19), krIDo'nusaMparibhyazca (1.3.21), samavaparivibhyaH sthaH (1.3.22), udvibhyAM tapaH (1.3.27), AGo yamahanaH (1.3.28), samo gamyRcCipracCisvarAyartishruvidibhyaH (1.3.29), nisamupavibhyo hvaH (1.3.30), avAdgraH (1.3.51) */
+/* samaH pratijJAne (1.3.52) */
+elseif ( $_GET['cond32']==="1")
+{
+    $suffix=array_merge($taG,array("SAnac","kAnac"));
+    echo "<p class = st >By samaH pratijJAne (1.3.52) :</p>"; 
+    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>";
+    echo "<p class = st >समः प्रतिज्ञाने (१.३.५२) :</p>";
+    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>";
+    echo "<hr>";                    
+    $atmanepada=1;
+}
+/* udazcaraH sakarmakAt (1.3.53) */
+elseif ( $_GET['cond33']==="1")
+{
+    $suffix=array_merge($taG,array("SAnac","kAnac"));
+    echo "<p class = st >By udazcaraH sakarmakAt (1.3.53) :</p>"; 
+    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>";
+    echo "<p class = st >उदश्चरः सकर्मकात्‌ (१.३.५३) :</p>";
+    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>";
+    echo "<hr>";                    
+    $atmanepada=1;
+}
+/* samastRtIyAyuktAt (1.3.54) */
+elseif ( $_GET['cond34']==="1")
+{
+    $suffix=array_merge($taG,array("SAnac","kAnac"));
+    echo "<p class = st >By samastRtIyAyuktAt (1.3.54) :</p>"; 
+    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>";
+    echo "<p class = st >समस्तृतीयायुक्तात्‌ (१.३.५४) :</p>";
+    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>";
+    echo "<hr>";                    
+    $atmanepada=1;
+}
+/* dANazca sA ceccaturthyarthe (1.3.55) */
+elseif ( $_GET['cond35']==="1")
+{
+    $suffix=array_merge($taG,array("SAnac","kAnac"));
+    echo "<p class = st >By dANazca sA ceccaturthyarthe (1.3.55) :</p>"; 
+    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>";
+    echo "<p class = st >दाणश्च सा चेच्चतुर्थ्यर्थे (१.३.५५) :</p>";
+    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>";
+    echo "<hr>";                    
+    $atmanepada=1;
+}
+/* upAdyamaH svakaraNe (1.3.56) */
+elseif ( $_GET['cond36']==="1")
+{
+    $suffix=array_merge($taG,array("SAnac","kAnac"));
+    echo "<p class = st >By upAdyamaH svakaraNe (1.3.56) :</p>"; 
+    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>";
+    echo "<p class = st >उपाद्यमः स्वकरणे (१.३.५६) :</p>";
+    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>";
+    echo "<hr>";                    
+    $atmanepada=1;
+}
+/* nAnorjJaH (1.3.58) */
+elseif ( $first==="anujijYA")
+{
+    $suffix=$tis;
+    echo "<p class = st >By nAnorjJaH (1.3.58) :</p>"; 
+            echo "<p class = hn >This sUtra mandates parasmaipadam. </p>";
+    echo "<p class = st >नानोर्ज्ञः (१.३.५८) :</p>";
+            echo "<p class = hn >अनेन सूत्रेण परस्मैपदं विधीयते । </p>";
+    echo "<hr>";                    
+    $parasmaipada=1;
+}
+/* jJAzrusmRdRzAM sanaH (1.3.57) */
+elseif ( $_GET['cond37']==="1")
+{
+    $suffix=array_merge($taG,array("SAnac","kAnac"));
+    echo "<p class = st >By jJAzrusmRdRzAM sanaH (1.3.57) :</p>"; 
+    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>";
+    echo "<p class = st >ज्ञाश्रुस्मृदृशां सनः (१.३.५७) :</p>";
+    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>";
+    echo "<hr>";                    
+    $atmanepada=1;
+}
+/* nervizaH (1.3.47), parivyavebhyaH kriyaH (1.3.18), viparAbhyAM jeH (1.3.19), krIDo'nusaMparibhyazca (1.3.21), samavaparivibhyaH sthaH (1.3.22), udvibhyAM tapaH (1.3.27), AGo yamahanaH (1.3.28), samo gamyRcCipracCisvarAyartishruvidibhyaH (1.3.29), nisamupavibhyo hvaH (1.3.30), avAdgraH (1.3.51), jJAzRsmRdRzAM sanaH (1.3.57) */
 elseif ( in_array($first,$toatmane) )
 {
     $suffix=array_merge($taG,array("SAnac","kAnac"));
