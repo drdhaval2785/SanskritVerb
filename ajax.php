@@ -968,6 +968,13 @@ if( ends($arrWord,array("kfY","qukfY"),4) ) // akartrabhiprAyo'yamArambhaH iti k
             $html .= '<input type="radio" value="2" name="cond42" > नहीं ';
             $html .= '</div>';            
 }
+if($_POST['step']==='11' && ends($arrWord,array("saMyama!","samyama!","utyama!","udyama!","Ayama!"),2) )
+{
+            $html .= '<div id="step33">';
+            $html .= '<input type="radio" value="1" name="cond43" > ग्रन्थविषयक ';
+            $html .= '<input type="radio" value="2" name="cond43" > अन्य ';
+            $html .= '</div>';            
+}
 
 
 //display the output

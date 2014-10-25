@@ -613,18 +613,57 @@ elseif ( (ends(array($first),$anudAttetverbs,1) || ends(array($first),$Gitverbs,
 {
     $suffix=array_merge($taG,array("SAnac","kAnac"));
     echo "<p class = st >By anudAttaGita Atmanepadam (1.3.12) :</p>"; 
-            echo "<p class = hn >This sUtra mandates Atmanepadam. </p>";
+    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>";
     echo "<p class = st >अनुदात्तङित आत्मनेपदम्‌ (१.३.१२) :</p>";
-            echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>";
+    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>";
     echo "<hr>";
     $atmanepada=1;
 }
-/* svaritaJitaH kartrabhiprAye kriyAphale (1.3.78) */
+/* vibhASopapadena pratIyamAne (1.3.77) */
+// This sUtra is intervowen in 1.3.72 to 1.3.76 as optional form.
+/* apAdvadaH (1.3.73) */
+elseif ( $first==="apavada!" && $pada==="pratyaya" && $lakAra!=="")
+{
+    $suffix=array_merge($tiG,array("SAnac","kAnac"));
+    echo "<p class = st >By apAdvadaH (1.3.73) :</p>"; 
+    echo "<p class = hn >When the fruit of the action goes to the doer, this dhAtu takes Atmanepada. Otherwise, it takes parasmaipada. vibhASopapadena pratIyamAne (1.3.77) makes the Atmanepada form optional if the upapada implies the kartRabhiprAya kriyAphala.</p>";
+    echo "<p class = st >अपाद्वदः (१.३.७३) :</p>";
+    echo "<p class = hn >क्रिया का फल जब कर्ता को मिलता है, तब इस धातु से आत्ममनेपद होता है । अन्यथा परस्मैपद होता है । विभाषोपपदेन प्रतीयमाने (१.३.७७) से यदि उपपद से कर्त्रभिप्राय क्रियाफल प्रतीयमान है तो आत्मनेपद विभाषा होता है ।</p>";
+    echo "<hr>";
+    $ubhayapada=1;
+}
+/* samudAGbhyo yamo'granthe (1.3.75) */
+elseif ( $_GET['cond43']==="2" && $pada==="pratyaya" && $lakAra!=="")
+{
+    $suffix=array_merge($tiG,array("SAnac","kAnac"));
+    echo "<p class = st >By samudAGbhyo yamo'granthe (1.3.75) :</p>"; 
+    echo "<p class = hn >When the fruit of the action goes to the doer, this dhAtu takes Atmanepada. Otherwise, it takes parasmaipada. vibhASopapadena pratIyamAne (1.3.77) makes the Atmanepada form optional if the upapada implies the kartRabhiprAya kriyAphala. </p>";
+    echo "<p class = st >समुदाङ्भ्यो यमोऽग्रन्थे (१.३.७५) :</p>";
+    echo "<p class = hn >क्रिया का फल जब कर्ता को मिलता है, तब इस धातु से आत्ममनेपद होता है । अन्यथा परस्मैपद होता है । विभाषोपपदेन प्रतीयमाने (१.३.७७) से यदि उपपद से कर्त्रभिप्राय क्रियाफल प्रतीयमान है तो आत्मनेपद विभाषा होता है । </p>";
+    echo "<hr>";
+    $ubhayapada=1;
+}
+/* anupasargAjjJaH (1.3.76) */
+elseif ( ends(array($first),array("jYA"),2) && $pada==="pratyaya" && $lakAra!=="")
+{
+    $suffix=array_merge($tiG,array("SAnac","kAnac"));
+    echo "<p class = st >By anupasargAjjJaH (1.3.76) :</p>"; 
+    echo "<p class = hn >When the fruit of the action goes to the doer, this dhAtu takes Atmanepada. Otherwise, it takes parasmaipada. vibhASopapadena pratIyamAne (1.3.77) makes the Atmanepada form optional if the upapada implies the kartRabhiprAya kriyAphala. </p>";
+    echo "<p class = st >अनुपसर्गाज्ज्ञः (१.३.७६) :</p>";
+    echo "<p class = hn >क्रिया का फल जब कर्ता को मिलता है, तब इस धातु से आत्ममनेपद होता है । अन्यथा परस्मैपद होता है । विभाषोपपदेन प्रतीयमाने (१.३.७७) से यदि उपपद से कर्त्रभिप्राय क्रियाफल प्रतीयमान है तो आत्मनेपद विभाषा होता है । </p>";
+    echo "<hr>";
+    $ubhayapada=1;
+}
+/* Nicazca (1.3.74) */
+// Pending. All secondary verb forms need a bit of mind application.
+/* svaritaJitaH kartrabhiprAye kriyAphale (1.3.72) */
 elseif ( ends(array($first),$ubhaya,1) && $pada==="pratyaya" && $lakAra!=="")
 {
     $suffix=array_merge($tiG,array("SAnac","kAnac"));
-    echo "<p class = st >By svaritaJitaH kartrabhiprAye kriyAphale (1.3.78) :</p>"; 
-    echo "<p class = st >स्वरितञितः कर्त्रभिप्राये क्रियाफले (१.३.७८) :</p>";
+    echo "<p class = st >By svaritaJitaH kartrabhiprAye kriyAphale (1.3.72) :</p>"; 
+    echo "<p class = hn >When the fruit of the action goes to the doer, these dhAtus take Atmanepada. Otherwise, they take parasmaipada. vibhASopapadena pratIyamAne (1.3.77) makes the Atmanepada form optional if the upapada implies the kartRabhiprAya kriyAphala. </p>";
+    echo "<p class = st >स्वरितञितः कर्त्रभिप्राये क्रियाफले (१.३.७२) :</p>";
+    echo "<p class = hn >क्रिया का फल जब कर्ता को मिलता है, तब इन धातुओं से आत्ममनेपद होता है । अन्यथा परस्मैपद होता है । विभाषोपपदेन प्रतीयमाने (१.३.७७) से यदि उपपद से कर्त्रभिप्राय क्रियाफल प्रतीयमान है तो आत्मनेपद विभाषा होता है । </p>";
     echo "<hr>";
     $ubhayapada=1;
 }
