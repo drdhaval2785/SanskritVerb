@@ -975,6 +975,13 @@ if($_POST['step']==='11' && ends($arrWord,array("saMyama!","samyama!","utyama!",
             $html .= '<input type="radio" value="2" name="cond43" > अन्य ';
             $html .= '</div>';            
 }
+if($_POST['step']==='11' && ends($arrWord,array("uparamu!"),2) )
+{
+            $html .= '<div id="step33">';
+            $html .= '<input type="radio" value="1" name="cond44" > अकर्मक ';
+            $html .= '<input type="radio" value="2" name="cond44" > अन्य ';
+            $html .= '</div>';            
+}
 
 
 //display the output
