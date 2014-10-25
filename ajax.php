@@ -961,6 +961,13 @@ if( ends($arrWord,array("lIN","lI",),4) ) // akartrabhiprAyo'yamArambhaH iti kAz
             $html .= '<input type="radio" value="2" name="cond41" > नहीं ';
             $html .= '</div>';            
 }
+if( ends($arrWord,array("kfY","qukfY"),4) ) // akartrabhiprAyo'yamArambhaH iti kAzikA. Therefore, not keeping step=11.
+{
+            $html .= '<div id="step33">';
+            $html .= '<input type="radio" value="1" name="cond42" > मिथ्या उपपद में है और अभ्यास के अर्थ में प्रयुक्त है ';
+            $html .= '<input type="radio" value="2" name="cond42" > नहीं ';
+            $html .= '</div>';            
+}
 
 
 //display the output

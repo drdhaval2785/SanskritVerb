@@ -579,6 +579,17 @@ elseif ( $_GET['cond41']==="1")
     echo "<hr>";                    
     $atmanepada=1;
 }
+/* mithyopapadAt kRJo'bhyAse (1.3.71) */
+elseif ( $_GET['cond42']==="1")
+{
+    $suffix=array_merge($taG,array("SAnac","kAnac"));
+    echo "<p class = st >By mithyopapadAt kRJo'bhyAse (1.3.71) :</p>"; 
+    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>";
+    echo "<p class = st >मिथ्योपपदात्‌ कृञोऽभ्यासे (१.३.७१) :</p>";
+    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>";
+    echo "<hr>";                    
+    $atmanepada=1;
+}
 
 /* nervizaH (1.3.47), parivyavebhyaH kriyaH (1.3.18), viparAbhyAM jeH (1.3.19), krIDo'nusaMparibhyazca (1.3.21), samavaparivibhyaH sthaH (1.3.22), udvibhyAM tapaH (1.3.27), AGo yamahanaH (1.3.28), samo gamyRcCipracCisvarAyartishruvidibhyaH (1.3.29), nisamupavibhyo hvaH (1.3.30), avAdgraH (1.3.51), jJAzRsmRdRzAM sanaH (1.3.57) */
 elseif ( in_array($first,$toatmane) )
