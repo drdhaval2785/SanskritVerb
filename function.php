@@ -916,7 +916,7 @@ function anekAca($a)
 function ends($a,$b,$n)
 {
     $upasarga = array("pra","prati","api","parA","apa","upa","pari","anu","ava","vi","saM","su","ati","ni","nir","ut","aDi","dur","aBi","A"); 
-    $pattern=array("pra","prA","pro","prati","praty","api","apy","parA","paro","apa","apA","apo","upa","upA","upo","pari","pary","anu","anU","anv","ava","avA","avo","vi","vy","saM","sam","san","su","sU","sv","ati","aty","ni","ny","nir","niH","nis","niz","ut","ud","aDi","aDy","dur","duH","dus","duz","aBi","aBy","A",);
+    $pattern=array("pra","prA","pro","prati","praty","api","apy","parA","paro","apa","apA","apo","upa","upA","upo","pari","pary","anu","anU","anv","ava","avA","avo","vi","vy","saM","sam","san","su","sU","sv","ati","aty","ni","ny","nir","niH","nis","niz","ut","ud","uc","ul","aDi","aDy","dur","duH","dus","duz","aBi","aBy","A",);
     
     foreach ($a as $aa)
     {
@@ -977,7 +977,7 @@ function ends($a,$b,$n)
                             $prat[]=1;
                         }
                     }
-                if (strpos($aa,$bb)>0 && in_array(1,$prat)) 
+                if ( (strpos($aa,$bb)>0 && in_array(1,$prat)) || $aa===$bb) 
                 {
                     $can[] = 1;
                 }

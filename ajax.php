@@ -926,6 +926,42 @@ if($_POST['step']==='11' && ends($arrWord,array("upayama!"),2) )
             $html .= '<input type="radio" value="2" name="cond36" > नहीं ';
             $html .= '</div>';            
 }
+if($_POST['step']==='11' && ends($arrWord,array("prayuji!r!","upayuji!r"),2) )
+{
+            $html .= '<div id="step33">';
+            $html .= '<input type="radio" value="1" name="cond37" > यज्ञपात्र ';
+            $html .= '<input type="radio" value="2" name="cond37" > यज्ञपात्र नहीं है ';
+            $html .= '</div>';            
+}
+if($_POST['step']==='11' && ends($arrWord,array("Buja!"),4) )
+{
+            $html .= '<div id="step33">';
+            $html .= '<input type="radio" value="1" name="cond38" > अवन ';
+            $html .= '<input type="radio" value="2" name="cond38" > अन्य ';
+            $html .= '</div>';            
+}
+if( ends($arrWord,array("BI","smiN","zmiN"),4) ) // akartrabhiprAyo'yamArambhaH iti kAzikA. Therefore, not keeping step=11.
+{
+            $html .= '<div id="step33">';
+            $html .= '<input type="radio" value="1" name="cond39" > हेतुभये ';
+            $html .= '<input type="radio" value="2" name="cond39" > नहीं ';
+            $html .= '</div>';            
+}
+if( ends($arrWord,array("gfDu!","vaYcu!","vancu!"),2) ) // akartrabhiprAyo'yamArambhaH iti kAzikA. Therefore, not keeping step=11.
+{
+            $html .= '<div id="step33">';
+            $html .= '<input type="radio" value="1" name="cond40" > प्रलम्भन ';
+            $html .= '<input type="radio" value="2" name="cond40" > अन्य ';
+            $html .= '</div>';            
+}
+if( ends($arrWord,array("lIN","lI",),4) ) // akartrabhiprAyo'yamArambhaH iti kAzikA. Therefore, not keeping step=11.
+{
+            $html .= '<div id="step33">';
+            $html .= '<input type="radio" value="1" name="cond41" > सम्मानन, शालीनीकरण या प्रलम्भन के अर्थ में प्रयुक्त है ';
+            $html .= '<input type="radio" value="2" name="cond41" > नहीं ';
+            $html .= '</div>';            
+}
+
 
 //display the output
 echo $html;
