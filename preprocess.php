@@ -53,17 +53,18 @@ $e=implode('","',$d);
 echo $e;*/
 
 /* Method to prepare list of parasmaipada, Atmanepada, ubhayapadas. */
-/*$a=file('ubhaya.txt');
+$a=file('kryAdi.txt');
 $a=array_map('trim',$a);
-print_r($a);
+//print_r($a);
 $b=array_map('convert1',$a);
 $b=array_map('trim',$b);
 $c=array_map('removeaccent',$b);
 $e=implode('","',$c);
-echo $e;*/
-
+echo $e;
+echo "<br><br>";
+echo implode('","',$a);
 /* method to find anudAttet and Git verbs */
-$a=file('allverbs.txt');
+/*$a=file('allverbs.txt');
 $a=array_map('trim',$a);
 $b=array_map('convert1',$a);
 $c=array_map('trim',$b);
@@ -79,7 +80,7 @@ for($i=0;$i<count($c);$i++)
 print_r($d);
 $d=array_map('removeaccent',$d);
 $e=implode('","',$d);
-echo $e;
+echo $e;*/
 
 /* making a list of upasarga combinations */
 /*$upasarga = array("pra","prati","api","parA","apa","upa","pari","anu","ava","vi","saM","su","ati","ni","nir","ut","aDi","dur","aBi"); // upasargas
