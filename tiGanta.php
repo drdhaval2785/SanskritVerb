@@ -1251,6 +1251,22 @@ if ( sub(array("i","I","u","U","f","F","x","X"),array("+"),$sArvadhAtuka_pratyay
     echo "<p class = sa >सार्वधातुकार्धधातुकयोः (७.३.८४) :</p>";
     display(0);    
 }
+/* sArvadhAtukArdhadhAtukayoH (7.3.84) */
+elseif ( sub(array("i","I","u","U","f","F","x","X"),$vikaraNa,array("+"),0) && ($sarvadhatuka===1 || $ardhadhatuka===1))
+{
+    $text=three(array("i","I","u","U","f","F","x","X",),$vikaraNa,array("+"),array("e","e","o","o","ar","ar","al","al",),$vikaraNa,array("+"),0);
+    echo "<p class = sa >sArvadhAtukArdhadhAtukayoH (7.3.84) :</p>"; 
+    echo "<p class = sa >सार्वधातुकार्धधातुकयोः (७.३.८४) :</p>";
+    display(0);    
+}
+/* pugantalaghUpadhasya ca (7.3.86) */
+if ( sub(array("i","u","f","x"),$hl,$sArvadhAtuka_pratyayas,0) && ($sarvadhatuka===1 || $ardhadhatuka===1))
+{
+    $text=three(array("i","u","f","x"),$hl,$sArvadhAtuka_pratyayas,array("e","o","ar","al"),$hl,$sArvadhAtuka_pratyayas,0);
+    echo "<p class = sa >pugantalaghUpadhasya ca (7.3.86) :</p>"; 
+    echo "<p class = sa >पुगन्तलघूपधस्य च (७.३.८६) :</p>";
+    display(0);    
+}
 /* jho'ntaH (7.1.3) */
 if (in_array($so,array("Ja","Ji")))
 {
@@ -1269,7 +1285,7 @@ if ($lakAra!=="")
     $text = two(prat('ec'),array("+a+","+Aya+","+Ana+"),$ayavayavah,array("a+","Aya+","Ana+"),0);
     echo "<p class = sa >By echo'yavAyAvaH (7.1.78) :</p>";
     echo "<p class = sa >एचोऽयवायावः (७.१.७८) :</p>";
-    display(4);
+    display(0);
     }
 }
 
@@ -3440,7 +3456,7 @@ if ($GIn===1 )
     $text = two(prat('ec'),array("I"),$ayavayavah,array("I"),0);
     echo "<p class = sa >By echo'yavAyAvaH (7.1.78) :</p>";
     echo "<p class = sa >एचोऽयवायावः (७.१.७८) :</p>";
-    display(4);
+    display(0);
     }
     /* akaH savarNe dIrghaH (6.1.101) */ 
     if (sub(array("i","I"),array("+I+"),blank(0),0))
@@ -3530,7 +3546,7 @@ if ($GIp===1 )
     $text = two(prat('ec'),array("I"),$ayavayavah,array("I"),0);
     echo "<p class = sa >By echo'yavAyAvaH (7.1.78) :</p>";
     echo "<p class = sa >एचोऽयवायावः (७.१.७८) :</p>";
-    display(4);
+    display(0);
     }
     /* akaH savarNe dIrghaH (6.1.101) */ 
     if (sub(array("i","I"),array("+I+"),blank(0),0))
@@ -3628,7 +3644,7 @@ if ($GIS===1 )
     $text = two(prat('ec'),array("I"),$ayavayavah,array("I"),0);
     echo "<p class = sa >By echo'yavAyAvaH (7.1.78) :</p>";
     echo "<p class = sa >एचोऽयवायावः (७.१.७८) :</p>";
-    display(4);
+    display(0);
     }
     /* akaH savarNe dIrghaH (6.1.101) */ 
     if (sub(array("i","I"),array("+I+"),blank(0),0))
@@ -5250,14 +5266,14 @@ if ($ancu===1 && ( sub(array("vizvak","deva"),array("anc"),blank(0),0)||sub($sar
             $text = two(array('i','I','u','U'),prat('ac'),array('y','y','v','v'),prat('ac'),0);
             echo "<p class = sa >By iko yaNaci (6.1.77) :</p>";
             echo "<p class = sa >इको यणचि (६.१.७७) :</p>";
-            display(4);
+            display(0);
             }
         if(sub(array("f","F","x","X"),prat('ac'),blank(0),0) && $bham===0)
             {
             $text = two(array("f","F","x","X"),prat('ac'),array("r","r","l","l"),prat('ac'),0);
             echo "<p class = sa >By iko yaNaci (6.1.77) :</p>";
             echo "<p class = sa >इको यणचि (५.१.७७) :</p>";
-            display(4); 
+            display(0); 
             }
 }
 /* adasa au sulopazca (7.2.107) */
@@ -6930,7 +6946,7 @@ if(sub(array('i','I','u','U'),prat('ac'),blank(0),0))
 $text = two(array('i','I','u','U'),prat('ac'),array('y','y','v','v'),prat('ac'),0);
 echo "<p class = sa >By iko yaNaci (6.1.77) :</p>";
 echo "<p class = sa >इको यणचि (६.१.७७) y:</p>";
-display(4);
+display(0);
 }
 if(sub(array("f","F","x","X"),prat('ac'),blank(0),0))
 {
@@ -6938,7 +6954,7 @@ $text = two(array("f","F","x","X"),prat('ac'),array("r","r","l","l"),prat('ac'),
 echo "<p class = sa >By iko yaNaci (6.1.77) :</p>";
 echo "<p class = sa >इको यणचि (५.१.७७) :</p>";
 $sthanivadbhav = 1; // 0 - no sthAnivadbhAva. 1 - sthAnivadbhAva.
-display(4); 
+display(0); 
 }
 else
 {
@@ -6988,7 +7004,7 @@ if (sub(prat('ec'),prat('ac'),blank(0),0))
 $text = two(prat('ec'),prat('ac'),$ayavayavah,prat('ac'),0);
 echo "<p class = sa >By echo'yavAyAvaH (7.1.78) :</p>";
 echo "<p class = sa >एचोऽयवायावः (७.१.७८) :</p>";
-display(4);
+display(0);
 }
 
 /* vAnto yi pratyaye (6.1.71), goryutau CandasyupasaMkhyAnam (vA 3543), adhvaparimANe ca (vA 3544) dhAtostannimittasyaiva (6.1.80) */
