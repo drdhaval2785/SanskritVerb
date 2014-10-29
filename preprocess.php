@@ -8,10 +8,13 @@ include "dev-slp.php"; // includes code for devanagari to SLP.
 include "function.php";
 
 /* method to create an array of necessary SLP1 list from devangari file */
-/*$a=file('NAdiverbs.txt');
-print_r($a);
+/*$a=file('allverbs.txt');
+//print_r($a);
+$a=array_map('trim',$a);
+echo implode('","',$a)."<br>";
 $a=array_map('convert1',$a);
-print_r($a);
+$a=array_map('removeaccent',$a);
+//print_r($a);
 $b=implode('","',$a);
 echo $b;*/
 
@@ -53,7 +56,7 @@ $e=implode('","',$d);
 echo $e;*/
 
 /* Method to prepare list of parasmaipada, Atmanepada, ubhayapadas. */
-$a=file('kryAdi.txt');
+/*$a=file('kryAdi.txt');
 $a=array_map('trim',$a);
 //print_r($a);
 $b=array_map('convert1',$a);
@@ -62,7 +65,8 @@ $c=array_map('removeaccent',$b);
 $e=implode('","',$c);
 echo $e;
 echo "<br><br>";
-echo implode('","',$a);
+echo implode('","',$a);*/
+
 /* method to find anudAttet and Git verbs */
 /*$a=file('allverbs.txt');
 $a=array_map('trim',$a);
@@ -110,4 +114,26 @@ foreach ($pre as $value)
 }
 */
 
+/* Process to find out ekAc, anekAc. */
+$a=file('allverbs.txt');
+$a=array_map('trim',$a);
+$a=array_map('convert1',$a);
+$a=array_map('removeaccent',$a);
+foreach ($a as $value)
+{
+    $value=preg_replace('/(['.pc('hl').']$)/','',$value);
+    $value=preg_replace('/([aAiIuUfFxXeoEO][!])/','',$value);
+    $value=preg_replace('/(^[Ywq][iu])/','',$value);
+    if (anekAca($value))
+    {
+        $val1[]=$value;
+    }
+    else
+    {
+        $val2[]=$value;
+    }
+}
+print_r($val1);
+echo "<br>";
+print_r($val2);
 ?>
