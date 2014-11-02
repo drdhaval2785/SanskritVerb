@@ -114,8 +114,8 @@ foreach ($pre as $value)
 }
 */
 
-/* Process to find out ekAc, anekAc. */
-$a=file('allverbs.txt');
+/* Process to segregate ekAc, anekAc from verb list */
+/*$a=file('allverbs.txt');
 $a=array_map('trim',$a);
 $a=array_map('convert1',$a);
 $a=array_map('removeaccent',$a);
@@ -132,8 +132,6 @@ foreach ($a as $value)
     {
         $val2[]=$value;
     }
-}
-print_r($val1);
-echo "<br>";
-print_r($val2);
+}*/
+
 ?>
