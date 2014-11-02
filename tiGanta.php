@@ -1302,9 +1302,9 @@ if (arr($text,'/['.flat($ac).'][!]/') && in_array($so,$tiG) )
     display(0);    
 }
 /* cuTU (1.3.7) */
-if (arr($text,'/[+][cCjYwWqQR]/') && $wa1 === 0 && in_array($so,$tiG))
+if (arr($text,'/[+][cjYwWqQR]/') && $wa1 === 0 && in_array($so,$tiG))
 {
-    it('/([+][cCjYwWqQR])/');
+    it('/([+][cjYwWqQR])/');
     echo "<p class = pa >By cuTU (1.3.7) 1:</p>";
     echo "<p class = pa >चुटू (१.३.७) :</p>";
     display(0);
@@ -6207,9 +6207,9 @@ if ((substr($first,0,2) === "Yi" || substr($first,0,2) === "wu" || substr($first
     display(0);
 }
 /* cuTU (1.3.7) */
-if (arr($text,'/[+][cCjYwWqQR]/') && $wa1 === 0 && ($sarva2 ===0 || $purva=1)  && !in_array($so,$tiG))
+if (arr($text,'/[+][cjYwWqQR]/') && $wa1 === 0 && ($sarva2 ===0 || $purva=1)  && !in_array($so,$tiG))
 {
-    it('/([+][cCjYwWqQR])/');
+    it('/([+][cjYwWqQR])/');
     echo "<p class = pa >By cuTU (1.3.7) :</p>";
     echo "<p class = pa >चुटू (१.३.७) :</p>";
     display(0);
