@@ -18,8 +18,8 @@
 <form action="tiGanta.php" method = "get" id="frm">
 <!--... first is the input word, which the user enters. -->
 प्रकृतिः : <input type="text" name="first" id="first"><br>
-<!--... Defining gender of the word. -->
-<input type="radio" name="lakAra" value="law">लट्‌
+<!--... Defining lakAra of the verb. -->
+<input type="radio" name="lakAra" value="law" checked>लट्‌
 <input type="radio" name="lakAra" value="liw">लिट्‌
 <input type="radio" name="lakAra" value="luw">लुट्‌
 <input type="radio" name="lakAra" value="lfw">लृट्‌
@@ -32,7 +32,7 @@
 <input type="radio" name="lakAra" value="luN">लुङ्‌
 <input type="radio" name="lakAra" value="lfN">लृङ्‌
 <br>
-<!--... Defining vAcya. Default is kartR. -->
+<!--... Defining vAcya. -->
 <input type="radio" name="vAcya" value="kartR">कर्तृवाच्य
 <input type="radio" name="vAcya" value="karma">कर्मवाच्य
 <input type="radio" name="vAcya" value="bhAva">भाववाच्य
@@ -40,7 +40,21 @@
 <!--... Defining transliteration of the word. Default is kept as Devanagari. User may change it according to his wish. -->
 <input type="radio" name="tran" value="Devanagari" checked>Devanagari
 <input type="radio" name="tran" value="IAST">IAST
-<input type="radio" name="tran" value="SLP1">SLP1
+<input type="radio" name="tran" value="SLP1" checked>SLP1
+<br>
+<!--... Defining sanAdi of the verb. -->
+<input type="radio" name="sanAdi" value="san">सन्‌
+<input type="radio" name="sanAdi" value="kyac">क्यच्‌
+<input type="radio" name="sanAdi" value="kAmyac">काम्यच्‌
+<input type="radio" name="sanAdi" value="kyaz">क्यष्‌
+<input type="radio" name="sanAdi" value="kyaN">क्यङ्‌
+<input type="radio" name="sanAdi" value="kvip">क्विप्‌
+<input type="radio" name="sanAdi" value="RiN">णिङ्‌
+<input type="radio" name="sanAdi" value="Ric">णिच्‌
+<input type="radio" name="sanAdi" value="yak">यक्‌
+<input type="radio" name="sanAdi" value="Aya">आय
+<input type="radio" name="sanAdi" value="yaN">यङ्‌
+<input type="radio" name="sanAdi" value="" checked>अन्य
 <br>
 <!--... Divs to record the output from ajax.php. step1, step2, step3 etc are the levels. see ajax.php to decide where ajax will send its output. Maximum user feedback level for our coding was 6. So, kept it 6. It can be easily added if need be. -->
 <div id="response">
