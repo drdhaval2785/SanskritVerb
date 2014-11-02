@@ -1265,9 +1265,11 @@ if (arr($text,'/[tTdDnsm]$/') && $pada=== "pratyaya" && sub(array("+"),$navibhak
     echo "<p class = pa >By na vibhaktau tusmAH (1.3.4)  :</p>";
     echo "<p class = pa >न विभक्तौ तुस्माः (१.३.४) :</p>";
     display(0);
+    $tusma=1;
 }
 /* halantyam (1.3.3) ant tasya lopaH (1.3.9) */
-elseif (in_array($so,$tiG) && arr($text,'/['.flat($hl).']$/') )
+// trying bracketing this out, because halantyam occurring two times was giving bad look asthetically.
+/*elseif (in_array($so,$tiG) && arr($text,'/['.flat($hl).']$/') )
 {
     itprat('/(['.flat($hl).']$)/');
     echo "<p class = pa >By halantyam (1.3.3) :</p>";
@@ -1277,15 +1279,21 @@ elseif (in_array($so,$tiG) && arr($text,'/['.flat($hl).']$/') )
     echo "<p class = sa >By tasya lopaH (1.3.9) :</p>";
     echo "<p class = sa >तस्य लोपः (१.३.९) :</p>";
     display(0); 
-}
+}*/
 $inbetweenpratyaya=array("ap","yan");
 $inbetweeenreplace=array("a","ya");
 /* halantyam (1.3.3) and tasya lopaH (1.3.9) */
-if (in_array($so,$tiG) && ( sub(array("+"),$inbetweenpratyaya,array("+"),0) || sub($hl,array("+"),$vikaraNa,0) || $ad===1 )  ) 
+if (in_array($so,$tiG) && ( sub(array("+"),$inbetweenpratyaya,array("+"),0) || arr($text,'/['.flat($hl).']$/') || sub($hl,array("+"),$vikaraNa,0) || $ad===1 )  ) 
 {
     echo "<p class = pa >By halantyam (1.3.3) :</p>";
     echo "<p class = pa >हलन्त्यम्‌ (१.३.३) :</p>";
     display(0);
+    if ($tusma!==1)
+    {
+        itprat('/(['.flat($hl).']$)/');
+        $text = last(prat('hl'),blank(count(prat('hl'))),0);
+        
+    }
     $text=three(array("+"),$inbetweenpratyaya,array("+"),array("+"),$inbetweeenreplace,array("+"),0);
     if ($ad===1)
     {
@@ -1318,6 +1326,25 @@ if ( sub($ac,array("+"),array("Ri+"),0) )
     echo "<p class = sa >By aco JNiti (7.2.115) :</p>";
     echo "<p class = sa >अचो ञ्णिति (७.२.११५) :</p>";
     display(3);
+}
+/* pugantalaghUpadhasya ca (7.2.86) */ 
+// puk pending.
+// more on enumeration kind. Not used regexes deliberately.
+if ( sub(array("i","I","u","U","f","F","x","X"),$hl,array("+Ri+"),0) )
+{ 
+    $text = three(array("i","I","u","U","f","F","x","X"),$hl,array("+Ri+"),array("e","e","o","o","ar","ar","al","al"),$hl,array("+Ri+"),0);
+    echo "<p class = sa >By pugantalaghUpadhasya ca (7.2.86) :</p>";
+    echo "<p class = sa >पुगन्तलघूपधस्य च (७.२.८६) :</p>";
+    display(0);
+}
+/* ata upadhAyAH (7.2.116) */ 
+// more on enumeration kind. Not used regexes deliberately.
+if ( sub(array("a"),$hl,array("+Ri+"),0) )
+{ 
+    $text = three(array("a"),$hl,array("+Ri+"),array("A"),$hl,array("+Ri+"),0);
+    echo "<p class = sa >By ata upadhAyAH (7.2.116) :</p>";
+    echo "<p class = sa >अत उपधायाः (७.२.११६) :</p>";
+    display(0);
 }
 /* cuTU (1.3.7) */
 if (arr($text,'/[+][cjYwWqQR]/') && in_array($so,$tiG))
@@ -1659,7 +1686,7 @@ if ($lakAra!=="") // Make aGgakArya specific to tiGanta.
     if (sub(array("a"),array("+a"),blank(0),0) && $pada === "pratyaya" && in_array($so,$tiG) )
     {
         $text = two(array("a"),array("a","e","o"),blank(1),array("a","e","o"),0);
-        echo "<p class = sa >By ato guNe (6.1.17) 1:</p>";
+        echo "<p class = sa >By ato guNe (6.1.17) :</p>";
         echo "<p class = sa >अतो गुणे (६.१.१७) :</p>";  
         display(0);
     }
