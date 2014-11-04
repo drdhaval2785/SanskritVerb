@@ -1069,7 +1069,7 @@ function ends($a,$b,$n)
             {
                     foreach ($pattern as $one)
                     {
-                        if (strpos($aa,$one)!==false)
+                        if (strpos($aa,$one)===0)
                         {
                             $prat[]=1;
                         }

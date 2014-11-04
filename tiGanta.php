@@ -785,7 +785,7 @@ elseif ( ends(array($first),array("pA","Ayama!","damu!","Ayasu!","parimuha!","ru
     $suffix=$taG;
     echo "<p class = st >By na pAdamyAGyamAGyasaparimuharucinRtivadavasaH (1.3.89) and Nicazca (1.3.74) :</p>"; 
     echo "<p class = hn >This sUtra mandates Atmanepadam. </p>";
-    echo "<p class = st >मिथ्योपपदात्‌ कृञोऽभ्यासे (१.३.७१) तथा णिचश्च (१.३.७४) :</p>";
+    echo "<p class = st >पादम्याङ्‍यमाङ्‍यसपरिमुहरुचिनृतिवदवसः (१.३.८९) तथा णिच्चअ (१.३.७४) :</p>";
     echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>";
     echo "<hr>";                    
     $atmanepada=1;
@@ -1099,7 +1099,7 @@ if (sub($juhotyAdi,array("+Sap+"),$tiG,0) && ends(array($fo),$juhotyAdi,4) && $s
     }
 }
 /* adiprabhRtibhyaH zapaH (2.4.72) */
-if (sub($adAdi,array("+Sap+"),$tiG,0) && $sarvadhatuka===1)
+if (sub($adAdi,array("+Sap+"),$tiG,0) && $sarvadhatuka===1 && ends(array($fo),$adAdi,4) )
 {
     $text=two(array("+Sap+"),$tiG,array("+"),$tiG,0);
     echo "<p class = sa >By adiprabhRtibhyaH zapaH (2.4.72) :</p>"; 
@@ -1109,7 +1109,7 @@ if (sub($adAdi,array("+Sap+"),$tiG,0) && $sarvadhatuka===1)
     $vik=array("Sapluk");
 }
 /* Nau prAtipadikasya iSThavatkAryaM bhavatIti vaktavyam (vA) */
-if ( !sub($$allverbs,array("+Ric+Sap+","+RiN+Sap+"),$tiG,0) )
+if ( !sub($allverbs,array("+Ric+Sap+","+RiN+Sap+"),$tiG,0) && sub(array("+Ric+Sap+","+RiN+Sap+"),$tiG,blank(0),0) )
 {
     echo "<p class = sa >By Nau prAtipadikasya iSThavatkAryaM bhavatIti vaktavyam (vA) :</p>"; 
     echo "<p class = sa >णौ प्रातिपदिकस्य इष्ठवत्कार्यं भवतीति वक्तव्यम्‌ (वा) :</p>";
@@ -1208,7 +1208,14 @@ if (in_array("i",$it) && $lakAra!=="")
     echo "<p class = sa >इदितो नुम्धातोः (७.१.५८) :</p>";
     display(0);
 }
-
+/* pAghrAdhmAsthAmnAdANdRzyartizadasadAM pibajighradhamatiSThamanayacCapazyarcCadhaushIyasIdAH (7.3.78) */
+if (sub(array("pA","GrA","DmA","sTA","mnA","dAR","dfzi!r","f","sf","Sadx!","zadx!"),array("+"),$shitpratyaya,0) && $lakAra!=="" && ends(array($fo),array("pA","DrA","DmA","sTA","mnA","dAR","dfzi!r","f","sf","Sadx!","zadx!"),4))
+{
+    $text=three(array("pA","GrA","DmA","sTA","mnA","dAR","dfzi!r","f","sf","Sadx!","zadx!"),array("+"),$shitpratyaya,array("pib","jiGr","Dam","tizW","man","yacC","paSy","rcC","DO","SIy","sId"),array("+"),$shitpratyaya,0);
+    echo "<p class = pa >By pAghrAdhmAsthAmnAdANdRzyartizadasadAM pibajighradhamatiSThamanayacCapazyarcCadhaushIyasIdAH (7.3.78) :</p>"; 
+    echo "<p class = pa >पाघ्राध्मास्थाम्नादाण्दृश्यर्तिसर्तिशदसदां पिबजिघ्रधमतिष्ठमनयच्छपश्यर्च्छधौशीयसीदाः (७.३.७८) :</p>";
+    display(0);    
+}
 /* tiGzitsArvadhAtukam (3.4.113) */
 // for zit pratyayas.
 if (sub(array("+"),$shitpratyaya,blank(0),0) && $lakAra!=="")
