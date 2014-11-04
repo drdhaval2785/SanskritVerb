@@ -296,7 +296,7 @@ elseif ( $_GET['cond24']==="1" && $first==="kramu!")
     echo "<p class = st >वृत्तिसर्गतायनेषु क्रमः (१.३.३८) तथा अनुपसर्गाद्वा (१.३.४३) :</p>";
     echo "<p class = hn >वैभाषिकं आत्मनेपदं विधीयते । </p>";
     echo "<hr>";                    
-    $atmanepada=1;
+    $ubhayapada=1;
 }
 /* upaparAbhyAm (1.3.39) */
 elseif ( $_GET['cond24']==="1" && in_array($first,array("upakramu!","parAkramu!")))
@@ -882,7 +882,14 @@ $fo = $first; // remembering the original prakRti. Sometimes we need to know wha
 $so = $second; ; // remembering the original pratyayas. Sometimes we need to know what was the original pratyaya.
 $lakAra=$_GET['lakAra'];
 /* displaying the data back to the user */
-echo "<p class = red >".convert($lakAra) ." लकार<br>".convert($fo)." + ".convert($sanAdi)." + ".convert($so)." <a href = tiGanta.html>Go Back</a></p>";
+if ($sanAdi!=="")
+{
+echo "<p class = red >".convert($lakAra) ." लकार<br>".convert($fo)." + ".convert($sanAdi)." + ".convert($so)." <a href = tiGanta.html>Go Back</a></p>";    
+}
+else
+{
+echo "<p class = red >".convert($lakAra) ." लकार<br>".convert($fo)." + ".convert($so)." <a href = tiGanta.html>Go Back</a></p>";    
+}
 echo "</br>";
 
 /* for sambodhana vibhaktis display */
@@ -1208,13 +1215,57 @@ if (in_array("i",$it) && $lakAra!=="")
     echo "<p class = sa >इदितो नुम्धातोः (७.१.५८) :</p>";
     display(0);
 }
-print_r($text);
 /* pAghrAdhmAsthAmnAdANdRzyartizadasadAM pibajighradhamatiSThamanayacCapazyarcCadhaushIyasIdAH (7.3.78) */
-if (sub(array("pA","GrA","DmA","sTA","mnA","dAR","dfzi!r","f","sf","Sadx!","zadx!"),array("+"),$shitpratyaya,0) && $lakAra!=="" && ends(array($fo),array("pA","GrA","DmA","sTA","mnA","dAR","dfzi!r","f","sf","Sadx!","zadx!"),4))
+if (sub(array("pA","GrA","DmA","sTA","mnA","dAR","dfzi!r","f","sf","Sadx!","zadx!"),array("+"),$shitpratyaya,0) && $lakAra!=="" && ends(array($fo),array("pA","GrA","DmA","sTA","mnA","dAR","dfzi!r","f","sf","Sadx!","zadx!","zWA"),4))
 {
     $text=three(array("pA","GrA","DmA","sTA","mnA","dAR","dfzi!r","f","sf","Sadx!","zadx!"),array("+"),$shitpratyaya,array("pib","jiGr","Dam","tizW","man","yacC","paSy","rcC","DO","SIy","sId"),array("+"),$shitpratyaya,0);
-    echo "<p class = pa >By pAghrAdhmAsthAmnAdANdRzyartizadasadAM pibajighradhamatiSThamanayacCapazyarcCadhaushIyasIdAH (7.3.78) :</p>"; 
-    echo "<p class = pa >पाघ्राध्मास्थाम्नादाण्दृश्यर्तिसर्तिशदसदां पिबजिघ्रधमतिष्ठमनयच्छपश्यर्च्छधौशीयसीदाः (७.३.७८) :</p>";
+    echo "<p class = sa >By pAghrAdhmAsthAmnAdANdRzyartizadasadAM pibajighradhamatiSThamanayacCapazyarcCadhaushIyasIdAH (7.3.78) :</p>"; 
+    echo "<p class = sa >पाघ्राध्मास्थाम्नादाण्दृश्यर्तिसर्तिशदसदां पिबजिघ्रधमतिष्ठमनयच्छपश्यर्च्छधौशीयसीदाः (७.३.७८) :</p>";
+    display(0);
+    $nomidelision=1; // We will remember this while doing halantyam and prevent halantyam application, because these are not upadeza
+}
+/* iSugamiyamAM CaH (7.3.77) */
+if (sub(array("izu!","gamx!","yama!"),array("+"),$shitpratyaya,0) && $lakAra!=="" && ends(array($fo),array("izu!","gamx!","yama!"),4))
+{
+    $text=three(array("izu!","gamx!","yama!"),array("+"),$shitpratyaya,array("iC","gaC","yaC"),array("+"),$shitpratyaya,0);
+    echo "<p class = sa >By iSugamiyamAM CaH (7.3.77) :</p>"; 
+    echo "<p class = sa >इषुगमियमां छः (७.३.७७) :</p>";
+    display(0);
+    $nomidelision=1; // We will remember this while doing halantyam and prevent halantyam application, because these are not upadeza
+}
+/* vA bhrAzabhlAzabhramukramutrasitruTilaSaH (3.1.70) */
+if (sub(array("wuBrASf!","wuBlASf!","BrASf!","BlASf!","Bramu!","kramu!","klamu!","trasI!","truwI!","laza!"),array("+"),array("Sap","Syan"),0) && $lakAra!=="" && ends(array($fo),array("wuBrASf!","wuBlASf!","BrASf!","BlASf!","Bramu!","kramu!","klamu!","trasI!","truwI!","laza!"),4) )
+{
+    $text=two(array("wuBrASf!","wuBlASf!","BrASf!","BlASf!","Bramu!","kramu!","klamu!","trasI!","truwI!","laza!"),array("+Sap"),array("wuBrASf!","wuBlASf!","BrASf!","BlASf!","Bramu!","kramu!","klamu!","trasI!","truwI!","laza!"),array("+Syan"),0);
+    $text=two(array("wuBrASf!","wuBlASf!","BrASf!","BlASf!","Bramu!","kramu!","klamu!","trasI!","truwI!","laza!"),array("+Syan"),array("wuBrASf!","wuBlASf!","BrASf!","BlASf!","Bramu!","kramu!","klamu!","trasI!","truwI!","laza!"),array("+Sap"),1);
+    echo "<p class = sa >By vA bhrAzabhlAzabhramukramutrasitruTilaSaH (3.1.70) :</p>"; 
+    echo "<p class = sa >वा भ्राशभ्लाशभ्रमुक्रमुत्रसित्रुटिलषः (३.१.७०) :</p>";
+    display(0);
+}
+/* kramaH parasmaipadeSu (7.3.76) */
+if (sub(array("kramu!",),array("+"),$shitpratyaya,0) && $lakAra!=="" && ends(array($fo),array("kramu!"),4) && in_array($so,$tis) )
+{
+    $text=three(array("kramu!"),array("+"),$shitpratyaya,array("krAm"),array("+"),$shitpratyaya,0);
+    echo "<p class = sa >By kramaH parasmaipadeSu (7.3.76) :</p>"; 
+    echo "<p class = sa >क्रमः परस्मैपदेषु (७.३.७६) :</p>";
+    display(0);
+    $nomidelision=1; // We will remember this while doing halantyam and prevent halantyam application, because these are not upadeza
+}
+/* zamAmaSTAnAM dIrghaH zyani (7.3.74) */
+if (sub(array("Samu!","tamu!","damu!","Sramu!","kzamu!","Bramu!","klamu!","madI!",),array("+"),array("Syan"),0) && $lakAra!=="" && ends(array($fo),array("Samu!","tamu!","damu!","Sramu!","kzamu!","Bramu!","klamu!","madI!",),4) )
+{
+    $text=two(array("Samu!","tamu!","damu!","Sramu!","kzamu!","Bramu!","klamu!","madI!",),array("+Syan"),array("SAm","tAm","dAm","SrAm","kzAm","BrAm","klAm","mAd",),array("+Syan"),0);
+    echo "<p class = sa >By zamAmaSTAnAM dIrghaH zyani (7.3.74) :</p>"; 
+    echo "<p class = sa >शमामष्टानां दीर्घः श्यनि (७.३.७४) :</p>";
+    display(0);
+    $nomidelision=1; // We will remember this while doing halantyam and prevent halantyam application, because these are not upadeza
+}
+/* SThivuklamyAcamAM ziti (7.3.75) */
+if (sub(array("zWivu!","klamu!","Acamu!"),array("+"),$shitpratyaya,0) && $lakAra!=="" && ends(array($fo),array("zWivu!","klamu!","Acamu!"),4) )
+{
+    $text=three(array("zWivu!","klamu!","Acamu!"),array("+"),$shitpratyaya,array("zWIv","klAm","AcAm"),array("+"),$shitpratyaya,0);
+    echo "<p class = sa >By SThivuklamyAcamAM ziti (7.3.75) :</p>"; 
+    echo "<p class = sa >ष्ठिवुक्लम्याचमां शिति (७.३.७५) :</p>";
     display(0);
     $nomidelision=1; // We will remember this while doing halantyam and prevent halantyam application, because these are not upadeza
 }
