@@ -134,4 +134,22 @@ foreach ($a as $value)
     }
 }*/
 
+/* Process to find AkArAnta etc from verb list */
+$a=file('allverbs.txt');
+$a=array_map('trim',$a);
+$a=array_map('convert1',$a);
+$a=array_map('removeaccent',$a);
+foreach ($a as $value)
+{
+    $p=$value;
+    $value=preg_replace('/(['.pc('hl').']$)/','',$value);
+    $value=preg_replace('/([aAiIuUfFxXeoEO][!])/','',$value);
+    $value=preg_replace('/(^[Ywq][iu])/','',$value);
+    if (arr(array($value),'/[A]$/'))
+    {
+        $val1[]=$p;
+    }
+}
+echo implode('","',$val1);
+
 ?>
