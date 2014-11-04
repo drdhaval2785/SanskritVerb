@@ -14,4 +14,4 @@ For Subanta generation - Install dev-slp.php, slp-dev.php, function.php, mystyle
 
 For tiGanta generation - Install dev-slp.php, slp-dev.php, function.php, mystyle.css, tiGanta.html, tiGanta.php, ajax.php and script.js in your system and then input a word. Give the feedback if the machine asks for any. Then machine will give you derivation of all forms of a particular verb.
 
-For offline usage - please run localhost/sanskrit/subanta.html from your browser.
+For offline usage - please run localhost/Sanskrit/tiGanta.html from your browser.
