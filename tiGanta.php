@@ -1208,13 +1208,15 @@ if (in_array("i",$it) && $lakAra!=="")
     echo "<p class = sa >इदितो नुम्धातोः (७.१.५८) :</p>";
     display(0);
 }
+print_r($text);
 /* pAghrAdhmAsthAmnAdANdRzyartizadasadAM pibajighradhamatiSThamanayacCapazyarcCadhaushIyasIdAH (7.3.78) */
-if (sub(array("pA","GrA","DmA","sTA","mnA","dAR","dfzi!r","f","sf","Sadx!","zadx!"),array("+"),$shitpratyaya,0) && $lakAra!=="" && ends(array($fo),array("pA","DrA","DmA","sTA","mnA","dAR","dfzi!r","f","sf","Sadx!","zadx!"),4))
+if (sub(array("pA","GrA","DmA","sTA","mnA","dAR","dfzi!r","f","sf","Sadx!","zadx!"),array("+"),$shitpratyaya,0) && $lakAra!=="" && ends(array($fo),array("pA","GrA","DmA","sTA","mnA","dAR","dfzi!r","f","sf","Sadx!","zadx!"),4))
 {
     $text=three(array("pA","GrA","DmA","sTA","mnA","dAR","dfzi!r","f","sf","Sadx!","zadx!"),array("+"),$shitpratyaya,array("pib","jiGr","Dam","tizW","man","yacC","paSy","rcC","DO","SIy","sId"),array("+"),$shitpratyaya,0);
     echo "<p class = pa >By pAghrAdhmAsthAmnAdANdRzyartizadasadAM pibajighradhamatiSThamanayacCapazyarcCadhaushIyasIdAH (7.3.78) :</p>"; 
     echo "<p class = pa >पाघ्राध्मास्थाम्नादाण्दृश्यर्तिसर्तिशदसदां पिबजिघ्रधमतिष्ठमनयच्छपश्यर्च्छधौशीयसीदाः (७.३.७८) :</p>";
-    display(0);    
+    display(0);
+    $nomidelision=1; // We will remember this while doing halantyam and prevent halantyam application, because these are not upadeza
 }
 /* tiGzitsArvadhAtukam (3.4.113) */
 // for zit pratyayas.
@@ -1321,19 +1323,6 @@ if (arr($text,'/[tTdDnsm]$/') && $pada=== "pratyaya" && sub(array("+"),$navibhak
     display(0);
     $tusma=1;
 }
-/* halantyam (1.3.3) ant tasya lopaH (1.3.9) */
-// trying bracketing this out, because halantyam occurring two times was giving bad look asthetically.
-/*elseif (in_array($so,$tiG) && arr($text,'/['.flat($hl).']$/') )
-{
-    itprat('/(['.flat($hl).']$)/');
-    echo "<p class = pa >By halantyam (1.3.3) :</p>";
-    echo "<p class = pa >हलन्त्यम्‌ (१.३.३) :</p>";
-    display(0);
-    $text = last(prat('hl'),blank(count(prat('hl'))),0);
-    echo "<p class = sa >By tasya lopaH (1.3.9) :</p>";
-    echo "<p class = sa >तस्य लोपः (१.३.९) :</p>";
-    display(0); 
-}*/
 $inbetweenpratyaya=array("ap","yan");
 $inbetweeenreplace=array("a","ya");
 /* halantyam (1.3.3) and tasya lopaH (1.3.9) */
@@ -1353,8 +1342,11 @@ if (in_array($so,$tiG) && ( sub(array("+"),$inbetweenpratyaya,array("+"),0) || a
     {
         $text=three($hl,array("+"),$tiG,array(""),array("+"),$tiG,0);
     }
-//    $text=three($hl,array("+"),$sanAdi,blank(count($hl)),array("+"),$sanAdi,0);
-    $text=three($hl,array("+"),$vikaraNa,blank(count($hl)),array("+"),$vikaraNa,0);
+    //    $text=three($hl,array("+"),$sanAdi,blank(count($hl)),array("+"),$sanAdi,0);
+    if ($nomidelision!==1)
+    {
+    $text=three($hl,array("+"),$vikaraNa,blank(count($hl)),array("+"),$vikaraNa,0);        
+    }
     echo "<p class = sa >By tasya lopaH (1.3.9) :</p>";
     echo "<p class = sa >तस्य लोपः (१.३.९) :</p>";
     display(0); 
