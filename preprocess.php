@@ -150,8 +150,7 @@ foreach ($a as $value)
         $val1[]=$p;
     }
 }
-echo implode('","',$val1);
-*/
+echo implode('","',$val1);*/
 
 /* making a list of duplicated verbs */
 /*$uniqueverbs=  array_unique($allverbs);
@@ -165,7 +164,40 @@ foreach ($allverbs as $value)
     $list = array_merge($list,array($value));
 }
 echo implode('","',$val);
-//echo "<br>".count($allverbs)."<br>".count($uniqueverbs)."<br>".count($val);
 */
+
+/* Process to find  etc from verb list */
+/*$a=file('allverbs.txt');
+$a=array_map('trim',$a);
+$a=array_map('convert1',$a);
+$a=array_map('removeaccent',$a);
+foreach ($a as $value)
+{
+    $p=$value;
+    if (arr(array($value),'/[i][!]/'))
+    {
+        $val1[]=$p;
+    }
+}
+echo implode('","',$val1);
+*/
+
+/* Process to find iditverbs with markers left out and numAgama made. */
+$a=$iditverbs;
+$a=array_map('trim',$a);
+$a=array_map('convert1',$a);
+$a=array_map('removeaccent',$a);
+$te1 = '/(['.pc('ac').'])(['.pc('hl').']*)$/';
+$te2 = '$1'.'n'.'$2'; // Adding the mit Agama after the last vowel. 'midaco'ntyAtparaH'.
+foreach ($a as $value)
+{
+    $p=$value;
+    $value=preg_replace('/(['.pc('hl').']$)/','',$value);
+    $value=preg_replace('/([aAiIuUfFxXeoEO][!])/','',$value);
+    $value=preg_replace('/(^[Ywq][iu])/','',$value);
+//    $val[]=$value; // for without mit Agama.
+    $val[] = preg_replace($te1,$te2,$value); // executing mit Agama.
+}
+echo implode('","',$val);
 
 ?>

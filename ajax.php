@@ -982,6 +982,13 @@ if($_POST['step']==='11' && ends($arrWord,array("uparamu!"),2) )
             $html .= '<input type="radio" value="2" name="cond44" > अन्य ';
             $html .= '</div>';            
 }
+if($_POST['step']==='11' && ends($arrWord,array("takzU!"),4) )
+{
+            $html .= '<div id="step33">';
+            $html .= '<input type="radio" value="1" name="cond45" > तनूकरणे ';
+            $html .= '<input type="radio" value="2" name="cond45" > अन्य ';
+            $html .= '</div>';            
+}
 
 
 //display the output
