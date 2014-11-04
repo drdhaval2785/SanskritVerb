@@ -135,7 +135,7 @@ foreach ($a as $value)
 }*/
 
 /* Process to find AkArAnta etc from verb list */
-$a=file('allverbs.txt');
+/*$a=file('allverbs.txt');
 $a=array_map('trim',$a);
 $a=array_map('convert1',$a);
 $a=array_map('removeaccent',$a);
@@ -151,5 +151,21 @@ foreach ($a as $value)
     }
 }
 echo implode('","',$val1);
+*/
+
+/* making a list of duplicated verbs */
+/*$uniqueverbs=  array_unique($allverbs);
+$list=array();
+foreach ($allverbs as $value)
+{
+    if (in_array($value,$list))
+    {
+        $val[]=$value;
+    }
+    $list = array_merge($list,array($value));
+}
+echo implode('","',$val);
+//echo "<br>".count($allverbs)."<br>".count($uniqueverbs)."<br>".count($val);
+*/
 
 ?>
