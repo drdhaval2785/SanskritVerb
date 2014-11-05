@@ -183,7 +183,7 @@ echo implode('","',$val1);
 */
 
 /* Process to find iditverbs with markers left out and numAgama made. */
-$a=$iditverbs;
+/*$a=$iditverbs;
 $a=array_map('trim',$a);
 $a=array_map('convert1',$a);
 $a=array_map('removeaccent',$a);
@@ -198,6 +198,35 @@ foreach ($a as $value)
 //    $val[]=$value; // for without mit Agama.
     $val[] = preg_replace($te1,$te2,$value); // executing mit Agama.
 }
-echo implode('","',$val);
+echo implode('","',$val);*/
+
+/* Creating arrays with all the information of a verb from raw data having upadeza, meaning, after it removal, gana, number, P/A/U, seT/veT/aniT */
+/*$a=file("rawcomplete.txt");
+for($j=0;$j<count($a);$j++)
+{
+    $c=explode("*",$a[$j]);
+    $c=array_map('trim',$c);
+        if (preg_match('/([(])([^)]*)([)])/',$c[2]))
+        {
+            $c[2]=preg_replace('/([^(]*)([(])([^)]*)([)])/','$3',$c[2]);
+        }
+        $e=$c[0];
+        for($k=0;$k<count($c);$k++)
+        {
+            $c[$k]=removeaccent($c[$k]);
+            $c[$k]=convert1($c[$k]);
+            $d[]=str_replace(array("|","#"),array("",""),$c[$k]);
+        }
+        $d[]=$e;
+        $d=array_map('trim',$d);
+        $t= implode(':',$d);
+        $out[]=$t;
+//        echo $t."<br>";    
+        $c=array();
+        $d=array();
+        $t="";
+}
+echo '$verbdata = array("'.implode('","',$out),'");';*/
+
 
 ?>
