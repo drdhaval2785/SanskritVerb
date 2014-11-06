@@ -50,7 +50,8 @@ $gender = $_GET['gender']; // "m" - male. "f" - female. "n" - neuter.
 $lakAra = $_GET['lakAra'];
 $vAcya = $_GET['vAcya'];
 $sanAdi = $_GET['sanAdi'];
-$verbset=$_GET['verbset'];    
+$verbset=$_GET['verbset'];
+$verbset=trim($verbset);
 /* Defining the variables used in the code and their default values .
  * If there is no change in the execution of subanta.php, the default values are operated.
  */
@@ -100,6 +101,7 @@ $samp = array(); // creating an array where we can store whethere samprasAraNa h
 /* Displaying information about the verb */
 if ($verbset!=="")
 {
+    
     verb_meaning_gana_number2($first);
 }
 elseif (in_array($first,$allverbs))
@@ -947,6 +949,17 @@ $input = ltrim(chop($first."+".$sanAdi."+".$second));
 $text = array();
 $text[] = $input; // Defining first member of the array as $input (combined words first and second)
 
+
+/* defining the sUtras mandating sanAdis */
+/* guptijkidbhyaH san (3.1.5) */
+if ( $_GET['cond47']===1 )
+{
+    $text=three(array("gupa!","tija!","kita!"),array("+"),$tiG,array("gupa!","tija!","kita!"),array("+san+"),$tiG,0);
+    echo "<p class = sa >By guptijkidbhyaH san (3.1.5) :</p>"; 
+    echo "<p class = sa >गुप्तिज्किद्भ्यः सन्‌ (३.१.५) :</p>";
+    echo "<hr>";
+    $sanAdi="san";
+}
 /* Displaying general information about lakAras */
 /* laT vartamAne (3.2.123) */
 if (in_array($so,$tiG) && $pada==="pratyaya" && $lakAra==="law")
@@ -1035,7 +1048,6 @@ if (sub(array("+"),$tiG,blank(0),0) && in_array($lakAra,array("law","low","laN",
 $vik=array();
 // first treatment of curAdi, because, it will take Nic before vikaraNa pratyaya.
 /* satyApapAzarUpavINAtUlazlokasenAlomatvacavarmacUrNacurAdibhyo Nic (3.1.25) */
-print_r($text); 
 if (sub($curAdi,array("+"),$tiG,0) && ends(array($fo),$curAdi,4) && $sarvadhatuka===1 && $verbset==="curAdi")
 {
     $text=two(array("+"),$tiG,array("+Ric+"),$tiG,0);
@@ -1517,8 +1529,8 @@ if (arr($text,'/[tTdDnsm]$/') && $pada=== "pratyaya" && sub(array("+"),$navibhak
     display(0);
     $tusma=1;
 }
-$inbetweenpratyaya=array("ap","yan","Ric","RiN");
-$inbetweeenreplace=array("a","ya","Ri","Ri");
+$inbetweenpratyaya=array("ap","yan","Ric","RiN","san");
+$inbetweeenreplace=array("a","ya","Ri","Ri","sa");
 /* halantyam (1.3.3) and tasya lopaH (1.3.9) */
 if (in_array($so,$tiG) && ( sub(array("+"),$inbetweenpratyaya,array("+"),0) || arr($text,'/['.flat($hl).']$/') || sub($hl,array("+"),$vikaraNa,0) || $ad===1 )  ) 
 {

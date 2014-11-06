@@ -993,6 +993,13 @@ if($_POST['step']==='11' && ends($arrWord,$nonuniqueverbs,4) )
 {
     verb_meaning_gana_number($word);
 }
+if($_POST['step']==='11' && ends($arrWord,array("gupa!","tija!","kita!"),4) )
+{
+            $html .= '<div id="step33">';
+            $html .= '<input type="radio" value="1" name="cond47" > निन्दा, क्षमा या व्याधिप्रतीकार के अर्थ में प्रयुक्त है ';
+            $html .= '<input type="radio" value="2" name="cond47" > नहीं ';
+            $html .= '</div>';            
+}
 
 //display the output
 echo $html;
