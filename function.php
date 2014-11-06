@@ -1582,6 +1582,7 @@ function verb_meaning_gana_number1($text)
     $meaning=scrape($text,0,1,1);
     $verbset=scrape($text,0,9,1);
     $number=scrape($text,0,8,1);
+    print_r($number);
     echo "<p class = st >".$verbaccent[0].' - '.convert($meaning[0]).', '.convert($verbset[0]).' '.$number[0].' '."</p>";
     echo "<hr>";
 }
@@ -1589,12 +1590,11 @@ function verb_meaning_gana_number1($text)
 function verb_meaning_gana_number2($text)
 {
     global $verbset;
-    echo $verbset;
     $verbaccent=scrape($text,0,7,1,"",$verbset,9);
     $meaning=scrape($text,0,1,1,"",$verbset,9);
-    $verbset=scrape($text,0,9,1,"",$verbset,9);
+    $verbset1=scrape($text,0,9,1,"",$verbset,9);
     $number=scrape($text,0,8,1,"",$verbset,9);
-    echo "<p class = st >".$verbaccent[0].' - '.convert($meaning[0]).', '.convert($verbset[0]).' '.$number[0].' '."</p>";
+    echo "<p class = st >".$verbaccent[0].' - '.convert($meaning[0]).', '.convert($verbset1[0]).' '.$number[0].' '."</p>";
     echo "<hr>";
 }
 

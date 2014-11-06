@@ -101,7 +101,6 @@ $samp = array(); // creating an array where we can store whethere samprasAraNa h
 /* Displaying information about the verb */
 if ($verbset!=="")
 {
-    
     verb_meaning_gana_number2($first);
 }
 elseif (in_array($first,$allverbs))
@@ -952,12 +951,12 @@ $text[] = $input; // Defining first member of the array as $input (combined word
 
 /* defining the sUtras mandating sanAdis */
 /* guptijkidbhyaH san (3.1.5) */
-if ( $_GET['cond47']===1 )
+if ( $_GET['cond47']==="1" )
 {
     $text=three(array("gupa!","tija!","kita!"),array("+"),$tiG,array("gupa!","tija!","kita!"),array("+san+"),$tiG,0);
     echo "<p class = sa >By guptijkidbhyaH san (3.1.5) :</p>"; 
     echo "<p class = sa >गुप्तिज्किद्भ्यः सन्‌ (३.१.५) :</p>";
-    echo "<hr>";
+    display(0);
     $sanAdi="san";
 }
 /* Displaying general information about lakAras */
