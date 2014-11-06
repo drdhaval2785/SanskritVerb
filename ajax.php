@@ -1000,6 +1000,13 @@ if($_POST['step']==='11' && ends($arrWord,array("gupa!","tija!","kita!"),4) )
             $html .= '<input type="radio" value="2" name="cond47" > नहीं ';
             $html .= '</div>';            
 }
+if($_POST['step']==='11' && ends($arrWord,array("mAna!","baDa!","dAna!","SAna!"),4) )
+{
+            $html .= '<div id="step33">';
+            $html .= '<input type="radio" value="1" name="cond48" > जिज्ञासा, वैरूप्य, आर्जव या निशान के अर्थ में प्रयुक्त है ';
+            $html .= '<input type="radio" value="2" name="cond48" > नहीं ';
+            $html .= '</div>';            
+}
 
 //display the output
 echo $html;

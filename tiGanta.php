@@ -959,6 +959,16 @@ if ( $_GET['cond47']==="1" )
     display(0);
     $sanAdi="san";
 }
+/* mAnbadhadAnzAnbhyo dIrghazcAbhyAsasya (3.1.6) */
+// right now only coded for san pratyaya and not for dIrghatva of abhyAsa, because abhyAsa is not taught yet.
+if ( $_GET['cond48']==="1" )
+{
+    $text=three(array("mAna!","baDa!","dAna!","SAna!"),array("+"),$tiG,array("mAna!","baDa!","dAna!","SAna!"),array("+san+"),$tiG,0);
+    echo "<p class = sa >By mAnbadhadAnzAnbhyo dIrghazcAbhyAsasya (3.1.6) :</p>"; 
+    echo "<p class = sa >मान्बधदान्शान्भ्यो दीर्घश्चाभ्यासस्य (३.१.६) :</p>";
+    display(0);
+    $sanAdi="san";
+}
 /* Displaying general information about lakAras */
 /* laT vartamAne (3.2.123) */
 if (in_array($so,$tiG) && $pada==="pratyaya" && $lakAra==="law")
@@ -1123,6 +1133,16 @@ elseif (sub($kryAdi,array("+"),$tiG,0) && ends(array($fo),$kryAdi,4) && $sarvadh
     echo "<p class = sa >क्र्यादिभ्यः श्ना (३.१.८१) :</p>";
     display(0);    
     $vik=array_merge($vik,array("SnA"));
+}
+/* kartari zap (3.1.68) */
+elseif (sub(array("+"),$tiG,blank(0),0) && $sarvadhatuka===1 && in_array($verbset,array("BvAdi","adAdi","juhotyAdi")))
+{
+    $text=two(array("+"),$tiG,array("+Sap+"),$tiG,0);
+    $text=one(array("+Sap+Sap"),array("+Sap+"),0);
+    echo "<p class = sa >By kartari zap (3.1.68) :</p>"; 
+    echo "<p class = sa >कर्तरि शप्‌ (३.१.६८) :</p>";
+    display(0);    
+    $vik=array_merge($vik,array("Sap"));
 }
 
 /* for regular input without user selection */
@@ -1314,39 +1334,52 @@ if (in_array($fo,array("zWivu!","zvazk")) )
            display(0);            
 }
 /* dhAtvAdeH SaH saH (6.1.64), No naH (6.1.65) and upadhAyAm ca (8.2.78) */
-else 
+elseif (arr(array($fo),'/^[z]/') || arr(array($fo),'/^[R]/') || arr(array($fo),'/[iu][r][d]/')) 
 {
-    for ($i=0;$i<count($noaccentsanubandhaslp);$i++)
-   {
-       if ($first===$noaccentsanubandhaslp[$i] )
-       {
-           $text=two($noaccentsanubandhaslp,array("+"),$noaccentniranubandhaslp,array("+"),0);
            if (arr(array($fo),'/^[z]/'))
            {
+               $text = change('/^([z])/','s');
                 echo "<p class = sa >By dhAtvAdeH SaH saH (6.1.64) :</p>";
                 echo "<p class = sa >धात्वादेः षः सः (६.१.६४) :</p>";
                 display(0);                       
            }
            if (arr(array($fo),'/^[R]/'))
            {
+               $text = change('/^([R])/','n');
                 echo "<p class = sa >By No naH (6.1.65) :</p>";
                 echo "<p class = sa >णो नः (६.१.६५) :</p>";
                 display(0);                                      
            }
            if (arr(array($fo),'/[iu][r][d]/'))
            {
+               $text=three(array("ir","ur"),$hl,array("+"),array("Ir","Ur"),$hl,array("+"),0);
                 echo "<p class = sa >By upadhAyAm ca (8.2.78) :</p>";
                 echo "<p class = sa >उपधायां च (८.२.७८) :</p>";
                 display(0);                                      
            }
-           break;
-       }
-   }   
+           
 }
 /* Sopadeza dhAtu */
 // This issue is pending. As per sahajabodha, this is needed. But I don't know where. So pending for now.
 /* Nopadeza dhAtu */
 // This issue is pending. As per sahajabodha, this is needed. But I don't know where. So pending for now.
+
+/* daMzasaJjasvaJjAM zapi (6.4.25) */
+if (sub(array("daMSa!","saYja!","svaYja!"),array("+Sap+"),$tiG,0) && ends(array($fo),array("daMSa!","zaYja!","zvaYja!"),4) )
+{
+    $text=two(array("daMSa!","saYja!","svaYja!"),array("+Sap+"),array("daSa!","saja!","svaja!"),array("+Sap+"),0);
+    echo "<p class = sa >By daMzasaJjasvaJjAM zapi (6.4.25) :</p>"; 
+    echo "<p class = sa >दंशसञ्जस्वञ्जां शपि (६.४.२५) :</p>";
+    display(0);    
+}
+/* raJjezca (6.4.26) */
+if (sub(array("raYja!"),array("+Sap+"),$tiG,0) && ends(array($fo),array("raYja!"),4) )
+{
+    $text=two(array("raYja!"),array("+Sap+"),array("raja!"),array("+Sap+"),0);
+    echo "<p class = sa >By raJjezca (6.4.26) :</p>"; 
+    echo "<p class = sa >रञ्जेश्च (६.४.२६) :</p>";
+    display(0);    
+}
 /* numAgama as per sahajabodha */
 // adding 'i' in it markers.
 if (ends(array($fo),$iditiverbs,4))
