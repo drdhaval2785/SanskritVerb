@@ -10,6 +10,7 @@ error_reporting(0);
 //post element
 $word = $_POST['first'];
 $tran = $_POST['tran'];
+$lakAra= $_POST['lakAra'];
 
 // IAST and devanagari handling
 // Code for converting from IAST to SLP
@@ -742,7 +743,7 @@ if($_POST['step']==='11')
 {
             $html .= '<div id="step11">';
             $html .= '<input type="radio" value="1" name="cond11" > कर्मव्यतिहार है ';
-            $html .= '<input type="radio" value="2" name="cond11" > नहीं ';
+            $html .= '<input type="radio" value="2" name="cond11" checked> नहीं ';
             $html .= '</div>';            
 }
 if($_POST['step']==='11_1')
@@ -1005,6 +1006,20 @@ if($_POST['step']==='11' && ends($arrWord,array("mAna!","baDa!","dAna!","SAna!")
             $html .= '<div id="step33">';
             $html .= '<input type="radio" value="1" name="cond48" > जिज्ञासा, वैरूप्य, आर्जव या निशान के अर्थ में प्रयुक्त है ';
             $html .= '<input type="radio" value="2" name="cond48" > नहीं ';
+            $html .= '</div>';            
+}
+if($_POST['step']==='11' && ends($arrWord,array("paRa!"),4) )
+{
+            $html .= '<div id="step33">';
+            $html .= '<input type="radio" value="1" name="cond49" > स्तुति ';
+            $html .= '<input type="radio" value="2" name="cond49" > व्यवहार ';
+            $html .= '</div>';            
+}
+if( in_array($_POST['step'],array('11','12','13')) && in_array($lakAra,array("laN","luN","lfN")) )
+{
+            $html .= '<div id="step22">';
+            $html .= '<input type="radio" value="1" name="cond50" > माङ्‌ योग है ';
+            $html .= '<input type="radio" value="2" name="cond50" checked> नहीं ';
             $html .= '</div>';            
 }
 
