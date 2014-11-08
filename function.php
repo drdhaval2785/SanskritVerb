@@ -213,7 +213,9 @@ $halAdi_apit_sArvadhAtuka_pratyayas=array_merge($halAdi_apit_sArvadhAtuka_tiG_pr
 $pit_sArvadhAtuka_pratyayas=array_merge($ajAdi_pit_sArvadhAtuka_vikaraNa_pratyayas,$ajAdi_pit_sArvadhAtuka_tiG_pratyayas,$halAdi_pit_sArvadhAtuka_tiG_pratyayas);
 // apit pratyayas
 $apit_sArvadhAtuka_pratyayas=array_merge($ajAdi_apit_sArvadhAtuka_kRt_pratyayas,$ajAdi_apit_sArvadhAtuka_tiG_pratyayas,$ajAdi_apit_sArvadhAtuka_vikaraNa_pratyayas,$halAdi_apit_sArvadhAtuka_tiG_pratyayas,$halAdi_apit_sArvadhAtuka_vikaraNa_pratyayas);
-
+// halAdi pratyayas and ajAdi pratyayas
+$ajAdi_sArvadhAtuka_pratyayas=array_merge($ajAdi_pit_sArvadhAtuka_pratyayas,$ajAdi_apit_sArvadhAtuka_pratyayas);
+$halAdi_sArvadhAtuka_pratyayas=array_merge($halAdi_pit_sArvadhAtuka_pratyayas,$halAdi_apit_sArvadhAtuka_pratyayas);
 // ArdhadhAtuka pratyayas trial. Not a complete list
 $ajAdi_kitGit_ArdhadhAtuka_pratyayas=array("atus","u");
 $halAdi_kitGit_ArdhadhAtuka_pratyayas=array("ya");
@@ -1630,7 +1632,8 @@ function tiGreplace()
     global $text;
     global $lakAra;
     global $taG; global $tis; global $tiG; global $so;
-    $default_Atmane_1=array("te","Ate","ante","se","ATe","Dve","i","vahe","mahe");
+    $default_Atmane_1=array("ta","AtAm","anta","TAs","ATAm","Dvam","i","vahi","mahi");  
+    $tiG_law__Atmane__1=array("te","Ate","ante","se","ATe","Dve","i","vahe","mahe");
     $tiG_law_parasmai_1=array("ti","tas","anti","si","Tas","Ta","mi","vas","mas");
     $tiG_law_Atmane_1=array("te","ite","ante","se","iTe","Dve","e","vahe","mahe");
     $tiG_low_parasmai_1=array("tu","tAm","antu","tAt","tam","ta","Ani","Ava","Ama"); // there is a blank pratyaya at ma.pu.

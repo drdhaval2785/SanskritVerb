@@ -89,6 +89,7 @@ $anobahuvrihe=0;
 $manah=0;
 $anapatya=0;
 $sarvadhatuka=0;    
+$veda=1;
 $R = array(); // creating an array where we can store whether the word has 'R' as it marker.
 $num = array(); // creating an array where we can store whether the word has 'num' Agama. 
 $it = array(); // Creating an array where we can store it markers.
@@ -1536,16 +1537,17 @@ if (in_array($fo,$pvAdi) && sub(array("+"),$shitpratyaya,blank(0),0) && $fo!=="j
 }
 /* pratyaya changes */
 /* jherjus (3.4.108) */
-if (in_array($so,array("Ji")) && ($lakAra==="ASIrliN"||$lakAra==="viDiliN") )
+/*if (in_array($so,array("Ji")) && ($lakAra==="ASIrliN"||$lakAra==="viDiliN") )
 {
     $text=two(array("+"),array("Ji"),array("+"),array("jus"),0);
     echo "<p class = sa >jherjus (3.4.108) :</p>"; 
     echo "<p class = sa >झेर्जुस्‌ (३.४.१०८) :</p>";
     display(0);
     $jherjus=1;
-}
+}*/
 /* jho'ntaH (7.1.3) */
-elseif (in_array($so,array("Ja","Ji")))
+/*else*/
+if (in_array($so,array("Ja","Ji")))
 {
     $text=two(array("+"),array("Ja","Ji"),array("+"),array("anta","anti"),0);
     echo "<p class = sa >jho'ntaH (7.1.3) :</p>"; 
@@ -2137,17 +2139,6 @@ $text=two($hl,array("+a+"),$hl,array("a+"),0);
 // As per sahajabodha
 if ($lakAra!=="") // Make aGgakArya specific to tiGanta.
 {
-    /* ato guNe (6.1.17) */
-    if (sub(array("a"),array("+a","+e","+o"),blank(0),0) && $pada === "pratyaya" && in_array($so,$tiG) )
-    {
-        while(sub(array("a"),array("+a","+e","+o"),blank(0),0) !== false)
-        {
-                 $text = two(array("a"),array("+a","+e","+o"),blank(1),array("+a","+e","+o"),0);   
-        }      
-        echo "<p class = sa >By ato guNe (6.1.17) :</p>";
-        echo "<p class = sa >अतो गुणे (६.१.१७) :</p>";  
-        display(0);
-    }
     /* iNo yaN (6.4.81) */
     if (sub(array("i"),array("+a"),blank(0),0) && $pada === "pratyaya" && in_array($so,$tiG) && $fo==="iR" )
     {
@@ -2156,19 +2147,18 @@ if ($lakAra!=="") // Make aGgakArya specific to tiGanta.
         echo "<p class = sa >इणो यण्‌ (६.४.८१) :</p>";  
         display(3);
     }
-
 }
 /* thAsasse (3.4.80) */
 $taGplus=array_merge($taG,array("anta","mahi")); // including the altered forms.
-if (sub(array("+"),array("TAs"),blank(0),0) && $pada === "pratyaya" && in_array($so,array("TAs")) && in_array($lakAra,array("law","liw","luw","lfw","sArvaDAtukalew","ArDaDAtukalew","low")))
+/*if (sub(array("+"),array("TAs"),blank(0),0) && $pada === "pratyaya" && in_array($so,array("TAs")) && in_array($lakAra,array("law","liw","luw","lfw","sArvaDAtukalew","ArDaDAtukalew","low")))
 {
     $text=one(array("+TAs"),array("+se"),0);
     echo "<p class = sa >By thAsasse (3.4.80) :</p>";
     echo "<p class = sa >थासस्से (३.४.८०) :</p>";  
     display(0);
-}
+}*/
 /* Tita AtmanepadAnAM Tere (3.4.79) */
-elseif (sub(array("+"),$taGplus,blank(0),0) && $pada === "pratyaya" && in_array($so,$taG) && in_array($lakAra,array("law","liw","luw","lfw","sArvaDAtukalew","ArDaDAtukalew","low")))
+/*elseif (sub(array("+"),$taGplus,blank(0),0) && $pada === "pratyaya" && in_array($so,$taG) && in_array($lakAra,array("law","liw","luw","lfw","sArvaDAtukalew","ArDaDAtukalew","low")))
 {
     for($i=0;$i<count($text);$i++)
     {
@@ -2177,7 +2167,7 @@ elseif (sub(array("+"),$taGplus,blank(0),0) && $pada === "pratyaya" && in_array(
     echo "<p class = sa >By Tita AtmanepadAnAM Tere (3.4.79) :</p>";
     echo "<p class = sa >टित आत्मनेपदानां टेरे (३.४.७९) :</p>";  
     display(0);
-}
+}*/
 
 /* Making provision for temporary change of pratyayas */
 // sahajabodha gives ready made custom pratyayas for all lakAras. Right now we are adopting them. After some time it may become obsolete when the machine itself has learnt all the pratyayakAryas.
@@ -2188,6 +2178,8 @@ if ($sarvadhatuka===1)
     echo "<p class = sa >प्रत्यय बदलने के बाद (सहजबोध के अनुसार) :</p>";  
     display(0);    
 }
+
+/* Joining aGga and pratyayas */
 /* ato dIrgho yaJi (7.3.101) */
 if (sub(array("a"),array("+m","+v"),blank(0),0) && $pada === "pratyaya" && in_array($so,$tiG) )
 {
@@ -2195,6 +2187,37 @@ if (sub(array("a"),array("+m","+v"),blank(0),0) && $pada === "pratyaya" && in_ar
     echo "<p class = sa >By ato dIrgho yaJi (7.3.101) :</p>";
     echo "<p class = sa >अतो दीर्घो यञि (७.३.१०१) :</p>";  
     display(3);
+}
+/* ato guNe (6.1.17) */
+if (sub(array("a"),array("+a","+e","+o"),blank(0),0) && $pada === "pratyaya" && in_array($so,$tiG) )
+{
+    while(sub(array("a"),array("+a","+e","+o"),blank(0),0) !== false)
+    {
+             $text = two(array("a"),array("+a","+e","+o"),blank(1),array("+a","+e","+o"),0);   
+    }      
+    echo "<p class = sa >By ato guNe (6.1.17) :</p>";
+    echo "<p class = sa >अतो गुणे (६.१.१७) :</p>";  
+    display(0);
+}
+/* bahulaM Candasi (2.4.73) */
+if (sub(array("SAm","ama"),array("+"),blank(0),0) && ends(array($fo),array("Samu!","ama!"),4) && in_array($so,$tiG) && $veda===1)
+{
+    $text=two(array("SAm+ya","ama"),array("+"),array("Sam","am"),array("+"),1);
+    echo "<p class = sa >By bahulaM Candasi (2.4.73) :</p>";
+    echo "<p class = hn >By this, vikaraNa may get elided in Candas.</p>";
+    echo "<p class = sa >बहुलं छन्दसि (२.४.७३) :</p>";  
+    echo "<p class = sa >इस सूत्र से छन्दस्‌ में विकरण का लोप हो सकता है ।</p>";  
+    display(0);
+}
+
+print_r($text);
+/* turustuzamyamaH sArvadhAtuke (7.3.95) */
+if (sub(array("tu","ru","zwuY","Sam","am"),array("+"),$halAdi_sArvadhAtuka_pratyayas,0) && ends(array($fo),array("tu","ru","zwuY","Samu!","ama!"),4) && in_array($so,$tiG) && $veda===1)
+{
+    $text = three(array("tu","ru","zwuY","Sam","am"),array("+"),$halAdi_sArvadhAtuka_pratyayas,array("tu","ru","zwuY","Sam","am"),array("+I+"),$halAdi_sArvadhAtuka_pratyayas,0);
+    echo "<p class = sa >By turustuzamyamaH sArvadhAtuke (7.3.95) :</p>";
+    echo "<p class = sa >तुरुस्तुशम्यमः सार्वधातुके (७.३.९५) :</p>";  
+    display(0);
 }
 /* For verbs - remove all + marks. */
 if(in_array($so,$tiG))
