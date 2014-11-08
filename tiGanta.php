@@ -667,6 +667,28 @@ elseif ( $_GET['cond44']==='1')
     echo "<hr>";
     $ubhayapada=1;
 }
+/* Nicazca (1.3.74) */
+elseif ( $verbset==='curAdi' )
+{
+    $suffix=$tiG;
+    echo "<p class = st >By Nicazca (1.3.74) :</p>"; 
+    echo "<p class = hn >When the fruit of the action goes to the doer, this dhAtu takes Atmanepada. Otherwise, it takes parasmaipada. vibhASopapadena pratIyamAne (1.3.77) makes the Atmanepada form optional if the upapada implies the kartRabhiprAya kriyAphala.</p>";
+    echo "<p class = st >णिचश्चः (१.३.७४) :</p>";
+    echo "<p class = hn >क्रिया का फल जब कर्ता को मिलता है, तब इस धातु से आत्ममनेपद होता है । अन्यथा परस्मैपद होता है । विभाषोपपदेन प्रतीयमाने (१.३.७७) से यदि उपपद से कर्त्रभिप्राय क्रियाफल प्रतीयमान है तो आत्मनेपद विभाषा होता है ।</p>";
+    echo "<hr>";
+    $ubhayapada=1;
+}
+/* Nicazca (1.3.74) */
+elseif ( ends(array($fo),$curAdi,4) && !in_array($verbset,array("BvAdi","adAdi","juhotyAdi","divAdi","svAdi","tudAdi","ruDAdi","tanAdi","kryAdi")) )
+{
+    $suffix=$tiG;
+    echo "<p class = st >By Nicazca (1.3.74) :</p>"; 
+    echo "<p class = hn >When the fruit of the action goes to the doer, this dhAtu takes Atmanepada. Otherwise, it takes parasmaipada. vibhASopapadena pratIyamAne (1.3.77) makes the Atmanepada form optional if the upapada implies the kartRabhiprAya kriyAphala.</p>";
+    echo "<p class = st >णिचश्चः (१.३.७४) :</p>";
+    echo "<p class = hn >क्रिया का फल जब कर्ता को मिलता है, तब इस धातु से आत्ममनेपद होता है । अन्यथा परस्मैपद होता है । विभाषोपपदेन प्रतीयमाने (१.३.७७) से यदि उपपद से कर्त्रभिप्राय क्रियाफल प्रतीयमान है तो आत्मनेपद विभाषा होता है ।</p>";
+    echo "<hr>";
+    $ubhayapada=1;
+}
 /* dyudbhyo luGi (1.3.91) */
 elseif ( ends(array($first),array("dyuta!","SvitA!","YimidA!","midA!","YizvidA!","zvidA!","svidA!","YikzvidA!","kzvidA!","ruca!","Guwa!","ruwa!","luwa!","luWa!","SuBa!","kzuBa!","RaBa!","naBa!","tuBa!","sransu!","sraMsu!","Dvansu!","DvaMsu!","Bransu!","BraMsu!","BranSu!","BraMSu!","sranBu!","sraMBu!","sramBu!","vftu!","vrDu!","SfDu!","syandU!","kfpU!","kxpU!"),4) && $vAcya==="kartR" && $lakAra==="luN")
 {
@@ -830,8 +852,6 @@ elseif ( ends(array($first),array("nigF","aSa!","Buja!","cala!","cupa!","kapi!",
 }
 /* aNAvakarmakAccittavatkartRkAt (1.3.88) */
 // Pending. Ni etc are very confusing at this stage. Will think later.
-/* Nicazca (1.3.74) */
-// Pending. All secondary verb forms need a bit of mind application.
 // budha... is an exception to cittavat part (kAzikA)
 /* svaritaJitaH kartrabhiprAye kriyAphale (1.3.72) */
 elseif ( ends(array($first),$ubhaya,1) && $pada==="pratyaya" && $lakAra!=="")
@@ -1119,6 +1139,15 @@ if (sub($curAdi,array("+"),$tiG,0) && ends(array($fo),$curAdi,4) && $sarvadhatuk
     $vik=array_merge($vik,array("Sap"));
     }
 }
+// For pratipadikas.
+elseif (sub(array("satyApa","pASa","vIRA","tUla","Sloka","senA","loma","tvac","varRa","cUrRa"),array("+"),blank(0),0) )
+{
+    $text=two(array("satyApa","pASa","vIRA","tUla","Sloka","senA","loma","tvac","varRa","cUrRa"),array("+"),array("satyApa","pASa","vIRA","tUla","Sloka","senA","loma","tvac","varRa","cUrRa"),array("+Ric+"),0);
+    $text=one(array("+Ric+Ric"),array("+Ric+"),0);
+    echo "<p class = sa >By satyApapAzarUpavINAtUlazlokasenAlomatvacavarmacUrNacurAdibhyo Nic (3.1.25) :</p>"; 
+    echo "<p class = sa >सत्यापपाशरूपवीणातूलश्लोकसेनालोमत्वचवर्मचूर्णचुरादिभ्यो णिच्‌ (३.१.२५) :</p>";
+    display(0);   
+}
 /* for user input specified verbs */
 /* divAdibhyaH zyan (3.1.69) */
 elseif (sub($divAdi,array("+"),$tiG,0) && ends(array($fo),$divAdi,4) && $sarvadhatuka===1 && $verbset==="divAdi")
@@ -1193,15 +1222,15 @@ elseif (sub(array("+"),$tiG,blank(0),0) && $sarvadhatuka===1 && in_array($verbse
 
 /* for regular input without user selection */
 /* satyApapAzarUpavINAtUlazlokasenAlomatvacavarmacUrNacurAdibhyo Nic (3.1.25) */
-elseif(sub($curAdi,array("+"),$tiG,0) && ends(array($fo),$curAdi,4) && $sarvadhatuka===1 )
+elseif (sub($curAdi,array("+"),$tiG,0) && ends(array($fo),$curAdi,4) && $sarvadhatuka===1)
 {
     $text=two(array("+"),$tiG,array("+Ric+"),$tiG,0);
     $text=one(array("+Ric+Ric"),array("+Ric+"),0);
     echo "<p class = sa >By satyApapAzarUpavINAtUlazlokasenAlomatvacavarmacUrNacurAdibhyo Nic (3.1.25) :</p>"; 
     echo "<p class = sa >सत्यापपाशरूपवीणातूलश्लोकसेनालोमत्वचवर्मचूर्णचुरादिभ्यो णिच्‌ (३.१.२५) :</p>";
-    display(0);   
+    display(0); 
     if (sub(array("+"),$tiG,blank(0),0) && $sarvadhatuka===1)
-    {   
+    {
     $text=two(array("+"),$tiG,array("+Sap+"),$tiG,0);
     $text=one(array("+Sap+Sap"),array("+Sap+"),0);
     echo "<p class = sa >By kartari zap (3.1.68) :</p>"; 
@@ -1673,6 +1702,30 @@ if (sub(array("kfp"),array("+"),blank(0),0) && ends(array($fo),array("kfpa!"),4)
     echo "<p class = sa >By kRpo ro laH (8.2.18) :</p>"; 
     echo "<p class = sa >कृपो रो लः (८.२.१८) :</p>";
     display(0);    
+}
+/* arttihrIvlIrIknUyIkSmAyyAtAM puGNau (7.3.36) */
+if (sub(array("f","hrI","vlI","rI","knU","kzmA"),array("+"),array("Ri"),0) && ends(array($fo),array("f","hrI","vlI","rI","knUyI!","kzmAyI!"),4) && in_array($so,$tiG))
+{
+    $text=two(array("f","hrI","vlI","rI","knU","kzmA"),array("+"),array("fp","hrIp","vlIp","rIp","knUp","kzmAp"),array("+"),0);
+    echo "<p class = sa >By arttihrIvlIrIknUyIkSmAyyAtAM puGNau (7.3.36) :</p>"; 
+    echo "<p class = sa >अर्तिह्रीव्लीरीक्नूयीक्ष्माय्यातां पुङ्णौ (७.३.३६) :</p>";
+    display(0);    
+    echo "<p class = pa >sanAdyantA dhAtavaH (3.1.32) :</p>"; 
+    echo "<p class = pa >सनाद्यन्ता धातवः (३.१.३२) :</p>";
+    display(0);
+    
+}
+/* arttihrIvlIrIknUyIkSmAyyAtAM puGNau (7.3.36) */
+elseif (sub(array("A"),array("+"),array("Ri"),0) && ends(array($fo),$AkArAntaverbs,4) && in_array($so,$tiG))
+{
+    $text=two(array("A"),array("+"),array("Ap"),array("+"),0);
+    echo "<p class = sa >By arttihrIvlIrIknUyIkSmAyyAtAM puGNau (7.3.36) :</p>"; 
+    echo "<p class = sa >अर्तिह्रीव्लीरीक्नूयीक्ष्माय्यातां पुङ्णौ (७.३.३६) :</p>";
+    display(0);    
+    echo "<p class = pa >sanAdyantA dhAtavaH (3.1.32) :</p>"; 
+    echo "<p class = pa >सनाद्यन्ता धातवः (३.१.३२) :</p>";
+    display(0);
+
 }
 /* idito numdhAtoH (7.1.58) */
 if ( in_array("i",$it) && $lakAra!=="" )
@@ -2209,8 +2262,6 @@ if (sub(array("SAm","ama"),array("+"),blank(0),0) && ends(array($fo),array("Samu
     echo "<p class = sa >इस सूत्र से छन्दस्‌ में विकरण का लोप हो सकता है ।</p>";  
     display(0);
 }
-
-print_r($text);
 /* turustuzamyamaH sArvadhAtuke (7.3.95) */
 if (sub(array("tu","ru","zwuY","Sam","am"),array("+"),$halAdi_sArvadhAtuka_pratyayas,0) && ends(array($fo),array("tu","ru","zwuY","Samu!","ama!"),4) && in_array($so,$tiG) && $veda===1)
 {
