@@ -100,7 +100,7 @@ $samp = array(); // creating an array where we can store whethere samprasAraNa h
 
 
 /* Displaying information about the verb */
-if ($verbset!=="")
+if ($verbset!=="none")
 {
     verb_meaning_gana_number2($first);
 }
@@ -108,7 +108,6 @@ elseif (in_array($first,$allverbs))
 {
     verb_meaning_gana_number1($first);
 }
-
 /* Deciding the pratyaya by doing padanirdhARaNa of parasmai, Atmane, ubhaya */ 
 /* bhAvakarmaNoH (1.3.13) */
 if ( in_array($vAcya,array("karma","bhAva")) && $pada==="pratyaya" && $lakAra!=="")
@@ -679,7 +678,7 @@ elseif ( $verbset==='curAdi' )
     $ubhayapada=1;
 }
 /* Nicazca (1.3.74) */
-elseif ( ends(array($fo),$curAdi,4) && !in_array($verbset,array("BvAdi","adAdi","juhotyAdi","divAdi","svAdi","tudAdi","ruDAdi","tanAdi","kryAdi")) )
+elseif ( ends(array($first),$curAdi,4) && $verbset==="none" )
 {
     $suffix=$tiG;
     echo "<p class = st >By Nicazca (1.3.74) :</p>"; 
