@@ -1645,6 +1645,14 @@ if ( sub(array("tfPa!","tuPa!","dfPa!","fPa!","guPa!","uBa!","SuBa!","tupa!","tf
     echo "<p class = sa >शे तृम्फादीनां नुम्वाच्यः (वा) :</p>";
     display(0);
 }
+/* sArvadhAtukamapit (1.1.7) */
+if ( sub(array("+"),$apit_sArvadhAtuka_pratyayas,blank(0),0))
+{
+    $it=array_merge($it,array("N"));
+    echo "<p class = sa >sArvadhAtukamapit (1.1.7) :</p>"; 
+    echo "<p class = sa >सार्वधातुकमपित्‌ (१.१.७) :</p>";
+    display(0);    
+}
 /* grahijyAvayivyadhivaSTivicativRzcatipRcCatibhRjjatInAM Giti ca (6.1.16) */
 if (ends(array($fo),array("jyA","graha!","vaya!","vyaDa!","vaSa!","vyaca!","o!vraScU!","pracCa!","Brasja!"),4) && in_array("N",$it))
 {
@@ -1825,13 +1833,13 @@ $text=one(array("ft+Iya+"),array("ftIya+"),0);
 /* pugantalaghUpadhasya ca (7.2.86) */ 
 // puk pending.
 // more on enumeration kind. Not used regexes deliberately.
-if ( sub(array("i","u","f","x"),$hl,array("+"),0) && $atolopa!==1 && ($sarvadhatuka===1 || $ardhadhatuka===1) )
+/*if ( sub(array("i","u","f","x"),$hl,array("+"),0) && $atolopa!==1 && ($sarvadhatuka===1 || $ardhadhatuka===1) )
 { 
     $text = three(array("i","u","f","x"),$hl,array("+"),array("e","o","ar","al"),$hl,array("+"),0);
     echo "<p class = sa >By pugantalaghUpadhasya ca (7.2.86) :</p>";
     echo "<p class = sa >पुगन्तलघूपधस्य च (७.२.८६) :</p>";
     display(0);
-}
+}*/
 /* UdupadhAyA gohaH (6.4.89) */ 
 if ( sub(array("goh"),array("+a"),blank(0),0) && ends(array($fo),array("guha!"),4) )
 { 
@@ -1976,7 +1984,7 @@ elseif ( sub(array("i","I","u","U","f","F","x","X"),array("nu+"),$halAdi_apit_sA
     display(0);    
     $kGiti=1;
 }
-elseif ( sub(array("i","I","u","U","f","F","x","X"),$kitGit_ArdhadhAtuka_pratyayas,blank(0),0) )
+elseif ( (sub(array("i","I","u","U","f","F","x","X"),array("+"),blank(0),0) || sub(array("i","u","f","x"),$hl,array("+"),0)) && ends($it,array("N","K"),2) )
 {
     echo "<p class = sa >By kGiti ca (1.1.5) :</p>"; 
     echo "<p class = sa >क्ङिति च (१.१.५) :</p>";
