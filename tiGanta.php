@@ -666,6 +666,42 @@ elseif ( $_GET['cond44']==='1')
     echo "<hr>";
     $ubhayapada=1;
 }
+/* AkusmAdAtmanepadinaH (dhAtupATha) */
+elseif ( $verbset==='curAdi' && ends(array($first),$AkusmIya,4) )
+{
+    $suffix=$taG;
+    echo "<p class = st >By AkusmAdAtmanepadinaH (dhAtupAThaH) :</p>"; 
+    echo "<p class = st >आकुस्मादात्मनेपदिनः (धातुपाठः) :</p>";
+    echo "<hr>";
+    $atmanepada=1;
+}
+/* AkusmAdAtmanepadinaH (dhAtupATha) */
+elseif ( $verbset==="none"  && ends(array($first),$AkusmIya,4))
+{
+    $suffix=$taG;
+    echo "<p class = st >By AkusmAdAtmanepadinaH (dhAtupAThaH) :</p>"; 
+    echo "<p class = st >आकुस्मादात्मनेपदिनः (धातुपाठः) :</p>";
+    echo "<hr>";
+    $atmanepada=1;
+}
+/* AgarvAdAtmanepadinaH (dhAtupATha) */
+elseif ( $verbset==='curAdi' && ends(array($first),$AgarvIya,4) )
+{
+    $suffix=$taG;
+    echo "<p class = st >By AgarvAdAtmanepadinaH (dhAtupATha) :</p>"; 
+    echo "<p class = st >आगर्वादात्मनेपदिनः (धातुपाठः) :</p>";
+    echo "<hr>";
+    $atmanepada=1;
+}
+/* AgarvAdAtmanepadinaH (dhAtupATha) */
+elseif ( $verbset==="none"  && ends(array($first),$AgarvIya,4))
+{
+    $suffix=$taG;
+    echo "<p class = st >By AgarvAdAtmanepadinaH (dhAtupATha) :</p>"; 
+    echo "<p class = st >आगर्वादात्मनेपदिनः (धातुपाठः) :</p>";
+    echo "<hr>";
+    $atmanepada=1;
+}
 /* Nicazca (1.3.74) */
 elseif ( $verbset==='curAdi' )
 {

@@ -6,6 +6,7 @@ ini_set("memory_limit","1000M");
 include "slp-dev.php"; // includes code for conversion from SLP to devanagari,
 include "dev-slp.php"; // includes code for devanagari to SLP.
 include "function.php";
+error_reporting(0);
 
 /* method to create an array of necessary SLP1 list from devangari file */
 /*$a=file('allverbs.txt');
@@ -145,12 +146,14 @@ foreach ($a as $value)
     $value=preg_replace('/(['.pc('hl').']$)/','',$value);
     $value=preg_replace('/([aAiIuUfFxXeoEO][!])/','',$value);
     $value=preg_replace('/(^[Ywq][iu])/','',$value);
-    if (arr(array($value),'/[A]$/'))
+    if (arr(array($value),'/[c][C]$/')) // change in this line to grab what you want.
     {
         $val1[]=$p;
+        verb_meaning_gana_number1($p);
     }
-}
-echo implode('","',$val1);*/
+}*/
+
+//echo implode('","',$val1);
 
 /* making a list of duplicated verbs */
 /*$uniqueverbs=  array_unique($allverbs);
@@ -229,4 +232,18 @@ for($j=0;$j<count($a);$j++)
 echo '$verbdata = array("'.implode('","',$out),'");';*/
 
 
+/* Method to scrape data from verbdata */
+foreach ($verbdata as $value)
+{
+    $val = explode(":",$value);
+    $val = array_map('trim',$val);
+    //if ($val[3]==="10")
+    //{
+    $p[]=$val[0];        
+    $q[]=$val[7];
+    //}
+}
+echo implode('","',$p);
+echo "<br><br>";
+echo implode('","',$q);
 ?>
