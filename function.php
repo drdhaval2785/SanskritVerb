@@ -180,9 +180,9 @@ $sArvadhAtuka_tiG_set1_vidhiliG_Atmane=array("Ita","IyAtAm","Iran","ITAs","IyATA
 $sArvadhAtuka_tiG_set1=array_merge($sArvadhAtuka_tiG_set1_laG_Atmane,$sArvadhAtuka_tiG_set1_laG_parasmai,$sArvadhAtuka_tiG_set1_laT_Atmane,$sArvadhAtuka_tiG_set1_laT_parasmai,$sArvadhAtuka_tiG_set1_loT_Atmane,$sArvadhAtuka_tiG_set1_loT_parasmai,$sArvadhAtuka_tiG_set1_vidhiliG_Atmane,$sArvadhAtuka_tiG_set1_vidhiliG_parasmai);
 // 2nd set
 $sArvadhAtuka_tiG_set2_laT_parasmai=array("ti","tas","anti","si","Tas","Ta","mi","vas","mas");
-$sArvadhAtuka_tiG_set2_loT_parasmai=array("tu","tAt","tAm","antu","hi","tAt","tam","ta","Ani","Ava","Ama");
+$sArvadhAtuka_tiG_set2_loT_parasmai=array("tu","tAm","antu","tAt","tam","ta","Ani","Ava","Ama"); // tAt and hi are removed.
 $sArvadhAtuka_tiG_set2_laG_parasmai=array("t","tAm","an","s","tam","ta","am","va","ma");
-$sArvadhAtuka_tiG_set2_vidhiliG_parasmai=array("yAt","yAtAm","yus","yAH","yAtam","yAt","yAm","yAva","yAma");
+$sArvadhAtuka_tiG_set2_vidhiliG_parasmai=array("yAt","yAtAm","yus","yAH","yAtam","yAta","yAm","yAva","yAma");
 $sArvadhAtuka_tiG_set2_laT_Atmane=array("te","Ate","ate","se","ATe","Dve","e","vahe","mahe");
 $sArvadhAtuka_tiG_set2_loT_Atmane=array("tAm","AtAm","atAm","sva","ATAm","Dvam","E","AvahE","AmahE");
 $sArvadhAtuka_tiG_set2_laG_Atmane=array("ta","AtAm","ata","TAs","ATAm","Dvam","i","vahi","mahi");
@@ -343,6 +343,7 @@ return $text;  // giving the result to the user.
 // 3 = without + sign, optional
 // 4 = with + sign only, mandatory (padAnta etc)
 // 5 = with + sign only, optional.
+// 11 - change at the end of word only.
 function two($a,$b,$c,$d,$merge) // the comments are the same as one function.
 {
     global $text;
@@ -352,7 +353,7 @@ function two($a,$b,$c,$d,$merge) // the comments are the same as one function.
           {
            for($j=0;$j<count($b);$j++)
                 {
-                    if($merge<2)
+                    if($merge<2 || $merge===11)
                     {
                     $p =  str_replace($a[$i].$b[$j],$c[$i].$d[$j],$p);   // replacement without "+" sign.
                     $p =  str_replace($a[$i]."+".$b[$j],$c[$i]."+".$d[$j],$p); // replacement for "+" sign.
@@ -858,7 +859,12 @@ return $output;
     global $first;
     foreach ($needle as $pattern)
     {
-        if (($repeat <2 && count(preg_grep("/$pattern/", $text)) >0) || ($repeat ===2 && strpos(strrev($first), strrev($pattern)) === 0) || ($repeat ===3 && strpos($first,$pattern) === 0) || ($repeat ===4 && strpos(strrev($second), strrev($pattern)) === 0) || ($repeat ===5 && strpos($second,$pattern) === 0))
+        if ( $repeat<2 && count(preg_grep("/$pattern/", $text)) >0)
+        {
+        $can = 1; // match found
+        break;
+        }  
+        elseif ( $repeat===2 && count(preg_grep("/$pattern$/", $text)) >0)
         {
         $can = 1; // match found
         break;
@@ -1092,7 +1098,7 @@ function ends($a,$b,$n)
             {
                     foreach ($pattern as $one)
                     {
-                        if (strpos($aa,$one)===0)
+                        if (strpos($aa,$one)===0 && strpos($aa,$one.$bb)!==false )
                         {
                             $prat[]=1;
                         }
@@ -1644,9 +1650,10 @@ function tiGreplace()
 {
     global $text;
     global $lakAra;
+    global $set;
     global $taG; global $tis; global $tiG; global $so;
     $default_Atmane_1=array("ta","AtAm","anta","TAs","ATAm","Dvam","i","vahi","mahi");  
-    $tiG_law__Atmane__1=array("te","Ate","ante","se","ATe","Dve","i","vahe","mahe");
+    $tiG_law_Atmane_1=array("te","Ate","ante","se","ATe","Dve","i","vahe","mahe");
     $tiG_law_parasmai_1=array("ti","tas","anti","si","Tas","Ta","mi","vas","mas");
     $tiG_law_Atmane_1=array("te","ite","ante","se","iTe","Dve","e","vahe","mahe");
     $tiG_low_parasmai_1=array("tu","tAm","antu","tAt","tam","ta","Ani","Ava","Ama"); // there is a blank pratyaya at ma.pu.
@@ -1655,7 +1662,20 @@ function tiGreplace()
     $tiG_laN_Atmane_1=array("ta","itAm","anta","TAs","iTAm","Dvam","i","vahi","mahi");
     $tiG_viDiliN_parasmai_1=array("it","itAm","iyus","is","itam","ita","iyam","iva","ima");
     $tiG_viDiliN_Atmane_1=array("Ita","IyAtAm","Iran","ITAs","IyATAm","IDvam","Iya","Ivahi","Imahi");
-    
+// second set pratyayas
+    $default_Atmane_2=array("ta","AtAm","anta","TAs","ATAm","Dvam","i","vahi","mahi");  
+    $tiG_law_Atmane_2=array("te","Ate","ante","se","ATe","Dve","i","vahe","mahe");
+    $tiG_law_parasmai_2=array("ti","tas","anti","si","Tas","Ta","mi","vas","mas");
+    $tiG_law_Atmane_2=array("te","Ate","ate","se","ATe","Dve","e","vahe","mahe");
+    $tiG_low_parasmai_2=array("tu","tAm","antu","tAt","tam","ta","Ani","Ava","Ama"); // there is tAt and hi missing.
+    $tiG_low_Atmane_2=array("tAm","AtAm","atAm","sva","ATAm","Dvam","E","AvahE","AmahE");
+    $tiG_laN_parasmai_2=array("t","tAm","an","s","tam","ta","am","va","ma");
+    $tiG_laN_Atmane_2=array("ta","AtAm","ata","TAs","ATAm","Dvam","i","vahi","mahi");
+    $tiG_viDiliN_parasmai_2=array("yAt","yAtAm","yus","yAs","yAtam","yAta","yAm","yAva","yAma");
+    $tiG_viDiliN_Atmane_2=array("Ita","IyAtAm","Iran","ITAs","IyATAm","IDvam","Iya","Ivahi","Imahi");
+
+   if($set===1)
+   {
         if ($lakAra==="low" && in_array($so,$tis))
         {
             $text=pratyayareplace($tiG_law_parasmai_1,$tiG_low_parasmai_1,$text);
@@ -1683,19 +1703,56 @@ function tiGreplace()
         if ($lakAra==="viDiliN" && in_array($so,$taG))
         {
             $text=pratyayareplace($default_Atmane_1,$tiG_viDiliN_Atmane_1,$text);
+        }               
+   }
+   if($set===2)
+   {
+        if ($lakAra==="low" && in_array($so,$tis))
+        {
+            $text=pratyayareplace($tiG_law_parasmai_1,$tiG_low_parasmai_1,$text);
         }        
+        if ($lakAra==="laN" && in_array($so,$tis))
+        {
+            $text=pratyayareplace($tiG_law_parasmai_2,$tiG_laN_parasmai_2,$text);
+        }        
+        if ($lakAra==="viDiliN" && in_array($so,$tis))
+        {
+            $text=pratyayareplace($tiG_law_parasmai_2,$tiG_viDiliN_parasmai_2,$text);
+        }        
+        if ($lakAra==="law" && in_array($so,$taG))
+        {
+            $text=pratyayareplace($default_Atmane_2,$tiG_law_Atmane_2,$text);
+        }        
+        if ($lakAra==="low" && in_array($so,$taG))
+        {
+            $text=pratyayareplace($default_Atmane_2,$tiG_low_Atmane_2,$text);
+        }        
+        if ($lakAra==="laN" && in_array($so,$taG))
+        {
+            $text=pratyayareplace($default_Atmane_2,$tiG_laN_Atmane_2,$text);
+        }        
+        if ($lakAra==="viDiliN" && in_array($so,$taG))
+        {
+            $text=pratyayareplace($default_Atmane_2,$tiG_viDiliN_Atmane_2,$text);
+        }               
+   }
     // patch for optional forms.
     foreach ($text as $val1)
     {
-        if (strpos($val1,"+tAt")!==false)
+        if (strpos($val1,"+tAt")!==false && $set===1)
         {
             $val2[]=$val1;
             $val2[]=str_replace("+tAt","",$val1);
         }
+        elseif (strpos($val1,"+tAt")!==false && $set===2)
+        {
+            $val2[]=$val1;
+            $val2[]=str_replace("+tAt","+hi",$val1);
+        }
         elseif (strpos($val1,"+tu")!==false)
         {
             $val2[]=$val1;
-            $val2[]=str_replace("+tu","tAt",$val1);
+            $val2[]=str_replace("+tu","+tAt",$val1);
         }        
         else
         {
@@ -1722,6 +1779,40 @@ function pratyayareplace($a,$b,$test)
     return $out;
 }
 
+/* function pratyayareplace to change pratyayas as per Sahajabodha */
+// sub is not specific. For pratyayas, we test whether it is at end or not.
+function pratyayareplace2($a,$b,$c,$d,$e,$f,$test)
+{
+    foreach($test as $value)
+    {
+        $counter=1;
+        for($i=0;$i<count($a);$i++)
+        {
+            for($j=0;$j<count($b);$j++)
+            {
+                for($k=0;$k<count($a);$k++)
+                {
+                    if(substr($value,(-strlen($a[$i].$b[$j].$c[$k])))===$a[$i].$b[$j].$c[$k])
+                    {
+                        $out[]=substr($value,0,-strlen($a[$i].$b[$j].$c[$k])).$d[$i].$e[$j].$f[$k];
+                        $counter=2;
+                    }
+                }
+            }            
+        }
+        if(in_array($value,$out))
+        {
+            $test=array_diff($test,array($value));
+            $out[]=$value;
+        }
+        elseif($counter===1)
+        {
+            $out[]=$value;
+        }
+        $counter=1;
+    }
+    return $out;
+}
 
 /* Functions which are not used in the code */
 /* Function f to find the nth letter in the word */

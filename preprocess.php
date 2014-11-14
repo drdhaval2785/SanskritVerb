@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /* set execution time to an hour */
 ini_set('max_execution_time', 36000);
 /* set memory limit to 1000 MB */
