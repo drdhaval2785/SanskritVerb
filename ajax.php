@@ -990,7 +990,7 @@ if($_POST['step']==='11' && ends($arrWord,array("takzU!"),4) )
             $html .= '<input type="radio" value="2" name="cond45" > अन्य ';
             $html .= '</div>';            
 }
-if($_POST['step']==='11' && ends($arrWord,$nonuniqueverbs,4) )
+if($_POST['step']==='11' && ends($arrWord,$nonuniqueverbs,2) )
 {
     verb_meaning_gana_number($word);
 }

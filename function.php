@@ -207,7 +207,7 @@ $sArvadhAtuka_pratyayas=array_merge($sArvadhAtuka_tiG_pratyayas,$sArvadhAtuka_kR
 // pit and apit sArvadhAtuka tiG pratyayas
 $halAdi_pit_sArvadhAtuka_tiG_pratyayas=array("ti","si","mi","tu","t","s");
 //$ajAdi_pit_sArvadhAtuka_tiG_pratyayas=array_merge(array("Ani","Ava","Ama","E","AvahE","AmahE","am"),$sArvadhAtuka_tiG_sArvadhAtukaleT);
-$ajAdi_pit_sArvadhAtuka_tiG_pratyayas=array("Ani","Ava","Ama","E","AvahE","AmahE","am"); // removed sArvadhAtukalew because it causes problems in ''anti' application to 'znu'.
+$ajAdi_pit_sArvadhAtuka_tiG_pratyayas=array("Ani","Ava","Ama","E","AvahE","AmahE","am",); // removed sArvadhAtukalew because it causes problems in ''anti' application to 'znu'.
 $halAdi_apit_sArvadhAtuka_tiG_pratyayas=array("tas","Tas","Ta","vas","mas","te","se","Dve","vahe","mahe","tAt","tAm","hi","tAt","tam","ta","tAm","sva","Dvam","tAm","tam","ta","va","ma","ta","TAs","Dvam","vahi","mahi","yAt","yAtAm","yus","yAs","yAtam","yAta","yAm","yAva","yAma",);
 $ajAdi_apit_sArvadhAtuka_tiG_pratyayas=array("anti","Ate","ate","ATe","e","ati","antu","AtAm","atAm","ATAm","atu","an","AtAm","ata","ATAm","i","us","Ita","IyAtAm","Iran","ITAs","IyATAm","IDvam","Iya","Ivahi","Imahi",);
 // pit and apit sArvadhAtuka kRt pratyayas
@@ -216,9 +216,9 @@ $ajAdi_apit_sArvadhAtuka_kRt_pratyayas=$sArvadhAtuka_kRt_pratyayas;
 $ajAdi_pit_sArvadhAtuka_vikaraNa_pratyayas=array("Sap");
 $halAdi_apit_sArvadhAtuka_vikaraNa_pratyayas=array("Syan","Snu","Snam","SnA","SAyac","SAnac","ya"); // watch out for the 'ya' entry. It was made to make application of hali ca possible after robbing the vikaraNa zyan of it markers.
 $ajAdi_apit_sArvadhAtuka_vikaraNa_pratyayas=array("Sa","SAyac","SAnac");
-// ajAdi and halAdi pit total pratyayas
+// ajAdi and halAdi pit total pratyayas 
 $ajAdi_pit_sArvadhAtuka_pratyayas=array_merge($ajAdi_pit_sArvadhAtuka_tiG_pratyayas,$ajAdi_pit_sArvadhAtuka_vikaraNa_pratyayas);
-$halAdi_pit_sArvadhAtuka_pratyayas=array("ti","si","mi","tu","t","s");
+$halAdi_pit_sArvadhAtuka_pratyayas=array("ti","si","mi","tu","t","s",);
 // ajAdi and halAdi apit total pratyayas
 $ajAdi_apit_sArvadhAtuka_pratyayas=array_merge($ajAdi_apit_sArvadhAtuka_kRt_pratyayas,$ajAdi_apit_sArvadhAtuka_tiG_pratyayas,$ajAdi_apit_sArvadhAtuka_vikaraNa_pratyayas);
 $halAdi_apit_sArvadhAtuka_pratyayas=array_merge($halAdi_apit_sArvadhAtuka_tiG_pratyayas,$halAdi_apit_sArvadhAtuka_vikaraNa_pratyayas);
@@ -1099,9 +1099,12 @@ function ends($a,$b,$n)
             {
                     foreach ($pattern as $one)
                     {
-                        if (strpos($aa,$one)===0 && strpos($aa,$one.$bb)!==false )
+                        foreach ($pattern as $two)
                         {
-                            $prat[]=1;
+                            if (strpos($aa,$one)===0 && strpos($aa,$two.$bb)!==false && strpos(strrev($aa),strrev($bb))===0 )
+                            {
+                                $prat[]=1;
+                            }                            
                         }
                     }
                 if ( (strpos($aa,$bb)>0 && in_array(1,$prat) ) || $aa===$bb) 
@@ -1790,7 +1793,7 @@ function pratyayareplace2($a,$b,$c,$d,$e,$f,$test)
         {
             for($j=0;$j<count($b);$j++)
             {
-                for($k=0;$k<count($a);$k++)
+                for($k=0;$k<count($c);$k++)
                 {
                     if(substr($value,(-strlen($a[$i].$b[$j].$c[$k])))===$a[$i].$b[$j].$c[$k])
                     {
