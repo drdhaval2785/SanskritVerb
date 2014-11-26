@@ -1407,7 +1407,7 @@ if (sub($juhotyAdi,array("+Sap+"),$tiG,0) && ends(array($fo),$juhotyAdi,4) && $s
     if ($zlu===1)
     {
         // taking replacements directly from sahajabodha p 329. Only hu's process is shown. For everything else there is direct substitution.
-        $juhotyAdireplace=array("if","kiki","kikit","gigA","GiGf","jajan","tutur","dadA","daDan","daDA","diDiz","nenij","pipf","pipF","pipF","baBas","biBI","biBfMS","mimA","vevij","veviz","sisf","hihA","hahA","huhu","hihf","jihrI");
+        $juhotyAdireplace=array("if","kiki","kikit","gigA","GiGf","jajan","tutur","dadA","daDan","daDA","diDiz","nenij","pipf","pipF","baBas","biBI","biBfMS","mimA","vevij","veviz","sisf","hihA","hahA","huhu","hihf","jihrI");
         if(sub(array("quBfY","mAN","o!hAN"),array("+"),blank(0),0))
         {
             $text=two(array("quBfY","mAN","o!hAN"),array("+"),array("biBf","mimA","jihA"),array("+"),0);
@@ -1930,22 +1930,6 @@ if (in_array($fo,$pvAdi) && $shit===1 && $fo!=="jyA" && ( $verbset==="kryAdi" ||
     echo "<p class = sa >प्वादीनां ह्रस्वः (७.३.८०) :</p>";
     display(0);        
 }
-/* RRta iddhAtoH (7.1.100) */
-if ( sub(array("F"),array("+"),$apit_sArvadhAtuka_pratyayas,0) && ($sarvadhatuka===1 || $ardhadhatuka===1) )
-{
-    $text=three(array("F"),array("+"),$apit_sArvadhAtuka_pratyayas,array("ir"),array("+"),$apit_sArvadhAtuka_pratyayas,0);
-    echo "<p class = sa >By RRta iddhAtoH (7.1.100) :</p>"; 
-    echo "<p class = sa >ॠत इद्धातोः (७.१.१००) :</p>";
-    display(0);    
-}
-/* hali ca (8.2.77) */
-if ( sub(array("i","u","f"),array("r+","v+"),$halAdi_apit_sArvadhAtuka_pratyayas,0) && in_array($so,$tiG) && $karoti!==1)
-{
-    $text=three(array("i","u","f"),array("r+","v+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("I","U","F"),array("r+","v+"),$halAdi_apit_sArvadhAtuka_pratyayas,0);
-    echo "<p class = sa >By hali ca (8.2.77) 1:</p>"; 
-    echo "<p class = sa >हलि च (८.२.७७) :</p>";
-    display(0);    
-}
 /* kRpo ro laH (8.2.18) */
 if (sub(array("kfp"),array("+"),blank(0),0) && ends(array($fo),array("kfpa!"),4))
 {
@@ -2255,6 +2239,7 @@ if ( sub(array("Se"),array("+"),array("ate","ata","atAm"),0) && in_array($so,$ti
     echo "<p class = sa >शीङो रुट्‌ (७.१.६) :</p>";
     display(0);    
 }
+print_r($text);
 /* udoSThyapUrvasya (7.1.102) */
 if ( sub(array("pF","PF","bF","BF","mF"),array("+"),$apit_sArvadhAtuka_pratyayas,0) && in_array($so,$tiG) )
 {
@@ -2415,7 +2400,6 @@ if ( in_array($fo,$ghuset) )
     display(0);
     $ghu=1;
 }
-print_r($text);
 /* dadhastathozca (8.2.38) */
 if ( sub(array("daDA"),array("+"),array("tas","Tas","Ta","te","se","Dve","tAt","tAm","tam","ta","sva","Dvam","TAs",),0) && in_array($so,$tiG) )
 {
@@ -2599,7 +2583,7 @@ if ($lakAra!=="")
     }
     // special patch for IDAgama of turustu... to make it amenable to aci znudhAtu...
     $text=one(array("+I+"),array("+I"),0);
-    if (($dhatu===1||$fo==="BrU") && arr($text,'/[iuIU][+]['.flat($ac).']/') && $pada==="pratyaya" && ( anekAca($fo)===false  || in_array($so,$tiG) || (arr($text,'/[B][U][+]/')||$fo==="suDI") ) && $dfmBU===0 && $didhI!==1 && !sub(array("+"),array("I"),array("+"),0) && $abhyasta!==1)
+    if (($dhatu===1||$fo==="BrU") && arr($text,'/[iuIU][+]['.flat($ac).']/') && $pada==="pratyaya" && ( anekAca($fo)===false  || in_array($so,$tiG) || (arr($text,'/[B][U][+]/')||$fo==="suDI") ) && $dfmBU===0 && $didhI!==1 && !sub(array("+"),array("I"),array("+"),0) && ($abhyasta!==1 || in_array($fo,array("hrI"))))
         {
         $text = three(array("i","I","u","U"),array("+"),$ac,array("iy","iy","uv","uv"),array("+"),$ac,0);
         echo "<p class = sa >By aci znudhAtubhruvAM yvoriyaGuvaGau (6.4.77) :</p>";
