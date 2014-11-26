@@ -2415,18 +2415,43 @@ if ( in_array($fo,$ghuset) )
     display(0);
     $ghu=1;
 }
-/* znA'bhyastayorAtaH (6.4.112) */
-if ( sub(array("dadA","daDA"),array("+"),$ajAdi_apit_sArvadhAtuka_tiG_pratyayas,0) && (in_array("N",$it)||in_array("k",$it)))
+print_r($text);
+/* dadhastathozca (8.2.38) */
+if ( sub(array("daDA"),array("+"),array("tas","Tas","Ta","te","se","Dve","tAt","tAm","tam","ta","sva","Dvam","TAs",),0) && in_array($so,$tiG) )
 {
-    $text=three(array("dadA","daDA"),array("+"),$ajAdi_apit_sArvadhAtuka_tiG_pratyayas,array("dad","daD"),array("+"),$ajAdi_apit_sArvadhAtuka_tiG_pratyayas,0);
+    $text=three(array("daDA"),array("+"),array("tas","Tas","Ta","te","se","Dve","tAt","tAm","tam","ta","sva","Dvam","TAs",),array("DaD"),array("+"),array("tas","Tas","Ta","te","se","Dve","tAt","tAm","tam","ta","sva","Dvam","TAs",),0);
+    echo "<p class = sa >By dadhastathozca (8.2.38) :</p>"; 
+    echo "<p class = sa >दधस्तथोश्च (८.२.३८) :</p>";
+    display(0);    
+}
+/* ghvasoreddhAvabhyAsalopazca (6.4.119) */
+if ( sub(array("dadA","daDA"),array("+"),array("hi"),0) && in_array($so,$tiG) )
+{
+    $text=three(array("dadA","daDA"),array("+"),array("hi"),array("de","De"),array("+"),array("hi"),0);
+    echo "<p class = sa >By ghvasoreddhAvabhyAsalopazca (6.4.119) :</p>"; 
+    echo "<p class = sa >घ्वसोरेद्धावभ्यासलोपश्च (६.४.११९) :</p>";
+    display(0);    
+}
+/* bhiyo'nyatarasyAm (6.4.115) */
+if ( sub(array("biBI"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,0) && in_array($so,$tiG) )
+{
+    $text=three(array("biBI"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("biBi"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,1);
+    echo "<p class = sa >By bhiyo'nyatarasyAm (6.4.115) :</p>"; 
+    echo "<p class = sa >भियोऽन्यतस्याम्‌ (६.४.११५) :</p>";
+    display(0);    
+}
+/* znA'bhyastayorAtaH (6.4.112) */
+if ( sub(array("dadA","daDA"),array("+"),$apit_sArvadhAtuka_pratyayas,0) && (in_array("N",$it)||in_array("k",$it)))
+{
+    $text=three(array("dadA","daDA"),array("+"),$apit_sArvadhAtuka_pratyayas,array("dad","daD"),array("+"),$apit_sArvadhAtuka_pratyayas,0);
     echo "<p class = sa >By znA'bhyastayorAtaH (6.4.112) :</p>"; 
     echo "<p class = sa >श्नाऽभ्यस्तयोरातः (६.४.११२) :</p>";
     display(0);    
 }
 /* znA'bhyastayorAtaH (6.4.112) */
-if ( $abhyasta===1 && sub(array("A"),array("+"),$ajAdi_apit_sArvadhAtuka_tiG_pratyayas,0) && (in_array("N",$it)||in_array("k",$it)))
+if ( $abhyasta===1 && sub(array("A"),array("+"),$apit_sArvadhAtuka_pratyayas,0) && (in_array("N",$it)||in_array("k",$it)))
 {
-    $text=three(array("A"),array("+"),$ajAdi_apit_sArvadhAtuka_tiG_pratyayas,array(""),array("+"),$ajAdi_apit_sArvadhAtuka_tiG_pratyayas,0);
+    $text=three(array("A"),array("+"),$apit_sArvadhAtuka_pratyayas,array(""),array("+"),$apit_sArvadhAtuka_pratyayas,0);
     echo "<p class = sa >By znA'bhyastayorAtaH (6.4.112) :</p>"; 
     echo "<p class = sa >श्नाऽभ्यस्तयोरातः (६.४.११२) :</p>";
     display(0);    
@@ -2574,7 +2599,7 @@ if ($lakAra!=="")
     }
     // special patch for IDAgama of turustu... to make it amenable to aci znudhAtu...
     $text=one(array("+I+"),array("+I"),0);
-    if (($dhatu===1||$fo==="BrU") && arr($text,'/[iuIU][+]['.flat($ac).']/') && $pada==="pratyaya" && ( anekAca($fo)===false  || in_array($so,$tiG) || (arr($text,'/[B][U][+]/')||$fo==="suDI") ) && $dfmBU===0 && $didhI!==1 && !sub(array("+"),array("I"),array("+"),0) )
+    if (($dhatu===1||$fo==="BrU") && arr($text,'/[iuIU][+]['.flat($ac).']/') && $pada==="pratyaya" && ( anekAca($fo)===false  || in_array($so,$tiG) || (arr($text,'/[B][U][+]/')||$fo==="suDI") ) && $dfmBU===0 && $didhI!==1 && !sub(array("+"),array("I"),array("+"),0) && $abhyasta!==1)
         {
         $text = three(array("i","I","u","U"),array("+"),$ac,array("iy","iy","uv","uv"),array("+"),$ac,0);
         echo "<p class = sa >By aci znudhAtubhruvAM yvoriyaGuvaGau (6.4.77) :</p>";
@@ -2608,7 +2633,7 @@ if ($lakAra!=="")
         display(0); 
         $unni=1; // 0 - the word is not unnI. 1 - the word is unnI
     } else { $unni=0; } 
-    if ($dhatu===1 && (arr($text,'/['.flat($ac).']['.flat($hl).'][iI][+]['.flat($ac).']/')||$unni===1) && $pada==="pratyaya" && anekAca($fo) && $nabhusu===0 )
+    if ($dhatu===1 && (arr($text,'/['.flat($ac).']['.flat($hl).'][iI][+]['.flat($ac).']/')||$unni===1) && $pada==="pratyaya" && (anekAca($fo) || $abhyasta===1 )&& $nabhusu===0 )
     {
         $text = three(array("i","I"),array("+"),$ac,array("y","y"),array("+"),$ac,0);                
         echo "<p class = sa >By eranekAco'saMyogapUrvasya (6.4.82) :</p>";
