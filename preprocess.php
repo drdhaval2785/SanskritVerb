@@ -204,7 +204,7 @@ foreach ($a as $value)
 echo implode('","',$val);*/
 
 /* Process to find iditverbs which have i!r combination. */
-$a=$iditverbs;
+/*$a=$iditverbs;
 $a=array_map('trim',$a);
 foreach ($a as $value)
 {
@@ -213,10 +213,10 @@ foreach ($a as $value)
         $val[]=$value;
     }
 }
-echo implode('","',$val);
+echo implode('","',$val);*/
 
 /* Creating arrays with all the information of a verb from raw data having upadeza, meaning, after it removal, gana, number, P/A/U, seT/veT/aniT */
-/*$a=file("rawcomplete.txt");
+$a=file("rawcomplete.txt");
 for($j=0;$j<count($a);$j++)
 {
     $c=explode("*",$a[$j]);
@@ -230,7 +230,9 @@ for($j=0;$j<count($a);$j++)
         {
             $c[$k]=removeaccent($c[$k]);
             $c[$k]=convert1($c[$k]);
-            $d[]=str_replace(array("|","#"),array("",""),$c[$k]);
+                $c[$k]=str_replace(array("| BvA#","| a#","| ju#","| di#","| svA#","| tu#","| ru#","| ta#","| kryA#","| cu#",),array("01","02","03","04","05","06","07","08","09","10",),$c[$k]);
+            $c[$k]=str_replace(array("|","#"),array("",""),$c[$k]);
+            $d[] = $c[$k];
         }
         $d[]=$e;
         $d=array_map('trim',$d);
@@ -241,7 +243,7 @@ for($j=0;$j<count($a);$j++)
         $d=array();
         $t="";
 }
-echo '$verbdata = array("'.implode('","',$out),'");';*/
+echo '$verbdata = array("'.implode('","',$out),'");';
 
 
 /* Method to scrape data from verbdata */
