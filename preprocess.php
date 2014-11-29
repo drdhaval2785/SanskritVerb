@@ -216,7 +216,7 @@ foreach ($a as $value)
 echo implode('","',$val);*/
 
 /* Creating arrays with all the information of a verb from raw data having upadeza, meaning, after it removal, gana, number, P/A/U, seT/veT/aniT */
-$a=file("rawcomplete.txt");
+/*$a=file("rawcomplete.txt");
 for($j=0;$j<count($a);$j++)
 {
     $c=explode("*",$a[$j]);
@@ -244,21 +244,21 @@ for($j=0;$j<count($a);$j++)
         $t="";
 }
 echo '$verbdata = array("'.implode('","',$out),'");';
-
+*/
 
 /* Method to scrape data from verbdata */
-/*foreach ($verbdata as $value)
+foreach ($verbdata as $value)
 {
     $val = explode(":",$value);
     $val = array_map('trim',$val);
-    //if ($val[3]==="10")
-    //{
+    if ($val[3]==="03")
+    {
     $p[]=$val[0];        
     $q[]=$val[7];
-    //}
+    }
 }
 echo implode('","',$p);
 echo "<br><br>";
-echo implode('","',$q);*/
+echo implode('","',$q);
 
 ?>
