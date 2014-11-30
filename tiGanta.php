@@ -1774,15 +1774,11 @@ if ( sub(array("+"),$apit_sArvadhAtuka_pratyayas,blank(0),0))
     $it=array_merge($it,array("N"));
     echo "<p class = sa >sArvadhAtukamapit (1.1.7) :</p>"; 
     echo "<p class = sa >सार्वधातुकमपित्‌ (१.१.७) :</p>";
+    display(0); 
+    echo "<p class = sa >By kGiti ca (1.1.5) 2:</p>"; 
+    echo "<p class = sa >क्ङिति च (१.१.५) :</p>";
     display(0);    
-}
-/* grahijyAvayivyadhivaSTivicativRzcatipRcCatibhRjjatInAM Giti ca (6.1.16) */
-if (ends(array($fo),array("jyA","graha!","vaya!","vyaDa!","vaSa!","vyaca!","o!vraScU!","pracCa!","Brasja!"),4) && in_array("N",$it))
-{
-    $text=two(array("jyA","graha!","vaya!","vyaDa!","vaSa!","vyaca!","o!vraScU!","pracCa!","Brasja!"),array("+"),array("jiA","gfha!","uya!","viDa!","uSa!","vica!","o!vfScU!","pfcCa!","Bfsja!"),array("+"),0);
-    echo "<p class = sa >grahijyAvayivyadhivaSTivicativRzcatipRcCatibhRjjatInAM Giti ca (6.1.16) :</p>"; 
-    echo "<p class = sa >ग्रहिज्यावयिव्यधिवष्टिविचतिवृश्चतिपृच्छतिभृज्जतीनां ङिति (६.१.१६) :</p>";
-    display(0);    
+    $kGiti=1;
 }
 /* mInAternigame (7.3.81) */
 if (sub(array("mIN",),$shitpratyaya,blank(0),0) && ends(array($fo),array("mIN"),4) && in_array($so,$tiG) && $veda===1)
@@ -1877,7 +1873,31 @@ if ($sarvadhatuka===1)
     echo "<p class = sa >प्रत्यय बदलने के बाद (सहजबोध के अनुसार) :</p>";  
     display(0);    
 }
-
+/* grahijyAvayivyadhivaSTivicativRzcatipRcCatibhRjjatInAM Giti ca (6.1.16) */
+if (ends(array($fo),array("jyA","graha!","vaya!","vyaDa!","vaSa!","vyaca!","o!vraScU!","pracCa!","Brasja!"),4) && pratyayareplace2(array("jyA","grah","vay","vyaD","vaS","vyac","vraSc","pracC","Brasj"),array("+"),$apit_sArvadhAtuka_pratyayas,array("jiA","gfh","uy","viD","uS","vic","vfSc","pfcC","Bfsj"),array("+"),$apit_sArvadhAtuka_pratyayas,$text)!==$text )
+{
+    $text=pratyayareplace2(array("jyA","grah","vay","vyaD","vaS","vyac","vraSc","pracC","Brasj"),array("+"),$apit_sArvadhAtuka_pratyayas,array("jiA","gfh","uy","viD","uS","vic","vfSc","pfcC","Bfsj"),array("+"),$apit_sArvadhAtuka_pratyayas,$text);
+    echo "<p class = sa >grahijyAvayivyadhivaSTivicativRzcatipRcCatibhRjjatInAM Giti ca (6.1.16) :</p>"; 
+    echo "<p class = sa >ग्रहिज्यावयिव्यधिवष्टिविचतिवृश्चतिपृच्छतिभृज्जतीनां ङिति (६.१.१६) :</p>";
+    display(0);    
+}
+/* IzaH se (7.2.77) */
+if (ends(array($fo),array("ISa!"),4) && sub(array("+"),array("s"),blank(0),0) && in_array($so,$tiG))
+{
+    $text=three(array("IS"),array("+"),array("s"),array("IS"),array("+"),array("s"),0);
+    echo "<p class = sa >grahijyAvayivyadhivaSTivicativRzcatipRcCatibhRjjatInAM Giti ca (6.1.16) :</p>"; 
+    echo "<p class = sa >ग्रहिज्यावयिव्यधिवष्टिविचतिवृश्चतिपृच्छतिभृज्जतीनां ङिति (६.१.१६) :</p>";
+    display(0);    
+}
+/* dviSazca (3.4.112) */
+if (ends(array($fo),array("dviza!"),4) && pratyayareplace2(array("dviz"),array("+"),array("an"),array("dviz"),array("+"),array("us"),$text)!==$text && in_array($so,$tiG) && $lakAra==="laN")
+{
+    $text1=pratyayareplace2(array("dviz"),array("+"),array("an"),array("dviz"),array("+"),array("us"),$text);
+    $text = array_merge($text,$text1);
+    echo "<p class = sa >By dviSazca (3.4.112) :</p>"; 
+    echo "<p class = sa >द्विषश्च (३.४.११२) :</p>";
+    display(0);    
+}
 /* adaH sarveSAm (7.3.100) */
 if ( pratyayareplace2(array("ad"),array("+"),array("t","s"),array("ad"),array("+"),array("at","as"),$text)!==$text && ends(array($fo),array("ada!"),4) && in_array($so,$tiG) && $sarvadhatuka===1)
 {
@@ -1958,7 +1978,6 @@ if ( sub($vrasca,array("+"),prat("Jl"),0)  && in_array($so,$tiG) )
     display(0); 
     $vras = 1; // 0 - This sUtra has not applied. 1 - This sUtra has applied.
 }
-print_r($text);
 if (arr($text,'/[CS][+]/') && in_array($so,$tiG))
 {
     $text = three(array("C","S"),array("+"),prat('Jl'),array("z","z"),array("+"),prat('Jl'),0);
@@ -2364,6 +2383,11 @@ if ( sub(array("+"),$apit_sArvadhAtuka_pratyayas,blank(0),0))
     echo "<p class = sa >sArvadhAtukamapit (1.1.7) :</p>"; 
     echo "<p class = sa >सार्वधातुकमपित्‌ (१.१.७) :</p>";
     display(0);    
+    echo "<p class = sa >By kGiti ca (1.1.5) 2:</p>"; 
+    echo "<p class = sa >क्ङिति च (१.१.५) :</p>";
+    display(0);    
+    $kGiti=1;
+
 }
 /* jJAjanorjA (7.3.79) */
 if ( ends(array($fo),array("janI!","jYA"),4) && in_array($so,$tiG) )
@@ -2497,9 +2521,18 @@ elseif ( sub(array("i","u","f","x"),$hl,$ArdhadhAtuka_pratyayas,0) && $atolopa!=
     display(0);    
 }
 /* pugantalaghUpadhasya ca (7.3.86) */
-elseif ( sub(array("i","u","f","x"),$hl,$sArvadhAtuka_pratyayas,0) && $atolopa!==1 && ($sarvadhatuka===1 || $ardhadhatuka===1) && arr($text,'/[iufx]['.pc('hl').'][+]/') && $kGiti!==1)
+elseif ( $atolopa!==1 && ($sarvadhatuka===1 || $ardhadhatuka===1) && arr($text,'/[iufx]['.pc('hl').'][+]/') && pratyayareplace2(array("i","u","f","x"),$hlplus,$pit_sArvadhAtuka_pratyayas,array("e","o","ar","al"),$hlplus,$pit_sArvadhAtuka_pratyayas,$text)!==$text)
 {
-    $text=three(array("i","u","f","x"),$hl,$sArvadhAtuka_pratyayas,array("e","o","ar","al"),$hl,$sArvadhAtuka_pratyayas,0);
+    $text=pratyayareplace2(array("i","u","f","x"),$hlplus,$pit_sArvadhAtuka_pratyayas,array("e","o","ar","al"),$hlplus,$pit_sArvadhAtuka_pratyayas,$text);
+    echo "<p class = sa >pugantalaghUpadhasya ca (7.3.86) :</p>"; 
+    echo "<p class = sa >पुगन्तलघूपधस्य च (७.३.८६) :</p>";
+    display(0);    
+}
+/* pugantalaghUpadhasya ca (7.3.86) */
+// for pratyayas deleted by halGyAb..
+elseif ( $atolopa!==1 && ($sarvadhatuka===1 || $ardhadhatuka===1) && arr($text,'/[iufx]['.pc('hl').'][+]$/') && pratyayareplace2(array("i","u","f","x"),$hlplus,blank(0),array("e","o","ar","al"),$hlplus,blank(0),$text)!==$text)
+{
+    $text=pratyayareplace2(array("i","u","f","x"),$hlplus,blank(0),array("e","o","ar","al"),$hlplus,blank(0),$text);
     echo "<p class = sa >pugantalaghUpadhasya ca (7.3.86) :</p>"; 
     echo "<p class = sa >पुगन्तलघूपधस्य च (७.३.८६) :</p>";
     display(0);    
@@ -2521,6 +2554,7 @@ elseif ( pratyayareplace2(array("nu+"),$pit_sArvadhAtuka_pratyayas,blank(0),arra
     echo "<p class = sa >सार्वधातुकार्धधातुकयोः (७.३.८४) :</p>";
     display(0);    
 }
+print_r($text);
 /* removing + from before Ni pratyayas */
 $text = one(array("+i+"),array("i+"),0);
 /* special treatment for qukfY (sahajabodha p. 301) */
@@ -11119,7 +11153,7 @@ $pada="pratyaya";
 $it = array();
 $itprakriti = array();
 $itpratyaya = array();
-$TAp=0; $DAp=0; $cAp=0; $GIp=0; $GIn=0; $GIS=0; $ajAdyataSTAp=0; $tusma=0;
+$TAp=0; $DAp=0; $cAp=0; $GIp=0; $GIn=0; $GIS=0; $kGiti=0; $ajAdyataSTAp=0; $tusma=0;
 }
 ?>
 </body>

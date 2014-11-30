@@ -57,6 +57,7 @@ $noco = array("ac","ic","ec","Ec"); // array where coH kuH won't apply.
 $antastha = array("y","r","l","v"); // antaHstha letters
 $ushma = array("S","z","s","h"); // uSma letters
 $iN = array("i","I","u","U"); // 'iN' pratyAhAra
+foreach ($hl as $value){ $hlplus[] = $value."+"; } // defining $hlplus
 $iN1 = array("i","I","u","U","f","F","x","X","e","o","E","O","h","y","v","r","l","k","K","g","G","N"); // iN and kavarga combined.
 $pratya =  array("aR","ak","ik","uk","eN","ac","ic","ec","Ec","aw","aR","iR","yaR","am","yam","Yam","Nam","yaY","Jaz","Baz","aS","haS","vaS","JaS","jaS","vaS","Cav","yay","may","Jay","Kay","cay","yar","Jar","Kar","car","Sar","al","hal","val","ral","Jal","Sal"); // valid pratyAhAras according to pANinIya vyAkaraNa
 $sup = array("su!","Ow","jas","am","O","Sas","wA","ByAm","Bis","Ne","ByAm","Byas","Nasi!","ByAm","Byas","Nas","os","Am","Ni","os","sup"); // sup pratyayas
