@@ -2683,14 +2683,6 @@ if ( sub(array("daDA"),array("+"),array("tas","Tas","Ta","te","se","Dve","tAt","
     echo "<p class = sa >दधस्तथोश्च (८.२.३८) :</p>";
     display(0);    
 }
-/* ghvasoreddhAvabhyAsalopazca (6.4.119) */
-if ( sub(array("dadA","daDA"),array("+"),array("hi"),0) && in_array($so,$tiG) )
-{
-    $text=three(array("dadA","daDA"),array("+"),array("hi"),array("de","De"),array("+"),array("hi"),0);
-    echo "<p class = sa >By ghvasoreddhAvabhyAsalopazca (6.4.119) :</p>"; 
-    echo "<p class = sa >घ्वसोरेद्धावभ्यासलोपश्च (६.४.११९) :</p>";
-    display(0);    
-}
 /* bhiyo'nyatarasyAm (6.4.115) */
 if ( sub(array("biBI"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,0) && in_array($so,$tiG) )
 {
@@ -2765,6 +2757,22 @@ if ( pratyayareplace2(array("a","i","u","f","x"),array("N+","Y+","R+","n+","m+")
     $text = pratyayareplace2(array("a","i","u","f","x"),array("N+","Y+","R+","n+","m+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("A","I","U","F","F"),array("N+","Y+","R+","n+","m+"),$halAdi_apit_sArvadhAtuka_pratyayas,$text);
     echo "<p class = sa >By anunAsikasya kvijhaloH kGiti (6.4.15) :</p>";
     echo "<p class = sa >अनुनासिकस्य क्विझलोः क्ङिति (६.४.१५) :</p>";  
+    display(0);    
+}
+/* ghvasoreddhAvabhyAsalopazca (6.4.119) */
+if ( sub(array("dadA","daDA"),array("+"),array("hi"),0) && in_array($so,$tiG) && ends(array($fo),array("qudAY","quDAY","dAY","DAY"),4) ) 
+{
+    $text=three(array("dadA","daDA"),array("+"),array("hi"),array("de","De",),array("+"),array("hi"),0);
+    echo "<p class = sa >By ghvasoreddhAvabhyAsalopazca (6.4.119) :</p>"; 
+    echo "<p class = sa >घ्वसोरेद्धावभ्यासलोपश्च (६.४.११९) :</p>";
+    display(0);    
+}
+/* ghvasoreddhAvabhyAsalopazca (6.4.119) */
+if ( sub(array("as"),array("+"),array("Di"),0) && in_array($so,$tiG) && ends(array($fo),array("asa!",),4) && $verbset==="adAdi") 
+{
+    $text=three(array("as"),array("+"),array("Di"),array("e"),array("+"),array("Di"),0);
+    echo "<p class = sa >By ghvasoreddhAvabhyAsalopazca (6.4.119) :</p>"; 
+    echo "<p class = sa >घ्वसोरेद्धावभ्यासलोपश्च (६.४.११९) :</p>";
     display(0);    
 }
 /* dhi ca (8.2.25) */
