@@ -126,7 +126,7 @@ if($verbset!=="none")
     elseif (verb_padafinder($first)===array("A"))
     {
         $suffix=$taG;
-        $Atmanepada=1;
+        $atmanepada=1;
     echo "<p class = st >AtmanepadI :</p>"; 
     echo "<p class = st >आत्मनेपदी :</p>";
     echo "<hr>";
@@ -2043,14 +2043,6 @@ if ((sub(array("s","k"),$hl,prat("Jl"),0) || arr($text,'/[sk]['.flat($hl).'][+]$
     echo "<p class = sa >स्कोः संयोगाद्योरन्ते च (८.२.२९) :</p>";
     display(0);
 }
-/* dhi ca (8.2.25) */
-if ( $lakAra!=="" && sub(array("s"),array("+"),array("D"),0) && in_array($so,$tiG))
-{
-    $text = three(array("s"),array("+"),array("D"),array(""),array("+"),array("D"),0);
-    echo "<p class = sa >By dhi ca (8.2.25) :</p>"; 
-    echo "<p class = sa >धि च (८.२.२५) :</p>";
-    display(0);     
-}
 /* patch for cikIrz */
 if (sub(array("cikIrz"),array("+"),blank(0),0) && in_array($so,$tiG) )
 {
@@ -2569,7 +2561,6 @@ elseif ( pratyayareplace2(array("nu+"),$pit_sArvadhAtuka_pratyayas,blank(0),arra
     echo "<p class = sa >सार्वधातुकार्धधातुकयोः (७.३.८४) :</p>";
     display(0);    
 }
-print_r($text);
 /* removing + from before Ni pratyayas */
 $text = one(array("+i+"),array("i+"),0);
 /* special treatment for qukfY (sahajabodha p. 301) */
@@ -2724,7 +2715,24 @@ if ( $abhyasta===1 && sub(array("A"),array("+"),$apit_sArvadhAtuka_pratyayas,0) 
     echo "<p class = sa >श्नाऽभ्यस्तयोरातः (६.४.११२) :</p>";
     display(0);    
 }
-
+/* znasorallopaH (6.4.111) */
+// znam pending.
+if ( pratyayareplace2(array("as"),array("+"),$apit_sArvadhAtuka_pratyayas,array("s"),array("+"),$apit_sArvadhAtuka_pratyayas,$text)!==$text && (ends(array($fo),array("asa!"),4) && $verbset==="adAdi" ) && (in_array("N",$it)||in_array("k",$it)))
+{
+    $text=pratyayareplace2(array("as"),array("+"),$apit_sArvadhAtuka_pratyayas,array("s"),array("+"),$apit_sArvadhAtuka_pratyayas,$text);
+    echo "<p class = sa >By znasorallopaH (6.4.111) :</p>"; 
+    echo "<p class = sa >श्नसोरल्लोपः (६.४.१११) :</p>";
+    display(0);    
+}
+/* tAsastyorlopaH (7.4.50) */
+// tAsi pending.
+if ( sub(array("as"),array("+"),array("s"),0) && (ends(array($fo),array("asa!"),4) && $verbset==="adAdi" ) && (in_array("N",$it)||in_array("k",$it)))
+{
+    $text=three(array("as"),array("+"),array("s"),array("a"),array("+"),array("s"),0);
+    echo "<p class = sa >By tAsastyorlopaH (7.4.50) :</p>"; 
+    echo "<p class = sa >तासस्त्योर्लोपः (७.४.५०) :</p>";
+    display(0);    
+}
 /* hanterjaH (6.4.36) */
 if ( sub(array("han"),array("+"),array("hi"),0) && in_array($so,$tiG) )
 {
@@ -2751,7 +2759,6 @@ if ( pratyayareplace2(array("man","han","gam","ram","nam","yam","van","tan","san
     echo "<p class = sa >अनुदात्तोपदेशवनतितनोत्यादीनामनुनासिकलोपो झलि क्ङिति (६.४.३७) :</p>";  
     display(0);    
 }
-
 /* anunAsikasya kvijhaloH kGiti (6.4.15) */
 if ( pratyayareplace2(array("a","i","u","f","x"),array("N+","Y+","R+","n+","m+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("A","I","U","F","F"),array("N+","Y+","R+","n+","m+"),$halAdi_apit_sArvadhAtuka_pratyayas,$text)!==$text && in_array($so,$tiG) && (in_array("N",$it)||in_array("k",$it))  && !sub(array("+"),prat("hm"),blank(0),0))
 {
@@ -2759,6 +2766,14 @@ if ( pratyayareplace2(array("a","i","u","f","x"),array("N+","Y+","R+","n+","m+")
     echo "<p class = sa >By anunAsikasya kvijhaloH kGiti (6.4.15) :</p>";
     echo "<p class = sa >अनुनासिकस्य क्विझलोः क्ङिति (६.४.१५) :</p>";  
     display(0);    
+}
+/* dhi ca (8.2.25) */
+if ( $lakAra!=="" && sub(array("s"),array("+"),array("D"),0) && in_array($so,$tiG))
+{
+    $text = three(array("s"),array("+"),array("D"),array(""),array("+"),array("D"),0);
+    echo "<p class = sa >By dhi ca (8.2.25) :</p>"; 
+    echo "<p class = sa >धि च (८.२.२५) :</p>";
+    display(0);     
 }
 /* lopo vyorvali (6.4.65) */
 if ( sub(array("v","y"),array("+"),prat("vl"),0) )
@@ -3272,6 +3287,14 @@ if(in_array($so,$tiG))
 {
     $text=one(array("+"),array(""),0);
 }
+/* tipyanasteH (8.2.73) */
+if ( arr($text,'/[s]$/') && $so==='tip' && $lakAra==="laN")
+{
+    $text = pratyayareplace2(array("s"),blank(0),blank(0),array("d"),blank(0),blank(0),$text);
+    echo "<p class = sa >By tipyanasteH (8.2.73) :</p>";
+    echo "<p class = sa >तिप्यनस्तेः (८.२.७३) :</p>";  
+    display(0);    
+}
 /* dazca (8.2.75) */
 if ( arr($text,'/[d]$/') && $so==='sip' && $lakAra==="laN")
 {
@@ -3283,21 +3306,13 @@ if ( arr($text,'/[d]$/') && $so==='sip' && $lakAra==="laN")
     display(0);    
 }
 /* sipi dhAto rurvA (8.2.74) */
-if ( arr($text,'/[d]$/') && $so==='tip' && $lakAr==="laN")
+if ( arr($text,'/[s]$/') && $so==='sip' && $lakAra==="laN")
 {
-    $text1 = pratyayyareplace2(array("s"),blank(0),blank(0),array("d"),blank(0),blank(0),$text);
-    $text2 = pratyayyareplace2(array("s"),blank(0),blank(0),array("r@"),blank(0),blank(0),$text);
+    $text1 = pratyayareplace2(array("s"),blank(0),blank(0),array("d"),blank(0),blank(0),$text);
+    $text2 = pratyayareplace2(array("s"),blank(0),blank(0),array("r@"),blank(0),blank(0),$text);
     $text = array_merge($text2,$text1);
-    echo "<p class = sa >By tipyanasteH (8.2.73) :</p>";
-    echo "<p class = sa >तिप्यनस्तेः (८.२.७३) :</p>";  
-    display(0);    
-}
-/* tipyanasteH (8.2.73) */
-if ( arr($text,'/[s]$/') && $so==='tip' && $lakAr==="laN")
-{
-    $text = pratyayyareplace2(array("s"),blank(0),blank(0),array("d"),blank(0),blank(0),$text);
-    echo "<p class = sa >By tipyanasteH (8.2.73) :</p>";
-    echo "<p class = sa >तिप्यनस्तेः (८.२.७३) :</p>";  
+    echo "<p class = sa >By sipi dhAto rurvA (8.2.74) :</p>";
+    echo "<p class = sa >सिपि धातो रुर्वा (८.२.७४) :</p>";  
     display(0);    
 }
 /* displaying general information about the sup vibhaktis */
@@ -11168,7 +11183,7 @@ $pada="pratyaya";
 $it = array();
 $itprakriti = array();
 $itpratyaya = array();
-$TAp=0; $DAp=0; $cAp=0; $GIp=0; $GIn=0; $GIS=0; $kGiti=0; $ajAdyataSTAp=0; $tusma=0;
+$TAp=0; $DAp=0; $cAp=0; $GIp=0; $GIn=0; $GIS=0; $kGiti=0; $abhyasta=0; $ajAdyataSTAp=0; $tusma=0;
 }
 ?>
 </body>
