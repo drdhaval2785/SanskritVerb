@@ -1934,7 +1934,14 @@ elseif ( pratyayareplace2(array("+"),array("an"),blank(0),array("+"),array("us")
     display(0);
 }
 /* idito numdhAtoH (7.1.58) */
-if ( in_array("i",$it) && $lakAra!=="" && !ends(array($fo),$irendiditverbs,4) )
+if ( in_array("i",$it) && $lakAra!=="" && ends(array($fo),array("cakzi!N"),4) )
+{
+    echo "<p class = sa >anuvRtti of 'padAnte' bars application of 'idito numdhAtoH' in case of cakSi!G. </p>";
+    echo "<p class = sa >अन्ते इदित इति व्याख्यानात्‌ नुम्‌ तु न ।</p>";
+    display(0);
+}
+/* idito numdhAtoH (7.1.58) */
+elseif ( in_array("i",$it) && $lakAra!=="" && !ends(array($fo),$irendiditverbs,4) )
 {
     $text = two($iditverbs2,array("+"),$iditverbs1,array("+"),0);
     echo "<p class = sa >By idito numdhAtoH (7.1.58) :</p>";
@@ -2035,6 +2042,14 @@ if ((sub(array("s","k"),$hl,prat("Jl"),0) || arr($text,'/[sk]['.flat($hl).'][+]$
     echo "<p class = sa >By skoH saMyogAdyorante ca (8.2.29) :</p>";
     echo "<p class = sa >स्कोः संयोगाद्योरन्ते च (८.२.२९) :</p>";
     display(0);
+}
+/* dhi ca (8.2.25) */
+if ( $lakAra!=="" && sub(array("s"),array("+"),array("D"),0) && in_array($so,$tiG))
+{
+    $text = three(array("s"),array("+"),array("D"),array(""),array("+"),array("D"),0);
+    echo "<p class = sa >By dhi ca (8.2.25) :</p>"; 
+    echo "<p class = sa >धि च (८.२.२५) :</p>";
+    display(0);     
 }
 /* patch for cikIrz */
 if (sub(array("cikIrz"),array("+"),blank(0),0) && in_array($so,$tiG) )
