@@ -2726,7 +2726,7 @@ if ( pratyayareplace2(array("as"),array("+"),$apit_sArvadhAtuka_pratyayas,array(
 }
 /* tAsastyorlopaH (7.4.50) */
 // tAsi pending.
-if ( sub(array("as"),array("+"),array("s"),0) && (ends(array($fo),array("asa!"),4) && $verbset==="adAdi" ) && (in_array("N",$it)||in_array("k",$it)))
+if ( sub(array("as"),array("+"),array("s"),0) && (ends(array($fo),array("asa!"),4) && $verbset==="adAdi" ))
 {
     $text=three(array("as"),array("+"),array("s"),array("a"),array("+"),array("s"),0);
     echo "<p class = sa >By tAsastyorlopaH (7.4.50) :</p>"; 
