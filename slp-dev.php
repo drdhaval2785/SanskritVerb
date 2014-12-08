@@ -126,6 +126,7 @@ $ch['hk'] = array(
 $text = str_replace("kxp","कॢप्",$text); // patch for ळ removal
 $text = str_replace("\n ", "\n", $text);
 $text = str_replace(" /'","/'",$text);
+$text = str_replace("/#'","",$text);
 $text = str_replace($ch['slp'],$ch['hk'],$text);
 $v = "्"; // Virama
 
@@ -275,7 +276,7 @@ $main['scr'] = array(
 	
 	40 => "ऽ", // apostrophe (avagraha)
 	41 => "’", // Latin apostrophe (’)
-	42 => "॰", // Abbreviation
+	42 => "", // Abbreviation
 	
 	116 => "ख", // kha
 	115 => "क", // ka
