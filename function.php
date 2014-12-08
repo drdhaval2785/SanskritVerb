@@ -1726,7 +1726,7 @@ function tiGreplace()
    {
         if ($lakAra==="low" && in_array($so,$tis))
         {
-            $text=pratyayareplace($tiG_law_parasmai_1,$tiG_low_parasmai_1,$text);
+            $text=pratyayareplace($tiG_law_parasmai_2,$tiG_low_parasmai_2,$text);
         }        
         if ($lakAra==="laN" && in_array($so,$tis))
         {
