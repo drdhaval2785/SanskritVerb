@@ -1872,8 +1872,6 @@ if (arr($text,'/['.flat($ac).'][!]/') && in_array($so,$tiG) )
     echo "<p class = sa >तस्य लोपः (१.३.९) :</p>";
     display(0);    
 }
-echo $set;
-print_r($text);
 /* Making provision for temporary change of pratyayas */
 // sahajabodha gives ready made custom pratyayas for all lakAras. Right now we are adopting them. After some time it may become obsolete when the machine itself has learnt all the pratyayakAryas.
 if ($sarvadhatuka===1)
@@ -1907,6 +1905,25 @@ if ($rudhAdibhyaH===1)
         echo "<p class = sa >By znasorallopaH (6.4.111) :</p>";
         echo "<p class = sa >श्नसोरल्लोपः (६.४.१११) :</p>";
         display(0);            
+    }
+    if (sub(array("tfnah"),array("+"),blank(0),0))
+    {
+        $text = one(array("tfnah+"),array("tfRah+"),0);
+        echo "<p class = sa >By RvarNAnnasya NatvaM vAcyam (vA 4969) :</p>";
+        echo "<p class = sa >ऋवर्णान्नस्य णत्वं वाच्यम्‌ (वा ४९६९) :</p>";     
+        display(0);
+    }
+    /* tRNaha im (7.3.92) */
+    if (pratyayareplace2(array("tfRah"),array("+"),$halAdi_pit_sArvadhAtuka_pratyayas,array("tfRaih"),array("+"),$halAdi_pit_sArvadhAtuka_pratyayas,$text)!==$text && in_array($so,$tiG))
+    {
+        $text = pratyayareplace2(array("tfRah"),array("+"),$halAdi_pit_sArvadhAtuka_pratyayas,array("tfRaih"),array("+"),$halAdi_pit_sArvadhAtuka_pratyayas,$text);
+        echo "<p class = sa >By tRNaha im (7.3.92) :</p>";
+        echo "<p class = sa >तृणह इम्‌ (७.३.९२) :</p>";     
+        display(0);
+        $text = one(array("tfRaih"),array("tfReh"),0);
+        echo "<p class = sa >By AdguNaH (6.1.87) :</p>";
+        echo "<p class = sa >आद्गुणः (६.१.८७) :</p>";
+        display(0);
     }
 }
 /* dAderdhAtorghaH (8.2.33) */
@@ -10391,6 +10408,7 @@ if ( arr($text,'/[@r]$/')||arr($text,'/[r][+]$/') && $roHsupi===0)
 /* Dho Dhe lopaH (8.3.13) */
 if (sub(array("Q"),array("Q"),blank(0),0))
 {
+    $text = three(array("e","o","E","O","M","H"),array("Q"),array("Q"),array("e","o","E","O","M","H"),array(""),array("Q"),0);
     $text = two(array('Q'),array('Q'),array(''),array('#Q'),0); 
     echo "<p class = sa >By Dho Dhe lopaH (8.3.13) :</p>";
     echo "<p class = sa >ढो ढे लोपः (८.३.१३) :</p>";
@@ -10400,6 +10418,7 @@ if (sub(array("Q"),array("Q"),blank(0),0))
 /* ro ri (8.3.14) */
 if (sub(array("r"),array("r"),blank(0),0))
 {
+    $text = three(array("e","o","E","O","M","H"),array("r"),array("r"),array("e","o","E","O","M","H"),array(""),array("r"),0);
     $text = two(array('r'),array('r'),array(''),array('#r'),0); 
     echo "<p class = sa >By ro ri (8.3.14) :</p>";
     echo "<p class = sa >रो रि (८.३.१४) :</p>";
@@ -11056,7 +11075,7 @@ $text = two(array("n"),$Tu,array("R"),$Tu,0);
 /* Dho Dhe lopaH (8.3.13) */
 if (sub(array("Q"),array("Q"),blank(0),0))
 {
-    $text = three(array("e","o","E","O"),array("Q"),array("Q"),array("e","o","E","O"),array(""),array("Q"),0);
+    $text = three(array("e","o","E","O","M","H"),array("Q"),array("Q"),array("e","o","E","O","M","H"),array(""),array("Q"),0);
     $text = two(array('Q'),array('Q'),array(''),array('#Q'),0); 
     echo "<p class = sa >By Dho Dhe lopaH (8.3.13) :</p>";
     echo "<p class = sa >ढो ढे लोपः (८.३.१३) :</p>";
@@ -11066,7 +11085,7 @@ if (sub(array("Q"),array("Q"),blank(0),0))
 /* ro ri (8.3.14) */
 if (sub(array("r"),array("r"),blank(0),0))
 {
-    $text = three(array("e","o","E","O"),array("r"),array("r"),array("e","o","E","O"),array(""),array("r"),0);
+    $text = three(array("e","o","E","O","M","H"),array("r"),array("r"),array("e","o","E","O","M","H"),array(""),array("r"),0);
     $text = two(array('r'),array('r'),array(''),array('#r'),0); 
     echo "<p class = sa >By ro ri (8.3.14) :</p>";
     echo "<p class = sa >रो रि (८.३.१४) :</p>";
