@@ -1680,6 +1680,8 @@ function tiGreplace()
     $tiG_laN_Atmane_1=array("ta","itAm","anta","TAs","iTAm","Dvam","i","vahi","mahi");
     $tiG_viDiliN_parasmai_1=array("it","itAm","iyus","is","itam","ita","iyam","iva","ima");
     $tiG_viDiliN_Atmane_1=array("Ita","IyAtAm","Iran","ITAs","IyATAm","IDvam","Iya","Ivahi","Imahi");
+    $tiG_sArvaDAtukalew_parasmai_1=array("ati","atas","anti","asi","aTas","aTa","ami","avas","amas");
+    $tiG_sArvaDAtukalew_Atmane_1=array("ate","Ete","ante","ase","ETe","aDve","e","avahe","amahe");
 // second set pratyayas
     $default_Atmane_2=array("ta","AtAm","anta","TAs","ATAm","Dvam","i","vahi","mahi");  
     $tiG_law_Atmane_2=array("te","Ate","ante","se","ATe","Dve","i","vahe","mahe");
@@ -1691,6 +1693,8 @@ function tiGreplace()
     $tiG_laN_Atmane_2=array("ta","AtAm","ata","TAs","ATAm","Dvam","i","vahi","mahi");
     $tiG_viDiliN_parasmai_2=array("yAt","yAtAm","yus","yAs","yAtam","yAta","yAm","yAva","yAma");
     $tiG_viDiliN_Atmane_2=array("Ita","IyAtAm","Iran","ITAs","IyATAm","IDvam","Iya","Ivahi","Imahi");
+    $tiG_sArvaDAtukalew_parasmai_2=array("ati","atas","anti","asi","aTas","aTa","ami","avas","amas");
+    $tiG_sArvaDAtukalew_Atmane_2=array("ate","Ete","ante","ase","ETe","aDve","e","avahe","amahe");
    if($set===1)
    {
         if ($lakAra==="low" && in_array($so,$tis))
@@ -1704,6 +1708,10 @@ function tiGreplace()
         if ($lakAra==="viDiliN" && in_array($so,$tis))
         {
             $text=pratyayareplace($tiG_law_parasmai_1,$tiG_viDiliN_parasmai_1,$text);
+        }        
+        if ($lakAra==="sArvadhAtukalew" && in_array($so,$tis))
+        {
+            $text=pratyayareplace($tiG_law_parasmai_1,$tiG_sArvaDAtukalew_parasmai_1,$text);
         }        
         if ($lakAra==="law" && in_array($so,$taG))
         {
@@ -1721,6 +1729,10 @@ function tiGreplace()
         {
             $text=pratyayareplace($default_Atmane_1,$tiG_viDiliN_Atmane_1,$text);
         }               
+        if ($lakAra==="sArvadhAtukalew" && in_array($so,$taG))
+        {
+            $text=pratyayareplace($default_Atmane_1,$tiG_sArvaDAtukalew_Atmane_1,$text);
+        }               
    }
    if($set===2)
    {
@@ -1735,6 +1747,10 @@ function tiGreplace()
         if ($lakAra==="viDiliN" && in_array($so,$tis))
         {
             $text=pratyayareplace($tiG_law_parasmai_2,$tiG_viDiliN_parasmai_2,$text);
+        }        
+        if ($lakAra==="sArvadhAtukalew" && in_array($so,$tis))
+        {
+            $text=pratyayareplace($tiG_law_parasmai_2,$tiG_sArvaDAtukalew_parasmai_2,$text);
         }        
         if ($lakAra==="law" && in_array($so,$taG))
         {
@@ -1752,8 +1768,13 @@ function tiGreplace()
         {
             $text=pratyayareplace($default_Atmane_2,$tiG_viDiliN_Atmane_2,$text);
         }               
+        if ($lakAra==="sArvadhAtukalew" && in_array($so,$taG))
+        {
+            $text=pratyayareplace($default_Atmane_2,$tiG_sArvaDAtukalew_Atmane_2,$text);
+        }               
    }
     // patch for optional forms.
+   // Patch for sArvadhAtuka leT forms is pending. 
     foreach ($text as $val1)
     {
         if (strpos($val1,"+tAt")!==false && $set===1)

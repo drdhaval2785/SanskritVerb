@@ -2617,6 +2617,7 @@ if ( sub(array("vid"),array("+"),array("ate","ata","atAm"),0) && in_array($so,$t
     echo "<p class = sa >वेत्तेर्विभाषा (७.१.७) :</p>";
     display(0);    
 }
+print_r($text); echo $kGiti; print_r($it);
 /* udoSThyapUrvasya (7.1.102) */
 if ( sub(array("pF","PF","bF","BF","mF"),array("+"),$apit_sArvadhAtuka_pratyayas,0) && in_array($so,$tiG) )
 {
@@ -2645,9 +2646,9 @@ elseif ($vras===1) // escaping this - because vrazca... is tripAdI function.
 {
 }
 /* pugantalaghUpadhasya ca (7.3.86) */
-elseif ( sub(array("i","u","f","x"),$hl,array("+u+"),0) && $atolopa!==1 && ($sarvadhatuka===1 || $ardhadhatuka===1) && arr($text,'/[iufx]['.pc('hl').'][+]/') )
+elseif ( sub(array("i","u","f","x"),$hl,array("+u+","+i+"),0) && $atolopa!==1 && ($sarvadhatuka===1 || $ardhadhatuka===1) && arr($text,'/[iufx]['.pc('hl').'][+]/') )
 {
-    $text=three(array("i","u","f","x"),$hl,array("+u+"),array("e","o","ar","al"),$hl,array("+u+"),0);
+    $text=three(array("i","u","f","x"),$hl,array("+u+","+i+"),array("e","o","ar","al"),$hl,array("+u+","+i+"),0);
     echo "<p class = sa >pugantalaghUpadhasya ca (7.3.86) :</p>"; 
     echo "<p class = sa >पुगन्तलघूपधस्य च (७.३.८६) 1:</p>";
     display(0);    
