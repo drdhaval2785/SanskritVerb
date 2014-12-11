@@ -2025,28 +2025,20 @@ elseif (sub(array("+"),$taGplus,blank(0),0) && in_array($so,$taG) && in_array($l
     echo "<p class = sa >टित आत्मनेपदानां टेरे (३.४.७९) :</p>";  
     display(0);
 }
+/* eta ai (3.4.93) */
+if ( pratyayareplace2(array("+"),array("e","vahe","mahe"),blank(0),array("+"),array("E","vahE","mahE"),blank(0),$text)!==$text && $lakAra==="low")
+{
+    $text=pratyayareplace2(array("+"),array("e","vahe","mahe"),blank(0),array("+"),array("E","vahE","mahE"),blank(0),$text);
+    echo "<p class = sa >By eta ai (3.4.93) :</p>";
+    echo "<p class = sa >एत ऐ (३.४.९३) :</p>";  
+    display(0);
+}
 /* savAbhyAM vAmau (3.4.91) */
 if ( pratyayareplace2(array("se","ve"),array(""),blank(0),array("sva","vam"),array(""),blank(0),$text)!==$text && $lakAra==="low")
 {
     $text=pratyayareplace2(array("se","ve"),array(""),blank(0),array("sva","vam"),array(""),blank(0),$text);
     echo "<p class = sa >By savAbhyAM vAmau (3.4.91) :</p>";
     echo "<p class = sa >सवाभ्यां वामौ (३.४.९१) :</p>";  
-    display(0);
-}
-/* eta ai (3.4.93) */
-if ( pratyayareplace2(array("+"),array("Ae","Avahe","Amahe"),blank(0),array("+"),array("AE","AvahE","AmahE"),blank(0),$text)!==$text && $lakAra==="low")
-{
-    $text=pratyayareplace2(array("+"),array("Ae","Avahe","Amahe"),blank(0),array("+"),array("AE","AvahE","AmahE"),blank(0),$text);
-    echo "<p class = sa >By eta ai (3.4.93) :</p>";
-    echo "<p class = sa >एत ऐ (३.४.९३) :</p>";  
-    display(0);
-}
-/* Am etaH (3.4.90) */
-if ( pratyayareplace2(array("e"),array(""),blank(0),array("Am"),array(""),blank(0),$text)!==$text && $lakAra==="low")
-{
-    $text=pratyayareplace2(array("e"),array(""),blank(0),array("Am"),array(""),blank(0),$text);
-    echo "<p class = sa >By Am etaH (3.4.90) :</p>";
-    echo "<p class = sa >आमेतः (३.४.९०) :</p>";  
     display(0);
 }
 /* loTo laGvat (3.4.85) */
@@ -2084,13 +2076,21 @@ if ( pratyayareplace2(array("i"),array(""),blank(0),array(""),array(""),blank(0)
     $itazca=1;
 } else {$itazca=0; }
 /* ADuttamasya picca (3.4.92) */
-if ( pratyayareplace2(array("+"),array("ni","va","ma","e","vahe","mahe"),blank(0),array("+"),array("Ani","Ava","Ama","Ae","Avahe","Amahe"),blank(0),$text)!==$text && $lakAra==="low")
+if ( pratyayareplace2(array("+"),array("ni","va","ma","E","vahE","mahE"),blank(0),array("+"),array("Ani","Ava","Ama","AE","AvahE","AmahE"),blank(0),$text)!==$text && $lakAra==="low")
 {
-    $text=pratyayareplace2(array("+"),array("ni","va","ma","e","vahe","mahe"),blank(0),array("+"),array("Ani","Ava","Ama","Ae","Avahe","Amahe"),blank(0),$text);
+    $text=pratyayareplace2(array("+"),array("ni","va","ma","E","vahE","mahE"),blank(0),array("+"),array("Ani","Ava","Ama","AE","AvahE","AmahE"),blank(0),$text);
     echo "<p class = sa >By ADuttamasya picca (3.4.92) :</p>";
     echo "<p class = sa >आडुत्तमस्य पिच्च (३.४.९२) :</p>";  
     display(0);
     $Agama=array("Aw");   
+}
+/* Am etaH (3.4.90) */
+if ( pratyayareplace2(array("e"),array(""),blank(0),array("Am"),array(""),blank(0),$text)!==$text && $lakAra==="low")
+{
+    $text=pratyayareplace2(array("e"),array(""),blank(0),array("Am"),array(""),blank(0),$text);
+    echo "<p class = sa >By Am etaH (3.4.90) :</p>";
+    echo "<p class = sa >आमेतः (३.४.९०) :</p>";  
+    display(0);
 }
 /* tuhyostAtaGGAziSyanyatarsyAm (7.1.35) */
 if ( pratyayareplace2(array("+"),array("tu","hi"),blank(0),array("+"),array("tAt","tAt"),blank(0),$text)!==$text && in_array($so,$tiG) )
@@ -2771,11 +2771,11 @@ if ( sub(array("+"),$apit_sArvadhAtuka_pratyayas,blank(0),0))
 
 }
 /* Ato GitaH (7.2.89) */
-if ( sub(array("a"),array("+A"),blank(0),0) && in_array($so,$tiG) && in_array("N",$it))
+if ( sub(array("a"),array("+A"),blank(0),0) && in_array($so,$tiG) && in_array($lakAra,$GitlakAra))
 {
     $text=two(array("a"),array("+A"),array("a"),array("+iy+"),0);
-    echo "<p class = sa >By jJAjanorjA (7.3.79) :</p>"; 
-    echo "<p class = sa >ज्ञाजनोर्जा (७.३.७९) :</p>";
+    echo "<p class = sa >By Ato GitaH (7.2.89) :</p>"; 
+    echo "<p class = sa >आतो ङितः (७.२.८९) :</p>";
     display(0);    
 }
 /* jJAjanorjA (7.3.79) */
