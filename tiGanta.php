@@ -1749,6 +1749,14 @@ if (in_array($so,array("Ji")) && ($lakAra==="ASIrliN"||$lakAra==="viDiliN") )
     display(0);
     $jherjus=1;
 }
+/* jhasya ran (3.4.105) */
+if (pratyayareplace2(array("+"),array("Ja"),blank(0),array("+"),array("ran"),blank(0),$text)!==$text && in_array($so,array("Ja")) )
+{
+    $text=pratyayareplace2(array("+"),array("Ja"),blank(0),array("+"),array("ran"),blank(0),$text);
+    echo "<p class = sa >By jhasya ran (3.4.105) :</p>"; 
+    echo "<p class = sa >झस्य रन्‌ (३.४.१०५) :</p>";
+    display(0);    
+}
 /* AtmanepadeSvanataH (7.1.5) */
 if (pratyayareplace2(array("+"),array("Ja"),blank(0),array("+"),array("ata"),blank(0),$text)!==$text && in_array($so,array("Ja")) && $set===2)
 {
@@ -1879,6 +1887,7 @@ if (arr($text,'/['.flat($ac).'][!]/') && in_array($so,$tiG) )
     echo "<p class = sa >तस्य लोपः (१.३.९) :</p>";
     display(0);    
 }
+$taGplus=array_merge($taG,array("anta","mahi","ata","i","ran")); // including the altered forms.
 /* sArvadhAtuka leT - treatment of pratyayas */
 $tiG_noanubandha=array("ti","tas","anti","si","Tas","Ta","mi","vas","mas","te","ite","ante","se","iTe","Dve","e","vahe","mahe");
 if ($lakAra==="sArvaDAtukalew")
@@ -1925,6 +1934,14 @@ if ($lakAra==="sArvaDAtukalew")
     display(0);        
     }    
 }
+/* liGaH sIyuT (3.4.102) */
+if ( in_array($lakAra,array("viDiliN","ASIrliN")) && in_array($so,$taGplus) )
+{
+    $text=pratyayareplace2(array("+"),$taGplus,blank(0),array("+sIy+"),$taGplus,blank(0),$text);
+    echo "<p class = sa >By liGaH sIyuT (3.4.102) :</p>";
+    echo "<p class = sa >लिङः सीयुट्‌ (३.४.१०२) :</p>";  
+    display(0);
+}
 $tisremoved=array("ti","tas","anti","jus","si","Tas","Ta","mi","vas","mas");
 /* yAsuT parasmaipadeSUdAtto Gicca (3.4.103) */
 if ( in_array($lakAra,array("viDiliN","ASIrliN")) && in_array($so,$tis) )
@@ -1958,11 +1975,19 @@ if ( in_array($lakAra,array("viDiliN","ASIrliN")) && sub(array("+"),array("t","T
     }
 }
 /* liGaH salopo'nantyasya (7.2.79) */
-if ( in_array($lakAra,array("viDiliN")) && sub(array("+yAs+"),$al,blank(0),0))
+if ( in_array($lakAra,array("viDiliN")) && sub(array("+yAs+","+sIy+"),$al,blank(0),0))
 {
-    $text=one(array("+yAs+"),array("+yA+"),0);
+    $text=one(array("+yAs+","+sIy+"),array("+yA+","+Iy+"),0);
     echo "<p class = sa >By liGaH salopo'nantyasya (7.2.79) :</p>";
     echo "<p class = sa >लिङः सलोपोऽनन्त्यस्य (७.२.७९) :</p>";  
+    display(0);
+}
+/* iTo't (3.4.106) */
+if ( in_array($lakAra,array("viDiliN","ASIrliN")) && sub(array("+Iy+i"),array(""),blank(0),0))
+{
+    $text=two(array("+Iy"),array("+i"),array("+Iy"),array("+a"),0);
+    echo "<p class = sa >By iTo't (3.4.106) :</p>";
+    echo "<p class = sa >इटोऽत्‌ (३.४.१०६) :</p>";  
     display(0);
 }
 /* ato yeyaH (7.2.80) */
@@ -2006,7 +2031,6 @@ if ( pratyayareplace2(array("+"),array("mi"),blank(0),array("+"),array("ni"),bla
     display(0);
 }
 /* thAsasse (3.4.80) */
-$taGplus=array_merge($taG,array("anta","mahi","ata","i")); // including the altered forms.
 if (sub(array("+"),array("TAs"),blank(0),0) && $pada === "pratyaya" && in_array($so,array("TAs")) && in_array($lakAra,array("law","liw","luw","lfw","sArvaDAtukalew","ArDaDAtukalew","low")))
 {
     $text=one(array("+TAs"),array("+se"),0);
