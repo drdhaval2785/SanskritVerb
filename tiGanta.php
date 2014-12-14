@@ -126,6 +126,13 @@ elseif (in_array($first,$allverbs))
 {
     verb_meaning_gana_number1($first);
 }
+/* upasarga display */
+if ($us!=="none")
+{
+    echo "<p class = st >upasarga:  $us</p>"; 
+    echo "<p class = st >उपसर्गः : ".convert($us)."</p>";
+    echo "<hr>";
+}
 /* In case the user has selected some gaNa, the pada has to correspond to that gaNa */
 if($verbset!=="none")
 {
@@ -3804,6 +3811,16 @@ if ( arr($text,'/[s]$/') && $so==='sip' && $lakAra==="laN" && $halGyAbbhyo===1)
     echo "<p class = sa >सिपि धातो रुर्वा (८.२.७४) :</p>";  
     display(0);    
 }
+
+/* Adding upasargas to the input verb. */
+if ($us!=="none" && in_array($so,$tiG))
+{
+    $text = Adyanta($text,$us,1);
+    echo "<p class = sa >Adding upasargas :</p>";
+    echo "<p class = sa >उपसर्ग लगाने पर :</p>";  
+    display(0);    
+}
+
 /* displaying general information about the sup vibhaktis */
 /* arthavadadhAturapratyayaH prAtipadikam (1.2.45), kRttaddhitasamAsAzca (1.2.46), pratyayaH (3.1.1), parazca (3.1.2), GyAppradipadikAt (4.1.1), svaujasamauTCaSTAbhyAmbhisGebhyAmbhyasGasibhyAmbhyasGasosAmGyossup (4.1.2), vibhaktizca (1.4.104), supaH (1.4.103) */
 // For future sUtras also, code for each sUtra is separated by /* xyz.... */.

@@ -1650,6 +1650,7 @@ function change($a,$b)
     return $val;
 } 
 /* function Adyanta */
+// $text - input array, $a - string to be added. $b - 1 for Adi, 2 for anta.
 function Adyanta($text,$a,$b)
 {
     foreach ($text as $value)
