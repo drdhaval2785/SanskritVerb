@@ -2214,20 +2214,22 @@ if (sub($dade,blank(0),blank(0),0) && (arr($text,'/[+]$/') || arr($text,'/[+]['.
     display(0); 
     $hodha1 = 1; // 0 - doesn't prevent ho DhaH. 1 - prevents ho DhaH.
 } else { $hodha1 = 0; } 
+print_r($text);
 /* grahijyAvayivyadhivaSTivicativRzcatipRcCatibhRjjatInAM Giti ca (6.1.16) */
-if (ends(array($fo),array("jyA","graha!","vaya!","vyaDa!","vaSa!","vyaca!","o!vraScU!","pracCa!","Brasja!"),4) && pratyayareplace2(array("jyA","grah","vay","vyaD","vaS","vyac","vraSc","pracC","Brasj"),array("+"),$apit_sArvadhAtuka_pratyayas,array("jiA","gfh","uy","viD","uS","vic","vfSc","pfcC","Bfsj"),array("+"),$apit_sArvadhAtuka_pratyayas,$text)!==$text )
+if (ends(array($fo),array("jyA","graha!","vaya!","vyaDa!","vaSa!","vyaca!","o!vraScU!","pracCa!","Brasja!"),4) && sub(array("jyA","grah","vay","vyaD","vaS","vyac","vraSc","pracC","Brasj"),array("+"),$apit_sArvadhAtuka_pratyayas,0) )
 {
-    $text=pratyayareplace2(array("jyA","grah","vay","vyaD","vaS","vyac","vraSc","pracC","Brasj"),array("+"),$apit_sArvadhAtuka_pratyayas,array("jiA","gfh","uy","viD","uS","vic","vfSc","pfcC","Bfsj"),array("+"),$apit_sArvadhAtuka_pratyayas,$text);
+    $text=three(array("jyA","grah","vay","vyaD","vaS","vyac","vraSc","pracC","Brasj"),array("+"),$apit_sArvadhAtuka_pratyayas,array("jiA","gfh","uy","viD","uS","vic","vfSc","pfcC","Bfsj"),array("+"),$apit_sArvadhAtuka_pratyayas,$text);
     echo "<p class = sa >grahijyAvayivyadhivaSTivicativRzcatipRcCatibhRjjatInAM Giti ca (6.1.16) :</p>"; 
     echo "<p class = sa >ग्रहिज्यावयिव्यधिवष्टिविचतिवृश्चतिपृच्छतिभृज्जतीनां ङिति (६.१.१६) :</p>";
     display(0);    
+    $text = samprasarana(array("jyA","grah","vay","vyaD","vaS","vyac","vraSc","pracC","Brasj"),0);
 }
 /* IzaH se (7.2.77) */
 if (ends(array($fo),array("ISa!"),4) && sub(array("+"),array("s"),blank(0),0) && in_array($so,$tiG))
 {
     $text=three(array("IS"),array("+"),array("s"),array("IS"),array("+"),array("s"),0);
-    echo "<p class = sa >grahijyAvayivyadhivaSTivicativRzcatipRcCatibhRjjatInAM Giti ca (6.1.16) :</p>"; 
-    echo "<p class = sa >ग्रहिज्यावयिव्यधिवष्टिविचतिवृश्चतिपृच्छतिभृज्जतीनां ङिति (६.१.१६) :</p>";
+    echo "<p class = sa >IzaH se (7.2.77) :</p>"; 
+    echo "<p class = sa >ईषः से (७.२.७७) :</p>";
     display(0);    
 }
 /* dviSazca (3.4.112) */
@@ -3284,10 +3286,12 @@ if (ends(array($fo),array("jyA"),4) && in_array("N",$it))
     echo "<p class = sa >grahijyAvayivyadhivaSTivicativRzcatipRcCatibhRjjatInAM Giti ca (6.1.16) :</p>"; 
     echo "<p class = sa >ग्रहिज्यावयिव्यधिवष्टिविचतिवृश्चतिपृच्छतिभृज्जतीनां ङिति (६.१.१६) :</p>";
     display(0);    
-    $text=two(array("jiA"),array("+"),array("ji"),array("+"),0);
+/*    $text=two(array("jiA"),array("+"),array("ji"),array("+"),0);
     echo "<p class = sa >samprasAraNAcca (6.1.104) :</p>"; 
     echo "<p class = sa >सम्प्रसारणाच्च (६.१.१०४) :</p>";
     display(0);    
+ */
+    $text = samprasarana(array("jyA"),0);
     $text=two(array("ji"),array("+"),array("jI"),array("+"),0);
     echo "<p class = sa >halaH (6.4.2) :</p>"; 
     echo "<p class = sa >हलः (६.४.२) :</p>";

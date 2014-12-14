@@ -1196,15 +1196,34 @@ function mit($pattern,$b,$merge)
     return $text;
 }
 /* function samprasarana */
-function samprasarana($a,$merge)
+function samprasarana($input,$merge)
 {
-    $yan = array("y","v","r","l");
-    $yanik = array("i","u","f","x"); // list of samprasAraNa for yaN.
-    foreach ($a as $value)
+    global $text; global $ac;
+    $yan = array("ya","va","ra","la");
+    $yanik = array("ia","ua","fa","xa"); // list of samprasAraNa for yaN.
+    foreach ($input as $value)
     {
-    $b[] = str_replace($yan,$yanik,$a);        // doing samprasARaNa.
-    }    
-    return $b;
+        $val1[]=str_replace($yan,$yanik,$value);
+    }
+        if ($merge===0)
+        {
+            $text = one($input,$val1,0);        // doing samprasARaNa.            
+        }
+        if ($merge===1)
+        {
+            $text = one($input,$val1,1);        // doing samprasARaNa.            
+        }
+        echo "<p class = sa >igyaNaH samprasAraNam (1.1.45) :</p>";
+        echo "<p class = sa >इग्यणः सम्प्रसारणम्‌ (१.१.४५) :</p>";
+        display(0);
+    if (arr($val1,'/[iufx][aAiIuUfFxXeEoO]/'))
+    {
+        $text = two(array("i","u","f","x"),$ac,array("i","u","f","x"),blank(count($ac)),0);
+        echo "<p class = sa >samprasAraNAcca (6.1.104) :</p>"; 
+        echo "<p class = sa >सम्प्रसारणाच्च (६.१.१०४) :</p>";
+        display(0);    
+    }        
+    return $text;
 }
 /* function itcheck */
 // $a to contain the array of it markers to check.
