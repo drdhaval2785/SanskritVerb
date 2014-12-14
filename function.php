@@ -237,7 +237,25 @@ $apit_sArvadhAtuka_pratyayas=array("Satf!","SAnac","SAnan","cAnaS","KaS","Sa","e
 // halAdi pratyayas and ajAdi pratyayas
 $ajAdi_sArvadhAtuka_pratyayas=array("Ani","Ava","Ama","E","AvahE","AmahE","am","Sap","Satf!","SAnac","SAnan","cAnaS","KaS","Sa","eS","SaDyE","SaDyEn","anti","Ate","ate","ATe","e","ati","antu","AtAm","atAm","ATAm","atu","an","AtAm","ata","ATAm","i","us","Ita","IyAtAm","Iran","ITAs","IyATAm","IDvam","Iya","Ivahi","Imahi","Sa","SAyac","SAnac");
 $halAdi_sArvadhAtuka_pratyayas=array("ti","si","mi","tu","t","s","tas","Tas","Ta","vas","mas","te","se","Dve","vahe","mahe","tAt","tAm","hi","tAt","tam","ta","tAm","sva","Dvam","tAm","tam","ta","va","ma","ta","TAs","Dvam","vahi","mahi","yAt","yAtAm","yus","yAs","yAtam","yAta","yAm","yAva","yAma","Syan","Snu","Snam","SnA","SAyac","SAnac","ya");
-// ArdhadhAtuka pratyayas trial. Not a complete list
+// ArdhadhAtuka tiG pratyayas. Now trying to complete the list according to sahajabodha.
+$ArdhadhAtuka_tiG_lRT_parasmai=array("syati","syatas","syanti","syasi","syaTas","syaTa","syAmi","syAvas","syAmas",);
+$ArdhadhAtuka_tiG_lRG_parasmai=array("syat","syatAm","syan","syas","syatam","syata","syam","syAva","syAma",);
+$ArdhadhAtuka_tiG_luT_parasmai=array("tA","tArO","tAras","tAsi","tAsTas","tAsTa","tAsmi","tAsvas","tAsmas",);
+$ArdhadhAtuka_tiG_ASIrliN_parasmai=array("yAt","yAstAm","yAsus","yAs","yAstam","yAsta","yAsam","yAsva","yAsma");
+$ArdhadhAtuka_tiG_liT_parasmai=array("Ral","atus","us","Tal","aTus","a","Ral","va","ma",);
+$ArdhadhAtuka_tiG_luG_parasmai=array(); // pending. sahajabodha 1 p. 21
+$ArdhadhAtuka_tiG_ArDaDAtukalew_parasmai=array(); // pending. sahajabodha 1 p. 23
+$ArdhadhAtuka_tiG_lRT_Atmane=array("syate","syete","syante","syase","syeTe","syaDve","sye","syAvahe","syAmahe",);
+$ArdhadhAtuka_tiG_lRG_Atmane=array("syata","syetAm","syanta","syaTAs","syaeTAm","syaDvam","sye","syAvahi","syAmahi",);
+$ArdhadhAtuka_tiG_luT_Atmane=array("tA","tArO","tAras","tAse","tAsATe","tADve","tAhe","tAsvahe","tAsmahe",);
+$ArdhadhAtuka_tiG_ASIrliN_Atmane=array("sIzwa","sIyAstAm","sIran","sIzWAs","sIyAsTAm","sIDvam","sIya","sIvahi","sImahi");
+$ArdhadhAtuka_tiG_liT_Atmane=array("e","Ate","ire","se","ATe","Dve","e","vahe","mahe",);
+$ArdhadhAtuka_tiG_luG_Atmane=array(); // pending. sahajabodha 1 p. 21
+$ArdhadhAtuka_tiG_ArDaDAtukalew_Atmane=array(); // pending. sahajabodha 1 p. 23
+// ArdhadhAtuka kRt pratyayas.
+$ArdhadhAtuka_kRt_pratyayas= array("Rvul","vuY","Ryat","GaY","Rini","Ra","Ryuw","aR","KukaY","Rvi","Yyuw","Rvin","GinuR","ukaY","uR","Rac","inuR","iY","Rvuc","Ramul","KamuY","tavya","tavyat","anIyar","yat","tfc","lyu","ac","zvun","Takan","vun","wa","in","Kac","qa","KizRuc","viw","vic","manin","vanip","ini","Kyun","tfn","izRuc","yuc","zAkan","Aluc","ru","Gurac","u","Uk","ra","Aru","lukan","varac","qu","zwran","itra","tumun","ap","aTuc","nan","a","ani","lyuw","Ga","Kal","se","sen","ase","asen","aDyE","aDyEn","tavE","taven","tosun","tvan","atfn","kyap","ka","wak","kvin","kaY","kvip","kaY","kvanip","kta","ktavatu","Nvanip","kAnac","kvasu","gsnu","kmarac","kurac","kvarap","kin","ki","najiN","kuk","ktri","naN","ktin","aN","ktic","kse","kasen","kaDyE","kaDyEn","taveN","kamul","kasun","ken","kenya","ktvA",);
+$ArdhadhAtuka_vikaraNa_pratyayas=array("ksa","caN","aN","sip","sya","tAs","cli","sic","ciR","u","yak",);
+$ArdhadhAtuka_remaining_pratyayas=array("Am","Ric","IyaN","yaN","san",);
 $ajAdi_kitGit_ArdhadhAtuka_pratyayas=array("atus","u");
 $halAdi_kitGit_ArdhadhAtuka_pratyayas=array("ya");
 $other_ArdhadhAtuka_pratyayas=array("Ri");
@@ -600,7 +618,7 @@ return $arr; // returning the desired savarNa array.
 // new messages can be added if the message is of repeated nature.
 function display($n)
 {
-    global $text;  // bringing $text from subanta.php
+    global $text, $upasarga_joined, $us; // bringing $text from main php function.
     /* removal of two ++ signs */
     $text = one(array("++"),array("+"),0);
 
@@ -645,7 +663,14 @@ function display($n)
         }
     for($i=1;$i<count($text)+1;$i++) // for all members of the $text array
     {
+        if ($upasarga_joined===1 || $us==="")
+        {
         echo "<p class = form>$i - ".convert($text[$i-1])."</p>"; // showing the output to the browser. e.g. 1. rAmaH. $i is for numbering. function convert converts the output into devanAgarI.
+        }
+        elseif ($upasarga_joined===0)
+        {
+        echo "<p class = form>$i - ".convert($us."+".$text[$i-1])."</p>"; // showing the output to the browser. e.g. 1. rAmaH. $i is for numbering. function convert converts the output into devanAgarI.
+        }
     }
     echo "<hr>"; // drawing a line after all the words are displayed. Thus two sUtras are separated by a separator line.
     if ($n === 2) { $text1 = $text; $text = $text2; } // not useful because the display(2) is not used in the code. If it is used, this will work.

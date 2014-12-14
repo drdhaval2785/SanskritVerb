@@ -127,7 +127,7 @@ elseif (in_array($first,$allverbs))
     verb_meaning_gana_number1($first);
 }
 /* upasarga display */
-if ($us!=="none")
+if ($us!=="")
 {
     echo "<p class = st >upasarga:  $us</p>"; 
     echo "<p class = st >उपसर्गः : ".convert($us)."</p>";
@@ -975,6 +975,7 @@ $second=$suffix[$w];    // defining the second word as su!, O, jas etc.
 if(in_array($second,$tiG)||in_array($second,$sup))
 {
 $vibhakti=1;    
+$us = $_GET["upasarga"]; // upasarga. Added on 14 Dec 2014.
 }
 /* Code for converting from IAST to SLP1 */
 // defining IAST letters.
@@ -3818,12 +3819,11 @@ if ( arr($text,'/[s]$/') && $so==='sip' && $lakAra==="laN" && $halGyAbbhyo===1)
 }
 
 /* Adding upasargas to the input verb. */
-if ($us!=="none" && in_array($so,$tiG))
+if ($us!=="" && in_array($so,$tiG))
 {
-    $text = Adyanta($text,$us,1);
-    echo "<p class = sa >Adding upasargas :</p>";
-    echo "<p class = sa >उपसर्ग लगाने पर :</p>";  
-    display(0);    
+    $text=Adyanta($text,$us,1);
+    $us="";
+    $upasarga_joined=1;
 }
 
 /* displaying general information about the sup vibhaktis */
@@ -11731,7 +11731,8 @@ $pada="pratyaya";
 $it = array();
 $itprakriti = array();
 $itpratyaya = array();
-$TAp=0; $DAp=0; $cAp=0; $GIp=0; $GIn=0; $GIS=0; $kGiti=0; $abhyasta=0; $ajAdyataSTAp=0; $tusma=0;
+$TAp=0; $DAp=0; $cAp=0; $GIp=0; $GIn=0; $GIS=0; $kGiti=0; $abhyasta=0; $ajAdyataSTAp=0; $tusma=0; $upasarga_joined=0;
+
 }
 ?>
 </body>
