@@ -6,7 +6,7 @@ ini_set("memory_limit","1000M");
 include "slp-dev.php"; // includes code for conversion from SLP to devanagari,
 include "dev-slp.php"; // includes code for devanagari to SLP.
 include "function.php";
-error_reporting(0);
+//error_reporting(0);
 
 /* method to create an array of necessary SLP1 list from devangari file */
 /*$a=file('allverbs.txt');
@@ -247,7 +247,7 @@ echo '$verbdata = array("'.implode('","',$out),'");';
 */
 
 /* Method to scrape data from verbdata */
-foreach ($verbdata as $value)
+/*foreach ($verbdata as $value)
 {
     $val = explode(":",$value);
     $val = array_map('trim',$val);
@@ -259,6 +259,14 @@ foreach ($verbdata as $value)
 }
 echo implode('","',$p);
 echo "<br><br>";
-echo implode('","',$q);
+echo implode('","',$q);*/
+
+/* Creating methods to have dropdown menu in tiGanta.html */
+$a = $upasarga_combinations;
+foreach ($a as $value)
+{
+$value = trim($value);
+echo '<option value="'.$value.'">'.convert($value).' - ('.$value.')</option>';
+}
 
 ?>

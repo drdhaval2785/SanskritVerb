@@ -60,6 +60,7 @@ ini_set("memory_limit","1000M");
 /* Reading from the HTML input. */
 $first = $_GET["first"]; // word entered by the user.
 //$second = $_GET['second']; // This has been bracketed because we are taking second member automatically.
+$us = $_GET["upasarga"]; // upasarga. Added on 14 Dec 2014.
 $tran = $_GET['tran']; // "Devanagari" - devanagari, "IAST" - IAST, "SLP1" - SLP1 transliteration.
 $gender = $_GET['gender']; // "m" - male. "f" - female. "n" - neuter.
 $lakAra = $_GET['lakAra'];
@@ -115,7 +116,6 @@ $itprakriti = array(); // creating an array where we can store it markers of pra
 $itpratyaya = array(); // creating an array where we can store it markers of pratyayas.
 $samp = array(); // creating an array where we can store whethere samprasAraNa has happened or not.
 // rest of the variables will be defined at their particular occurence in the code.
-
 
 /* Displaying information about the verb */
 if ($verbset!=="none")
