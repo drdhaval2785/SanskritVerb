@@ -1772,13 +1772,14 @@ if (in_array($so,array("Ji")) && ($lakAra==="ASIrliN"||$lakAra==="viDiliN") )
     $jherjus=1;
 }
 /* jhasya ran (3.4.105) */
-if (pratyayareplace2(array("+"),array("Ja"),blank(0),array("+"),array("ran"),blank(0),$text)!==$text && in_array($so,array("Ja")) )
+if (pratyayareplace2(array("+"),array("Ja"),blank(0),array("+"),array("ran"),blank(0),$text)!==$text && in_array($so,array("Ja")) && in_array($lakAra,array("viDiliN","ASIrliN")))
 {
     $text=pratyayareplace2(array("+"),array("Ja"),blank(0),array("+"),array("ran"),blank(0),$text);
     echo "<p class = sa >By jhasya ran (3.4.105) :</p>"; 
     echo "<p class = sa >झस्य रन्‌ (३.४.१०५) :</p>";
     display(0);    
-}
+    $jhasyaran=1;
+} else {$jhasyaran=0; }
 /* AtmanepadeSvanataH (7.1.5) */
 if (pratyayareplace2(array("+"),array("Ja"),blank(0),array("+"),array("ata"),blank(0),$text)!==$text && in_array($so,array("Ja")) && $set===2)
 {
@@ -2061,7 +2062,7 @@ if (sub(array("+"),array("TAs"),blank(0),0) && $pada === "pratyaya" && in_array(
     display(0);
 }
 /* Tita AtmanepadAnAM Tere (3.4.79) */
-elseif (sub(array("+"),$taGplus,blank(0),0) && in_array($so,$taG) && in_array($lakAra,array("law","liw","luw","lfw","sArvaDAtukalew","ArDaDAtukalew","low")))
+elseif (sub(array("+"),$taGplus,blank(0),0) && in_array($so,$taG) && in_array($lakAra,array("law","liw","luw","lfw","sArvaDAtukalew","ArDaDAtukalew","low")) && $jhasyaran!==1)
 {
     for($i=0;$i<count($text);$i++)
     {
