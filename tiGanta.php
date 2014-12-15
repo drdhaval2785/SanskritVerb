@@ -124,15 +124,6 @@ if ($us!=="")
     echo "<p class = st >उपसर्गः : ".convert($us)."</p>";
     echo "<hr>";
 }
-/* idAgama decision */
-$verb_without_anubandha=scrape($first,0,2,1)[0];
-if (anekAca($verb_without_anubandha) || $san===1 || $yaG===1)
-{
-    $idAgama="sew";
-    echo "<p class = st >This is a 'seT' verb.</p>"; 
-    echo "<p class = st >सेट्‌ धातुः</p>";
-    echo "<hr>";
-}
 /* In case the user has selected some gaNa, the pada has to correspond to that gaNa */
 if($verbset!=="none")
 {
@@ -1138,6 +1129,100 @@ if ( in_array($sanAdi,array("Aya","IyaN","RiN")) && sub(array("Aya","IyaN","RiN"
     display(0);
     $sanAdi="RiN";
     $atmanepada=1;
+}
+/* idAgama decision */
+if (in_array($lakAra,array("lfw","lfN","luw","ASIrliN","luN","liw","ArDaDAtukalew"))) // checking whether ArdhadhAtuka lakAra or not.
+{
+    $verb_without_anubandha=scrape($first,0,2,1)[0];
+    if (anekAca($verb_without_anubandha) || $san===1 || $yaG===1)
+    {
+        $id_dhAtu="sew";
+        echo "<p class = st >This is a 'seT' verb.</p>"; 
+        echo "<p class = st >सेट्‌ धातुः</p>";
+        echo "<hr>";
+    }
+    /* RddhanoH sye (7.2.70) */
+    elseif ( (ends(array($fo),array("f",),1)||ends(array($fo),array("hana!",),4))&& in_array($lakAra,array("lfw","lfN")))
+    {
+        $id_dhAtu="sew";
+        echo "<p class = st >By RddhanoH sye (7.2.70) :</p>"; 
+        echo "<p class = st >ऋद्धनोः स्ये (७.२.७०) :</p>";
+        echo "<hr>";        
+    }
+    /* se'sici kRtacRtacCRdatRdanRtaH (7.2.57) */
+    elseif ( ends(array($fo),array("kfta!","cfta!","Cfda!","tfda!","nfta!",),4) && in_array($lakAra,array("lfw","lfN")))
+    {
+        $id_dhAtu="vew";
+        echo "<p class = st >By se'sici kRtacRtacCRdatRdanRtaH (7.2.57) :</p>"; 
+        echo "<p class = st >सेऽसिचि कृतचृतच्छृदतृदनृतः (७.२.५७) :</p>";
+        echo "<hr>";
+    }
+    /* gameriT parasmaipadeSu (7.2.58) */
+    elseif ( ends(array($fo),array("gamx!",),4) && in_array($lakAra,array("lfw","lfN")) && $parasmaipada===1)
+    {
+        $id_dhAtu="sew";
+        echo "<p class = st >By gameriT parasmaipadeSu (7.2.58) :</p>"; 
+        echo "<p class = st >गमेरिट्‌ परस्मैपदेषु (७.२.५८) :</p>";
+        echo "<hr>";
+    }
+    /* na vRdbhyazcaturbhyaH (7.2.59) */
+    elseif ( ends(array($fo),array("vftu!","vfDu!","SfDu!","syandU!",),4) && in_array($lakAra,array("lfw","lfN")) && $parasmaipada===1)
+    {
+        $id_dhAtu="aniw";
+        echo "<p class = st >By na vRdbhyazcaturbhyaH (7.2.59) :</p>"; 
+        echo "<p class = st >न वृद्भ्यश्चतुर्भ्यः (७.२.५९) :</p>";
+        echo "<hr>";
+    }
+    /* tAsi ca klRpaH (7.2.60) */
+    // tAs is pending. sakArAdi done.
+    elseif ( ends(array($fo),array("kxpa!",),4) && in_array($lakAra,array("lfw","lfN")) && $parasmaipada===1)
+    {
+        $id_dhAtu="aniw";
+        echo "<p class = st >By tAsi ca klRpaH (7.2.60) :</p>"; 
+        echo "<p class = st >तासि च क्लृपः (७.२.६०) :</p>";
+        echo "<hr>";
+    }
+    /* svaratisUtisUyatidhUJUdito vA (7.2.44) */
+    elseif (ends(array($fo),array("svf","zUN","DUN"),4) || ends(array($fo),$Uditverbs,4))
+    {
+        $id_dhAtu="vew";
+        echo "<p class = st >By svaratisUtisUyatidhUJUdito vA (7.2.44) :</p>"; 
+        echo "<p class = st >स्वरतिसूतिसूयतिधूञूदितो वा (७.२.४४) :</p>";
+        echo "<hr>";        
+    }
+    /* radhAdibhyazca (7.2.45) */
+    elseif (ends(array($fo),array("raDa!","RaSa!","tfpa!","dfpa!","druha!","muha!","zRuha!","zRiha!"),4) )
+    {
+        $id_dhAtu="vew";
+        echo "<p class = st >By radhAdibhyazca (7.2.45) :</p>"; 
+        echo "<p class = st >रधादिभ्यश्च (७.२.४५) :</p>";
+        echo "<hr>";        
+    }
+    /* niraH kuSaH (7.2.46) */
+    elseif (ends(array($fo),array("kuza!"),4) && $us==="nis" )
+    {
+        $id_dhAtu="vew";
+        echo "<p class = st >By niraH kuSaH (7.2.46) :</p>"; 
+        echo "<p class = st >निरः कुषः (७.२.४६) :</p>";
+        echo "<hr>";        
+    }
+    elseif($verbset!=="none")
+    {
+        if (verb_itfinder($first)===array("sew"))
+        {
+            $id_dhAtu="sew";
+            echo "<p class = st >This is a 'seT' verb.</p>"; 
+            echo "<p class = st >सेट्‌ धातुः</p>";
+            echo "<hr>";        
+        }
+        elseif (verb_itfinder($first)===array("aniw"))
+        {
+            $id_dhAtu="aniw";
+            echo "<p class = st >This is an 'aniT' verb.</p>"; 
+            echo "<p class = st >अनिट्‌ धातुः</p>";
+            echo "<hr>";        
+        }
+    }    
 }
 
 /* Displaying general information about lakAras */
