@@ -254,8 +254,16 @@ $ArdhadhAtuka_tiG_luG_Atmane=array(); // pending. sahajabodha 1 p. 21
 $ArdhadhAtuka_tiG_ArDaDAtukalew_Atmane=array(); // pending. sahajabodha 1 p. 23
 // ArdhadhAtuka kRt pratyayas.
 $ArdhadhAtuka_kRt_pratyayas= array("Rvul","vuY","Ryat","GaY","Rini","Ra","Ryuw","aR","KukaY","Rvi","Yyuw","Rvin","GinuR","ukaY","uR","Rac","inuR","iY","Rvuc","Ramul","KamuY","tavya","tavyat","anIyar","yat","tfc","lyu","ac","zvun","Takan","vun","wa","in","Kac","qa","KizRuc","viw","vic","manin","vanip","ini","Kyun","tfn","izRuc","yuc","zAkan","Aluc","ru","Gurac","u","Uk","ra","Aru","lukan","varac","qu","zwran","itra","tumun","ap","aTuc","nan","a","ani","lyuw","Ga","Kal","se","sen","ase","asen","aDyE","aDyEn","tavE","taven","tosun","tvan","atfn","kyap","ka","wak","kvin","kaY","kvip","kaY","kvanip","kta","ktavatu","Nvanip","kAnac","kvasu","gsnu","kmarac","kurac","kvarap","kin","ki","najiN","kuk","ktri","naN","ktin","aN","ktic","kse","kasen","kaDyE","kaDyEn","taveN","kamul","kasun","ken","kenya","ktvA",);
+// ArdhadhAtuka vikaraNa pratyayas.
 $ArdhadhAtuka_vikaraNa_pratyayas=array("ksa","caN","aN","sip","sya","tAs","cli","sic","ciR","u","yak",);
+// ArdhadhAtuka prakrIrNa pratyayas.
 $ArdhadhAtuka_remaining_pratyayas=array("Am","Ric","IyaN","yaN","san",);
+// All ArdhadhAtuka_pratyayas
+$ArdhadhAtuka_pratyayas=array();// Pending. Will do soon after luG and ArDaDAtukalew are done.
+// ArdhadhAtuka seT pratyayas.
+$ArdhadhAtuka_seT_pratyayas=array("Tal","va","ma","se","Dve","vahe","mahe","kvasu","kta","ktavatu","ktvA","tumun","tavya","tavyat","tfc","tfn","tAs","tavE","taven","tosun","tvan","taveN","sic","sIyuw","san","sya","kse","se","sen","sip",);
+// ArdhadhAtuka aniT pratyayas.
+$ArdhadhAtuka_aniT_pratyayas=array(); // All except seT. But 'All' is pending. Will complete soon.
 $ajAdi_kitGit_ArdhadhAtuka_pratyayas=array("atus","u");
 $halAdi_kitGit_ArdhadhAtuka_pratyayas=array("ya");
 $other_ArdhadhAtuka_pratyayas=array("Ri");
@@ -618,7 +626,7 @@ return $arr; // returning the desired savarNa array.
 // new messages can be added if the message is of repeated nature.
 function display($n)
 {
-    global $text, $upasarga_joined, $us; // bringing $text from main php function.
+    global $text; global $upasarga_joined; global $us; // bringing $text from main php function.
     /* removal of two ++ signs */
     $text = one(array("++"),array("+"),0);
 
@@ -1899,6 +1907,34 @@ function pratyayareplace2($a,$b,$c,$d,$e,$f,$test)
     }
     return $out;
 }
+
+/* Code for converting from IAST and Devanagari to SLP1 for input from tiGanta.html */
+function toslp($text)
+{
+    global $tran;
+    // defining IAST letters.
+    $iast = array("a","ā","i","ī","u","ū","ṛ","ṝ","ḷ","ḹ","e","ai","o","au","ṃ","ḥ","kh","ch","ṭh","th","ph","gh","jh","ḍh","dh","bh","ṅ","ñ","ṇ","k","c","ṭ","t","p","g","j","ḍ","d","b","n","m","y","r","l","v","s","h","ś","ṣ",);
+    // defining SLP1 letters.
+    $slp = array("a","A","i","I","u","U","f","F","x","X","e","E", "o","O", "M","H","K", "C",  "W", "T", "P","G", "J",  "Q", "D","B", "N","Y","R","k","c","w","t","p","g","j","q","d","b","n","m","y","r","l","v","s","h","S","z",);
+      if (preg_match('/[āĀīĪūŪṛṚṝṜḷḶḹḸṃṂḥḤṭṬḍḌṅṄñÑṇṆśŚṣṢV]/',$text) )// if there is IAST letters in the input, change them to SLP1
+    {
+        $text = str_replace($iast,$slp,$text);
+    }
+    if ($tran === "IAST") // if the user says that the input is IAST - change it to SLP1.
+    {
+         $text = str_replace($iast,$slp,$text);
+    }
+    /* Code for converting from devanagari - SLP1 */ 
+    //This is innocuous. Therefore even running without the selection in dropdown menu. 
+    $text = json_encode($text);
+    $text = str_replace("\u200d","",$text); // removing whitespace
+    $text = str_replace("\u200c","",$text); // removing whitespace
+    $text = json_decode($text);
+    $text = convert1($text); // converting to SLP1
+    
+    return $text;
+}
+
 
 /* Functions which are not used in the code */
 /* Function f to find the nth letter in the word */

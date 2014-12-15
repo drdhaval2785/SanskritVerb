@@ -7,16 +7,6 @@
 <!--... Defining CSS -->
 <link rel="stylesheet" type="text/css" href="mystyle.css">
 <!--... including Ajax jquery. -->
-<!-- javascript function for making links.  -->
-<script type=\"text/javascript\">
- function linkto(key,dictcode,dictyear) {
-  var href = \"http://www.sanskrit-lexicon.uni-koeln.de/scans/\" +
-    dictcode + \"Scan/\" + dictyear + \"/web/webtc/indexcaller.php?key=\" + key 
-    + \"&input=slp1&output=SktDevaUnicode\";
-  window.open(href,\"_blank\");
-  return false;
- }
-</script>
 </head>
 </link>
 </meta>
@@ -58,15 +48,15 @@ ini_set('max_execution_time', 36000);
 ini_set("memory_limit","1000M");
 
 /* Reading from the HTML input. */
-$first = $_GET["first"]; // word entered by the user.
-//$second = $_GET['second']; // This has been bracketed because we are taking second member automatically.
+//$first = $_GET["first"]; // word entered by the user.
+$first = toslp($_GET["first"]); // to change the word input in devanagari / IAST to slp.
 $us = $_GET["upasarga"]; // upasarga. Added on 14 Dec 2014.
 $tran = $_GET['tran']; // "Devanagari" - devanagari, "IAST" - IAST, "SLP1" - SLP1 transliteration.
 $gender = $_GET['gender']; // "m" - male. "f" - female. "n" - neuter.
 $lakAra = $_GET['lakAra'];
 $vAcya = $_GET['vAcya'];
 $sanAdi = $_GET['sanAdi'];
-$verbset=$_GET['verbset'];
+$verbset = $_GET['verbset'];
 $verbset=trim($verbset);
 /* Defining the variables used in the code and their default values .
  * If there is no change in the execution of subanta.php, the default values are operated.
@@ -95,6 +85,7 @@ $abhyasta = 0; // 0 - not abhyasta. 1 - abhyasta.
 $shatR = 0; // 0 - not zatR pratyaya. 1 - zatR pratyaya.
 $Nyanta = 0; // 0 - not Nyanta, 1 - Nyanta.
 $san = 0; // 0 - non san, 1 - san. 'san' is used to create nAmadhAtus. 
+$yaG = 0; // 0 - no yaG pratyaya. 1 - yaG pratyaya has applied.
 $vasu = 0; // 0 - no vasvanta, 1 - vasvanta.
 $shap = 0; // 0 - no zap pratyaya. 1 - zap pratyaya.
 $shyan = 0; // 0 - no zyan pratyaya. 1 - zyan pratyaya.
@@ -133,10 +124,18 @@ if ($us!=="")
     echo "<p class = st >उपसर्गः : ".convert($us)."</p>";
     echo "<hr>";
 }
+/* idAgama decision */
+$verb_without_anubandha=scrape($first,0,2,1)[0];
+if (anekAca($verb_without_anubandha) || $san===1 || $yaG===1)
+{
+    $idAgama="sew";
+    echo "<p class = st >This is a 'seT' verb.</p>"; 
+    echo "<p class = st >सेट्‌ धातुः</p>";
+    echo "<hr>";
+}
 /* In case the user has selected some gaNa, the pada has to correspond to that gaNa */
 if($verbset!=="none")
 {
-    
     if (verb_padafinder($first)===array("u"))
     {
         $suffix=$tiG;
@@ -976,6 +975,7 @@ if(in_array($second,$tiG)||in_array($second,$sup))
 {
 $vibhakti=1;    
 $us = $_GET["upasarga"]; // upasarga. Added on 14 Dec 2014.
+$upasarga_joined=0;
 }
 /* Code for converting from IAST to SLP1 */
 // defining IAST letters.
@@ -1005,7 +1005,6 @@ $second = json_decode($second);
 $first = convert1($first); // converting to SLP1
 $second = convert1($second); // converting to SLP1
 
-//include 'preprocess.php';
 $fo = $first; // remembering the original prakRti. Sometimes we need to know what was the original prakRti.
 $so = $second; ; // remembering the original pratyayas. Sometimes we need to know what was the original pratyaya.
 $lakAra=$_GET['lakAra'];
@@ -2215,7 +2214,6 @@ if (sub($dade,blank(0),blank(0),0) && (arr($text,'/[+]$/') || arr($text,'/[+]['.
     display(0); 
     $hodha1 = 1; // 0 - doesn't prevent ho DhaH. 1 - prevents ho DhaH.
 } else { $hodha1 = 0; } 
-print_r($text);
 /* grahijyAvayivyadhivaSTivicativRzcatipRcCatibhRjjatInAM Giti ca (6.1.16) */
 if (ends(array($fo),array("jyA","graha!","vaya!","vyaDa!","vaSa!","vyaca!","o!vraScU!","pracCa!","Brasja!"),4) && sub(array("jyA","grah","vay","vyaD","vaS","vyac","vraSc","pracC","Brasj"),array("+"),$apit_sArvadhAtuka_pratyayas,0) )
 {
@@ -3821,9 +3819,11 @@ if ( arr($text,'/[s]$/') && $so==='sip' && $lakAra==="laN" && $halGyAbbhyo===1)
 /* Adding upasargas to the input verb. */
 if ($us!=="" && in_array($so,$tiG))
 {
-    $text=Adyanta($text,$us,1);
+    $usplus=$us."+";
+    $text=Adyanta($text,$usplus,1);
     $us="";
     $upasarga_joined=1;
+    $pada="pada";
 }
 
 /* displaying general information about the sup vibhaktis */
