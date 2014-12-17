@@ -641,8 +641,8 @@ function display($n)
 
     if ($n === 1) // sending special messages.
         {
-        echo "<p class = hn>Please note: Wherever there is dvitva, it is optionally negated by sarvatra zAkalyasya. (8.4.51)</p>";
-        echo "<p class = hn>द्वित्व का सर्वत्र सर्वत्र शाकल्यस्य (८.४.५१) से पाक्षिक निषेध होता है ।</p>";
+        echo "<p class = hn>Please note: Wherever there is dvitva, it is optionally negated by sarvatra zAkalyasya. (".link_sutra("8.4.51").")</p>\n";
+        echo "<p class = hn>द्वित्व का सर्वत्र सर्वत्र शाकल्यस्य (८.४.५१) से पाक्षिक निषेध होता है ।</p>\n";
         }
     if ($n === 2) 
         { 
@@ -650,46 +650,46 @@ function display($n)
         }
     if ($n === 3) 
         {
-        echo "<p class = pa>yasmAtpratyayavidhistadAdi pratyaye'Ggam (2.4.13) and aGgasya (6.4.1) </p>";
-        echo "<p class = pa>यस्मात्प्रत्ययविधिस्तदादि प्रत्ययेऽङ्गम्‌ (२.४.१३) तथा अङ्गस्य (६.४.१) </p>";
+        echo "<p class = pa>yasmAtpratyayavidhistadAdi pratyaye'Ggam (".link_sutra("2.4.13").") and aGgasya (".link_sutra("6.4.1").") </p>\n";
+        echo "<p class = pa>यस्मात्प्रत्ययविधिस्तदादि प्रत्ययेऽङ्गम्‌ (२.४.१३) तथा अङ्गस्य (६.४.१) </p>\n";
         }
     if ($n === 4) 
         {
-        echo "<p class = hn>N.B.: yaNaH pratiSedho vAcyaH (vA 4806) prevents application of saMyogAntasya lopaH (8.2.23) </p>";
-        echo "<p class = hn>यणः प्रतिषेधो वाच्यः (वा ४८०६) से संयोगान्तस्य लोपः (८.२.२३) का निषेध होता है ।</p>";
+        echo "<p class = hn>N.B.: yaNaH pratiSedho vAcyaH (vA 4806) prevents application of saMyogAntasya lopaH (".link_sutra("8.2.23").") </p>\n";
+        echo "<p class = hn>यणः प्रतिषेधो वाच्यः (वा ४८०६) से संयोगान्तस्य लोपः (८.२.२३) का निषेध होता है ।</p>\n";
         }
     if ($n === 5) 
         {
-        echo "<p class = hn>N.B.: anekAlzitsarvasya (1.1.55) mandates sarvAdeza.  </p>";
-        echo "<p class = hn>अनेकाल्शित्सर्वस्य (१.१.५५) से सर्वादेश होता है ।</p>";
+        echo "<p class = hn>N.B.: anekAlzitsarvasya (".link_sutra("1.1.55").") mandates sarvAdeza.  </p>\n";
+        echo "<p class = hn>अनेकाल्शित्सर्वस्य (१.१.५५) से सर्वादेश होता है ।</p>\n";
         }
     if ($n === 6) 
         {
-        echo "<p class = pa>yasmAtpratyayavidhistadAdi pratyaye'Ggam (2.4.13) aGgasya (6.4.1) and bhasya (6.4.129) :</p>";
-        echo "<p class = pa>यस्मात्प्रत्ययविधिस्तदादि प्रत्ययेऽङ्गम्‌ (२.४.१३), अङ्गस्य (६.४.१) तथा भस्य (६.४.१२९) :</p>";
+        echo "<p class = pa>yasmAtpratyayavidhistadAdi pratyaye'Ggam (".link_sutra("2.4.13").") aGgasya (".link_sutra("6.4.1").") and bhasya (".link_sutra("6.4.129").") :</p>\n";
+        echo "<p class = pa>यस्मात्प्रत्ययविधिस्तदादि प्रत्ययेऽङ्गम्‌ (२.४.१३), अङ्गस्य (६.४.१) तथा भस्य (६.४.१२९) :</p>\n";
         }
     if ($n === 7) 
         {
-        echo "<p class = pa>padasya (8.1.16), padAt (8.1.17) and anudAttaM sarvamapAdAdau (8.1.18) :</p>";
-        echo "<p class = pa>पदस्य (८.१.१६), पदात्‌ (८.१.१७) तथा अनुदात्तं सर्वमपादादौ (८.१.१८) :</p>";
+        echo "<p class = pa>padasya (".link_sutra("8.1.16")."), padAt (".link_sutra("8.1.17").") and anudAttaM sarvamapAdAdau (".link_sutra("8.1.18").") :</p>\n";
+        echo "<p class = pa>पदस्य (८.१.१६), पदात्‌ (८.१.१७) तथा अनुदात्तं सर्वमपादादौ (८.१.१८) :</p>\n";
         }
     if ($n === 8) 
         {
-        echo "<p class = pa>anupasarjanAt (4.1.14) :</p>";
-        echo "<p class = pa>अनुपसर्जनात्‌ (४.१.१४) :</p>";
+        echo "<p class = pa>anupasarjanAt (".link_sutra("4.1.14").") :</p>\n";
+        echo "<p class = pa>अनुपसर्जनात्‌ (४.१.१४) :</p>\n";
         }
     for($i=1;$i<count($text)+1;$i++) // for all members of the $text array
     {
         if ($upasarga_joined===1 || $us==="")
         {
-        echo "<p class = form>$i - ".convert($text[$i-1])."</p>"; // showing the output to the browser. e.g. 1. rAmaH. $i is for numbering. function convert converts the output into devanAgarI.
+        echo "<p class = form>$i - ".convert($text[$i-1])."</p>\n"; // showing the output to the browser. e.g. 1. rAmaH. $i is for numbering. function convert converts the output into devanAgarI.
         }
         elseif ($upasarga_joined===0)
         {
-        echo "<p class = form>$i - ".convert($us."+".$text[$i-1])."</p>"; // showing the output to the browser. e.g. 1. rAmaH. $i is for numbering. function convert converts the output into devanAgarI.
+        echo "<p class = form>$i - ".convert($us."+".$text[$i-1])."</p>\n"; // showing the output to the browser. e.g. 1. rAmaH. $i is for numbering. function convert converts the output into devanAgarI.
         }
     }
-    echo "<hr>"; // drawing a line after all the words are displayed. Thus two sUtras are separated by a separator line.
+    echo "<hr>\n"; // drawing a line after all the words are displayed. Thus two sUtras are separated by a separator line.
     if ($n === 2) { $text1 = $text; $text = $text2; } // not useful because the display(2) is not used in the code. If it is used, this will work.
 }
 /* function dvitva will be used to duplicate a letter */
@@ -1255,14 +1255,14 @@ function samprasarana($input,$merge)
         {
             $text = one($input,$val1,1);        // doing samprasARaNa.            
         }
-        echo "<p class = sa >igyaNaH samprasAraNam (1.1.45) :</p>";
-        echo "<p class = sa >इग्यणः सम्प्रसारणम्‌ (१.१.४५) :</p>";
+        echo "<p class = sa >igyaNaH samprasAraNam (".link_sutra("1.1.45").") :</p>\n";
+        echo "<p class = sa >इग्यणः सम्प्रसारणम्‌ (१.१.४५) :</p>\n";
         display(0);
     if (arr($val1,'/[iufx][aAiIuUfFxXeEoO]/'))
     {
         $text = two(array("i","u","f","x"),$ac,array("i","u","f","x"),blank(count($ac)),0);
-        echo "<p class = sa >samprasAraNAcca (6.1.104) :</p>"; 
-        echo "<p class = sa >सम्प्रसारणाच्च (६.१.१०४) :</p>";
+        echo "<p class = sa >samprasAraNAcca (".link_sutra("6.1.104").") :</p>\n"; 
+        echo "<p class = sa >सम्प्रसारणाच्च (६.१.१०४) :</p>\n";
         display(0);    
     }        
     return $text;
@@ -1411,59 +1411,59 @@ function anubandha()
         if(substr($first,0,2) === "Yi") { $itprakriti = array_merge($itprakriti,array("Yi")); }
         if(substr($first,0,2) === "wu") { $itprakriti = array_merge($itprakriti,array("wu")); }
         if(substr($first,0,2) === "qu") { $itprakriti = array_merge($itprakriti,array("qu")); }
-        echo "<p class = pa >By AdirGiTuDavaH (1.3.5) :</p>";
-        echo "<p class = pa >आदिर्ञिटुडवः (१.३.५) :</p>";
+        echo "<p class = pa >By AdirGiTuDavaH (".link_sutra("1.3.5) :</p>\n";
+        echo "<p class = pa >आदिर्ञिटुडवः (१.३.५) :</p>\n";
         display(0);
         $text = first(array("Yi","wu","qu"),array("","",""),0); // function first removes and replaces specific strings from the words. For details see function.php.
-        echo "<p class = sa >tasya lopaH (1.3.9) :</p>";
-        echo "<p class = sa >तस्य लोपः (१.३.९) :</p>";
+        echo "<p class = sa >tasya lopaH (".link_sutra("1.3.9").") :</p>\n";
+        echo "<p class = sa >तस्य लोपः (१.३.९) :</p>\n";
         display(0);
     }
     /* cuTU (1.3.7) */ 
     if (arr($text,'/[+][cCjJYwWqQR]/') )
     {
-        echo "<p class = pa >By cuTU (1.3.7) :</p>";
-        echo "<p class = pa >चुटू (१.३.७) :</p>";
+        echo "<p class = pa >By cuTU (".link_sutra("1.3.7").") :</p>\n";
+        echo "<p class = pa >चुटू (१.३.७) :</p>\n";
         display(0);
         $text = two(array("+"),array("c","C","j","J","Y","w","W","q","Q","R"),array("+"),blank(10),0);
         $text = last(array("jas","wA",),array("as","A"),0);
-        echo "<p class = sa >tasya lopaH (1.3.9) :</p>";
-        echo "<p class = sa >तस्य लोपः (१.३.९) :</p>";
+        echo "<p class = sa >tasya lopaH (".link_sutra("1.3.9").") :</p>\n";
+        echo "<p class = sa >तस्य लोपः (१.३.९) :</p>\n";
         display(0);
     }
     /* SaH pratyayasya (1.3.6) */
     if (arr($text,'/[+][z]/') && $pada=== "pratyaya")
     {
         it('/([+][z])/');
-        echo "<p class = pa >By SaH pratyayasya (1.3.6) :</p>";
-        echo "<p class = pa >षः प्रत्ययस्य (१.३.६) :</p>";
+        echo "<p class = pa >By SaH pratyayasya (".link_sutra("1.3.6").") :</p>\n";
+        echo "<p class = pa >षः प्रत्ययस्य (१.३.६) :</p>\n";
         display(0);
         $text = two(array("+"),array("z"),array("+"),array(""),0);
-        echo "<p class = sa >By tasya lopaH (1.3.9) :</p>";
-        echo "<p class = sa >तस्य लोपः (१.३.९) :</p>";
+        echo "<p class = sa >By tasya lopaH (".link_sutra("1.3.9").") :</p>\n";
+        echo "<p class = sa >तस्य लोपः (१.३.९) :</p>\n";
         display(0);
     }
     /* lazakvataddhite (1.3.8) */
     if (((arr($text,'/[+][lSkKgGN]/'))||$sarva2===1||$purva===1) && $taddhita === 0 )
     {
         it('/([+][lSkKgGN])/');
-        echo "<p class = pa >By lazakvataddhite (1.3.8) :</p>";
-        echo "<p class = pa >लशक्वतद्धिते (१.३.८) :</p>";
+        echo "<p class = pa >By lazakvataddhite (".link_sutra("1.3.8").") :</p>\n";
+        echo "<p class = pa >लशक्वतद्धिते (१.३.८) :</p>\n";
         display(0);
         $text = two(array("+"),array("l","S","k","K","g","G","N"),array("+"),array("","","","","","",""),0);
-        echo "<p class = sa >By tasya lopaH (1.3.9) :</p>";
-        echo "<p class = sa >तस्य लोपः (१.३.९) :</p>";
+        echo "<p class = sa >By tasya lopaH (".link_sutra("1.3.9").") :</p>\n";
+        echo "<p class = sa >तस्य लोपः (१.३.९) :</p>\n";
         display(0);
     }
     if (arr($text,'/['.flat($ac).'][!]/')  )
     {
         it('/(['.flat($ac).'][!])/');
-        echo "<p class = pa >By upadeze'janunAsika it (1.3.2) :</p>";
-        echo "<p class = pa >उपदेशेऽजनुनासिक इत्‌ (१.३.२) :</p>";
+        echo "<p class = pa >By upadeze'janunAsika it (".link_sutra("1.3.2").") :</p>\n";
+        echo "<p class = pa >उपदेशेऽजनुनासिक इत्‌ (१.३.२) :</p>\n";
         display(0);
         $text = two($ac,array("!"),blank(count($ac)),array(""),0);
-        echo "<p class = sa >By tasya lopaH (1.3.9) :</p>";
-        echo "<p class = sa >तस्य लोपः (१.३.९) :</p>";
+        echo "<p class = sa >By tasya lopaH (".link_sutra("1.3.9").") :</p>\n";
+        echo "<p class = sa >तस्य लोपः (१.३.९) :</p>\n";
         display(0);    
     }
 
@@ -1679,8 +1679,8 @@ function verb_meaning_gana_number1($text)
     $meaning=scrape($text,0,1,1);
     $verbset=scrape($text,0,9,1);
     $number=scrape($text,0,8,1);
-    echo "<p class = st >".$verbaccent[0].' - '.convert($meaning[0]).', '.convert($verbset[0]).' '.$number[0].' '."</p>";
-    echo "<hr>";
+    echo "<p class = st >".$verbaccent[0].' - '.convert($meaning[0]).', '.convert($verbset[0]).' '.$number[0].' '."</p>\n";
+    echo "<hr>\n";
 }
 // for display in tiGanta.php in case the user has chosen the gaNa.
 function verb_meaning_gana_number2($text)
@@ -1690,8 +1690,8 @@ function verb_meaning_gana_number2($text)
     $meaning=scrape($text,0,1,1,"",$verbset,9);
     $verbset1=scrape($text,0,9,1,"",$verbset,9);
     $number=scrape($text,0,8,1,"",$verbset,9);
-    echo "<p class = st >".$verbaccent[0].' - '.convert($meaning[0]).', '.convert($verbset1[0]).' '.$number[0].' '."</p>";
-    echo "<hr>";
+    echo "<p class = st >".$verbaccent[0].' - '.convert($meaning[0]).', '.convert($verbset1[0]).' '.$number[0].' '."</p>\n";
+    echo "<hr>\n";
 }
 // for display in tiGanta.php in case the user has chosen the gaNa.
 function verb_padafinder($text)
@@ -1961,8 +1961,8 @@ function Adezapratyaya()
             $val[]=preg_replace('/([+])([iIuUfFxXeEoOhyvrlkKgGN])([s])/',"$1$2z",$value);
         }
         $text = $val;
-            echo "<p class = sa >By AdezapratyayayoH (8.3.59) :</p>";
-            echo "<p class = sa >आदेशप्रत्यययोः (८.३.५९) :</p>";
+            echo "<p class = sa >By AdezapratyayayoH (".link_sutra("8.3.59").") :</p>\n";
+            echo "<p class = sa >आदेशप्रत्यययोः (८.३.५९) :</p>\n";
             display(0);
     }
     elseif (arr($text,'/(['.flat($iN1).'])([+])([^s]*)([s])/') )
@@ -1972,8 +1972,8 @@ function Adezapratyaya()
             $val[]=preg_replace('/([iIuUfFxXeEoOhyvrlkKgGN])([+])([^s]*)([s])/',"$1$2$3z",$value);
         }
         $text = $val;
-            echo "<p class = sa >By AdezapratyayayoH (8.3.59) :</p>";
-            echo "<p class = sa >आदेशप्रत्यययोः (८.३.५९) :</p>";
+            echo "<p class = sa >By AdezapratyayayoH (".link_sutra("8.3.59").") :</p>\n";
+            echo "<p class = sa >आदेशप्रत्यययोः (८.३.५९) :</p>\n";
             display(0);
     }
     elseif (arr($text,'/([+])([^s]*)([iIuUfFxXeEoOhyvrlkKgGN])([s])/') )
@@ -1983,8 +1983,8 @@ function Adezapratyaya()
             $val[]=preg_replace('/([+])([^s]*)(['.flat($iN1).'])([s])/',"$1$2$3z",$value);
         }
         $text = $val;
-            echo "<p class = sa >By AdezapratyayayoH (8.3.59) :</p>";
-            echo "<p class = sa >आदेशप्रत्यययोः (८.३.५९) :</p>";
+            echo "<p class = sa >By AdezapratyayayoH (".link_sutra("8.3.59").") :</p>\n";
+            echo "<p class = sa >आदेशप्रत्यययोः (८.३.५९) :</p>\n";
             display(0);
     }
     else
