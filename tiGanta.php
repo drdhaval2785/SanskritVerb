@@ -51,8 +51,10 @@ $tran = $_GET['tran']; // "Devanagari" - devanagari, "IAST" - IAST, "SLP1" - SLP
 $gender = $_GET['gender']; // "m" - male. "f" - female. "n" - neuter.
 $lakAra = $_GET['lakAra'];
 $vAcya = $_GET['vAcya'];
+if (!$vAcya) { $vAcya="kartR"; }
 $sanAdi = $_GET['sanAdi'];
 $verbset = $_GET['verbset'];
+if (!$verbset) { $verbset="none"; }
 $verbset=trim($verbset);
 /* Defining the variables used in the code and their default values .
  * If there is no change in the execution of subanta.php, the default values are operated.
@@ -2333,7 +2335,6 @@ if ( pr2(array("+"),array("tu","hi"),blank(0),array("+"),array("tAt","tAt"),blan
     echo "<p class = sa >तुह्योस्तातङ्ङाशिष्यन्यतरस्याम्‌ (७.१.३५) :</p>\n";
     display(0);    
 }
-print_r($text);
 /* syatAsI lRlutoH (3.1.33) */
 if ( pr2(array("+"),blank(0),$tiG1,array("+"),array("sya"),$tiG1,$text)!==$text && in_array($lakAra,array("lfw","lfN")) )
 {
