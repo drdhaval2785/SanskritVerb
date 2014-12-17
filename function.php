@@ -1411,7 +1411,7 @@ function anubandha()
         if(substr($first,0,2) === "Yi") { $itprakriti = array_merge($itprakriti,array("Yi")); }
         if(substr($first,0,2) === "wu") { $itprakriti = array_merge($itprakriti,array("wu")); }
         if(substr($first,0,2) === "qu") { $itprakriti = array_merge($itprakriti,array("qu")); }
-        echo "<p class = pa >By AdirGiTuDavaH (".link_sutra("1.3.5) :</p>\n";
+        echo "<p class = pa >By AdirGiTuDavaH (".link_sutra("1.3.5").") :</p>\n";
         echo "<p class = pa >आदिर्ञिटुडवः (१.३.५) :</p>\n";
         display(0);
         $text = first(array("Yi","wu","qu"),array("","",""),0); // function first removes and replaces specific strings from the words. For details see function.php.
