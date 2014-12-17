@@ -1667,7 +1667,7 @@ function verb_meaning_gana_number($text)
             $html .= '<div id="step22">';
     for($i=0;$i<count($verbaccent);$i++)
     {
-            $html .= '<input type="radio" value="'.trim($verbset[$i]).'" name="verbset" > '.$verbaccent[$i].' - '.convert($meaning[$i]).', '.convert($verbset[$i]).' '.$number[$i].' ';        
+            $html .= '<input required autocomplete="off" type="radio" value="'.trim($verbset[$i]).'" name="verbset" > '.$verbaccent[$i].' - '.convert($meaning[$i]).', '.convert($verbset[$i]).' '.$number[$i];        
     }
             $html .= '</div>';            
 return $html;

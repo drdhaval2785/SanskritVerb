@@ -21,13 +21,13 @@ float: inherit;
 table {
 	width: 800px;
 }
-div {
+div.one {
     color: #8b0000;
  background-color: #d0d0d0;
  font-size: 16pt;
 font-family: "Siddhanta";
- padding-right: 40px;
-   left: 20px;
+ padding-right: 20px;
+ padding-left: 20px;
 }
 /* vidhi sUtra */
 /* We use this to style vidhi sUtras. */
@@ -36,8 +36,8 @@ p.sa {
  background-color: #d0d0d0;
  font-size: 16pt;
 font-family: "Siddhanta"; /* Default font is kept Siddhanta for proper display of upadhmAnIya and jihvAmUlIya. */
- padding-right: 40px;
-   left: 20px;
+ padding-right: 20px;
+ padding-left: 20px;
 }
 /* notes */ 
 /* We use this to style notes */
@@ -45,13 +45,16 @@ p.hn {
  color: black;
  background-color: #ffffcc;
  font-family: "Siddhanta";
- padding-left: 0px;
+ padding-right: 20px;
+ padding-left: 20px;
 }
 /* sutras etc except vidhi sutra */
 /* most probably paribhASAs, saJjJA sUtra etc are recorded in this */
 p.pa {
     background: #ccffcc;
   font-family: "Siddhanta";
+ padding-right: 20px;
+ padding-left: 20px;
 }
 /* Error message */
 /* using red color to give error messages to user */
