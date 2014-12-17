@@ -1993,6 +1993,24 @@ function Adezapratyaya()
     }
     return $text;
 }
+function link_sutra($s) {
+ /* $s is a string of form X.Y.Z where X,Y,Z are digits
+   Returns a string   
+   <a href="http://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/X/X.Y.Z.htm">X.Y.Z</a>
+  e.g., if s = "3.4.113", returns
+   <a href="http://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.4.113.htm">3.4.113</a>
+ */
+ $parts = preg_split('/[.]/',$s);
+ if (count($parts) != 3) {  // error checking
+  echo "<p>link_sutra error: input = $s</p>\n";
+  exit(1);
+ }
+ $X=$parts[0];
+ $Y=$parts[1];
+ $Z=$parts[2];
+ $ans = "<a href=\"http://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/$X/$X.$Y.$Z.htm\">$X.$Y.$Z</a>";
+ return $ans;
+}
 
 /* Functions which are not used in the code */
 /* Function f to find the nth letter in the word */

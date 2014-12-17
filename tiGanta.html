@@ -5,8 +5,7 @@
 <meta charset="UTF-8">
 <!--... Defining CSS -->
 <link rel="stylesheet" type="text/css" href="mystyle.css">
-<!--... including Ajax jquery. -->
-<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" ></script> -->
+<!--... including Ajax jquery. This is local version of <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" ></script> so that I can work without internet connection-->
 <script src="ajaxcode.js" ></script>
 <!--... script.js is javascript which we use to make the frontend interective for user feedback. Whenever the user clicks the radio button specified in script.js, the data is sent to ajax.php and then output from ajax.php is shown in the frontend. This process may continue as long as you want. -->
 <script src="script.js" ></script>
@@ -42,9 +41,9 @@
 <input type="radio" name="lakAra" value="lfN">लृङ्‌-->
 <br>
 <!--... Defining vAcya. -->
-<input type="radio" name="vAcya" value="kartR">कर्तृवाच्य
-<input type="radio" name="vAcya" value="karma">कर्मवाच्य
-<input type="radio" name="vAcya" value="bhAva">भाववाच्य
+<input type="radio" name="vAcya" required value="kartR"  autocomplete="off" >कर्तृवाच्य
+<input type="radio" name="vAcya" value="karma"  autocomplete="off">कर्मवाच्य
+<input type="radio" name="vAcya" value="bhAva"  autocomplete="off">भाववाच्य
 <br>    
 <!--... Defining transliteration of the word. Default is kept as Devanagari. User may change it according to his wish. -->
 <input type="radio" name="tran" value="Devanagari" checked>Devanagari
