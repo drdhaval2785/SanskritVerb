@@ -1001,7 +1001,7 @@ if($_POST['step']==='11' && ends($arrWord,$nonuniqueverbs,2) )
 }
 elseif ($_POST['step']==='11' && ends($arrWord,$allverbs,4) )
 {
-            $html .= '<input required type="hidden" name="verbset" value="none" >';        
+            //$html .= '<input required type="hidden" name="verbset" value="none" >';        
 }
 if($_POST['step']==='11' && ends($arrWord,array("gupa!","tija!","kita!"),4) )
 {

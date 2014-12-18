@@ -689,7 +689,7 @@ function display($n)
         echo "<p class = form>$i - ".convert($us."+".$text[$i-1])."</p>\n"; // showing the output to the browser. e.g. 1. rAmaH. $i is for numbering. function convert converts the output into devanAgarI.
         }
     }
-    echo "<hr>\n"; // drawing a line after all the words are displayed. Thus two sUtras are separated by a separator line.
+//    echo "<hr>\n"; // drawing a line after all the words are displayed. Thus two sUtras are separated by a separator line.
     if ($n === 2) { $text1 = $text; $text = $text2; } // not useful because the display(2) is not used in the code. If it is used, this will work.
 }
 /* function dvitva will be used to duplicate a letter */
@@ -1655,14 +1655,35 @@ function scrape($a,$a1,$b,$c,$d,$e,$e1)
     $ret=array_map('trim',$ret);
     return $ret;
 }
+/* Creating a function to fetch data from the verbdata variable */
+// The function is almost ready. Now rename the variables so that it can be used.
+// $a = the input to take as base, $a1 = ref number of $a, $b = the thing to search. $c 1=whole list, 2=corresponding list. $d=additional field to be displayed, $e=additional condition, $e1= its ref no.
+// Ref nos. 0=upadeza, 1=Meaning, 2=verb without anubandhas, 3=verbset, 4=number in dhatupatha, 5=Atmane/parasmai/ubhaya, 6=seT/aniT. 7. verb with accent 8.Set+number 9. Set name
+// 0 to 6 are in the array. after that we process.
+function scrape1($a,$a1,$b,$c)
+{
+    global $verbdata;
+    for($i=0;$i<count($verbdata);$i++)
+    {
+        $bomb=explode(':',$verbdata[$i]);
+        $bomb[8]=$bomb[3].".".$bomb[4];
+        $bomb[9]=str_replace(array("01","02","03","04","05","06","07","08","09","10",),array("BvAdi","adAdi","juhotyAdi","divAdi","svAdi","tudAdi","ruDAdi","tanAdi","kryAdi","curAdi",),$bomb[3]);
+            if($a===$bomb[$a1] )
+            {
+                $ret[]=$bomb[$b];
+            }
+    }
+    $ret=array_map('trim',$ret);
+    return $ret;
+}
 // for ajax display in case the verb entered belongs to more than one gaNa.
 function verb_meaning_gana_number($text)
 {
     global $html;
-    $verbaccent=scrape($text,0,7,1);
-    $meaning=scrape($text,0,1,1);
-    $verbset=scrape($text,0,9,1);
-    $number=scrape($text,0,8,1);
+    $verbaccent=scrape1($text,0,7,1);
+    $meaning=scrape1($text,0,1,1);
+    $verbset=scrape1($text,0,9,1);
+    $number=scrape1($text,0,8,1);
     
             $html .= '<div id="step22">';
     for($i=0;$i<count($verbaccent);$i++)
@@ -1675,10 +1696,10 @@ return $html;
 // for display in tiGanta.php
 function verb_meaning_gana_number1($text)
 {
-    $verbaccent=scrape($text,0,7,1);
-    $meaning=scrape($text,0,1,1);
-    $verbset=scrape($text,0,9,1);
-    $number=scrape($text,0,8,1);
+    $verbaccent=scrape1($text,0,7,1);
+    $meaning=scrape1($text,0,1,1);
+    $verbset=scrape1($text,0,9,1);
+    $number=scrape1($text,0,8,1);
     echo "<p class = st >".$verbaccent[0].' - '.convert($meaning[0]).', '.convert($verbset[0]).' '.$number[0].' '."</p>\n";
     echo "<hr>\n";
 }
@@ -1698,14 +1719,27 @@ function verb_padafinder($text)
 {
     global $verbset;
     $verbpada=scrape($text,0,5,1,"",$verbset,9);
+	$verbpada=array_unique($verbpada);
+	$verbpada=array_values($verbpada);
     return $verbpada;
+	print_r($verbpada);
 }
 // Searching for seT / aniT of a verb for use in tiGanta.php in case the user has chosen the gaNa.
 function verb_itfinder($text)
 {
     global $verbset;
-    $verbpada=scrape($text,0,6,1,"",$verbset,9);
-    return $verbpada;
+	global $fo;
+	if ($verbset!=="none")
+	{
+    $verb_it=scrape($text,0,6,1,"",$verbset,9);
+    }
+	else
+	{
+	$verb_it=scrape1($text,0,6,1);
+	}
+	$verb_it=array_unique($verb_it);
+	$verb_it=array_values($verb_it);
+	return $verb_it;
 }
 /* function change to change all members of $text based on a regular expression */
 function change($a,$b)
@@ -1893,6 +1927,7 @@ function pratyayareplace($a,$b,$test)
 // sub is not specific. For pratyayas, we test whether it is at end or not.
 function pr2($a,$b,$c,$d,$e,$f,$test)
 {
+	$out=array();
     foreach($test as $value)
     {
         $counter=1;
@@ -1951,7 +1986,6 @@ function toslp($text)
     return $text;
 }
 function Adezapratyaya()
-// INkoH is pending to be incorporated.
 {
     global $text;
     if (arr($text,'/([+])([iIuUfFxXeEoOhyvrlkKgGN])([s])/') )
@@ -1965,7 +1999,7 @@ function Adezapratyaya()
             echo "<p class = sa >आदेशप्रत्यययोः (८.३.५९) :</p>\n";
             display(0);
     }
-    elseif (arr($text,'/(['.flat($iN1).'])([+])([^s]*)([s])/') )
+    elseif (arr($text,'/([iIuUfFxXeEoOhyvrlkKgGN])([+])([^s]*)([s])/') )
     {
         foreach ($text as $value)
         {

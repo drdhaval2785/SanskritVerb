@@ -12,7 +12,9 @@ $(document).ready(function() {
 					response = data; // serialises data got from form of subanta.html
 		});
 	}
-	
+function removeAttr() {
+    $("input:radio[name=vAcya]:checked").removeAttr("checked");
+}	
 	$( document ).on( "click", "input:radio[name=gender]", function() {// if the user clicks on gender radio button.
 		if($('input:radio[name=gender]:checked').val() === "m"){ // if the checked gender is "m"
 			$('#step').val('1'); // send value of 'step' as '1' to ajax.php
