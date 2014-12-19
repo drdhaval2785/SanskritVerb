@@ -2019,6 +2019,29 @@ function Adezapratyaya()
 	}
     return $text;
 }
+function ekAcobazo()
+{
+    global $text; global $verb_without_anubandha;
+	foreach ($text as $value)
+	{	
+		if ( !anekAca($verb_without_anubandha) && ( preg_match('/[bgqd](['.pc('al').']*)[JBGQD][+][sD]/',$value) || preg_match('/[JBGQD][+]$/',$value) ) )
+		{
+			$value = preg_replace('/([b])(['.pc('al').']*)([JBGQD][+])/',"B$2$3",$value);
+			$value = preg_replace('/([g])(['.pc('al').']*)([JBGQD][+])/',"G$2$3",$value);
+			$value = preg_replace('/([q])(['.pc('al').']*)([JBGQD][+])/',"Q$2$3",$value);
+			$val[] = preg_replace('/([d])(['.pc('al').']*)([JBGQD][+])/',"D$2$3",$value);
+		}
+		else
+		{
+				$val[] = $value;
+		}
+	}
+		$text = $val;
+		echo "<p class = sa >By ekAco bazo bhaS jhaSantasya sdhvoH (".link_sutra("8.2.37").") :</p>\n";
+		echo "<p class = sa >एकाचो बशो भष्‌ झषन्तस्य स्ध्वोः (८.२.३७):</p>\n";
+		display(0);  
+    return $text;
+}
 function link_sutra($s) {
  /* $s is a string of form X.Y.Z where X,Y,Z are digits
    Returns a string   
