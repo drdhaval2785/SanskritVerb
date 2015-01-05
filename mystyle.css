@@ -64,6 +64,8 @@ p.red {
  font-family: "Siddhanta";
  padding-top: 2px;
 padding-bottom: 2px;
+ padding-right: 20px;
+ padding-left: 20px;
  }
 /* taddhitas */
 p.st {
@@ -72,6 +74,8 @@ p.st {
  font-family: "Siddhanta";
  padding-top: 2px;
 padding-bottom: 2px;
+ padding-right: 20px;
+ padding-left: 20px;
 }
 /* taddhitas */
 p.ta {
@@ -80,6 +84,17 @@ p.ta {
  font-family: "Siddhanta";
  padding-top: 2px;
 padding-bottom: 2px;
+ padding-right: 20px;
+ padding-left: 20px;
+}
+p.form {
+padding-top: 4px;
+color: black;
+background: white;
+font-family: "Siddhanta";
+padding-left: 3px;
+ padding-right: 20px;
+ padding-left: 20px;
 }
 
 /* the next styles are not used in code. kept reserved for future usages. */
@@ -87,13 +102,6 @@ p.comm {
 font-style: italic;
 }
 /* elizarenkova */
-p.form {
-padding-top: 4px;
-color: black;
-background: white;
-font-family: "Siddhanta";
-padding-left: 3px;
-}
 /* geldner */
 p.de {
    color: #5b2e00;

@@ -999,9 +999,10 @@ if($_POST['step']==='11' && ends($arrWord,$nonuniqueverbs,2) )
 {
     verb_meaning_gana_number($word);
 }
-elseif ($_POST['step']==='11' && ends($arrWord,$allverbs,4) )
+elseif ($_POST['step']==='11' && ends($arrWord,$allverbs,2) )
 {
-            //$html .= '<input required type="hidden" name="verbset" value="none" >';        
+	$verbset = scrape1($word,0,9,1);
+	$html .= '<input required type="hidden" name="verbset" value="'.$verbset[0].'" >';        
 }
 if($_POST['step']==='11' && ends($arrWord,array("gupa!","tija!","kita!"),4) )
 {
