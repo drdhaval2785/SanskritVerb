@@ -57,16 +57,9 @@ $e=implode('","',$d);
 echo $e;*/
 
 /* Method to prepare list of parasmaipada, Atmanepada, ubhayapadas. */
-/*$a=file('kryAdi.txt');
-$a=array_map('trim',$a);
-//print_r($a);
-$b=array_map('convert1',$a);
-$b=array_map('trim',$b);
-$c=array_map('removeaccent',$b);
-$e=implode('","',$c);
-echo $e;
-echo "<br><br>";
-echo implode('","',$a);*/
+//echo '$parasmai=array("'.implode('","',scrape1("pa",5,0,1)).'");';
+//echo '$Atmane=array("'.implode('","',scrape1("A",5,0,1)).'");';
+//echo '$ubhaya=array("'.implode('","',scrape1("u",5,0,1)).'");';
 
 /* method to find anudAttet and Git verbs */
 /*$a=file('allverbs.txt');
@@ -251,22 +244,72 @@ echo '$verbdata = array("'.implode('","',$out),'");';
 {
     $val = explode(":",$value);
     $val = array_map('trim',$val);
-    if ($val[3]==="03")
-    {
     $p[]=$val[0];        
     $q[]=$val[7];
-    }
 }
-echo implode('","',$p);
+echo '$allverbs=array("'.implode('","',$p).'");';
 echo "<br><br>";
-echo implode('","',$q);*/
+echo '$allverbs1=array("'.implode('","',$q).'");';*/
+foreach ($verbdata as $value)
+{
+	$val = explode(":",$value);
+	$val = array_map('trim',$val);
+	if ($val[3] === '10')
+	{
+		$p[]= $val[0];
+		$q[]= $val[7];
+	}
+}
+echo '$curAdi=array("'.implode('","',$p).'");';
+echo "<br><br>";
+echo '$curAdi1=array("'.implode('","',$q).'");';
 
 /* Creating methods to have dropdown menu in tiGanta.html */
-$a = $upasarga_combinations;
+/*$a = $upasarga_combinations;
 foreach ($a as $value)
 {
 $value = trim($value);
 echo '<option value="'.$value.'">'.convert($value).' - ('.$value.')</option>';
+}*/
+
+/* Corrected the database for curAdi adantadhAtus. Earlier it had no akAra at end. Now it has */
+/*foreach ($curAdi_adanta as $value)
+{
+	$val[] = $value."!";
 }
+foreach ($verbdata as $in)
+{
+	$exp = explode(':',$in);
+	//if (in_array($exp[0],$val) && $exp[3]==='10')
+	if (in_array($exp[0],$curAdi_adanta) && $exp[3]==='10')
+	{
+		//$exp[2] = $exp[2]."a";
+		//$exp[0] = substr($exp[0],0,-1);
+		$exp[7] = str_replace('ँ॒॑','॒॑',$exp[7]);
+		$exp[7] = str_replace('ँ॑','॑',$exp[7]);
+		$exp[7] = str_replace('ँ॒','॒',$exp[7]);
+		if (substr($exp[7],-1)==="ँ")
+		{ $exp[7] = substr($exp[7],0,-1); }
+		$out[] = implode(':',$exp);
+	}
+	else
+	{
+		$out[] = $in;
+	}
+}
+$infile = fopen('in.txt','w+');
+$outfile = fopen('out.txt','w+');
+foreach ($verbdata as $datum)
+{
+	fputs($infile,$datum."\n");
+}
+foreach ($out as $datum)
+{
+	echo $datum.'","';
+	fputs($outfile,$datum."\n");
+}
+fclose($infile);
+fclose($outfile);
+*/
 
 ?>

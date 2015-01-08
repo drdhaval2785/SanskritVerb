@@ -11,6 +11,7 @@ error_reporting(0);
 $word = $_POST['first'];
 $tran = $_POST['tran'];
 $lakAra= $_POST['lakAra'];
+$sanAdi = $_POST['sanAdi'];
 
 // IAST and devanagari handling
 // Code for converting from IAST to SLP
@@ -946,7 +947,7 @@ if($_POST['step']==='11' && ends($arrWord,array("Buja!"),4) )
             $html .= '<input required type="radio" value="2" name="cond38" > अन्य ';
             $html .= '</div>';            
 }
-if( ends($arrWord,array("BI","smiN","zmiN"),4) ) // akartrabhiprAyo'yamArambhaH iti kAzikA. Therefore, not keeping step=11.
+if( ends($arrWord,array("YiBI","smiN","zmiN"),4) ) // akartrabhiprAyo'yamArambhaH iti kAzikA. Therefore, not keeping step=11.
 {
             $html .= '<div id="step33">';
             $html .= '<input required type="radio" value="1" name="cond39" > हेतुभये ';
@@ -1030,6 +1031,27 @@ if( in_array($_POST['step'],array('11','12','13')) && in_array($lakAra,array("la
             $html .= '<div id="step22">';
             $html .= '<input required type="radio" value="1" name="cond50" > माङ्‌ योग है ';
             $html .= '<input required type="radio" value="2" name="cond50" checked> नहीं ';
+            $html .= '</div>';            
+}
+if( in_array($_POST['step'],array('11','12','13')) && ends($arrWord,array("iR","ik",),2) && $sanAdi==="Ric")
+{
+            $html .= '<div id="step22">';
+            $html .= '<input required type="radio" value="1" name="cond51" > अबोधन ';
+            $html .= '<input required type="radio" value="2" name="cond51" checked> बोधन ';
+            $html .= '</div>';            
+}
+if( in_array($_POST['step'],array('11','12','13')) && ends($arrWord,array("duza!",),2) && $sanAdi==="Ric")
+{
+            $html .= '<div id="step22">';
+            $html .= '<input required type="radio" value="1" name="cond52" > चित्तविराग ';
+            $html .= '<input required type="radio" value="2" name="cond52" checked> अन्य ';
+            $html .= '</div>';            
+}
+if( in_array($_POST['step'],array('11','12','13')) && ends($arrWord,array("ziDU!",),2) && $sanAdi==="Ric")
+{
+            $html .= '<div id="step22">';
+            $html .= '<input required type="radio" value="1" name="cond53" > पारलौकिक ज्ञान ';
+            $html .= '<input required type="radio" value="2" name="cond53" checked> अन्य ';
             $html .= '</div>';            
 }
 
