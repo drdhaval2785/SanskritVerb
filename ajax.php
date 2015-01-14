@@ -1003,7 +1003,8 @@ if($_POST['step']==='11' && ends($arrWord,$nonuniqueverbs,2) )
 elseif ($_POST['step']==='11' && ends($arrWord,$allverbs,2) )
 {
 	$verbset = scrape1($word,0,9,1);
-	$html .= '<input required type="hidden" name="verbset" value="'.$verbset[0].'" >';        
+	$number = scrape($word,0,8,1,"",$verbset[0],9);
+	$html .= '<input required type="hidden" name="number" value="'.$number[0].'" >'; 
 }
 if($_POST['step']==='11' && ends($arrWord,array("gupa!","tija!","kita!"),4) )
 {
@@ -1054,6 +1055,7 @@ if( in_array($_POST['step'],array('11','12','13')) && ends($arrWord,array("ziDU!
             $html .= '<input required type="radio" value="2" name="cond53" checked> अन्य ';
             $html .= '</div>';            
 }
+
 
 //display the output
 $html = trim($html);
