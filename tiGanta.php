@@ -166,6 +166,8 @@ $samp = array(); // creating an array where we can store whethere samprasAraNa h
 $Agama = array(); // storing Agamas.
 // rest of the variables will be defined at their particular occurence in the code.
 
+// Testing with $san=1
+$yaG=1;
 /* Displaying information about the verb */
 if ($verbset!=="none")
 {
@@ -3204,6 +3206,7 @@ if ( sub($hl,array("ya+"),$ArdhadhAtuka_pratyayas,0) )
     echo "<p class = sa >By yasya halaH (".link_sutra("6.4.49").") :</p>\n";
     echo "<p class = sa >यस्य हलः (६.४.४९) :</p>\n";
     display(0);
+	$atolopa=1;
 }
 /* ato lopaH (6.4.48) */
 if ( sub(array("a+"),$ArdhadhAtuka_pratyayas,blank(0),0) )
@@ -11834,6 +11837,15 @@ if (sub(array("Q"),array("Q"),blank(0),0))
     echo "<p class = sa >ढो ढे लोपः (८.३.१३) :</p>\n";
     display(0); 
     $dho = 1;  // 0 - This sUtra has not applied. 1 - This sUtra has applied.
+	print_r($text);
+	/* sahivahorodavarNasya (6.3.111) */
+	if (sub(array("va","sa"),array("Q"),blank(0),0) && ends(array($fo),array("vaha!","zaha!"),4))
+	{
+		$text = two(array("va","sa"),array("Q"),array("vo","so"),array("Q"),0);
+		echo "<p class = sa >By sahivahorodavarNasya (".link_sutra("6.3.111").") :</p>\n";
+		echo "<p class = sa >सहिवहोरोदवर्णस्य (६.३.१११) :</p>\n";
+		display(0); 
+	}
 } else { $dho = 0; }
 /* ro ri (8.3.14) */
 if (sub(array("r"),array("r"),blank(0),0))
@@ -12501,6 +12513,15 @@ if (sub(array("Q"),array("Q"),blank(0),0))
     echo "<p class = sa >ढो ढे लोपः (८.३.१३) :</p>\n";
     display(0); 
     $dho = 1;  // 0 - This sUtra has not applied. 1 - This sUtra has applied.
+	print_r($text);
+	/* sahivahorodavarNasya (6.3.111) */
+	if (sub(array("va","sa"),array("#Q"),blank(0),0) && ends(array($fo),array("vaha!","zaha!"),4))
+	{
+		$text = two(array("va","sa"),array("#Q"),array("vo","so"),array("Q"),0);
+		echo "<p class = sa >By sahivahorodavarNasya (".link_sutra("6.3.111").") :</p>\n";
+		echo "<p class = sa >सहिवहोरोदवर्णस्य (६.३.१११) :</p>\n";
+		display(0); 
+	}
 } else { $dho = 0; }
 /* ro ri (8.3.14) */
 if (sub(array("r"),array("r"),blank(0),0))
