@@ -250,7 +250,7 @@ echo '$verbdata = array("'.implode('","',$out),'");';
 echo '$allverbs=array("'.implode('","',$p).'");';
 echo "<br><br>";
 echo '$allverbs1=array("'.implode('","',$q).'");';*/
-foreach ($verbdata as $value)
+/*foreach ($verbdata as $value)
 {
 	$val = explode(":",$value);
 	$val = array_map('trim',$val);
@@ -262,7 +262,17 @@ foreach ($verbdata as $value)
 }
 echo '$curAdi=array("'.implode('","',$p).'");';
 echo "<br><br>";
-echo '$curAdi1=array("'.implode('","',$q).'");';
+echo '$curAdi1=array("'.implode('","',$q).'");';*/
+foreach ($verbdata as $value)
+{
+	$val = explode(":",$value);
+	$val = array_map('trim',$val);
+	if (preg_match('/[uUfFxX][!]/',$val[0]) )
+	{
+		$p[]= $val[0];
+	}
+}
+echo '$ugitverbs=array("'.implode('","',$p).'");';
 
 /* Creating methods to have dropdown menu in tiGanta.html */
 /*$a = $upasarga_combinations;

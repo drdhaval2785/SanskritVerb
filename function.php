@@ -116,7 +116,7 @@ $taG=array("ta","AtAm","Ja","TAs","ATAm","Dvam","iw","vahi","mahiN");
 $tiGprathama=array("tip","tas","Ji","ta","AtAm","Ja",);
 $tiGmadhyama=array("sip","Tas","Ta","TAs","ATAm","Dvam",);
 $tiGuttama=array("mip","vas","mas","iw","vahi","mahiN");
-$tiG1=array("te","ite","ante","se","iTe","Dve","e","vahe","mahe","ti","tas","anti","si","Tas","Ta","mi","vas","mas","Ate","ATe","ta","itAm","anta","TAs","iTAm","Dvam","i","vahi","mahi","t","ant","s","m","tAm","tam","ta","am","AtAm","ATAm"); // removal of anubandhas.
+$tiG1=array("te","ite","ante","se","iTe","Dve","e","vahe","mahe","ti","tas","anti","si","Tas","Ta","mi","vas","mas","Ate","ATe","ta","itAm","anta","TAs","iTAm","Dvam","i","vahi","mahi","t","ant","s","m","tAm","tam","ta","am","AtAm","ATAm","va","ma"); // removal of anubandhas.
 $shitpratyaya=array("Sap","Syan","Snu","Sa","Snam","SnA","SAyac","SAnac");
 $Nitpratyaya=array("");
 $Jitpratyaya=array("");
@@ -152,6 +152,7 @@ $AkArAntaverbs=array("KyA","gAN","gA","GrA","jYA","jYA","jyA","daridrA","qudAY",
 $nonuniqueverbs=array("ahi!","aYcu!","aYcu!","awwa!","aRa!","aqqa!","ana!","ama!","aya!","arca!","arja!","arda!","arha!","arha!","asa!","Apx!","iN","ik","ila!","iza!","iza!","IKi!","Iqa!","Ira!","Iza!","uCI!","uCi!","uWa!","ujJa!","f","f","fDu!","ejf!","ezf!","kaqa!","kaRa!","kaRa!","kaWi!","kaWi!","kaqi!","kaqi!","katra!","kaqqa!","kadi!","kala!","kala!","kasa!","kASf!","kiwa!","kita!","kuN","kuca!","kuca!","kuwa!","kuwwa!","kuRa!","kuWi!","kuqi!","kuqi!","kuqi!","kupa!","kubi!","kUwa!","kURa!","kfY","kftI!","kfpa!","kfza!","kF","kfpU!","kradi!","kladi!","klidi!","kzaji!","kzi","kzi","kzipa!","kzuBa!","kzuBa!","kzura!","YikzvidA!","YikzvidA!","Kaqi!","Kida!","Kida!","gaja!","gaqi!","garja!","garda!","garva!","garha!","gala!","guN","guja!","guDa!","gupa!","gupa!","gF","gF","granTa!","granTa!","glepf!","Gawa!","Gawa!","Gawwa!","Guwa!","GuRa!","Guzi!r","GUrRa!","Gf","Gf","caka!","caqi!","cana!","capa!","camu!","cara!","carca!","carca!","cala!","cala!","caha!","caha!","ciY","cIva!","cuwa!","cuqqa!","cubi!","cUrRa!","Cada!","Cada!","jartsa!","jartsa!","jala!","jasu!","jasu!","ji","ci","ci","juqa!","juqa!","jF","jYA","jri","jvala!","Jartsa!","Jartsa!","Jaza!","qipa!","qipa!","qipa!","qIN","tasi!","taqa!","tanu!","tapa!","tapa!","tarja!","tija!","tila!","tila!","tuja!","tuji!","tuji!","tuqi!","tupa!","tuPa!","tuBa!","tuBa!","tumpa!","tumPa!","tubi!","tfpa!","tfpa!","tfpa!","tfpa!","truwa!","daSi!","dasi!","dakza!","dala!","divu!","divu!","dfpa!","dfpa!","dfBI!","dF","dF","DU","DUY","DUY","DUpa!","DUpa!","DfN","u!Drasa!","Dru","Dvana!","Dvana!","nawa!","Rawa!","RaBa!","RaBa!","Ruda!","RU","nF","pasi!","pakza!","paci!","pawa!","pawa!","paqi!","pada!","pala!","pA","piji!","piji!","piqi!","piSa!","puwa!","puwa!","puwa!","puqa!","puRa!","puTa!","pula!","puza!","puza!","puza!","puza!","pUrI!","purva!","pUla!","pf","pfcI!","pF","pF","pelf!","praTa!","prIY","pluza!","pluza!","baDa!","banDa!","barha!","barha!","bala!","balha!","bila!","bukka!","buDa!","busa!","bfhi!","Bakza!","Baja!","Bawa!","Baqi!","Bala!","BAma!","BU","BU","BUza!","BraMSu!","Bramu!","Brasja!","mahi!","maGi!","maqi!","maqi!","manTa!","maska!","wumasjo!","maha!","mAN","mana!","mAna!","mAna!","YimidA!","mila!","muwa!","muwa!","muqi!","muda!","mUla!","mfjU!","mfqa!","mfza!","mrakza!","mrakza!","mleCa!","yama!","yu","yuja!","rahi!","raGi!","raYja!","rawa!","rawa!","raRa!","rasa!","raha!","raha!","ri","riza!","ruwa!","ruwa!","ruWi!","ruza!","ruza!","lakza!","laGi!","laGi!","laGi!","laja!","laja!","laji!","laji!","laji!","laqa!","o!laqi!","labi!","lala!","lasa!","o!lasjI!","liKa!","ligi!","liSa!","lI","luji!","luwa!","luwa!","luwa!","luwa!","luWa!","luWa!","luWa!","luqa!","luWi!","luWi!","luBa!","lubi!","lUza!","lokf!","locf!","vaki!","vaca!","vaYcu!","vawa!","vawa!","vawa!","vawi!","vawi!","vaqi!","vada!","vanu!","vana!","vaBra!","varRa!","barha!","varha!","balha!","vasa!","vasa!","vasa!","vaska!","bAhf!","viCa!","o!vijI!","vida!","vida!","vida!","vila!","vizka!","visa!","bisa!","vfY","bfhi!","bfhi!","vfjI!","vfjI!","vftu!","vftu!","vfDu!","bfha!","vehf!","vella!","vyaya!","vyaya!","vyuza!","vyusa!","vraja!","vraja!","vraRa!","vraRa!","SaWa!","SaWa!","SaWa!","Sadx!","Sapa!","Sala!","Siza!","SIka!","SIla!","SuWa!","SuWi!","SuWi!","SunDa!","SuBa!","SuBa!","SumBa!","SfDu!","SfDu!","sraMsu!","SraRa!","SraTa!","SraTa!","SraTa!","SranTa!","SranTa!","SrA","Sliza!","Sragi!","SvaWa!","zWivu!","zvaska!","zaca!","satra!","zadx!","zaha!","zaha!","sAra!","ziY","zu","zUN","zUda!","sf","sfja!","zwupa!","zwUpa!","zRiha!","spaSa!","sPuwa!","sPuwa!","sPuwi!","sPuqi!","zmiN","smf","smf","sraMsu!","sramBu!","Sragi!","zvada!","svana!","zvaska!","zvaska!","svAda!","hisi!","huqi!","hula!","heWa!","heWa!","hoqf!","hrasa!","hvf");
 $ghaTAdi_mit=array("kaKe!","rage!","lage!","hvage!","hlage!","zage!","zwage!","kage!","Gawa!","vyaTa!","praTa!","prasa!","mrada!","sKada!","dakza!","heqa!","krapa!","YitvarA!","jvara!","gaqa!","nawa!","Bawa!","Rawa!","caka!","aka!","aga!","kuRa!","raRa!","caRa!","SaRa!","SraRa!","SraTa!","SlaTa!","kraTa!","klaTa!","vana!","jvala!","hvala!","hmala!","zfka!","kzaji!","kadi!","kradi!","kladi!","smf"); // dhAtus 914 to 927 not included. Pending. It needs user input to decide the meaning. See p 91 of sahajabodha 1.
 $mitcurAdiverbs=array("jYapa!","yama!","caha!","raha!","bala!","ciY",);
+$ugitverbs=array("akzU!","acu!","aYjU!","aSU!","asu!","Apx!","Apx!","ASAsu!","fRu!","fDu!","fDu!","ejf!","ejf!","ezf!","ezf!","oKf!","oRf!","kabf!","kamu!","kASf!","kASf!","kAsf!","kuju!","kudf!","kfpU!","kfpU!","kepf!","kelf!","kevf!","knasu!","kramu!","krIqf!","klamu!","klidU!","kliSU!","klIbf!","kzaRu!","kzamU!","kzamU!z","kziRu!","kzivu!","kzIbf!","kzIvf!","kzevu!","kzvelf!","Kanu!","KAdf!","Kuju!","Kelf!","Kevf!","Korf!","Kolf!","gamx!","gADf!","gAhU!","gupU!","guhU!","gfhU!","gfDu!","gepf!","gevf!","gezf!","grasu!","grucu!","glasu!","glucu!","glepf!","glepf!","glevf!","glezf!","Gasx!","GfRu!","Gfzu!","DrAGf!","cakAsf!","caYcu!","camu!","camu!","cAyf!","cIbf!","cIBf!","cIvf!","celf!","Camu!","u!Cfdi!r","jamu!","jasu!","jasu!","jasu!","jimu!","jizu!","jutf!","jezf!","jehf!","Jamu!","wikf!","wIkf!","QOkf!","takzU!","taYcu!","taYcU!","tanu!","tanu!","tamu!","tasu!","tAyf!","tikf!","tipf!","tIkf!","tuqf!","tUqf!","tfMhU!","tfRu!","u!tfdi!r","tfhU!","tepf!","tevf!","trapU!z","trOkf!","tvakzU!","tvaYcu!","damu!","damBu!","dasu!","dASf!","dAsf!","divu!","divu!","divu!","devf!","drAKf!","drAGf!","drAqf!","drAhf!","drekf!","DAvu!","Depf!","Dorf!","u!Drasa!","u!Drasa!","DrAKf!","DrAqf!","Drekf!","DvaMsu!","nATf!","nADf!","RAsf!","Ridf!","Rizu!","Redf!","Rezf!","patx!","pelf!","pizx!","pisf!","pfzu!","pelf!","pevf!","pezf!","pesf!","pERf!","pruzu!","prezf!","prERf!","proTf!","pluzu!","plevf!","Pelf!","basu!","bADf!","bAhf!","bIBf!","u!bundi!r","bfhU!","vehf!","Basu!","BAsf!","BfMSu!","BfSu!","Bezf!","BraMSu!","BraMSu!","BraMsu!","Bramu!","Bramu!","wuBrAjf!","BrAjf!","wuBrASf!","Brejf!","Brezf!","wuBlASf!","Blezf!","manu!","mAhf!","miTf!","midf!","miDf!","mizu!","mImf!","mucx!","mfjU!","mfjU!","mfDu!","mfzu!","meTf!","medf!","meDf!","mepf!","mevf!","mrucu!","mruYcu!","mrewf!","mreqf!","mlucu!","mluYcu!","mlewf!","mlevf!","yasu!","wuyAcf!","yutf!","yezf!","yOwf!","ramu!","rAKf!","rAGf!","rAjf!","rAsf!","rekf!","rejf!","rewf!","repf!","reBf!","revf!","rezf!","roqf!","rOqf!","lAKf!","lAGf!","lupx!","lepf!","lokf!","lokf!","locf!","locf!","loqf!","vaYcu!","vaYcu!","vanu!","vanu!","vasu!","vAvftu!","vASf!","bAhf!","viTf!","vidx!","vizu!","vizx!","vftu!","vftu!","vftu!","vfDu!","vfDu!","vfzu!","vfhU!","veRf!","veTf!","venf!","velf!","vehf!","o!vraScU!","SaMsu!","Sakx!","Sadx!","Sadx!","Samu!","Sasu!","SAKf!","SAqf!","SAsu!","Sizx!","SIkf!","SIBf!","SfDu!","SfDu!","SfDu!","Self!","Sevf!","SoRf!","SOwf!","syandU!","sraMsu!","sraMsu!","Sramu!","SramBu!","Srizu!","SroRf!","SlAKf!","SlAGf!","Slizu!","Slokf!","SloRf!","zWivu!","zWivu!","zadx!","zadx!","zanu!","ziDU!","ziDu!","ziBu!","zimBu!","zivu!","sIkf!","sfpx!","zfBu!","zfmBu!","sekf!","zelf!","zevf!","skamBu!","skumBu!","stamBu!","zwipf!","zwuBu!","stumBu!","stfhU!","zwepf!","zRasu!","zRusu!","syamu!","sraMsu!","sramBu!","sramBu!","srivu!","srekf!","srokf!","huqf!","hUqf!","hfzu!","heqf!","hepf!","hezf!","hoqf!","hoqf!","hrezf!");
 $curAdi_optionalNic_idud=array("pUrI!","ancu!","divu!","jasu!","SfDu!","vftu!","vfDu!","tanu!","uDrasa!","mfjU!","vaYcu!","BU","kfpa!","grasa!","dala!","ruja!","puza!","ji","ci","paw","ciY","pawa!","Gawa!","Rada!","nawa!","taqa!","nala!","puwa!","luwa!","gupa!","puTa!","kupa!","ruwa!","vftu!","vfDu!","tuji!","miji!","piji!","luji!","Baji!","laDi!","trasi!","pisi!","kusi!","daSi!","kuSi!","Gawi!","bfhi!","laji!","aji!","dasi!","BfSi!","ruSi!","rusi!","puwi!","raGi!","laGi!","ahi!","rahi!","mahi!","laqi!","vicCa!","cIva!","lokf!","locf!","tarka!","SIka!","DUpa!",);
 $curAdi_optionalNic_Asvada=array("grasa!","dala!","ruja!","puza!","ji","ci","paw","ciY","pawa!","Gawa!","Rada!","nawa!","taqa!","nala!","puwa!","luwa!","gupa!","puTa!","kupa!","ruwa!","vftu!","vfDu!","tuji!","miji!","piji!","luji!","Baji!","laDi!","trasi!","pisi!","kusi!","daSi!","kuSi!","Gawi!","bfhi!","laji!","aji!","dasi!","BfSi!","ruSi!","rusi!","puwi!","raGi!","laGi!","ahi!","rahi!","mahi!","laqi!","vicCa!","cIva!","lokf!","locf!","tarka!","SIka!","DUpa!","pUrI!");
 $curAdi_optionalNic_AdhRSIya=array("lI","jri","mI","prIY","BU","DUY","vfY","jF","zaha!","tapa!","SraTa!","Cada!","tanu!","vada!","vaca!","Asada!","rica!","Siza!","yuja!","juza!","pfca!","vfjI!","tfpa!","CfdI!","dfBI!","dfBa!","mfjU!","mfza!","Dfza!","granTa","granTa!","SranTa","SunDa!","hisi!","kaWi!","arca!","Ira!","SIka!","cIka!","arda!","arha!","Aplx!","mAna!","garha!","mArga!",);
@@ -220,7 +221,7 @@ $sArvadhAtuka_tiG_pratyayas=array("ati","at","ad","atas","anti","an","asi","as",
 $sArvadhAtuka_kRt_pratyayas=array("Satf!","SAnac","SAnan","cAnaS","KaS","Sa","eS","SaDyE","SaDyEn");
 // sArvadhAtuka vikaraNa pratyayas.
 $sArvadhAtuka_vikaraNa_pratyayas=array("Sap","Syan","Snu","Sa","Snam","SnA","SAyac","SAnac");
-$vikaraNa=array("ap","yan","nu","a","na","nA","Aya","Ana","u","Ri","ya");
+$vikaraNa=array("ap","yan","nu","a","na","nA","Aya","Ana","u","Ri","ya",);
 // Total sArvadhAtuka pratyayas.
 $sArvadhAtuka_pratyayas=array("ati","at","ad","atas","anti","an","asi","as","aTas","aTa","ami","am","avas","ava","amas","ama","Ati","At","Ad","Atas","Anti","An","Asi","As","ATas","ATa","Ami","Am","Avas","Ava","Amas","Ama","ate","atE","Ete","ante","antE","ase","asE","ETe","aDve","aDvE","e","E","avahe","avahE","amahe","amahE","Ate","AtE","Ete","Ante","AntE","Ase","AsE","ETe","ADve","ADvE","e","E","Avahe","AvahE","Amahe","AmahE","ti","tas","anti","si","Tas","Ta","mi","vas","mas","tu","tAt","tAm","antu","tAt","tam","ta","Ani","Ava","Ama","t","tAm","an","s","tam","t","am","va","ma","it","itAm","iyus","is","itam","ita","iyam","iva","ima","te","ite","ante","se","iTe","Dve","e","vahe","mahe","tAm","itAm","antAm","sva","iTAm","Dvam","E","AvahE","AmahE","ta","itAm","anta","TAs","iTAm","Dvam","i","vahi","mahi","Ita","IyAtAm","Iran","ITAs","IyATAm","IDvam","Iya","Ivahi","Imahi","ati","atu","us","ti","tas","anti","si","Tas","Ta","mi","vas","mas","tu","tAm","antu","tAt","tam","ta","Ani","Ava","Ama","t","tAm","an","s","tam","ta","am","va","ma","yAt","yAtAm","yus","yAH","yAtam","yAta","yAm","yAva","yAma","te","Ate","ate","se","ATe","Dve","e","vahe","mahe","tAm","AtAm","atAm","sva","ATAm","Dvam","E","AvahE","AmahE","ta","AtAm","ata","TAs","ATAm","Dvam","i","vahi","mahi","Ita","IyAtAm","Iran","ITAs","IyATAm","IDvam","Iya","Ivahi","Imahi","Satf!","SAnac","SAnan","cAnaS","KaS","Sa","eS","SaDyE","SaDyEn","Sap","Syan","Snu","Sa","Snam","SnA","SAyac","SAnac");
 // pit and apit sArvadhAtuka tiG pratyayas
@@ -1992,36 +1993,12 @@ function Adezapratyaya($text)
 		for ($i=1;$i<count($parts);$i++) // leaving the first part and starting from second because it is not pratyaya. Mostly it is prakRti.
 		{
 			$parts[$i]=preg_replace('/([iIuUfFxXeEoOhyvrlkKgGN])([s])/','$1z',$parts[$i]);
+			if (arr($text,'/[s]$/')) // patch for aDAsIs, aDAsisus
+			{
+				$parts[$i]=preg_replace('/([z])$/','s',$parts[$i]);			
+			}
 		}
 		$val[] = implode('+',$parts);
-		/*if (preg_match('/([+])([iIuUfFxXeEoOhyvrlkKgGN])([s])([I])([s])/',$value) ) // patch for sIyuT with iDAgama.
-		{
-				$val[]=preg_replace('/([+])([iIuUfFxXeEoOhyvrlkKgGN])([s])([I])([s])/',"$1$2z$4z",$value);
-		}
-		elseif (preg_match('/([iIuUfFxXeEoOhyvrlkKgGN])([+])([s])([I])([s])/',$value) ) // patch for sIyuT with iN of verb.
-		{
-				$val[]=preg_replace('/([iIuUfFxXeEoOhyvrlkKgGN])([+])([s])([I])([s])/',"$1$2z$4z",$value);
-		}
-		elseif (preg_match('/([+])([s])([I])([s])/',$value) ) // patch for sIyuT with iN of verb.
-		{
-				$val[]=preg_replace('/([+])([s])([I])([s])/',"$1$2$3z",$value);
-		}
-		elseif (preg_match('/([+])([iIuUfFxXeEoOhyvrlkKgGN])([s])/',$value) )
-		{
-				$val[]=preg_replace('/([+])([iIuUfFxXeEoOhyvrlkKgGN])([s])/',"$1$2z",$value);
-		}
-		elseif (preg_match('/([iIuUfFxXeEoOhyvrlkKgGN])([+])([^s]*)([s])/',$value) )
-		{
-				$val[]=preg_replace('/([iIuUfFxXeEoOhyvrlkKgGN])([+])([^s]*)([s])/',"$1$2$3z",$value);
-		}
-		elseif (preg_match('/([+])([^s]*)([iIuUfFxXeEoOhyvrlkKgGN])([s])/',$value) )
-		{
-				$val[]=preg_replace('/([+])([^s]*)([iIuUfFxXeEoOhyvrlkKgGN])([s])/',"$1$2$3z",$value);
-		}
-		else
-		{
-				$val[] = $value;
-		}*/
 	}
 	if ($val!==$text)
 	{
