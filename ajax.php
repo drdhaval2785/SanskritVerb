@@ -1055,6 +1055,20 @@ if( in_array($_POST['step'],array('11','12','13')) && ends($arrWord,array("ziDU!
             $html .= '<input required type="radio" value="2" name="cond53" checked> अन्य ';
             $html .= '</div>';            
 }
+if( in_array($_POST['step'],array('11','12','13')) && ends($arrWord,array("Sliza!",),2) && $lakAra==="luN")
+{
+            $html .= '<div id="step22">';
+            $html .= '<input required type="radio" value="1" name="cond54" > आलिङ्गन ';
+            $html .= '<input required type="radio" value="2" name="cond54" checked> अन्य ';
+            $html .= '</div>';            
+}
+if( in_array($_POST['step'],array('11','12','13')) && ends(array($fo),array("qukfY","mfN","df","ruha!"),2) && $lakAra==="luN")
+{
+            $html .= '<div id="step22">';
+            $html .= '<input required type="radio" value="1" name="cond55" > छन्दस्‌ ';
+            $html .= '<input required type="radio" value="2" name="cond55" checked> नहीं ';
+            $html .= '</div>';            
+}
 
 
 //display the output
