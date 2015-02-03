@@ -1062,7 +1062,7 @@ if( in_array($_POST['step'],array('11','12','13')) && ends($arrWord,array("Sliza
             $html .= '<input required type="radio" value="2" name="cond54" checked> अन्य ';
             $html .= '</div>';            
 }
-if( in_array($_POST['step'],array('11','12','13')) && ends(array($fo),array("qukfY","mfN","df","ruha!"),2) && $lakAra==="luN")
+if( in_array($_POST['step'],array('11','12','13')) && ends(array($fo),array("qukfY","mfN","df","ruha!","gupa!"),2) && $lakAra==="luN")
 {
             $html .= '<div id="step22">';
             $html .= '<input required type="radio" value="1" name="cond55" > छन्दस्‌ ';

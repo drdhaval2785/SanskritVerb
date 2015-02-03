@@ -2056,7 +2056,144 @@ function link_sutra($s) {
  $ans = "<a href=\"http://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/$X/$X.$Y.$Z.htm\">$X.$Y.$Z</a>";
  return $ans;
 }
-
+function caG()
+{
+	global $text;
+	foreach ($text as $value)
+	{
+		$parts=explode('+',$value);
+		if ($parts[1]==="Ri" && preg_match('/^['.pc('hl').']/',$parts[0]) && !anekAca($parts[0]) ) // halAdi ekAc
+		{
+			$parts[0]=$parts[0]."+".$parts[0];
+		}
+		elseif ($parts[1]==="Ri" && preg_match('/^['.pc('hl').']/',$parts[0]) && anekAca($parts[0]) ) // halAdi anekAc
+		{
+			$splitvowel=preg_split('/([aAiIuUfFxXeEoO])/',$parts[0],null,PREG_SPLIT_DELIM_CAPTURE);
+			$parts[0]=$splitvowel[0].$splitvowel[1].implode('',$splitvowel);
+		}
+		$val[]=implode('+',$parts);
+	}
+	$text = $val;
+	/* caGi (6.1.11) */
+	echo "<p class = sa >By caGi (".link_sutra("6.1.11").") and ekAco dve prathamasya (".link_sutra("6.1.1").") :</p>\n"; 
+	echo "<p class = sa >चङि (६.१.११) तथा एकाचो द्वे प्रथमस्य (६.१.१) :</p>\n";
+	display(0);
+return $text;
+}
+function abhyAsa()
+{
+	global $text;	
+	foreach ($text as $value)
+	{
+		$parts=explode('+',$value);
+		$splitvowel=preg_split('/([aAiIuUfFxXeEoO])/',$parts[0],null,PREG_SPLIT_DELIM_CAPTURE);
+		$split2=preg_split('/(['.pc('hl').'])/',$splitvowel[0],null,PREG_SPLIT_DELIM_CAPTURE);
+		/* urat (7.4.66) */
+		if (in_array($splitvowel[1],array("f")) )
+		{
+			$parts[0]=str_replace("f","ar",$parts[0]);
+			$text = array(implode('+',$parts)); 
+			$value = implode('+',$parts);
+			echo "<p class = sa >By urat (".link_sutra("7.4.66").") and uraNraparaH (".link_sutra("1.1.51").") :</p>\n"; 
+			echo "<p class = sa >उरत्‌ (७.४.६६) तथा उरण्रपरः (१.१.५१):</p>\n";
+			display(0);
+			$parts=explode('+',$value);
+			$splitvowel=preg_split('/([a])/',$parts[0],null,PREG_SPLIT_DELIM_CAPTURE);
+			$split2=preg_split('/(['.pc('hl').'])/',$splitvowel[0],null,PREG_SPLIT_DELIM_CAPTURE);
+			$parts[0]=$split2[1].$splitvowel[1];
+			$halAdi=1;
+			$text = array(implode('+',$parts)); 
+			$value = implode('+',$parts);
+		}
+		$parts=explode('+',$value);
+		/* zarpUrvAH khayaH (7.4.61) */
+		if ($parts[0]===$parts[1] && preg_match('/^[Szs]['.pc('Ky').']/',$parts[0])  ) // zarpUrvA khayaH
+		{
+			$splitvowel=preg_split('/([aAiIuUfFxXeEoO])/',$parts[0],null,PREG_SPLIT_DELIM_CAPTURE);
+			$split2=preg_split('/(['.pc('hl').'])/',$splitvowel[0],null,PREG_SPLIT_DELIM_CAPTURE);
+			$parts[0]=$split2[3].$splitvowel[1];
+			$zar=1;
+		}
+		/* halAdiH zeSaH (7.4.60) */
+		elseif ($parts[0]===$parts[1] && preg_match('/^['.pc('hl').']/',$parts[0])  ) // halAdiH zeSaH
+		{
+			$splitvowel=preg_split('/([aAiIuUfFxXeEoO])/',$parts[0],null,PREG_SPLIT_DELIM_CAPTURE);
+			$split2=preg_split('/(['.pc('hl').'])/',$splitvowel[0],null,PREG_SPLIT_DELIM_CAPTURE);
+			$parts[0]=$split2[1].$splitvowel[1];
+			$halAdi=1;
+		}
+		$val[]=implode('+',$parts);
+	}
+	$text = $val;
+	/* halAdiH zeSaH (7.4.60) */
+	if ($halAdi===1)
+	{
+		echo "<p class = sa >By halAdiH zeSaH (".link_sutra("7.4.60").") :</p>\n"; 
+		echo "<p class = sa >हलादिः शेषः (७.४.६०) :</p>\n";
+		display(0);
+	}
+	/* zarpUrvAH khayaH (7.4.61) */
+	if ($zar===1)
+	{
+		echo "<p class = sa >By zarpUrvAH khayaH (".link_sutra("7.4.61").") :</p>\n"; 
+		echo "<p class = sa >शर्पूर्वाः खयः (७.४.६१) :</p>\n";
+		display(0);
+	}
+		/* hrasvaH (7.4.59) */
+		if (in_array($splitvowel[1],array("A","I","U","F","X","e","o","E","O")) )
+		{
+			$parts=explode('+',$value);
+			$parts[0]=str_replace(array("A","I","U","F","X","e","o","E","O"),array("a","i","u","f","x","i","u","i","u"),$parts[0]);
+			$val1[] = implode('+',$parts);
+			$text=$val1;
+			echo "<p class = sa >By hrasvaH (".link_sutra("7.4.59").") :</p>\n"; 
+			echo "<p class = sa >ह्रस्वः (७.४.५९) :</p>\n";
+			display(0);
+		}
+		/* kuhozcuH (7.4.62) */
+		if (in_array($splitvowel[0],array("k","K","g","G","N","h")) )
+		{
+			foreach ($text as $value)
+			{
+				$parts=explode('+',$value);
+				$parts[0]=str_replace(array("k","K","g","G","N","h"),array("c","C","j","J","Y","j"),$parts[0]);
+				$val2[] = implode('+',$parts);
+			}
+			$text=$val2;
+			echo "<p class = sa >By kuhozcuH (".link_sutra("7.4.62").") :</p>\n"; 
+			echo "<p class = sa >कुहोश्चुः (७.४.६२) :</p>\n";
+			display(0);            
+		}
+		/* abhyAse carca (8.4.54) */
+		if (in_array($splitvowel[0],array("J","B","G","Q","D","K","P","C","W","T")))
+		{
+			foreach ($text as $value)
+			{
+				$parts=explode('+',$value);
+				$parts[0]=str_replace(array("J","B","G","Q","D","K","P","C","W","T"),array("j","b","g","q","d","k","p","c","w","t"),$parts[0]);
+				$val2[] = implode('+',$parts);
+			}
+			$text=$val2;
+			echo "<p class = sa >By abhyAse carca (".link_sutra("8.4.54").") :</p>\n"; 
+			echo "<p class = sa >अभ्यासे चर्चः (८.४.५४) :</p>\n";
+			display(0);            
+		}
+		/* abhyAsAcca (7.3.85) */
+		if (in_array($fo,array("hana!")))
+		{
+			foreach ($text as $value)
+			{
+				$parts=explode('+',$value);
+				$parts[1]=str_replace(array("h"),array("G"),$parts[1]);
+				$val2[] = implode('+',$parts);
+			}
+			echo "<p class = sa >By abhyAsAcca (".link_sutra("7.3.85").") :</p>\n"; 
+			echo "<p class = sa >अभ्यासाच्च (७.३.८५) :</p>\n";
+			display(0);            
+		
+	}
+return $text;
+}
 
 
 /* Functions which are not used in the code */
