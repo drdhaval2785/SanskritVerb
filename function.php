@@ -2069,7 +2069,7 @@ function caG()
 		elseif ($parts[1]==="Ri" && preg_match('/^['.pc('hl').']/',$parts[0]) && anekAca($parts[0]) ) // halAdi anekAc
 		{
 			$splitvowel=preg_split('/([aAiIuUfFxXeEoO])/',$parts[0],null,PREG_SPLIT_DELIM_CAPTURE);
-			$parts[0]=$splitvowel[0].$splitvowel[1].implode('',$splitvowel);
+			$parts[0]=$splitvowel[0].$splitvowel[1]."+".implode('',$splitvowel);
 		}
 		$val[]=implode('+',$parts);
 	}
@@ -2142,16 +2142,19 @@ function abhyAsa()
 		/* hrasvaH (7.4.59) */
 		if (in_array($splitvowel[1],array("A","I","U","F","X","e","o","E","O")) )
 		{
-			$parts=explode('+',$value);
-			$parts[0]=str_replace(array("A","I","U","F","X","e","o","E","O"),array("a","i","u","f","x","i","u","i","u"),$parts[0]);
-			$val1[] = implode('+',$parts);
+			foreach ($text as $value)
+			{
+				$parts=explode('+',$value);
+				$parts[0]=str_replace(array("A","I","U","F","X","e","o","E","O"),array("a","i","u","f","x","i","u","i","u"),$parts[0]);
+				$val1[] = implode('+',$parts);
+			}
 			$text=$val1;
 			echo "<p class = sa >By hrasvaH (".link_sutra("7.4.59").") :</p>\n"; 
 			echo "<p class = sa >ह्रस्वः (७.४.५९) :</p>\n";
 			display(0);
 		}
 		/* kuhozcuH (7.4.62) */
-		if (in_array($splitvowel[0],array("k","K","g","G","N","h")) )
+		if (preg_match('/[kKgGNh]/',$splitvowel[0]) ) 
 		{
 			foreach ($text as $value)
 			{
@@ -2162,10 +2165,10 @@ function abhyAsa()
 			$text=$val2;
 			echo "<p class = sa >By kuhozcuH (".link_sutra("7.4.62").") :</p>\n"; 
 			echo "<p class = sa >कुहोश्चुः (७.४.६२) :</p>\n";
-			display(0);            
+			display(0); 
 		}
 		/* abhyAse carca (8.4.54) */
-		if (in_array($splitvowel[0],array("J","B","G","Q","D","K","P","C","W","T")))
+		if (preg_match('/[JBGQDKPCWT]/',$splitvowel[0]) )
 		{
 			foreach ($text as $value)
 			{
