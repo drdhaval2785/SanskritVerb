@@ -167,6 +167,7 @@ $tudAdi=array("ila!","iza!","uCI!","ujJa!","uCi!","ujJa!","ubja!","uBa!","umBa!"
 $divAdi_puSAdi=array("Saka!","madI!","raDa!","RaBa!","klamu!","kzamu!","tamu!","damu!","Bramu!","Samu!","Sramu!","RaSa!","asu!","jasu!","tasu!","dasu!","vasu!","yasu!","masI!","klidU!","YikzvidA!","YimidA!","YizvidA!","ziDu!","qipa!","riza!","Sliza!","bisa!","zRiha!","uca!","luwa!","kruDa!","kzuDa!","SuDa!","kupa!","gupa!","yupa!","rupa!","lupa!","kzuBa!","tuBa!","luBa!","tuza!","duza!","puza!","Suza!","pluza!","ruza!","vyuza!","busa!","druha!","muha!","zRuha!","fDu!","kfSa!","gfDu!","tfpa!","dfpa!","BfSu!","vfSa!","tfzA!","hfza!","kuMsa!","BraMSu!",);
 $bhvAdi_dyutAdi=array("RaBa!","YiSvitA!","YimidA!","YizvidA!","ruca!","Guwa!","ruwa!","luwa!","luWa!","dyuta!","kzuBa!","tuBa!","SuBa!","vftu!","vfDu!","SfDu!","syandU!","kfpU!","sraMBu!","BraMSu!","DvaMsu!","BraMsu!","sraMsu!",);
 $lRdit=array("Sakx!","patx!","Sadx!","zadx!","gamx!","Gasx!","vidx!","Sizx!","pizx!","vizx!","mucx!","lupx!","kfpx!","Apx!");
+$Rditverbs=array("ejf!","ejf!","ezf!","ezf!","oKf!","oRf!","kabf!","kASf!","kASf!","kAsf!","kudf!","kepf!","kelf!","kevf!","krIqf!","klIbf!","kzIbf!","kzIvf!","kzvelf!","KAdf!","Kelf!","Kevf!","Korf!","Kolf!","gADf!","gepf!","gevf!","gezf!","glepf!","glepf!","glevf!","glezf!","DrAGf!","cakAsf!","cAyf!","cIbf!","cIBf!","cIvf!","celf!","jutf!","jezf!","jehf!","wikf!","wIkf!","QOkf!","tAyf!","tikf!","tipf!","tIkf!","tuqf!","tUqf!","tepf!","tevf!","trOkf!","dASf!","dAsf!","devf!","drAKf!","drAGf!","drAqf!","drAhf!","drekf!","Depf!","Dorf!","DrAKf!","DrAqf!","Drekf!","nATf!","nADf!","RAsf!","Ridf!","Redf!","Rezf!","pelf!","pisf!","pelf!","pevf!","pezf!","pesf!","pERf!","prezf!","prERf!","proTf!","plevf!","Pelf!","bADf!","bAhf!","bIBf!","vehf!","BAsf!","Bezf!","wuBrAjf!","BrAjf!","wuBrASf!","Brejf!","Brezf!","wuBlASf!","Blezf!","mAhf!","miTf!","midf!","miDf!","mImf!","meTf!","medf!","meDf!","mepf!","mevf!","mrewf!","mreqf!","mlewf!","mlevf!","wuyAcf!","yutf!","yezf!","yOwf!","rAKf!","rAGf!","rAjf!","rAsf!","rekf!","rejf!","rewf!","repf!","reBf!","revf!","rezf!","roqf!","rOqf!","lAKf!","lAGf!","lepf!","lokf!","lokf!","locf!","locf!","loqf!","vASf!","bAhf!","viTf!","veRf!","veTf!","venf!","velf!","vehf!","SAKf!","SAqf!","SIkf!","SIBf!","Self!","Sevf!","SoRf!","SOwf!","SroRf!","SlAKf!","SlAGf!","Slokf!","SloRf!","sIkf!","sekf!","zelf!","zevf!","zwipf!","zwepf!","srekf!","srokf!","huqf!","hUqf!","heqf!","hepf!","hezf!","hoqf!","hoqf!","hrezf!");
 // list of 10 gaNas and some upagaNas. With accent, devanagari
 $bhvAdi1=array("अ॑हिँ॒","अ॑कँ॑","अ॑क्षूँ॑","अ॑गँ॑","अ॑किँ॒","अ॑गिँ॑","अ॑घिँ॒","अ॑चुँ॒॑","अ॑जँ॑","अ॑चिँ॑","अ॑ञ्चुँ॑","अ॑ञ्चुँ॒॑","अ॑टँ॑","अ॑ट्टँ॒","अ॑डँ॑","अ॑ड्डँ॑","अ॑णँ॑","अ॑ठिँ॒","अ॑तँ॑","अ॑ड्डँ॑","अ॑तिँ॑","अ॑दिँ॑","अ॑भ्रँ॑","अ॑मँ॑","अ॑बिँ॒","अ॑भिँ॒","अ॑यँ॒","अ॑यँ॒॑","अ॑र्घँ॑","अ॑र्चँ॑","अ॑र्जँ॑","अ॑र्दँ॑","अ॑र्बँ॑","अ॑र्वँ॑","अ॑र्हँ॑","अ॑लँ॑","अ॑वँ॑","अ॑षँ॒॑","अ॑सँ॒॑","आ॑छिँ॑","आ॑शसि","इ॑खँ॑","इ॑खिँ॑","इ॑गिँ॑","इ॑टँ॑","इ॑दिँ॑","इ॑विँ॑","ई॑क्षँ॒","ई॑खिँ॑","ई॑खिँ॑","ई॑ज॒","ई॑जिँ॒","ई॑र्क्ष्यँ॑","ई॑र्ष्यँ॑","ई॑षँ॑","ई॑षँ॒","ई॑हँ॒","उ॒ङ्","उ॑क्षँ॑","उ॑खँ॑","उ॑खिँ॑","उ॑छीँ॑","उ॑छिँ॑","उ॑ठँ॑","उ॑ठँ॒","उ॑र्दँ॒","उ॑र्वीँ॑","उ॑षँ॑","उ॑हिँ॑र्","ऊ॑ठँ॑","ऊ॑यीँ॒","ऊ॑षँ॑","ऊ॑हँ॒","ऋ॒","ऋ॑जँ॒","ऋ॑जिँ॒","ए॑जृँ॒","ए॑जृँ॑","ए॑ठँ॒","ए॑धँ॒","ए॑षृँ॒","ए॑षृँ॒","ओ॑खृँ॑","ओ॑णृँ॑","क॑कँ॒","क॑खँ॑","क॑खेँ॑","क॑गेँ॑","क॑किँ॒","क॑चँ॒","क॑जँ॑","क॑चिँ॒","क॑टीँ॑","क॑टेँ॑","क॑ठँ॑","क॑डँ॑","क॑ड्डँ॑","क॑णँ॑","क॑णँ॑","क॑ठिँ॒","क॑डिँ॑","क॑डिँ॒","क॑त्थँ॒","क॑दँ॒","क॑ड्डँ॑","क॑नीँ॑","क॑दिँ॑","क॑दिँ॒","क॑पँ॒","क॑बृँ॒","क॑मुँ॒","क॑पिँ॒","क॑र्जँ॑","क॑र्दँ॑","क॑र्बँ॑","क॑र्वँ॑","क॑लँ॒","क॑ल्लँ॒","क॑षँ॑","क॑सँ॑","का॑क्षिँ॑","का॑चिँ॒","का॑शृँ॒","का॑सृँ॒","कि॑टँ॑","कि॑टँ॑","कि॑तँ॑","की॑लँ॑","कु॒ङ्","कु॑कँ॒","कु॑चँ॑","कु॑चँ॑","कु॑जुँ॑","कु॑ञ्चँ॑","कु॑जिँ॑","कु॑टिँ॑","कु॑ठिँ॑","कु॑डिँ॒","कु॑डिँ॑","कु॑थिँ॑","कु॑बिँ॑","कु॑र्द॒","कु॑लँ॑","कू॑जँ॑","कू॑लँ॑","कृ॒ञ्","कृ॑विँ॑","कृ॑पँ॒","कृ॑पूँ॒","कृ॒षँ॑","कृ॑पूँ॒","के॑पृँ॒","के॑लृँ॑","के॑वृँ॒","कै॒","क्न॑थँ॑","क्नू॑यीँ॒","क्म॑रँ॑","क्र॑थँ॑","क्र॑दँ॒","क्र॑दिँ॑","क्र॑दिँ॒","क्र॑पँ॒","क्र॑मुँ॑","क्री॑डृँ॑","क्रु॑ञ्चँ॑","क्रु॒शँ॑","क्ल॑थँ॑","क्ल॑दँ॒","क्ल॑दिँ॑","क्ल॑दिँ॒","क्लि॑दिँ॒","क्लि॑दिँ॑","क्ली॑बृँ॒","क्लु॒ङ्","क्ले॑शँ॒","क्व॑णँ॑","क्व॑थेँ॑","क्ष॑जिँ॒","क्ष॒प॑य॒॑श्च॑","क्ष॑मूँ॒ष्","क्ष॑रँ॑","क्षि॒","क्षि॑वुँ॑","क्षी॑जँ॑","क्षी॑बृँ॒","क्षी॑वृँ॒","क्षु॑भँ॒","क्षु॑रँ॑","क्षे॑वुँ॑","क्षै॒","क्ष्मा॑यीँ॒","क्ष्मी॑लँ॑","ञिक्ष्वि॑दाँ॑","ञिक्ष्वि॑दाँ॑","क्ष्वे॑लृँ॑","ख॑जँ॑","ख॑जिँ॑","ख॑टँ॑","ख॑डिँ॒","ख॑दँ॑","ख॑नुँ॒॑","ख॑र्जँ॑","ख॑र्दँ॑","ख॑र्बँ॑","ख॑र्वँ॑","ख॑लँ॑","ख॑षँ॑","खा॑दृँ॑","खि॑टँ॑","खु॒ङ्","खु॑जुँ॑","खु॑र्द॒","खे॑लृँ॑","खे॑वृँ॒","खै॒","खो॑रृँ॑","खो॑लृँ॑","ग॑जँ॑","ग॑जिँ॑","ग॑डँ॑","ग॑डिँ॑","ग॑डिँ॑","ग॑दँ॑","ग॒मॢँ॑","ग॑र्जँ॑","ग॑र्दँ॑","ग॑र्बँ॑","ग॑र्वँ॑","ग॑र्हँ॒","ग॑लँ॑","ग॑ल्भँ॒","ग॑ल्हँ॒","गा॒ङ्","गा॑धृँ॒","गा॑हूँ॒","गु॒ङ्","गु॒ङ्","गु॑जँ॑","गु॑जिँ॑","गु॑दँ॒","गु॑पँ॒","गु॑पूँ॑","गु॑र्द॒","गु॑र्वीँ॑","गु॑हूँ॒॑","गृ॑हूँ॒","गृ॒","गृ॑जँ॑","गृ॑जिँ॑","गे॑पृँ॒","गे॑वृँ॒","गे॑षृँ॒","गै॒","गो॑ष्टँ॒","ग्र॑थिँ॒","ग्र॑सुँ॒","ग्रु॑चुँ॑","ग्ल॑सुँ॒","ग्ल॑हँ॒","ग्लु॑चुँ॑","ग्लु॑ञ्चँ॑","ग्ले॑पृँ॒","ग्ले॑पृँ॒","ग्ले॑वृँ॒","ग्ले॑षृँ॑","ग्लै॒","घ॑ग्घँ॑","घ॑घँ॑","घ॑टँ॒","घ॑ट्टँ॒","घ॑षँ॒","घ॑सॢँ॑","घि॑णिँ॒","घु॒ङ्","घु॑षिँ॒","घु॑टँ॒","घु॑णँ॒","घु॑णिँ॒","घु॑षिँ॑र्","घू॑र्णँ॒","घृ॒","घृ॑णिँ॒","घृ॑षुँ॑","घ्रा॒","ध्रा॑घृँ॒","ङु॑ङ्","च॑कँ॑","च॑कँ॒","च॑ञ्चुँ॑","च॑टेँ॑","च॑णँ॑","च॑डिँ॒","च॑तेँ॒॑","च॑देँ॒॑","च॑नँ॑","च॑दिँ॑","च॑पँ॑","च॑मुँ॑","च॑यँ॒","च॑रँ॑","च॑र्चँ॑","च॑र्बँ॑","च॑र्वँ॑","च॑लँ॑","च॑षँ॒॑","च॑हँ॑","चा॑यृँ॒॑","चि॑टँ॑","चि॑तीँ॑","चि॑ल्लँ॑","ची॑बृँ॒॑","ची॑भृँ॒","ची॑वृँ॒॑","चु॑च्यँ॑","चु॑ड्डँ॑","चु॑डिँ॑","चु॑ड्डँ॑","चु॑पँ॑","चु॑बिँ॑","चु॑ल्लँ॑","चू॑षँ॑","चे॑लृँ॑","चे॑ष्टँ॒","च्यु॑तिँ॑र्","छ॑मुँ॑","छ॑षँ॒॑","ज॑जँ॑","ज॑जिँ॑","ज॑टँ॑","ज॑पँ॑","ज॑भीँ॒","ज॑मुँ॑","ज॑र्त्सँ॑","ज॑र्त्सँ॑","ज॑र्त्सँ॑","ज॑लँ॑","ज॑ल्पँ॑","ज॑षँ॑","जि॒","जिँ॒","जि॑विँ॑","जि॑मुँ॑","जि॑षुँ॑","जी॑वँ॑","जु॒ङ्","जु॒","जु॑गिँ॑","जु॑तृँ॒","जू॑षँ॑","जृ॑भिँ॒","जे॑षृँ॒","जे॑हृँ॒","जै॒","ज्यु॒ङ्","ज्यु॑तिँ॑र्","ज्रि॒","ज्व॑रँ॑","ज्व॑लँ॑","ज्व॑लँ॑","झ॑टँ॑","झ॑मुँ॑","झ॑र्त्सँ॑","झ॑र्त्सँ॑","झ॑र्त्सँ॑","झ॑षँ॑","झ॑षँ॒॑","ट॑लँ॑","टि॑कृँ॒","टी॑कृँ॒","ट्व॑लँ॑","डी॑ङ्","ढौ॑कृँ॒","त॑सिँ॑","त॑कँ॑","त॑क्षूँ॑","त॑क्षँ॑","त॑किँ॑","त॑गिँ॑","त॑ञ्चुँ॑","त॑टँ॑","त॑डिँ॒","त॒पँ॑","त॑यँ॒","त॑र्जँ॑","त॑र्दँ॑","ता॑यृँ॒","ति॑कृँ॒","ति॑जँ॒","ति॒पृँ॒","ति॑लँ॑","ति॑ल्लँ॑","ती॑कृँ॒","ती॑वँ॑","तु॑जँ॑","तु॑जिँ॑","तु॑डृँ॑","तु॑डिँ॒","तु॑पँ॑","तु॑फँ॑","तु॑भँ॒","तु॑म्पँ॑","तु॑म्फँ॑","तु॑बिँ॑","तु॑र्वी॑","तु॑सँ॑","तु॑हिँ॑र्","तू॑डृँ॑","तू॑लँ॑","तू॑षँ॑","तृ॑क्षँ॑","तॄ॑","ते॑जँ॑","ते॑पृँ॒","ते॑वृँ॒","त्य॒जँ॑","त्र॑क्षँ॑","त्र॑खँ॑","त्र॑किँ॒","त्र॑गिँ॑","त्र॑दिँ॑","त्र॑पूँ॒ष्","त्रि॑खिँ॑","त्रु॑पँ॑","त्रु॑फँ॑","त्रु॑म्पँ॑","त्रु॑म्फँ॑","त्रै॒ङ्","त्रौ॑कृँ॒","त्व॑क्षूँ॑","त्व॑गिँ॑","त्व॑ञ्चुँ॑","ञित्व॑राँ॒","त्वि॒षँ॒॑","त्स॑रँ॑","थ॑किँ॑","थु॑र्वी॑","दं॒शँ॑","द॑क्षँ॒","द॑क्षँ॒","द॑घिँ॑","द॑दँ॒","द॑धँ॒","द॑यँ॒","द॑लँ॑","द॒हँ॑","दा॒ण्","दा॑नँ॒॑","दा॑शृँ॒॑","दा॑सृँ॒॑","दि॑विँ॑","दी॑क्षँ॒","दु॒","दु॑र्वीँ॑","दु॑हिँ॑र्","दृ॑हिँ॑","दृ॑हँ॑","दॄ॑","दे॒ङ्","दे॑वृँ॒","दै॒प्","दृ॒शिँ॑र्","द्यु॑तँ॒","द्यै॒","द्र॑मँ॑","द्रा॑खृँ॑","द्रा॑घृँ॒","द्रा॑क्षिँ॑","द्रा॑डृँ॒","द्रा॑हृँ॒","द्रु॒","द्रे॑कृँ॒","द्रै॒","द्वृ॒","ध॑णँ॑","ध॑विँ॑","धा॑वुँ॒॑","धि॑क्षँ॒","धि॑विँ॑","धु॑क्षँ॒","धु॑र्वीँ॑","धू॑पँ॑","धृ॒ङ्","धृ॒ञ्","धृ॑जँ॑","धृ॑जिँ॑","धे॒ट्","धे॑पृँ॒","धो॑रृँ॑","ध्मा॒","ध्मा॑क्षिँ॑","ध्यै॒","ध्र॑जँ॑","ध्र॑जिँ॑","ध्र॑णँ॑","ध्रा॑खृँ॑","ध्रा॑क्षिँ॑","ध्रा॑डृँ॒","ध्रि॑जँ॑","ध्रु॒","ध्रे॑कृँ॒","ध्रै॒","ध्वं॑सुँ॒","ध्व॑जँ॑","ध्व॑जिँ॑","ध्व॑णँ॑","ध्व॑नँ॑","ध्व॑नँ॑","ध्वा॑क्षिँ॑","ध्वृ॒","ण॑क्षँ॑","ण॑खँ॑","ण॑खिँ॑","ण॑टँ॑","ण॑टँ॑","ण॑दँ॑","टुन॑दिँ॑","ण॑भँ॒","ण॒मँ॑","ण॑यँ॒","न॑र्दँ॑","ण॑लँ॑","ण॑सँ॒","ना॑थृँ॒","ना॑धृँ॒","णा॑सृँ॒","णि॑क्षँ॑","णि॑दृँ॒॑","णि॑दिँ॑","णि॑विँ॑","णि॑शँ॑","णि॑षुँ॑","णी॒ञ्","णी॑लँ॑","णी॑वँ॑","नॄ॑","णे॑दृँ॒॑","णे॑षृँ॒","प॑क्षँ॑","डुप॒चँ॒॑ष्","प॑चिँ॒","प॑टँ॑","प॑ठँ॑","प॑णँ॒","प॑डिँ॒","प॑तॢँ॑","प॑थेँ॑","प॑नँ॒","प॑यँ॒","प॑र्दँ॒","प॑र्पँ॑","प॑र्बँ॑","प॑र्वँ॑","प॑लँ॑","पे॑लृँ॑","पा॒","पि॑टँ॑","पि॑ठँ॑","पि॑डिँ॒","पि॑विँ॑","पि॑सृँ॑","पी॑लँ॑","पी॑वँ॑","पु॑टँ॑","पु॑डँ॑","पु॑डिँ॑","पु॑थिँ॑","पु॑र्वँ॑","पु॑लँ॑","पु॑षँ॑","पू॑ङ्","पू॑यीँ॒","पु॑र्वँ॑","पू॑लँ॑","पू॑षँ॑","पृ॑षुँ॑","पे॑लृँ॑","पे॑वृँ॒","पे॑षृँ॒","पे॑सृँ॑","पै॒","पै॑णृँ॑","ओँ॑प्या॑यीँ॒","प्यै॒ङ्","प्र॑थँ॒","प्र॑सँ॒","प्रु॒ङ्","प्रु॑षुँ॑","प्रे॑षृँ॒","प्रै॑णृँ॑","प्रो॑थृँ॒॑","प्ल॑क्षँ॒॑","प्लि॑हँ॒","प्लु॒ङ्","प्लु॑षुँ॑","प्ले॑वृँ॒","फ॑क्कँ॑","फ॑णँ॑","फ॑लँ॑","ञिफ॑लाँ॑","फु॑ल्लँ॑","फे॑लृँ॑","ब॑हिँ॒","ब॑ठँ॑","ब॑णँ॑","ब॑टिँ॑","ब॑दँ॑","ब॑धँ॒","व॑भ्रँ॑","ब॑र्बँ॑","ब॑र्हँ॒","ब॑लँ॑","ब॑ल्हँ॒","बा॑डृ॒","बा॑धृँ॒","बा॑हृँ॒","बि॑टँ॑","बि॑दिँ॑","बि॑सँ॑","बी॑भृँ॒","बु॑क्कँ॑","बु॑गिँ॑","बु॑धँ॑","बु॑धिँ॒॑र्","उँ॑बु॑न्दिँ॒॑र्","बृ॑हिँ॑","बृ॑हँ॑","बे॑सँ॑","वे॑हृँ॒","व्र॑णँ॑","भ॑क्षँ॒॑","भ॒जँ॒॑","भ॑टँ॑","भ॑टँ॑","भ॑णँ॑","भ॑डिँ॒","भ॑दिँ॒","भ॑र्बँ॑","भ॑र्भँ॑","भ॑र्वँ॑","भ॑लँ॒","भ॑ल्लँ॒","भ॑षँ॑","भा॑मँ॒","भा॑षँ॒","भा॑सृँ॒","भि॑क्षँ॒","ञिमि॑दाँ॒","भि॑दिँ॑","भू॑","भू॑षँ॑","भृ॒ञ्","भृ॑जीँ॒","भे॑षृँ॒॑","भ्य॑सँ॒","भ्रं॑शुँ॑","भ्रं॑सुँ॒","भ्र॑क्षँ॒॑","भ्र॑णँ॑","भ्र॑मुँ॑","टुभ्रा॑जृँ॒","भ्रा॑जृँ॒","टुभ्रा॑शृँ॒","भ्रे॑जृँ॒","भ्रे॑षृँ॒॑","भ्ल॑क्षँ॒॑","टुभ्ला॑शृँ॒","भ्ले॑षृँ॒॑","म॑हिँ॒","म॑खँ॑","म॑किँ॒","म॑खिँ॑","म॑गिँ॑","म॑घिँ॒","म॑घिँ॑","म॑चँ॒","म॑चिँ॒","म॑ठँ॑","म॑णँ॑","म॑ठिँ॒","म॑डिँ॒","म॑डिँ॑","म॑थेँ॑","म॑न्थँ॑","म॑थिँ॑","म॑दिँ॒","म॑भ्रँ॑","म॑यँ॒","म॑र्बँ॑","म॑र्वँ॑","म॑लँ॒","म॑ल्लँ॒","म॑वँ॑","म॑व्यँ॑","म॑शँ॑","म॑षँ॑","म॑स्कँ॒","म॑स्कँ॒","म॑हँ॑","मा॑क्षिँ॑","मा॑नँ॒","मा॑हृँ॒॑","मि॑थृँ॒॑","मि॑दृँ॒॑","मि॑धृँ॒॑","मि॑विँ॑","मि॑शँ॑","मि॑षुँ॑","मि॒हँ॑","मी॑मृँ॑","मी॑लँ॑","मी॑वँ॑","मु॑खिँ॑","मु॑जँ॑","मु॑चि॒","मु॑जिँ॑","मु॑टँ॑","मु॑डँ॑","मु॑ठिँ॒","मु॑डिँ॑","मु॑डिँ॒","मु॑दँ॒","मु॑र्छाँ॑","मु॑र्वीँ॑","मू॑ङ्","मू॑लँ॑","मू॑षँ॑","मृ॑क्षँ॑","मृ॑धुँ॒॑","मृ॑षुँ॑","मे॒ङ्","मे॑थृँ॒॑","मे॑दृँ॒॑","मे॑धृँ॒॑","मे॑पृँ॒","मे॑वृँ॒","म्ना॒","म्र॑क्षँ॑","म्र॑दँ॒","म्रु॑चुँ॑","म्रु॑ञ्चुँ॑","म्रे॑टृँ॑","म्रे॑डृँ॑","म्लु॑चुँ॑","म्लु॑ञ्चुँ॑","म्ले॑छँ॑","म्ले॑टृँ॑","म्ले॑वृँ॒","म्लै॒","य॒जँ॒॑","य॑तीँ॒","य॒भँ॑","य॒मँ॑","टुया॑चृँ॒॑","यु॑गिँ॑","यु॑छँ॑","यु॑तृँ॒","यू॑षँ॑","ये॑षृँ॒","यौ॑टृँ॑","र॑हिँ॑","र॑क्षँ॑","र॑खँ॑","र॑गेँ॑","र॑खिँ॑","र॑गिँ॑","र॑घिँ॒","र॒ञ्जँ॒॑","र॑टँ॑","र॑टँ॑","र॑ठँ॑","र॑णँ॑","र॑णँ॑","र॑विँ॑","र॑दँ॑","र॑पँ॑","र॑फँ॑","र॒भँ॒","र॒मुँ॒","र॑फिँ॑","र॑बिँ॒","र॑भिँ॒","र॑यँ॒","र॑सँ॑","र॑हँ॑","रा॑खृँ॑","रा॑घृँ॒","रा॑जृँ॒॑","रा॑सृँ॒","रि॑खँ॑","रि॑खिँ॑","रि॑गिँ॑","रि॑विँ॑","रि॑षँ॑","रु॒ङ्","रु॑चँ॒","रु॑टँ॒","रु॑ठँ॑","रु॑टिँ॑","रु॑ठिँ॑","रु॑ठिँ॑","रु॑डिँ॑","रु॑षँ॑","रु॒हँ॑","रू॑षँ॑","रे॑कृँ॒","रे॑जृँ॒","रे॑टृँ॒॑","रे॑पृँ॒","रे॑भृँ॒","रे॑वृँ॒","रे॑षृँ॒","रै॒","रो॑डृँ॑","रौ॑डृँ॑","ल॑खँ॑","ल॑गेँ॑","ल॑खिँ॑","ल॑गिँ॑","ल॑घिँ॒","ल॑घिँ॑","ल॑छँ॑","ल॑जँ॑","ल॑जिँ॑","ल॑टँ॑","ल॑डँ॑","ल॑पँ॑","डुल॒भँ॒ष्","ल॑बिँ॒","ल॑बिँ॒","ल॑भिँ॒","ल॑यँ॒","ल॑र्बँ॑","ल॑लँ॑","ल॑षँ॒॑","ल॑सँ॑","ला॑खृँ॑","ला॑घृँ॒","ला॑जँ॑","ला॑छिँ॑","ला॑जिँ॑","लि॑खँ॑","लि॑खिँ॑","लि॑गिँ॑","लु॑ञ्चँ॑","लु॑टँ॒","लु॑टँ॑","लु॑ठँ॒","लु॑ठँ॑","लु॑डँ॑","लु॑टिँ॑","लु॑ठिँ॑","लु॑ठिँ॑","लु॑ठिँ॑","लु॑डिँ॑","लु॑थिँ॑","लु॑बिँ॑","लू॑षँ॑","ले॑पृँ॒","लो॑कृँ॒","लो॑चृँ॒","लो॑डृँ॑","लो॑ष्टँ॒","व॑क्षँ॑","व॑खँ॑","व॑किँ॒","व॑किँ॒","व॑खिँ॑","व॑गिँ॑","व॑घिँ॒","व॑जँ॑","व॑ञ्चुँ॑","व॑टँ॑","व॑टँ॑","व॑ठँ॑","व॑णँ॑","व॑टिँ॑","व॑ठिँ॒","व॑डिँ॒","व॑दँ॑","व॑नँ॑","व॑नुँ॑","व॑नँ॑","व॑दिँ॒","डुव॒पँ॒॑","व॑भ्रँ॑","टुव॑मँ॑","व॑यँ॒","व॑र्चँ॒","व॑र्षँ॒","व॑र्हँ॒","व॑ल॒","व॑ल्गँ॑","व॑ल्भँ॒","व॑ल्लँ॒","व॑ल्हँ॒","व॑षँ॑","व॑स्कँ॒","व॒सँ॑","व॑स्कँ॒","व॒हँ॒॑","वा॑क्षिँ॑","वा॑छिँ॑","वा॑डृ॒","बा॑हृँ॒","वि॑टँ॑","वि॑थृँ॒","वि॑षुँ॑","वि॑सँ॑","वी॑जँ॒","वु॑गिँ॑","बृ॑हिँ॑","वृ॑कँ॒","वृ॑क्षँ॒","वृ॑तुँ॒","वृ॑धुँ॒","वृ॑षुँ॑","बृ॑हँ॑","वे॒ञ्","वे॑णृँ॒॑","वे॑थृँ॒","वे॑नृँ॒॑","टुवे॑पृ॒","वे॑लृँ॑","वे॑ल्लँ॑","वे॑ष्टँ॒","वे॑सँ॑","वे॑हृँ॒","वे॑ल्लँ॑","ओँ॑वै॑","व्य॑थँ॒","व्य॑यँ॒॑","व्ये॒ञ्","व्र॑जँ॑","व्र॑जँ॑","व्र॑जिँ॑","व्र॑णँ॑","शं॑सुँ॑","श॑किँ॒","श॑चँ॒","श॑टँ॑","श॑ठँ॑","श॑णँ॑","श॑डिँ॒","श॒दॢँ॑","श॒पँ॒॑","श॑र्बँ॑","श॑र्वँ॑","श॑लँ॑","श॑लँ॒","श॑ल्भँ॒","श॑वँ॑","श॑शँ॑","श॑षँ॑","श॑सुँ॑","शा॑खृँ॑","शा॑डृँ॒","शा॑नँ॒॑","शि॑क्षँ॒","शि॑खिँ॑","शि॑घिँ॑","शि॑टँ॑","शि॑षँ॑","शी॑कृँ॒","शी॑भृँ॒","शी॑लँ॑","शु॑कँ॑","शु॑चँ॑","शु॑च्यँ॑","शु॑ठँ॑","शु॑ठिँ॑","शु॑ठिँ॑","शु॑न्धँ॑","शु॑भँ॑","शु॑भँ॒","शु॑म्भँ॑","शू॑लँ॑","शू॑षँ॑","शृ॑धुँ॒॑","शृ॑धुँ॒","शे॑लृँ॑","शे॑वृँ॒","शै॒","शो॑णृँ॑","शौ॑टृँ॑","श्चु॑तिँ॑र्","श्च्यु॑तिँ॑र्","श्न॑थँ॑","श्मी॑लँ॑","स्य॑न्दूँ॒","च्यु॒ङ्","श्यै॒ङ्","स्रं॑सुँ॒","स्रं॑सुँ॒","श्र॑किँ॒","श्र॑गिँ॑","श्र॑णँ॑","श्र॑थँ॑","श्र॑थिँ॒","श्र॑म्भुँ॒","श्रा॑","श्रि॑ञ्","श्रि॑षुँ॑","श्रु॒","श्रै॒","श्रो॑णृँ॑","श्ल॑किँ॒","श्ल॑गिँ॑","श्ल॑थँ॑","श्ला॑खृँ॑","श्ला॑घृँ॒","श्लि॑षुँ॑","श्लो॑कृँ॒","श्लो॑णृँ॑","श्व॑किँ॒","श्र॑गिँ॑","श्व॑चँ॒","श्व॑चिँ॒","श्व॑लँ॑","श्व॑ल्लँ॑","टुओँश्वि॑","श्वि॑ताँ॑","श्वि॑दिँ॒","ष्ट्यै॒","ष्ठि॑वुँ॑","ष्व॑स्कँ॒","ष्व॑स्कँ॒","ष॑गेँ॑","ष॑चँ॒॑","ष॑चँ॒","ष॑स्जँ॑","ष॒ञ्जँ॑","ष॑टँ॑","ष॒दॢँ॑","ष॑नँ॑","ष॑पँ॑","ष॑मँ॑","ष॑र्क्षँ॑","ष॑र्जँ॑","ष॑र्बँ॑","ष॑र्वँ॑","ष॑लँ॑","ष॑स्जँ॑","ष॑हँ॒","षि॑टँ॑","षि॑धँ॑","षि॑धूँ॑","षि॑विँ॑","षि॑भुँ॑","षि॑म्भुँ॑","सी॑कृँ॒","षु॒","षू॑दँ॒","सू॑र्क्षँ॑","षू॑र्क्ष्यँ॑","सू॑षँ॑","सृ॒","सृ॒पॢँ॑","षृ॑भुँ॑","षृ॑म्भुँ॑","से॑कृँ॒","षे॑लृँ॑","षे॑वृँ॒","षै॒","स्क॒न्दिँ॑र्","स्क॑भिँ॒","स्कु॑दिँ॒","स्ख॑दँ॒","स्ख॑लँ॑","ष्ट॑कँ॑","ष्ट॑नँ॑","ष्ट॑मँ॑","ष्ट॑भिँ॒","ष्ठ॑लँ॑","ष्टि॑पृँ॒","ष्टु॑चँ॒","ष्टु॑भुँ॒","ष्टृ॑क्षँ॑","ष्टे॑पृँ॒","ष्टै॒","स्त्यै॒","ष्ट्र॑क्षँ॑","ष्ठ॑गेँ॑","ष्ठा॒","ष्णै॒","स्प॑दिँ॒","स्प॑र्धँ॒","स्प॑शँ॒॑","स्फा॑यीँ॒","स्फु॑टँ॒","स्फु॑टिँ॑र्","स्फु॑टिँ॑","स्फु॑डिँ॒","स्फु॑र्छाँ॑","टुओँस्फू॑र्जाँ॑","ष्मि॒ङ्","स्मी॑लँ॑","स्मृ॑","स्मृ॒","स्य॑मुँ॑","स्रं॑सुँ॒","स्र॑किँ॒","स्र॑म्भुँ॒","स्र॑म्भुँ॒","स्रु॒","स्रे॑कृँ॒","स्रै॒","स्रो॑कृँ॒","ष्व॑किँ॒","श्र॑गिँ॑","ष्व॒ञ्जँ॒","ष्व॑दँ॒","स्व॑नँ॑","स्व॑नँ॑","स्व॑र्दँ॒","ष्व॑स्कँ॒","ष्व॑स्कँ॒","स्वा॑दँ॒","ञिष्वि॑दाँ॒","स्वृ॒","ह॑टँ॑","ह॑ठँ॑","ह॒दँ॒","ह॑म्मँ॑","ह॑र्यँ॑","ह॑यँ॑","ह॑लँ॑","ह॑सेँ॑","हि॑क्कँ॒॑","हि॑टँ॑","हि॑डिँ॒","हि॑विँ॑","हु॑डृँ॑","हु॑डिँ॒","हु॑डिँ॒","हु॑र्छाँ॑","हु॑लँ॑","हु॑लँ॑","हू॑डृँ॑","हृ॒ञ्","हृ॑षुँ॑","ह्र॑सँ॑","हे॑ठँ॒","हे॑ठँ॑","हे॑डृँ॒","हे॑डँ॑","हे॑पृँ॒","हे॑षृँ॒","हो॑डृँ॒","हो॑डृँ॑","ह्म॑लँ॑","ह्र॑गेँ॑","ह्र॑सँ॑","ह्रा॑दँ॒","ह्री॑छँ॑","ह्रे॑षृँ॒","ह्ल॑गेँ॑","ह्ल॑सँ॑","ह्ला॑दीँ॒","ह्व॑लँ॑","ह्वृ॒","ह्वृ॒","ह्वे॒ञ्");
 $divAdi1=array("अ॑णँ॒","अ॑नुरु॒धँ॒","अ॑नँ॒","अ॑सुँ॑","इ॑षँ॑","ई॒ङ्","उ॑चँ॑","ऋ॑धुँ॑","का॑शृँ॒","कुं॑शँ॑","कुं॑सँ॑","कु॑थँ॑","कु॑पँ॑","कु॑शँ॑","कु॑सँ॑","कृ॑शँ॑","क्न॑सुँ॑","क्रु॒धँ॑","क्ल॑मुँ॑","क्लि॑दूँ॑","क्लि॑शँ॒","क्ष॑मूँ॑","क्षि॒पँ॑","क्षु॒धँ॑","क्षु॑भँ॑","ञिक्ष्वि॑दाँ॑","खि॒दँ॒","गु॑धँ॑","गु॑पँ॑","गू॑रीँ॒","गृ॑धुँ॑","घू॑री॒","चू॑रीँ॒","छो॒","ज॑नीँ॒","ज॑सुँ॑","जू॑रीँ॒","जॄ॑ष्","झॄ॑ष्","डि॑पँ॑","डी॒ङ्","त॒पँ॒","त॑मुँ॑","त॑सुँ॑","ति॑मँ॑","ती॑मँ॑","तु॑भँ॑","तु॒षँ॑","तू॑रीँ॒","तृ॒पँ॑","ञितृ॑षँ॑","त्र॑सीँ॑","द॑मुँ॑","द॑सुँ॑","दि॑वुँ॑","दी॑ङ्","दी॑पीँ॒","दु॒षँ॑","दू॑ङ्","दृ॒पँ॑","दो॒","द्रु॒हँ॑","धी॒ङ्","धू॑री॒","ण॑भँ॑","ण॒शँ॑","ण॒हँ॒॑","नृ॑तीँ॑","प॒दँ॒","पी॒ङ्","पु॑थँ॑","पु॑षँ॑","पु॒षँ॑","पु॑ष्पँ॑","पू॑रीँ॒","प्यु॑षँ॑","प्यु॑सँ॑","प्री॒ङ्","प्लु॑षँ॑","प्लु॑षँ॑","ब॑सुँ॑","वि॑सँ॑","बु॒धँ॒","बु॑सँ॑","बु॑सँ॑","ब्यु॑सँ॑","भ॑सुँ॑","भृं॑शुँ॑","भृ॑शुँ॑","भ्रं॑शुँ॑","भ्र॑मुँ॑","म॑दीँ॑","म॒नँ॒","म॑सीँ॑","मा॒ङ्","ञिमि॑दाँ॑","मी॒ङ्","मु॑सँ॑","मु॒हँ॑","मृ॑षँ॒॑","य॑सुँ॑","यु॒जँ॒","यु॒धँ॒","यु॑पँ॑","र॒ञ्जँ॒॑","र॒धँ॑","रा॒धः","रि॑षँ॑","री॒ङ्","रु॑पँ॑","रु॑षँ॑","लि॒शँ॒","ली॒ङ्","लु॑टँ॑","लु॑ठँ॑","लु॑पँ॑","लु॑भँ॑","व॑सुँ॑","वा॑वृ॑तुँ॒","वा॑शृँ॒","वि॒दँ॒","बि॑सँ॑","वु॑सँ॑","वृ॑तुँ॒","वृ॑शँ॑","व्य॒धँ॑","व्यु॑षँ॑","व्यु॑षँ॑","व्यु॑सँ॑","व्री॒ङ्","व्री॑डँ॑","श॒कँ॒॑","श॒पँ॒॑","श॑मुँ॑","ईँ॑शु॑चिँ॒॑र्","शु॒धँ॑","शु॒षँ॑","शू॑रीँ॒","शो॒","श्र॑मुँ॑","श्लि॒षँ॑","ष्ठि॑वुँ॑","स॑मीँ॑","ष॑हँ॑","षि॒धुँ॑","षि॑वुँ॑","षु॑हँ॑","षू॑ङ्","सृ॒जँ॒","षो॒","ष्टि॑मँ॑","ष्टी॑मँ॑","ष्टु॑पँ॑","ष्टू॑पँ॑","ष्ण॑सुँ॑","ष्णि॒हँ॑","ष्णु॑सुँ॑","ष्णु॒हँ॑","स्रि॑वुँ॑","ष्वि॒दाँ॑","हृ॑षँ॑");
@@ -2056,17 +2057,17 @@ function link_sutra($s) {
  $ans = "<a href=\"http://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/$X/$X.$Y.$Z.htm\">$X.$Y.$Z</a>";
  return $ans;
 }
-function caG()
+function caG_halAdi()
 {
 	global $text;
 	foreach ($text as $value)
 	{
 		$parts=explode('+',$value);
-		if ($parts[1]==="Ri" && preg_match('/^['.pc('hl').']/',$parts[0]) && !anekAca($parts[0]) ) // halAdi ekAc
+		if (preg_match('/^['.pc('hl').']/',$parts[0]) && preg_match('/[+][a][+]/',$value) && !anekAca($parts[0]) ) // halAdi ekAc
 		{
 			$parts[0]=$parts[0]."+".$parts[0];
 		}
-		elseif ($parts[1]==="Ri" && preg_match('/^['.pc('hl').']/',$parts[0]) && anekAca($parts[0]) ) // halAdi anekAc
+		elseif (preg_match('/^['.pc('hl').']/',$parts[0]) && preg_match('/[+][a][+]/',$value) && anekAca($parts[0]) ) // halAdi anekAc
 		{
 			$splitvowel=preg_split('/([aAiIuUfFxXeEoO])/',$parts[0],null,PREG_SPLIT_DELIM_CAPTURE);
 			$parts[0]=$splitvowel[0].$splitvowel[1]."+".implode('',$splitvowel);
@@ -2074,15 +2075,69 @@ function caG()
 		$val[]=implode('+',$parts);
 	}
 	$text = $val;
+	$text = one(array("Sva+Sva+"),array("Sva+"),0);
 	/* caGi (6.1.11) */
 	echo "<p class = sa >By caGi (".link_sutra("6.1.11").") and ekAco dve prathamasya (".link_sutra("6.1.1").") :</p>\n"; 
 	echo "<p class = sa >चङि (६.१.११) तथा एकाचो द्वे प्रथमस्य (६.१.१) :</p>\n";
 	display(0);
 return $text;
 }
-function abhyAsa()
+function caG_ajAdi()
 {
-	global $text;	
+	global $text;
+	foreach ($text as $value)
+	{
+		$parts=explode('+',$value);
+		$splitvowel=preg_split('/([aAiIuUfFxXeEoO])/',$parts[0],null,PREG_SPLIT_DELIM_CAPTURE);
+		if (preg_match('/^['.pc('ac').']/',$parts[0]) && preg_match('/[\+][a]/',$value) && preg_match('/[ndr]['.pc('hl').']/',$splitvowel[count($splitvowel)-3]) ) 
+		{
+			$splitvowel=preg_split('/([aAiIuUfFxXeEoO])/',$parts[0],null,PREG_SPLIT_DELIM_CAPTURE);
+			$rep=substr($splitvowel[count($splitvowel)-3],1);
+			$parts[0]=implode('',$splitvowel)."+".$rep.$splitvowel[count($splitvowel)-2];
+			$nandra=1;
+		}		
+		elseif (preg_match('/^['.pc('ac').']/',$parts[0]) && preg_match('/[\+][a]/',$value) && preg_match('/[b]['.pc('hl').']/',$splitvowel[count($splitvowel)-3]) ) 
+		{
+			$splitvowel=preg_split('/([aAiIuUfFxXeEoO])/',$parts[0],null,PREG_SPLIT_DELIM_CAPTURE);
+			$rep=substr($splitvowel[count($splitvowel)-3],1);
+			$parts[0]=implode('',$splitvowel)."+".$rep.$splitvowel[count($splitvowel)-2];
+			$bakara=1;
+		}		
+		elseif (preg_match('/^['.pc('ac').']/',$parts[0]) && preg_match('/[\+][a]/',$value) ) 
+		{
+			$splitvowel=preg_split('/([aAiIuUfFxXeEoO])/',$parts[0],null,PREG_SPLIT_DELIM_CAPTURE);
+			$parts[0]=implode('',$splitvowel)."+".$splitvowel[count($splitvowel)-3].$splitvowel[count($splitvowel)-2];
+		}
+		$val[]=implode('+',$parts);
+	}
+	$text = $val;
+	if ($nandra===1)
+	{
+		/* na ndrAH saMyogAdayaH (6.1.3) */
+		echo "<p class = sa >By na ndrAH saMyogAdayaH (".link_sutra("6.1.3").") :</p>\n"; 
+		echo "<p class = sa >न न्द्राः संयोगादयः (६.१.३) :</p>\n";
+		display(0);				
+	}
+	elseif ($bakara===1)
+	{
+		/* bakArasyApyayaM pratiSedhaH (vA) */
+		echo "<p class = sa >By bakArasyApyayaM pratiSedhaH (vA) :</p>\n"; 
+		echo "<p class = sa >बकारस्याप्ययं प्रतिषेधः (वा) :</p>\n";
+		display(0);				
+	}
+	else
+	{
+		/* caGi (6.1.11) */
+		echo "<p class = sa >By caGi (".link_sutra("6.1.11").") and ajAderdvitIyasya (".link_sutra("6.1.2").") :</p>\n"; 
+		echo "<p class = sa >चङि (६.१.११) तथा अजादेर्द्वितीयस्य (६.१.२) :</p>\n";
+		display(0);		
+	}
+return $text;
+}
+
+function abhyAsa_halAdi()
+{
+	global $text;	global $caG;
 	foreach ($text as $value)
 	{
 		$parts=explode('+',$value);
@@ -2107,7 +2162,7 @@ function abhyAsa()
 		}
 		$parts=explode('+',$value);
 		/* zarpUrvAH khayaH (7.4.61) */
-		if ($parts[0]===$parts[1] && preg_match('/^[Szs]['.pc('Ky').']/',$parts[0])  ) // zarpUrvA khayaH
+		if (preg_match('/^[Szs]['.pc('Ky').']/',$parts[0])  ) // zarpUrvA khayaH
 		{
 			$splitvowel=preg_split('/([aAiIuUfFxXeEoO])/',$parts[0],null,PREG_SPLIT_DELIM_CAPTURE);
 			$split2=preg_split('/(['.pc('hl').'])/',$splitvowel[0],null,PREG_SPLIT_DELIM_CAPTURE);
@@ -2115,7 +2170,7 @@ function abhyAsa()
 			$zar=1;
 		}
 		/* halAdiH zeSaH (7.4.60) */
-		elseif ($parts[0]===$parts[1] && preg_match('/^['.pc('hl').']/',$parts[0])  ) // halAdiH zeSaH
+		elseif (preg_match('/^['.pc('hl').']/',$parts[0])  ) // halAdiH zeSaH
 		{
 			$splitvowel=preg_split('/([aAiIuUfFxXeEoO])/',$parts[0],null,PREG_SPLIT_DELIM_CAPTURE);
 			$split2=preg_split('/(['.pc('hl').'])/',$splitvowel[0],null,PREG_SPLIT_DELIM_CAPTURE);
@@ -2139,14 +2194,24 @@ function abhyAsa()
 		echo "<p class = sa >शर्पूर्वाः खयः (७.४.६१) :</p>\n";
 		display(0);
 	}
+	$splitvowel=preg_split('/([aAiIuUfFxXeEoO])/',$parts[0],null,PREG_SPLIT_DELIM_CAPTURE);
+	$split2=preg_split('/(['.pc('hl').'])/',$splitvowel[0],null,PREG_SPLIT_DELIM_CAPTURE);
+	$parts=explode('+',$value);
 		/* hrasvaH (7.4.59) */
 		if (in_array($splitvowel[1],array("A","I","U","F","X","e","o","E","O")) )
 		{
 			foreach ($text as $value)
 			{
-				$parts=explode('+',$value);
-				$parts[0]=str_replace(array("A","I","U","F","X","e","o","E","O"),array("a","i","u","f","x","i","u","i","u"),$parts[0]);
-				$val1[] = implode('+',$parts);
+				if (preg_match('/[\+][a]/',$value) && $caG===1)
+				{
+					$parts=explode('+',$value);
+					$parts[0]=str_replace(array("A","I","U","F","X","e","o","E","O"),array("a","i","u","f","x","i","u","i","u"),$parts[0]);
+					$val1[] = implode('+',$parts);
+				}
+				else
+				{
+					$val1[] = $value;
+				}
 			}
 			$text=$val1;
 			echo "<p class = sa >By hrasvaH (".link_sutra("7.4.59").") :</p>\n"; 
@@ -2158,9 +2223,16 @@ function abhyAsa()
 		{
 			foreach ($text as $value)
 			{
-				$parts=explode('+',$value);
-				$parts[0]=str_replace(array("k","K","g","G","N","h"),array("c","C","j","J","Y","j"),$parts[0]);
-				$val2[] = implode('+',$parts);
+				if (preg_match('/[\+][a]/',$value) && $caG===1)
+				{
+					$parts=explode('+',$value);
+					$parts[0]=str_replace(array("k","K","g","G","N","h"),array("c","C","j","J","Y","j"),$parts[0]);
+					$val2[] = implode('+',$parts);
+				}
+				else
+				{
+					$val2[] = $value;
+				}
 			}
 			$text=$val2;
 			echo "<p class = sa >By kuhozcuH (".link_sutra("7.4.62").") :</p>\n"; 
@@ -2172,11 +2244,18 @@ function abhyAsa()
 		{
 			foreach ($text as $value)
 			{
-				$parts=explode('+',$value);
-				$parts[0]=str_replace(array("J","B","G","Q","D","K","P","C","W","T"),array("j","b","g","q","d","k","p","c","w","t"),$parts[0]);
-				$val2[] = implode('+',$parts);
+				if (preg_match('/[\+][a]/',$value) && $caG===1)
+				{
+					$parts=explode('+',$value);
+					$parts[0]=str_replace(array("J","B","G","Q","D","K","P","C","W","T"),array("j","b","g","q","d","k","p","c","w","t"),$parts[0]);
+					$val3[] = implode('+',$parts);
+				}
+				else
+				{
+					$val3[]=$value;
+				}
 			}
-			$text=$val2;
+			$text=$val3;
 			echo "<p class = sa >By abhyAse carca (".link_sutra("8.4.54").") :</p>\n"; 
 			echo "<p class = sa >अभ्यासे चर्चः (८.४.५४) :</p>\n";
 			display(0);            
@@ -2186,9 +2265,16 @@ function abhyAsa()
 		{
 			foreach ($text as $value)
 			{
-				$parts=explode('+',$value);
-				$parts[1]=str_replace(array("h"),array("G"),$parts[1]);
-				$val2[] = implode('+',$parts);
+				if (preg_match('/[\+][a]/',$value) && $caG===1)
+				{					
+					$parts=explode('+',$value);
+					$parts[1]=str_replace(array("h"),array("G"),$parts[1]);
+					$val4[] = implode('+',$parts);
+				}
+				else
+				{
+					$val4[] = $value;
+				}
 			}
 			echo "<p class = sa >By abhyAsAcca (".link_sutra("7.3.85").") :</p>\n"; 
 			echo "<p class = sa >अभ्यासाच्च (७.३.८५) :</p>\n";
@@ -2198,6 +2284,264 @@ function abhyAsa()
 return $text;
 }
 
+function abhyAsa_ajAdi()
+{
+	global $text;	global $caG;
+	foreach ($text as $value)
+	{
+		$parts=explode('+',$value);
+		$splitvowel=preg_split('/([aAiIuUfFxXeEoO])/',$parts[0],null,PREG_SPLIT_DELIM_CAPTURE);
+		$split2=preg_split('/(['.pc('hl').'])/',$splitvowel[0],null,PREG_SPLIT_DELIM_CAPTURE);
+		/* urat (7.4.66) */
+		// pending modification to ajAdi.
+		if (in_array($splitvowel[1],array("f")) )
+		{
+			$parts[0]=str_replace("f","ar",$parts[0]);
+			$text = array(implode('+',$parts)); 
+			$value = implode('+',$parts);
+			echo "<p class = sa >By urat (".link_sutra("7.4.66").") and uraNraparaH (".link_sutra("1.1.51").") :</p>\n"; 
+			echo "<p class = sa >उरत्‌ (७.४.६६) तथा उरण्रपरः (१.१.५१):</p>\n";
+			display(0);
+			$parts=explode('+',$value);
+			$splitvowel=preg_split('/([a])/',$parts[0],null,PREG_SPLIT_DELIM_CAPTURE);
+			$split2=preg_split('/(['.pc('hl').'])/',$splitvowel[0],null,PREG_SPLIT_DELIM_CAPTURE);
+			$parts[0]=$split2[1].$splitvowel[1];
+			$halAdi=1;
+			$text = array(implode('+',$parts)); 
+			$value = implode('+',$parts);
+		}
+		$parts=explode('+',$value);
+		/* zarpUrvAH khayaH (7.4.61) */
+		if ( preg_match('/[Szs]['.pc('Ky').']/',$parts[0])  ) // zarpUrvA khayaH
+		{
+			$splitvowel=preg_split('/([aAiIuUfFxXeEoO])/',$parts[0],null,PREG_SPLIT_DELIM_CAPTURE);
+			$split2=preg_split('/(['.pc('hl').'])/',$splitvowel[2],null,PREG_SPLIT_DELIM_CAPTURE);
+			$parts[0]=$splitvowel[1].$split2[3].$splitvowel[3];
+			$zar=1;
+		}
+		/* halAdiH zeSaH (7.4.60) */
+		elseif ( preg_match('/['.pc('hl').']/',$parts[0])  ) // halAdiH zeSaH
+		{
+			$splitvowel=preg_split('/([aAiIuUfFxXeEoO])/',$parts[0],null,PREG_SPLIT_DELIM_CAPTURE);
+				$split2=preg_split('/(['.pc('hl').'])/',$splitvowel[2],null,PREG_SPLIT_DELIM_CAPTURE);
+				print_r($text);
+			$parts[0]=$splitvowel[1].$split2[1].$splitvowel[3];
+			$halAdi=1;
+		}
+		$val[]=implode('+',$parts);
+	}
+	$text = $val;
+	/* halAdiH zeSaH (7.4.60) */
+	if ($halAdi===1)
+	{
+		echo "<p class = sa >By halAdiH zeSaH (".link_sutra("7.4.60").") :</p>\n"; 
+		echo "<p class = sa >हलादिः शेषः (७.४.६०) :</p>\n";
+		display(0);
+	}
+	/* zarpUrvAH khayaH (7.4.61) */
+	if ($zar===1)
+	{
+		echo "<p class = sa >By zarpUrvAH khayaH (".link_sutra("7.4.61").") :</p>\n"; 
+		echo "<p class = sa >शर्पूर्वाः खयः (७.४.६१) :</p>\n";
+		display(0);
+	}
+	$splitvowel=preg_split('/([aAiIuUfFxXeEoO])/',$parts[0],null,PREG_SPLIT_DELIM_CAPTURE);
+	$split2=preg_split('/(['.pc('hl').'])/',$splitvowel[0],null,PREG_SPLIT_DELIM_CAPTURE);
+	$parts=explode('+',$value);
+		/* hrasvaH (7.4.59) */
+		if (in_array($splitvowel[1],array("A","I","U","F","X","e","o","E","O")) )
+		{
+			foreach ($text as $value)
+			{
+				if (preg_match('/[\+][a]/',$value) && $caG===1)
+				{
+					$parts=explode('+',$value);
+					$parts[0]=str_replace(array("A","I","U","F","X","e","o","E","O"),array("a","i","u","f","x","i","u","i","u"),$parts[0]);
+					$val1[] = implode('+',$parts);
+				}
+				else
+				{
+					$val1[] = $value;
+				}
+			}
+			$text=$val1;
+			echo "<p class = sa >By hrasvaH (".link_sutra("7.4.59").") :</p>\n"; 
+			echo "<p class = sa >ह्रस्वः (७.४.५९) :</p>\n";
+			display(0);
+		}
+		/* kuhozcuH (7.4.62) */
+		if (preg_match('/[kKgGNh]/',$parts[0]) ) 
+		{
+			foreach ($text as $value)
+			{
+				if (preg_match('/[\+][a]/',$value) && $caG===1)
+				{
+					$parts=explode('+',$value);
+					$parts[0]=str_replace(array("k","K","g","G","N","h"),array("c","C","j","J","Y","j"),$parts[0]);
+					$val2[] = implode('+',$parts);
+				}
+				else
+				{
+					$val2[] = $value;
+				}
+			}
+			$text=$val2;
+			echo "<p class = sa >By kuhozcuH (".link_sutra("7.4.62").") :</p>\n"; 
+			echo "<p class = sa >कुहोश्चुः (७.४.६२) :</p>\n";
+			display(0); 
+		}
+		/* abhyAse carca (8.4.54) */
+		if (preg_match('/[JBGQDKPCWT]/',$parts[0]) )
+		{
+			foreach ($text as $value)
+			{
+				if (preg_match('/[\+][a]/',$value) && $caG===1)
+				{
+					$parts=explode('+',$value);
+					$parts[0]=str_replace(array("J","B","G","Q","D","K","P","C","W","T"),array("j","b","g","q","d","k","p","c","w","t"),$parts[0]);
+					$val3[] = implode('+',$parts);
+				}
+				else
+				{
+					$val3[]=$value;
+				}
+			}
+			$text=$val3;
+			echo "<p class = sa >By abhyAse carca (".link_sutra("8.4.54").") :</p>\n"; 
+			echo "<p class = sa >अभ्यासे चर्चः (८.४.५४) :</p>\n";
+			display(0);            
+		}
+		/* abhyAsAcca (7.3.85) */
+		if (in_array($fo,array("hana!")))
+		{
+			foreach ($text as $value)
+			{
+				if (preg_match('/[\+][a]/',$value) && $caG===1)
+				{					
+					$parts=explode('+',$value);
+					$parts[1]=str_replace(array("h"),array("G"),$parts[1]);
+					$val4[] = implode('+',$parts);
+				}
+				else
+				{
+					$val4[] = $value;
+				}
+			}
+			echo "<p class = sa >By abhyAsAcca (".link_sutra("7.3.85").") :</p>\n"; 
+			echo "<p class = sa >अभ्यासाच्च (७.३.८५) :</p>\n";
+			display(0);            
+		
+	}
+return $text;
+}
+
+function san()
+{
+	global $text, $atolopa;
+	foreach ($text as $value)
+	{
+		$parts=explode('+',$value);
+		if (preg_match('/[a]$/',$parts[0]) && !preg_match('/^['.pc('ac').']['.pc('hl').']['.pc('hl').']/',$parts[1]) && !preg_match('/^[AIUFXeoEO]/',$parts[1]) && $atolopa!==1 && !in_array($parts[1],array("smar","dar","tvar","praT","mrad","star","spaS")) )
+		{
+			$parts[0]=preg_replace('/([a])$/','i',$parts[0]);
+			$sanyata=1;
+		}
+		$val1[]=implode('+',$parts);
+	}
+	$text = $val1;
+	/* atsmRdRtvaraprathamradastRRspazAm (7.4.95) */	
+	if (in_array($parts[1],array("smar","dar","tvar","praT","mrad","star","spaS")))
+	{
+		echo "<p class = sa >By atsmRdRtvaraprathamradastRRspazAm (".link_sutra("7.4.95").") :</p>\n"; 
+		echo "<p class = sa >अत्स्मृदृत्वरप्रथम्रदस्तॄस्पशाम्‌ (७.४.९५) :</p>\n";
+		display(0);				
+	}
+	/* vibhASA veSTiceSTyoH (7.4.96) */	
+	elseif (in_array($parts[1],array("vezw","cezw")))
+	{
+		$text = one(array("vi+vezw","ci+cezw"),array("va+vezw","ca+cezw"),1);
+		echo "<p class = sa >By vibhASA veSTiceSTyoH (".link_sutra("7.4.96").") :</p>\n"; 
+		echo "<p class = sa >विभाषा वेष्टिचेष्ट्योः (७.४.९६) :</p>\n";
+		display(0);				
+	}	
+	/* I ca gaNaH (7.4.97) */	
+	elseif (in_array($parts[1],array("gaR")))
+	{
+		$text = one(array("ja+gaR"),array("jI+gaR"),0);
+		echo "<p class = sa >By I ca gaNaH (".link_sutra("7.4.97").") :</p>\n"; 
+		echo "<p class = sa >ई च गणः (७.४.९७) :</p>\n";
+		display(0);
+	}
+	/* sanyataH (7.4.79) */
+	elseif ($sanyata===1)
+	{
+		echo "<p class = sa >By sanyataH (".link_sutra("7.4.49").") :</p>\n"; 
+		echo "<p class = sa >सन्यतः (७.४.४९) :</p>\n";
+		display(0);		
+	}
+
+	foreach ($text as $value)
+	{
+		$parts=explode('+',$value);
+		if (preg_match('/[u]$/',$parts[0]) && preg_match('/^[pPbBmyrlvj][a]/',$parts[1]) )
+		{
+			$parts[0]=preg_replace('/([u])$/','i',$parts[0]);
+			$ohpuyan=1;
+		}
+		$val3[]=implode('+',$parts);
+	}
+	$text = $val3;
+	/* oH puyaNjyapare (7.4.80) */
+	if ($ohpuyan===1)
+	{
+		echo "<p class = sa >By oH puyaNjyapare (".link_sutra("7.4.80").") :</p>\n"; 
+		echo "<p class = sa >ओः पुयण्ज्यपरे (७.४.८०) :</p>\n";
+		display(0);		
+	}
+
+	foreach ($text as $value)
+	{
+		$parts=explode('+',$value);
+		$val4[]=implode('+',$parts);
+		if (preg_match('/[u]$/',$parts[0]) && in_array($parts[1],array("srav","Srav","drav","prav","plav","cyav",)) )
+		{
+			$parts[0]=preg_replace('/([u])$/','i',$parts[0]);
+			$sravati=1;
+			$val4[]=implode('+',$parts);
+		}
+	}
+	$text = $val4;
+	/* sravatizRNotidravatipravatiplavaticyavatInAM vA (7.4.81) */
+	if ($sravati===1)
+	{
+		echo "<p class = sa >By sravatizRNotidravatipravatiplavaticyavatInAM vA (".link_sutra("7.4.81").") :</p>\n"; 
+		echo "<p class = sa >स्रवतिशृणोतिद्रवतिप्रवतिप्लवतिच्यवतीनां वा (७.४.८१) :</p>\n";
+		display(0);
+	}
+
+	foreach ($text as $value)
+	{
+		$parts=explode('+',$value);
+		if (preg_match('/[aiufx]$/',$parts[0]) && !preg_match('/^['.pc('ac').']['.pc('hl').']['.pc('hl').']/',$parts[1]) && !preg_match('/^['.pc('hl').']['.pc('hl').']/',$parts[1]) && !preg_match('/^[AIUFXeoEO]/',$parts[1]) && !preg_match('/^['.pc('hl').'][AIUFXeoEO]/',$parts[1]) && $atolopa!==1 && !in_array($parts[1],array("smar","dar","tvar","praT","mrad","star","spaS")) )
+		{
+			$parts[0]=preg_replace('/([a])$/','A',$parts[0]);
+			$parts[0]=preg_replace('/([i])$/','I',$parts[0]);
+			$parts[0]=preg_replace('/([u])$/','U',$parts[0]);
+			$parts[0]=preg_replace('/([f])$/','F',$parts[0]);
+			$parts[0]=preg_replace('/([x])$/','X',$parts[0]);
+			$dirgholagho=1;
+		}
+		$val2[]=implode('+',$parts);
+	}
+	$text = $val2;
+	/* dIrgho laghoH (7.4.94) */
+	if ($dirgholagho===1)
+	{
+		echo "<p class = sa >By dIrgho laghoH (".link_sutra("7.4.94").") :</p>\n"; 
+		echo "<p class = sa >दीर्घो लघोः (७.४.९४) :</p>\n";
+		display(0);		
+	}
+}
 
 /* Functions which are not used in the code */
 /* Function f to find the nth letter in the word */

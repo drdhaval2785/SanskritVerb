@@ -267,12 +267,12 @@ foreach ($verbdata as $value)
 {
 	$val = explode(":",$value);
 	$val = array_map('trim',$val);
-	if (preg_match('/[uUfFxX][!]/',$val[0]) )
+	if (preg_match('/[f][!]/',$val[0]) )
 	{
 		$p[]= $val[0];
 	}
 }
-echo '$ugitverbs=array("'.implode('","',$p).'");';
+echo '$Rditverbs=array("'.implode('","',$p).'");';
 
 /* Creating methods to have dropdown menu in tiGanta.html */
 /*$a = $upasarga_combinations;
