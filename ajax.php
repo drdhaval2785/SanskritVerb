@@ -1062,11 +1062,19 @@ if( in_array($_POST['step'],array('11','12','13')) && ends($arrWord,array("Sliza
             $html .= '<input required type="radio" value="2" name="cond54" checked> अन्य ';
             $html .= '</div>';            
 }
-if( in_array($_POST['step'],array('11','12','13')) && ends(array($fo),array("qukfY","mfN","df","ruha!","gupa!"),2) && $lakAra==="luN")
+if( in_array($_POST['step'],array('11','12','13')) && ends($arrWord,array("qukfY","mfN","df","ruha!","gupa!"),2) && $lakAra==="luN")
 {
             $html .= '<div id="step22">';
             $html .= '<input required type="radio" value="1" name="cond55" > छन्दस्‌ ';
             $html .= '<input required type="radio" value="2" name="cond55" checked> नहीं ';
+            $html .= '</div>';            
+}
+if( in_array($_POST['step'],array('11','12','13')) && ends($arrWord,array("yama!"),2) )
+{
+            $html .= '<div id="step22">';
+            $html .= '<input required type="radio" value="1" name="cond56" > गन्धने ';
+            $html .= '<input required type="radio" value="2" name="cond56" > उपयमने ';
+            $html .= '<input required type="radio" value="3" name="cond56" checked> अन्य ';
             $html .= '</div>';            
 }
 
