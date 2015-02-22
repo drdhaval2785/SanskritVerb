@@ -2468,7 +2468,7 @@ if ($lakAra==="liw" && ends(array($fo),array("UrRuY"),4) )
     display(0);
 }
 /* ijAdezca gurumato'nRcCaH (3.1.36) */
-elseif ($lakAra==="liw" && arr(array($fo),'/^[IUFXeEoO]/') && !ends(array($fo),array("fCa!"),4) )
+elseif ($lakAra==="liw" && arr(array($verb_without_anubandha),'/^[IUFXeEoO]/') && !ends(array($fo),array("fCa!"),4) )
 {
     $text=two(array("+"),$tiG,array("+Am+"),$tiG,0);
     echo "<p class = sa >By ijAdezca gurumato'nRcCaH (".link_sutra("3.1.36").") :</p>\n";
