@@ -1273,7 +1273,6 @@ function samprasarana($input,$merge)
     {
         $text = two(array("i","u","f","x"),$ac,array("i","u","f","x"),blank(count($ac)),2);
         echo "<p class = sa >samprasAraNAcca (".link_sutra("6.1.104").") :</p>\n"; 
-        echo "<p class = sa >samprasAraNAcca (".link_sutra("6.1.104").") :</p>\n"; 
         echo "<p class = sa >सम्प्रसारणाच्च (६.१.१०४) :</p>\n";
         display(0);    
     }   
@@ -2854,7 +2853,69 @@ function zlu()
 		display(0);            
 	}
 }
-
+function Am()
+{
+	global $lakAra, $fo, $verb_without_anubandha, 
+	/* UrNotezca pratiSedho vaktavyaH (vA) */
+	if ($lakAra==="liw" && ends(array($fo),array("UrRuY"),4) )
+	{
+		echo "<p class = sa >By UrNotezca pratiSedho vaktavyaH (vA) :</p>\n"; 
+		echo "<p class = sa >ऊर्णोतेश्च प्रतिषेधो वक्तव्यः (वा) :</p>\n";
+		display(0);
+	}
+	/* ijAdezca gurumato'nRcCaH (3.1.36) */
+	elseif ($lakAra==="liw" && arr(array($verb_without_anubandha),'/^[IUFXeEoO]/') && !ends(array($fo),array("fCa!"),4) )
+	{
+		$text=two(array("+"),$tiG,array("+Am+"),$tiG,0);
+		echo "<p class = sa >By ijAdezca gurumato'nRcCaH (".link_sutra("3.1.36").") :</p>\n";
+		echo "<p class = sa >इजादेश्च गुरुमतोऽनृच्छः (३.१.३६) :</p>\n";
+		display(0);
+	}
+	/* dayAyAysazca (3.1.37) */
+	elseif ($lakAra==="liw" && ends(array($fo),array("daya!","aya!","Asa!"),4) )
+	{
+		$text=two(array("+"),$tiG,array("+Am+"),$tiG,0);
+		echo "<p class = sa >By dayAyAysazca (".link_sutra("3.1.37").") :</p>\n";
+		echo "<p class = sa >दयायासश्च (३.१.३७) :</p>\n";
+		display(0);
+	}
+	/* uSavidajAgRbhyo'nyatarasyAm (3.1.38) */
+	elseif ($lakAra==="liw" && ends(array($fo),array("uza!","vida!","jAgf"),4) )
+	{
+		$text=two(array("+"),$tiG,array("+Am+"),$tiG,1);
+		echo "<p class = sa >By uSavidajAgRbhyo'nyatarasyAm (".link_sutra("3.1.38").") :</p>\n";
+		echo "<p class = sa >उषविदजागृभ्योऽन्यतरस्याम्‌ (३.१.३८) :</p>\n";
+		display(0);
+	}
+	/* bhIhrIbhRhuvAM zluvacca (3.1.39) */
+	elseif ($lakAra==="liw" && ends(array($fo),array("YiBI","hrI","quBfY","hu"),4) )
+	{
+		$text=two(array("+"),$tiG,array("+Am+"),$tiG,1);
+		echo "<p class = sa >By uSavidajAgRbhyo'nyatarasyAm (".link_sutra("3.1.38").") :</p>\n";
+		echo "<p class = sa >उषविदजागृभ्योऽन्यतरस्याम्‌ (३.१.३८) :</p>\n";
+		display(0);
+		$zluvat=1;
+		zlu();
+	}
+	/* kAspratyayAdAmamantre liTi (3.1.35) */
+	elseif ($lakAra==="liw" && $veda===0 && (anekAca($verb_without_anubandha) || $sanAdi!=='' || $verbset==="curAdi" || $fo==="kAsf!") )
+	{
+		$text=two(array("+"),$tiG,array("+Am+"),$tiG,0);
+		echo "<p class = sa >By kAspratyayAdAmamantre liTi (".link_sutra("3.1.35").") :</p>\n"; 
+		echo "<p class = sa >कास्प्रत्ययादाममन्त्रे (३.१.३५) :</p>\n";
+		display(0);
+	}
+	/* AmaH (2.4.81) and kRJcAnuprayujyate liTi (3.1.40) */
+	if ($lakAra==="liw" && sub(array("+Am+"),$tiG,blank(0),0) )
+	{
+		$text=three(array("+Am+"),array("","",""),$tiG,array("+Am+"),array("kf+"),$tiG,0);
+		$text=one(array("+Am+kf+"),array("+Am+BU+"),1);
+		$text=one(array("+Am+kf+"),array("+Am+as+"),1);
+		echo "<p class = sa >By AmaH (".link_sutra("2.4.81").") and kRJcAnuprayujyate liTi (".link_sutra("3.1.40").") :</p>\n"; 
+		echo "<p class = sa >आमः (२.४.८१) तथा कृञ्चानुप्रयुज्यते लिटि (३.१.४०) :</p>\n";
+		display(0);
+	}
+}
 /* Functions which are not used in the code */
 /* Function f to find the nth letter in the word */
 function f($text,$n) // Not used in code.
