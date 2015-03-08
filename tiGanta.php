@@ -3311,7 +3311,7 @@ elseif (ends(array($fo),array("qukfY","sf","quBfY","vfN","vfY","zwuY","dru","sru
 	display(0);
 }
 /* kRsRbhRvRstudrusruzruvo liTi (7.2.13) */
-elseif (!ends(array($fo),array("qukfY","sf","quBfY","vfN","vfY","zwuY","dru","sru","zru"),4) && $lakAra==="liw" && in_array($so,array("vas","mas","TAs","Dve","vahi","mahiN")))
+elseif (!ends(array($fo),array("qukfY","sf","quBfY","vfN","vfY","zwuY","dru","sru","zru"),4) && $lakAra==="liw" && in_array($so,array("vas","mas","TAs","Dvam","vahi","mahiN")))
 {
 	$id_dhAtu="sew";
 	echo "<p class = sa >By kRsRbhRvRstudrusruzruvo liTi (".link_sutra("7.2.13").") :</p>\n"; 
@@ -3437,7 +3437,6 @@ if ($lakAra==="liw" && arr($text,'/^['.pc('hl').']/'))
 	liT_halAdi();
 	abhyAsa_halAdi();
 }
-print_r($itpratyaya);
 /* liTi vayo yaH (6.1.38) and vazcAsyAnyatarasyAM kiti (6.1.39) */
 if (ends(array($fo),array("veY"),4) && sub(array("vay"),array("+"),blank(0),0) && $lakAra==="liw" && in_array("k",$itpratyaya))
 {
@@ -4366,12 +4365,25 @@ elseif ( pr2(array("i","I","u","U","f","F","x","X"),array("+"),$ArdhadhAtuka_tiG
     display(0);    
     $kGiti=1;
 }
-if ($lakAra==="liw" && arr($text,'/['.pc('hl').'][iI][+][aAiIuUfFxXeEoO]/') && !arr($text,'/['.pc('hl').']['.pc('hl').'][iI][+][aAiIuUfFxXeEoO]/') )
+foreach ($tiG1 as $value) {$iDtiG = "i".$value;} // defining iDtiG i.e. iDAgama+tiG1.
+/* aco JNiti patch for liT. */
+if ( (sub($ac,array("+"),$tiG1,0)||sub($ac,array("+"),$iDtiG,0)) && in_array($so,array("tip")) && $lakAra==="liw")
 {
-	$text=three($hl,array("i+","I+"),$ac,$hl,array("y+","y+"),$ac,0);
-	echo "<p class = sa >By eranekAco'saMyogapUrvasya (".link_sutra("6.4.82").") :</p>\n";
-	echo "<p class = sa >एरनेकाचोऽसंयोगपूर्वस्य (६.४.८२) :</p>\n";
-	display(0);	
+    $text = pr2($ac,array("+"),$tiG1,vriddhi($ac),array("+"),$tiG1,$text);
+    $text = pr2($ac,array("+"),$iDtiG,vriddhi($ac),array("+"),$iDtiG,$text);
+    echo "<p class = sa >By aco JNiti (".link_sutra("7.2.115").") :</p>\n";
+    echo "<p class = sa >अचो ञ्णिति (७.२.११५) :</p>\n";
+    display(0);
+}
+/* aco JNiti patch for liT mip. */
+if ( (sub($ac,array("+"),$tiG1,0)||sub($ac,array("+"),$iDtiG,0)) && in_array($so,array("mip")) && $lakAra==="liw")
+{
+    $text1 = pr2($ac,array("+"),$tiG1,vriddhi($ac),array("+"),$tiG1,$text);
+    $text2 = pr2($ac,array("+"),$iDtiG,vriddhi($ac),array("+"),$iDtiG,$text);
+	$text = array_merge($text,$text1,$text2);
+    echo "<p class = sa >By aco JNiti (".link_sutra("7.2.115").") :</p>\n";
+    echo "<p class = sa >अचो ञ्णिति (७.२.११५) :</p>\n";
+    display(0);
 }
 /* udoSThyapUrvasya (7.1.102) */
 if ( sub(array("pF","PF","bF","BF","mF"),array("+"),$apit_sArvadhAtuka_pratyayas,0) && in_array($so,$tiG) )
@@ -5046,7 +5058,7 @@ if (sub(array("le","lE"),array("+"),blank(0),0) && ((ends(array($fo),array("lI")
 		display(0);		
 	}
 }
-print_r($text); echo $id_dhAtu, $id_pratyaya;
+echo $id_dhAtu, $id_pratyaya, $yAsuT, $caG, $ksa;
 /* patch for yAsuT Agama to combine it with the next pratyaya. because it would not be getting iDAgama. */
 $text = one(array("+yA+"),array("+yA"),0);
 /* Adding iDAgama actually */
@@ -5095,13 +5107,6 @@ if (ends(array($fo),array("wuo!Svi"),4) )
     echo "<p class = sa >इडागमे कृते :</p>\n";
     display(0);
 }
-if ($lakAra==="liw" && arr($text,'/['.pc('hl').'][iI][+][aAiIuUfFxXeEoO]/') && !arr($text,'/['.pc('hl').']['.pc('hl').'][iI][+][aAiIuUfFxXeEoO]/') )
-{
-	$text=three($hl,array("i+","I+"),$ac,$hl,array("y+","y+"),$ac,0);
-	echo "<p class = sa >By eranekAco'saMyogapUrvasya (".link_sutra("6.4.82").") :</p>\n";
-	echo "<p class = sa >एरनेकाचोऽसंयोगपूर्वस्य (६.४.८२) :</p>\n";
-	display(0);	
-}
 /* Ato lopa iTi ca (7.4.64) */
 if ( sub(array("A+"),array("i"),$tiG1,0) && $lakAra!=="" && in_array("iw",$Agama) )
 {
@@ -5127,26 +5132,6 @@ if ( sub(array("masj","naS"),array("+"),prat('Jl'),0) && ends(array($fo),array("
     echo "<p class = sa >मस्जिनशोर्झलि (७.१.६०) :</p>\n";
     display(0);
 }
-foreach ($tiG1 as $value) {$iDtiG = "i".$value;} // defining iDtiG i.e. iDAgama+tiG1.
-/* aco JNiti patch for liT. */
-if ( (sub($ac,array("+"),$tiG1,0)||sub($ac,array("+"),$iDtiG,0)) && in_array($so,array("tip")) && $lakAra==="liw")
-{
-    $text = pr2($ac,array("+"),$tiG1,vriddhi($ac),array("+"),$tiG1,$text);
-    $text = pr2($ac,array("+"),$iDtiG,vriddhi($ac),array("+"),$iDtiG,$text);
-    echo "<p class = sa >By aco JNiti (".link_sutra("7.2.115").") :</p>\n";
-    echo "<p class = sa >अचो ञ्णिति (७.२.११५) :</p>\n";
-    display(0);
-}
-/* aco JNiti patch for liT mip. */
-if ( (sub($ac,array("+"),$tiG1,0)||sub($ac,array("+"),$iDtiG,0)) && in_array($so,array("mip")) && $lakAra==="liw")
-{
-    $text1 = pr2($ac,array("+"),$tiG1,vriddhi($ac),array("+"),$tiG1,$text);
-    $text2 = pr2($ac,array("+"),$iDtiG,vriddhi($ac),array("+"),$iDtiG,$text);
-	$text = array_merge($text,$text1,$text2);
-    echo "<p class = sa >By aco JNiti (".link_sutra("7.2.115").") :</p>\n";
-    echo "<p class = sa >अचो ञ्णिति (७.२.११५) :</p>\n";
-    display(0);
-}
 // ata upadhAyAH patch for liT.
 if ( sub(array("a"),$hl,array("+"),0) && in_array($so,array("tip")) && $lakAra==="liw" )
 {
@@ -5163,6 +5148,7 @@ if ( sub(array("a"),$hl,array("+"),0) && in_array($so,array("mip")) && $lakAra==
     echo "<p class = sa >अत उपधायाः (७.२.११६) :</p>\n";
     display(0);
 }
+print_r($text); echo $ardhadhatuka, $didhI, $kGiti, $sIyuT, $bhUsuvo;
 /* sArvadhAtukArdhadhAtukayoH (7.3.84) */
 if ( pr2(array("i","I","u","U","f","F","x","X",),array("+"),$ArdhadhAtuka_tiG_pratyayas,array("e","e","o","o","ar","ar","al","al",),array("+"),$ArdhadhAtuka_tiG_pratyayas,$text)!==$text && $ardhadhatuka===1  && $didhI!==1  && $kGiti!==1 && $sIyuT!==1 && $bhUsuvo!==1)
 {
@@ -5192,6 +5178,13 @@ if ( $ardhadhatuka===1 && (sub(array("i","u","f","x"),$hlplus,$tiG1,0) || sub(ar
     echo "<p class = sa >pugantalaghUpadhasya ca (7.3.86) :</p>\n"; 
     echo "<p class = sa >पुगन्तलघूपधस्य च (७.३.८६) :</p>\n";
     display(0);    
+}
+if ($lakAra==="liw" && arr($text,'/['.pc('hl').'][iI][+][aAiIuUfFxXeEoO]/') && !arr($text,'/['.pc('hl').']['.pc('hl').'][iI][+][aAiIuUfFxXeEoO]/') )
+{
+	$text=three($hl,array("i+","I+"),$ac,$hl,array("y+","y+"),$ac,0);
+	echo "<p class = sa >By eranekAco'saMyogapUrvasya (".link_sutra("6.4.82").") :</p>\n";
+	echo "<p class = sa >एरनेकाचोऽसंयोगपूर्वस्य (६.४.८२) :</p>\n";
+	display(0);	
 }
 
 
