@@ -1155,6 +1155,7 @@ for ($w=0;$w<count($suffix);$w++) // running the loop till $sup1 is exhausted.
 {
 $second=$suffix[$w];    // defining the second word as su!, O, jas etc.
 $id_original=$id_dhAtu;
+$id_original_pratyaya=$id_pratyaya;
 if(in_array($second,$tiG)||in_array($second,$sup))
 {
 $vibhakti=1;    
@@ -2521,7 +2522,10 @@ if ($lakAra==="liw" && in_array($so,$tis) )
     echo "<p class = sa >परस्मैपदानां णलतुसुस्थल्थुसणल्वमाः (३.४.८२) :</p>\n";
     display(0);		
 }
-
+if ($lakAra==="liw")
+{
+	if (in_array($so,array("tip","tas","Ji","Tas","Ta","mip","ta","AtAm","Ja","ATAm","iw"))) {$id_pratyaya="aniw";}
+}
 $svAdiajanta=array("zuY","ziY","SiY","qumiY","ciY","stfY","kfY","vfY","DuY","dUY","wudu","hi","pf","spf","df","ri","kzi","ciri","jiri");
 $svAdihalanta=array_diff($svAdi,$svAdiajanta);
 /* aniditAM hala upadhAyAH kGiti (6.4.24) */ 
@@ -5076,7 +5080,7 @@ if ($id_dhAtu==="sew" && $id_pratyaya==="sew" && !($yAsuT===1 && $lakAra==="ASIr
 	$text = one(array("+iyAs+","Ay+t","daridrA+is"),array("+yAs+","Ay+it","daridrA+s"),0);
 	$text = two(array("sfap","spfaS","mfaS","kfaz","tfap","dfap"),array("+i"),array("sarp","sparS","marS","karz","tarp","darp"),array("+i"),0); // not before iDAgama.
     echo "<p class = sa >By doing iDAgama :</p>\n"; 
-    echo "<p class = sa >इडागमे कृते :</p>\n";
+    echo "<p class = sa >इडागमे कृते 1:</p>\n";
     display(0);
 	$Agama=array_merge($Agama,array("iw"));
 }
@@ -5095,16 +5099,16 @@ if ($id_dhAtu==="vew" && $id_pratyaya==="sew" && !($yAsuT===1 && $lakAra==="ASIr
 	$text = one(array("+iyAs+","Ay+t","vaD+s","gopAya+s","gopAya+s","gup+is"),array("+yAs+","Ay+it","vaD+is","gopAya+is","gopAya+is","gup+s"),0);
 	$text = two(array("sfap","spfaS","mfaS","kfaz","tfap","dfap"),array("+i"),array("sarp","sparS","marS","karz","tarp","darp"),array("+i"),0); // not before iDAgama.
     echo "<p class = sa >By doing iDAgama :</p>\n"; 
-    echo "<p class = sa >इडागमे कृते :</p>\n";
+    echo "<p class = sa >इडागमे कृते 2:</p>\n";
     display(0);
 	$Agama=array_merge($Agama,array("iw"));
 }
 // patch for Svi dhAtu
-if (ends(array($fo),array("wuo!Svi"),4) )
+if (ends(array($fo),array("wuo!Svi"),4) && sub(array("Svi"),array("+"),prat('vl'),0) )
 {
-	$text = one(array("Svi+s"),array("Svi+is"),0);
+	$text = three(array("Svi","Su+Su"),array("+"),prat('vl'),array("Svi","Su+Su"),array("+i"),prat('vl'),0);
 	echo "<p class = sa >By doing iDAgama :</p>\n"; 
-    echo "<p class = sa >इडागमे कृते :</p>\n";
+    echo "<p class = sa >इडागमे कृते 3:</p>\n";
     display(0);
 }
 /* Ato lopa iTi ca (7.4.64) */
@@ -5148,7 +5152,6 @@ if ( sub(array("a"),$hl,array("+"),0) && in_array($so,array("mip")) && $lakAra==
     echo "<p class = sa >अत उपधायाः (७.२.११६) :</p>\n";
     display(0);
 }
-print_r($text); echo $ardhadhatuka, $didhI, $kGiti, $sIyuT, $bhUsuvo;
 /* sArvadhAtukArdhadhAtukayoH (7.3.84) */
 if ( pr2(array("i","I","u","U","f","F","x","X",),array("+"),$ArdhadhAtuka_tiG_pratyayas,array("e","e","o","o","ar","ar","al","al",),array("+"),$ArdhadhAtuka_tiG_pratyayas,$text)!==$text && $ardhadhatuka===1  && $didhI!==1  && $kGiti!==1 && $sIyuT!==1 && $bhUsuvo!==1)
 {
@@ -14138,6 +14141,7 @@ echo "<hr>\n";
 /* setting the $pada back to pratyaya for next use */
 $pada="pratyaya";
 $id_dhAtu=$id_original;
+$id_pratyaya=$id_original_pratyaya;
 $it = array();
 $itprakriti = array();
 $itpratyaya = array();
