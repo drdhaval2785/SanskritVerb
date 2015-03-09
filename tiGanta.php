@@ -4369,6 +4369,30 @@ elseif ( pr2(array("i","I","u","U","f","F","x","X"),array("+"),$ArdhadhAtuka_tiG
     display(0);    
     $kGiti=1;
 }
+/* heracaGi (7.3.56) */
+if ( sub(array("ji+hi"),array("+"),array(""),0) && $caG!==1)
+{
+	$text = one(array("ji+hi+"),array("ji+Gi+"),0);
+    echo "<p class = sa >By heracaGi (".link_sutra("7.3.56").") :</p>\n";    echo "<p class = hn >This prevents guNa. </p>\n"; 
+    echo "<p class = sa >हेरचङि (७.३.५६) :</p>\n";
+    display(0);
+}
+/* sanliTorjeH (7.3.57) */
+if ( sub(array("ji+ji"),array("+"),array(""),0) && ($sanDai=="san" || $lakAra==="liw"))
+{
+	$text = one(array("ji+ji+"),array("ji+gi+"),0);
+    echo "<p class = sa >By sanliTorjeH (".link_sutra("7.3.57").") :</p>\n";    echo "<p class = hn >This prevents guNa. </p>\n"; 
+    echo "<p class = sa >सन्लिटोर्जेः (७.३.५७) :</p>\n";
+    display(0);
+}
+/* vibhASA ceH (7.3.58) */
+if ( sub(array("ci+ci"),array("+"),array(""),0) && ($sanDai=="san" || $lakAra==="liw"))
+{
+	$text = one(array("ci+ci+"),array("ci+ki+"),1);
+    echo "<p class = sa >By vibhASA ceH (".link_sutra("7.3.58").") :</p>\n";    echo "<p class = hn >This prevents guNa. </p>\n"; 
+    echo "<p class = sa >विभाषा चेः (७.३.५८) :</p>\n";
+    display(0);
+}
 foreach ($tiG1 as $value) {$iDtiG = "i".$value;} // defining iDtiG i.e. iDAgama+tiG1.
 /* aco JNiti patch for liT. */
 if ( (sub($ac,array("+"),$tiG1,0)||sub($ac,array("+"),$iDtiG,0)) && in_array($so,array("tip")) && $lakAra==="liw")
@@ -5150,6 +5174,14 @@ if ( sub(array("a"),$hl,array("+"),0) && in_array($so,array("mip")) && $lakAra==
     $text = three(array("a"),$hl,array("+"),array("A"),$hl,array("+"),1);
     echo "<p class = sa >By ata upadhAyAH (".link_sutra("7.2.116").") :</p>\n";
     echo "<p class = sa >अत उपधायाः (७.२.११६) :</p>\n";
+    display(0);
+}
+/* dIGo yuDaci kGiti (6.4.64) */
+if ( sub(array("dI"),array("+"),$ac,0) && $kGiti===1)
+{
+    $text=three(array("dI"),array("+"),$ac,array("dI"),array("+y"),$ac,0);
+    echo "<p class = sa >By dIGo yuDaci kGiti (".link_sutra("6.4.64").") :</p>\n"; 
+    echo "<p class = sa >दीङो युडचि क्ङिति (६.४.६४) :</p>\n";
     display(0);
 }
 /* sArvadhAtukArdhadhAtukayoH (7.3.84) */
