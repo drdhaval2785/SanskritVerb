@@ -2346,8 +2346,7 @@ function liT_ajAdi()
 		/* halAdiH zeSaH (7.4.60) */
 			$splitvowel=preg_split('/([aAiIuUfFxXeEoO])/',$parts[0],null,PREG_SPLIT_DELIM_CAPTURE);
 				$split2=preg_split('/(['.pc('hl').'])/',$splitvowel[2],null,PREG_SPLIT_DELIM_CAPTURE);
-			$parts[0]=$splitvowel[1];
-			$halAdi=1;
+			if ($parts[0]!=="UrRunu"){$parts[0]=$splitvowel[1];	$halAdi=1;}
 		$val5[]=implode('+',$parts);
 	}
 	$text = $val5;
