@@ -1051,7 +1051,7 @@ if (in_array($lakAra,array("lfw","lfN","luw","ASIrliN","luN","liw","ArDaDAtukale
         echo "<hr>\n";
     }
      /* svaratisUtisUyatidhUJUdito vA (7.2.44) */
-    elseif (ends(array($fo),array("svf","zUN","DUN"),4) || ends(array($fo),$Uditverbs,4))
+    elseif (ends(array($fo),array("svf","zUN","DUY"),4) || ends(array($fo),$Uditverbs,4))
     {
         $id_dhAtu="vew";
         echo "<p class = st >By svaratisUtisUyatidhUJUdito vA (".link_sutra("7.2.44").") :</p>\n"; 
@@ -4319,7 +4319,6 @@ if ( sub($ik,$hlplus,array("s"),0) && in_array($so,$taG) && ($sic===1||$sIyuT===
 	$it = array_merge($it,array("k"));
 	$kGiti=1;
 }
-print_r($text); echo $id_dhAtu, $id_pratyaya;
 /* vibhASorNoH (1.2.3) */ 
 if ( ends(array($fo),array("UrRuY"),4) && sub(array("UrRu","orRu","UrRo","orRo","UrRunu","orRunu",),array("+"),blank(0),0) && in_array($lakAra,$ArdhadhAtuka_lakAra) && $id_dhAtu==="sew" && $id_pratyaya==="sew")
 {
@@ -4395,26 +4394,6 @@ if ( sub(array("ci+ci"),array("+"),array(""),0) && ($sanDai=="san" || $lakAra===
 	$text = one(array("ci+ci+"),array("ci+ki+"),1);
     echo "<p class = sa >By vibhASA ceH (".link_sutra("7.3.58").") :</p>\n";    echo "<p class = hn >This prevents guNa. </p>\n"; 
     echo "<p class = sa >विभाषा चेः (७.३.५८) :</p>\n";
-    display(0);
-}
-foreach ($tiG1 as $value) {$iDtiG = "i".$value;} // defining iDtiG i.e. iDAgama+tiG1.
-/* aco JNiti patch for liT. */
-if ( (sub($ac,array("+"),$tiG1,0)||sub($ac,array("+"),$iDtiG,0)) && in_array($so,array("tip")) && $lakAra==="liw")
-{
-    $text = pr2($ac,array("+"),$tiG1,vriddhi($ac),array("+"),$tiG1,$text);
-    $text = pr2($ac,array("+"),$iDtiG,vriddhi($ac),array("+"),$iDtiG,$text);
-    echo "<p class = sa >By aco JNiti (".link_sutra("7.2.115").") :</p>\n";
-    echo "<p class = sa >अचो ञ्णिति (७.२.११५) :</p>\n";
-    display(0);
-}
-/* aco JNiti patch for liT mip. */
-if ( (sub($ac,array("+"),$tiG1,0)||sub($ac,array("+"),$iDtiG,0)) && in_array($so,array("mip")) && $lakAra==="liw")
-{
-    $text1 = pr2($ac,array("+"),$tiG1,vriddhi($ac),array("+"),$tiG1,$text);
-    $text2 = pr2($ac,array("+"),$iDtiG,vriddhi($ac),array("+"),$iDtiG,$text);
-	$text = array_merge($text,$text1,$text2);
-    echo "<p class = sa >By aco JNiti (".link_sutra("7.2.115").") :</p>\n";
-    echo "<p class = sa >अचो ञ्णिति (७.२.११५) :</p>\n";
     display(0);
 }
 /* udoSThyapUrvasya (7.1.102) */
@@ -5129,6 +5108,43 @@ if ( sub(array("UrRunu","UrRu"),array("+"),array("i"),0) )
     echo "<p class = sa >sArvadhAtukArdhadhAtukayoH (".link_sutra("7.3.84").") :</p>\n"; 
     echo "<p class = sa >सार्वधातुकार्धधातुकयोः (७.३.८४) :</p>\n";
     display(0);    
+}
+print_r($text);
+/* bhuvo vugluGliToH (6.4.88) */
+if ( arr($text,'/[B][U][+]['.pc('ac').']/') && in_array($lakAra,array("luN","liw")))
+{
+    $text = three(array("BU"),array("+"),$ac,array("BUv"),array("+"),$ac,0);
+    echo "<p class = sa >By bhuvo vugluGliToH (".link_sutra("6.4.88").") :</p>\n"; 
+    echo "<p class = sa >भुवो वुग्लुङ्लिटोः (६.४.८८) :</p>\n";
+    display(0); 
+}
+/* bhavateraH (7.4.73) */
+if ( sub(array("bu+BUv"),array("+"),blank(0),0) && $lakAra==="liw")
+{
+	$text = two(array("bu+BUv"),array("+"),array("ba+BUv"),array("+"),0);
+    echo "<p class = sa >By bhavateraH (".link_sutra("7.4.73").") :</p>\n";
+    echo "<p class = sa >भवतेरः (७.४.७३) :</p>\n";
+    display(0);
+}
+foreach ($tiG1 as $value) {$iDtiG = "i".$value;} // defining iDtiG i.e. iDAgama+tiG1.
+/* aco JNiti patch for liT. */
+if ( (sub($ac,array("+"),$tiG1,0)||sub($ac,array("+"),$iDtiG,0)) && in_array($so,array("tip")) && $lakAra==="liw")
+{
+    $text = pr2($ac,array("+"),$tiG1,vriddhi($ac),array("+"),$tiG1,$text);
+    $text = pr2($ac,array("+"),$iDtiG,vriddhi($ac),array("+"),$iDtiG,$text);
+    echo "<p class = sa >By aco JNiti (".link_sutra("7.2.115").") :</p>\n";
+    echo "<p class = sa >अचो ञ्णिति (७.२.११५) :</p>\n";
+    display(0);
+}
+/* aco JNiti patch for liT mip. */
+if ( (sub($ac,array("+"),$tiG1,0)||sub($ac,array("+"),$iDtiG,0)) && in_array($so,array("mip")) && $lakAra==="liw")
+{
+    $text1 = pr2($ac,array("+"),$tiG1,vriddhi($ac),array("+"),$tiG1,$text);
+    $text2 = pr2($ac,array("+"),$iDtiG,vriddhi($ac),array("+"),$iDtiG,$text);
+	$text = array_merge($text,$text1,$text2);
+    echo "<p class = sa >By aco JNiti (".link_sutra("7.2.115").") :</p>\n";
+    echo "<p class = sa >अचो ञ्णिति (७.२.११५) :</p>\n";
+    display(0);
 }
 /* Ato lopa iTi ca (7.4.64) */
 if ( sub(array("A+"),array("i"),$tiG1,0) && $lakAra!=="" && in_array("iw",$Agama) )
@@ -6139,14 +6155,6 @@ if ((arr($text,'/['.pc('hl').'][+][sts]$/')  )&& in_array($so,array("su!","tip",
     display(0); 
     $pada="pada"; // there is no pratyaya left now.
     $halGyAbbhyo=1;
-}
-/* bhuvo vugluGliToH (6.4.88) */
-if ( arr($text,'/[B][U][+]['.pc('ac').']/') && in_array($lakAra,array("luN","liw")) )
-{
-    $text = three(array("BU"),array("+"),$ac,array("BUv"),array("+"),$ac,0);
-    echo "<p class = sa >By bhuvo vugluGliToH (".link_sutra("6.4.88").") :</p>\n"; 
-    echo "<p class = sa >भुवो वुग्लुङ्लिटोः (६.४.८८) :</p>\n";
-    display(0); 
 }
 /* rAtsasya (8.2.24) */
 if ((arr($text,('/[r][+][s]$/')) && $pada === "pratyaya") || (arr($text,('/[r][s][+]/')) && $pada === "pada") )
@@ -14199,6 +14207,16 @@ $text = three(prat('hl'),$ppp,$ppp,prat('hl'),blank(4),$ppp,1);
 echo "<p class = sa >By jharo jhari savarNe (".link_sutra("8.4.65").") :</p>\n";
 echo "<p class = sa >झरो झरि सवर्णे (८.४.६५) :</p>\n";
 display(0);
+}
+/* nipAta forms */ 
+/* apaspRdhethAmAnRcurAnRhuzcicyuSetityAhAzrAtAHzritamAzIrAzIrtAH (6.1.35) */ 
+if(sub(array("apasparDeTAm","AnarcuH","AnarhuH","cucyuvize","tatyAja"),blank(0),blank(0),0) && $veda===1)
+// pending zrAtAH.... onwards. Original words to be found out.
+{
+	$text = one(array("apasparDeTAm","AnarcuH","AnarhuH","cucyuvize","tatyAja"),array("apaspfDeTAm","AnfcuH","AnfhuH","cicyuze","tityAja"),1);
+	echo "<p class = sa >By apaspRdhethAmAnRcurAnRhuzcicyuSetityAhAzrAtAHzritamAzIrAzIrtAH (".link_sutra("6.1.35").") :</p>\n";
+	echo "<p class = sa >अपस्पृधेथामानृचुरानृहुश्चिच्युषेतित्याजश्राताःश्रितमाशीराशीर्तः (६.१.३५) :</p>\n";
+	display(0);
 }
 /* Final Display */
 echo "<p class = sa >Final forms are :</p>\n";
