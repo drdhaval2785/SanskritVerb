@@ -2152,13 +2152,13 @@ function caG_ajAdi()
 		$splitvowel=preg_split('/([aAiIuUfFxXeEoO])/',$parts[0],null,PREG_SPLIT_DELIM_CAPTURE);
 		$split2=preg_split('/(['.pc('hl').'])/',$splitvowel[0],null,PREG_SPLIT_DELIM_CAPTURE);
 		/* urat (7.4.66) */
-		if (in_array($splitvowel[1],array("f")) )
+		if (in_array($splitvowel[1],array("f","F")) )
 		{
 			$parts[0]=str_replace("f","ar",$parts[0]);
 			$text = array(implode('+',$parts)); 
 			$value = implode('+',$parts);
 			echo "<p class = sa >By urat (".link_sutra("7.4.66").") and uraNraparaH (".link_sutra("1.1.51").") :</p>\n"; 
-			echo "<p class = sa >उरत्‌ (७.४.६६) तथा उरण्रपरः (१.१.५१):</p>\n";
+			echo "<p class = sa >उरत्‌ (७.४.६६) तथा उरण्रपरः (१.१.५१) 1:</p>\n";
 			display(0);
 		}
 		$parts=explode('+',$value);
@@ -2365,13 +2365,13 @@ function liT_ajAdi()
 		display(0);
 	}
 		/* urat (7.4.66) */
-		if (in_array($splitvowel[1],array("f")) )
+		if (in_array($splitvowel[1],array("f","F")) )
 		{
 			$parts[0]="ar";
 			$text = array(implode('+',$parts)); 
 			$value = implode('+',$parts);
 			echo "<p class = sa >By urat (".link_sutra("7.4.66").") and uraNraparaH (".link_sutra("1.1.51").") :</p>\n"; 
-			echo "<p class = sa >उरत्‌ (७.४.६६) तथा उरण्रपरः (१.१.५१):</p>\n";
+			echo "<p class = sa >उरत्‌ (७.४.६६) तथा उरण्रपरः (१.१.५१) 2:</p>\n";
 			display(0);
 		}
 		$parts=explode('+',$value);
@@ -2529,12 +2529,12 @@ function abhyAsa_halAdi()
 		$splitvowel=preg_split('/([aAiIuUfFxXeEoO])/',$parts[0],null,PREG_SPLIT_DELIM_CAPTURE);
 		$split2=preg_split('/(['.pc('hl').'])/',$splitvowel[0],null,PREG_SPLIT_DELIM_CAPTURE);
 		/* urat (7.4.66) */
-		if (in_array($splitvowel[1],array("f")) )
+		if (in_array($splitvowel[1],array("f","F")) )
 		{
-			$parts[0]=str_replace("f","ar",$parts[0]);
+			$parts[0]=str_replace(array("f","F"),array("ar","ar"),$parts[0]);
 			$value = implode('+',$parts);
 			echo "<p class = sa >By urat (".link_sutra("7.4.66").") and uraNraparaH (".link_sutra("1.1.51").") :</p>\n"; 
-			echo "<p class = sa >उरत्‌ (७.४.६६) तथा उरण्रपरः (१.१.५१):</p>\n";
+			echo "<p class = sa >उरत्‌ (७.४.६६) तथा उरण्रपरः (१.१.५१) 3:</p>\n";
 			display(0);
 			$parts=explode('+',$value);
 			$splitvowel=preg_split('/([a])/',$parts[0],null,PREG_SPLIT_DELIM_CAPTURE);

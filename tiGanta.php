@@ -4414,7 +4414,7 @@ elseif ( sub(array("F"),array("+"),array("nA+"),0) && ($sarvadhatuka===1 || $ard
     display(0);    
 }
 /* RRta iddhAtoH (7.1.100) */
-elseif ( pr2(array("F"),array("+"),$apit_sArvadhAtuka_pratyayas,array("ir"),array("+"),$apit_sArvadhAtuka_pratyayas,$text)!==$text && ($sarvadhatuka===1 || $ardhadhatuka===1) )
+elseif ( pr2(array("F"),array("+"),$apit_sArvadhAtuka_pratyayas,array("ir"),array("+"),$apit_sArvadhAtuka_pratyayas,$text)!==$text && $sarvadhatuka===1 )
 {
     $text=three(array("F"),array("+"),$apit_sArvadhAtuka_pratyayas,array("ir"),array("+"),$apit_sArvadhAtuka_pratyayas,0);
     echo "<p class = sa >By RRta iddhAtoH (".link_sutra("7.1.100").") :</p>\n"; 
@@ -5126,11 +5126,11 @@ if ( sub(array("bu+BUv"),array("+"),blank(0),0) && $lakAra==="liw")
     echo "<p class = sa >भवतेरः (७.४.७३) :</p>\n";
     display(0);
 }
-/* RcCatRRtAm (7.4.11) */
-if ( sub(array("A+f"),array("+"),blank(0),0) && $lakAra==="liw" && in_array($fo,array("f","fCa!")) && in_array("k",$itpratyaya))
+/* RcCatyRRtAm (7.4.11) */
+if ( sub(array("A+f","F"),array("+"),blank(0),0) && $lakAra==="liw" && (in_array($fo,array("f","fCa!")) || ends(array($fo),array("F"),1) ) && in_array("k",$itpratyaya))
 {
-	$text = two(array("A+f"),array("+"),array("A+ar"),array("+"),0);
-    echo "<p class = sa >By RcCatRRtAm (".link_sutra("7.4.11").") :</p>\n";
+	$text = two(array("A+f","F"),array("+"),array("A+ar","ar"),array("+"),0);
+    echo "<p class = sa >By RcCatyRRtAm (".link_sutra("7.4.11").") :</p>\n";
     echo "<p class = sa >ऋच्छत्यॄताम्‌(७.४.११) :</p>\n";
     display(0);
 }
@@ -5170,7 +5170,14 @@ if ( sub(array("ad","f","vyay"),array("+"),$tiG1,0) && in_array($fo,array("adx!"
     echo "<p class = sa >इडत्त्यर्तिव्ययतीनाम्‌ (७.४.६६) :</p>\n";
     display(0);    
 }
-
+/* Rtazca saMyogAderguNaH (7.2.42) */
+if ( arr($text,'/['.pc('hl').']['.pc('hl').'][f][+]/') && $lakAra==="liw" && in_array("k",$itpratyaya) )
+{
+    $text=three($hl,$hl,array("f+"),$hl,$hl,array("ar+"),0);
+    echo "<p class = sa >By Rtazca saMyogAderguNaH (".link_sutra("7.4.42").") :</p>\n"; 
+    echo "<p class = sa >ऋतश्च संयोगादेर्गुणः (७.४.४२) :</p>\n";
+    display(0);    
+}
 /* masjinazorjhali (7.1.60) */ 
 if ( sub(array("masj","naS"),array("+"),prat('Jl'),0) && ends(array($fo),array("wumasjo!","RaSa!"),4) )
 { 
@@ -5240,7 +5247,15 @@ if ($lakAra==="liw" && arr($text,'/['.pc('hl').'][iI][+][aAiIuUfFxXeEoO]/') && !
 	echo "<p class = sa >एरनेकाचोऽसंयोगपूर्वस्य (६.४.८२) :</p>\n";
 	display(0);	
 }
-
+print_r($text);
+/* tRRphalabhajatrapazca (6.4.122) */
+if ( sub(array("ta+tar","pa+Pal","ta+trap"),array("+"),blank(0),0) && $lakAra==="liw" && !ends(array($so),array("tip","mip"),2) )
+{
+    $text=two(array("ta+tar","pa+Pal","ta+trap"),array("+"),array("ter","Pel","trep"),array("+"),0);
+    echo "<p class = sa >By tRRphalabhajatrapazca (".link_sutra("6.4.122").") :</p>\n"; 
+    echo "<p class = sa >तॄफलभजत्रपश्च (६.४.१२२) :</p>\n";
+    display(0);
+}
 
 
 $novrddhi=0;
