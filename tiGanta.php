@@ -5268,6 +5268,22 @@ elseif ( sub(array("Sa+Sas","da+dad","ar"),array("+"),blank(0),0) && $lakAra==="
     echo "<p class = sa >न शसददवादिगुणानाम्‌ (६.४.१२६) :</p>\n";
     display(0);
 }
+/* na zasadadavAdiguNAnAm (6.4.126) */
+elseif ( sub(array("va+vaj","va+vaK","va+vaw","va+vaW","va+vaR","va+van","va+val","va+vaz","va+vam"),array("+"),blank(0),0) && $lakAra==="liw" && !ends(array($so),array("tip","mip"),2) )
+{
+    echo "<p class = sa >By na zasadadavAdiguNAnAm (".link_sutra("6.4.126").") :</p>\n"; 
+    echo "<p class = sa >न शसददवादिगुणानाम्‌ (६.४.१२६) :</p>\n";
+    display(0);
+}
+/* ata ekahalmadhye'nAdezAderliTi (6.4.120) */
+elseif ( arr($text,'/^['.pc('hl').'][a][+]['.pc('hl').'][a]['.pc('hl').'][+]/') && $lakAra==="liw" && !ends(array($so),array("tip","mip"),2) )
+{
+    $text=change('/^(['.pc('hl').'][a][+])(['.pc('hl').'])([a])(['.pc('hl').'][+])/','$2e$4');
+	$text=change('/^(['.pc('hl').'])([e])(['.pc('hl').'][+][T][a]$)/','$1a+$1a$3'); // for thal.
+    echo "<p class = sa >By ata ekahalmadhye'nAdezAderliTi (".link_sutra("6.4.120").") :</p>\n"; 
+    echo "<p class = sa >अत एकहल्मध्येऽनादेशादेर्लिटि (६.४.१२०) :</p>\n";
+    display(0);
+}
 
 
 $novrddhi=0;
