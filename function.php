@@ -2012,7 +2012,7 @@ function Adezapratyaya($text)
 				$parts[$i]=preg_replace('/([iIuUfFxXeEoOhyvrlkKgGN])([s])/','$1z',$parts[$i]);
 				if (arr($text,'/[s]$/')) // patch for aDAsIs, aDAsisus
 				{
-					$parts[$i]=preg_replace('/([z])$/','s',$parts[$i]);			
+					$parts[count($parts)-1]=preg_replace('/([z])$/','s',$parts[count($parts)-1]);
 				}
 			}
 			$val[] = implode('+',$parts);			
@@ -2338,11 +2338,9 @@ function liT_ajAdi()
 		if (in_array($parts[0],array("vac","svap","yaj","vap","vah","vas","vad","ve","hve","Svi","vye","grah","jyA","vay","vyaD","vaS","vyac","vraSc","pracC","Brasj",)) )
 		{
 			$parts[0]=str_replace(array("vac","svap","yaj","vap","vah","vas","vad","ve","hve","Svi","vye","grah","jyA","vay","vyaD","vaS","vyac","vraSc","pracC","Brasj",),array("uc","sup","ij","up","uh","us","ud","u","hu","Su","vi","gfh","ji","uy","viD","uS","vic","vfSc","pfcC","Bfsj",),$parts[0]);
+			$litya=1;
 		}
 			$value=implode("+",$parts);
-			echo "<p class = sa >By liTyabhyAsasyobhayeSAm (".link_sutra("6.1.17").") and samprasAraNAcca (".link_sutra("6.1.104").") :</p>\n"; 
-			echo "<p class = sa >लिट्यभ्यासस्योभयेषाम्‌ (६.१.१७) तथा सम्प्रसारणाच्च (६.१.१०४) :</p>\n";
-			display(0);
 		$parts=explode('+',$value);
 		/* halAdiH zeSaH (7.4.60) */
 			$splitvowel=preg_split('/([aAiIuUfFxXeEoO])/',$parts[0],null,PREG_SPLIT_DELIM_CAPTURE);
@@ -2351,6 +2349,12 @@ function liT_ajAdi()
 		$val5[]=implode('+',$parts);
 	}
 	$text = $val5;
+	if ($litya===1)
+	{
+		echo "<p class = sa >By liTyabhyAsasyobhayeSAm (".link_sutra("6.1.17").") and samprasAraNAcca (".link_sutra("6.1.104").") :</p>\n"; 
+		echo "<p class = sa >लिट्यभ्यासस्योभयेषाम्‌ (६.१.१७) तथा सम्प्रसारणाच्च (६.१.१०४) 1:</p>\n";
+		display(0);
+	}
 	/* halAdiH zeSaH (7.4.60) */
 	if ($halAdi===1)
 	{
@@ -2509,7 +2513,7 @@ function abhyAsa_halAdi()
 	if ($litya===1)
 	{
 			echo "<p class = sa >By liTyabhyAsasyobhayeSAm (".link_sutra("6.1.17").") and samprasAraNAcca (".link_sutra("6.1.104").") :</p>\n"; 
-			echo "<p class = sa >लिट्यभ्यासस्योभयेषाम्‌ (६.१.१७) तथा सम्प्रसारणाच्च (६.१.१०४) :</p>\n";
+			echo "<p class = sa >लिट्यभ्यासस्योभयेषाम्‌ (६.१.१७) तथा सम्प्रसारणाच्च (६.१.१०४) 2:</p>\n";
 			display(0);		
 	}
 	if ($vyatha===1)
