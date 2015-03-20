@@ -2152,14 +2152,10 @@ function caG_ajAdi()
 		$splitvowel=preg_split('/([aAiIuUfFxXeEoO])/',$parts[0],null,PREG_SPLIT_DELIM_CAPTURE);
 		$split2=preg_split('/(['.pc('hl').'])/',$splitvowel[0],null,PREG_SPLIT_DELIM_CAPTURE);
 		/* urat (7.4.66) */
-		if (in_array($splitvowel[1],array("f","F")) )
+		if (in_array($splitvowel[1],array("f","F")) && !preg_match('/[Szs]['.pc('Ky').'][fF]/',$parts[0]) )
 		{
 			$parts[0]=str_replace("f","ar",$parts[0]);
-			$text = array(implode('+',$parts)); 
-			$value = implode('+',$parts);
-			echo "<p class = sa >By urat (".link_sutra("7.4.66").") and uraNraparaH (".link_sutra("1.1.51").") :</p>\n"; 
-			echo "<p class = sa >उरत्‌ (७.४.६६) तथा उरण्रपरः (१.१.५१) 1:</p>\n";
-			display(0);
+			$urat=1;
 		}
 		$parts=explode('+',$value);
 		/* zarpUrvAH khayaH (7.4.61) */
@@ -2194,6 +2190,13 @@ function caG_ajAdi()
 		echo "<p class = sa >By zarpUrvAH khayaH (".link_sutra("7.4.61").") :</p>\n"; 
 		echo "<p class = sa >शर्पूर्वाः खयः (७.४.६१) :</p>\n";
 		display(0);
+	}
+	/* urat (7.4.66) */
+	if ($urat===1)
+	{
+		echo "<p class = sa >By urat (".link_sutra("7.4.66").") and uraNraparaH (".link_sutra("1.1.51").") :</p>\n"; 
+		echo "<p class = sa >उरत्‌ (७.४.६६) तथा उरण्रपरः (१.१.५१) 1:</p>\n";
+		display(0);	
 	}
 	$splitvowel=preg_split('/([aAiIuUfFxXeEoO])/',$parts[0],null,PREG_SPLIT_DELIM_CAPTURE);
 	$split2=preg_split('/(['.pc('hl').'])/',$splitvowel[0],null,PREG_SPLIT_DELIM_CAPTURE);
@@ -2370,7 +2373,7 @@ function liT_ajAdi()
 		display(0);
 	}
 		/* urat (7.4.66) */
-		if (in_array($splitvowel[1],array("f","F")) )
+		if (in_array($splitvowel[1],array("f","F"))  && !preg_match('/[Szs]['.pc('Ky').'][fF]/',$parts[0]))
 		{
 			$parts[0]="ar";
 			$text = array(implode('+',$parts)); 
@@ -2404,12 +2407,13 @@ function liT_ajAdi()
 			display(0);
 		}
 		/* tasmAnnuDdvihalaH (7.4.71) */
-		elseif (preg_match('/['.pc('hl').']['.pc('hl').']/',$parts[1]) || preg_match('/[f]/',$parts[1])) 
+		if (preg_match('/['.pc('hl').']['.pc('hl').']/',$parts[1]) || preg_match('/[f]/',$parts[1])) 
 		{
 			foreach ($text as $value)
 			{
-				if ( (preg_match('/[\+][a]/',$value) && $caG===1) || $lakAra==="liw")
+				if ( (preg_match('/[+][a]/',$value) && $caG===1) || $lakAra==="liw")
 				{
+					$parts=explode('+',$value);
 					$parts=explode('+',$value);
 					$parts[1]="n".$parts[1];
 					$val2[] = implode('+',$parts);
@@ -2534,14 +2538,10 @@ function abhyAsa_halAdi()
 		$splitvowel=preg_split('/([aAiIuUfFxXeEoO])/',$parts[0],null,PREG_SPLIT_DELIM_CAPTURE);
 		$split2=preg_split('/(['.pc('hl').'])/',$splitvowel[0],null,PREG_SPLIT_DELIM_CAPTURE);
 		/* urat (7.4.66) */
-		if (in_array($splitvowel[1],array("f","F")) )
+		if (in_array($splitvowel[1],array("f","F"))  && !preg_match('/[Szs]['.pc('Ky').'][fF]/',$parts[0]))
 		{
 			$parts[0]=str_replace(array("f","F"),array("ar","ar"),$parts[0]);
-			$value = implode('+',$parts);
-			echo "<p class = sa >By urat (".link_sutra("7.4.66").") and uraNraparaH (".link_sutra("1.1.51").") :</p>\n"; 
-			echo "<p class = sa >उरत्‌ (७.४.६६) तथा उरण्रपरः (१.१.५१) 3:</p>\n";
-			display(0);
-			$parts=explode('+',$value);
+			$urat=1;
 			$splitvowel=preg_split('/([a])/',$parts[0],null,PREG_SPLIT_DELIM_CAPTURE);
 			$split2=preg_split('/(['.pc('hl').'])/',$splitvowel[0],null,PREG_SPLIT_DELIM_CAPTURE);
 			$parts[0]=$split2[1].$splitvowel[1];
@@ -2568,6 +2568,14 @@ function abhyAsa_halAdi()
 		$val[]=implode('+',$parts);
 	}
 	$text = $val;
+	/* urat (7.4.66) */
+	if ($urat===1)
+	{
+		echo "<p class = sa >By urat (".link_sutra("7.4.66").") and uraNraparaH (".link_sutra("1.1.51").") :</p>\n"; 
+		echo "<p class = sa >उरत्‌ (७.४.६६) तथा उरण्रपरः (१.१.५१) 1:</p>\n";
+		display(0);	
+	}
+
 	/* halAdiH zeSaH (7.4.60) */
 	if ($halAdi===1)
 	{
