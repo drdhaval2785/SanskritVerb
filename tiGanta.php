@@ -2578,12 +2578,15 @@ if ( pr2(array("+"),$apit_sArvadhAtuka_pratyayas,blank(0),array("+fadfad"),$apit
     echo "<p class = sa >sArvadhAtukamapit (".link_sutra("1.1.7").") :</p>\n"; 
     echo "<p class = sa >सार्वधातुकमपित्‌ (१.१.७) :</p>\n";
     display(0); 
-    echo "<p class = sa >By kGiti ca (".link_sutra("1.1.5").") :</p>\n"; 
-    echo "<p class = hn >This prevents guNa. </p>\n"; 
-    echo "<p class = sa >क्ङिति च (१.१.५) 1:</p>\n";
-    echo "<p class = hn >अनेन सूत्रेण गुणनिषेधः विधीयते ।</p>\n";
-    display(0);    
-    $kGiti=1;
+	if (pr2(pc('ik'),array("+"),$apit_sArvadhAtuka_pratyayas,pc('ik'),array("+fadfad"),$apit_sArvadhAtuka_pratyayas,$text)!== $text)
+	{
+		echo "<p class = sa >By kGiti ca (".link_sutra("1.1.5").") :</p>\n"; 
+		echo "<p class = hn >This prevents guNa. </p>\n"; 
+		echo "<p class = sa >क्ङिति च (१.१.५) 1:</p>\n";
+		echo "<p class = hn >अनेन सूत्रेण गुणनिषेधः विधीयते ।</p>\n";
+		display(0);    
+		$kGiti=1;	
+	}
 }
 /* mInAternigame (7.3.81) */
 if (sub(array("mIN",),$shitpratyaya,blank(0),0) && ends(array($fo),array("mIN"),4) && in_array($so,$tiG) && $veda===1)
@@ -2642,8 +2645,10 @@ if (in_array($so,$tiG) && ( sub(array("+"),$inbetweenpratyaya,array("+"),0) || (
 	$text = one(array("i!r"),array("i!"),0);
 	$text = two($hl,array("+ran"),blank(count($hl)),array("+ran"),0);
     $text=three($hlplus,array("Ri"),array("+"),blank1("+",count($hlplus)),array("Ri"),array("+"),0);
-    if ($nomidelision!==1 && ends(array($fo),$hl,2)) // Addition of ends function is to prevent application to kF -> kir converted halanta, which are not there in upadeza.
+	echo $nomidelision, $fo;
+    if ($nomidelision!==1 && ends(array($fo),$hl,0)) // Addition of ends function is to prevent application to kF -> kir converted halanta, which are not there in upadeza.
     {
+	echo "yes";
     $text=three($hlplus,$vikaraNa,array("+"),blank1("+",count($hlplus)),$vikaraNa,array("+"),0);
     }
 	$text=one(array("+si+"),array("+sic+"),0);
@@ -4006,7 +4011,7 @@ if ( sub(array("a"),array("+Ri"),blank(0),0) )
     $atolopa=1;
 }
 /* kGiti ca (1.1.5) */
-if ( in_array("N",$itpratyaya) || in_array("k",$itpratyaya) )
+/*if ( in_array("N",$itpratyaya) || in_array("k",$itpratyaya) )
 {
     echo "<p class = sa >By kGiti ca (".link_sutra("1.1.5").") :</p>\n"; 
     echo "<p class = hn >This prevents guNa. </p>\n"; 
@@ -4014,7 +4019,7 @@ if ( in_array("N",$itpratyaya) || in_array("k",$itpratyaya) )
     echo "<p class = hn >अनेन सूत्रेण गुणनिषेधः विधीयते ।</p>\n";
     display(0);
     $kGiti=1;
-}
+}*/
 /* aco JNiti (7.2.115) */ 
 // more on enumeration kind. Not used regexes deliberately.
 if ( sub($ac,array("+"),array("Ri+"),0) && $bhasyADhe!==1)
@@ -4211,12 +4216,15 @@ if ( sub(array("+"),$apit_sArvadhAtuka_pratyayas,blank(0),0) && $sarvadhatuka===
     echo "<p class = sa >sArvadhAtukamapit (".link_sutra("1.1.7").") :</p>\n"; 
     echo "<p class = sa >सार्वधातुकमपित्‌ (१.१.७) :</p>\n";
     display(0);    
-    echo "<p class = sa >By kGiti ca (".link_sutra("1.1.5").") :</p>\n"; 
-    echo "<p class = hn >This prevents guNa. </p>\n"; 
-    echo "<p class = sa >क्ङिति च (१.१.५) 2:</p>\n";
-    echo "<p class = hn >अनेन सूत्रेण गुणनिषेधः विधीयते ।</p>\n";
-    display(0);    
-    $kGiti=1;
+	if (pr2(pc('ik'),array("+"),$apit_sArvadhAtuka_pratyayas,pc('ik'),array("+fadfad"),$apit_sArvadhAtuka_pratyayas,$text)!== $text)
+	{
+		echo "<p class = sa >By kGiti ca (".link_sutra("1.1.5").") :</p>\n"; 
+		echo "<p class = hn >This prevents guNa. </p>\n"; 
+		echo "<p class = sa >क्ङिति च (१.१.५) 1:</p>\n";
+		echo "<p class = hn >अनेन सूत्रेण गुणनिषेधः विधीयते ।</p>\n";
+		display(0);    
+		$kGiti=1;	
+	}
 }
 /* jJAjanorjA (7.3.79) */
 if ( ends(array($fo),array("janI!","jYA"),4) && in_array($so,$tiG) && sub(array("jan","jYA"),array("+"),$shitpratyayareplace,0) )
