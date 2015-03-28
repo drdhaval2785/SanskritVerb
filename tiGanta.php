@@ -4095,7 +4095,6 @@ if (arr($text,'/[+][cjYwWqQR]/') && in_array($so,$tiG))
     echo "<p class = sa >तस्य लोपः (१.३.९) :</p>\n";
     display(0);
 }
-print_r($text);
 /* lopo vyorvali (6.4.65) */
 // patch for sIyuT
 if ( sub(array("+Iy","+sIy"),array("+"),prat("vl"),0) && !in_array($sanAdi,array("Ric")))
