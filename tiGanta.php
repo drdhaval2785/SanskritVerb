@@ -209,7 +209,7 @@ elseif ( $fo==="kfpU!" && ($san===1 || in_array($lakAra,array("lfN","lfw","luw")
     $ubhayapada=1;
 }
 /* na gatihiMsArthebhyH (1.3.15) */
-elseif ( $_GET['cond11_1']==='1')
+elseif ( $_GET['cond11_1']==='1') // cond stands for condition. They are taken from user input. For all variables having cond as prefix, details can be seen at ajax requirement.docx.
 {
     $suffix=$tis;
     echo "<p class = st >By na gatihiMsArthebhyH (".link_sutra("1.3.15").") :</p>\n"; 
