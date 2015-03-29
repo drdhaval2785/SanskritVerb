@@ -2645,10 +2645,8 @@ if (in_array($so,$tiG) && ( sub(array("+"),$inbetweenpratyaya,array("+"),0) || (
 	$text = one(array("i!r"),array("i!"),0);
 	$text = two($hl,array("+ran"),blank(count($hl)),array("+ran"),0);
     $text=three($hlplus,array("Ri"),array("+"),blank1("+",count($hlplus)),array("Ri"),array("+"),0);
-	echo $nomidelision, $fo;
     if ($nomidelision!==1 && ends(array($fo),$hl,0)) // Addition of ends function is to prevent application to kF -> kir converted halanta, which are not there in upadeza.
     {
-	echo "yes";
     $text=three($hlplus,$vikaraNa,array("+"),blank1("+",count($hlplus)),$vikaraNa,array("+"),0);
     }
 	$text=one(array("+si+"),array("+sic+"),0);
