@@ -263,7 +263,7 @@ echo '$allverbs1=array("'.implode('","',$q).'");';*/
 echo '$curAdi=array("'.implode('","',$p).'");';
 echo "<br><br>";
 echo '$curAdi1=array("'.implode('","',$q).'");';*/
-foreach ($verbdata as $value)
+/*foreach ($verbdata as $value)
 {
 	$val = explode(":",$value);
 	$val = array_map('trim',$val);
@@ -273,6 +273,7 @@ foreach ($verbdata as $value)
 	}
 }
 echo '$editverbs=array("'.implode('","',$p).'");';
+*/
 
 /* Creating methods to have dropdown menu in tiGanta.html */
 /*$a = $upasarga_combinations;
@@ -321,5 +322,13 @@ foreach ($out as $datum)
 fclose($infile);
 fclose($outfile);
 */
+
+/* listing verb with anubandhas for autocomplete */
+foreach ($verbdata as $value)
+{
+	$val = explode(":",$value);
+	$val = array_map('trim',$val);
+	echo $val[0].'","';
+}
 
 ?>
