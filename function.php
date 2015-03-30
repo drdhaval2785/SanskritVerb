@@ -1998,9 +1998,10 @@ function toslp($text)
 }
 function Adezapratyaya($text)
 {
+	global $ksa;
 	foreach ($text as $value)
 	{
-		if (preg_match('/[iIuUfFxXeEoOhyvrlkKgGN][+][s]/',$value)) // patch for ksa
+		if (preg_match('/[iIuUfFxXeEoOhyvrlkKgGN][+][s]/',$value) && $ksa===1) // patch for ksa
 		{
 			$val[]=preg_replace('/([iIuUfFxXeEoOhyvrlkKgGN])([+][s])/',"$1+z",$value);			
 		}
@@ -2591,6 +2592,8 @@ function abhyAsa_halAdi()
 		display(0);
 	}
 		/* hrasvaH (7.4.59) */
+		if (in_array($splitvowel[1],array("A","I","U","F","X","e","o","E","O")) && !preg_match('/^['.pc('ac').']/',$parts[0]) )
+		{
 			foreach ($text as $value)
 			{
 				$parts=explode('+',$value);
@@ -2611,6 +2614,7 @@ function abhyAsa_halAdi()
 			echo "<p class = sa >By hrasvaH (".link_sutra("7.4.59").") :</p>\n"; 
 			echo "<p class = sa >ह्रस्वः (७.४.५९) :</p>\n";
 			display(0);
+		}
 		/* kuhozcuH (7.4.62) */
 		if (preg_match('/[kKgGNh]/',$splitvowel[0]) ) 
 		{

@@ -858,6 +858,17 @@ elseif ( ends(array($first),array("kxpU!"),4) && $vAcya==="kartR" && in_array($l
     echo "<hr>\n";
     $ubhayapada=1;
 }
+/* AziSi nAtha iti vAcyam (vA) */
+elseif ( ends(array($first),array("nATf!"),4) )
+{
+    $suffix=$tiG;
+    echo "<p class = st >By AziSi nAtha iti vAcyam (vA) :</p>\n"; 
+    echo "<p class = hn >When this verb is used in the sense of 'AziS', then only it takes Atmanepada, otherwise it takes parasmaipada.</p>\n";
+    echo "<p class = st >आशिषि नाथ इति वाच्यम्‌ (वा) :</p>\n";
+    echo "<p class = hn >अस्याशिश्येवात्मनेपदं स्यात्‌ । </p>\n";
+    echo "<hr>\n";
+    $ubhayapada=1;
+}
 /* anudAttaGita Atmanepadam (1.3.12) */
 elseif ( (ends(array($first),$anudAttetverbs,4) || ends(array($first),$Gitverbs,4) || ends(array($first),array("fta!"),4) ) && scrape1($number,8,5,1)===array("A") && $pada==="pratyaya" && $lakAra!=="" && $_GET['cond49']!=="1" ) // the exclusion is useful for the sanAdi pratyayas e.g. paRAya has parasmai, paRa! has Atmanepadatva. See http://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.1.28.htm for clarification. Second addition is for RterIyaG, Atmanepada because of IyaG pratyaya.
 {
@@ -2571,7 +2582,7 @@ if ( sub(array("tfPa!","tuPa!","dfPa!","fPa!","guPa!","uBa!","SuBa!","tupa!","tf
     display(0);
 }
 /* sArvadhAtukamapit (1.1.7) */
-if ( pr2(array("+"),$apit_sArvadhAtuka_pratyayas,blank(0),array("+fadfad"),$apit_sArvadhAtuka_pratyayas,blank(0),$text)!== $text && $sarvadhatuka===1)
+if ( pr2(array("+"),$apit_sArvadhAtuka_pratyayas,blank(0),array("+fadfad"),$apit_sArvadhAtuka_pratyayas,blank(0),$text)!== $text && $sarvadhatuka===1 && !in_array("Sap",$vik) )
 {
     $it=array_merge($it,array("N"));
     $itpratyaya=array_merge($itpratyaya,array("N"));
@@ -3106,7 +3117,7 @@ elseif ( in_array("i",$it) && $lakAra!=="" && !ends(array($fo),$irendiditverbs,4
     display(0);
 }
 /* aniditAM hala upadhAyAH kGiti (6.4.24) */ 
-if ( sub($aniditverbs,array("+"),blank(0),0) && (in_array("N",$itpratyaya) || in_array("k",$itpratyaya)) && !in_array($sanAdi,array("Ric")) )
+if ( ends(array($fo),$aniditverbs,4) && (in_array("N",$itpratyaya) || in_array("k",$itpratyaya)) && !in_array($sanAdi,array("Ric")) )
 {
     $text = three(array("N","Y","R","n","m","M"),$hl,array("+"),array("","","","","","",),$hl,array("+"),0);        
     echo "<p class = sa >aniditAM hala upadhAyAH kGiti (".link_sutra("6.4.24").") :</p>\n";
@@ -4206,8 +4217,9 @@ if ( ends(array($fo),array("Gasa!","Basa!"),4) && pr2(array("Gas","Bas"),array("
     echo "<p class = sa >घसिभसोर्हलि च (६.४.१००) :</p>\n";
     display(0);    
 }
+print_r($vik);
 /* sArvadhAtukamapit (1.1.7) */
-if ( sub(array("+"),$apit_sArvadhAtuka_pratyayas,blank(0),0) && $sarvadhatuka===1)
+if (  !in_array("Sap",$vik) && sub(array("+"),$apit_sArvadhAtuka_pratyayas,blank(0),0) && $sarvadhatuka===1 )
 {
     $it=array_merge($it,array("N"));
     $itpratyaya=array_merge($itpratyaya,array("N"));
@@ -4492,9 +4504,9 @@ elseif(sub(array("fp","hrIp","vlIp","rIp","knUp","kzmAp","blIp"),array("+"),arra
     display(0);
 }
 /* pugantalaghUpadhasya ca (7.3.86) */
-elseif ( sub(array("i","u","f","x"),$hl,array("+u+","+i+"),0) && $atolopa!==1 && ($sarvadhatuka===1 || $ardhadhatuka===1) && arr($text,'/[iufx]['.pc('hl').'][+]/')  && $didhI!==1 && $vijait!==1)
+elseif ( sub(array("i","u","f","x"),$hl,array("+u+","+i+","+a+"),0) && $atolopa!==1 && ($sarvadhatuka===1 || $ardhadhatuka===1) && arr($text,'/[iufx]['.pc('hl').'][+]/')  && $didhI!==1 && $vijait!==1)
 {
-    $text=three(array("i","u","f","x"),$hl,array("+u+","+i+"),array("e","o","ar","al"),$hl,array("+u+","+i+"),0);
+    $text=three(array("i","u","f","x"),$hl,array("+u+","+i+","+a+"),array("e","o","ar","al"),$hl,array("+u+","+i+","+a+"),0);
     echo "<p class = sa >pugantalaghUpadhasya ca (".link_sutra("7.3.86").") :</p>\n"; 
     echo "<p class = sa >पुगन्तलघूपधस्य च (७.३.८६) 1:</p>\n";
     display(0);    
@@ -6287,7 +6299,7 @@ if ( $lakAra!=="" && sub(array("s"),array("Dv"),blank(0),0) && in_array($so,$tiG
     display(0);     
 }
 /* hrasvAdaGgAt (8.2.27) */
-if ( sub(array("a","i","u","f","x"),array("+s"),prat("Jl"),0) && in_array($so,$tiG))
+if ( sub(array("a","i","u","f","x"),array("+s"),prat("Jl"),0) && in_array($so,$tiG) && $sic===1)
 {
 $text = three(array("a","i","u","f","x"),array("+s"),prat("Jl"),array("a","i","u","f","x"),array("+"),prat("Jl"),0); 
 echo "<p class = sa >By hrasvAdaGgAt (".link_sutra("8.2.27").") :</p>\n";
