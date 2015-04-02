@@ -1,4 +1,15 @@
 <?php
+echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<!--... Defining UTF-8 as our default character set, so that devanagari is displayed properly. -->
+<meta charset="UTF-8">
+<!--... Defining CSS -->
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+</head>
+<body>
+';
+
 /* set execution time to an hour */
 ini_set('max_execution_time', 36000);
 /* set memory limit to 1000 MB */
@@ -324,11 +335,32 @@ fclose($outfile);
 */
 
 /* listing verb with anubandhas for autocomplete */
-foreach ($verbdata as $value)
+/*foreach ($verbdata as $value)
 {
 	$val = explode(":",$value);
 	$val = array_map('trim',$val);
 	echo $val[0].'","';
+}*/
+
+/* Creating database of AS sutras by scraping from Sai Susarla's google spreadsheet https://docs.google.com/spreadsheet/ccc?key=0Aocnp1cX4xG8dGh5Q0JaX21WYTZ0MktsRVQ3NzVON0E#gid=0. */
+// 0 - chapter, 1 - paada, 2 - sutra, 3 - sutra number, 4 - akaaraadi krama, 5 - kaumudi krama, 6 - sutra id, 7 - sutra type, 8 - sanjna, 9 - paribhaashaa, 10 - special case, 11 - adhikaara, 12 - commentary link, 13 - sutra devanagari, 14 - sutra padaccheda
+/*$input=file("rawsutra.txt"); // downloaded as CSV file.
+echo '$ASdata=array("';
+foreach ($input as $value)
+{
+	$datum = explode(',',$value);
+	$datum = array_map('trim',$datum);
+	$datum = str_replace(array(' ।','(',')'),array('','{','}'),$datum);
+	$data[] = $datum[6].':'.$datum[7].':'.$datum[13];
 }
+$output = implode('","',$data);
+echo $output;
+echo '");';
+*/
+
+/* gui function testing */
+$text = array("BU+Sap+tip");
+$upasarga_joined=1;
+gui ('1.1.1');
 
 ?>
