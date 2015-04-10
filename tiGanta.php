@@ -5202,6 +5202,20 @@ if (ends(array($fo),array("wuo!Svi"),4) && sub(array("Svi"),array("+"),prat('vl'
 	echo "<p class = sa >आर्धधातुकस्येड्वलादेः (७.२.३५) 3:</p>\n";
     display(0);
 }
+/* vadavrajahalantasya acaH (7.2.3) */ 
+if ( arr($text,'/['.pc('ac').'](['.pc('hl').'M]*)[+][st]/')  && $lakAra==="luN"  && $sic!==0 && in_array($so,$tis) )
+{
+	foreach ($text as $value)
+		{
+		$value = preg_replace('/(['.pc('ac').'])(['.pc('hl').'M]*)([+])([st])/','$1?$2$3$4',$value);
+		$aca[] = str_replace(array("a?","A?","i?","I?","u?","U?","f?","F?","x?","X?","e?","o?","E?","O?",),array("A","A","E","E","O","O","Ar","Ar","Al","Al","E","O","E","O",),$value);
+	}
+	$text = $aca; $aca=array();
+	$text = one(array("+sA+t",),array("+sa+t"),0);
+    echo "<p class = sa >By vadavrajahalantasya acaH (".link_sutra("7.2.3").") :</p>\n";
+    echo "<p class = sa >वदव्रजहलन्ताच्च अचः (७.२.३) 2:</p>\n";
+    display(0);
+}
 /* pugantalaghUpadhasya ca (7.3.86) */
 if ( $atolopa!==1 && $ardhadhatuka===1 && sub(array("i","u","f","x"),$hl,array("+sI","+isI"),0) && !arr($text,"/[+][i][y][+][t]$/")  && $didhI!==1 && ($sIyuT===1||$sic===1) && $vijait!==1 )
 {
@@ -5379,7 +5393,6 @@ if ( $ardhadhatuka===1 && (sub(array("i","u","f","x"),$hlplus,$tiG1,0) || sub(ar
     echo "<p class = sa >पुगन्तलघूपधस्य च (७.३.८६) 11:</p>\n";
     display(0);    
 }
-print_r($text);
 /* abhyAsasyAsavarNe (6.4.78) */
 if ( arr($text,'/^[iIuU][+][eoEO]/') && $abhyAsa===1)
 {
@@ -5486,20 +5499,6 @@ elseif ( ( sub($ac,array("h","m","y"),array("+is"),0) || sub(array("kzaR","Svas"
     echo "<p class = pa >ह्म्यन्तक्षणश्वसजागृणिश्व्येदिताम्‌ (७.२.५) :</p>\n";
     display(0);
 	$novrddhi=1;
-}
-/* vadavrajahalantasya acaH (7.2.3) */ 
-elseif ( arr($text,'/['.pc('ac').'](['.pc('hl').'M]*)[+][st]/')  && $lakAra==="luN"  && $sic!==0 && in_array($so,$tis) )
-{
-	foreach ($text as $value)
-		{
-		$value = preg_replace('/(['.pc('ac').'])(['.pc('hl').'M]*)([+])([st])/','$1?$2$3$4',$value);
-		$aca[] = str_replace(array("a?","A?","i?","I?","u?","U?","f?","F?","x?","X?","e?","o?","E?","O?",),array("A","A","E","E","O","O","Ar","Ar","Al","Al","E","O","E","O",),$value);
-	}
-	$text = $aca; $aca=array();
-	$text = one(array("+sA+t",),array("+sa+t"),0);
-    echo "<p class = sa >By vadavrajahalantasya acaH (".link_sutra("7.2.3").") :</p>\n";
-    echo "<p class = sa >वदव्रजहलन्ताच्च अचः (७.२.३) 2:</p>\n";
-    display(0);
 }
 /* ato halAderlaghoH (7.2.7) */
 elseif ( sub(array("a"),$hl,array("+is"),0)  && $sic===1 && in_array($so,$tis) )
