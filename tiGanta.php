@@ -314,7 +314,7 @@ elseif ( $_GET['cond18']==="1" )
     $atmanepada=1;
 }
 /* anuparAbhyAM kruJaH (1.3.79) */
-elseif ( ends(array($first),array("anukfY","parAkfY"),2) )
+elseif ( ends(array($first),array("qukfY"),2) && in_array($us,array("anu","parA")) )
 {
     $suffix=$tis;
     echo "<p class = st >By anuparAbhyAM kruJaH (".link_sutra("1.3.79").") :</p>\n"; 
@@ -402,7 +402,7 @@ elseif ( $_GET['cond24']==="1" && $first==="kramu!")
     $ubhayapada=1;
 }
 /* upaparAbhyAm (1.3.39) */
-elseif ( $_GET['cond24']==="1" && in_array($first,array("upakramu!","parAkramu!")))
+elseif ( $_GET['cond24']==="1" )
 {
     $suffix=$taG;
     echo "<p class = st >By upaparAbhyAm (".link_sutra("1.3.39").") :</p>\n"; 
@@ -578,7 +578,7 @@ elseif ( $_GET['cond36']==="1")
     $atmanepada=1;
 }
 /* nAnorjJaH (1.3.58) */
-elseif ( $first==="anujijYA")
+elseif ( $first==="jYA" && $us==="anu" && $sanAdi==="san")
 {
     $suffix=$tis;
     echo "<p class = st >By nAnorjJaH (".link_sutra("1.3.58").") :</p>\n"; 
@@ -589,7 +589,7 @@ elseif ( $first==="anujijYA")
     $parasmaipada=1;
 }
 /* pratyAGbhyAM zruvaH (1.3.59) */
-elseif ( in_array($first,array("pratiSuSru","ASuSru",)))
+elseif ( in_array($us,array("prati","A")) && $first==="Sru" && $sanAdi==="san")
 {
     $suffix=$tis;
     echo "<p class = st >By pratyAGbhyAM zruvaH (".link_sutra("1.3.59").") :</p>\n"; 
@@ -612,7 +612,7 @@ elseif ( $_GET['cond37']==="1")
 }
 /* zadeH zitaH (1.3.60) */
 // I have taken these five lakAras because they have vikaraNa pratyaya 'zap' which qualifies for this sUtra.
-elseif ( in_array($first,array("Sadlz!")) && in_array($lakAra,array("law","low","laN","viDiliN","sArvaDAtukalew")))
+elseif ( in_array($first,array("Sadx!")) && in_array($lakAra,array("law","low","laN","viDiliN","sArvaDAtukalew")))
 {
     $suffix=$tis;
     echo "<p class = st >By zadeH zitaH (".link_sutra("1.3.60").") :</p>\n"; 
@@ -640,12 +640,12 @@ elseif ( in_array($first,array("mfN")) && in_array($lakAra,array("law","low","la
 /* NeraNau yatkarma Nau cetsa kartA'nAdhyAne (1.3.67) */
 // This will need not less than a PhD. Nagesha bhatta seems to have written a book on this subject (NeraNivAdArthaH). So leaving it right now.
 /* samaH kSNuvaH (1.3.65) */
-elseif ( in_array($first,array("saMkzRu","samkzRu","saNkzRu")))
+elseif ( in_array($first,array("kzRu")) && $us==="sam")
 {
     $suffix=$taG;
-    echo "<p class = st >By upAdyamaH svakaraNe (".link_sutra("1.3.56").") :</p>\n"; 
+    echo "<p class = st >By samaH kSNuvaH (".link_sutra("1.3.65").") :</p>\n"; 
     echo "<p class = hn >This sUtra mandates Atmanepadam. </p>\n";
-    echo "<p class = st >उपाद्यमः स्वकरणे (१.३.५६) :</p>\n";
+    echo "<p class = st >समः क्ष्णुवः (१.३.६५) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
     $atmanepada=1;
@@ -723,7 +723,7 @@ elseif ( in_array($us.$first,$toatmane) )
     $atmanepada=1;
 }
 /* vyAGparibhyo ramaH (1.3.83) */
-elseif ( ends(array($first),array("ramu!","ramu!","ramu!"),2) && in_array($us,array("vi","A","pari",)) && $vAcya==="kartR")
+elseif ( ends(array($first),array("ramu!"),2) && in_array($us,array("vi","A","pari",)) && $vAcya==="kartR")
 {
     $suffix=$tis;
     echo "<p class = st >By vyAGparibhyo ramaH (".link_sutra("1.3.83").") :</p>\n"; 
@@ -883,7 +883,7 @@ elseif ( (ends(array($first),$anudAttetverbs,4) || ends(array($first),$Gitverbs,
 /* vibhASopapadena pratIyamAne (1.3.77) */
 // This sUtra is intervowen in 1.3.72 to 1.3.76 as optional form.
 /* apAdvadaH (1.3.73) */
-elseif ( $first==="apavada!" && $pada==="pratyaya" && $lakAra!=="")
+elseif ( $first==="vada!" && $us==="apa" && $pada==="pratyaya" && $lakAra!=="")
 {
     $suffix=$tiG;
     echo "<p class = st >By apAdvadaH (".link_sutra("1.3.73").") :</p>\n"; 
@@ -916,7 +916,7 @@ elseif ( ends(array($first),array("jYA"),2) && $pada==="pratyaya" && $lakAra!=="
     $ubhayapada=1;
 }
 /* abhipratyatibhyaH kSipaH (1.3.80) */
-elseif ( ends(array($first),array("aBikzipa!","pratikzipa!","atikzipa!"),2) && $vAcya==="kartR")
+elseif ( ends(array($first),array("kzipa!"),2) && in_array($us,array("aBi","prati","ati"))$vAcya==="kartR")
 {
     $suffix=$tis;
     echo "<p class = st >By abhipratyatibhyaH kSipaH (".link_sutra("1.3.80").") :</p>\n"; 
@@ -927,7 +927,7 @@ elseif ( ends(array($first),array("aBikzipa!","pratikzipa!","atikzipa!"),2) && $
     $parasmaipada=1;
 }
 /* prAdvahaH (1.3.81) */
-elseif ( ends(array($first),array("pravaha!"),2) && $vAcya==="kartR")
+elseif ( ends(array($first),array("vaha!"),2) && $us==="pra" && $vAcya==="kartR")
 {
     $suffix=$tis;
     echo "<p class = st >By prAdvahaH (".link_sutra("1.3.81").") :</p>\n"; 
@@ -938,7 +938,7 @@ elseif ( ends(array($first),array("pravaha!"),2) && $vAcya==="kartR")
     $parasmaipada=1;
 }
 /* parermRSaH (1.3.82) */
-elseif ( ends(array($first),array("parimfza!"),2) && $vAcya==="kartR")
+elseif ( ends(array($first),array("mfza!"),2) && $us==="pari" && $vAcya==="kartR")
 {
     $suffix=$tis;
     echo "<p class = st >By parermRSaH (".link_sutra("1.3.82").") :</p>\n"; 
@@ -961,7 +961,7 @@ elseif ( ends(array($first),array("buDa!","yuDa!","naSa!","iN","pru","dru","sru"
     $parasmaipada=1;
 }
 /* na pAdamyAGyamAGyasaparimuharucinRtivadavasaH (1.3.89) */
-elseif ( ends(array($first),array("pA","Ayama!","damu!","Ayasu!","parimuha!","ruca!","nftI!","vada!","vasa!"),4) && $vAcya==="kartR" && in_array($sanAdi,array("Ric","RiN")))
+elseif ( ends(array($us.$first),array("pA","Ayama!","damu!","Ayasu!","parimuha!","ruca!","nftI!","vada!","vasa!"),4) && $vAcya==="kartR" && in_array($sanAdi,array("Ric","RiN")))
 {
     $suffix=$taG;
     echo "<p class = st >By na pAdamyAGyamAGyasaparimuharucinRtivadavasaH (".link_sutra("1.3.89").") and Nicazca (".link_sutra("1.3.74").") :</p>\n"; 
