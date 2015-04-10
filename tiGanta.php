@@ -3634,9 +3634,9 @@ elseif ( pr2(array("+"),array("an"),blank(0),array("+"),array("us"),blank(0),$te
     display(0);
 }
 /* mRjervRddhiH (7.2.114) */
-if ( pr2(array("mfj"),array("+"),$pit_sArvadhAtuka_pratyayas,array("mArj"),array("+"),$pit_sArvadhAtuka_pratyayas,$text)!==$text && in_array($so,$tiG))
+if ( sub(array("mfj"),array("+"),blank(0),0) && in_array($so,$tiG)&& $fo==="mfjU!")
 {
-    $text=pr2(array("mfj"),array("+"),$pit_sArvadhAtuka_pratyayas,array("mArj"),array("+"),$pit_sArvadhAtuka_pratyayas,$text);
+    $text=two(array("mfj"),array("+"),array("mArj"),array("+"),0);
     echo "<p class = sa >By mRjervRddhiH (".link_sutra("7.2.114").") :</p>\n"; 
     echo "<p class = sa >मृजेर्वृद्धिः (७.२.११४) :</p>\n";
     display(0);    
