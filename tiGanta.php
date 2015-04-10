@@ -3428,6 +3428,7 @@ if ( sub(array("A","yam","ram","nam"),array("+sic+"),blank(0),0) && in_array($so
     echo "<p class = sa >By yamaramanamAtAM sakca (".link_sutra("7.2.73").") :</p>\n"; 
     echo "<p class = sa >यमरमनमातां सक्च (७.२.७३) :</p>\n";
     display(0);
+	$yamarama=1;
 }
 /* iTa ITi (8.2.28) */ 
 if ( sub(array("+sis+"),array("I"),blank(0),0) && in_array($so,$tiG) )
@@ -4703,7 +4704,7 @@ elseif ( sub(array("f"),array("+y"),blank(0),0) && (in_array($sanAdi,array("yak"
     display(0);    
 }
 /* akRtsArvadhAtukayordIrghaH (7.4.25) */
-elseif ( sub($ac,array("+"),array("y"),0) && !sub($ac,array("+"),array("y+a"),0) && in_array($so,$tiG) && $sarvadhatuka!==1 && $kRt!==1 && (in_array("N",$itpratyaya) || in_array("k",$itpratyaya)) && $lakAra!=="liw" && !arr($text,'/^[y][a][+][y][AIUFeEoO]/'))
+elseif ( sub($ac,array("+"),array("y"),0) && !sub($ac,array("+"),array("y+a"),0) && in_array($so,$tiG) && $sarvadhatuka!==1 && $kRt!==1 && (in_array("N",$itpratyaya) || in_array("k",$itpratyaya)) && $lakAra!=="liw" && !arr($text,'/^[y][a][+][y]/'))
 {
     $text=three($ac,array("+"),array("y"),dirgha($ac),array("+"),array("y"),0);
     echo "<p class = sa >akRtsArvadhAtukayordIrghaH (".link_sutra("7.4.25").") :</p>\n"; 
@@ -5194,7 +5195,7 @@ if (ends(array($fo),array("wuo!Svi"),4) && sub(array("Svi"),array("+"),prat('vl'
     display(0);
 }
 /* vadavrajahalantasya acaH (7.2.3) */ 
-if ( arr($text,'/['.pc('ac').'](['.pc('hl').'M]*)[+][st]/')  && $lakAra==="luN"  && $sic!==0 && in_array($so,$tis) )
+if ( arr($text,'/['.pc('ac').'](['.pc('hl').'M]*)[+][st]/')  && $lakAra==="luN"  && $sic!==0 && in_array($so,$tis) && $yamarama!==1)
 {
 	foreach ($text as $value)
 		{
