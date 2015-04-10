@@ -916,7 +916,7 @@ elseif ( ends(array($first),array("jYA"),2) && $pada==="pratyaya" && $lakAra!=="
     $ubhayapada=1;
 }
 /* abhipratyatibhyaH kSipaH (1.3.80) */
-elseif ( ends(array($first),array("kzipa!"),2) && in_array($us,array("aBi","prati","ati"))$vAcya==="kartR")
+elseif ( ends(array($first),array("kzipa!"),2) && in_array($us,array("aBi","prati","ati")) && $vAcya==="kartR")
 {
     $suffix=$tis;
     echo "<p class = st >By abhipratyatibhyaH kSipaH (".link_sutra("1.3.80").") :</p>\n"; 
@@ -3193,7 +3193,6 @@ if ( pr2(array("+"),array("tAs+"),array("ti","tas","anti","te","Ate","ante"),arr
 	$syatAsI=1;
 }
 /* tAsastyorlopaH (7.4.50) */
-// asti pending.
 elseif (sub(array("tAs"),array("+"),array("s"),0) && $lakAra==="luw" && $tAs===1)
 {
     $text=three(array("tAs"),array("+"),array("s"),array("tA"),array(""),array("s"),0);
@@ -4920,7 +4919,6 @@ if ( pr2(array("as"),array("+"),$apit_sArvadhAtuka_pratyayas,array("s"),array("+
     display(0);    
 }
 /* tAsastyorlopaH (7.4.50) */
-// tAsi pending.
 if ( sub(array("as"),array("+"),array("s"),0) && (ends(array($fo),array("asa!"),4) && $verbset==="adAdi" ))
 {
     $text=three(array("as"),array("+"),array("s"),array("a"),array("+"),array("s"),0);
