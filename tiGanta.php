@@ -13913,18 +13913,20 @@ if (sub(array("SrIpAn+i","vftrahan+"),blank(0),blank(0),0) && !arr($text,'/[+]$/
     echo "<p class = sa >एकाजुत्तरपदे णः (८.४.१२) :</p>\n";
     display(0);   
 }
+print_r($text);
 /* Patch to remove the + sign */
 // For dvitva, + sign pauses many problems. Now we don't have to remember what was prakRti and what was pratyaya. Therefore we can afford to remove + sign now.
-if (arr($text,'/['.pc('hl').' ][+]['.pc('hl').']/') || arr($text,'/[HM!][+]['.pc('hl').']/'))
+if (arr($text,'/['.pc('hl').' ][+]['.pc('hl').']/') || arr($text,'/[HM!][+]['.pc('hl').']/') || arr($text,'/['.pc('hl').'][+][HM]/'))
 {
 $text = three($hl,array("+"," +"),$hl,$hl,array(""," "),$hl,0);    
 $text = three(array("H","M","!"),array("+"),$hl,array("H","M","!"),array(""),$hl,0);    
+$text = three($hl,array("+"),array("H","M"),$hl,array("+"),array("H","M"),0);    
 }
 if ( arr($text,'/['.pc('ac').'HM! ][+]['.pc('ac').']/') || arr($text,'/[HM!][+]['.pc('ac').']/') )
 {  
 $text = one(array("+"),array(" "),0);
 }
-if ( arr($text,'/['.pc('ac').' ][+]['.pc('hl').'MH]/') || arr($text,'/[+]$/') )
+if ( arr($text,'/['.pc('ac').' ][+]['.pc('hl').'MH]/') || arr($text,'/[+]$/')  || arr($text,'/['.pc('hl').'][+][HM]/'))
 {  
 $text = one(array("+"),array(""),0);
 }
