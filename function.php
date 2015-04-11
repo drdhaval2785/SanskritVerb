@@ -2016,12 +2016,16 @@ function toiast($text)
 
 function Adezapratyaya($text)
 {
-	global $ksa, $SaHsaH, $sic, $syatAsI;
+	global $ksa, $SaHsaH, $sic, $syatAsI, $us;
 	foreach ($text as $value)
 	{
-		if (preg_match('/[iIuUfFxXeEoOhyvrlkKgGN][+][s]/',$value) && ($ksa===1 || $SaHsaH===1 || $sic===1 || $syatAsI===1)) // patch for ksa
+		if (preg_match('/[iIuUfFxXeEoOhyvrlkKgGN][+][s]/',$value) && ($ksa===1 || $SaHsaH===1 || $sic===1 || $syatAsI===1 || $us!=="")) // patch for ksa
 		{
 			$val[]=preg_replace('/([iIuUfFxXeEoOhyvrlkKgGN])([+][s])/',"$1+z",$value);			
+		}
+		elseif (preg_match('/^[s]/',$value) && ends(array($us),prat('ik'),1))
+		{
+			$val[]=preg_replace('/^([s])/',"z",$value);			
 		}
 		else
 		{

@@ -1499,7 +1499,7 @@ if ( $_GET['cond48']==="1" )
 /* gupUdhUpavicCipaNipanibhya AyaH (3.1.28) */
 if ( sub(array("gupU!","viCa!","pana!"),array("+"),blank(0),0) || (sub(array("DUpa!"),array("+"),$sArvadhAtuka_pratyayas,0) && $verbset==="BvAdi") || $_GET['cond49']==="1"  )
 {
-    $text=two(array("gupU!","DUpa!","viCa!","pana!","paRa!"),array("+"),array("gupU!","DUpa!","viCa!","pana!","paRa!"),array("+Aya+"),0);
+    $text=three(array("gupU!","DUpa!","viCa!","pana!","paRa!"),array("+"),$tiG,array("gupU!","DUpa!","viCa!","pana!","paRa!"),array("+Aya+"),$tiG,0);
     echo "<p class = sa >By gupUdhUpavicCipaNipanibhya AyaH (".link_sutra("3.1.28").") :</p>\n"; 
     echo "<p class = sa >गुपूधूपविच्छिपणिपनिभ्य आयः (३.१.२८) :</p>\n";
     display(0);
@@ -1663,6 +1663,7 @@ if ($lakAra==="luN")
 		echo "<p class = sa >By cli luGi (".link_sutra("3.1.43").") :</p>\n"; 
 		echo "<p class = sa >च्लि लुङि (३.१.४३) :</p>\n";
 		display(0);
+		$set=2;
 	/* zala igupadhAdaniTaH ksaH (3.1.45) */
 	if (ends(array($fo),array("kruSa!","diSa!","riSa!","ruSa!","liSa!","tviza!","dviza!","miha!","ruha!","liha!","duha!"),4) )
 	{
@@ -2660,6 +2661,17 @@ if (arr($text,'/[tTdDnsm]$/') && $vibhakti===1)
 } else {$tusma=0; }
 $inbetweenpratyaya=array("ap","yan","Ric","RiN","san","IyaN");
 $inbetweeenreplace=array("a","ya","Ri","Ri","sa","Iya");
+/* halantyam (1.3.3) and tasya lopaH (1.3.9) */
+if (in_array($so,$tiG) && sub(array("!"),$hl,array("+"),0) && arr(array($fo),'/[!]['.pc('hl').']$/') )
+{
+    echo "<p class = pa >By halantyam (".link_sutra("1.3.3").") :</p>\n";
+    echo "<p class = pa >हलन्त्यम्‌ (१.३.३) 1:</p>\n";
+    display(0);
+	$text=three(array("!"),$hl,array("+"),array("!"),blank(count($hl)),array("+"),0);
+	echo "<p class = sa >By tasya lopaH (".link_sutra("1.3.9").") :</p>\n";
+    echo "<p class = sa >तस्य लोपः (१.३.९) :</p>\n";
+    display(0); 
+}
 /* halantyam (1.3.3) and tasya lopaH (1.3.9) */
 //if (in_array($so,$tiG) && ( sub(array("+"),$inbetweenpratyaya,array("+"),0) || (arr($text,'/['.flat($hl).']$/') && $tusma!==1) || sub($hl,array("+"),$vikaraNa,0) || $ad===1 || $rudhAdibhyaH===1 || in_array($lakAra,array("liw","luw","lfw","ASIrliN","luN","lfN","ArDaDAtukalew")) ))
 if (in_array($so,$tiG) && ( sub(array("+"),$inbetweenpratyaya,array("+"),0) || (arr($text,'/['.flat($hl).']$/') && $tusma!==1) || sub($hl,array("+"),$vikaraNa,0) || $ad===1 || $rudhAdibhyaH===1))
@@ -3983,14 +3995,6 @@ if (sub(array("Dinv","kfnv"),array("+"),array("u+"),0) && ends(array($fo),array(
     echo "<p class = sa >धिविकृण्व्योर च (३.१.८०) :</p>\n";
     display(0);    
 }
-/* radhijabhoraci (7.1.61) */
-if (sub(array("raD","jaB"),array("+"),$ac,0) && ends(array($fo),array("raDa!","jaBa!"),4) )
-{
-    $text=three(array("raD","jaB"),array("+"),$ac,array("ranD","janB"),array("+"),$ac,0);
-    echo "<p class = sa >By radhijabhoraci (".link_sutra("7.1.61").") :</p>\n"; 
-    echo "<p class = sa >रधिजभोरचि (७.१.६१) :</p>\n";
-    display(0);    
-}
 /* lopaH pibaterIccAbhyAsasya (7.4.4) */
 if (sub(array("pa+pAy"),array("+"),array("Ri"),0) && ends(array($fo),array("pA"),4) && in_array($so,$tiG) && !(ends(array($fo),array("pA"),2) && $verbset==="adAdi") && $luGset===5)
 {
@@ -4040,6 +4044,7 @@ if ($lakAra==='luN')
 	}
 	$text = one(array("+a+"),array("+a"),0);
 }
+print_r($text);
 /* ato lopaH (6.4.48) */
 //if ( sub(array("a+"),$vikaraNa_ArdhadhAtuka_pratyayas,$tiG1,0) || pr2(array("a+"),$ArdhadhAtuka_pratyayas,blank(0),array("+"),$ArdhadhAtuka_pratyayas,blank(0),$text)!==$text )
 if ( in_array($fo,$curAdi_adanta) && $ardhadhatuka===1 && ($verbset==="none"||$verbset==="curAdi"))
@@ -4054,9 +4059,9 @@ if ( in_array($fo,$curAdi_adanta) && $ardhadhatuka===1 && ($verbset==="none"||$v
     $atolopa=1;
 }
 /* ato lopaH (6.4.48) */
-if ( sub(array("a"),array("+Ri"),blank(0),0) )
+if ( sub(array("a"),array("+Ri","+Ra"),blank(0),0) )
 { 
-	$text = two(array("a"),array("+Ri"),array(""),array("+Ri"),0);
+	$text = two(array("a"),array("+Ri","+Ra"),array(""),array("+Ri","+Ra"),0);
     echo "<p class = sa >By ato lopaH (".link_sutra("6.4.48").") :</p>\n";
     echo "<p class = sa >अतो लोपः (६.४.४८) :</p>\n";
     display(0);
@@ -4637,12 +4642,24 @@ elseif ( pr2(array("nu+"),$pit_sArvadhAtuka_pratyayas,blank(0),array("no+"),$pit
     echo "<p class = sa >सार्वधातुकार्धधातुकयोः (७.३.८४) 2:</p>\n";
     display(0);    
 }
-/* akaH savarNe dIrghaH (6.1.101) */
-if ( arr($text,'/^[iIuU]/') && sub(array("i+i","I+I","u+u","U+U"),blank(0),blank(0),0) && $abhyAsa===1)
+foreach ($tiG1 as $value) {$iDtiG = "i".$value;} // defining iDtiG i.e. iDAgama+tiG1.
+/* aco JNiti patch for liT. */
+if ( (sub($ac,array("+"),$tiG1,0)||sub($ac,array("+"),$iDtiG,0)) && in_array($so,array("tip")) && $lakAra==="liw")
 {
-    $text=one(array("i+i","I+I","u+u","U+U"),array("I","I","U","U"),0);
-	echo "<p class = sa >By akaH savarNe dIrghaH (".link_sutra("6.1.101").") :</p>\n";
-    echo "<p class = sa >अकः सवर्णे दीर्घः (६.१.१०१) :</p>\n";
+    $text = pr2($ac,array("+"),$tiG1,vriddhi($ac),array("+"),$tiG1,$text);
+    $text = pr2($ac,array("+"),$iDtiG,vriddhi($ac),array("+"),$iDtiG,$text);
+    echo "<p class = sa >By aco JNiti (".link_sutra("7.2.115").") :</p>\n";
+    echo "<p class = sa >अचो ञ्णिति (७.२.११५) :</p>\n";
+    display(0);
+}
+/* aco JNiti patch for liT mip. */
+if ( (sub($ac,array("+"),$tiG1,0)||sub($ac,array("+"),$iDtiG,0)) && in_array($so,array("mip")) && $lakAra==="liw")
+{
+    $text1 = pr2($ac,array("+"),$tiG1,vriddhi($ac),array("+"),$tiG1,$text);
+    $text2 = pr2($ac,array("+"),$iDtiG,vriddhi($ac),array("+"),$iDtiG,$text);
+	$text = array_merge($text,$text1,$text2);
+    echo "<p class = sa >By aco JNiti (".link_sutra("7.2.115").") :</p>\n";
+    echo "<p class = sa >अचो ञ्णिति (७.२.११५) :</p>\n";
     display(0);
 }
 /* sidhyaterapAralaukike (6.1.49) */
@@ -5217,6 +5234,14 @@ if (ends(array($fo),array("wuo!Svi"),4) && sub(array("Svi"),array("+"),prat('vl'
 	echo "<p class = sa >आर्धधातुकस्येड्वलादेः (७.२.३५) 3:</p>\n";
     display(0);
 }
+/* radhijabhoraci (7.1.61) */
+if (sub(array("raD","jaB"),array("+"),$ac,0) && ends(array($fo),array("raDa!","jaBI!"),4) )
+{
+    $text=three(array("raD","jaB"),array("+"),$ac,array("ranD","janB"),array("+"),$ac,0);
+    echo "<p class = sa >By radhijabhoraci (".link_sutra("7.1.61").") :</p>\n"; 
+    echo "<p class = sa >रधिजभोरचि (७.१.६१) :</p>\n";
+    display(0);    
+}
 /* vadavrajahalantasya acaH (7.2.3) */ 
 if ( arr($text,'/['.pc('ac').'](['.pc('hl').'M]*)[+][st]/')  && $lakAra==="luN"  && $sic!==0 && in_array($so,$tis) && $yamarama!==1)
 {
@@ -5232,7 +5257,7 @@ if ( arr($text,'/['.pc('ac').'](['.pc('hl').'M]*)[+][st]/')  && $lakAra==="luN" 
     display(0);
 }
 /* pugantalaghUpadhasya ca (7.3.86) */
-if ( $atolopa!==1 && $ardhadhatuka===1 && sub(array("i","u","f","x"),$hl,array("+sI","+isI"),0) && !arr($text,"/[+][i][y][+][t]$/")  && $didhI!==1 && ($sIyuT===1||$sic===1) && $vijait!==1 )
+if ( $atolopa!==1 && $ardhadhatuka===1 && sub(array("i","u","f","x"),$hl,array("+sI","+isI"),0) && !arr($text,"/[+][i][y][+][t]$/")  && $didhI!==1 && ($sIyuT===1||$sic===1) && $vijait!==1 && $kGiti!==1)
 {
 	$text=three(array("i","u","f","x"),$hl,array("+sI","+isI"),array("e","o","ar","al"),$hl,array("+sI","+isI"),0);
 	if ($id_dhAtu==="vew") // e.g. gfhU! - garhizIzwa ang GfzIzwa are expected outcome.
@@ -5283,26 +5308,6 @@ if ( sub(array("A+f","A+fcC","A+nf","A+nfcC","F"),array("+"),blank(0),0) && $lak
 	$text = two(array("A+f","A+fcC","A+nf","A+nfcC","F"),array("+"),array("A+ar","A+arcC","A+nar","A+narcC","ar"),array("+"),0);
     echo "<p class = sa >By RcCatyRRtAm (".link_sutra("7.4.11").") :</p>\n";
     echo "<p class = sa >ऋच्छत्यॄताम्‌(७.४.११) :</p>\n";
-    display(0);
-}
-foreach ($tiG1 as $value) {$iDtiG = "i".$value;} // defining iDtiG i.e. iDAgama+tiG1.
-/* aco JNiti patch for liT. */
-if ( (sub($ac,array("+"),$tiG1,0)||sub($ac,array("+"),$iDtiG,0)) && in_array($so,array("tip")) && $lakAra==="liw")
-{
-    $text = pr2($ac,array("+"),$tiG1,vriddhi($ac),array("+"),$tiG1,$text);
-    $text = pr2($ac,array("+"),$iDtiG,vriddhi($ac),array("+"),$iDtiG,$text);
-    echo "<p class = sa >By aco JNiti (".link_sutra("7.2.115").") :</p>\n";
-    echo "<p class = sa >अचो ञ्णिति (७.२.११५) :</p>\n";
-    display(0);
-}
-/* aco JNiti patch for liT mip. */
-if ( (sub($ac,array("+"),$tiG1,0)||sub($ac,array("+"),$iDtiG,0)) && in_array($so,array("mip")) && $lakAra==="liw")
-{
-    $text1 = pr2($ac,array("+"),$tiG1,vriddhi($ac),array("+"),$tiG1,$text);
-    $text2 = pr2($ac,array("+"),$iDtiG,vriddhi($ac),array("+"),$iDtiG,$text);
-	$text = array_merge($text,$text1,$text2);
-    echo "<p class = sa >By aco JNiti (".link_sutra("7.2.115").") :</p>\n";
-    echo "<p class = sa >अचो ञ्णिति (७.२.११५) :</p>\n";
     display(0);
 }
 /* dAderdhAtorghaH (8.2.33) */
@@ -6143,6 +6148,14 @@ if ($lakAra!=="")
         echo "<p class = hn >गतिकारकेतरपूर्वपदस्य यण्‌ नेष्यते (वा ५०३४) से गति / कारक से भिन्न पूर्वपद होने पर यह सूत्र नहीं लागू होता । इयङ्‌ या उवङ्‌ की प्रवृत्ति होती है । :</p>\n";
         display(3);
     }    
+	/* akaH savarNe dIrghaH (6.1.101) */
+	if ( arr($text,'/^[iIuU]/') && sub(array("i+i","I+I","u+u","U+U"),blank(0),blank(0),0) && $abhyAsa===1)
+	{
+		$text=one(array("i+i","I+I","u+u","U+U"),array("I","I","U","U"),0);
+		echo "<p class = sa >By akaH savarNe dIrghaH (".link_sutra("6.1.101").") :</p>\n";
+		echo "<p class = sa >अकः सवर्णे दीर्घः (६.१.१०१) :</p>\n";
+		display(0);
+	}
 }
 
 /* Adding aDAgama and other pratyaya works which are done after aGgakArya */
@@ -6358,9 +6371,9 @@ echo "<p class = sa >By hrasvAdaGgAt (".link_sutra("8.2.27").") :</p>\n";
 echo "<p class = sa >ह्रस्वादङ्गात् (८.२.२७) :</p>\n";
 display(0);
 }
-print_r($text); echo $SaHsaH;
+if (ends(array($us),prat('ik'),1)) {echo "yes";}
 /* AdezapratyayayoH (8.3.59) */
-if( in_array($so,$tiG) && (!arr($text,'/[+][s]$/') || $SaHsaH===1 || $sic===1 || $syatAsI===1) && !sub(array("+"),array("yAs"),array("+"),0) && Adezapratyaya($text)!==$text )
+if( in_array($so,$tiG) && (!arr($text,'/[+][s]$/') || $SaHsaH===1 || $sic===1 || $syatAsI===1 || ends(array($us),prat('ik'),1)) && !sub(array("+"),array("yAs"),array("+"),0) && Adezapratyaya($text)!==$text )
 {
     $text = Adezapratyaya($text); // created a new function on 15/12/2014
 	echo "<p class = sa >By AdezapratyayayoH (".link_sutra("8.3.59").") :</p>\n";
@@ -12681,9 +12694,9 @@ display(0);
 $vriddhireci=1; // 0 - this sUtra has not applied. 1 - this sUtra has appied.
 } else {$vriddhireci=0; }
 /* udaH sthAstambhvoH pUrvasya (8.1.61) */
-if(sub(array("ud","ut"),array("sTA","stam"),blank(0),0))
+if(sub(array("ud","ut"),array("sTA","stam","stan"),blank(0),0))
 {
-$text = two(array("ud","ut"),array('sTA','stam'),array("ud","ut"),array('TTA','Ttam'),0);
+$text = two(array("ud","ut"),array('sTA','stam',"stan"),array("ud","ut"),array('TTA','Ttam','Ttan'),0);
 echo "<p class = sa >By udaH sthAstambhvoH pUrvasya (".link_sutra("8.1.61").") :</p>\n";
 echo "<p class = sa >उदः स्थास्तम्भ्वोः पूर्वस्य (८.१.६१) :</p>\n";
 display(0);
