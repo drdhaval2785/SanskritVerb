@@ -2296,13 +2296,13 @@ elseif (arr($text,'/^[z]/') || arr($text,'/^[R]/') || arr($text,'/[iu][r][d]/'))
                 echo "<p class = sa >By dhAtvAdeH SaH saH (".link_sutra("6.1.64").") :</p>\n";
                 echo "<p class = sa >धात्वादेः षः सः (६.१.६४) :</p>\n";
                 display(0);
+				$SaHsaH=1;
                 if (arr($text,'/^[s][wWqQR]/'))
                 {
                     $text=two(array("s"),$Tu,array("s"),$tu,0);
                     echo "<p class = sa >By nimittApAye naimittikasyApyapAyaH (paribhASA) :</p>\n";
                     echo "<p class = sa >निमित्तापाये नैमित्तिकस्याप्यपायः (परिभाषा) :</p>\n";
                     display(0);                    
-					$SaHsaH=1;
                 }
            }
            if (arr($text,'/^[R]/'))
@@ -6358,6 +6358,7 @@ echo "<p class = sa >By hrasvAdaGgAt (".link_sutra("8.2.27").") :</p>\n";
 echo "<p class = sa >ह्रस्वादङ्गात् (८.२.२७) :</p>\n";
 display(0);
 }
+print_r($text); echo $SaHsaH;
 /* AdezapratyayayoH (8.3.59) */
 if( in_array($so,$tiG) && (!arr($text,'/[+][s]$/') || $SaHsaH===1 || $sic===1 || $syatAsI===1) && !sub(array("+"),array("yAs"),array("+"),0) && Adezapratyaya($text)!==$text )
 {
