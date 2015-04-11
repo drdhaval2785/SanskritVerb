@@ -1533,19 +1533,6 @@ if ( in_array($sanAdi,array("Aya","IyaN","RiN")) && $lakAra!=="" && $ardhadhatuk
     display(0);
     $atmanepada=1;
 }
-/* Che ca (6.1.73) */
-if (sub($hrasva,array("C"),blank(0),0) && in_array($so,$tiG) )
-{
-$text = two(array("a","i","u","f","x"),array("C"),array("at","it","ut","ft","xt"),array("C"),0);
-echo "<p class = sa >By Che ca (".link_sutra("6.1.73").") :</p>\n";
-echo "<p class = sa >छे च (६.१.७३) :</p>\n";
-display(0);
-// separate patch for asthetic value.
-$text = one(array("tC"),array("cC"),0);
-echo "<p class = sa >By stoH zcunA zcuH (".link_sutra("8.4.40").") :</p>\n";
-echo "<p class = sa >स्तोः श्चुना श्चुः (८.४.४०) :</p>\n";
-display(0);
-}
 /* Displaying general information about lakAras */
 /* laT vartamAne (3.2.123) */
 if (in_array($so,$tiG) && $pada==="pratyaya" && $lakAra==="law")
@@ -3165,6 +3152,19 @@ if ( ends(array($fo),$aniditverbs,4) && (in_array("N",$itpratyaya) || in_array("
     echo "<p class = sa >अनिदितां हल उपधायाः क्ङिति (६.४.२४) :</p>\n";
     display(0); 
     $aniditAm = 1; // 0 - this sUtra has not applied. 1 - this sUtra has applied.
+}
+/* Che ca (6.1.73) */
+if (sub($hrasva,array("C"),blank(0),0) && in_array($so,$tiG) )
+{
+	$text = two(array("a","i","u","f","x"),array("C"),array("at","it","ut","ft","xt"),array("C"),0);
+	echo "<p class = sa >By Che ca (".link_sutra("6.1.73").") :</p>\n";
+	echo "<p class = sa >छे च (६.१.७३) :</p>\n";
+	display(0);
+	// separate patch for asthetic value.
+	$text = one(array("tC"),array("cC"),0);
+	echo "<p class = sa >By stoH zcunA zcuH (".link_sutra("8.4.40").") :</p>\n";
+	echo "<p class = sa >स्तोः श्चुना श्चुः (८.४.४०) :</p>\n";
+	display(0);
 }
 /* syatAsI lRlutoH (3.1.33) */
 if ( pr2(array("+"),blank(0),$tiG1,array("+"),array("sya"),$tiG1,$text)!==$text && in_array($lakAra,array("lfw","lfN")) )
@@ -13913,7 +13913,6 @@ if (sub(array("SrIpAn+i","vftrahan+"),blank(0),blank(0),0) && !arr($text,'/[+]$/
     echo "<p class = sa >एकाजुत्तरपदे णः (८.४.१२) :</p>\n";
     display(0);   
 }
-print_r($text);
 /* Patch to remove the + sign */
 // For dvitva, + sign pauses many problems. Now we don't have to remember what was prakRti and what was pratyaya. Therefore we can afford to remove + sign now.
 if (arr($text,'/['.pc('hl').' ][+]['.pc('hl').']/') || arr($text,'/[HM!][+]['.pc('hl').']/') || arr($text,'/['.pc('hl').'][+][HM]/'))
