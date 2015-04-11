@@ -2314,6 +2314,7 @@ elseif (arr($text,'/^[z]/') || arr($text,'/^[R]/') || arr($text,'/[iu][r][d]/'))
                     echo "<p class = sa >By nimittApAye naimittikasyApyapAyaH (paribhASA) :</p>\n";
                     echo "<p class = sa >निमित्तापाये नैमित्तिकस्याप्यपायः (परिभाषा) :</p>\n";
                     display(0);                    
+					$SaHsaH=1;
                 }
            }
            if (arr($text,'/^[R]/'))
@@ -6342,7 +6343,7 @@ echo "<p class = sa >ह्रस्वादङ्गात् (८.२.२७)
 display(0);
 }
 /* AdezapratyayayoH (8.3.59) */
-if( in_array($so,$tiG) && !arr($text,'/[+][s]$/') && !sub(array("+"),array("yAs"),array("+"),0) && Adezapratyaya($text)!==$text )
+if( in_array($so,$tiG) && (!arr($text,'/[+][s]$/') || $SaHsaH===1) && !sub(array("+"),array("yAs"),array("+"),0) && Adezapratyaya($text)!==$text )
 {
     $text = Adezapratyaya($text); // created a new function on 15/12/2014
 	echo "<p class = sa >By AdezapratyayayoH (".link_sutra("8.3.59").") :</p>\n";

@@ -2016,10 +2016,10 @@ function toiast($text)
 
 function Adezapratyaya($text)
 {
-	global $ksa;
+	global $ksa, $SaHsaH;
 	foreach ($text as $value)
 	{
-		if (preg_match('/[iIuUfFxXeEoOhyvrlkKgGN][+][s]/',$value) && $ksa===1) // patch for ksa
+		if (preg_match('/[iIuUfFxXeEoOhyvrlkKgGN][+][s]/',$value) && ($ksa===1 || $SaHsaH===1)) // patch for ksa
 		{
 			$val[]=preg_replace('/([iIuUfFxXeEoOhyvrlkKgGN])([+][s])/',"$1+z",$value);			
 		}
