@@ -649,7 +649,6 @@ function display($n)
     global $text; global $upasarga_joined; global $us; // bringing $text from main php function.
     /* removal of two ++ signs */
     $text = one(array("++"),array("+"),0);
-
     if ($n === 1) // sending special messages.
         {
         echo "<p class = hn>Please note: Wherever there is dvitva, it is optionally negated by sarvatra zAkalyasya. (".link_sutra("8.4.51").")</p>\n";
@@ -700,9 +699,77 @@ function display($n)
         echo "<p class = form>$i - ".convert($us."+".$text[$i-1])."</p>\n"; // showing the output to the browser. e.g. 1. rAmaH. $i is for numbering. function convert converts the output into devanAgarI.
         }
     }
-//    echo "<hr>\n"; // drawing a line after all the words are displayed. Thus two sUtras are separated by a separator line.
     if ($n === 2) { $text1 = $text; $text = $text2; } // not useful because the display(2) is not used in the code. If it is used, this will work.
 }
+/* function display2 is specially designed to try with gui function. */
+// There are three arguments. 0 will simply display the message. 
+// 1 will show an additional message in dvitva. 
+// 2 is not used in the code. Useful where there were two optional forms.
+// 3 is for aGgAdhikAra.
+// 4 is for yaNaH pratiSedho vAcyaH in case of yaN.
+// 5 is for sarvAdeza.
+// 6 is for bhasya adhikAra.
+// 7 is for padasya, padAt, anudAttaM sarvamapAdAdau adhikAra.
+// 8 is for anupasarjanAt adhikAra.
+// new messages can be added if the message is of repeated nature.
+function display2($text,$n)
+{
+    global $upasarga_joined; global $us; // bringing $text from main php function.
+	foreach ($text as $val) { $out[] = str_replace("++","+",$val);}
+	$text = $out;
+    if ($n === 1) // sending special messages.
+        {
+        echo "<p class = hn>Please note: Wherever there is dvitva, it is optionally negated by sarvatra zAkalyasya. (".link_sutra("8.4.51").")</p>\n";
+        echo "<p class = hn>द्वित्व का सर्वत्र सर्वत्र शाकल्यस्य (८.४.५१) से पाक्षिक निषेध होता है ।</p>\n";
+        }
+    if ($n === 2) 
+        { 
+        global $text1; $text2 = $text; $text = $text1; 
+        }
+    if ($n === 3) 
+        {
+        echo "<p class = pa>yasmAtpratyayavidhistadAdi pratyaye'Ggam (".link_sutra("2.4.13").") and aGgasya (".link_sutra("6.4.1").") </p>\n";
+        echo "<p class = pa>यस्मात्प्रत्ययविधिस्तदादि प्रत्ययेऽङ्गम्‌ (२.४.१३) तथा अङ्गस्य (६.४.१) </p>\n";
+        }
+    if ($n === 4) 
+        {
+        echo "<p class = hn>N.B.: yaNaH pratiSedho vAcyaH (vA 4806) prevents application of saMyogAntasya lopaH (".link_sutra("8.2.23").") </p>\n";
+        echo "<p class = hn>यणः प्रतिषेधो वाच्यः (वा ४८०६) से संयोगान्तस्य लोपः (८.२.२३) का निषेध होता है ।</p>\n";
+        }
+    if ($n === 5) 
+        {
+        echo "<p class = hn>N.B.: anekAlzitsarvasya (".link_sutra("1.1.55").") mandates sarvAdeza.  </p>\n";
+        echo "<p class = hn>अनेकाल्शित्सर्वस्य (१.१.५५) से सर्वादेश होता है ।</p>\n";
+        }
+    if ($n === 6) 
+        {
+        echo "<p class = pa>yasmAtpratyayavidhistadAdi pratyaye'Ggam (".link_sutra("2.4.13").") aGgasya (".link_sutra("6.4.1").") and bhasya (".link_sutra("6.4.129").") :</p>\n";
+        echo "<p class = pa>यस्मात्प्रत्ययविधिस्तदादि प्रत्ययेऽङ्गम्‌ (२.४.१३), अङ्गस्य (६.४.१) तथा भस्य (६.४.१२९) :</p>\n";
+        }
+    if ($n === 7) 
+        {
+        echo "<p class = pa>padasya (".link_sutra("8.1.16")."), padAt (".link_sutra("8.1.17").") and anudAttaM sarvamapAdAdau (".link_sutra("8.1.18").") :</p>\n";
+        echo "<p class = pa>पदस्य (८.१.१६), पदात्‌ (८.१.१७) तथा अनुदात्तं सर्वमपादादौ (८.१.१८) :</p>\n";
+        }
+    if ($n === 8) 
+        {
+        echo "<p class = pa>anupasarjanAt (".link_sutra("4.1.14").") :</p>\n";
+        echo "<p class = pa>अनुपसर्जनात्‌ (४.१.१४) :</p>\n";
+        }
+    for($i=1;$i<count($text)+1;$i++) // for all members of the $text array
+    {
+        if ($upasarga_joined===1 || $us==="")
+        {
+        echo "<p class = form>$i - ".convert($text[$i-1])."</p>\n"; // showing the output to the browser. e.g. 1. rAmaH. $i is for numbering. function convert converts the output into devanAgarI.
+        }
+        elseif ($upasarga_joined===0)
+        {
+        echo "<p class = form>$i - ".convert($us."+".$text[$i-1])."</p>\n"; // showing the output to the browser. e.g. 1. rAmaH. $i is for numbering. function convert converts the output into devanAgarI.
+        }
+    }
+    if ($n === 2) { $text1 = $text; $text = $text2; } // not useful because the display(2) is not used in the code. If it is used, this will work.
+}
+
 /* function dvitva will be used to duplicate a letter */
 // It has six arguments, first four arguments are the arrays which need to be replaced. 
 // $location is to specify which of these 4 consecutive arrays is to be duplicated. e.g. 2 will mean that the second member will be duplicated.
@@ -2979,36 +3046,39 @@ function Am()
 	}
 }
 /* Function gui to overcome issues pointed out in https://github.com/drdhaval2785/SanskritVerb/issues/125 */
-function gui($sutra_number)
+// matches function makes the code fast. Earlier we were using a for loop over vdata / ASdata which was very costly. matches function is derived from the answer of Aleks G from http://stackoverflow.com/questions/12315536/search-for-php-array-element-containing-string
+function gui($text,$sutra_number,$style,$note)
 {
-	global $text; global $ASdata, $vdata; global $upasarga_joined; global $us; // bringing $text from main php function.
-	for($i=0;$i<count($ASdata);$i++)
+	if (!in_array($style,array("pa","hn","st"))) { $style="sa"; }
+	global $ASdata, $vdata; global $upasarga_joined; global $us; // bringing $text from main php function.
+	if (strpos($sutra_number,'-')===false)
 	{
-		if (strpos($sutra_number,'-')===false)
-		{
-			$int = explode(':',$ASdata[$i]);
-			$sutra_no[$i] = $int[0];
-			$sutra_type[$i] = $int[1];
-			$sutra_dev[$i] = $int[2];
-			if ($sutra_no[$i] === $sutra_number)
-			{	
-				echo "<p class = sa >By ".toiast($sutra_dev[$i])." (".link_sutra($sutra_number).") - ".toiast($sutra_type[$i])." :</p>\n";
-				echo "<p class = sa >".$sutra_dev[$i]." (".convert($sutra_number).") - ".$sutra_type[$i]." :</p>\n";
-				display(0);
-			}		
-		}
-		elseif (strpos($sutra_number,'-')!==false)
-		{
-			$int = explode(':',$vdata[$i]);
-			$vartika_no[$i] = $int[0];
-			$sutra_dev[$i] = $int[1];
-			if ($vartika_no[$i] === $sutra_number)
-			{	
-				echo "<p class = sa >By ".toiast($sutra_dev[$i])." (vA ".link_vartika($sutra_number).") :</p>\n";
-				echo "<p class = sa >".convert($sutra_dev[$i])." (वा ".convert($sutra_number).") :</p>\n";
-				display(0);
-			}				
-		}
+		$matches = array_filter($ASdata, function($var) use ($sutra_number) { return strpos($var,$sutra_number.":")!==false; });
+		$matches=array_values($matches);
+		$int = explode(':',$matches[0]); // We presume that there would be only one such match.
+		$sutra_no[$i] = $int[0];
+		$sutra_type[$i] = $int[1];
+		$sutra_dev[$i] = $int[2];
+		if ($sutra_no[$i] === $sutra_number)
+		{	
+			echo "<p class = ".$style." >By ".toiast($sutra_dev[$i])." (".link_sutra($sutra_number).") :</p>\n";
+			echo "<p class = ".$style." >".$sutra_dev[$i]." (".convert($sutra_number).") :</p>\n";
+			display2($text,$note);
+		}		
+	}
+	elseif (strpos($sutra_number,'-')!==false)
+	{
+		$matches = array_filter($vdata, function($var) use ($sutra_number) { return strpos($var,$sutra_number.":")!==false; });
+		$matches=array_values($matches);
+		$int = explode(':',$matches[0]);
+		$vartika_no[$i] = $int[0];
+		$sutra_dev[$i] = $int[1];
+		if ($vartika_no[$i] === $sutra_number)
+		{	
+			echo "<p class = ".$style." >By ".toiast($sutra_dev[$i])." (vA ".link_vartika($sutra_number).") :</p>\n";
+			echo "<p class = ".$style." >".convert($sutra_dev[$i])." (वा ".convert($sutra_number).") :</p>\n";
+			display2($text,$note);
+		}				
 	}
 }
 

@@ -379,6 +379,13 @@ echo '$vdata=array("'.implode('","',$output).'");'
 /* gui function testing */
 $text = array("BU+Sap+tip");
 $upasarga_joined=1;
-gui ('1.1.4-5');
-
+$op[] = array($text,'1.1.4','pa');
+$op[] = array($text,'1.1.5','sa',3);
+$text = one(array("+Sap+"),array("++"),0);
+$op[] = array($text,'1.1.6-1','st');
+$op[] = array($text,'1.1.15','hn');
+foreach ($op as $value)
+{
+	gui($value[0],$value[1],$value[2],$value[3]);
+}
 ?>
