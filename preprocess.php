@@ -17,7 +17,7 @@ ini_set("memory_limit","1000M");
 include "slp-dev.php"; // includes code for conversion from SLP to devanagari,
 include "dev-slp.php"; // includes code for devanagari to SLP.
 include "function.php";
-//error_reporting(0);
+error_reporting(0);
 
 /* method to create an array of necessary SLP1 list from devangari file */
 /*$a=file('allverbs.txt');
@@ -358,9 +358,27 @@ echo $output;
 echo '");';
 */
 
+/* Creating database of vArtikas by scraping from google spreadsheet https://docs.google.com/spreadsheet/ccc?key=0Al_QBT-hoqqVdGV5U2tQZ3ltX3poX1hjZmhqcGQzN1E#gid=6 */
+// The vArtika portion is downloaded as vArtika.csv file. The current code converts it to a usable data.
+/*$var=file('vArtika.csv');
+$var=array_map('convert1',$var);
+for ($i=0;$i<count($var);$i++)
+{
+	$individual[$i]=explode(',',$var[$i]);
+	if ($individual[$i][0]==="")
+	{
+		$individual[$i][0] = $individual[$i-1][0];
+	}
+	if ($individual[$i][1]==="")
+	{
+		$output[]=$individual[$i][0]."-".$individual[$i][2].":".$individual[$i][3];
+	}
+}
+echo '$vdata=array("'.implode('","',$output).'");'
+*/
 /* gui function testing */
 $text = array("BU+Sap+tip");
 $upasarga_joined=1;
-gui ('1.1.1');
+gui ('1.1.4-5');
 
 ?>
