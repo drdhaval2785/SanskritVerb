@@ -1802,6 +1802,30 @@ function verb_meaning_gana_number2($text)
     echo "<p class = st >".$verbaccent[0].' - '.convert($meaning[0]).', '.convert($verbset1[0]).' '.$number[0].' '."</p>\n";
     echo "<hr>\n";
 }
+// for display in tiGanta.php in case the verb is not in our database.
+function verb_meaning_gana_number3($text)
+{
+	echo "<p class = st >dhAtuH - ".$text."</p>\n";
+	echo "<p class = st >धातुः - ".convert($text)."</p>\n";
+	echo "<hr>\n";
+}
+// for display of upasarga details.
+function upasarga_display($text)
+{
+    echo "<p class = st >upasarga: $text</p>\n"; 
+    echo "<p class = st >उपसर्गः : ".convert($text)."</p>\n";
+    echo "<hr>\n";
+}
+// for deciding verb padas.
+function verb_pada($verb,$sutra,$suffix,$pada)
+{
+	gui2($sutra);
+    $suffix=$taG;
+    echo "<p class = st >By bhAvakarmaNoH (".link_sutra("1.3.13").") :</p>\n"; 
+    echo "<p class = st >भावकर्मणोः (१.३.१३) :</p>\n";
+    echo "<hr>\n";
+    $atmanepada=1;
+}
 // for display in tiGanta.php in case the user has chosen the gaNa.
 function verb_padafinder($text)
 {
@@ -3078,6 +3102,42 @@ function gui($text,$sutra_number,$style,$note)
 			echo "<p class = ".$style." >By ".toiast($sutra_dev[$i])." (vA ".link_vartika($sutra_number).") :</p>\n";
 			echo "<p class = ".$style." >".convert($sutra_dev[$i])." (वा ".convert($sutra_number).") :</p>\n";
 			display2($text,$note);
+		}				
+	}
+}
+/* Function gui2 to use in case we don't want to display the word (e.g. before entering prakriyA e.g. dhAtu pada etc. */
+// matches function makes the code fast. Earlier we were using a for loop over vdata / ASdata which was very costly. matches function is derived from the answer of Aleks G from http://stackoverflow.com/questions/12315536/search-for-php-array-element-containing-string
+function gui2($sutra_number)
+{
+	$style="sa";
+	global $ASdata, $vdata; global $upasarga_joined; global $us; // bringing $text from main php function.
+	if (strpos($sutra_number,'-')===false)
+	{
+		$matches = array_filter($ASdata, function($var) use ($sutra_number) { return strpos($var,$sutra_number.":")!==false; });
+		$matches=array_values($matches);
+		$int = explode(':',$matches[0]); // We presume that there would be only one such match.
+		$sutra_no[$i] = $int[0];
+		$sutra_type[$i] = $int[1];
+		$sutra_dev[$i] = $int[2];
+		if ($sutra_no[$i] === $sutra_number)
+		{	
+			echo "<p class = ".$style." >By ".toiast($sutra_dev[$i])." (".link_sutra($sutra_number).") :</p>\n";
+			echo "<p class = ".$style." >".$sutra_dev[$i]." (".convert($sutra_number).") :</p>\n";
+			echo "<hr/>";
+		}		
+	}
+	elseif (strpos($sutra_number,'-')!==false)
+	{
+		$matches = array_filter($vdata, function($var) use ($sutra_number) { return strpos($var,$sutra_number.":")!==false; });
+		$matches=array_values($matches);
+		$int = explode(':',$matches[0]);
+		$vartika_no[$i] = $int[0];
+		$sutra_dev[$i] = $int[1];
+		if ($vartika_no[$i] === $sutra_number)
+		{	
+			echo "<p class = ".$style." >By ".toiast($sutra_dev[$i])." (vA ".link_vartika($sutra_number).") :</p>\n";
+			echo "<p class = ".$style." >".convert($sutra_dev[$i])." (वा ".convert($sutra_number).") :</p>\n";
+			echo "<hr/>";
 		}				
 	}
 }

@@ -179,25 +179,22 @@ elseif (in_array($first,$allverbs))
 }
 else
 {
-	echo "<p class = st >धातुः - ".convert($first)."</p>\n";
-	echo "<hr>\n";
+	verb_meaning_gana_number3($first);
 }
 /* upasarga display */
 if ($us!=="")
 {
-    echo "<p class = st >upasarga:  $us</p>\n"; 
-    echo "<p class = st >उपसर्गः : ".convert($us)."</p>\n";
-    echo "<hr>\n";
+	upasarga_display($us);
 }
 /* Deciding the pratyaya by doing padanirdhARaNa of parasmai, Atmane, ubhaya */ 
 /* bhAvakarmaNoH (1.3.13) */
 if ( in_array($vAcya,array("karma","bhAva")) && $pada==="pratyaya" && $lakAra!=="")
 {
-    $suffix=$taG;
+/*    $suffix=$taG;
     echo "<p class = st >By bhAvakarmaNoH (".link_sutra("1.3.13").") :</p>\n"; 
     echo "<p class = st >भावकर्मणोः (१.३.१३) :</p>\n";
     echo "<hr>\n";
-    $atmanepada=1;
+    $verbpada="A";*/
 }
 /* luTi ca klRpaH (1.3.93) */
 elseif ( $fo==="kfpU!" && ($san===1 || in_array($lakAra,array("lfN","lfw","luw"))))
@@ -206,7 +203,7 @@ elseif ( $fo==="kfpU!" && ($san===1 || in_array($lakAra,array("lfN","lfw","luw")
     echo "<p class = st >By luTi ca klRpaH (".link_sutra("1.3.93").") :</p>\n"; 
     echo "<p class = st >लुटि च क्लृपः (१.३.९३) :</p>\n";
     echo "<hr>\n";
-    $ubhayapada=1;
+    $verbpada="u";
 }
 /* na gatihiMsArthebhyH (1.3.15) */
 elseif ( $_GET['cond11_1']==='1') // cond stands for condition. They are taken from user input. For all variables having cond as prefix, details can be seen at ajax requirement.docx.
@@ -215,7 +212,7 @@ elseif ( $_GET['cond11_1']==='1') // cond stands for condition. They are taken f
     echo "<p class = st >By na gatihiMsArthebhyH (".link_sutra("1.3.15").") :</p>\n"; 
     echo "<p class = st >न गतिहिंसार्थेभ्यः (१.३.१५) :</p>\n";
     echo "<hr>\n";
-    $parasmaipada=1;
+    $verbpada="p";
 }
 /* itaretarAnyo'nyopapadAcca (1.3.16) */
 // parasparopapadAcceti vaktavyam is implicitly included in it. If need be, a user feedback has to be increased.
@@ -225,7 +222,7 @@ elseif ( $_GET['cond11_1']==='2')
     echo "<p class = st >By itaretarAnyo'nyopapadAcca (".link_sutra("1.3.16").") :</p>\n"; 
     echo "<p class = st >इतरेतरान्योऽन्योपपदाच्च (१.३.१६) :</p>\n";
     echo "<hr>\n";
-    $parasmaipada=1;
+    $verbpada="p";
 }
 /* kartari karmavyatihAre (1.3.14) */
 elseif ( $_GET['cond11_1']==='3')
@@ -234,7 +231,7 @@ elseif ( $_GET['cond11_1']==='3')
     echo "<p class = st >By kartari karmavyatihAre (".link_sutra("1.3.14").") :</p>\n"; 
     echo "<p class = st >कर्तरि कर्मव्यतिहारे (१.३.१४) :</p>\n";
     echo "<hr>\n";
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* AGo do'nAsyaviharaNe (1.3.20) */
 elseif ( $_GET['cond14']==="2" )
@@ -245,7 +242,7 @@ elseif ( $_GET['cond14']==="2" )
     echo "<p class = st >आङो दोऽनास्यविहरणे (१.३.२०) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* parAGgakarmakAnna niSedhaH (vA 903) */
 elseif ( $_GET['cond14_1']==="2" )
@@ -256,7 +253,7 @@ elseif ( $_GET['cond14_1']==="2" )
     echo "<p class = st >पराङ्गकर्मकान्न निषेधः (वा ९०३) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* prakAzanastheyAkhyayozca (1.3.23) */
 elseif ( $_GET['cond15']==="1" )
@@ -267,7 +264,7 @@ elseif ( $_GET['cond15']==="1" )
     echo "<p class = st >प्रकाशनस्थेयाख्ययोश्च (१.३.२३) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* udo'nUrdhvakarmaNi (1.3.24) */
 elseif ( $_GET['cond16']==="2" )
@@ -278,7 +275,7 @@ elseif ( $_GET['cond16']==="2" )
     echo "<p class = st >उदोऽनूर्ध्वकर्मणि (१.३.२४) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* upAnmantrakaraNe (1.3.25) */
 elseif ( $_GET['cond17']==="1" )
@@ -289,7 +286,7 @@ elseif ( $_GET['cond17']==="1" )
     echo "<p class = st >उपान्मन्त्रकरणे (१.३.२५) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* akarmakAcca (1.3.26) */
 elseif ( $_GET['cond17']==="2" )
@@ -300,7 +297,7 @@ elseif ( $_GET['cond17']==="2" )
     echo "<p class = st >अकर्मकाच्च (१.३.२६) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* spardhAyAmAGaH (1.3.31) */
 elseif ( $_GET['cond18']==="1" )
@@ -311,7 +308,7 @@ elseif ( $_GET['cond18']==="1" )
     echo "<p class = st >स्पर्धायामाङः (१.३.३१) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* anuparAbhyAM kruJaH (1.3.79) */
 elseif ( ends(array($first),array("qukfY"),2) && in_array($us,array("anu","parA")) )
@@ -322,7 +319,7 @@ elseif ( ends(array($first),array("qukfY"),2) && in_array($us,array("anu","parA"
     echo "<p class = st >अनुपराभ्यां कृञः (१.३.७९) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेण परस्मैपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $parasmaipada=1;
+    $verbpada="p";
 }
 /* gandhanAvakSepaNasevanasAhasikyapratiyatnaprakathanopayogeSu kRJaH (1.3.32) */
 elseif ( $_GET['cond19']==="1" )
@@ -333,7 +330,7 @@ elseif ( $_GET['cond19']==="1" )
     echo "<p class = st >गन्धनावक्षेपणसेवनसाहसिक्यप्रतियत्नप्रकथनोपयोगेषु कृञः (१.३.३२) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";$logfile = fopen('D:\\!sorting\\verboutput\\log.txt','a+');
     echo "<hr>\n";                    
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* adheH prahasane (1.3.33) */
 elseif ( $_GET['cond20']==="1" )
@@ -344,7 +341,7 @@ elseif ( $_GET['cond20']==="1" )
     echo "<p class = st >अधेः प्रहसने (१.३.३३) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* veH zabdakarmaNaH (1.3.34) */
 elseif ( $_GET['cond21']==="1" )
@@ -355,7 +352,7 @@ elseif ( $_GET['cond21']==="1" )
     echo "<p class = st >वेः शब्दकर्मणः (१.३.३४) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* akarmakAcca (1.3.35) */
 elseif ( $_GET['cond21']==="2" )
@@ -366,7 +363,7 @@ elseif ( $_GET['cond21']==="2" )
     echo "<p class = st >अकर्मकाच्च (१.३.३५) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* kartRsthe cAzarIre karmaNi (1.3.37) */
 elseif ( $_GET['cond23']==="1" )
@@ -377,7 +374,7 @@ elseif ( $_GET['cond23']==="1" )
     echo "<p class = st >कर्तृस्थे चाशरीरे कर्मणि (१.३.३७) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* sammAnanotsaJjanAcAryakaraNajJAnabhRtivigaNanavyayeSu niyaH (1.3.36) */
 elseif ( $_GET['cond22']==="1" )
@@ -388,7 +385,7 @@ elseif ( $_GET['cond22']==="1" )
     echo "<p class = st >सम्माननोत्सञ्जनाचार्यकरणज्ञानभृतिविगणनेषु नियः (१.३.३६) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* vRttisargatAyaneSu kramaH (1.3.38) and anupasargAdvA (1.3.43) */
 elseif ( $_GET['cond24']==="1" && $first==="kramu!")
@@ -399,7 +396,7 @@ elseif ( $_GET['cond24']==="1" && $first==="kramu!")
     echo "<p class = st >वृत्तिसर्गतायनेषु क्रमः (१.३.३८) तथा अनुपसर्गाद्वा (१.३.४३) :</p>\n";
     echo "<p class = hn >वैभाषिकं आत्मनेपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $ubhayapada=1;
+    $verbpada="u";
 }
 /* upaparAbhyAm (1.3.39) */
 elseif ( $_GET['cond24']==="1" )
@@ -410,7 +407,7 @@ elseif ( $_GET['cond24']==="1" )
     echo "<p class = st >उपपराभ्याम्‌ (१.३.३९) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* AGa udgamane (1.3.40) */
 elseif ( $_GET['cond25']==="1")
@@ -421,7 +418,7 @@ elseif ( $_GET['cond25']==="1")
     echo "<p class = st >आङ उद्गमने (१.३.४०) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* veH pAdaviharaNe (1.3.41) */
 elseif ( $_GET['cond26']==="1")
@@ -432,7 +429,7 @@ elseif ( $_GET['cond26']==="1")
     echo "<p class = st >वेः पादविहरणे (१.३.४१) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* propAbhyAM samarthAbhyAm (1.3.42) */
 elseif ( $_GET['cond31']==="1")
@@ -443,7 +440,7 @@ elseif ( $_GET['cond31']==="1")
     echo "<p class = st >प्रोपाभ्यां समर्थाभ्याम्‌ (१.३.४२) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* apahnave jJaH (1.3.44) */
 elseif ( $_GET['cond27']==="1")
@@ -454,7 +451,7 @@ elseif ( $_GET['cond27']==="1")
     echo "<p class = st >अपह्नवे ज्ञः (१.३.४४) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* akarmakAcca (1.3.45) */
 elseif ( $_GET['cond27']==="2")
@@ -465,7 +462,7 @@ elseif ( $_GET['cond27']==="2")
     echo "<p class = st >अकर्मकाच्च (१.३.४५) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* sampratibhyAmanAdhyAne (1.3.46) */
 elseif ( $_GET['cond28']==="1")
@@ -476,7 +473,7 @@ elseif ( $_GET['cond28']==="1")
     echo "<p class = st >सम्प्रतिभ्यामनाध्याने (१.३.४६) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* bhAsanopasaMbhASAjJAnayatnavimatyupanimantraNeSu vadaH (1.3.47) */
 elseif ( $_GET['cond29']==="1")
@@ -487,7 +484,7 @@ elseif ( $_GET['cond29']==="1")
     echo "<p class = st >भासनोपसंभाषाज्ञानयत्नविमत्युपनिमन्त्रणेषु वदः (१.३.४७) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* vyaktavAcAM samuccAraNe (1.3.48) */
 elseif ( $_GET['cond29']==="2")
@@ -498,7 +495,7 @@ elseif ( $_GET['cond29']==="2")
     echo "<p class = st >व्यक्तवाचां समुच्चारणे (१.३.४८) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* vibhASA vipralApe (1.3.50) */
 elseif ( $_GET['cond29']==="3" )
@@ -509,7 +506,7 @@ elseif ( $_GET['cond29']==="3" )
     echo "<p class = st >विभाषा विप्रलापे (१.३.५०) :</p>\n";
     echo "<p class = hn >वैभाषिकं आत्मनेपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* anorakarmakAt (1.3.49) */
 elseif ( $_GET['cond30']==="1")
@@ -520,7 +517,7 @@ elseif ( $_GET['cond30']==="1")
     echo "<p class = st >अनोरकर्मकात्‌ (१.३.४९) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* samaH pratijJAne (1.3.52) */
 elseif ( $_GET['cond32']==="1")
@@ -531,7 +528,7 @@ elseif ( $_GET['cond32']==="1")
     echo "<p class = st >समः प्रतिज्ञाने (१.३.५२) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* udazcaraH sakarmakAt (1.3.53) */
 elseif ( $_GET['cond33']==="1")
@@ -542,7 +539,7 @@ elseif ( $_GET['cond33']==="1")
     echo "<p class = st >उदश्चरः सकर्मकात्‌ (१.३.५३) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* samastRtIyAyuktAt (1.3.54) */
 elseif ( $_GET['cond34']==="1")
@@ -553,7 +550,7 @@ elseif ( $_GET['cond34']==="1")
     echo "<p class = st >समस्तृतीयायुक्तात्‌ (१.३.५४) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* dANazca sA ceccaturthyarthe (1.3.55) */
 elseif ( $_GET['cond35']==="1")
@@ -564,7 +561,7 @@ elseif ( $_GET['cond35']==="1")
     echo "<p class = st >दाणश्च सा चेच्चतुर्थ्यर्थे (१.३.५५) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* upAdyamaH svakaraNe (1.3.56) */
 elseif ( $_GET['cond36']==="1")
@@ -575,7 +572,7 @@ elseif ( $_GET['cond36']==="1")
     echo "<p class = st >उपाद्यमः स्वकरणे (१.३.५६) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* nAnorjJaH (1.3.58) */
 elseif ( $first==="jYA" && $us==="anu" && $sanAdi==="san")
@@ -586,7 +583,7 @@ elseif ( $first==="jYA" && $us==="anu" && $sanAdi==="san")
     echo "<p class = st >नानोर्ज्ञः (१.३.५८) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेण परस्मैपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $parasmaipada=1;
+    $verbpada="p";
 }
 /* pratyAGbhyAM zruvaH (1.3.59) */
 elseif ( in_array($us,array("prati","A")) && $first==="Sru" && $sanAdi==="san")
@@ -597,7 +594,7 @@ elseif ( in_array($us,array("prati","A")) && $first==="Sru" && $sanAdi==="san")
     echo "<p class = st >प्रत्याङ्भ्यां श्रुवः (१.३.५९) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेण परस्मैपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $parasmaipada=1;
+    $verbpada="p";
 }
 /* jJAzrusmRdRzAM sanaH (1.3.57) */
 elseif ( $_GET['cond37']==="1")
@@ -608,7 +605,7 @@ elseif ( $_GET['cond37']==="1")
     echo "<p class = st >ज्ञाश्रुस्मृदृशां सनः (१.३.५७) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* zadeH zitaH (1.3.60) */
 // I have taken these five lakAras because they have vikaraNa pratyaya 'zap' which qualifies for this sUtra.
@@ -620,7 +617,7 @@ elseif ( in_array($first,array("Sadx!")) && in_array($lakAra,array("law","low","
     echo "<p class = st >शदेः शितः (१.३.६०) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेण परस्मैपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $parasmaipada=1;
+    $verbpada="p";
 }
 /* mriyaterluGliGozca (1.3.61) */
 elseif ( in_array($first,array("mfN")) && in_array($lakAra,array("law","low","laN","viDiliN","sArvaDAtukalew","ASIrliN","luN")))
@@ -631,7 +628,7 @@ elseif ( in_array($first,array("mfN")) && in_array($lakAra,array("law","low","la
     echo "<p class = st >म्रियतेर्लुङ्लिङोश्च (१.३.६१) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेण परस्मैपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $parasmaipada=1;
+    $verbpada="p";
 }
 /* pUrvavatsanaH (1.3.62) */
 // Pending. san is not taught yet. So difficult to code right now. san will be treated later on.
@@ -648,7 +645,7 @@ elseif ( in_array($first,array("kzRu")) && $us==="sam")
     echo "<p class = st >समः क्ष्णुवः (१.३.६५) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* bhujo'navane (1.3.66) */
 elseif ( $_GET['cond38']==="1")
@@ -659,7 +656,7 @@ elseif ( $_GET['cond38']==="1")
     echo "<p class = st >भुजोऽनवने (१.३.६६) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* bhIsmyorhetubhaye (1.3.68) */
 elseif ( $_GET['cond39']==="1")
@@ -670,7 +667,7 @@ elseif ( $_GET['cond39']==="1")
     echo "<p class = st >भीस्मयोर्हेतुभये (१.३.६८) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* gRdhivaJcyoH pralambhane (1.3.69) */
 elseif ( $_GET['cond40']==="1")
@@ -681,7 +678,7 @@ elseif ( $_GET['cond40']==="1")
     echo "<p class = st >गृधिवञ्च्योः प्रलम्भने (१.३.६९) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* liyaH sammAnanazAlInIkaraNayozca (1.3.70) */
 elseif ( $_GET['cond41']==="1")
@@ -692,7 +689,7 @@ elseif ( $_GET['cond41']==="1")
     echo "<p class = st >लियः सम्माननशालीनीकरणयोश्च (१.३.७०) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* mithyopapadAt kRJo'bhyAse (1.3.71) */
 elseif ( $_GET['cond42']==="1")
@@ -703,7 +700,7 @@ elseif ( $_GET['cond42']==="1")
     echo "<p class = st >मिथ्योपपदात्‌ कृञोऽभ्यासे (१.३.७१) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* nervizaH (1.3.47), parivyavebhyaH kriyaH (1.3.18), viparAbhyAM jeH (1.3.19), krIDo'nusaMparibhyazca (1.3.21), samavaparivibhyaH sthaH (1.3.22), udvibhyAM tapaH (1.3.27), AGo yamahanaH (1.3.28), samo gamyRcCipracCisvarAyartishruvidibhyaH (1.3.29), nisamupavibhyo hvaH (1.3.30), avAdgraH (1.3.51), jJAzRsmRdRzAM sanaH (1.3.57) */
 elseif ( in_array($us.$first,$toatmane) )
@@ -720,7 +717,7 @@ elseif ( in_array($us.$first,$toatmane) )
             echo "<hr>\n";                    
         }
     }
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* vyAGparibhyo ramaH (1.3.83) */
 elseif ( ends(array($first),array("ramu!"),2) && in_array($us,array("vi","A","pari",)) && $vAcya==="kartR")
@@ -731,7 +728,7 @@ elseif ( ends(array($first),array("ramu!"),2) && in_array($us,array("vi","A","pa
     echo "<p class = st >व्याङ्परिभ्यो रमः (१.३.८३) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेण परस्मैपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $parasmaipada=1;
+    $verbpada="p";
 }
 /* upAcca (1.3.84) */
 elseif ( $_GET['cond44']==="2")
@@ -742,7 +739,7 @@ elseif ( $_GET['cond44']==="2")
     echo "<p class = st >उपाच्च (१.३.८४) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेण परस्मैपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $parasmaipada=1;
+    $verbpada="p";
 }
 /* vibhASA'karmakAt (1.3.74) */
 elseif ( $_GET['cond44']==='1')
@@ -753,7 +750,7 @@ elseif ( $_GET['cond44']==='1')
     echo "<p class = st >विभाषाऽकर्मकात्‌ (१.३.७४) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेण वैभाषिकं परस्मैपदं विधीयते ।</p>\n";
     echo "<hr>\n";
-    $ubhayapada=1;
+    $verbpada="u";
 }
 /* Nicazca (1.3.74) */
 elseif ( $sanAdi==="Ric")
@@ -764,7 +761,7 @@ elseif ( $sanAdi==="Ric")
     echo "<p class = st >णिचश्चः (१.३.७४) :</p>\n";
     echo "<p class = hn >क्रिया का फल जब कर्ता को मिलता है, तब इस धातु से आत्ममनेपद होता है । अन्यथा परस्मैपद होता है । विभाषोपपदेन प्रतीयमाने (१.३.७७) से यदि उपपद से कर्त्रभिप्राय क्रियाफल प्रतीयमान है तो आत्मनेपद विभाषा होता है ।</p>\n";
     echo "<hr>\n";
-    $ubhayapada=1;
+    $verbpada="u";
 }
 /* AkusmAdAtmanepadinaH (dhAtupATha) */
 elseif ( $verbset==='curAdi' && ends(array($first),$AkusmIya,4) )
@@ -773,7 +770,7 @@ elseif ( $verbset==='curAdi' && ends(array($first),$AkusmIya,4) )
     echo "<p class = st >By AkusmAdAtmanepadinaH (dhAtupAThaH) :</p>\n"; 
     echo "<p class = st >आकुस्मादात्मनेपदिनः (धातुपाठः) :</p>\n";
     echo "<hr>\n";
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* AkusmAdAtmanepadinaH (dhAtupATha) */
 elseif ( $verbset==="none"  && ends(array($first),$AkusmIya,4))
@@ -782,7 +779,7 @@ elseif ( $verbset==="none"  && ends(array($first),$AkusmIya,4))
     echo "<p class = st >By AkusmAdAtmanepadinaH (dhAtupAThaH) :</p>\n"; 
     echo "<p class = st >आकुस्मादात्मनेपदिनः (धातुपाठः) :</p>\n";
     echo "<hr>\n";
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* AgarvAdAtmanepadinaH (dhAtupATha) */
 elseif ( $verbset==='curAdi' && ends(array($first),$AgarvIya,4) )
@@ -791,7 +788,7 @@ elseif ( $verbset==='curAdi' && ends(array($first),$AgarvIya,4) )
     echo "<p class = st >By AgarvAdAtmanepadinaH (dhAtupATha) :</p>\n"; 
     echo "<p class = st >आगर्वादात्मनेपदिनः (धातुपाठः) :</p>\n";
     echo "<hr>\n";
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* AgarvAdAtmanepadinaH (dhAtupATha) */
 elseif ( $verbset==="none"  && ends(array($first),$AgarvIya,4))
@@ -800,7 +797,7 @@ elseif ( $verbset==="none"  && ends(array($first),$AgarvIya,4))
     echo "<p class = st >By AgarvAdAtmanepadinaH (dhAtupATha) :</p>\n"; 
     echo "<p class = st >आगर्वादात्मनेपदिनः (धातुपाठः) :</p>\n";
     echo "<hr>\n";
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* Nicazca (1.3.74) */
 elseif ( $verbset==='curAdi' )
@@ -811,7 +808,7 @@ elseif ( $verbset==='curAdi' )
     echo "<p class = st >णिचश्चः (१.३.७४) :</p>\n";
     echo "<p class = hn >क्रिया का फल जब कर्ता को मिलता है, तब इस धातु से आत्ममनेपद होता है । अन्यथा परस्मैपद होता है । विभाषोपपदेन प्रतीयमाने (१.३.७७) से यदि उपपद से कर्त्रभिप्राय क्रियाफल प्रतीयमान है तो आत्मनेपद विभाषा होता है ।</p>\n";
     echo "<hr>\n";
-    $ubhayapada=1;
+    $verbpada="u";
 }
 /* Nicazca (1.3.74) */
 elseif ( ends(array($first),$curAdi,4) && $verbset==="none" )
@@ -822,7 +819,7 @@ elseif ( ends(array($first),$curAdi,4) && $verbset==="none" )
     echo "<p class = st >णिचश्चः (१.३.७४) :</p>\n";
     echo "<p class = hn >क्रिया का फल जब कर्ता को मिलता है, तब इस धातु से आत्ममनेपद होता है । अन्यथा परस्मैपद होता है । विभाषोपपदेन प्रतीयमाने (१.३.७७) से यदि उपपद से कर्त्रभिप्राय क्रियाफल प्रतीयमान है तो आत्मनेपद विभाषा होता है ।</p>\n";
     echo "<hr>\n";
-    $ubhayapada=1;
+    $verbpada="u";
 }
 /* dyudbhyo luGi (1.3.91) */
 elseif ( ends(array($first),array("dyuta!","SvitA!","YimidA!","midA!","YizvidA!","zvidA!","svidA!","YikzvidA!","kzvidA!","ruca!","Guwa!","ruwa!","luwa!","luWa!","SuBa!","kzuBa!","RaBa!","naBa!","tuBa!","sransu!","sraMsu!","Dvansu!","DvaMsu!","Bransu!","BraMsu!","BranSu!","BraMSu!","sranBu!","sraMBu!","sramBu!","vftu!","vrDu!","SfDu!","syandU!","kfpU!","kxpU!"),4) && $vAcya==="kartR" && $lakAra==="luN")
@@ -833,7 +830,7 @@ elseif ( ends(array($first),array("dyuta!","SvitA!","YimidA!","midA!","YizvidA!"
     echo "<p class = st >द्युद्भ्यो लुङि (१.३.९१) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेण वैभाषिकं परस्मैपदं विधीयते ।</p>\n";
     echo "<hr>\n";
-    $ubhayapada=1;
+    $verbpada="u";
 }
 /* vRdbhyaH syasanoH (1.3.92) */
 // san is pending. lRluToH syAtAsI - got the lakAras from here.
@@ -845,7 +842,7 @@ elseif ( ends(array($first),array("vftu!","vrDu!","SfDu!","syandU!","kfpU!","kxp
     echo "<p class = st >वृद्भ्यः स्यस्यनोः (१.३.९२) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेण वैभाषिकं परस्मैपदं विधीयते ।</p>\n";
     echo "<hr>\n";
-    $ubhayapada=1;
+    $verbpada="u";
 }
 /* luTi ca klRpaH (1.3.93) */
 elseif ( ends(array($first),array("kxpU!"),4) && $vAcya==="kartR" && in_array($lakAra,array("luw")))
@@ -856,7 +853,7 @@ elseif ( ends(array($first),array("kxpU!"),4) && $vAcya==="kartR" && in_array($l
     echo "<p class = st >लुटि च कॢपः (१.३.९३) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेण वैभाषिकं परस्मैपदं विधीयते ।</p>\n";
     echo "<hr>\n";
-    $ubhayapada=1;
+    $verbpada="u";
 }
 /* AziSi nAtha iti vAcyam (vA) */
 elseif ( ends(array($first),array("nATf!"),4) )
@@ -867,7 +864,7 @@ elseif ( ends(array($first),array("nATf!"),4) )
     echo "<p class = st >आशिषि नाथ इति वाच्यम्‌ (वा) :</p>\n";
     echo "<p class = hn >अस्याशिश्येवात्मनेपदं स्यात्‌ । </p>\n";
     echo "<hr>\n";
-    $ubhayapada=1;
+    $verbpada="u";
 }
 /* anudAttaGita Atmanepadam (1.3.12) */
 elseif ( (ends(array($first),$anudAttetverbs,4) || ends(array($first),$Gitverbs,4) || ends(array($first),array("fta!"),4) ) && scrape1($number,8,5,1)===array("A") && $pada==="pratyaya" && $lakAra!=="" && $_GET['cond49']!=="1" ) // the exclusion is useful for the sanAdi pratyayas e.g. paRAya has parasmai, paRa! has Atmanepadatva. See http://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.1.28.htm for clarification. Second addition is for RterIyaG, Atmanepada because of IyaG pratyaya.
@@ -878,7 +875,7 @@ elseif ( (ends(array($first),$anudAttetverbs,4) || ends(array($first),$Gitverbs,
     echo "<p class = st >अनुदात्तङित आत्मनेपदम्‌ (१.३.१२) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
     echo "<hr>\n";
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* vibhASopapadena pratIyamAne (1.3.77) */
 // This sUtra is intervowen in 1.3.72 to 1.3.76 as optional form.
@@ -891,7 +888,7 @@ elseif ( $first==="vada!" && $us==="apa" && $pada==="pratyaya" && $lakAra!=="")
     echo "<p class = st >अपाद्वदः (१.३.७३) :</p>\n";
     echo "<p class = hn >क्रिया का फल जब कर्ता को मिलता है, तब इस धातु से आत्ममनेपद होता है । अन्यथा परस्मैपद होता है । विभाषोपपदेन प्रतीयमाने (१.३.७७) से यदि उपपद से कर्त्रभिप्राय क्रियाफल प्रतीयमान है तो आत्मनेपद विभाषा होता है ।</p>\n";
     echo "<hr>\n";
-    $ubhayapada=1;
+    $verbpada="u";
 }
 /* samudAGbhyo yamo'granthe (1.3.75) */
 elseif ( $_GET['cond43']==="2" && $pada==="pratyaya" && $lakAra!=="")
@@ -902,7 +899,7 @@ elseif ( $_GET['cond43']==="2" && $pada==="pratyaya" && $lakAra!=="")
     echo "<p class = st >समुदाङ्भ्यो यमोऽग्रन्थे (१.३.७५) :</p>\n";
     echo "<p class = hn >क्रिया का फल जब कर्ता को मिलता है, तब इस धातु से आत्ममनेपद होता है । अन्यथा परस्मैपद होता है । विभाषोपपदेन प्रतीयमाने (१.३.७७) से यदि उपपद से कर्त्रभिप्राय क्रियाफल प्रतीयमान है तो आत्मनेपद विभाषा होता है । </p>\n";
     echo "<hr>\n";
-    $ubhayapada=1;
+    $verbpada="u";
 }
 /* anupasargAjjJaH (1.3.76) */
 elseif ( ends(array($first),array("jYA"),2) && $pada==="pratyaya" && $lakAra!=="")
@@ -913,7 +910,7 @@ elseif ( ends(array($first),array("jYA"),2) && $pada==="pratyaya" && $lakAra!=="
     echo "<p class = st >अनुपसर्गाज्ज्ञः (१.३.७६) :</p>\n";
     echo "<p class = hn >क्रिया का फल जब कर्ता को मिलता है, तब इस धातु से आत्ममनेपद होता है । अन्यथा परस्मैपद होता है । विभाषोपपदेन प्रतीयमाने (१.३.७७) से यदि उपपद से कर्त्रभिप्राय क्रियाफल प्रतीयमान है तो आत्मनेपद विभाषा होता है । </p>\n";
     echo "<hr>\n";
-    $ubhayapada=1;
+    $verbpada="u";
 }
 /* abhipratyatibhyaH kSipaH (1.3.80) */
 elseif ( ends(array($first),array("kzipa!"),2) && in_array($us,array("aBi","prati","ati")) && $vAcya==="kartR")
@@ -924,7 +921,7 @@ elseif ( ends(array($first),array("kzipa!"),2) && in_array($us,array("aBi","prat
     echo "<p class = st >अभिप्रत्यतिभ्यः क्षिपः (१.३.८०) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेण परस्मैपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $parasmaipada=1;
+    $verbpada="p";
 }
 /* prAdvahaH (1.3.81) */
 elseif ( ends(array($first),array("vaha!"),2) && $us==="pra" && $vAcya==="kartR")
@@ -935,7 +932,7 @@ elseif ( ends(array($first),array("vaha!"),2) && $us==="pra" && $vAcya==="kartR"
     echo "<p class = st >प्राद्वहः (१.३.८१) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेण परस्मैपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $parasmaipada=1;
+    $verbpada="p";
 }
 /* parermRSaH (1.3.82) */
 elseif ( ends(array($first),array("mfza!"),2) && $us==="pari" && $vAcya==="kartR")
@@ -946,7 +943,7 @@ elseif ( ends(array($first),array("mfza!"),2) && $us==="pari" && $vAcya==="kartR
     echo "<p class = st >परेर्मृषः (१.३.८२) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेण परस्मैपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $parasmaipada=1;
+    $verbpada="p";
 }
 /* budhayudhanazajaneGprudrusrubhyo NeH (1.3.86) */
 // NeH coding pending.
@@ -958,7 +955,7 @@ elseif ( ends(array($first),array("buDa!","yuDa!","naSa!","iN","pru","dru","sru"
     echo "<p class = st >बुधयुधनशजनेङ्प्रुद्रुस्रुभ्यो णेः (१.३.८६) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेण परस्मैपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $parasmaipada=1;
+    $verbpada="p";
 }
 /* na pAdamyAGyamAGyasaparimuharucinRtivadavasaH (1.3.89) */
 elseif ( ends(array($us.$first),array("pA","Ayama!","damu!","Ayasu!","parimuha!","ruca!","nftI!","vada!","vasa!"),4) && $vAcya==="kartR" && in_array($sanAdi,array("Ric","RiN")))
@@ -969,7 +966,7 @@ elseif ( ends(array($us.$first),array("pA","Ayama!","damu!","Ayasu!","parimuha!"
     echo "<p class = st >पादम्याङ्‍यमाङ्‍यसपरिमुहरुचिनृतिवदवसः (१.३.८९) तथा णिचश्च (१.३.७४) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* vA kyaSaH (1.3.90) */
 // right now very coarse way of finding out kyaS. Will have to revisit.
@@ -981,7 +978,7 @@ elseif ( ends(array($first),array("Aya"),1) && $pada==="pratyaya" && $lakAra!=="
     echo "<p class = st >वा क्यषः (१.३.९०) :</p>\n";
     echo "<p class = hn >वैभाषिकं परस्मैपदं विधीयते । </p>\n";
     echo "<hr>\n";
-    $ubhayapada=1;
+    $verbpada="u";
 }
 /* nigaraNacalanArthebhyazca (1.3.87) */
 // NeH coding pending.
@@ -993,7 +990,7 @@ elseif ( ends(array($first),array("nigF","aSa!","Buja!","cala!","cupa!","kapi!",
     echo "<p class = st >निगरणचलनार्थेभ्यश्च (१.३.८७) :</p>\n";
     echo "<p class = hn >अनेन सूत्रेण परस्मैपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $parasmaipada=1;
+    $verbpada="p";
 }
 /* aNAvakarmakAccittavatkartRkAt (1.3.88) */
 // Pending. Ni etc are very confusing at this stage. Will think later.
@@ -1007,7 +1004,7 @@ elseif ( ends(array($first),$ubhaya,4) && $pada==="pratyaya" && $lakAra!=="")
     echo "<p class = st >स्वरितञितः कर्त्रभिप्राये क्रियाफले (१.३.७२) :</p>\n";
     echo "<p class = hn >क्रिया का फल जब कर्ता को मिलता है, तब इन धातुओं से आत्ममनेपद होता है । अन्यथा परस्मैपद होता है । विभाषोपपदेन प्रतीयमाने (१.३.७७) से यदि उपपद से कर्त्रभिप्राय क्रियाफल प्रतीयमान है तो आत्मनेपद विभाषा होता है । </p>\n";
     echo "<hr>\n";
-    $ubhayapada=1;
+    $verbpada="u";
 }
 /* In case the user has selected some gaNa, the pada has to correspond to that gaNa */
 elseif($verbset!=="none")
@@ -1015,7 +1012,7 @@ elseif($verbset!=="none")
     if (verb_padafinder($first)===array("u"))
     {
         $suffix=$tiG;
-        $ubhayapada=1;
+        $verbpada="u";
     echo "<p class = st >ubhayapadI :</p>\n"; 
     echo "<p class = st >उभयपदी :</p>\n";
     echo "<hr>\n";
@@ -1023,7 +1020,7 @@ elseif($verbset!=="none")
     elseif (verb_padafinder($first)===array("A"))
     {
         $suffix=$taG;
-        $atmanepada=1;
+        $verbpada="A";
     echo "<p class = st >AtmanepadI :</p>\n"; 
     echo "<p class = st >आत्मनेपदी :</p>\n";
     echo "<hr>\n";
@@ -1031,7 +1028,7 @@ elseif($verbset!=="none")
     elseif (verb_padafinder($first)===array("pa"))
     {
         $suffix=$tis;
-        $parasmaipada=1;
+        $verbpada="p";
     echo "<p class = st >parasmaipadI :</p>\n"; 
     echo "<p class = st >परस्मैपदी :</p>\n";
     echo "<hr>\n";
@@ -1046,7 +1043,7 @@ elseif ( $pada==="pratyaya" && $lakAra!=="")
     echo "<p class = st >शेषात्‌ कर्तरि परस्मैपदम्‌ (१.३.७९) :</p>\n";
             echo "<p class = hn >अनेन सूत्रेण परस्मैपदं विधीयते । </p>\n";
     echo "<hr>\n";
-    $parasmaipada=1;
+    $verbpada="p";
 }
 /* idAgama decision */
     //$verb_without_anubandha=scrape($first,0,2,1)[0];  // ejf
@@ -1092,7 +1089,7 @@ if (in_array($lakAra,array("lfw","lfN","luw","ASIrliN","luN","liw","ArDaDAtukale
         echo "<hr>\n";
     }
     /* gameriT parasmaipadeSu (7.2.58) */
-    elseif ( ends(array($fo),array("gamx!",),4) && in_array($lakAra,array("lfw","lfN")) && $parasmaipada===1)
+    elseif ( ends(array($fo),array("gamx!",),4) && in_array($lakAra,array("lfw","lfN")) && $verbpada==="p")
     {
         $id_dhAtu="sew";
         echo "<p class = st >By gameriT parasmaipadeSu (".link_sutra("7.2.58").") :</p>\n"; 
@@ -1104,7 +1101,7 @@ if (in_array($lakAra,array("lfw","lfN","luw","ASIrliN","luN","liw","ArDaDAtukale
     /* na vRdbhyazcaturbhyaH (7.2.59) */
     elseif ( ends(array($fo),array("vftu!","vfDu!","SfDu!","syandU!",),4) && in_array($lakAra,array("lfw","lfN")) )
     {
-		$ubhayapada=1;
+		$verbpada="u";
         $id_dhAtu="aniw";
 		$suffix = $tiG;
         echo "<p class = st >By na vRdbhyazcaturbhyaH (".link_sutra("7.2.59").") :</p>\n"; 
@@ -1115,7 +1112,7 @@ if (in_array($lakAra,array("lfw","lfN","luw","ASIrliN","luN","liw","ArDaDAtukale
     }
     /* tAsi ca klRpaH (7.2.60) */
     // sakArAdi. tAsi done elsewhere.
-    elseif ( ends(array($fo),array("kxpa!",),4) && in_array($lakAra,array("lfw","lfN")) && $parasmaipada===1)
+    elseif ( ends(array($fo),array("kxpa!",),4) && in_array($lakAra,array("lfw","lfN")) && $verbpada==="p")
     {
         $id_dhAtu="aniw";
         echo "<p class = st >By tAsi ca klRpaH (".link_sutra("7.2.60").") :</p>\n"; 
@@ -1265,7 +1262,7 @@ display(0);
 /* na vRdbhyazcaturbhyaH (7.2.59) */
 elseif ( ends(array($fo),array("vftu!","vfDu!","SfDu!","syandU!",),4) && in_array($lakAra,array("lfw","lfN")) && in_array($so,$taG))
 {
-	$atmanepada=1;
+	$verbpada="A";
 	$id_dhAtu="sew";
 	echo "<p class = sa >By na vRdbhyazcaturbhyaH (".link_sutra("7.2.59").") :</p>\n"; 
 	echo "<p class = hn >Other than parasmaipada, this dhAtu takes iDAgama.</p>\n"; 
@@ -1513,7 +1510,7 @@ if ( ends(array($fo),array("fta!"),4) && $pada==="pratyaya" && $lakAra!=="")
     echo "<p class = sa >ऋतेरीयङ्‌ (३.१.२९) :</p>\n";
     display(0);
     $sanAdi="IyaN";
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* kamerNiG (3.1.30) */
 if ( ends(array($fo),array("kamu!"),4) && $pada==="pratyaya" && $lakAra!=="")
@@ -1523,7 +1520,7 @@ if ( ends(array($fo),array("kamu!"),4) && $pada==="pratyaya" && $lakAra!=="")
     echo "<p class = sa >कमेर्णिङ्‌ (३.१.३०) :</p>\n";
     display(0);
     $sanAdi="RiN";
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* AyAdaya ArdhadhAtuke vA (3.1.31) */
 if ( in_array($sanAdi,array("Aya","IyaN","RiN")) && $lakAra!=="" && $ardhadhatuka===1)
@@ -1532,7 +1529,7 @@ if ( in_array($sanAdi,array("Aya","IyaN","RiN")) && $lakAra!=="" && $ardhadhatuk
     echo "<p class = sa >By AyAdaya ArdhadhAtuke vA (".link_sutra("3.1.31").") :</p>\n"; 
     echo "<p class = sa >आयादय आर्धधातुके वा (३.१.३१) :</p>\n";
     display(0);
-    $atmanepada=1;
+    $verbpada="A";
 }
 /* Displaying general information about lakAras */
 /* laT vartamAne (3.2.123) */
@@ -1592,14 +1589,14 @@ if (in_array($so,$tiG) && $pada==="pratyaya" && $lakAra!=="")
     display(0);
 }
 /* laH parasmaipadam (1.4.99) */
-if ( ($parasmaipada===1 || ($ubhayapada===1 && in_array($so,$tis))) && $lakAra!=="")
+if ( ($verbpada==="p" || ($verbpada==="u" && in_array($so,$tis))) && $lakAra!=="")
 {
     echo "<p class = pa >laH parasmaipadam (".link_sutra("1.4.99").") :</p>\n"; 
     echo "<p class = pa >लः परस्मैपदम्‌ (१.४.९९) :</p>\n";
     display(0);
 }
 /* taGAnAvAtmanepadam (1.4.100) */
-if ( ( $atmanepada===1 || ($ubhayapada===1 && in_array($so,$taG)) )&& $pada==="pratyaya" && $lakAra!=="")
+if ( ( $verbpada==="A" || ($verbpada==="u" && in_array($so,$taG)) )&& $pada==="pratyaya" && $lakAra!=="")
 {
     echo "<p class = pa >taGAnAvAtmanepadam (".link_sutra("1.4.100").") :</p>\n"; 
     echo "<p class = pa >तङानावात्मनेपदम्‌ (१.४.१००) :</p>\n";
@@ -4044,7 +4041,6 @@ if ($lakAra==='luN')
 	}
 	$text = one(array("+a+"),array("+a"),0);
 }
-print_r($text);
 /* ato lopaH (6.4.48) */
 //if ( sub(array("a+"),$vikaraNa_ArdhadhAtuka_pratyayas,$tiG1,0) || pr2(array("a+"),$ArdhadhAtuka_pratyayas,blank(0),array("+"),$ArdhadhAtuka_pratyayas,blank(0),$text)!==$text )
 if ( in_array($fo,$curAdi_adanta) && $ardhadhatuka===1 && ($verbset==="none"||$verbset==="curAdi"))
@@ -13329,6 +13325,16 @@ if (arr($text,'/[m][+]/') && $dhatu===1 && $pada==="pada")
     $text = one(array("san+",),array("sam+",),0); // upasarga sam wrongly converted to san. So bringing it back. Pending to make it specific to start.
     echo " <p class = sa >By mo no dhAtoH (".link_sutra("8.2.64").") :</p>\n";
     echo " <p class = sa >मो नो धातोः (८.२.६४) :</p>\n";
+    display(0);
+}
+print_r($text);
+/* mvozca (8.2.65) */
+if (arr($text,'/[m][+]/') && $dhatu===1 && in_array($so,$tiG) )
+{
+    $text = one(array("m+",),array("n+",),0);
+    $text = one(array("san+",),array("sam+",),0); // upasarga sam wrongly converted to san. So bringing it back. Pending to make it specific to start.
+    echo " <p class = sa >By mvozca (".link_sutra("8.2.65").") :</p>\n";
+    echo " <p class = sa >म्वोश्च (८.२.६५) :</p>\n";
     display(0);
 }
 /* rvorupadhAyA dIrgha ikaH (8.2.76) */
