@@ -997,11 +997,11 @@ if($_POST['step']==='11' && ends($arrWord,array("takzU!"),4) )
             $html .= '<input required type="radio" value="2" name="cond45" > अन्य ';
             $html .= '</div>';            
 }
-if($_POST['step']==='11' && ends($arrWord,$nonuniqueverbs,2) )
+if(($_POST['step']==='11' || $_POST['step']==='12' || $_POST['step']==='13') && ends($arrWord,$nonuniqueverbs,2) )
 {
     verb_meaning_gana_number($word);
 }
-elseif ($_POST['step']==='11' && ends($arrWord,$allverbs,2) )
+elseif (($_POST['step']==='11' || $_POST['step']==='12' || $_POST['step']==='13') && ends($arrWord,$allverbs,2) )
 {
 	$verbset = scrape1($word,0,9,1);
 	$number = scrape($word,0,8,1,"",$verbset[0],9);

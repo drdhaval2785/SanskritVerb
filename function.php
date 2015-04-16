@@ -302,6 +302,8 @@ $noaccentsanubandhaslp=array_map('trim',$noaccentsanubandha);
 $noaccentwithoutanusvar=array_map('removeanusvar',$noaccentsanubandhaslp);
 $noaccentniranubandhaslp=array_map('verbprocess',$noaccentsanubandhaslp);*/
 
+// Verb pada by sUtra number database
+$verb_sutra_pada=array("1.3.13:A","1.3.15:p","1.3.16:p","1.3.14:A","1.3.20:A","1.3.23:A","vA903:A","1.3.24:A","1.3.25:A","1.3.26:A","1.3.31:A","1.3.79:p","1.3.32:A","1.3.33:A","1.3.34:A","1.3.35:A","1.3.37:A","1.3.36:A","1.3.43:u","1.3.39:A","1.3.40:A","1.3.41:A","1.3.42:A","1.3.44:A","1.3.45:A","1.3.46:A","1.3.47:A","1.3.50:u","1.3.49:A","1.3.52:A","1.3.53:A","1.3.54:A","1.3.55:A","1.3.56:A","1.3.58:p","1.3.59:p","1.3.57:A","1.3.60:p","1.3.61:p","1.3.65:A","1.3.66:A","1.3.68:A","1.3.69:A","1.3.70:A","1.3.71:A","1.3.18:A","1.3.19:A","1.3.21:A","1.3.22:A","1.3.27:A","1.3.28:A","1.3.29:A","1.3.30:A","1.3.51:A","1.3.57:A","1.3.83:p","1.3.84:p","1.3.74:p","1.3.91:u","1.3.92:u","1.3.93:A","1.3.12:A","1.3.73:u","1.3.75:u","1.3.76:u","1.3.80:p","1.3.81:p","1.3.82:p","1.3.86:p","1.3.89:A","1.3.90:u","1.3.87:p","1.3.72:u",);
 /* changing the pada of verb in case of upasargas */
 $toatmane=array("niviSa!","parikrIY","vikrIY","avakrIY","viji","parAji","AkrIqf!","anukrIqf!","samkrIqf!","parikrIqf!","samsTA","avasTA","prasTA","visTA","udtapa!","vitapa!","Ayama!","Ahana!","samgamx!","samfcCa!","sampracCa!","samsvf","samf","samzru","samvidx!","nihveY","samhveY","upahveY","vihveY","avagf","jijYA","SuSru","susmf","didfSir",);
 $sutraenglish=array("nerviSaH (1.3.17)","parivyavebhyaH kriyaH (1.3.18)","parivyavebhyaH kriyaH (1.3.18)","parivyavebhyaH kriyaH (1.3.18)","viparAbhyAM jeH (1.3.19)","viparAbhyAM jeH (1.3.19)","krIDo'nusaMparibhyazca (1.3.21)","krIDo'nusaMparibhyazca (1.3.21)","krIDo'nusaMparibhyazca (1.3.21)","krIDo'nusaMparibhyazca (1.3.21)","samavaparivibhyaH sthaH (1.3.22)","samavaparivibhyaH sthaH (1.3.22)","samavaparivibhyaH sthaH (1.3.22)","samavaparivibhyaH sthaH (1.3.22)","udvibhyAM tapaH (1.3.27)","udvibhyAM tapaH (1.3.27)","AGo yamahanaH (1.3.28)","AGo yamahanaH (1.3.28)","samo gamyRcCipracCisvarAyartishruvidibhyaH (1.3.29)","samo gamyRcCipracCisvarAyartishruvidibhyaH (1.3.29)","samo gamyRcCipracCisvarAyartishruvidibhyaH (1.3.29)","samo gamyRcCipracCisvarAyartishruvidibhyaH (1.3.29)","samo gamyRcCipracCisvarAyartishruvidibhyaH (1.3.29)","samo gamyRcCipracCisvarAyartishruvidibhyaH (1.3.29)","samo gamyRcCipracCisvarAyartishruvidibhyaH (1.3.29)","nisamupavibhyo hvaH (1.3.30)","nisamupavibhyo hvaH (1.3.30)","nisamupavibhyo hvaH (1.3.30)","nisamupavibhyo hvaH (1.3.30)","avAdgraH (1.3.51)","jJAzrusmRdRzAM sanaH (1.3.57)","jJAzrusmRdRzAM sanaH (1.3.57)","jJAzrusmRdRzAM sanaH (1.3.57)","jJAzrusmRdRzAM sanaH (1.3.57)",);
@@ -1788,7 +1790,8 @@ function verb_meaning_gana_number1($text)
     $meaning=scrape1($text,0,1,1);
     $verbset=scrape1($text,0,9,1);
     $number=scrape1($text,0,8,1);
-    echo "<p class = st >".$verbaccent[0].' - '.convert($meaning[0]).', '.convert($verbset[0]).' '.$number[0].' '."</p>\n";
+    echo "<p class = st >".toiast($verbaccent[0]).' - '.toiast($meaning[0]).', '.toiast($verbset[0]).' '.$number[0].' '."</p>\n";
+    echo "<p class = st >".$verbaccent[0].' - '.convert($meaning[0]).', '.convert($verbset[0]).' '.convert($number[0]).' '."</p>\n";
     echo "<hr>\n";
 }
 // for display in tiGanta.php in case the user has chosen the gaNa.
@@ -1799,7 +1802,8 @@ function verb_meaning_gana_number2($text)
     $meaning=scrape($text,0,1,1,"",$verbset,9);
     $verbset1=scrape($text,0,9,1,"",$verbset,9);
     $number=scrape($text,0,8,1,"",$verbset,9);
-    echo "<p class = st >".$verbaccent[0].' - '.convert($meaning[0]).', '.convert($verbset1[0]).' '.$number[0].' '."</p>\n";
+    echo "<p class = st >".toiast($verbaccent[0]).' - '.toiast($meaning[0]).', '.toiast($verbset1[0]).' '.$number[0].' '."</p>\n";
+    echo "<p class = st >".$verbaccent[0].' - '.convert($meaning[0]).', '.convert($verbset1[0]).' '.convert($number[0]).' '."</p>\n";
     echo "<hr>\n";
 }
 // for display in tiGanta.php in case the verb is not in our database.
@@ -1817,14 +1821,39 @@ function upasarga_display($text)
     echo "<hr>\n";
 }
 // for deciding verb padas.
-function verb_pada($verb,$sutra,$suffix,$pada)
+function verb_pada($sutra)
 {
 	gui2($sutra);
-    $suffix=$taG;
-    echo "<p class = st >By bhAvakarmaNoH (".link_sutra("1.3.13").") :</p>\n"; 
-    echo "<p class = st >भावकर्मणोः (१.३.१३) :</p>\n";
-    echo "<hr>\n";
-    $atmanepada=1;
+	global $verb_sutra_pada;
+	$matches = array_filter($verb_sutra_pada, function($var) use ($sutra) { return strpos($var,$sutra.":")!==false; });
+	$matches=array_values($matches);
+	$int = explode(':',$matches[0]); // We presume that there would be only one such match.
+	global $verbpada;
+	$verbpada = $int[1];
+	verb_suffixes($verbpada);
+}
+// for deciding suffixes as per the verb padas.
+function verb_suffixes($pada)
+{	
+	global $taG, $tis, $tiG;
+	global $suffix;
+	if ($pada==="A")
+	{
+		$suffix=$taG;
+	}
+	elseif ($pada==="p")
+	{
+		$suffix=$tis;
+	}
+	elseif ($pada==="u")
+	{
+		$suffix=$tiG;
+	}
+	else
+	{
+		echo "Error - verb pada is not decided properly. Check";
+		exit;
+	}		
 }
 // for display in tiGanta.php in case the user has chosen the gaNa.
 function verb_padafinder($text)
@@ -3109,7 +3138,7 @@ function gui($text,$sutra_number,$style,$note)
 // matches function makes the code fast. Earlier we were using a for loop over vdata / ASdata which was very costly. matches function is derived from the answer of Aleks G from http://stackoverflow.com/questions/12315536/search-for-php-array-element-containing-string
 function gui2($sutra_number)
 {
-	$style="sa";
+	$style="st";
 	global $ASdata, $vdata; global $upasarga_joined; global $us; // bringing $text from main php function.
 	if (strpos($sutra_number,'-')===false)
 	{

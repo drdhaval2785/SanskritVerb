@@ -195,6 +195,7 @@ if ( in_array($vAcya,array("karma","bhAva")) && $pada==="pratyaya" && $lakAra!==
     echo "<p class = st >भावकर्मणोः (१.३.१३) :</p>\n";
     echo "<hr>\n";
     $verbpada="A";*/
+	verb_pada('1.3.13');
 }
 /* luTi ca klRpaH (1.3.93) */
 elseif ( $fo==="kfpU!" && ($san===1 || in_array($lakAra,array("lfN","lfw","luw"))))
@@ -506,7 +507,7 @@ elseif ( $_GET['cond29']==="3" )
     echo "<p class = st >विभाषा विप्रलापे (१.३.५०) :</p>\n";
     echo "<p class = hn >वैभाषिकं आत्मनेपदं विधीयते । </p>\n";
     echo "<hr>\n";                    
-    $verbpada="A";
+    $verbpada="u";
 }
 /* anorakarmakAt (1.3.49) */
 elseif ( $_GET['cond30']==="1")
@@ -6367,7 +6368,6 @@ echo "<p class = sa >By hrasvAdaGgAt (".link_sutra("8.2.27").") :</p>\n";
 echo "<p class = sa >ह्रस्वादङ्गात् (८.२.२७) :</p>\n";
 display(0);
 }
-if (ends(array($us),prat('ik'),1)) {echo "yes";}
 /* AdezapratyayayoH (8.3.59) */
 if( in_array($so,$tiG) && (!arr($text,'/[+][s]$/') || $SaHsaH===1 || $sic===1 || $syatAsI===1 || ends(array($us),prat('ik'),1)) && !sub(array("+"),array("yAs"),array("+"),0) && Adezapratyaya($text)!==$text )
 {
@@ -13327,7 +13327,6 @@ if (arr($text,'/[m][+]/') && $dhatu===1 && $pada==="pada")
     echo " <p class = sa >मो नो धातोः (८.२.६४) :</p>\n";
     display(0);
 }
-print_r($text);
 /* mvozca (8.2.65) */
 if (arr($text,'/[m][+]/') && $dhatu===1 && in_array($so,$tiG) )
 {
