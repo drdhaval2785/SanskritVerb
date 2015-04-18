@@ -195,16 +195,17 @@ if ( in_array($vAcya,array("karma","bhAva")) && $pada==="pratyaya" && $lakAra!==
     echo "<p class = st >भावकर्मणोः (१.३.१३) :</p>\n";
     echo "<hr>\n";
     $verbpada="A";*/
-	verb_pada('1.3.13');
+	$verbpada=verb_pada('1.3.13');
 }
 /* luTi ca klRpaH (1.3.93) */
 elseif ( $fo==="kfpU!" && ($san===1 || in_array($lakAra,array("lfN","lfw","luw"))))
 {
-    $suffix=$tiG;
+/*    $suffix=$tiG;
     echo "<p class = st >By luTi ca klRpaH (".link_sutra("1.3.93").") :</p>\n"; 
     echo "<p class = st >लुटि च क्लृपः (१.३.९३) :</p>\n";
     echo "<hr>\n";
-    $verbpada="u";
+    $verbpada="u";*/
+	verb_pada('1.3.93');
 }
 /* na gatihiMsArthebhyH (1.3.15) */
 elseif ( $_GET['cond11_1']==='1') // cond stands for condition. They are taken from user input. For all variables having cond as prefix, details can be seen at ajax requirement.docx.
@@ -1046,6 +1047,9 @@ elseif ( $pada==="pratyaya" && $lakAra!=="")
     echo "<hr>\n";
     $verbpada="p";
 }
+/* Deciding suffixes based on parasmai, Atmane or ubhayapada of verbs. */
+$suffix=verb_suffixes($verbpada);
+
 /* idAgama decision */
     //$verb_without_anubandha=scrape($first,0,2,1)[0];  // ejf
     $temp = scrape1($first,0,2,1); 
@@ -1270,8 +1274,6 @@ elseif ( ends(array($fo),array("vftu!","vfDu!","SfDu!","syandU!",),4) && in_arra
 	echo "<p class = sa >न वृद्भ्यश्चतुर्भ्यः (७.२.५९) :</p>\n";
 	display(0);
 }
-
-
 
 /* tiGzitsArvadhAtukam (3.4.113) */ 
 // for tiG.
