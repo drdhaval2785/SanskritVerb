@@ -2386,6 +2386,7 @@ function caG_ajAdi()
 			echo "<p class = sa >ह्रस्वः (७.४.५९) :</p>\n";
 			display(0);
 		}
+		global $liT_Adeza;
 		/* kuhozcuH (7.4.62) */
 		if (preg_match('/[kKgGNh]/',$parts[0]) ) 
 		{
@@ -2406,6 +2407,7 @@ function caG_ajAdi()
 			echo "<p class = sa >By kuhozcuH (".link_sutra("7.4.62").") :</p>\n"; 
 			echo "<p class = sa >कुहोश्चुः (७.४.६२) :</p>\n";
 			display(0); 
+			$liT_Adeza=1;
 		}
 		/* abhyAse carca (8.4.54) */
 		if (preg_match('/[JBGQDKPCWT]/',$parts[0]) )
@@ -2427,6 +2429,7 @@ function caG_ajAdi()
 			echo "<p class = sa >By abhyAse carca (".link_sutra("8.4.54").") :</p>\n"; 
 			echo "<p class = sa >अभ्यासे चर्चः (८.४.५४) :</p>\n";
 			display(0);            
+			$liT_Adeza=1;
 		}
 		/* abhyAsAcca (7.3.85) */
 		if (in_array($fo,array("hana!")))
@@ -2778,6 +2781,7 @@ function abhyAsa_halAdi()
 			echo "<p class = sa >ह्रस्वः (७.४.५९) :</p>\n";
 			display(0);
 		}
+		global $liT_Adeza;
 		/* kuhozcuH (7.4.62) */
 		if (preg_match('/[kKgGNh]/',$splitvowel[0]) ) 
 		{
@@ -2798,6 +2802,7 @@ function abhyAsa_halAdi()
 			echo "<p class = sa >By kuhozcuH (".link_sutra("7.4.62").") :</p>\n"; 
 			echo "<p class = sa >कुहोश्चुः (७.४.६२) :</p>\n";
 			display(0); 
+			$liT_Adeza=1;
 		}
 		/* abhyAse carca (8.4.54) */
 		if (preg_match('/[JBGQDKPCWT]/',$splitvowel[0]) )
@@ -2819,6 +2824,7 @@ function abhyAsa_halAdi()
 			echo "<p class = sa >By abhyAse carca (".link_sutra("8.4.54").") :</p>\n"; 
 			echo "<p class = sa >अभ्यासे चर्चः (८.४.५४) :</p>\n";
 			display(0);            
+			$liT_Adeza=1;
 		}
 		/* abhyAsAcca (7.3.85) */
 		if (in_array($fo,array("hana!")))

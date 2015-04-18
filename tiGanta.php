@@ -5436,7 +5436,8 @@ if ( sub(array("ja+jar","ba+Bram","ta+tras"),array("+"),blank(0),0) && $lakAra==
     echo "<p class = sa >वा जॄभ्रमुत्रसाम्‌ (६.४.१२४) :</p>\n";
     display(0);
 }
-/* phaNAM ca saptAnAm (6.4.125) */elseif ( sub(array("pa+PaR","ra+rAj","ba+BrAj","ba+BrAS","ba+BlAS","sa+syam","sa+svan","da+Dvan"),array("+"),blank(0),0) && $lakAra==="liw" && !ends(array($so),array("tip","mip"),2) )
+/* phaNAM ca saptAnAm (6.4.125) */
+elseif ( sub(array("pa+PaR","ra+rAj","ba+BrAj","ba+BrAS","ba+BlAS","sa+syam","sa+svan","da+Dvan"),array("+"),blank(0),0) && $lakAra==="liw" && !ends(array($so),array("tip","mip"),2) )
 {
     $text=two(array("pa+PaR","ra+rAj","ba+BrAj","ba+BrAS","ba+BlAS","sa+syam","sa+svan","da+Dvan"),array("+"),array("PeR","rej","Brej","BreS","BleS","syem","sven","Dven"),array("+"),1);
     echo "<p class = sa >By phaNAM ca saptAnAm (".link_sutra("6.4.125").") :</p>\n"; 
@@ -5478,7 +5479,7 @@ elseif ( sub(array("gam","Gan","jan","Gas","Kan"),array("+"),blank(0),0) && in_a
 {
 }
 /* ata ekahalmadhye'nAdezAderliTi (6.4.120) */
-elseif ( arr($text,'/^['.pc('hl').'][a][+]['.pc('hl').'][a]['.pc('hl').'][+]/') && $lakAra==="liw" && !ends(array($so),array("tip","mip"),2) )
+elseif ( arr($text,'/^['.pc('hl').'][a][+]['.pc('hl').'][a]['.pc('hl').'][+]/') && $lakAra==="liw" && !ends(array($so),array("tip","mip"),2) && $liT_Adeza!==1)
 {
     $text=change('/^(['.pc('hl').'][a][+])(['.pc('hl').'])([a])(['.pc('hl').'][+])/','$2e$4');
 	$text=change('/^(['.pc('hl').'])([e])(['.pc('hl').'][+][T][a]$)/','$1a+$1a$3'); // for thal.
