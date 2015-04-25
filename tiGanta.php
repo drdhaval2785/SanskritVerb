@@ -190,66 +190,38 @@ if ($us!=="")
 /* bhAvakarmaNoH (1.3.13) */
 if ( in_array($vAcya,array("karma","bhAva")) && $pada==="pratyaya" && $lakAra!=="")
 {
-/*    $suffix=$taG;
-    echo "<p class = st >By bhAvakarmaNoH (".link_sutra("1.3.13").") :</p>\n"; 
-    echo "<p class = st >भावकर्मणोः (१.३.१३) :</p>\n";
-    echo "<hr>\n";
-    $verbpada="A";*/
 	$verbpada=verb_pada('1.3.13');
 }
 /* luTi ca klRpaH (1.3.93) */
 elseif ( $fo==="kfpU!" && ($san===1 || in_array($lakAra,array("lfN","lfw","luw"))))
 {
-/*    $suffix=$tiG;
-    echo "<p class = st >By luTi ca klRpaH (".link_sutra("1.3.93").") :</p>\n"; 
-    echo "<p class = st >लुटि च क्लृपः (१.३.९३) :</p>\n";
-    echo "<hr>\n";
-    $verbpada="u";*/
-	verb_pada('1.3.93');
+	$verbpada=verb_pada('1.3.93');
 }
 /* na gatihiMsArthebhyH (1.3.15) */
 elseif ( $_GET['cond11_1']==='1') // cond stands for condition. They are taken from user input. For all variables having cond as prefix, details can be seen at ajax requirement.docx.
 {
-    $suffix=$tis;
-    echo "<p class = st >By na gatihiMsArthebhyH (".link_sutra("1.3.15").") :</p>\n"; 
-    echo "<p class = st >न गतिहिंसार्थेभ्यः (१.३.१५) :</p>\n";
-    echo "<hr>\n";
-    $verbpada="p";
+	$verbpada=verb_pada('1.3.15');
 }
 /* itaretarAnyo'nyopapadAcca (1.3.16) */
 // parasparopapadAcceti vaktavyam is implicitly included in it. If need be, a user feedback has to be increased.
 elseif ( $_GET['cond11_1']==='2')
 {
-    $suffix=$tis;
-    echo "<p class = st >By itaretarAnyo'nyopapadAcca (".link_sutra("1.3.16").") :</p>\n"; 
-    echo "<p class = st >इतरेतरान्योऽन्योपपदाच्च (१.३.१६) :</p>\n";
-    echo "<hr>\n";
-    $verbpada="p";
+	$verbpada=verb_pada('1.3.16');
 }
 /* kartari karmavyatihAre (1.3.14) */
 elseif ( $_GET['cond11_1']==='3')
 {
-    $suffix=$taG;
-    echo "<p class = st >By kartari karmavyatihAre (".link_sutra("1.3.14").") :</p>\n"; 
-    echo "<p class = st >कर्तरि कर्मव्यतिहारे (१.३.१४) :</p>\n";
-    echo "<hr>\n";
-    $verbpada="A";
+	$verbpada=verb_pada('1.3.14');
 }
 /* AGo do'nAsyaviharaNe (1.3.20) */
 elseif ( $_GET['cond14']==="2" )
 {
-    $suffix=$taG;
-    echo "<p class = st >By AGo do'nAsyaviharaNe (".link_sutra("1.3.20").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>\n";
-    echo "<p class = st >आङो दोऽनास्यविहरणे (१.३.२०) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="A";
+	$verbpada=verb_pada('1.3.20');
 }
 /* parAGgakarmakAnna niSedhaH (vA 903) */
+// Pending to refractor because I am not able to locate vArtika number in MB.
 elseif ( $_GET['cond14_1']==="2" )
 {
-    $suffix=$taG;
     echo "<p class = st >By parAGgakarmakAnna niSedhaH (vA 903) :</p>\n"; 
     echo "<p class = hn >This sUtra mandates Atmanepadam. </p>\n";
     echo "<p class = st >पराङ्गकर्मकान्न निषेधः (वा ९०३) :</p>\n";
@@ -260,377 +232,174 @@ elseif ( $_GET['cond14_1']==="2" )
 /* prakAzanastheyAkhyayozca (1.3.23) */
 elseif ( $_GET['cond15']==="1" )
 {
-    $suffix=$taG;
-    echo "<p class = st >By prakAzanastheyAkhyayozca (".link_sutra("1.3.23").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>\n";
-    echo "<p class = st >प्रकाशनस्थेयाख्ययोश्च (१.३.२३) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="A";
+	$verbpada=verb_pada('1.3.23');
 }
 /* udo'nUrdhvakarmaNi (1.3.24) */
 elseif ( $_GET['cond16']==="2" )
 {
-    $suffix=$taG;
-    echo "<p class = st >By udo'nUrdhvakarmaNi (".link_sutra("1.3.24").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>\n";
-    echo "<p class = st >उदोऽनूर्ध्वकर्मणि (१.३.२४) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="A";
+	$verbpada=verb_pada('1.3.24');
 }
 /* upAnmantrakaraNe (1.3.25) */
 elseif ( $_GET['cond17']==="1" )
 {
-    $suffix=$taG;
-    echo "<p class = st >By upAnmantrakaraNe (".link_sutra("1.3.25").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>\n";
-    echo "<p class = st >उपान्मन्त्रकरणे (१.३.२५) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="A";
+	$verbpada=verb_pada('1.3.25');
 }
 /* akarmakAcca (1.3.26) */
 elseif ( $_GET['cond17']==="2" )
 {
-    $suffix=$taG;
-    echo "<p class = st >By akarmakAcca (".link_sutra("1.3.26").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>\n";
-    echo "<p class = st >अकर्मकाच्च (१.३.२६) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="A";
+	$verbpada=verb_pada('1.3.26');
 }
 /* spardhAyAmAGaH (1.3.31) */
 elseif ( $_GET['cond18']==="1" )
 {
-    $suffix=$taG;
-    echo "<p class = st >By spardhAyAmAGaH (".link_sutra("1.3.31").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>\n";
-    echo "<p class = st >स्पर्धायामाङः (१.३.३१) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="A";
+	$verbpada=verb_pada('1.3.31');
 }
 /* anuparAbhyAM kruJaH (1.3.79) */
 elseif ( ends(array($first),array("qukfY"),2) && in_array($us,array("anu","parA")) )
 {
-    $suffix=$tis;
-    echo "<p class = st >By anuparAbhyAM kruJaH (".link_sutra("1.3.79").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates parasmaipadam. </p>\n";
-    echo "<p class = st >अनुपराभ्यां कृञः (१.३.७९) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेण परस्मैपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="p";
+	$verbpada=verb_pada('1.3.79');
 }
 /* gandhanAvakSepaNasevanasAhasikyapratiyatnaprakathanopayogeSu kRJaH (1.3.32) */
 elseif ( $_GET['cond19']==="1" )
 {
-    $suffix=$taG;
-    echo "<p class = st >By gandhanAvakSepaNasevanasAhasikyapratiyatnaprakathanopayogeSu kRJaH (".link_sutra("1.3.32").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>\n";
-    echo "<p class = st >गन्धनावक्षेपणसेवनसाहसिक्यप्रतियत्नप्रकथनोपयोगेषु कृञः (१.३.३२) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";$logfile = fopen('D:\\!sorting\\verboutput\\log.txt','a+');
-    echo "<hr>\n";                    
-    $verbpada="A";
+	$verbpada=verb_pada('1.3.32');
 }
 /* adheH prahasane (1.3.33) */
 elseif ( $_GET['cond20']==="1" )
 {
-    $suffix=$taG;
-    echo "<p class = st >By adheH prahasane (".link_sutra("1.3.33").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>\n";
-    echo "<p class = st >अधेः प्रहसने (१.३.३३) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="A";
+	$verbpada=verb_pada('1.3.33');
 }
 /* veH zabdakarmaNaH (1.3.34) */
 elseif ( $_GET['cond21']==="1" )
 {
-    $suffix=$taG;
-    echo "<p class = st >By veH zabdakarmaNaH (".link_sutra("1.3.34").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>\n";
-    echo "<p class = st >वेः शब्दकर्मणः (१.३.३४) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="A";
+	$verbpada=verb_pada('1.3.34');
 }
 /* akarmakAcca (1.3.35) */
 elseif ( $_GET['cond21']==="2" )
 {
-    $suffix=$taG;
-    echo "<p class = st >By akarmakAcca (".link_sutra("1.3.35").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>\n";
-    echo "<p class = st >अकर्मकाच्च (१.३.३५) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="A";
+	$verbpada=verb_pada('1.3.35');
 }
 /* kartRsthe cAzarIre karmaNi (1.3.37) */
 elseif ( $_GET['cond23']==="1" )
 {
-    $suffix=$taG;
-    echo "<p class = st >By kartRsthe cAzarIre karmaNi (".link_sutra("1.3.37").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>\n";
-    echo "<p class = st >कर्तृस्थे चाशरीरे कर्मणि (१.३.३७) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="A";
+	$verbpada=verb_pada('1.3.37');
 }
 /* sammAnanotsaJjanAcAryakaraNajJAnabhRtivigaNanavyayeSu niyaH (1.3.36) */
 elseif ( $_GET['cond22']==="1" )
 {
-    $suffix=$taG;
-    echo "<p class = st >By sammAnanotsaJjanAcAryakaraNajJAnabhRtivigaNanavyayeSu niyaH (".link_sutra("1.3.36").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>\n";
-    echo "<p class = st >सम्माननोत्सञ्जनाचार्यकरणज्ञानभृतिविगणनेषु नियः (१.३.३६) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="A";
+	$verbpada=verb_pada('1.3.36');
 }
 /* vRttisargatAyaneSu kramaH (1.3.38) and anupasargAdvA (1.3.43) */
 elseif ( $_GET['cond24']==="1" && $first==="kramu!")
 {
-    $suffix=$tiG;
-    echo "<p class = st >By vRttisargatAyaneSu kramaH (".link_sutra("1.3.38").") and anupasargAdvA (".link_sutra("1.3.43").") :</p>\n"; 
-    echo "<p class = hn >These sUtras mandate optional Atmanepadam. </p>\n";
-    echo "<p class = st >वृत्तिसर्गतायनेषु क्रमः (१.३.३८) तथा अनुपसर्गाद्वा (१.३.४३) :</p>\n";
-    echo "<p class = hn >वैभाषिकं आत्मनेपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="u";
+	$verbpada=verb_pada('1.3.38');
+	$verbpada=verb_pada('1.3.43');
 }
 /* upaparAbhyAm (1.3.39) */
 elseif ( $_GET['cond24']==="1" )
 {
-    $suffix=$taG;
-    echo "<p class = st >By upaparAbhyAm (".link_sutra("1.3.39").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>\n";
-    echo "<p class = st >उपपराभ्याम्‌ (१.३.३९) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="A";
+	$verbpada=verb_pada('1.3.39');
 }
 /* AGa udgamane (1.3.40) */
 elseif ( $_GET['cond25']==="1")
 {
-    $suffix=$taG;
-    echo "<p class = st >By AGa udgamane (".link_sutra("1.3.40").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>\n";
-    echo "<p class = st >आङ उद्गमने (१.३.४०) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="A";
+	$verbpada=verb_pada('1.3.40');
 }
 /* veH pAdaviharaNe (1.3.41) */
 elseif ( $_GET['cond26']==="1")
 {
-    $suffix=$taG;
-    echo "<p class = st >By veH pAdaviharaNe (".link_sutra("1.3.41").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>\n";
-    echo "<p class = st >वेः पादविहरणे (१.३.४१) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="A";
+	$verbpada=verb_pada('1.3.41');
 }
 /* propAbhyAM samarthAbhyAm (1.3.42) */
 elseif ( $_GET['cond31']==="1")
 {
-    $suffix=$taG;
-    echo "<p class = st >By propAbhyAM samarthAbhyAm (".link_sutra("1.3.42").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>\n";
-    echo "<p class = st >प्रोपाभ्यां समर्थाभ्याम्‌ (१.३.४२) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="A";
+	$verbpada=verb_pada('1.3.42');
 }
 /* apahnave jJaH (1.3.44) */
 elseif ( $_GET['cond27']==="1")
 {
-    $suffix=$taG;
-    echo "<p class = st >By apahnave jJaH (".link_sutra("1.3.44").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>\n";
-    echo "<p class = st >अपह्नवे ज्ञः (१.३.४४) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="A";
+	$verbpada=verb_pada('1.3.44');
 }
 /* akarmakAcca (1.3.45) */
 elseif ( $_GET['cond27']==="2")
 {
-    $suffix=$taG;
-    echo "<p class = st >By akarmakAcca (".link_sutra("1.3.45").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>\n";
-    echo "<p class = st >अकर्मकाच्च (१.३.४५) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="A";
+	$verbpada=verb_pada('1.3.45');
 }
 /* sampratibhyAmanAdhyAne (1.3.46) */
 elseif ( $_GET['cond28']==="1")
 {
-    $suffix=$taG;
-    echo "<p class = st >By sampratibhyAmanAdhyAne (".link_sutra("1.3.46").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>\n";
-    echo "<p class = st >सम्प्रतिभ्यामनाध्याने (१.३.४६) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="A";
+	$verbpada=verb_pada('1.3.46');
 }
 /* bhAsanopasaMbhASAjJAnayatnavimatyupanimantraNeSu vadaH (1.3.47) */
 elseif ( $_GET['cond29']==="1")
 {
-    $suffix=$taG;
-    echo "<p class = st >By bhAsanopasaMbhASAjJAnayatnavimatyupanimantraNeSu vadaH (".link_sutra("1.3.47").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>\n";
-    echo "<p class = st >भासनोपसंभाषाज्ञानयत्नविमत्युपनिमन्त्रणेषु वदः (१.३.४७) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="A";
+	$verbpada=verb_pada('1.3.47');
 }
 /* vyaktavAcAM samuccAraNe (1.3.48) */
 elseif ( $_GET['cond29']==="2")
 {
-    $suffix=$taG;
-    echo "<p class = st >By vyaktavAcAM samuccAraNe (".link_sutra("1.3.48").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>\n";
-    echo "<p class = st >व्यक्तवाचां समुच्चारणे (१.३.४८) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="A";
+	$verbpada=verb_pada('1.3.48');
 }
 /* vibhASA vipralApe (1.3.50) */
 elseif ( $_GET['cond29']==="3" )
 {
-    $suffix=$tiG;
-    echo "<p class = st >By vibhASA vipralApe (".link_sutra("1.3.50").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates optional Atmanepadam. </p>\n";
-    echo "<p class = st >विभाषा विप्रलापे (१.३.५०) :</p>\n";
-    echo "<p class = hn >वैभाषिकं आत्मनेपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="u";
+	$verbpada=verb_pada('1.3.50');
 }
 /* anorakarmakAt (1.3.49) */
 elseif ( $_GET['cond30']==="1")
 {
-    $suffix=$taG;
-    echo "<p class = st >By anorakarmakAt (".link_sutra("1.3.49").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>\n";
-    echo "<p class = st >अनोरकर्मकात्‌ (१.३.४९) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="A";
+	$verbpada=verb_pada('1.3.49');
 }
 /* samaH pratijJAne (1.3.52) */
 elseif ( $_GET['cond32']==="1")
 {
-    $suffix=$taG;
-    echo "<p class = st >By samaH pratijJAne (".link_sutra("1.3.52").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>\n";
-    echo "<p class = st >समः प्रतिज्ञाने (१.३.५२) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="A";
+	$verbpada=verb_pada('1.3.52');
 }
 /* udazcaraH sakarmakAt (1.3.53) */
 elseif ( $_GET['cond33']==="1")
 {
-    $suffix=$taG;
-    echo "<p class = st >By udazcaraH sakarmakAt (".link_sutra("1.3.53").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>\n";
-    echo "<p class = st >उदश्चरः सकर्मकात्‌ (१.३.५३) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="A";
+	$verbpada=verb_pada('1.3.53');
 }
 /* samastRtIyAyuktAt (1.3.54) */
 elseif ( $_GET['cond34']==="1")
 {
-    $suffix=$taG;
-    echo "<p class = st >By samastRtIyAyuktAt (".link_sutra("1.3.54").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>\n";
-    echo "<p class = st >समस्तृतीयायुक्तात्‌ (१.३.५४) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="A";
+	$verbpada=verb_pada('1.3.54');
 }
 /* dANazca sA ceccaturthyarthe (1.3.55) */
 elseif ( $_GET['cond35']==="1")
 {
-    $suffix=$taG;
-    echo "<p class = st >By dANazca sA ceccaturthyarthe (".link_sutra("1.3.55").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>\n";
-    echo "<p class = st >दाणश्च सा चेच्चतुर्थ्यर्थे (१.३.५५) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="A";
+	$verbpada=verb_pada('1.3.55');
 }
 /* upAdyamaH svakaraNe (1.3.56) */
 elseif ( $_GET['cond36']==="1")
 {
-    $suffix=$taG;
-    echo "<p class = st >By upAdyamaH svakaraNe (".link_sutra("1.3.56").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>\n";
-    echo "<p class = st >उपाद्यमः स्वकरणे (१.३.५६) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="A";
+	$verbpada=verb_pada('1.3.56');
 }
 /* nAnorjJaH (1.3.58) */
 elseif ( $first==="jYA" && $us==="anu" && $sanAdi==="san")
 {
-    $suffix=$tis;
-    echo "<p class = st >By nAnorjJaH (".link_sutra("1.3.58").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates parasmaipadam. </p>\n";
-    echo "<p class = st >नानोर्ज्ञः (१.३.५८) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेण परस्मैपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="p";
+	$verbpada=verb_pada('1.3.58');
 }
 /* pratyAGbhyAM zruvaH (1.3.59) */
 elseif ( in_array($us,array("prati","A")) && $first==="Sru" && $sanAdi==="san")
 {
-    $suffix=$tis;
-    echo "<p class = st >By pratyAGbhyAM zruvaH (".link_sutra("1.3.59").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates parasmaipadam. </p>\n";
-    echo "<p class = st >प्रत्याङ्भ्यां श्रुवः (१.३.५९) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेण परस्मैपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="p";
+	$verbpada=verb_pada('1.3.59');
 }
 /* jJAzrusmRdRzAM sanaH (1.3.57) */
 elseif ( $_GET['cond37']==="1")
 {
-    $suffix=$taG;
-    echo "<p class = st >By jJAzrusmRdRzAM sanaH (".link_sutra("1.3.57").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>\n";
-    echo "<p class = st >ज्ञाश्रुस्मृदृशां सनः (१.३.५७) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="A";
+	$verbpada=verb_pada('1.3.57');
 }
 /* zadeH zitaH (1.3.60) */
 // I have taken these five lakAras because they have vikaraNa pratyaya 'zap' which qualifies for this sUtra.
 elseif ( in_array($first,array("Sadx!")) && in_array($lakAra,array("law","low","laN","viDiliN","sArvaDAtukalew")))
 {
-    $suffix=$tis;
-    echo "<p class = st >By zadeH zitaH (".link_sutra("1.3.60").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates parasmaipadam. </p>\n";
-    echo "<p class = st >शदेः शितः (१.३.६०) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेण परस्मैपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="p";
+	$verbpada=verb_pada('1.3.60');
 }
 /* mriyaterluGliGozca (1.3.61) */
 elseif ( in_array($first,array("mfN")) && in_array($lakAra,array("law","low","laN","viDiliN","sArvaDAtukalew","ASIrliN","luN")))
 {
-    $suffix=$tis;
-    echo "<p class = st >By mriyaterluGliGozca (".link_sutra("1.3.61").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates parasmaipadam. </p>\n";
-    echo "<p class = st >म्रियतेर्लुङ्लिङोश्च (१.३.६१) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेण परस्मैपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="p";
+	$verbpada=verb_pada('1.3.61');
 }
 /* pUrvavatsanaH (1.3.62) */
 // Pending. san is not taught yet. So difficult to code right now. san will be treated later on.
@@ -641,70 +410,35 @@ elseif ( in_array($first,array("mfN")) && in_array($lakAra,array("law","low","la
 /* samaH kSNuvaH (1.3.65) */
 elseif ( in_array($first,array("kzRu")) && $us==="sam")
 {
-    $suffix=$taG;
-    echo "<p class = st >By samaH kSNuvaH (".link_sutra("1.3.65").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>\n";
-    echo "<p class = st >समः क्ष्णुवः (१.३.६५) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="A";
+	$verbpada=verb_pada('1.3.65');
 }
 /* bhujo'navane (1.3.66) */
 elseif ( $_GET['cond38']==="1")
 {
-    $suffix=$taG;
-    echo "<p class = st >By bhujo'navane (".link_sutra("1.3.66").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>\n";
-    echo "<p class = st >भुजोऽनवने (१.३.६६) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="A";
+	$verbpada=verb_pada('1.3.66');
 }
 /* bhIsmyorhetubhaye (1.3.68) */
 elseif ( $_GET['cond39']==="1")
 {
-    $suffix=$taG;
-    echo "<p class = st >By bhIsmyorhetubhaye (".link_sutra("1.3.68").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>\n";
-    echo "<p class = st >भीस्मयोर्हेतुभये (१.३.६८) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="A";
+	$verbpada=verb_pada('1.3.68');
 }
 /* gRdhivaJcyoH pralambhane (1.3.69) */
 elseif ( $_GET['cond40']==="1")
 {
-    $suffix=$taG;
-    echo "<p class = st >By gRdhivaJcyoH pralambhane (".link_sutra("1.3.69").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>\n";
-    echo "<p class = st >गृधिवञ्च्योः प्रलम्भने (१.३.६९) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="A";
+	$verbpada=verb_pada('1.3.69');
 }
 /* liyaH sammAnanazAlInIkaraNayozca (1.3.70) */
 elseif ( $_GET['cond41']==="1")
 {
-    $suffix=$taG;
-    echo "<p class = st >By liyaH sammAnanazAlInIkaraNayozca (".link_sutra("1.3.70").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>\n";
-    echo "<p class = st >लियः सम्माननशालीनीकरणयोश्च (१.३.७०) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="A";
+	$verbpada=verb_pada('1.3.70');
 }
 /* mithyopapadAt kRJo'bhyAse (1.3.71) */
 elseif ( $_GET['cond42']==="1")
 {
-    $suffix=$taG;
-    echo "<p class = st >By mithyopapadAt kRJo'bhyAse (".link_sutra("1.3.71").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>\n";
-    echo "<p class = st >मिथ्योपपदात्‌ कृञोऽभ्यासे (१.३.७१) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="A";
+	$verbpada=verb_pada('1.3.71');
 }
 /* nervizaH (1.3.47), parivyavebhyaH kriyaH (1.3.18), viparAbhyAM jeH (1.3.19), krIDo'nusaMparibhyazca (1.3.21), samavaparivibhyaH sthaH (1.3.22), udvibhyAM tapaH (1.3.27), AGo yamahanaH (1.3.28), samo gamyRcCipracCisvarAyartishruvidibhyaH (1.3.29), nisamupavibhyo hvaH (1.3.30), avAdgraH (1.3.51), jJAzRsmRdRzAM sanaH (1.3.57) */
+// Pending to refractor. Will have to separate the sUtras.
 elseif ( in_array($us.$first,$toatmane) )
 {
     $suffix=$taG;
@@ -713,9 +447,7 @@ elseif ( in_array($us.$first,$toatmane) )
         if($us.$first===$toatmane[$i])
         {
             echo "<p class = st >By ".$sutraenglish[$i]." :</p>\n"; 
-            echo "<p class = hn >This sUtra mandates Atmanepadam. </p>\n";
             echo "<p class = st >".$sutradeva[$i]." :</p>\n";
-            echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
             echo "<hr>\n";                    
         }
     }
@@ -724,275 +456,133 @@ elseif ( in_array($us.$first,$toatmane) )
 /* vyAGparibhyo ramaH (1.3.83) */
 elseif ( ends(array($first),array("ramu!"),2) && in_array($us,array("vi","A","pari",)) && $vAcya==="kartR")
 {
-    $suffix=$tis;
-    echo "<p class = st >By vyAGparibhyo ramaH (".link_sutra("1.3.83").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates parasmaipadam. </p>\n";
-    echo "<p class = st >व्याङ्परिभ्यो रमः (१.३.८३) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेण परस्मैपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="p";
+	$verbpada=verb_pada('1.3.83');
 }
 /* upAcca (1.3.84) */
 elseif ( $_GET['cond44']==="2")
 {
-    $suffix=$tis;
-    echo "<p class = st >By upAcca (".link_sutra("1.3.84").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates parasmaipadam. </p>\n";
-    echo "<p class = st >उपाच्च (१.३.८४) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेण परस्मैपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="p";
+	$verbpada=verb_pada('1.3.84');
 }
 /* vibhASA'karmakAt (1.3.74) */
 elseif ( $_GET['cond44']==='1')
 {
-    $suffix=$tiG;
-    echo "<p class = st >By vibhASA'karmakAt (".link_sutra("1.3.74").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates optional parasmaipada.</p>\n";
-    echo "<p class = st >विभाषाऽकर्मकात्‌ (१.३.७४) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेण वैभाषिकं परस्मैपदं विधीयते ।</p>\n";
-    echo "<hr>\n";
-    $verbpada="u";
+	$verbpada=verb_pada('1.3.74');
 }
 /* Nicazca (1.3.74) */
 elseif ( $sanAdi==="Ric")
 {
-    $suffix=$tiG;
-    echo "<p class = st >By Nicazca (".link_sutra("1.3.74").") :</p>\n"; 
-    echo "<p class = hn >When the fruit of the action goes to the doer, this dhAtu takes Atmanepada. Otherwise, it takes parasmaipada. vibhASopapadena pratIyamAne (".link_sutra("1.3.77").") makes the Atmanepada form optional if the upapada implies the kartRabhiprAya kriyAphala.</p>\n";
-    echo "<p class = st >णिचश्चः (१.३.७४) :</p>\n";
-    echo "<p class = hn >क्रिया का फल जब कर्ता को मिलता है, तब इस धातु से आत्ममनेपद होता है । अन्यथा परस्मैपद होता है । विभाषोपपदेन प्रतीयमाने (१.३.७७) से यदि उपपद से कर्त्रभिप्राय क्रियाफल प्रतीयमान है तो आत्मनेपद विभाषा होता है ।</p>\n";
-    echo "<hr>\n";
-    $verbpada="u";
+	$verbpada=verb_pada('1.3.74');
 }
 /* AkusmAdAtmanepadinaH (dhAtupATha) */
 elseif ( $verbset==='curAdi' && ends(array($first),$AkusmIya,4) )
 {
-    $suffix=$taG;
-    echo "<p class = st >By AkusmAdAtmanepadinaH (dhAtupAThaH) :</p>\n"; 
-    echo "<p class = st >आकुस्मादात्मनेपदिनः (धातुपाठः) :</p>\n";
-    echo "<hr>\n";
-    $verbpada="A";
+	$verbpada=verb_pada('AkusmAd');
 }
 /* AkusmAdAtmanepadinaH (dhAtupATha) */
 elseif ( $verbset==="none"  && ends(array($first),$AkusmIya,4))
 {
-    $suffix=$taG;
-    echo "<p class = st >By AkusmAdAtmanepadinaH (dhAtupAThaH) :</p>\n"; 
-    echo "<p class = st >आकुस्मादात्मनेपदिनः (धातुपाठः) :</p>\n";
-    echo "<hr>\n";
-    $verbpada="A";
+	$verbpada=verb_pada('AkusmAd');
 }
 /* AgarvAdAtmanepadinaH (dhAtupATha) */
 elseif ( $verbset==='curAdi' && ends(array($first),$AgarvIya,4) )
 {
-    $suffix=$taG;
-    echo "<p class = st >By AgarvAdAtmanepadinaH (dhAtupATha) :</p>\n"; 
-    echo "<p class = st >आगर्वादात्मनेपदिनः (धातुपाठः) :</p>\n";
-    echo "<hr>\n";
-    $verbpada="A";
+	$verbpada=verb_pada('AgarvAd');
 }
 /* AgarvAdAtmanepadinaH (dhAtupATha) */
 elseif ( $verbset==="none"  && ends(array($first),$AgarvIya,4))
 {
-    $suffix=$taG;
-    echo "<p class = st >By AgarvAdAtmanepadinaH (dhAtupATha) :</p>\n"; 
-    echo "<p class = st >आगर्वादात्मनेपदिनः (धातुपाठः) :</p>\n";
-    echo "<hr>\n";
-    $verbpada="A";
+	$verbpada=verb_pada('AgarvAd');
 }
 /* Nicazca (1.3.74) */
 elseif ( $verbset==='curAdi' )
 {
-    $suffix=$tiG;
-    echo "<p class = st >By Nicazca (".link_sutra("1.3.74").") :</p>\n"; 
-    echo "<p class = hn >When the fruit of the action goes to the doer, this dhAtu takes Atmanepada. Otherwise, it takes parasmaipada. vibhASopapadena pratIyamAne (".link_sutra("1.3.77").") makes the Atmanepada form optional if the upapada implies the kartRabhiprAya kriyAphala.</p>\n";
-    echo "<p class = st >णिचश्चः (१.३.७४) :</p>\n";
-    echo "<p class = hn >क्रिया का फल जब कर्ता को मिलता है, तब इस धातु से आत्ममनेपद होता है । अन्यथा परस्मैपद होता है । विभाषोपपदेन प्रतीयमाने (१.३.७७) से यदि उपपद से कर्त्रभिप्राय क्रियाफल प्रतीयमान है तो आत्मनेपद विभाषा होता है ।</p>\n";
-    echo "<hr>\n";
-    $verbpada="u";
+	$verbpada=verb_pada('1.3.74');
 }
 /* Nicazca (1.3.74) */
 elseif ( ends(array($first),$curAdi,4) && $verbset==="none" )
 {
-    $suffix=$tiG;
-    echo "<p class = st >By Nicazca (".link_sutra("1.3.74").") :</p>\n"; 
-    echo "<p class = hn >When the fruit of the action goes to the doer, this dhAtu takes Atmanepada. Otherwise, it takes parasmaipada. vibhASopapadena pratIyamAne (".link_sutra("1.3.77").") makes the Atmanepada form optional if the upapada implies the kartRabhiprAya kriyAphala.</p>\n";
-    echo "<p class = st >णिचश्चः (१.३.७४) :</p>\n";
-    echo "<p class = hn >क्रिया का फल जब कर्ता को मिलता है, तब इस धातु से आत्ममनेपद होता है । अन्यथा परस्मैपद होता है । विभाषोपपदेन प्रतीयमाने (१.३.७७) से यदि उपपद से कर्त्रभिप्राय क्रियाफल प्रतीयमान है तो आत्मनेपद विभाषा होता है ।</p>\n";
-    echo "<hr>\n";
-    $verbpada="u";
+	$verbpada=verb_pada('1.3.74');
 }
 /* dyudbhyo luGi (1.3.91) */
 elseif ( ends(array($first),array("dyuta!","SvitA!","YimidA!","midA!","YizvidA!","zvidA!","svidA!","YikzvidA!","kzvidA!","ruca!","Guwa!","ruwa!","luwa!","luWa!","SuBa!","kzuBa!","RaBa!","naBa!","tuBa!","sransu!","sraMsu!","Dvansu!","DvaMsu!","Bransu!","BraMsu!","BranSu!","BraMSu!","sranBu!","sraMBu!","sramBu!","vftu!","vrDu!","SfDu!","syandU!","kfpU!","kxpU!"),4) && $vAcya==="kartR" && $lakAra==="luN")
 {
-    $suffix=$tiG;
-    echo "<p class = st >By dyudbhyo luGi (".link_sutra("1.3.91").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates optional parasmaipada.</p>\n";
-    echo "<p class = st >द्युद्भ्यो लुङि (१.३.९१) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेण वैभाषिकं परस्मैपदं विधीयते ।</p>\n";
-    echo "<hr>\n";
-    $verbpada="u";
+	$verbpada=verb_pada('1.3.91');
 }
 /* vRdbhyaH syasanoH (1.3.92) */
 // san is pending. lRluToH syAtAsI - got the lakAras from here.
 elseif ( ends(array($first),array("vftu!","vrDu!","SfDu!","syandU!","kfpU!","kxpU!"),4) && $vAcya==="kartR" && in_array($lakAra,array("lfN","lfw")))
 {
-    $suffix=$tiG;
-    echo "<p class = st >By vRdbhyaH syasanoH (".link_sutra("1.3.92").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates optional parasmaipada.</p>\n";
-    echo "<p class = st >वृद्भ्यः स्यस्यनोः (१.३.९२) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेण वैभाषिकं परस्मैपदं विधीयते ।</p>\n";
-    echo "<hr>\n";
-    $verbpada="u";
+	$verbpada=verb_pada('1.3.92');
 }
 /* luTi ca klRpaH (1.3.93) */
 elseif ( ends(array($first),array("kxpU!"),4) && $vAcya==="kartR" && in_array($lakAra,array("luw")))
 {
-    $suffix=$tiG;
-    echo "<p class = st >By luTi ca klRpaH (".link_sutra("1.3.93").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates optional parasmaipada.</p>\n";
-    echo "<p class = st >लुटि च कॢपः (१.३.९३) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेण वैभाषिकं परस्मैपदं विधीयते ।</p>\n";
-    echo "<hr>\n";
-    $verbpada="u";
+	$verbpada=verb_pada('1.3.93');
 }
 /* AziSi nAtha iti vAcyam (vA) */
 elseif ( ends(array($first),array("nATf!"),4) )
 {
-    $suffix=$tiG;
-    echo "<p class = st >By AziSi nAtha iti vAcyam (vA) :</p>\n"; 
-    echo "<p class = hn >When this verb is used in the sense of 'AziS', then only it takes Atmanepada, otherwise it takes parasmaipada.</p>\n";
-    echo "<p class = st >आशिषि नाथ इति वाच्यम्‌ (वा) :</p>\n";
-    echo "<p class = hn >अस्याशिश्येवात्मनेपदं स्यात्‌ । </p>\n";
-    echo "<hr>\n";
-    $verbpada="u";
+	$verbpada=verb_pada('1.3.21-7');
 }
 /* anudAttaGita Atmanepadam (1.3.12) */
 elseif ( (ends(array($first),$anudAttetverbs,4) || ends(array($first),$Gitverbs,4) || ends(array($first),array("fta!"),4) ) && scrape1($number,8,5,1)===array("A") && $pada==="pratyaya" && $lakAra!=="" && $_GET['cond49']!=="1" ) // the exclusion is useful for the sanAdi pratyayas e.g. paRAya has parasmai, paRa! has Atmanepadatva. See http://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.1.28.htm for clarification. Second addition is for RterIyaG, Atmanepada because of IyaG pratyaya.
 {
-    $suffix=$taG;
-    echo "<p class = st >By anudAttaGita Atmanepadam (".link_sutra("1.3.12").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>\n";
-    echo "<p class = st >अनुदात्तङित आत्मनेपदम्‌ (१.३.१२) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
-    echo "<hr>\n";
-    $verbpada="A";
+	$verbpada=verb_pada('1.3.12');
 }
 /* vibhASopapadena pratIyamAne (1.3.77) */
 // This sUtra is intervowen in 1.3.72 to 1.3.76 as optional form.
 /* apAdvadaH (1.3.73) */
 elseif ( $first==="vada!" && $us==="apa" && $pada==="pratyaya" && $lakAra!=="")
 {
-    $suffix=$tiG;
-    echo "<p class = st >By apAdvadaH (".link_sutra("1.3.73").") :</p>\n"; 
-    echo "<p class = hn >When the fruit of the action goes to the doer, this dhAtu takes Atmanepada. Otherwise, it takes parasmaipada. vibhASopapadena pratIyamAne (".link_sutra("1.3.77").") makes the Atmanepada form optional if the upapada implies the kartRabhiprAya kriyAphala.</p>\n";
-    echo "<p class = st >अपाद्वदः (१.३.७३) :</p>\n";
-    echo "<p class = hn >क्रिया का फल जब कर्ता को मिलता है, तब इस धातु से आत्ममनेपद होता है । अन्यथा परस्मैपद होता है । विभाषोपपदेन प्रतीयमाने (१.३.७७) से यदि उपपद से कर्त्रभिप्राय क्रियाफल प्रतीयमान है तो आत्मनेपद विभाषा होता है ।</p>\n";
-    echo "<hr>\n";
-    $verbpada="u";
+	$verbpada=verb_pada('1.3.73');
 }
 /* samudAGbhyo yamo'granthe (1.3.75) */
 elseif ( $_GET['cond43']==="2" && $pada==="pratyaya" && $lakAra!=="")
 {
-    $suffix=$tiG;
-    echo "<p class = st >By samudAGbhyo yamo'granthe (".link_sutra("1.3.75").") :</p>\n"; 
-    echo "<p class = hn >When the fruit of the action goes to the doer, this dhAtu takes Atmanepada. Otherwise, it takes parasmaipada. vibhASopapadena pratIyamAne (".link_sutra("1.3.77").") makes the Atmanepada form optional if the upapada implies the kartRabhiprAya kriyAphala. </p>\n";
-    echo "<p class = st >समुदाङ्भ्यो यमोऽग्रन्थे (१.३.७५) :</p>\n";
-    echo "<p class = hn >क्रिया का फल जब कर्ता को मिलता है, तब इस धातु से आत्ममनेपद होता है । अन्यथा परस्मैपद होता है । विभाषोपपदेन प्रतीयमाने (१.३.७७) से यदि उपपद से कर्त्रभिप्राय क्रियाफल प्रतीयमान है तो आत्मनेपद विभाषा होता है । </p>\n";
-    echo "<hr>\n";
-    $verbpada="u";
+	$verbpada=verb_pada('1.3.75');
 }
 /* anupasargAjjJaH (1.3.76) */
 elseif ( ends(array($first),array("jYA"),2) && $pada==="pratyaya" && $lakAra!=="")
 {
-    $suffix=$tiG;
-    echo "<p class = st >By anupasargAjjJaH (".link_sutra("1.3.76").") :</p>\n"; 
-    echo "<p class = hn >When the fruit of the action goes to the doer, this dhAtu takes Atmanepada. Otherwise, it takes parasmaipada. vibhASopapadena pratIyamAne (".link_sutra("1.3.77").") makes the Atmanepada form optional if the upapada implies the kartRabhiprAya kriyAphala. </p>\n";
-    echo "<p class = st >अनुपसर्गाज्ज्ञः (१.३.७६) :</p>\n";
-    echo "<p class = hn >क्रिया का फल जब कर्ता को मिलता है, तब इस धातु से आत्ममनेपद होता है । अन्यथा परस्मैपद होता है । विभाषोपपदेन प्रतीयमाने (१.३.७७) से यदि उपपद से कर्त्रभिप्राय क्रियाफल प्रतीयमान है तो आत्मनेपद विभाषा होता है । </p>\n";
-    echo "<hr>\n";
-    $verbpada="u";
+	$verbpada=verb_pada('1.3.76');
 }
 /* abhipratyatibhyaH kSipaH (1.3.80) */
 elseif ( ends(array($first),array("kzipa!"),2) && in_array($us,array("aBi","prati","ati")) && $vAcya==="kartR")
 {
-    $suffix=$tis;
-    echo "<p class = st >By abhipratyatibhyaH kSipaH (".link_sutra("1.3.80").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates parasmaipadam. </p>\n";
-    echo "<p class = st >अभिप्रत्यतिभ्यः क्षिपः (१.३.८०) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेण परस्मैपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="p";
+	$verbpada=verb_pada('1.3.80');
 }
 /* prAdvahaH (1.3.81) */
 elseif ( ends(array($first),array("vaha!"),2) && $us==="pra" && $vAcya==="kartR")
 {
-    $suffix=$tis;
-    echo "<p class = st >By prAdvahaH (".link_sutra("1.3.81").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates parasmaipadam. </p>\n";
-    echo "<p class = st >प्राद्वहः (१.३.८१) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेण परस्मैपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="p";
+	$verbpada=verb_pada('1.3.81');
 }
 /* parermRSaH (1.3.82) */
 elseif ( ends(array($first),array("mfza!"),2) && $us==="pari" && $vAcya==="kartR")
 {
-    $suffix=$tis;
-    echo "<p class = st >By parermRSaH (".link_sutra("1.3.82").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates parasmaipadam. </p>\n";
-    echo "<p class = st >परेर्मृषः (१.३.८२) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेण परस्मैपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="p";
+	$verbpada=verb_pada('1.3.82');
 }
 /* budhayudhanazajaneGprudrusrubhyo NeH (1.3.86) */
 // NeH coding pending.
 elseif ( ends(array($first),array("buDa!","yuDa!","naSa!","iN","pru","dru","sru"),4) && $vAcya==="kartR")
 {
-    $suffix=$tis;
-    echo "<p class = st >By budhayudhanazajaneGprudrusrubhyo NeH (".link_sutra("1.3.86").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates parasmaipadam. </p>\n";
-    echo "<p class = st >बुधयुधनशजनेङ्प्रुद्रुस्रुभ्यो णेः (१.३.८६) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेण परस्मैपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="p";
+	$verbpada=verb_pada('1.3.86');
 }
 /* na pAdamyAGyamAGyasaparimuharucinRtivadavasaH (1.3.89) */
 elseif ( ends(array($us.$first),array("pA","Ayama!","damu!","Ayasu!","parimuha!","ruca!","nftI!","vada!","vasa!"),4) && $vAcya==="kartR" && in_array($sanAdi,array("Ric","RiN")))
 {
-    $suffix=$taG;
-    echo "<p class = st >By na pAdamyAGyamAGyasaparimuharucinRtivadavasaH (".link_sutra("1.3.89").") and Nicazca (".link_sutra("1.3.74").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>\n";
-    echo "<p class = st >पादम्याङ्‍यमाङ्‍यसपरिमुहरुचिनृतिवदवसः (१.३.८९) तथा णिचश्च (१.३.७४) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="A";
+	$verbpada=verb_pada('1.3.89');
 }
 /* vA kyaSaH (1.3.90) */
 // right now very coarse way of finding out kyaS. Will have to revisit.
 elseif ( ends(array($first),array("Aya"),1) && $pada==="pratyaya" && $lakAra!=="")
 {
-    $suffix=$tiG;
-    echo "<p class = st >By vA kyaSaH (".link_sutra("1.3.90").") :</p>\n"; 
-    echo "<p class = hn >These roots get optional parasmaipada. </p>\n";
-    echo "<p class = st >वा क्यषः (१.३.९०) :</p>\n";
-    echo "<p class = hn >वैभाषिकं परस्मैपदं विधीयते । </p>\n";
-    echo "<hr>\n";
-    $verbpada="u";
+	$verbpada=verb_pada('1.3.90');
 }
 /* nigaraNacalanArthebhyazca (1.3.87) */
 // NeH coding pending.
 elseif ( ends(array($first),array("nigF","aSa!","Buja!","cala!","cupa!","kapi!",),4) && $vAcya==="kartR")
 {
-    $suffix=$tis;
-    echo "<p class = st >By nigaraNacalanArthebhyazca (".link_sutra("1.3.87").") :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates parasmaipadam. </p>\n";
-    echo "<p class = st >निगरणचलनार्थेभ्यश्च (१.३.८७) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेण परस्मैपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="p";
+	$verbpada=verb_pada('1.3.87');
 }
 /* aNAvakarmakAccittavatkartRkAt (1.3.88) */
 // Pending. Ni etc are very confusing at this stage. Will think later.
@@ -1000,53 +590,30 @@ elseif ( ends(array($first),array("nigF","aSa!","Buja!","cala!","cupa!","kapi!",
 /* svaritaJitaH kartrabhiprAye kriyAphale (1.3.72) */
 elseif ( ends(array($first),$ubhaya,4) && $pada==="pratyaya" && $lakAra!=="")
 {
-    $suffix=$tiG;
-    echo "<p class = st >By svaritaJitaH kartrabhiprAye kriyAphale (".link_sutra("1.3.72").") :</p>\n"; 
-    echo "<p class = hn >When the fruit of the action goes to the doer, these dhAtus take Atmanepada. Otherwise, they take parasmaipada. vibhASopapadena pratIyamAne (".link_sutra("1.3.77").") makes the Atmanepada form optional if the upapada implies the kartRabhiprAya kriyAphala. </p>\n";
-    echo "<p class = st >स्वरितञितः कर्त्रभिप्राये क्रियाफले (१.३.७२) :</p>\n";
-    echo "<p class = hn >क्रिया का फल जब कर्ता को मिलता है, तब इन धातुओं से आत्ममनेपद होता है । अन्यथा परस्मैपद होता है । विभाषोपपदेन प्रतीयमाने (१.३.७७) से यदि उपपद से कर्त्रभिप्राय क्रियाफल प्रतीयमान है तो आत्मनेपद विभाषा होता है । </p>\n";
-    echo "<hr>\n";
-    $verbpada="u";
+	$verbpada=verb_pada('1.3.72');
 }
 /* In case the user has selected some gaNa, the pada has to correspond to that gaNa */
 elseif($verbset!=="none")
 {
     if (verb_padafinder($first)===array("u"))
     {
-        $suffix=$tiG;
-        $verbpada="u";
-    echo "<p class = st >ubhayapadI :</p>\n"; 
-    echo "<p class = st >उभयपदी :</p>\n";
-    echo "<hr>\n";
+		$verbpada=verb_pada('uBayapadI');
     }
     elseif (verb_padafinder($first)===array("A"))
     {
-        $suffix=$taG;
-        $verbpada="A";
-    echo "<p class = st >AtmanepadI :</p>\n"; 
-    echo "<p class = st >आत्मनेपदी :</p>\n";
-    echo "<hr>\n";
+		$verbpada=verb_pada('AtmanepadI');
     }
     elseif (verb_padafinder($first)===array("pa"))
     {
-        $suffix=$tis;
-        $verbpada="p";
-    echo "<p class = st >parasmaipadI :</p>\n"; 
-    echo "<p class = st >परस्मैपदी :</p>\n";
-    echo "<hr>\n";
+		$verbpada=verb_pada('parasmEpadI');
     }
 }
 /* zeSAt kartari parasmaipadam (1.3.79) */
 elseif ( $pada==="pratyaya" && $lakAra!=="")
 {
-    $suffix=$tis;
-    echo "<p class = st >zeSAt kartari parasmaipadam (".link_sutra("1.3.79").") :</p>\n"; 
-            echo "<p class = hn >This sUtra mandates parasmaipadam. </p>\n";
-    echo "<p class = st >शेषात्‌ कर्तरि परस्मैपदम्‌ (१.३.७९) :</p>\n";
-            echo "<p class = hn >अनेन सूत्रेण परस्मैपदं विधीयते । </p>\n";
-    echo "<hr>\n";
-    $verbpada="p";
+	$verbpada=verb_pada('1.3.71');
 }
+
 /* Deciding suffixes based on parasmai, Atmane or ubhayapada of verbs. */
 $suffix=verb_suffixes($verbpada);
 
