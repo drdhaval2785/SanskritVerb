@@ -48,8 +48,9 @@
 <br>
 <!--... Defining vAcya. -->
 <input type="radio" name="vAcya" id="vAcya" required value="kartR"  autocomplete="off" >कर्तृवाच्य
-<input type="radio" name="vAcya" id="vAcya" value="karma"  autocomplete="off">कर्मवाच्य
+<!--<input type="radio" name="vAcya" id="vAcya" value="karma"  autocomplete="off">कर्मवाच्य
 <input type="radio" name="vAcya" id="vAcya" value="bhAva"  autocomplete="off">भाववाच्य
+-->
 <font color="red" size="2">Mandatory field. Wait for ajax to load.</font>
 <br>    
 <!--... Defining transliteration of the word. Default is kept as Devanagari. User may change it according to his wish. -->
@@ -73,6 +74,7 @@
 <input type="radio" name="sanAdi" value="aN">अङ्‌
 -->
 <input type="hidden" name="sanAdi" value="" checked>
+<input type="hidden" name="frontend" value="1" checked>
 
 
 <!--... Divs to record the output from ajax.php. step1, step2, step3 etc are the levels. see ajax.php to decide where ajax will send its output. Maximum user feedback level for our coding was 6. So, kept it 6. It can be easily added if need be. -->

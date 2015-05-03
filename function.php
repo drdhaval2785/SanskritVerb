@@ -1787,39 +1787,54 @@ return $html;
 // for display in tiGanta.php
 function verb_meaning_gana_number1($text)
 {
+	global $frontend;
     $verbaccent=scrape1($text,0,7,1);
     $meaning=scrape1($text,0,1,1);
     $verbset=scrape1($text,0,9,1);
     $number=scrape1($text,0,8,1);
-    echo "<p class = st >".toiast($verbaccent[0]).' - '.toiast($meaning[0]).', '.toiast($verbset[0]).' '.$number[0].' '."</p>\n";
-    echo "<p class = st >".$verbaccent[0].' - '.convert($meaning[0]).', '.convert($verbset[0]).' '.convert($number[0]).' '."</p>\n";
-    echo "<hr>\n";
+	if ($frontend==='1')
+	{
+		echo "<p class = st >".toiast($verbaccent[0]).' - '.toiast($meaning[0]).', '.toiast($verbset[0]).' '.$number[0].' '."</p>\n";
+		echo "<p class = st >".$verbaccent[0].' - '.convert($meaning[0]).', '.convert($verbset[0]).' '.convert($number[0]).' '."</p>\n";
+		echo "<hr>\n";		
+	}
 }
 // for display in tiGanta.php in case the user has chosen the gaNa.
 function verb_meaning_gana_number2($text)
 {
-    global $verbset;
+    global $verbset, $frontend;
     $verbaccent=scrape($text,0,7,1,"",$verbset,9);
     $meaning=scrape($text,0,1,1,"",$verbset,9);
     $verbset1=scrape($text,0,9,1,"",$verbset,9);
     $number=scrape($text,0,8,1,"",$verbset,9);
-    echo "<p class = st >".toiast($verbaccent[0]).' - '.toiast($meaning[0]).', '.toiast($verbset1[0]).' '.$number[0].' '."</p>\n";
-    echo "<p class = st >".$verbaccent[0].' - '.convert($meaning[0]).', '.convert($verbset1[0]).' '.convert($number[0]).' '."</p>\n";
-    echo "<hr>\n";
+	if ($frontend==='1')
+	{
+		echo "<p class = st >".toiast($verbaccent[0]).' - '.toiast($meaning[0]).', '.toiast($verbset1[0]).' '.$number[0].' '."</p>\n";
+		echo "<p class = st >".$verbaccent[0].' - '.convert($meaning[0]).', '.convert($verbset1[0]).' '.convert($number[0]).' '."</p>\n";
+		echo "<hr>\n";		
+	}
 }
 // for display in tiGanta.php in case the verb is not in our database.
 function verb_meaning_gana_number3($text)
 {
-	echo "<p class = st >dhAtuH - ".$text."</p>\n";
-	echo "<p class = st >धातुः - ".convert($text)."</p>\n";
-	echo "<hr>\n";
+	global $frontend;
+	if ($frontend==='1')
+	{
+		echo "<p class = st >dhAtuH - ".$text."</p>\n";
+		echo "<p class = st >धातुः - ".convert($text)."</p>\n";
+		echo "<hr>\n";		
+	}
 }
 // for display of upasarga details.
 function upasarga_display($text)
 {
-    echo "<p class = st >upasarga: $text</p>\n"; 
-    echo "<p class = st >उपसर्गः : ".convert($text)."</p>\n";
-    echo "<hr>\n";
+	global $frontend;
+	if ($frontend==='1')
+	{
+		echo "<p class = st >upasarga: $text</p>\n"; 
+		echo "<p class = st >उपसर्गः : ".convert($text)."</p>\n";
+		echo "<hr>\n";
+	}
 }
 // for deciding verb padas.
 function verb_pada($sutra)
@@ -2114,8 +2129,7 @@ function toslp($text)
     $text = str_replace("\u200d","",$text); // removing whitespace
     $text = str_replace("\u200c","",$text); // removing whitespace
     $text = json_decode($text);
-    $text = convert1($text); // converting to SLP1
-    
+    $text = convert1($text); // converting to SLP1    
     return $text;
 }
 function toiast($text)
@@ -3104,13 +3118,32 @@ function Am()
 		display(0);
 	}
 }
+/* function storedata to store necessary information for display later on. */
+function storedata($sutra_number,$style,$note)
+{
+	global $text, $storedata;
+	if (!in_array($style,array("pa","hn","st","red"))) { $style="sa"; }
+	if (!isset($note)) { $note=0; }
+	$storedata[]=array($text,$sutra_number,$style,$note);
+}
+/* displaying from the storedata */
+function display_from_storedata()
+{
+	global $storedata;
+	foreach ($storedata as $value)
+	{
+		gui($value[0],$value[1],$value[2],$value[3]);
+	}
+}
 /* Function gui to overcome issues pointed out in https://github.com/drdhaval2785/SanskritVerb/issues/125 */
 // matches function makes the code fast. Earlier we were using a for loop over vdata / ASdata which was very costly. matches function is derived from the answer of Aleks G from http://stackoverflow.com/questions/12315536/search-for-php-array-element-containing-string
 function gui($text,$sutra_number,$style,$note)
 {
-	if (!in_array($style,array("pa","hn","st"))) { $style="sa"; }
-	global $ASdata, $vdata, $upasarga_joined, $us; // bringing $text from main php function.
-	if (strpos($sutra_number,'-')===false) // AS numbers are 1.1.1 format. Vartikas are in 1.1.1-1 format. So, - is the delimiter which is differentiating point.
+	global $frontend, $storedata;
+	if (!in_array($style,array("pa","hn","st","red"))) { $style="sa"; }
+	if (!isset($note)) { $note=0; }
+	global $ASdata, $vdata, $miscdata, $upasarga_joined, $us; // bringing $text from main php function.
+	if (strpos($sutra_number,'-')===false && $frontend==='1') // AS numbers are 1.1.1 format. Vartikas are in 1.1.1-1 format. So, - is the delimiter which is differentiating point.
 	{
 		$matches = array_filter($ASdata, function($var) use ($sutra_number) { return strpos($var,$sutra_number.":")!==false; });
 		$matches=array_values($matches);
@@ -3126,7 +3159,7 @@ function gui($text,$sutra_number,$style,$note)
 			display2($text,$note);
 		}		
 	}
-	elseif (strpos($sutra_number,'-')!==false)
+	elseif (strpos($sutra_number,'-')!==false && $frontend==='1')
 	{
 		$matches = array_filter($vdata, function($var) use ($sutra_number) { return strpos($var,$sutra_number.":")!==false; });
 		$matches=array_values($matches);
@@ -3141,43 +3174,7 @@ function gui($text,$sutra_number,$style,$note)
 			display2($text,$note);
 		}				
 	}
-}
-/* Function gui2 to use in case we don't want to display the word (e.g. before entering prakriyA e.g. dhAtu pada etc. */
-// matches function makes the code fast. Earlier we were using a for loop over vdata / ASdata which was very costly. matches function is derived from the answer of Aleks G from http://stackoverflow.com/questions/12315536/search-for-php-array-element-containing-string
-function gui2($sutra_number)
-{
-	$style="st";
-	global $ASdata, $vdata, $miscdata; global $upasarga_joined; global $us; // bringing $text from main php function.
-	if (strpos($sutra_number,'-')===false && strpos($sutra_number,'.')!==false)
-	{
-		$matches = array_filter($ASdata, function($var) use ($sutra_number) { return strpos($var,$sutra_number.":")!==false; });
-		$matches=array_values($matches);
-		$int = explode(':',$matches[0]); // We presume that there would be only one such match.
-		$sutra_no[$i] = $int[0];
-		$sutra_type[$i] = $int[1];
-		$sutra_dev[$i] = $int[2];
-		if ($sutra_no[$i] === $sutra_number)
-		{	
-			echo "<p class = ".$style." >By ".toiast($sutra_dev[$i])." (".link_sutra($sutra_number).") :</p>\n";
-			echo "<p class = ".$style." >".$sutra_dev[$i]." (".convert($sutra_number).") :</p>\n";
-			echo "<hr/>";
-		}		
-	}
-	elseif (strpos($sutra_number,'-')!==false && strpos($sutra_number,'.')!==false)
-	{
-		$matches = array_filter($vdata, function($var) use ($sutra_number) { return strpos($var,$sutra_number.":")!==false; });
-		$matches=array_values($matches);
-		$int = explode(':',$matches[0]);
-		$vartika_no[$i] = $int[0];
-		$sutra_dev[$i] = $int[1];
-		if ($vartika_no[$i] === $sutra_number)
-		{	
-			echo "<p class = ".$style." >By ".toiast($sutra_dev[$i])." (vA ".link_vartika($sutra_number).") :</p>\n";
-			echo "<p class = ".$style." >".convert($sutra_dev[$i])." (वा ".convert($sutra_number).") :</p>\n";
-			echo "<hr/>";
-		}				
-	}
-	else // For $miscdata for displaying miscellaneous information.
+	elseif ($frontend==='1') // For $miscdata for displaying miscellaneous information.
 	{
 		$matches = array_filter($miscdata, function($var) use ($sutra_number) { return strpos($var,$sutra_number.":")!==false; });
 		$matches=array_values($matches);
@@ -3192,7 +3189,56 @@ function gui2($sutra_number)
 		}				
 	}
 }
-
+/* Function gui2 to use in case we don't want to display the word (e.g. before entering prakriyA e.g. dhAtu pada etc. */
+// matches function makes the code fast. Earlier we were using a for loop over vdata / ASdata which was very costly. matches function is derived from the answer of Aleks G from http://stackoverflow.com/questions/12315536/search-for-php-array-element-containing-string
+function gui2($sutra_number)
+{
+	$style="st";
+	global $ASdata, $vdata, $miscdata, $frontend; global $upasarga_joined; global $us; // bringing $text from main php function.
+	if (strpos($sutra_number,'-')===false && strpos($sutra_number,'.')!==false && $frontend==='1')
+	{
+		$matches = array_filter($ASdata, function($var) use ($sutra_number) { return strpos($var,$sutra_number.":")!==false; });
+		$matches=array_values($matches);
+		$int = explode(':',$matches[0]); // We presume that there would be only one such match.
+		$sutra_no[$i] = $int[0];
+		$sutra_type[$i] = $int[1];
+		$sutra_dev[$i] = $int[2];
+		if ($sutra_no[$i] === $sutra_number)
+		{	
+			echo "<p class = ".$style." >By ".toiast($sutra_dev[$i])." (".link_sutra($sutra_number).") :</p>\n";
+			echo "<p class = ".$style." >".$sutra_dev[$i]." (".convert($sutra_number).") :</p>\n";
+			echo "<hr/>";
+		}		
+	}
+	elseif (strpos($sutra_number,'-')!==false && strpos($sutra_number,'.')!==false && $frontend==='1')
+	{
+		$matches = array_filter($vdata, function($var) use ($sutra_number) { return strpos($var,$sutra_number.":")!==false; });
+		$matches=array_values($matches);
+		$int = explode(':',$matches[0]);
+		$vartika_no[$i] = $int[0];
+		$sutra_dev[$i] = $int[1];
+		if ($vartika_no[$i] === $sutra_number)
+		{	
+			echo "<p class = ".$style." >By ".toiast($sutra_dev[$i])." (vA ".link_vartika($sutra_number).") :</p>\n";
+			echo "<p class = ".$style." >".convert($sutra_dev[$i])." (वा ".convert($sutra_number).") :</p>\n";
+			echo "<hr/>";
+		}				
+	}
+	elseif ( $frontend==='1') // For $miscdata for displaying miscellaneous information.
+	{
+		$matches = array_filter($miscdata, function($var) use ($sutra_number) { return strpos($var,$sutra_number.":")!==false; });
+		$matches=array_values($matches);
+		$int = explode(':',$matches[0]);
+		$vartika_no[$i] = $int[0];
+		$sutra_dev[$i] = $int[1];
+		if ($vartika_no[$i] === $sutra_number)
+		{	
+			echo "<p class = ".$style." >By ".toiast($sutra_dev[$i])." :</p>\n";
+			echo "<p class = ".$style." >".convert($sutra_dev[$i])." :</p>\n";
+			echo "<hr/>";
+		}				
+	}
+}
 
 
 
