@@ -10041,17 +10041,16 @@ $v4 = array('OhiR','Er','Oh','OQ','Ez','Ezy','Art','ArR','ArR','ArR','ArR','ArR'
 if (sub($v1,$v2,blank(0),0) && $pada === "pada")
 {
 $text = two($v1,$v2,$v3,$v4,0);
-echo "<p class = sa >Applying the following vArtikas : akSAdUhinyAmupasaMkhyAnam (vA 3604), svAdireriNoH (vA 3606), prAdUhoDhoDyeSaiSyeSu (vA 3605), Rte ca tRtIyAsamAse (vA 3607), pravatsatarakambalavasanadazArNAnAmRNe (vA 3608-9)</p>\n";
-echo "<p class = sa >अक्षादूहिन्यामुपसंख्यानम्‌ (वा ३६०४), स्वादेरेरिणोः (वा ३६०६), प्रादूहोढोढ्येषैष्येषु (वा ३६०५), ऋते च तृतीयासमासे (वा ३६०७), प्रवत्सतरकम्बलवसनदशार्णानामृणे (वा ३६०८-०९)</p>\n";
-display(0);
+storedata('6.1.89-3','sa',0);
+storedata('6.1.89-4','sa',0);
+storedata('6.1.89-5','sa',0);
+storedata('6.1.89-6','sa',0);
 }
 /* etyedhatyuThsu (6.1.89) */ 
 if (sub(array("a","A"),array("eti","ezi","emi","etu","Et","EtAm","EH","Es","Etam","Eta","Eva","Ema","ezyati","Ezyati","etA","eD","ED","Uh"),blank(0),0))
 {
     $text = two (array("a","A"),array("eti","ezi","emi","etu","Et","EtAm","EH","Es","Etam","Eta","Eva","Ema","ezyati","Ezyati","etA","eD","ED","Uh"),blank(2),array("Eti","Ezi","Emi","Etu","Et","EtAm","EH","Es","Etam","Eta","Eva","Ema","Ezyati","Ezyati","EtA","ED","ED","Oh"),0);
-    echo "<p class = sa >By etyedhatyuThsu (".link_sutra("6.1.89").") :</p>\n";
-    echo "<p class = sa >एत्येधत्यूठ्सु (६.१.८९) :</p>\n";
-    display(0);
+	storedata('6.1.89','sa',0);
 }
 /* AdguNaH (6.1.87) */
 $forguna = array("i","I","u","U"); // the vowels which take guNa prakriyA. iko guNavRddhi.
@@ -10059,9 +10058,7 @@ $rep = array("e","e","o","o"); // replacement of guNa.
 if (sub($aa,$forguna,blank(0),0))
 {
 $text = two($aa,$forguna,blank(2),$rep,0);
-echo "<p class = sa >By AdguNaH (".link_sutra("6.1.87").") :</p>\n";
-echo "<p class = sa >आद्गुणः (६.१.८७) :</p>\n";
-display(0);
+storedata('6.1.87','sa',0);
 }
 /* uraNraparaH (1.1.51) */ 
 $forguna = array("f","F","x","X");
@@ -10069,9 +10066,8 @@ $rep = array("ar","ar","al","al");
 if (sub($aa,$forguna,blank(0),0))
 {
 $text = two($aa,$forguna,blank(2),$rep,0);
-echo "<p class = sa >By AdguNaH (".link_sutra("6.1.87").") and uraNraparaH (".link_sutra("1.1.51").") :</p>\n";
-echo "<p class = sa >आद्गुणः (६.१.८७) तथा उरण्रपरः (१.१.५१) :</p>\n";
-display(0);
+storedata('1.1.51','sa',0);
+storedata('6.1.87','sa',0);
 }
 /* eGi pararUpam (6.1.94) */ // Added it here because it is exception to vRddhireci.
 for($i=0;$i<count($akarantaupasarga);$i++) // $akarantaupasarga - see function.php
@@ -10081,26 +10077,18 @@ for($i=0;$i<count($akarantaupasarga);$i++) // $akarantaupasarga - see function.p
 if (sub($akarantaupasarga,prat('eN'),blank(0),0) && arr($text,'/[I][y]/') && in_array($first,$akarantaupasarga))
 {
 $text = two($akarantaupasarga,prat('eN'),$a_upa_without_a,prat('eN'),1);
-echo "<p class = sa >By eGi pararUpam (".link_sutra("6.1.94").") and anuvRtti of vA supi :</p>\n";
-echo "<p class = sa >एङि पररूपम्‌ (६.१.९४) तथा वा सुपि की अनुवृत्ति :</p>\n";
-display(0);
+storedata('6.1.94','sa',0);
 }
 elseif (sub($akarantaupasarga,prat('eN'),blank(0),0) && in_array($first,$akarantaupasarga))
 {
 $text = two($akarantaupasarga,prat('eN'),$a_upa_without_a,prat('eN'),0);
-echo "<p class = sa >By eGi pararUpam (".link_sutra("6.1.94").") :</p>\n";
-echo "<p class = sa >एङि पररूपम्‌ (६.१.९४) :</p>\n";
-display(0);
+storedata('6.1.94','sa',0);
 }
 /* eve cAniyoge (vA 3631) */
 if (sub($aa,array("eva"),blank(0),0))
 {
 $text = two($aa,array("eva"),blank(2),array("eva"),1);
-echo "<p class = sa >By eve cAniyoge (vA 3631) :</p>
-    <p class = hn >N.B. that the optionality applies only in case the eva is used for avadhAraNa.</p>\n" ;
-echo "<p class = sa >एवे चावधारणे (वा ३६३१) :</p>
-    <p class = hn >जब 'एव' अवधारण के अर्थ में प्रयुक्त हुआ हो, तभी यह नियम लागू होता है ।</p>\n" ;
-display(0);
+storedata('6.1.94-3','sa',0);
 }
 /* vA supyapizaleH (6.1.92) */ // Not possible to know what is nAmadhAtu and what is not. Therefore added as comments. Not coded.
 /* aco'ntyAdi Ti (1.1.64) */ // a saJjJAsUtra. No vidhi mentioned.
@@ -10108,11 +10096,7 @@ display(0);
 if (sub($aa,array("otu","ozW"),blank(0),0))
 {
 $text = two($aa,array("otu","ozW"),blank(2),array("otu","ozW"),1);
-echo "<p class = sa >By otvoShThayoH samAse vA (vA 3634) :</p>
-    <p class = hn >If what you entered is a samAsa, it will be optionally converted. Otherwise ignore the pararUpa form.</p>\n";
-echo "<p class = sa >ओत्वोष्ठ्योः समासे वा (वा ३६३४) :</p>
-    <p class = hn >यदि समास है तभी यह नियम लागू होगा । अन्यथा पररूप वाला रूप नहीं बनेगा ।</p>\n";
-display(0);
+storedata('6.1.94-5','sa',0);
 }
 /* nAmreDitasyAntasya tu vA (6.1.99), tasya paramAmreDitam (8.1.2) */
 for($i=0;$i<count($text);$i++)
@@ -10137,23 +10121,16 @@ for($i=0;$i<count($text);$i++)
 }
 if ( $amredita === 1 && $start === 1)
 {
+storedata('8.1.2','pa',0);
 $text = two(array("at"),array("iti"),array("a"),array("iti"),1); // e.g. paTatpaTiti, paTatpaTatiti.
-echo "<p class = sa >nAmreDitasyAntasya tu vA (".link_sutra("6.1.99")."), tasya paramAmreDitam (".link_sutra("8.1.2").") :</p>
-    <p class = hn >When the 'at' happens to be at the end of an onaematopic word and it is followed by 'iti', its 'Ti' is elided. This rule doesn't apply on single vowel words like 'zrat'.</p>\n";
-echo "<p class = sa >नाम्रेडितस्यान्तस्य तु वा (६.१.९९), तस्य परमाम्रेडितम्‌ (८.१.२) :</p>
-    <p class = hn >आम्रेडित में यह नियम लागू वैभाषिक तौर से होता है, और अन्तिम तकार का होता है । एकाच्‌ शब्दों में, जैसे कि श्रत्‌, यह लागू नहीं होता ।</p>\n";
-display(0);   
+storedata('6.1.99','sa',0);
 }
 /* avyaktAnukaraNasyAta itau (6.1.98) */
 $ff = preg_split('/[aAiiuUfFxXeEoO]/',$first); // checking whether the first word has more than two vowels.
 if (sub(array("at"),array("iti"),blank(0),0) && $amredita === 0 && $start ===1 && count($ff)>2)
 {
 $text = two($array("at"),array("iti"),blank(1),array("iti"),0);
-echo "<p class = sa >By avyaktAnukaraNasyAta itau (".link_sutra("6.1.98").") :</p>
-    <p class = hn > When the 'at' happens to be at the end of an onaematopic word and it is followed by 'iti', its 'Ti' is elided. This rule doesn't apply on single vowel words like 'zrat'.</p>\n";
-echo "<p class = sa >अव्यक्तानुकरणस्यात इतौ (६.१.९८) :</p>
-    <p class = hn >अव्यक्तानुकरण में प्रयुक्त हुए शब्द के अत्‌ के बाद में यदि इति हो तो यह नियम लागू होता है । एकाच्‌ शब्दों में, जैसे कि श्रत्‌, यह लागू नहीं होता ।</p>\n";
-display(0);
+storedata('6.1.98','sa',0);
 }
 /* vRddhireci (6.1.88) */
 $aa = array("a","A"); // a and A
@@ -10162,18 +10139,14 @@ if (sub($aa,prat("ec"),blank(0),0) )
 {
 $text = one(array("a+e","a+E","a+o","a+O","A+e","A+E","A+o","A+O"),array("E+","E+","O+","O+","E+","E+","O+","O+"),0);
 $text = two($aa,prat('ec'),blank(2),$vrrdhi,0);
-echo "<p class = sa >By vRddhireci (".link_sutra("6.1.88").") :</p>\n";
-echo "<p class = sa >वृद्धिरेचि (६.१.८८) :</p>\n";
-display(0); 
+storedata('6.1.88','sa',0);
 $vriddhireci=1; // 0 - this sUtra has not applied. 1 - this sUtra has appied.
 } else {$vriddhireci=0; }
 /* udaH sthAstambhvoH pUrvasya (8.1.61) */
 if(sub(array("ud","ut"),array("sTA","stam","stan"),blank(0),0))
 {
 $text = two(array("ud","ut"),array('sTA','stam',"stan"),array("ud","ut"),array('TTA','Ttam','Ttan'),0);
-echo "<p class = sa >By udaH sthAstambhvoH pUrvasya (".link_sutra("8.1.61").") :</p>\n";
-echo "<p class = sa >उदः स्थास्तम्भ्वोः पूर्वस्य (८.१.६१) :</p>\n";
-display(0);
+storedata('8.1.61','sa',0);
 }
 /* saMhitAyAm (6.1.72) */ 
 // This is adhikArasUtra. Nothing to code here.
@@ -10181,37 +10154,26 @@ display(0);
 if (sub($hrasva,array("C"),blank(0),0))
 {
 $text = two(array("a","i","u","f","x"),array("C"),array("at","it","ut","ft","xt"),array("C"),0);
-echo "<p class = sa >By Che ca (".link_sutra("6.1.73").") :</p>\n";
-echo "<p class = sa >छे च (६.१.७३) :</p>\n";
-display(0);
-
+storedata('6.1.73','sa',0);
 }
 /* AGmAGozca (6.1.74) */
 if (($first === "A" || $first === "mA") && $start===1)
 {
 $text = two(array("A"),array("C"),array("At"),array("C"),0);
-echo "<p class = sa >By AGmAGozca (".link_sutra("6.1.74").") :</p>\n";
-echo "<p class = sa >आङ्माङोश्च (६.१.७४) :</p>\n";
-display(0);
+storedata('6.1.74','sa',0);
 }
 /* dIrghAt (6.1.75) and padAntAdvA (6.1.76) */
 if (sub($dirgha,array("C"),blank(0),0) && $pada === "pratyaya" && $start === 1) // for $dirgha see function.php
 {
 $text = two($dirgha,array("C"),array("At","It","Ut","Ft","Xt","et","Et","ot","Ot"),array("C"),0);
-echo "<p class = sa >By dIrghAt (".link_sutra("6.1.75").") padAntAdvA (".link_sutra("6.1.76").") :</p>
-    <p class = hn >N.B.: The 'tuk' Agama is optional in case the preceding dIrgha vowel is at the padAnta. Otherwise, it is mandatory to add.</p>\n";
-echo "<p class = sa >दीर्घात्‌ (६.१.७५) तथा पदान्ताद्वा (६.१.७६) :</p>
-    <p class = hn >यदी दीर्घ स्वर पदान्त में हो तब तुक्‌ आगम लगाना पाक्षिक है । अन्यथा यह आवश्यक है ।</p>\n";
-display(0);
+storedata('6.1.75','sa',0);
+storedata('6.1.76','sa',0);
 }
 if (sub($dirgha,array("C"),blank(0),0) && $pada === "pada" && $start ===1)
 {
 $text = two($dirgha,array("C"),$dirghata,array("C"),1);
-echo "<p class = sa >By dIrghAt (".link_sutra("6.1.75").") padAntAdvA (".link_sutra("6.1.76").") :</p>
-    <p class = hn >N.B.: The 'tuk' Agama is optional in case the preceding dIrgha vowel is at the padAnta. Otherwise, it is mandatory to add.</p>\n";
-echo "<p class = sa >दीर्घात्‌ (६.१.७५) तथा पदान्ताद्वा (६.१.७६) :</p>
-    <p class = hn >यदी दीर्घ स्वर पदान्त में हो तब तुक्‌ आगम लगाना पाक्षिक है । अन्यथा यह आवश्यक है ।</p>\n";
-display(0);
+storedata('6.1.75','sa',0);
+storedata('6.1.76','sa',0);
 }
 /* yasmAtpratyayavidhistadAdi pratyaye'Ggam (2.4.13) */
 // Pending to code.
