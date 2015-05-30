@@ -9250,75 +9250,60 @@ if ( sub(array("a","A","i","I","u","U","f","F","x"),array("+am"),blank(0),0))
 /* sAntamahataH saMyogasya (6.4.10) */
 if ( ( (arr($text,'/['.flat($ac).'][nM][s][+]/') && $dhatu===1)|| $fo==="mahat" )&& $sarvanamasthana1===1 && $sambuddhi===0)
 {
-    echo "<p class = pa >sAntamahataH saMyogasya (".link_sutra("6.4.10").") doesn't apply here. </p>\n";
+	// Pending to refractor
+/*    echo "<p class = pa >sAntamahataH saMyogasya (".link_sutra("6.4.10").") doesn't apply here. </p>\n";
     echo "<p class = pa >सान्तमहतः संयोगस्य (६.४.१०) इत्यत्र सान्तसंयोगोऽपि प्रातिपदिकस्यैव गृह्यते, न तु धातोः, महच्छब्दसाहचर्यात्‌ ।</p>\n";    
-    display(0);
+    display(0);*/
 } 
 if ( ( (arr($text,'/['.flat($ac).'][nM][s][+]/') && $dhatu===0)|| $fo==="mahat" )&& $sarvanamasthana1===1 && $sambuddhi===0)
 {
+	storedata('1.1.65','pa',0);
     $text = two($ac,array("ns+","Ms+"),$acdir,array("ns+","Ms+"),0);
     $text = one(array("mahant"),array("mahAnt"),0);
-    echo "<p class = sa >By sAntamahataH saMyogasya (".link_sutra("6.4.10").") :</p>\n";
-    echo "<p class = sa >सान्तमहतः संयोगस्य (६.४.१०) :</p>\n";
-    echo "<p class = pa >alo'ntyAtpUrva upadhA (".link_sutra("1.1.65").") </p>\n";
-    echo "<p class = pa >अलोऽन्त्यात्पूर्व उपधा (१.१.६५) </p>\n";   
-    display(0);
+	storedata('6.4.10','sa',0);
 }
 if (arr($text,'/['.flat($ac).'][nM][s][+]/') && ends(array($fo),array("mahat"),1) && $sarvanamasthana1===1 && $sambuddhi===0)
 {
+	storedata('1.1.65','pa',0);
     $text = two($ac,array("ns+"),$acdir,array("ns+"),0);
-    echo "<p class = sa >By sAntamahataH saMyogasya (".link_sutra("6.4.10").") :</p>\n";
-    echo "<p class = sa >सान्तमहतः संयोगस्य (६.४.१०) :</p>\n";
-    echo "<p class = pa >alo'ntyAtpUrva upadhA (".link_sutra("1.1.65").") </p>\n";
-    echo "<p class = pa >अलोऽन्त्यात्पूर्व उपधा (१.१.६५) </p>\n";   
-    display(0);
+	storedata('6.4.10','sa',0);
 }
 if ( ends(array($fo),array("Danuz"),1) && $sarvanamasthana1===1 && $sambuddhi===0)
 {
     $text = two($ac,array("nz+"),$acdir,array("nz+"),0);
-    echo "<p class = sa >By sAntamahataH saMyogasya (".link_sutra("6.4.10").") :</p>\n";
-    echo "<p class = sa >सान्तमहतः संयोगस्य (६.४.१०) :</p>\n";
-    echo "<p class = pa >Because Satva is asiddha. </p>\n";
+	storedata('6.4.10','sa',0);
+	// Pending to refractor
+/*    echo "<p class = pa >Because Satva is asiddha. </p>\n";
     echo "<p class = pa >षत्व के असिद्ध होने के कारण । </p>\n";   
-    display(0);
+    display(0);*/
 }
 
 /* Rta ut (6.1.111) */
 if ( (arr($text,'/[fx][+][a]/')) && in_array($so,array("Nasi!","Nas")) && $pada==="pratyaya")
 {
     $text = two(array("f","x"),array("+a"),array("ur","ul"),array("+"),0);
-    echo "<p class = sa >By Rta ut (".link_sutra("6.1.111").") :</p>\n";
-    echo "<p class = sa >ऋत उत्‌ (६.१.१११) :</p>\n";
-    display(0);
+	storedata('6.1.111','sa',0);
     $text = one(array("r+s"),array("r"),0);
-    echo "<p class = sa >By rAtsasya (".link_sutra("8.2.24").") :</p>\n"; 
-    echo "<p class = sa >रात्सस्य (८.२.२४) :</p>\n";
-    display(0); 
+	storedata('8.2.24','sa',0);
 }
 /* auto'mzasoH (6.1.93) */
 if (sub(array("o"),array("+"),array("a"),0) && in_array($so,array("am","Sas")))
 {  
     $text = two(array("o"),array("+a"),array(""),array("+A"),0);
-    echo "<p class = sa >By auto'mzasoH (".link_sutra("6.1.93").") :</p>\n";
-    echo "<p class = sa >औतोऽम्शसोः (६.१.९३) :</p>\n";
-    display(0);
+	storedata('6.1,93','sa',0);
 }
 /* ato bhisa ais (7.1.9) */
 if (arr($text,'/[a][+]/') && $so === "Bis" && $nedamadas===0 && $fo!=="adas" )
 {
     $text = two(array("a"),array("Bis"),array("a"),array("Es"),0);
-    echo "<p class = sa >By ato bhisa ais (".link_sutra("7.1.9").") :</p>\n";
-    echo "<p class = sa >अतो भिस ऐस्‌ (७.१.९) :</p>\n";
-    display(5); 
+	storedata('7.1.9','sa',5);
     $atobhis = 1; // 0 - this sUtra has not applied. 1 - this sUtra has applied.
 } else { $atobhis = 0; }
 /* yasyeti ca (6.4.148) */
 if (arr($text,'/[aI][+][I]/') && $bham===1 && ($auGazyA===0))
 {
     $text = two(array("a","I"),array("I"),array("",""),array("I"),0);
-    echo "<p class = sa >By yasyeti ca (".link_sutra("6.4.148").") :</p>\n";
-    echo "<p class = sa >यस्येति च (६.१.१४८) :</p>\n";
-    display(3); 
+	storedata('6.4.148','sa',3);
 }
 
 /* do-while loop for sapAdasaptAdhyAyI */
@@ -9336,26 +9321,21 @@ $original = $text ; // remembering the member entering the loop. We will have to
 if ($so === "os" && arr($text,'/[a][+]/') && $start ===1)
 {
     $text = two(array("a"),array($second),array("e"),array($second),0);
-    echo "<p class = sa >By osi ca (".link_sutra("7.3.104").") :</p>\n";
-    echo "<p class = sa >ओसि च (७.३.१०४) :</p>\n";
-    display(3);
+	storedata('7.3.104','sa',3);
 }
 /* na tisR.4.4) */
 if ($so === "Am" && sub(array("tisf","catasf"),array("+"),blank(0),0))
 {
-    echo "<p class = sa >By na tisRcatasR (".link_sutra("6.4.4").") :</p>\n";
-    echo "<p class = hn >This prevents application of 'nAmi'.</p>\n";
-    echo "<p class = sa >न तिसृचतसृ (६.४.४) :</p>\n";
-    echo "<p class = hn >यह सूत्र नामि की प्रवृत्ति को निषिद्ध करता है ।</p>\n";
-    display(3); 
+	storedata('7.4.4','sa',3);
     $natisf=1; // 0 - no prevention of nAmi. 1 - prevention of nAmi.
 } else { $natisf = 0; }
 /* explanation of prarINAm */
 if (sub(array("rI"),array("+"),array("nAm"),0) && arr(array($fo),'/[r][E]$/'))
 {
-    echo "<p class = hn >According to mAdhava, rAyo hali applies here to convert it to prarANAm. But it is wrong according to Siddhantakaumudi.</p>\n";
+	// Pending to refractor
+/*    echo "<p class = hn >According to mAdhava, rAyo hali applies here to convert it to prarANAm. But it is wrong according to Siddhantakaumudi.</p>\n";
     echo "<p class = hn >माधव के अनुसार यहाँ रायो हलि से आत्त्व होता है । परन्तु सिद्धान्तकौमुदी के अनुसार यह गलत है ।</p>\n";    
-    display(0);
+    display(0);*/
 }   
 /* nAmi (6.4.3) and nR ca (6.4.6) */
 if (arr($text,'/['.flat($ac).'][+][n][A][m]$/') && $start ===1 && !in_array($fo,$sarvanama) && $natisf === 0)
@@ -9363,26 +9343,22 @@ if (arr($text,'/['.flat($ac).'][+][n][A][m]$/') && $start ===1 && !in_array($fo,
     if(arr($text,'/[n][f][+][n][A][m]$/'))
     {
     $text = two(array("nf"),array("nAm"),array("nF"),array("nAm"),1);
-    echo "<p class = sa >By nR ca (".link_sutra("6.4.6").") :</p>\n";
-    echo "<p class = sa >नृ च (६.४.६) :</p>\n";
-    display(3);        
+	storedata('6.4.6','sa',3);
     }
     elseif (sub(array("a+"),array("nAm"),blank(0),0))
         {
-        echo "<p class = pa >Even though, supi ca (".link_sutra("7.3.102").") is a parasUtra, it doesn't operate here. The causes are: (1) violation of sannipAtaparibhASA and (2) ArambhasAmarthya of 'nAmi'. :</p>\n";
+			// Pending to refractor
+        /*echo "<p class = pa >Even though, supi ca (".link_sutra("7.3.102").") is a parasUtra, it doesn't operate here. The causes are: (1) violation of sannipAtaparibhASA and (2) ArambhasAmarthya of 'nAmi'. :</p>\n";
         echo "<p class = pa >यद्यपि सुपि च (७.३.१०२) परसूत्र है, फिर भी उसकी प्रवृत्ति यहाँ नहीं होती है । सन्निपातपरिभाषा के विरोध से और नामि च सूत्र के प्रारम्भ के सामर्थ्य से । </p>\n";
-        display(0);
-        echo "<p class = sa >By nAmi (".link_sutra("6.4.3").") :</p>\n";
-        echo "<p class = sa >नामि (६.४.३) :</p>\n";        
+        display(0);*/
         $text = two($ac,array("nAm"),array("A","A","I","I","U","U","F","F","F","F","e","E","o","O"),array("nAm"),0);
+		storedata('6.4.3','sa',3);
         }
     else
         {
-        echo "<p class = sa >By nAmi (".link_sutra("6.4.3").") :</p>\n";
-        echo "<p class = sa >नामि (६.४.३) :</p>\n";        
         $text = two($ac,array("nAm"),array("A","A","I","I","U","U","F","F","F","F","e","E","o","O"),array("nAm"),0);
+		storedata('6.4.3','sa',3);
         }
-    display(3);        
  $nami = 1;  // 0 - doesn't prevent application of supi ca. 1 - prevents application of supi ca.
 } 
 else 
@@ -9393,17 +9369,16 @@ else
 if ((in_array($so,array("Byas","sup","Bis")) || ($sut===1 && $sAmaAkam===0)) && arr($text,'/[a][+][Bs]/') && $start ===1)
 {
     $text = two(array("a"),array("Byas","su","sAm","Bis"),array("e"),array("Byas","su","sAm","Bis"),0);
-    echo "<p class = sa >By bahuvacane jhalyet (".link_sutra("7.3.103").") :</p>\n";
+	storedata('7.3.103','sa',3);
     if (in_array($so,array("Byas","Bis")) && arr($text,'/[e][+][B]/'))
     {
-    echo "<p class = hn >This rule 'overrides supi ca'.</p>\n";        
+		// Pending to refractor
+//    echo "<p class = hn >This rule 'overrides supi ca'.</p>\n";        
     }
-    echo "<p class = sa >बहुवचने झल्येत्‌ (७.३.१०३) :</p>\n";
     if (in_array($so,array("Byas","Bis")) && arr($text,'/[e][+][B]/'))
     {
-    echo "<p class = hn >'सुपि च' इति दीर्घे प्राप्ते परत्वादस्य सूत्रस्य प्रवृत्तिः ।</p>\n";        
+//    echo "<p class = hn >'सुपि च' इति दीर्घे प्राप्ते परत्वादस्य सूत्रस्य प्रवृत्तिः ।</p>\n";        
     }
-    display(3); 
     $bahuvacane = 1; // 0 - doesn't prevent application of supi ca. 1 - prevents application of supi ca.
 } else { $bahuvacane = 0; }
 /* supi ca (7.3.102) */
@@ -9411,24 +9386,20 @@ if (in_array($so,$sup) && arr($text,'/[a][+]['.pc('yY').']/') && $amipUrva===0 &
 {
     if (arr($text,'/[a][+]['.pc('yY').']/') && in_array($fo,array("idam","idakam")) )
     {
-    echo "<p class = pa >Adyantavadekasmin (".link_sutra("1.1.21").") :</p>\n";
-    echo "<p class = pa >आद्यन्तवदेकस्मिन्‌ (१.१.२१) :</p>\n";
-    display(0);
+	storedata('1.1.21','sa',3);
     }
     $text = two(array("a"),array("+"),array("A"),array("+"),0);
-    echo "<p class = sa >By supi ca (".link_sutra("7.3.102").") :</p>\n";
-    echo "<p class = sa >सुपि च (७.३.१०२) :</p>\n";
-    display(3);
+	storedata('7.3.102','sa',3);
 }
 if ($Ne===1 && $start === 1)
 {
     $text = one(array("a+ya"),array("A+ya"),0);
-    echo "<p class = sa >By supi ca (".link_sutra("7.3.102").") :</p>\n";
-    echo "<p class = hn >'sannipAtalakSaNo vidhiranimittaM tadvighAtasya (pa 86) doesn't apply here. Its anityatva has been shown by kaSTAya kramaNe. </p>\n";
-    echo "<p class = sa >सुपि च (७.३.१०२) :</p>\n";
-    echo "<p class = hn >'सन्निपातलक्षणो विधिरनिमित्तं तद्विघातस्य (प ८६) यहाँ लागू नहीं होता है । कष्टाय क्रमणे से उसका अनित्यत्व ज्ञापित होता है ।</p>\n";
-    display(3);
+	storedata('7.3.102','sa',3);
+	// Pending to refractor.
+/*    echo "<p class = hn >'sannipAtalakSaNo vidhiranimittaM tadvighAtasya (pa 86) doesn't apply here. Its anityatva has been shown by kaSTAya kramaNe. </p>\n";
+    echo "<p class = hn >'सन्निपातलक्षणो विधिरनिमित्तं तद्विघातस्य (प ८६) यहाँ लागू नहीं होता है । कष्टाय क्रमणे से उसका अनित्यत्व ज्ञापित होता है ।</p>\n";*/
 }
+
 /* pragRhya section */
 /* plutapragRhyA aci nityam (6.1.125) */
 // There is no definition of pluta / pragRhya here. So we will code that as and when case arises.
@@ -9442,11 +9413,7 @@ $text = two(array("i+","I+"),array("a","A","u","U","f","F","x","X","e","o","E","
 $text = two(array("u+","U+"),array("a","A","i","I","f","F","x","X","e","o","E","O"),array("u +","u +"),array("a","A","i","I","f","F","x","X","e","o","E","O"),1);
 $text = two(array("f+","F+"),array("a","A","u","U","i","I","e","o","E","O"),array("f +","f +"),array("a","A","u","U","i","I","e","o","E","O"),1);
 $text = two(array("x+","X+"),array("a","A","u","U","i","I","e","o","E","O"),array("x +","x +"),array("a","A","u","U","i","I","e","o","E","O"),1);
-echo "<p class = sa >By iko'savarNe zAkalyasya hrasvazca (".link_sutra("6.1.127").") :</p>
-    <p class = hn >Note that this will not apply in samAsa. Also when followed by a 'sit' pratyaya, it will not apply. e.g. pArzva</p>\n";
-echo "<p class = sa >इकोऽसवर्णे शाकल्यस्य ह्रस्वश्च (६.१.१२७) :</p>
-    <p class = hn >समास व सित्‌ प्रत्यय परे होने पर यह लागू नहीं होता । जैसे कि पार्श्व ।</p>\n";
-display(0);
+storedata('6.1.127','sa',3);
 }
 /* upasargAdRti dhAtau (6.1.11) and vA supyApizaleH (6.1.12) */
 $akarantaupasarga = array("pra","apa","ava","upa",);
@@ -9459,19 +9426,16 @@ if ((sub($akarantaupasarga,$verbs_ru,blank(0),0) && !sub(array("prafRa"),blank(0
 {
     if (arr($text,'/[I][y]/'))
     {
-            $text = two($akarantaupasarga,$verbs_ru,$changedupasarga,$verbs_changed,1);
+		$text = two($akarantaupasarga,$verbs_ru,$changedupasarga,$verbs_changed,1);
     }
     else
     {
-            $text = two($akarantaupasarga,$verbs_ru,$changedupasarga,$verbs_changed,0);
+        $text = two($akarantaupasarga,$verbs_ru,$changedupasarga,$verbs_changed,0);
     }
 $text = two($akarantaupasarga,array("xkArIy"),$changedupasarga2,array("kArIy"),1);
 $text = two($akarantaupasarga,array("xkArIy"),$changedupasarga3,array("kArIy"),0);
-echo "<p class = sa >By upasargAdRti dhAtau (".link_sutra("6.1.11").") and vA supyApizaleH (".link_sutra("6.1.12").") :</p>\n";
-echo "<p class = hn >In case akArAnta upasarga is followed by RkArAdi nAmadhAtu, there is optional vRddhi ekAdeza. If there is dIrgha RUkAra at the start of dhAtu or nAmadhAtu, upasargAdRti dhAtau and vA supyApizaleH don't apply. iko yaNaci and uraNraparaH apply.</p>\n";
-echo "<p class = sa >उपसर्गादृति धातौ (६.१.११) तथा वा सुप्यापिशलेः (६.१.१२) :</p>\n";
-echo "<p class = hn >अकारान्त उपसर्ग से ऋकारादि नामधातु परे होने पर विकल्प से वृद्धि एकादेश होता है । यदि धातु या नामधातु ॠकार से आरंभ होता है, तब उपसर्गादृति धातौ तथा वा सुप्यापिशलेः लागू नहीं होते हैं । अतः इको यणचि व उरण्रपरः ही लागू होते हैं ।</p>\n";
-display(0); 
+storedata('6.1.11','sa',0);
+storedata('6.1.12','sa',0);
 $upas = 1; // 0 - doesn't prevent application of RtyakaH. 1 - prevents application of RtyakaH.
 } else { $upas = 0; }
 /* RtyakaH (6.1.128) */
@@ -9482,17 +9446,14 @@ if (arr($text,'/['.flat($ak).'][+][fx]/') && $start===1 && $pada ==="pada" && $u
 if (sub($ak,array("f","x"),blank(0),0))
 {
 $text = two ($ak,array("f","x"),$akrt,array("f","x"),1);
-echo "<p class = sa >By RtyakaH (".link_sutra("6.1.128").") :</p>
-    <p class = hn >Note: This applies only to padAnta. </p>\n";
-echo "<p class = sa >ऋत्यकः (६.१.१२८) :</p>
-    <p class = hn >Note: This applies only to padAnta. </p>\n";
-display(0);
+storedata('6.1.128','sa',0);
 }
 }
 if ($upas === 1)
 {
-    echo "<p class = hn >RtyakaH is barred by upasargAdRti dhAtau. </p>
-    <p class = hn >ऋत्यकः उपसर्गादृति धातौ से बाधित हुआ है ।</p><hr>\n";
+	// Pending to refractor
+/*    echo "<p class = hn >RtyakaH is barred by upasargAdRti dhAtau. </p>
+    <p class = hn >ऋत्यकः उपसर्गादृति धातौ से बाधित हुआ है ।</p><hr>\n";*/
 }
 /* vAkyasya TeH pluta udAttaH (8.2.82) */
 // This is adhikArasutra. Nothing to code here.
@@ -9509,16 +9470,12 @@ if ($upas === 1)
 if (sub(array("amI"),blank(0),blank(0),0) && $fo === "amI" && $start===1)
 {
 $text = two (array("amI"),$ac,array("amI "),$ac,1);
-echo "<p class = sa >By adaso mAt (".link_sutra("1.1.12").") :</p>\n";
-echo "<p class = sa >अदसो मात्‌ (१.१.१२) :</p>\n";
-display(0);
+storedata('1.1.12','sa',0);
 }
 if (sub(array("amU"),blank(0),blank(0),0)&& $fo === "amU" &&$start===1)
 {
 $text = two (array("amU"),$ac,array("amU "),$ac,1);
-echo "<p class = sa >By adaso mAt (".link_sutra("1.1.12").") :</p>\n";
-echo "<p class = sa >अदसो मात्‌ (१.१.१२) :</p>\n";
-display(0);
+storedata('1.1.12','sa',0);
 }
 /* ze (1.1.13) */
 // Not possible to know whether one form has ze or not. ajax for feedback pending.
@@ -9528,9 +9485,7 @@ $nipata1 = array("a ","A ","i ","I ","u ","U ","e ","E ","o ","O "); // adding a
 if (in_array($first,$nipata) && sub(array($first),$ac,blank(0),0) && $start===1)
 {
 $text = two ($nipata,$ac,$nipata1,$ac,0);
-echo "<p class = sa >By nipAta ekAjanAG (".link_sutra("1.1.14").") :</p>\n";
-echo "<p class = sa >निपात एकाजनाङ्‌ (१.१.१४) :</p>\n";
-display(0);
+storedata('1.1.14','sa',0);
 }
 /* ot (1.1.15) */
 $ot = array("o","aho","ho","utAho","aTo");
@@ -9538,54 +9493,38 @@ $ot1 = array("o ","aho ","ho ","utAho ","aTo ");
 if (in_array($first,$ot) && sub(array($first),$ac,blank(0),0) && $start===1)
 {
 $text = two ($ot,$ac,$ot1,$ac,0);
-echo "<p class = sa >By ot (".link_sutra("1.1.15").") :</p>\n";
-echo "<p class = sa >ओत्‌ (१.१.१५) :</p>\n";
-display(0);
+storedata('1.1.15','sa',0);
 }
 /* sambuddhau zAkalyasyetAvanArSe (1.1.16) */
 if (arr($text,'/[o][+]/') && $second === "iti" && $start===1)
 {
 $text = two(array($first),$ac,array($first." "),$ac,1);
-echo "<p class = sa >By sambuddhau zAkalyasyetAvanArSe (".link_sutra("1.1.16").") :</p>
-    <p class = hn >Note: This rule will apply only in case the 'o'kAra at the end of the first word is for sambuddhi and the 'iti' is anArSa (of non-vedic origin).</p>\n";
-"<p class = sa >सम्बुद्धौ शाकल्यस्येतावनार्षे (१.१.१६) :</p>
-    <p class = hn >यह नियम तभी लागू होगा जब प्रथम शब्द के अन्त का ओकार सम्बुद्धि के लिए हो और अनार्ष 'इति' शब्द उसके परे हो ।</p>\n";
-display(0);
+storedata('1.1.16','sa',0);
 }
 /* UYaH (1.1.17) */
 if ($first === "u" && $second === "iti" && $start===1)
 {
 $text = two(array("u"),array("iti"),array("u "),array("iti"),1);
-echo "<p class = sa >By uYaH (".link_sutra("1.1.17").") :</p>\n";
-echo "<p class = sa >उञः (१.१.१७) :</p>\n";
-display(0);
+storedata('1.1.17','sa',0);
 }
 /* U! (1.1.18) */ // Here ! has been used for anunAsika.
 if ($first === "u" && $second === "iti" && $start===1)
 {
 $text = two(array("u"),array("iti"),array("U! "),array("iti"),1);
-echo "<p class = sa >By U! (".link_sutra("1.1.17").") :</p>\n";
-echo "<p class = sa >ऊँ (१.१.१७) :</p>\n";
-display(0);
+storedata('1.1.17','sa',0);
 }
 /* maya uYo vo vA (8.3.33) */
 if (sub(array("Sam","kim","tvam","tad"),array("u"),$ac,0))
 {
 $text = three(array("Sam","kim","tvam","tad"),array("u"),$ac,array("Sam","kim","tvam","tad"),array("v"),$ac,1);
-echo "<p class = sa >By maya uYo vo vA (".link_sutra("8.3.33").") :</p>\n";
-echo "<p class = sa >मय उञो वो वा (८.३.३३) :</p>\n";
-display(0);
+storedata('8.3.33','sa',0);
 }
 /* IdUtau ca saptamyarthe (1.1.19) */
 /*$idut = array("I","U"); $idut1 = array("I ","U ");
 if (preg_match('/[IU]$/',$first) && sub(array("I","U"),$ac,blank(0),0) && $pada ==="pada")
 {
 $text = two($idut,$ac,$idut1,$ac,1);
-echo "<p class = sa >By IdUtau ca saptamyarthe (".link_sutra("1.1.19").") :</p>\n";
-echo "<p class = hn >N.B.: This will apply only in case the I/U at the end of the first word have been used in sense of saptamI vibhakti. Otherwise this pragRhyatva will not be there.</p>\n";
-echo "<p class = sa >ईदूतौ च सप्तम्यर्थे (१.१.१९) :</p>\n";
-echo "<p class = hn >यदि प्रथम पद के अन्त में ई / ऊ सप्तमी के अर्थ में प्रयुक्त हुए हों तभी यह नियम लागू होगा ।</p>\n";
-display(0);
+storedata('1.1.19','sa',0);
 }*/ // vedic in nature. gives too many wrong results. commented right now.
 /* zakandhvAdiSu pararUpaM vAcyam (vA 3632) */
 $shakandhu1 = array("Saka","karka","kula","manas","hala","lANgala","patan","mfta"); // first word of zakandhvAdi
@@ -9594,9 +9533,7 @@ $shakandhu = array("Sak","kark","kul","man","hal","lANgal","pat","mArt"); // rep
 if (sub($shakandhu1,$shakandhu2,blank(0),0))
 {
 $text = two($shakandhu1,$shakandhu2,$shakandhu,$shakandhu2,0);
-echo "<p class = sa >By zakandhvAdiSu pararUpaM vAcyam (vA 3632) :</p>\n";
-echo "<p class = sa >शकन्ध्वादिषु पररूपं वाच्यम्‌ (वा ३६३२) :</p>\n";
-display(0);
+storedata('6.1.94-4','sa',0);
 }
 $shakandhu1 = array("sIman","sAra"); // ajax possible. pending.
 $shakandhu2 = array("anta","aNga");
@@ -9605,11 +9542,10 @@ if (sub($shakandhu1,$shakandhu2,blank(0),0))
 {
 $text = two($shakandhu1,$shakandhu2,$shakandhu,$shakandhu2,1);
 $text = one(array("sIman+ant","sAra+aNg"),array("sIm+Ant","sAr+ANg"),0);
-echo "<p class = sa >By zakandhvAdiSu pararUpaM vAcyam (vA 3632) :</p>\n";
-echo  "<p class = hn >Note: the sImanta - kezaveSa and sAraGga - pazu/pakSI - Then only this will apply.</p>\n";
-echo "<p class = sa >शकन्ध्वादिषु पररूपं वाच्यम्‌ (वा ३६३२) :</p>\n";
-echo  "<p class = hn >यदि सीमन्त केशवेश के अर्थ में और सारङ्ग पशु-पक्षी के अर्थ में प्रयुक्त हुए हो, तभी यह नियम लागू होता है ।</p>\n";
-display(0);
+storedata('6.1.94-4','sa',0);
+// Pending to refractor.
+/*echo  "<p class = hn >Note: the sImanta - kezaveSa and sAraGga - pazu/pakSI - Then only this will apply.</p>\n";
+echo  "<p class = hn >यदि सीमन्त केशवेश के अर्थ में और सारङ्ग पशु-पक्षी के अर्थ में प्रयुक्त हुए हो, तभी यह नियम लागू होता है ।</p>\n";*/
 }
 /* omAGozca (6.1.95) */ 
 $aag = array("om","OM","Aj","Acy","AYc","Anakt","Att","As","er","Eray","okz","ArcC","Arpit","Ohyat","oQ","arSyAt"); // list for OM and AG.
@@ -9617,47 +9553,31 @@ if (sub(array("a","A"),$aag,blank(0),0))
 { 
 $text = two(array("a","A"),array("om","OM"),blank(2),array("om","om"),0);
 $text = two(array("a","A"),$aag,blank(2),$aag,0);
-echo "<p class = sa >By omAGozca (".link_sutra("6.1.95").") :</p>
-    <p class = hn >The om or AG following the a,A gets converted to pararUpa. </p>\n";
-echo "<p class = sa >ओमाङोश्च (६.१.९५) :</p>
-    <p class = hn >अ/आ के परे यदि ओम्‌ या आङ्‌ हो तो पररूप होता है । </p>\n";
-display(0);
+storedata('6.1.95','sa',0);
 }
 /* ATazca (6.1.90) */
 if (sub(array("A"),$ac,blank(0),0) && in_array("Aw",$Agama) )
 {
 $text = two(array("A"),$ac,array(""),vriddhi($ac),0);
-echo "<p class = sa >By ATazca (".link_sutra("6.1.90").") :</p>\n";
-echo "<p class = sa >आटश्च :</p>\n";
-display(0);
+storedata('6.1.90','sa',0);
 }
 /* striyAH (6.4.79) */
 if (ends(array($fo),array("strI","stri"),1) && arr($text,'/[s][t][r][Ii][+]['.pc('ac').']/') && in_array($so,$acsup) && !in_array($so,array("am","Sas","Am")))
 {
     $text = one(array("strI+","stri+"),array("striy+","striy+"),0);
-    echo "<p class = sa >By striyAH (".link_sutra("6.4.79").") :</p>\n";
-    echo "<p class = sa >स्त्रियाः (६.४.७९) :</p>\n";
-    display(3);
+	storedata('6.4.79','sa',3);
 }
 /* nAdici (6.1.104) */
 $ic = array("i","I","u","U","f","F","x","X","e","o","E","O");
 if (arr($text,'/[a][+]['.flat($ic).']/') && !arr($text,'/[a][+][aA]/') && (in_array($so,$prathama)))
 {
-    echo "<p class = pa >By nAdici (".link_sutra("6.1.104").") :</p>
-        <p class = hn >N.B. : This is exception to prathamayoH pUrvasavarNaH. </p>\n";
-      echo "<p class = pa >नादिचि (६.१.१०४) :</p>
-        <p class = hn >यह नियम प्रथमयोः पूर्वसवर्णः का अपवाद है ।</p>\n";
-    display (0); 
+	storedata('6.1.104','sa',0);
     $nadici = 1; // 0 - this rule has not applied. 1 - this rule has applied.
 } else { $nadici = 0; }
 /* dIrghAjjasi ca (6.1.105) */
 if ((arr($text,'/[AIUFeEoO][+]['.flat($ic).']/')||((sub($dirgha,array("+"),array("as"),0)) && $so==="jas")) && (in_array($so,$prathama)))
 {
-    echo "<p class = pa >By dIrghAjjasi ca (".link_sutra("6.1.105").") :</p>
-        <p class = hn >N.B. : This is exception to prathamayoH pUrvasavarNaH. </p>\n";
-      echo "<p class = pa >दीर्घाज्जसि च (६.१.१०५) :</p>
-        <p class = hn >यह नियम प्रथमयोः पूर्वसवर्णः का अपवाद है ।</p>\n";
-    display (0); 
+	storedata('6.1.105','sa',0);
     $nadici1 = 1; // 0 - this rule has not applied. 1 - this rule has applied.
 } else { $nadici1 = 0; } 
 /* prathamayoH pUrvasavarNaH (6.1.102) */ 
@@ -9668,25 +9588,20 @@ if (sub($ak,array("+"),array("a","O"),0) && in_array($so,$prathama)  && $nadici 
 {
     if (sub(array("a"),array("a","O"),blank(0),0)&& in_array($so,$prathama)  && $nadici === 0 && $nadici1 === 0)
     {
-        echo "<p class = hn >ato guNe (".link_sutra("6.1.96").") is exception to only akaH savarNe dIrghaH (".link_sutra("6.1.101").") and not to prathamayoH pUrvasavarNaH (".link_sutra("6.1.102")."), because of the paribhASA 'purastAdapavAdA anantarAnvidhInbAdhante nottarAn (pa 60). Therefore pURvasavarNadIrgha can occur. :</p>\n";
+		// Pending to refractor.
+/*        echo "<p class = hn >ato guNe (".link_sutra("6.1.96").") is exception to only akaH savarNe dIrghaH (".link_sutra("6.1.101").") and not to prathamayoH pUrvasavarNaH (".link_sutra("6.1.102")."), because of the paribhASA 'purastAdapavAdA anantarAnvidhInbAdhante nottarAn (pa 60). Therefore pURvasavarNadIrgha can occur. :</p>\n";
         echo "<p class = hn >'पुरस्तादपवादा अनन्तरान्विधीन्बाधन्ते नोत्तरान्‌ (प ६०) परिभाषा के कारण अतो गुणे (६.१.९६) सिर्फ अकः सवर्णे दीर्घः (६.१.१०१) का अपवाद है, प्रथमयोः पूर्वसवर्णः (६.१.१०२) का नहीं । अतः पूर्वसवर्णदीर्घ हो सकता है ।</p>\n";
-        display (0);
+        display (0);*/
     }
     $text = two($ak,array("a","O"),$akreplace,array("",""),0);
-    echo "<p class = sa >By prathamayoH pUrvasavarNaH (".link_sutra("6.1.102").") :</p>
-        <p class = hn >N.B. : This applies to only in prathamA and dvitIyA vibhakti, and not in other cases. </p>\n";
-    echo "<p class = sa >प्रथमयोः पूर्वसवर्णः (६.१.१०२) :</p>
-        <p class = hn >यह प्रथमा और द्वितीया विभक्तियों में लागू होता है ।</p>\n";
-    display (0); 
+	storedata('6.1.102','sa',0);
     $prathamayoh = 1; // 0 - this rule has not applied. 1 - this rule has applied. Useful in tasmAcCaso naH puMsi.
 } else { $prathamayoh = 0; }
 /* tasmAcChaso naH puMsi (6.1.103) */
 if ($prathamayoh ===1 && $so === "Sas" && $gender==="m")
 {
     $text = one(array("+s"),array("+n"),0);
-    echo "<p class = sa >By tasmAcCaso naH puMsi (".link_sutra("6.1.103").") :</p>\n";
-    echo "<p class = sa >तस्माच्छसो नः पुंसि (६.१.१०३) :</p>\n";  
-    display(0); 
+	storedata('6.1.103','sa',0);
 }
 /* Rti savarNe R vA (vA 3640) and lRti savarNe lR vA (vA 3641) */
 $ruti1 = array("f","F","x","X");
@@ -9696,9 +9611,8 @@ if (sub($ruti1,array("f","x"),blank(0),0))
 {
 $text = two($ruti1,array("f"),blank(count($ruti1)),$ruti2,1);
 $text = two($ruti1,array("x"),blank(count($ruti1)),$lruti2,1);
-echo "<p class = sa >By Rti savarNe R vA (vA 3640) and lRti savarNe lR vA (vA 3641) :</p>\n";
-echo "<p class = sa >ऋति सवर्णे ऋ वा (वा ३६४०) तथा लृति सवर्णे लृ वा (वा ३६४१) :</p>\n";
-display(0); 
+storedata('6.1.101-1','sa',0);
+storedata('6.1.101-2','sa',0);
 }
 /* akaH savarNe dIrghaH (6.1.101) */ 
 $ak1 = array("a","a","A","A","i","i","I","I","u","u","U","U","f","f","F","F","f","f","F","F","x","x","X","X","x","x","X","X");
@@ -9710,72 +9624,57 @@ $text = two(array("i","I"),array("i","I"),array("I","I"),blank(2),0);
 $text = two(array("u","U"),array("u","U"),array("U","U"),blank(2),0);
 $text = two(array("f","F","x","X"),array("f","F","x","X"),array("F","F","F","F"),blank(4),0);
 $text = two(array("x","X"),array("x","X"),array("F","F"),blank(2),0);
-echo "<p class = sa >By akaH savarNe dIrghaH (".link_sutra("6.1.101").") :</p>\n";
-echo "<p class = sa >अकः सवर्णे दीर्घः (६.१.१०१) :</p>\n";
-display(0);
+storedata('6.1.101','sa',0);
 }
 /* ato guNe (6.1.17) */
 if (sub(array("a"),array("a","e","o"),blank(0),0) && !sub(array("pra","upa"),array("a","e","o"),blank(0),0) && $pada === "pratyaya" )
 {
     $text = two(array("a"),array("a","e","o"),blank(1),array("a","e","o"),0);
-    echo "<p class = sa >By ato guNe (".link_sutra("6.1.17").") :</p>\n";
-    echo "<p class = sa >अतो गुणे (६.१.१७) :</p>\n";  
-    display(0);
+	storedata('6.1.17','sa',0);
 }
 /* hrasvasya guNaH (7.3.108) */ 
 if (arr($text,'/[iufx][+][s]/') && $so==="su!" && $sambuddhi===1 && $amba===0)
 {
     $text = two(array("i","u","f","x"),array("+"),array("e","o","ar","al"),array("+"),0);
-    echo "<p class = sa >By hrasvasya guNaH (".link_sutra("7.3.108").") :</p>\n";
-    echo "<p class = sa >ह्रस्वस्य गुणः (७.३.१०८) :</p>\n";
-    display(3);
+	storedata('7.3.108','sa',3);
 }
 if (arr($text,'/[iufx][+]$/') && $so==="su!" && $sambuddhi===1 && $svamo===1)
 {
     $text = two(array("i","u","f","x"),array("+"),array("e","o","ar","al"),array("+"),1);
-    echo "<p class = sa >By hrasvasya guNaH (".link_sutra("7.3.108").") :</p>\n";
-    echo "<p class = sa >ह्रस्वस्य गुणः (७.३.१०८) :</p>\n";
-    display(3);
+	storedata('7.3.108','sa',3);
 }
 /* halGyAbbhyo dIrghAtsutisyapRktaM hal (6.1.68) and apRkta ekAlpratyayaH (1.2.41) */
 // GyAp pending. only hal handled now.
 if ((arr($text,'/['.pc('hl').'][+][sts]$/') || $GI===1 || $Ap===1 )&& in_array($so,array("su!","ti","si",)))
 {
-    echo "<p class = pa >By apRkta ekAlpratyayaH (".link_sutra("1.2.41").") :</p>\n";
-    echo "<p class = pa >अपृक्त एकाल्प्रत्ययः (१.२.४१) :</p>\n";
-    display(0);
+	storedata('1.2.41','pa',0);
 }
 if ((arr($text,'/['.pc('hl').'][+][sts]$/')  )&& in_array($so,array("su!","ti","si")))
 {
     $text = two($hl,array("+s","+t"),$hl,array("+","+"),0);
-    echo "<p class = sa >By halGyAbbhyo dIrghAtsutisyapRktaM hal (".link_sutra("6.1.68").") :</p>\n";
-    echo "<p class = sa >हल्ङ्‍याब्भ्यो दीर्घात्सुतिस्यपृक्तं हल्‌ (६.१.६८) :</p>\n";
-    display(0); 
+	storedata('6.1.68','sa',0);
     $pada="pada"; // there is no pratyaya left now.
 }
 if ($GI===1 && arr($text,'/[I][+][st]$/') && in_array($so,array("su!","ti","si")))
 {
     $text = two(array("I"),array("+s","+t"),array("I"),array("+","+"),0);
-    echo "<p class = sa >By halGyAbbhyo dIrghAtsutisyapRktaM hal (".link_sutra("6.1.68").") :</p>\n";
-    echo "<p class = sa >हल्ङ्‍याब्भ्यो दीर्घात्सुतिस्यपृक्तं हल्‌ (६.१.६८) :</p>\n";
-    display(0); 
+	storedata('6.1.68','sa',0);
     $pada="pada"; // there is no pratyaya left now.
 }
 if ( $Ap===1 && sub(array("A"),array("+"),array("s","t"),0) && in_array($so,array("su!","ti","si")))
 {
     $text = two(array("A"),array("+s","+t"),array("A"),array("+","+"),0);
-    echo "<p class = sa >By halGyAbbhyo dIrghAtsutisyapRktaM hal (".link_sutra("6.1.68").") :</p>\n";
-    echo "<p class = sa >हल्ङ्‍याब्भ्यो दीर्घात्सुतिस्यपृक्तं हल्‌ (६.१.६८) :</p>\n";
-    display(0); 
+	storedata('6.1.68','sa',0);
     $pada="pada"; // there is no pratyaya left now.
 }
 /* patch for varShABU sambodhana */
 if ($dhatu===1 && $first==="varzABU" && sub(array("varzABU"),array("+"),array("s"),1) && $pada==="pratyaya" )
 {
     $text = two(array("varzABU"),array("+"),array("varzABu"),array("+"),1);
-    echo "<p class = sa >kaiyaTa believes it to be 'he varSAbhUH'. The alternative belief is 'he varSAbhu'.</p>\n";
+	// Pending to refractor
+/*    echo "<p class = sa >kaiyaTa believes it to be 'he varSAbhUH'. The alternative belief is 'he varSAbhu'.</p>\n";
     echo "<p class = sa >भेकजातौ नित्यस्त्रीत्वाभावाद्‌ हे वर्षाभूः कैयटमते । मतान्तरे तु हे वर्षाभु ।</p>\n";
-    display(0);
+    display(0);*/
 }
 
 /* eGhrasvAtsambuddheH (6.1.69) and ekavacanaM sambuddhiH (2.3.49) */ // removed the last letter, not as in sutra. Look out for issues if any crops up.
@@ -9795,33 +9694,25 @@ if ($sambuddhi === 1 && $so === "su!" && (sub($hrasva,array("+"),array("s","m"),
     }
     $text = $value1;
     $value1 = array();*/
-    echo "<p class = sa >By eGhrasvAtsambuddheH (".link_sutra("6.1.69").") :</p>\n";
-    echo "<p class = sa >एङ्ह्रस्वात्सम्बुद्धेः (६.१.६९) :</p>\n";
-    display(0); 
+	storedata('6.1.69','sa',0);
 }
 /* dazca (7.2.109) */
 if (sub(array("ida","idak","idA","idAn",),blank(0),blank(0),0) && in_array($fo,array("idam","idakam")) && in_array($so,$sup))
 {
     $text = one(array("ida+","idak","idA+","idAn+","idakA+"),array("ima+","imak","imA+","imAn+","imakA+"),0);
-    echo "<p class = sa >By dazca (".link_sutra("7.2.109").") :</p>\n";
-    echo "<p class = sa >दश्च (७.२.१०९) :</p>\n";
-    display(3);
+	storedata('7.2.109','sa',3);
 }
 /* iko yaNaci (6.1.77) */
 if(sub(array('i','I','u','U'),prat('ac'),blank(0),0))
 {
 $text = two(array('i','I','u','U'),prat('ac'),array('y','y','v','v'),prat('ac'),0);
-echo "<p class = sa >By iko yaNaci (".link_sutra("6.1.77").") :</p>\n";
-echo "<p class = sa >इको यणचि (६.१.७७) y:</p>\n";
-display(0);
+storedata('6.1.77','sa',0);
 }
 if(sub(array("f","F","x","X"),prat('ac'),blank(0),0))
 {
 $text = two(array("f","F","x","X"),prat('ac'),array("r","r","l","l"),prat('ac'),0);
-echo "<p class = sa >By iko yaNaci (".link_sutra("6.1.77").") :</p>\n";
-echo "<p class = sa >इको यणचि (५.१.७७) :</p>\n";
+storedata('6.1.77','sa',0);
 $sthanivadbhav = 1; // 0 - no sthAnivadbhAva. 1 - sthAnivadbhAva.
-display(0); 
 }
 else
 {
@@ -9832,55 +9723,38 @@ $go = array("go"); $aonly = array("a");
 if(sub($go,$aonly,blank(0),0) && ( $pada==="pada" || $bham===1 || sub(array("goanc"),blank(0),blank(0),0)))
 {
 $text = two($go,$aonly,array("go "),$aonly,1);
-echo "<p class = sa >By sarvatra vibhASA goH (".link_sutra("6.1.122").")</p>
-    <p class = hn >it is optionally kept as prakRtibhAva :</p>\n";
-echo "<p class = sa >सर्वत्र विभाषा गोः (६.१.१२२)</p>
-    <p class = hn >पाक्षिक रूप से प्रकृतिभाव भी होता है ।</p>\n";
+storedata('6.1.122','sa',0);
 display(0); 
 } 
 /* avaG sphoTAyanasya (6.1.123) */ 
 if (sub($go,prat('ac'),blank(0),0) && ( $pada==="pada" || $bham===0 || sub(array("goanc"),blank(0),blank(0),0))  )
 {
 $text = two($go,prat('ac'),array('gava'),prat('ac'),1);
-echo "<p class = sa >By avaG sphoTAyanasya (".link_sutra("6.1.123").") </p>
-    <p class = hn >it is optionally converted to avaG :</p>\n";
-echo "<p class = sa >अवङ्‌ स्फोटायनस्य (६.१.१२३) </p>
-    <p class = hn >पाक्षिक रूप से अवङ्‌ भी होता है ।</p>\n";
-display(0);
+storedata('6.1.123','sa',0);
 } 
 /* indre ca (6.1.124) */
 if (sub($go,array("indra"),blank(0),0)  && ( $pada==="pada" || $bham===1 || sub(array("goanc"),blank(0),blank(0),0)))
 {
 $text = two($go,array("indra"),array('gava'),array("indra"),0);
-echo "<p class = sa >by indre ca (".link_sutra("6.1.124").") :</p>\n";
-echo "<p class = sa >इन्द्रे च (६.१.१२४) :</p>\n";
-display(0); 
+storedata('6.1.124','sa',0);
 } 
 /* eGaH padAntAdati (6.1.109) */ 
 if (sub(array("e","o"),array("a"),blank(0),0)  && ( $pada==="pada" || sub(array("goanc"),blank(0),blank(0),0)))
 {
     $text = two(prat('eN'),array("a"),prat('eN'),array("'"),0);
-    echo "<p class = sa >By eGaH padAntAdati (".link_sutra("6.1.109").") : </p>\n";
-    echo "<p class = sa >एङः पदान्तादति (६.१.१०९) : </p>\n";
-    display(0);
+	storedata('6.1.`09','sa',0);
 }
 /* eco'yavAyAvaH (7.1.78) */
 $ayavayavah = array("ay","av","Ay","Av");
 if (sub(prat('ec'),prat('ac'),blank(0),0))
 {
 $text = two(prat('ec'),prat('ac'),$ayavayavah,prat('ac'),0);
-echo "<p class = sa >By echo'yavAyAvaH (".link_sutra("7.1.78").") :</p>\n";
-echo "<p class = sa >एचोऽयवायावः (७.१.७८) 6:</p>\n";
-display(0);
+storedata('7.1.78','sa',0);
 }
 /* dIdhIvevITAm (1.1.7) */
 if (arr($text,'/[a][yv][i][t][A]$/') && in_array("iw",$Agama) && $ardhadhatuka===1 && in_array($so,$tiG) && $start===1)
 {
-    echo "<p class = sa >dIdhIvevITAm (".link_sutra("1.1.7").") :</p>\n"; 
-    echo "<p class = hn >This rule prevents guNa which is mandated by pugantalaghUpadhasya ca.</p>\n"; 
-    echo "<p class = sa >दीधीवेवीटाम्‌ (१.१.७) :</p>\n";
-    echo "<p class = hn >अनेन पुगन्तलघूपधस्य चेत्यनेन विहितो गुणो बाध्यते ।</p>\n";
-    display(0);    
+	storedata('1.1.7','sa',0);
 }
 /* vAnto yi pratyaye (6.1.71), goryutau CandasyupasaMkhyAnam (vA 3543), adhvaparimANe ca (vA 3544) dhAtostannimittasyaiva (6.1.80) */
 $o = array("o","O"); 
@@ -9892,79 +9766,52 @@ $dhato1 = array("urRa","ra","na","sna","kza","kzRa","Da","Dra","da","dra","sra",
 if (sub($dhato,$y,blank(0),0) && $pada ==="pratyaya" && $start ===1)
 {
 $text = two($dhato,$y,$dhato1,array("vy"),0);
-    echo "<p class = sa >By dhAtostannimittasyaiva (".link_sutra("6.1.77").")  : </p>\n";
-    echo "<p class = sa >धातोस्तन्निमित्तस्यैव (६.१.७७) : </p>\n";
-    display(0);
+storedata('6.1.77','sa',0);
 } 
 if (sub($o,$y,blank(0),0) && $pada ==="pratyaya" && !sub($dhato,$y,blank(0),0))
 {
     if (sub(array("gav"),$y,blank(0),0))
     {
     $text = two($o,$y,$ab,$y,0);
-    echo "<p class = sa >By vAnto yi pratyaye (".link_sutra("6.1.71")."), goryutau CandasyupasaMkhyAnam (vA 3543), adhvaparimANe ca (vA 3544)  : </p>
-        <p class = hn > If the 'y' following 'o/O' belongs to a pratyaya or the word 'go' is followed by 'yuti' in Chandas/ as a measure of distance (vA 3543, 3544).</p>\n";
-    echo "<p class = sa >वान्तो यि प्रत्यये (६.१.७१), गोर्यूतौ छन्दस्युपसंख्यानम्‌ (वा ३५४३), अध्वपरिमाणे च (वा ३५४४)  : </p>
-        <p class = hn > यकारादि प्रत्यय के परे रहते या वैदिक भाषा / अध्वपरिमाण के अर्थ में यूति शब्द परे हो तब यह नियम लागू होता है ।</p>\n";        
+	storedata('6.1.71','sa',0);
     }
     elseif (sub(array("o","O"),array("yat"),blank(0),0))
     {
-    echo "<p class = sa >By dhAtostannimittasyaiva (".link_sutra("6.1.77").")  : </p>\n";
-    echo "<p class = hn >Here the 'o' is because of 'y'. Therefore This doesn't apply. </p>\n";
-    echo "<p class = sa >धातोस्तन्निमित्तस्यैव (६.१.७७) :</p>\n";                
-    echo "<p class = hn >ओयते में ओकार यकारनिमित्तक नहीं होने के कारण इस सूत्र से अवादेश नहीं हुआ ।</p>\n";                
+	storedata('6.1.77','sa',0);
     }
     else
     {
     $text = two($o,$y,$ab,$y,0);
-    echo "<p class = sa >By vAnto yi pratyaye (".link_sutra("6.1.71").") : </p>\n";
-    echo "<p class = sa >वान्तो यि प्रत्यये (६.१.७१) :</p>\n";        
+	storedata('6.1.71','sa',0);
     }
-    display(0);
 }
 /* kSayyajayyau zakyArthe (6.1.81)*/
 if (sub(array("kze"),array("ya"),blank(0),0)  && $pada ==="pratyaya" && $start === 1)
 {
     $text = two(array("kze"),array("ya"),array("kzay"),array("ya"),1);
-    echo "<p class = sa >By kSayyajayyau zakyArthe (".link_sutra("6.1.81").") :</p>
-        <p class = hn >If the word is to be used in the meaning of 'being capable of', then only it will be क्षय्य.</p>\n";
-    echo "<p class = sa >क्षय्यजय्यौ शक्यार्थे (६.१.८१) :</p>
-        <p class = hn >यदि क्षय कर सकने के  अर्थ में प्रयोग होता है तभी क्षय्य होगा ।</p>\n";
-    display(0);    
+	storedata('6.1.81','sa',0);
 }
 if (sub(array("je"),array("ya"),blank(0),0) && $pada ==="pratyaya" && $start === 1)
 {
-        $text = two(array("je"),array("ya"),array("jay"),array("ya"),1);
-    echo "<p class = sa >By kSayyajayyau zakyArthe (".link_sutra("6.1.81").") :</p>
-        <p class = hn >If the word is to be used in the meaning of 'being capable of', then only it will be जय्य.</p>\n";
-    echo "<p class = sa >क्षय्यजय्यौ शक्यार्थे (६.१.८१) :</p>
-        <p class = hn >यदि जय कर सकने के  अर्थ में प्रयोग होता है तभी जय्य होगा ।</p>\n";
-    display(0);
+    $text = two(array("je"),array("ya"),array("jay"),array("ya"),1);
+	storedata('6.1.81','sa',0);
 }
 /* krayyastadarthe (6.1.82) */
 if (sub(array("kre"),array("ya"),blank(0),0)  && $pada ==="pratyaya" && $start ===1)
-{
-    
+{    
     $text = two(array("kre"),array("ya"),array("kray"),array("ya"),1);
-    echo "<p class = sa >By krayyastadarthe (".link_sutra("6.1.82").") :</p>
-        <p class = hn >If the word is to be used in the meaning of 'for sale', then only it will be क्रय्य.</p>\n";
-     echo "<p class = sa >क्रय्यस्तदर्थे (६.१.८२) :</p>
-        <p class = hn >यदि बेचने के लिये रखा हुआ इस अर्थ में प्रयोग हो तभी क्रय्य शब्द बनता है </p>\n";
-    display(0);
+	storedata('6.1.82','sa',0);
 }
 /* khyatyAtparasya (6.1.112) */
 if (arr($text,'/[Kt][y][+][a]/')  && arr(array($fo),'/[Kt][iI]$/') && in_array($so,array("Nasi!","Nas")) && $pada==="pratyaya")
 {
     $text = three(array("Ky","ty"),array("+"),array("a"),array("Ky","ty"),array("+"),array("u"),0);
-    echo "<p class = sa >By khyatyAtparasya (".link_sutra("6.1.112").") :</p>\n";
-    echo "<p class = sa >ख्यत्यात्परस्य (६.१.११२) :</p>\n";
-    display(0);
+	storedata('6.1.112','sa',0);
 }
 if (sub(array("lUny","kzAmy","prastImy"),array("+"),blank(0),0) && in_array($so,array("Nasi!","Nas")) && $pada==="pratyaya")
 {
     $text = three(array("lUny","kzAmy","prastImy"),array("+"),array("a"),array("lUny","kzAmy","prastImy"),array("+"),array("u"),0);
-    echo "<p class = sa >By khyatyAtparasya (".link_sutra("6.1.112").") :</p>\n";
-    echo "<p class = sa >ख्यत्यात्परस्य (६.१.११२) :</p>\n";
-    display(0);
+	storedata('6.1.112','sa',0);
 }
 
 /* Exceptions to sasajuSo ruH */
@@ -9972,47 +9819,34 @@ if (sub(array("lUny","kzAmy","prastImy"),array("+"),blank(0),0) && in_array($so,
 if (sub(array("sas","ezas"),$hl,blank(0),0)  && !sub(array("asa","anEza"),array("s"),$hl,0) && in_array($fo,array("sas","ezas")))
 {
     $text = two(array("sas","ezas"),$hl,array("sa ","eza "),$hl,1);
-    echo "<p class = sa >By etattadoH sulopo&konaJsamAse hali (".link_sutra("6.1.132").") :</p>\n";
-    echo "<p class = sa >एतत्तदोः सुलोपोऽकोऽनञ्समासे हलि (६.१.१३२)) :</p>\n";
-    display(0);
+	storedata('6.1.132','sa',0);
 }
 /* so'ci lope cetpAdapUraNam (6.1.134) */
 //if (sub(array("sa"),array("s"),$ac,0))
 if (sub(array("sas"),array("+"),$ac,0))
 {
     $text = three(array("sa"),array("s"),$ac,array("sa"),array(""),$ac,1);
-    echo "<p class = sa >so'ci lope cetpAdapUraNam (".link_sutra("6.1.134").") :</p>
-        <p class = hn >N.B. : There is difference of opinion here. vAmana thinks that it applies only to RkpAda. Others think that it applies to zlokapAda also e.g. 'saiSa dAzarathI rAmaH'.</p>\n";
-    echo "<p class = sa >सोऽचि लोपे चेत्पादपूरणम्‌ (६.१.१३४) :</p>
-        <p class = hn >यहाँ मतान्तर है । वामन के मत में यह केवल ऋक्पाद में लागू होता है । अन्यों के मत में यह श्लोकपाद में भी लागू होता है । जैसे कि सैष दाशरथी रामः ।</p>\n";
-    display(0);
+	storedata('6.1.134','sa',0);
 }
 /* aniditAM patch for sraMs and dhvaMs */
 // so that vasusraMsu.. may apply
 if (sub(array("sraMs","DvaMs"),blank(0),blank(0),0))
 {
         $text = one(array("sraMs","DvaMs"),array("sras","Dvas"),0);
-        echo "<p class = sa >aniditAM hala upadhAyAH kGiti (".link_sutra("6.4.24").") :</p>\n";
-        echo "<p class = sa >अनिदितां हल उपधायाः क्ङिति (६.४.२४) :</p>\n";
-        display(0); $aniditAm = 1;
+		storedata('6.4.24','sa',0);
+        $aniditAm = 1;
 }
 /* vasusraMsudhvaMsvanaDuhAM daH (8.2.72) */
 $vasu1 = array("sras","Dvas","anaquh");
 if (sub($vasu1,array("+"),blank(0),0)  && $pada ==="pada")
 {
     $text = two(array("sras","Dvas","anaquh"),array("+"),array("srad","Dvad","anaqud"),array("+"),0);
-    echo "<p class = sa >By vasusraMsudhvaMsvanaDuhAM daH (".link_sutra("8.2.72").") :</p>\n";
-     echo "<p class = sa >वसुस्रंसुध्वंस्वनडुहां दः (८.२.७२) :</p>\n";
-    display(0); 
+	storedata('8.2.72','sa',0);
 }
 if ((sub(array("vidvas","sedivas","uzivas","Suzruvas","upeyivas","anASvas"),array("+"),blank(0),0))  && $pada ==="pada" && !arr($text,'/[s][+]$/'))
 {
     $text = one(array("vidvas","sedivas","uzivas","Suzruvas","upeyivas","anASvas"),array("vidvad","sedivad","uzivad","Suzruvad","upeyivad","anASvad"),0);
-    echo "<p class = sa >By vasusraMsudhvaMsvanaDuhAM daH (".link_sutra("8.2.72").") :</p>
-        <p class = hn >N.B. : If 'vas' is used in sense of vasupratyayAnta as in 'vidvas', then only this conversion takes place. Not in cases like 'zivas'.</p>\n";
-     echo "<p class = sa >वसुस्रंसुध्वंस्वनडुहाः दः (८.२.७२) :</p>
-        <p class = hn >यदि वसुप्रत्ययान्त शब्द जैसे कि विद्वस्‌ इत्यादि में यह नियम लागू होता है । शिवस्‌ जैसे शब्दों में नहीं ।</p>\n";
-   display(0); 
+	storedata('8.2.72','sa',0);
 }
 /* saMyogAnta patch for asmad / yuSmad */
 // make it more specific to asmad / yuSmad. Right now there is nothing in the condition which restricts its application to asmad / yuSmad.
@@ -10020,66 +9854,59 @@ if (arr($text,'/['.pc('hl').'][s]$/') )
 {
     $text = last(array("nas","vas"),array("nass","vass"),0);
    $text = last(array("s"),array(""),0);
-    echo "<p class = sa >By saMyogAntasya lopaH (".link_sutra("8.2.23").") :</p>\n";
-    echo "<p class = sa >संयोगान्तस्य लोपः (८.२.२३) :</p>\n";
-   display(0);
+	storedata('8.2.23','sa',0);
 }
 /* patch for asiddhatva of SakAra of pratyaya as in pipaThiS */
 // SakARa of pipaThiS is because of a sUtra which is in tripAdi. so asiddhatva has to apply. We have not come to that sUtra. We take pipaThiS as the base word.
 if (arr($text,'/[z][+]/') && $pada==="pada" && sub(array("pipaWiz","ASiz"),array("+"),blank(0),0) )
 {
    $text = two(array("z"),array("+"),array("r@"),array("+"),0); $R=array_merge($R,array(1));
-    echo "<p class = sa >Satva is asiddha to rutva. Therefore sasajuSo ruH applies. </p>\n";
+   // Pending to refractor
+/*    echo "<p class = sa >Satva is asiddha to rutva. Therefore sasajuSo ruH applies. </p>\n";
     echo "<p class = sa >रुत्वं प्रति षत्वस्यासिद्धत्वात्‌ ससजुषो रुः इति रुत्वम्‌ ।</p>\n";
-   display(0); 
+   display(0); */
    $dhatu=1; // This patch is for dhAtus. So $dhatu is made 1.
 }
 /* patch for asiddhatva of SakAra of doS */
 if (arr($text,'/[z][+]/') && $pada==="pada" && sub(array("doz","Danuz"),array("+"),blank(0),0) )
 {
    $text = two(array("z"),array("+"),array("r@"),array("+"),0); $R=array_merge($R,array(1));
-    echo "<p class = sa >Satva is asiddha to rutva. Therefore sasajuSo ruH applies. </p>\n";
+   // Pending to refractor.
+/*    echo "<p class = sa >Satva is asiddha to rutva. Therefore sasajuSo ruH applies. </p>\n";
     echo "<p class = sa >रुत्वं प्रति षत्वस्यासिद्धत्वात्‌ ससजुषो रुः इति रुत्वम्‌ ।</p>\n";
-   display(0); // this patch is for non dhAtus. therefore $dhatu is not altered.
+   display(0); // this patch is for non dhAtus. therefore $dhatu is not altered.*/
 }
 /* sasajuSo ruH (8.2.66) */
 if ((arr($text,'/[s][a][j][u][z][+]/') && $start===1  && $pada ==="pada" ))
 {
     $text = one(array("z+",),array("r@+",),0); $R=array_merge($R,array(1));
-    echo " <p class = sa >By sasajuSo ruH (".link_sutra("8.2.66").") :</p>\n";
-    echo " <p class = sa >ससजुषो रुः (८.२.६६) :</p>\n";
-       display(0);
+	storedata('8.2.66','sa',0);
 }
 if ((arr($text,'/[H][+]/') && $start===1  && $pada ==="pada" )) // for neutralising users' tendency to enter visarga.
 {
     $text = one(array("H+",),array("r@+",),0); $R=array_merge($R,array(1));
-    echo " <p class = hn >You have entered a visarga at the end of the first word. Usually it is derived from a sakAra at the end of the word.</p>\n";
+	// Pending to refractor.
+/*    echo " <p class = hn >You have entered a visarga at the end of the first word. Usually it is derived from a sakAra at the end of the word.</p>\n";
     echo " <p class = hn >आपने प्रथम शब्द के अन्त में विसर्ग का प्रयोग किया है । सामान्यतः यह सकारान्त शब्द से उद्भव होता है ।</p>\n";
-       display(0);
+	display(0);*/
 }
 if (arr($text,'/[aAiIuUfFxXeEoO][s][+]/') && $start===1  && ( $pada ==="pada" || $so==="su!" ))
 {
     $text = one(array("s+"),array("r@+"),0); $R=array_merge($R,array(1));
-    echo " <p class = sa >By sasajuSo ruH (".link_sutra("8.2.66").") :</p>\n";
-    echo " <p class = sa >ससजुषो रुः (८.२.६६) :</p>\n";
-       display(0); $r1=1; // 0 - first word doesn't have sasajuSo ruH. 1 - first owrd has sasajuSo ruH.
+	storedata('8.2.66','sa',0);
+	$r1=1; // 0 - first word doesn't have sasajuSo ruH. 1 - first owrd has sasajuSo ruH.
 }
 elseif ($start>1 && $r1!==0) { $r1 = 1; } else {$r1=0; }
 if ( arr($text,'/['.pc('ac').'][s]$/') && $start===1 )
 {
     $text = last(array("s"),array("r@"),0);
-    echo "<p class = sa >By sasajuSo ruH (".link_sutra("8.2.66").") :</p>\n"; 
-     echo "<p class = sa >ससजुषो रुः (८.२.६६) :</p>\n";$r2 = 1;
-     display(0);
+	storedata('8.2.66','sa',0);
 }
 elseif ( arr($text,'/['.pc('ac').'][+][s]$/') && $start===1 )
 {
     $text=last(array("s"),array("r@"),0);
-//    $text = three($ac,array("+"),array("s"),$ac,array("+"),array("r@"),0); $R=array_merge($R,array(1));
-     echo "<p class = sa >By sasajuSo ruH (".link_sutra("8.2.66").") :</p>\n"; 
-     echo "<p class = sa >ससजुषो रुः (८.२.६६) :</p>\n";
+	storedata('8.2.66','sa',0);
      $r2 = 1; // 0 - second word doesn't have sasajuSo ruH. 1 -second word has sasajuSo ruH.
-     display(0);
 }
 elseif ($start>1 && $r2!==0) 
     {
@@ -10092,12 +9919,11 @@ else
 if (arr($text,'/[H]$/') && $start===1  && $pada ==="pada" )
 {
      $text = last(array("H"),array("r@"),0); $R=array_merge($R,array(1));
-      echo " <p class = hn >You have entered a visarga at the end of the second word. Usually it is derived from a sakAra at the end of the word.</p>\n";
-    echo " <p class = hn >आपने द्वितीय शब्द के अन्त में विसर्ग का प्रयोग किया है । सामान्यतः यह सकारान्त शब्द से उद्भव होता है ।</p>\n";
-     echo "<p class = sa >By sasajuSo ruH (".link_sutra("8.2.66").") :</p>\n"; 
-      echo "<p class = sa >ससजुषो रुः (८.२.६६) :</p>\n";
+	 // Pending to refractor.
+/*      echo " <p class = hn >You have entered a visarga at the end of the second word. Usually it is derived from a sakAra at the end of the word.</p>\n";
+    echo " <p class = hn >आपने द्वितीय शब्द के अन्त में विसर्ग का प्रयोग किया है । सामान्यतः यह सकारान्त शब्द से उद्भव होता है ।</p>\n";*/
+	storedata('8.2.66','sa',0);
       $r1= 1;
-     display(0);
 }
 /* ahan(8.2.68) and ro'supi (8.2.69) and rUparAtrirathantareSu vAcyam (vA 4847) */ 
 $noahan = array("vftrahan","bahuvftrahan");
@@ -10106,47 +9932,43 @@ if (sub(array("ahan","Ahan","AhAn"),array("+"),blank(0),0) && !sub($noahan,blank
     if ((strpos($so,"rUp")===0)||(strpos($so,"rAtr")===0)||(strpos($so,"raTantar")===0))
     {
     $text = one(array("ahan","Ahan","AhAn"),array("ahar@","Ahar@","AhAr@"),0); $R=array_merge($R,array(1));
-    echo "<p class = sa >By ahan (".link_sutra("8.2.68").") and rUparAtrirathantareSu vAcyam (vA 4847).</p>\n";
-     echo "<p class = sa >अहन्‌ (८.२.६८) तथा रूपरात्रिरथन्तरेषु वाच्यम्‌ (वा ४८४७) ।</p>\n";
-     display(0);
+	storedata('8.2.68','sa',0);
+	storedata('8.2.68-1','sa',0);
     }
     else 
     {
     $text = one(array("ahan","Ahan","AhAn"),array("ahar","Ahan","AhAr@"),0);
-        echo "<p class = sa >ro'supi (".link_sutra("8.2.69").") :</p>\n";
-     echo "<p class = sa >रोऽसुपि (८.२.६९) :</p>\n";
-     display(0);
+	storedata('8.2.69','sa',0);
     }
 }
 if ( (arr($text,'/[aA][h][aA][n]$/')||arr($text,'/[aA][h][aA][n][+]/') )&& !sub($noahan,blank(0),blank(0),0) && (in_array($so,$sup)) && $pada === "pada")
 {
-     echo "<p class = sa >By ahan (".link_sutra("8.2.68").") :</p>\n";
+	// Pending to refractor.
+/*     echo "<p class = sa >By ahan (".link_sutra("8.2.68").") :</p>\n";
      echo "<p class = hn >This creates a nipAta for ahan, and shows that the na lopaH prAtipadikAntasya doesn't apply here.</p>\n";
      echo "<p class = sa >अहन्‌ (८.२.६८) :</p>\n";
      echo "<p class = hn >अनेन नलोपाभावं निपात्यते ।</p>\n";
-     display(0);
+     display(0);*/
     $text = one(array("ahan","Ahan","AhAn"),array("ahar@","Ahar@","AhAr@"),0); $R=array_merge($R,array(1));
-     echo "<p class = sa >By ahan (".link_sutra("8.2.68").") :</p>\n";
-     echo "<p class = hn >This mandates rutva here.</p>\n";
-     echo "<p class = sa >अहन्‌ (८.२.६८) :</p>\n";
-     echo "<p class = hn >अनेन रुर्विधेयः ।</p>\n";
-   display(0); 
+	storedata('8.2.68','sa',0);
 }
 /* samaH suTi (8.3.5) */ // have used @ as mark of anunAsika u of ru. 
 if (sub(array("sam"),array("s"),array("k"),0))
 {
 $text = three(array("sam"),array("s"),array("k"),array("saMr@"),array("s"),array("k"),0);
+	storedata('8.3.5','sa',0);
 $text = one(array("Mr@"),array("!r@"),1); $R=array_merge($R,array(1));
-echo "<p class = sa >By samaH suTi (".link_sutra("8.3.5")."), atrAnunAsikaH pUrvasya tu vA (".link_sutra("8.3.2").") and anunAsikAtparo'nusvAraH (".link_sutra("8.3.4").") :</p>\n";
-echo "<p class = sa >समः सुटि (८.३.५), अत्रानुनासिकः पूर्वस्य तु वा (८.३.२) तथा अनुनासिकात्परोऽनुस्वारः (८.३.४) :</p>\n";
-display(0); 
+	storedata('8.3.2','sa',0);
+	storedata('8.3.4','sa',0);
 }
 /* khyAYAdeze na (vA 1591) */
 if (sub(array("pum"),array("Ky"),blank(0),0))
 {
-echo "<p class = sa >By khyAYAdeze na (vA 1591) :</p>\n";
-echo "<p class = sa >ख्याञादेशे न (वा १५९१) :</p>\n";
-display(0); $pum = 1; // 0 - pumaH khayyampare is mandatory. 1 - pumaH khayyampare is optional.
+	// Pending to refractor
+	/*echo "<p class = sa >By khyAYAdeze na (vA 1591) :</p>\n";
+	echo "<p class = sa >ख्याञादेशे न (वा १५९१) :</p>\n";
+	display(0);*/
+	$pum = 1; // 0 - pumaH khayyampare is mandatory. 1 - pumaH khayyampare is optional.
 } else { $pum = 0; }
 /* pumaH khayyampare (8.3.6) */
 $am = array("a","A","i","I","u","U","f","F","x","X","e","o","E","O","h","y","v","r","l","Y","m","N","R","n");
@@ -10154,9 +9976,9 @@ if(sub(array("pum"),prat('Ky'),$am,0) && $pum === 0)
 {
 $text = three(array("pum"),prat('Ky'),$am,array("puMr@"),prat('Ky'),$am,0);
 $text = one(array("Mr@"),array("!r@"),1);
-echo "<p class = sa >By pumaH khayyampare (".link_sutra("8.3.6")."), atrAnunAsikaH pUrvasya tu vA (".link_sutra("8.3.2").") and anunAsikAtparo'nusvAraH (".link_sutra("8.3.4").") :</p>\n";
-echo "<p class = sa >पुमः खय्यम्परे (८.३.६), अत्रानुनासिकः पूर्वस्य तु वा (८.३.२) तथा अनुनासिकात्परोऽनुस्वारः (८.३.४) :</p>\n";
-display(0);
+storedata('8.3.6','sa',0);
+storedata('8.3.2','sa',0);
+storedata('8.3.4','sa',0);
 } 
 /* nazChavyaprazAn (8.3.7) */
 if (sub(array("n"),prat('Cv'),$am,0) && arr($text,'/[n][+]['.pc('Cv').']/') && $pada ==="pada")
@@ -10164,51 +9986,46 @@ if (sub(array("n"),prat('Cv'),$am,0) && arr($text,'/[n][+]['.pc('Cv').']/') && $
 $text = three(array("n"),prat('Cv'),$am,array("Mr@"),prat('Cv'),$am,0); $R=array_merge($R,array(1));
 $text = one(array("praSAMr@"),array("praSAn"),0);
 $text = one(array("Mr@"),array("!r@"),1);
-echo "<p class = sa >By nazChavyaprazAn (".link_sutra("8.3.7")."), atrAnunAsikaH pUrvasya tu vA (".link_sutra("8.3.2").") and anunAsikAtparo'nusvAraH (".link_sutra("8.3.4").") :</p>\n";
-echo "<p class = sa >नश्छव्यप्रशान्‌ (८.३.७), अत्रानुनासिकः पूर्वस्य तु वा (८.३.२) तथा अनुनासिकात्परोऽनुस्वारः (८.३.४)  :</p>\n";
-display(0);
+storedata('8.3.6','sa',0);
+storedata('8.3.2','sa',0);
+storedata('8.3.4','sa',0);
 } 
 /* nRUnpe (8.3.10) */
 if (sub(array("nFn"),array("p"),blank(0),0)  && $pada ==="pada")
 {
 $text = two(array("nFn"),array("p"),array("nFMr@"),array("p"),0);
 $text = one(array("Mr@"),array("!r@"),1);
-echo "<p class = sa >By nRUnpe (".link_sutra("8.3.10")."), atrAnunAsikaH pUrvasya tu vA (".link_sutra("8.3.2").") and anunAsikAtparo'nusvAraH (".link_sutra("8.3.4").") </p>\n";
-echo "<p class = sa >नॄन्पे (८.३.१०), अत्रानुनासिकः पूर्वस्य तु वा (८.३.२) तथा अनुनासिकात्परोऽनुस्वारः (८.३.४) : </p>\n";
-display(0);
+storedata('8.3.10','sa',0);
+storedata('8.3.2','sa',0);
+storedata('8.3.4','sa',0);
 }
 /* svatavAn pAyau (8.3.11) */
 if (sub(array("svatavAn"),array("pAyu"),blank(0),0)  && $pada ==="pada")
 {
 $text = two(array("svatavAn"),array("pAyu"),array("svatavA! "),array("pAyu"),0);
-echo "<p class = sa >By svatavAn pAyau (".link_sutra("8.3.11")."), atrAnunAsikaH pUrvasya tu vA (".link_sutra("8.3.2").")</p>\n";
-echo "<p class = sa >स्वतवान्पायौ (८.३.११), अत्रानुनासिकः पूर्वस्य तु वा (८.३.२) : </p>\n";
-display(0);
+storedata('8.3.11','sa',0);
+storedata('8.3.2','sa',0);
 }
 /* kAnAmreDite (8.3.12) */ 
 if (sub(array("kAn"),array("kAn"),blank(0),0))
 {
 $text = two(array("kAn"),array("kAn"),array("kAMr@"),array("kAn"),0); $R=array_merge($R,array(1));
 $text = one(array("Mr@"),array("!r@"),1);
-echo "<p class = sa >By kAnAmreDite (".link_sutra("8.3.12")."), atrAnunAsikaH pUrvasya tu vA (".link_sutra("8.3.2").") and anunAsikAtparo'nusvAraH (".link_sutra("8.3.4").") :</p>\n";
-echo "<p class = sa >कानाम्रेडिते (८.३.१२), अत्रानुनासिकः पूर्वस्य तु वा (८.३.२) तथा अनुनासिकात्परोऽनुस्वारः (८.३.४)  :</p>\n";
-display(0);
+storedata('8.3.12','sa',0);
+storedata('8.3.2','sa',0);
+storedata('8.3.4','sa',0);
 }
 /* ato roraplutAdaplute (6.1.113) */
 if (sub(array("ar@"),array("a"),blank(0),0))
 {
     $text = two(array("ar@"),array("a"),array("au"),array("a"),0);
-    echo "<p class = sa >By ato roraplutAdaplute (".link_sutra("6.1.113").") :</p>\n";
-    echo "<p class = sa >अतो रोरप्लुतादप्लुते (६.१.११३) :</p>\n";
-    display (0);
+	storedata('6.1.113','sa',0);
 }
 /* hazi ca (6.1.114) */
 if (sub(array("a"),array("r@"),prat('hS'),0))
 {
     $text = three(array("a"),array("r@"),prat('hS'),array("a"),array("u"),prat('hS'),0);
-    echo "<p class = sa >By hazi ca (".link_sutra("6.1.114").") :</p>\n";
-    echo "<p class = sa >हशि च (६.१.११४) :</p>\n";
-    display (0);
+	storedata('6.1.114','sa',0);
 }
 /* ekaH pUrvaparayoH (6.1.84) */ // This is the adhikArasUtra. No vidhi mentioned.
 // The following vArtikas are exception to AdguNaH. Otherwise after joining, it will be difficult to identify. So coded here.
