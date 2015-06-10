@@ -27,7 +27,7 @@ include "dev-slp.php"; // includes code for devanagari to SLP.
 /* hides error reports. */
 // If the warning is shown with line number of function.php and you are not able to trace the line which called it, turn the all error reporting on. It will help you locate the wrong entries in a reasonably narrow space, because there are so many notices around.
 //error_reporting(E_ERROR | E_WARNING | E_PARSE);
-//error_reporting(0);
+error_reporting(0);
 
 /* set execution time to an hour */
 ini_set('max_execution_time', 36000);
@@ -170,29 +170,31 @@ $samp = array(); // creating an array where we can store whethere samprasAraNa h
 $Agama = array(); // storing Agamas.
 // rest of the variables will be defined at their particular occurence in the code.
 
-/* Displaying information about the verb */
+/* Displaying information about the verb to the user */
 if ($verbset!=="none")
 {
-    verb_meaning_gana_number2($first);
+    verb_meaning_gana_number2($first); // See function.php for details of function.
 }
 elseif (in_array($first,$allverbs))
 {
-    verb_meaning_gana_number1($first);
+    verb_meaning_gana_number1($first); // See function.php for details of function.
 }
 else
 {
-	verb_meaning_gana_number3($first);
+	verb_meaning_gana_number3($first); // See function.php for details of function.
 }
+
 /* upasarga display */
 if ($us!=="")
 {
-	upasarga_display($us);
+	upasarga_display($us); // See function.php for details of function.
 }
+
 /* Deciding the pratyaya by doing padanirdhARaNa of parasmai, Atmane, ubhaya */ 
 /* bhAvakarmaNoH (1.3.13) */
 if ( in_array($vAcya,array("karma","bhAva")) && $pada==="pratyaya" && $lakAra!=="")
 {
-	$verbpada=verb_pada('1.3.13');
+	$verbpada=verb_pada('1.3.13'); // See function.php for details of function.
 }
 /* luTi ca klRpaH (1.3.93) */
 elseif ( $fo==="kfpU!" && ($san===1 || in_array($lakAra,array("lfN","lfw","luw"))))
@@ -224,12 +226,7 @@ elseif ( $_GET['cond14']==="2" )
 // Pending to refractor because I am not able to locate vArtika number in MB.
 elseif ( $_GET['cond14_1']==="2" )
 {
-    echo "<p class = st >By parAGgakarmakAnna niSedhaH (vA 903) :</p>\n"; 
-    echo "<p class = hn >This sUtra mandates Atmanepadam. </p>\n";
-    echo "<p class = st >पराङ्गकर्मकान्न निषेधः (वा ९०३) :</p>\n";
-    echo "<p class = hn >अनेन सूत्रेणात्मनेपदं विधीयते । </p>\n";
-    echo "<hr>\n";                    
-    $verbpada="A";
+	$verbpada=verb_pada('vA 903'); // Not able to locate the vArtika. So added it in the $verb_sutra_pada array.
 }
 /* prakAzanastheyAkhyayozca (1.3.23) */
 elseif ( $_GET['cond15']==="1" )
