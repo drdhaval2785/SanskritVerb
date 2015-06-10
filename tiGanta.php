@@ -97,11 +97,11 @@ mkdir ('verboutput');
 $logfile = fopen('verboutput//log.txt','a+');
 fputs($logfile,date('D, d M Y H:i:s')."\n");
 fputs($logfile,"verb = $first, gaNa = $verbset, lakAra = $lakAra, transliteration = $tran, vAcya = $vAcya, upasarga = $us\n");
-fclose($logfile);
 
 $outfile = fopen("verboutput//".$first."_".$verbset."_".$lakAra.".html", "wb");
 
 echo $header; // creating header. This will ensure that the HTML is shown with UTF-8 encoding with necessary stylesheet.
+fputs($outfile,$header);
 if (!$verbset) { $verbset="none"; } // I dont think this is needed now. Test and remove. Pending.
 $verbset=trim($verbset);
 $fo = $first; // remembering the original prakRti. Sometimes we need to know what was the original prakRti.
@@ -626,49 +626,36 @@ if (in_array($lakAra,array("lfw","lfN","luw","ASIrliN","luN","liw","ArDaDAtukale
     if (anekAca($verb_without_anubandha) || $san===1 || $yaG===1 || $sanAdi==="Ric" )
     {
         $id_dhAtu="sew";
-        echo "<p class = st >This is a 'seT' verb.</p>\n"; 
-        echo "<p class = st >सेट्‌ धातुः </p>\n";
-        echo "<hr>\n";
+		gui2('seTverb');
+		print2('seTverb');
     }
      /* svaratisUtisUyatidhUJUdito vA (7.2.44) */
     elseif (ends(array($fo),array("svf","zUN","DUY"),4) || ends(array($fo),$Uditverbs,4))
     {
         $id_dhAtu="vew";
-        echo "<p class = st >By svaratisUtisUyatidhUJUdito vA (".link_sutra("7.2.44").") :</p>\n"; 
-        echo "<p class = hn >This sUtra makes this a veT dhAtu. </p>\n"; 
-        echo "<p class = st >स्वरतिसूतिसूयतिधूञूदितो वा (७.२.४४) :</p>\n";
-        echo "<p class = hn >अनेन सूत्रेण वेट्त्वं विधीयते ।</p>\n";
-        echo "<hr>\n";        
+		gui2('7.2.44');
+		print2('7.2.44');
     }
    /* RddhanoH sye (7.2.70) */
     elseif ( (ends(array($verb_without_anubandha),array("f",),1) || ends(array($fo),array("hana!",),4))&& in_array($lakAra,array("lfw","lfN")))
     {
         $id_dhAtu="sew";
-        echo "<p class = st >By RddhanoH sye (".link_sutra("7.2.70").") :</p>\n"; 
-        echo "<p class = hn >This sUtra makes this a seT dhAtu. </p>\n"; 
-        echo "<p class = st >ऋद्धनोः स्ये (७.२.७०) :</p>\n";
-        echo "<p class = hn >अनेन सूत्रेण सेट्त्वं विधीयते ।</p>\n";
-        echo "<hr>\n";        
+		gui2('7.2.70');
+		print2('7.2.70');
     }
     /* se'sici kRtacRtacCRdatRdanRtaH (7.2.57) */
     elseif ( ends(array($fo),array("kftI!","cfta!","Cfda!","tfda!","nfta!",),4) && in_array($lakAra,array("lfw","lfN")))
     {
         $id_dhAtu="vew";
-        echo "<p class = st >By se'sici kRtacRtacCRdatRdanRtaH (".link_sutra("7.2.57").") :</p>\n"; 
-        echo "<p class = hn >This sUtra makes this a veT dhAtu. </p>\n"; 
-        echo "<p class = st >सेऽसिचि कृतचृतच्छृदतृदनृतः (७.२.५७) :</p>\n";
-        echo "<p class = hn >अनेन सूत्रेण वेट्त्वं विधीयते ।</p>\n";
-        echo "<hr>\n";
+		gui2('7.2.57');
+		print2('7.2.57');
     }
     /* gameriT parasmaipadeSu (7.2.58) */
     elseif ( ends(array($fo),array("gamx!",),4) && in_array($lakAra,array("lfw","lfN")) && $verbpada==="p")
     {
         $id_dhAtu="sew";
-        echo "<p class = st >By gameriT parasmaipadeSu (".link_sutra("7.2.58").") :</p>\n"; 
-        echo "<p class = hn >This sUtra makes this a seT dhAtu. </p>\n"; 
-        echo "<p class = st >गमेरिट्‌ परस्मैपदेषु (७.२.५८) :</p>\n";
-        echo "<p class = hn >अनेन सूत्रेण सेट्त्वं विधीयते ।</p>\n";
-        echo "<hr>\n";
+		gui2('7.2.58');
+		print2('7.2.58');
     }
     /* na vRdbhyazcaturbhyaH (7.2.59) */
     elseif ( ends(array($fo),array("vftu!","vfDu!","SfDu!","syandU!",),4) && in_array($lakAra,array("lfw","lfN")) )
@@ -677,56 +664,41 @@ if (in_array($lakAra,array("lfw","lfN","luw","ASIrliN","luN","liw","ArDaDAtukale
         $id_dhAtu="aniw";
 		$suffix = $tiG;
 		gui2('7.2.59');
-//        echo "<p class = st >By na vRdbhyazcaturbhyaH (".link_sutra("7.2.59").") :</p>\n"; 
-  //      echo "<p class = hn >This sUtra makes this an aniT dhAtu and also parasmaipadI. </p>\n"; 
-    //    echo "<p class = st >न वृद्भ्यश्चतुर्भ्यः (७.२.५९) :</p>\n";
-      //  echo "<p class = hn >अनेन सूत्रेण अनिट्त्वं परस्मैपदित्वं च विधीयेते ।</p>\n";
-        //echo "<hr>\n";
+		print2('7.2.59');
     }
     /* tAsi ca klRpaH (7.2.60) */
     // sakArAdi. tAsi done elsewhere.
     elseif ( ends(array($fo),array("kxpa!",),4) && in_array($lakAra,array("lfw","lfN")) && $verbpada==="p")
     {
         $id_dhAtu="aniw";
-        echo "<p class = st >By tAsi ca klRpaH (".link_sutra("7.2.60").") :</p>\n"; 
-        echo "<p class = hn >This sUtra makes this an aniT dhAtu. </p>\n"; 
-        echo "<p class = st >तासि च क्लृपः (७.२.६०) :</p>\n";
-        echo "<p class = hn >अनेन सूत्रेण अनिट्त्वं विधीयते ।</p>\n";
-        echo "<hr>\n";
+		gui2('7.2.60');
+		print2('7.2.60');
     }
     /* radhAdibhyazca (7.2.45) */
     elseif (ends(array($fo),array("raDa!","RaSa!","tfpa!","dfpa!","druha!","muha!","zRuha!","zRiha!"),4) )
     {
         $id_dhAtu="vew";
-        echo "<p class = st >By radhAdibhyazca (".link_sutra("7.2.45").") :</p>\n"; 
-        echo "<p class = hn >This sUtra makes this a veT dhAtu. </p>\n"; 
-        echo "<p class = st >रधादिभ्यश्च (७.२.४५) :</p>\n";
-        echo "<p class = hn >अनेन सूत्रेण वेट्त्वं विधीयते ।</p>\n";
-        echo "<hr>\n";        
+		gui2('7.2.45');
+		print2('7.2.45');
     }
     /* niraH kuSaH (7.2.46) */
     elseif (ends(array($fo),array("kuza!"),4) && $us==="nis" )
     {
         $id_dhAtu="vew";
-        echo "<p class = st >By niraH kuSaH (".link_sutra("7.2.46").") :</p>\n"; 
-        echo "<p class = hn >This sUtra makes this a veT dhAtu. </p>\n"; 
-        echo "<p class = st >निरः कुषः (७.२.४६) :</p>\n";
-        echo "<p class = hn >अनेन सूत्रेण वेट्त्वं विधीयते ।</p>\n";
-        echo "<hr>\n";        
+		gui2('7.2.46');
+		print2('7.2.46');
     }
 	elseif (verb_itfinder($first)===array("sew"))
 	{
 		$id_dhAtu="sew";
-		echo "<p class = st >This is a 'seT' verb.</p>\n"; 
-		echo "<p class = st >सेट्‌ धातुः </p>\n";
-		echo "<hr>\n";        
+		gui2('seTverb');
+		print2('seTverb');
 	}
 	elseif (verb_itfinder($first)===array("aniw"))
 	{
 		$id_dhAtu="aniw";
-		echo "<p class = st >This is an 'aniT' verb.</p>\n"; 
-		echo "<p class = st >अनिट्‌ धातुः</p>\n";
-		echo "<hr>\n";        
+		gui2('aniTverb');
+		print2('aniTverb');
 	}
 }
 else
@@ -11648,19 +11620,25 @@ if(sub(array("apasparDeTAm","AnarcuH","AnarhuH","cucyuvize","tatyAja"),blank(0),
 	$text = one(array("apasparDeTAm","AnarcuH","AnarhuH","cucyuvize","tatyAja"),array("apaspfDeTAm","AnfcuH","AnfhuH","cicyuze","tityAja"),0);
 	storedata('6.1.35','sa',0);
 }
+
+/* Displaying the sUtras and sequential changes of $frontend is not set to 0. */
 if ($frontend!=="0")
 {
 	display_from_storedata();
+	print_from_storedata();
 }
+
 /* Final Display */
 if ($frontend!=="0")
 {	
 	echo "<p class = sa >Final forms are :</p>\n";
 	echo "<p class = sa >आखिरी रूप हैं :</p>\n";
 }
-
 display(0);
 echo "<hr>\n";
+
+
+
 /* setting the $pada back to pratyaya for next use */
 $pada="pratyaya";
 $id_dhAtu=$id_original;
@@ -11670,31 +11648,21 @@ $itprakriti = array();
 $itpratyaya = array();
 $Agama=array();
 $TAp=0; $DAp=0; $cAp=0; $GIp=0; $GIn=0; $GIS=0; $kGiti=0; $abhyasta=0; $ajAdyataSTAp=0; $tusma=0; $upasarga_joined=0;
+$storedata=array();
+$text=array();
 }
+
+/* Closing the HTML */
 echo "</body>
 </html>";
-//ob_end_flush();
-/*if (isset($argv[0]))
-{
-	ob_end_clean();
-}
-else
-{
-	ob_end_flush();
-}*/
-//fputs($outfile,ob_get_contents());
-//ob_end_flush();
-//fclose($outfile);
-$logfile = fopen('D:\\!sorting\\verboutput\\log.txt','a+');
+fputs($outfile,"</body>
+</html>");
+fclose($outfile);
+
+/* Logging the end of execution in logfile */
 fputs($logfile,"Request completed on :".date('D, d M Y H:i:s')."\n");
 fputs($logfile,"------------------------------\n");
 fclose($logfile);
 
-function printtofile($buffer)
-{
-global $outfile;
-fputs($outfile,$buffer);
-return $buffer;
-}
-
+/* End of Code */
 ?>

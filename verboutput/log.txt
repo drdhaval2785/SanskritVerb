@@ -1,0 +1,52 @@
+Wed, 10 Jun 2015 11:28:55
+verb = BU, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = A
+Wed, 10 Jun 2015 11:30:27
+verb = BU, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = A
+Wed, 10 Jun 2015 14:51:54
+verb = BU, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = 
+Request completed on :Wed, 10 Jun 2015 14:53:09
+------------------------------
+Wed, 10 Jun 2015 15:03:23
+verb = BU, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = 
+Request completed on :Wed, 10 Jun 2015 15:04:36
+------------------------------
+Wed, 10 Jun 2015 15:10:47
+verb = BU, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = 
+Wed, 10 Jun 2015 15:13:08
+verb = BU, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = 
+Wed, 10 Jun 2015 15:14:43
+verb = BU, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = 
+Wed, 10 Jun 2015 16:26:46
+verb = BU, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = 
+Request completed on :Wed, 10 Jun 2015 16:28:00
+------------------------------
+Wed, 10 Jun 2015 18:54:32
+verb = BU, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = 
+Request completed on :Wed, 10 Jun 2015 18:55:49
+------------------------------
+Wed, 10 Jun 2015 19:05:35
+verb = BU, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = 
+Request completed on :Wed, 10 Jun 2015 19:06:50
+------------------------------
+Wed, 10 Jun 2015 19:08:20
+verb = BU, gaNa = BvAdi, lakAra = lfw, transliteration = SLP1, vAcya = kartR, upasarga = 
+Request completed on :Wed, 10 Jun 2015 19:09:51
+------------------------------
+Wed, 10 Jun 2015 19:12:42
+verb = BU, gaNa = BvAdi, lakAra = lfw, transliteration = SLP1, vAcya = kartR, upasarga = 
+Request completed on :Wed, 10 Jun 2015 19:14:15
+------------------------------
+Wed, 10 Jun 2015 19:18:02
+verb = BU, gaNa = BvAdi, lakAra = lfw, transliteration = SLP1, vAcya = kartR, upasarga = 
+Request completed on :Wed, 10 Jun 2015 19:19:31
+------------------------------
+Wed, 10 Jun 2015 19:20:09
+verb = eDa!, gaNa = BvAdi, lakAra = lfw, transliteration = SLP1, vAcya = kartR, upasarga = 
+Request completed on :Wed, 10 Jun 2015 19:20:50
+------------------------------
+Wed, 10 Jun 2015 19:20:52
+verb = eDa!, gaNa = BvAdi, lakAra = lfw, transliteration = SLP1, vAcya = kartR, upasarga = 
+Wed, 10 Jun 2015 19:25:05
+verb = eDa!, gaNa = BvAdi, lakAra = lfw, transliteration = SLP1, vAcya = kartR, upasarga = 
+Wed, 10 Jun 2015 19:25:27
+verb = eDa!, gaNa = BvAdi, lakAra = lfw, transliteration = SLP1, vAcya = kartR, upasarga = 

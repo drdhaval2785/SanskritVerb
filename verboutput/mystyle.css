@@ -1,0 +1,120 @@
+/* This code is borrowed from Mr. Marcis Gasuns. */
+body {
+font-family: "Arial Unicode MS, Sans-Serif";
+font-size: 16pt;
+font-style: normal;
+font-weight: normal;
+color: #333333;
+background: white;
+padding-left: 5px;
+}
+/* hymn name */
+h3 {
+	font-style: italic;
+        color: #ff0000;
+}
+p {
+float: inherit;
+	margin: 0 0 0 0;
+      
+}
+table {
+	width: 800px;
+}
+div.one {
+    color: #8b0000;
+ background-color: #d0d0d0;
+ font-size: 16pt;
+font-family: "Siddhanta";
+ padding-right: 20px;
+ padding-left: 20px;
+}
+/* vidhi sUtra */
+/* We use this to style vidhi sUtras. */
+p.sa {
+    color: #8b0000; 
+ background-color: #d0d0d0;
+ font-size: 16pt;
+font-family: "Siddhanta"; /* Default font is kept Siddhanta for proper display of upadhmAnIya and jihvAmUlIya. */
+ padding-right: 20px;
+ padding-left: 20px;
+}
+/* notes */ 
+/* We use this to style notes */
+p.hn {
+ color: black;
+ background-color: #ffffcc;
+ font-family: "Siddhanta";
+ padding-right: 20px;
+ padding-left: 20px;
+}
+/* sutras etc except vidhi sutra */
+/* most probably paribhASAs, saJjJA sUtra etc are recorded in this */
+p.pa {
+    background: #ccffcc;
+  font-family: "Siddhanta";
+ padding-right: 20px;
+ padding-left: 20px;
+}
+/* Error message */
+/* using red color to give error messages to user */
+p.red {
+ color: black;
+ background-color: #ff0033;
+ font-family: "Siddhanta";
+ padding-top: 2px;
+padding-bottom: 2px;
+ padding-right: 20px;
+ padding-left: 20px;
+ }
+/* taddhitas */
+p.st {
+ color: black;
+ background-color:hotpink ;
+ font-family: "Siddhanta";
+ padding-top: 2px;
+padding-bottom: 2px;
+ padding-right: 20px;
+ padding-left: 20px;
+}
+/* taddhitas */
+p.ta {
+ color: black;
+ background-color:cyan ;
+ font-family: "Siddhanta";
+ padding-top: 2px;
+padding-bottom: 2px;
+ padding-right: 20px;
+ padding-left: 20px;
+}
+p.form {
+padding-top: 4px;
+color: black;
+background: white;
+font-family: "Siddhanta";
+padding-left: 3px;
+ padding-right: 20px;
+ padding-left: 20px;
+}
+
+/* the next styles are not used in code. kept reserved for future usages. */
+p.comm {
+font-style: italic;
+}
+/* elizarenkova */
+/* geldner */
+p.de {
+   color: #5b2e00;
+   background: white;
+ font-family: "Charter Indologique";
+ padding-left: 6px;
+ padding-right: 50px;
+}
+/* griffith */
+p.en {
+ color: #2c577b;
+ background: white;
+ font-family: "Charter Indologique";
+ padding-left: 9px;
+ padding-right: 50px;
+}
