@@ -1,15 +1,4 @@
 <?php
-$header = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
-<head>
-<!--... Defining UTF-8 as our default character set, so that devanagari is displayed properly. -->
-<meta charset="UTF-8">
-<!--... Defining CSS -->
-<link rel="stylesheet" type="text/css" href="mystyle.css">
-<!--... including Ajax jquery. -->
-</head> 
-<body>
-';
  /* This code is developed by Dr. Dhaval Patel (drdhaval2785@gmail.com) of www.sanskritworld.in and Ms. Sivakumari Katuri.
   * Layout assistance by Mr Marcis Gasuns.
   * Available under GNU licence.
@@ -38,27 +27,41 @@ include "dev-slp.php"; // includes code for devanagari to SLP.
 /* hides error reports. */
 // If the warning is shown with line number of function.php and you are not able to trace the line which called it, turn the all error reporting on. It will help you locate the wrong entries in a reasonably narrow space, because there are so many notices around.
 //error_reporting(E_ERROR | E_WARNING | E_PARSE);
-//error_reporting(-1);
-error_reporting(0);
+//error_reporting(0);
+
 /* set execution time to an hour */
 ini_set('max_execution_time', 36000);
 /* set memory limit to 100000 MB */
 ini_set("memory_limit","100000M");
+
+/* Defining header for all HTMLs */
+$header = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<!--... Defining UTF-8 as our default character set, so that devanagari is displayed properly. -->
+<meta charset="UTF-8">
+<!--... Defining CSS -->
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+<!--... including Ajax jquery. -->
+</head> 
+<body>
+';
 
 /* Reading from the HTML input. */
 //$first = $_GET["first"]; // word entered by the user.
 $first = toslp($_GET["first"]); // to change the word input in devanagari / IAST to slp.
 $us = $_GET["upasarga"]; // upasarga. Added on 14 Dec 2014.
 $tran = $_GET['tran']; // "Devanagari" - devanagari, "IAST" - IAST, "SLP1" - SLP1 transliteration.
-$lakAra = $_GET['lakAra'];
-$gender = $_GET['gender']; // "m" - male. "f" - female. "n" - neuter.
-$vAcya = $_GET['vAcya'];
-if (!$vAcya) { $vAcya="kartR"; }
-$sanAdi = $_GET['sanAdi'];
-$number = $_GET['number'];
-$verbset = $_GET['verbset'];
-$frontend = $_GET['frontend'];
-//$frontend=0; // for testing
+$lakAra = $_GET['lakAra']; // There are 12 possible lakAras (mentioned in tiGanta.html)
+//$gender = $_GET['gender']; // "m" - male. "f" - female. "n" - neuter.
+$gender = "";
+$vAcya = $_GET['vAcya']; // kartR, karma, bhAva
+if (!$vAcya) { $vAcya="kartR"; } // If it is not set, consider it as kartR (because it is the most common one)
+$sanAdi = $_GET['sanAdi']; // Default is ''. There are 12 sanAdi groups (mentioned in tiGanta.html)
+$number = $_GET['number']; // Verb number e.g. BU sattAyAm BvAdi has 01.0001 as number. Fetched via ajax.php
+$verbset = verbset_from_number($number); // bhvAdi, adAdi etc. Fetched via ajax.php
+$frontend = $_GET['frontend']; // Whether to display sUtras in frontend or not. Fetched via tiGanta.html
+
 global $storedata;
 if (!$verbset) { $verbset = scrape1($number,8,9,1)[0]; } // for overcoming issue in https://github.com/drdhaval2785/SanskritVerb/issues/97
 /* Now trying to make program equally compatible with commandline.
@@ -90,19 +93,15 @@ if (isset($argv[0]))
 	if (!isset($argv[7])) { $sanAdi = ''; }	
 }
 /* Creating a log */
-$logfile = fopen('D:\\!sorting\\verboutput\\log.txt','a+');
+mkdir ('verboutput');
+$logfile = fopen('verboutput//log.txt','a+');
 fputs($logfile,date('D, d M Y H:i:s')."\n");
 fputs($logfile,"verb = $first, gaNa = $verbset, lakAra = $lakAra, transliteration = $tran, vAcya = $vAcya, upasarga = $us\n");
 fclose($logfile);
-$outfile = fopen("D:\\!sorting\\verboutput\\".$first."_".$verbset."_".$lakAra.".html", "wb");
-// The patch to replace echo with fputs and enter the data into the output html file. See http://stackoverflow.com/questions/27708929/can-echo-be-manipulated-to-write-to-a-file-in-php
-/*ob_start(function($x) use($outfile) {
-	fwrite($outfile, $x);
-	return '';
-});*/
-//ob_start(); // Now onward everything which is echoed will not be shown in frontend, but stored in buffer. If we call ob_end_clean it will not be echoed. If we call ob_end_flush it will be echoed. If we use ob_get_contents the content can be stored in string. If we do fputs($outfile,ob_get_contents()) we will be able to write it to the outfile. They have been used at the end of the code. This makes the code resilient to be used for Commandline / browser with writing to the outfile. 31/12/2014
-echo $header; // creating header.
 
+$outfile = fopen("verboutput//".$first."_".$verbset."_".$lakAra.".html", "wb");
+
+echo $header; // creating header. This will ensure that the HTML is shown with UTF-8 encoding with necessary stylesheet.
 if (!$verbset) { $verbset="none"; } // I dont think this is needed now. Test and remove. Pending.
 $verbset=trim($verbset);
 $fo = $first; // remembering the original prakRti. Sometimes we need to know what was the original prakRti.
@@ -160,6 +159,7 @@ $kit=0;
 $kRt=0;
 $sic=0;
 $caG=0;
+$vras=0;
 $id_pratyaya="sew"; // right now taking it as default. Will feed later on.
 $R = array(); // creating an array where we can store whether the word has 'R' as it marker.
 $num = array(); // creating an array where we can store whether the word has 'num' Agama. 
@@ -732,6 +732,10 @@ if (in_array($lakAra,array("lfw","lfN","luw","ASIrliN","luN","liw","ArDaDAtukale
 		echo "<hr>\n";        
 	}
 }
+else
+{
+	$id_dhAtu="";
+}
 /* a for loop for entering all sup pratyayas one by one. Sambuddhi is at the last after sup. */
 //$sup1= array("su!","O","jas","am","Ow","Sas","wA","ByAm","Bis","Ne","ByAm","Byas","Nasi!","ByAm","Byas","Nas","os","Am","Ni","os","sup","su!","O","jas"); // the last three members are for sambodhana forms.
 for ($w=0;$w<count($suffix);$w++) // running the loop till $sup1 is exhausted.
@@ -1112,6 +1116,7 @@ if (sub(array("jakza!","jAgf","daridrA","ASAsu!","cakAsf!","dIDIN","vevIN"),blan
 }
 /* Adding vikaraNas */
 $vik=array();
+$luGset=0;
 if ($lakAra==="luN")
 {
 	$luGset=1;
@@ -1761,7 +1766,7 @@ if ( in_array($fo,$ghuset) )
 {
 	storedata('1.1.19','sa',0);
     $ghu=1;
-}
+} else { $ghu=0; }
 /* pvAdInAM hrasvaH (7.3.80) */
 if (in_array($fo,$pvAdi) && sub(array("+"),$shitpratyaya,blank(0),0) && $fo!=="jyA" && ( $verbset==="curAdi" || ($verbset==="none" && ends(array($fo),$curAdi,4) ) ))
 {
@@ -4282,7 +4287,6 @@ if ( sub(array("goh","guh"),array("+"),$ac,0) && ends(array($fo),array("guhU!"),
 /* vrazcabhrasjamRjayajarAjabhrAjacChazAM ca (8.2.35) */
 // TubhrAjR dIptau and ejR bhejR bhrAjR dIptau are different. This is pending to code.
 // parau vrajeH SaH padAnte (u 217) pending. 
-$vras=0;
 $vrasca = array("vfSc","sfj","mfj","yaj","rAj","BrAj","devej","parivrAj","Bfj","ftvij","mArj","vraSc","Brasj","sraj","sfaj","Barj","vrASc","vrAc","vrac","BrAj","BArj");
 $vrashca = array("vfSz","sfz","mfz","yaz","rAz","BrAz","devez","parivrAz","Bfz","ftviz","mArz","vraSz","Brasz","sraz","sfaz","Barz","vrAz","vrAz","vraz","BrAz","BArz");
 if ( sub($vrasca,array("+"),prat("Jl"),0)  && in_array($so,$tiG) && ends(array($fo),array("o!vraScU!","sfja!","mfja!","yaja!","rAjf!","wuBrAjf!","Bfja!","mfjU!","Brasja!"),4))
@@ -4431,6 +4435,7 @@ if (sub(array("z","Q"),array("s"),blank(0),0) && !in_array("Sapluk",$vik))
 	storedata('8.2.41','sa',0);
 }
 /* coH kuH (8.2.30) */
+$coku=0;
 if ((arr($text,'/['.flat($cu).'][+]['.pc('Jl').']/')) && !in_array($fo,$noco) && in_array($so,$tiG) && ($syatAsI!==1 || $id_dhAtu !== "sew" )) // need to test for veT dhAtus. Pending.
 {
 	$text = three($cu,array("+"),prat('Jl'),$ku,array("+"),prat('Jl'),0); 
@@ -4814,13 +4819,13 @@ if( in_array($so,$tiG) && (!arr($text,'/[+][s]$/') || $SaHsaH===1 || $sic===1 ||
 	storedata('8.3.59','sa',0);
 }
 /* vibhASeTaH (8.3.80) */
-if( in_array($so,$tiG) && arr(array($verb_without_anubandha,'/[iIuUfFxXeEoOhyvrl]$/')) && (sub($iN2,array("+izIDv"),blank(0),0) || (sub($iN2,array("+iDv"),blank(0),0) && in_array($lakAra,array("luN","liw")) )) )
+if( in_array($so,$tiG) && arr(array($verb_without_anubandha),'/[iIuUfFxXeEoOhyvrl]$/') && (sub($iN2,array("+izIDv"),blank(0),0) || (sub($iN2,array("+iDv"),blank(0),0) && in_array($lakAra,array("luN","liw")) )) )
 {
 	$text = two($iN2,array("+izIDv","+iDv"),$iN2,array("+izIQv","+iQv"),1);
 	storedata('8.3.80','sa',0);
 }
 /* iNaH SIdhvaMluGliTAM dho'GgAt (8.3.79) */
-elseif( in_array($so,$tiG) && arr(array($verb_without_anubandha,'/[iIuUfFxXeEoOhyvrl]$/')) && (sub($iN2,array("zIDv"),blank(0),0) || (sub($iN2,array("Dv"),blank(0),0) && in_array($lakAra,array("luN","liw")) )) )
+elseif( in_array($so,$tiG) && arr(array($verb_without_anubandha),'/[iIuUfFxXeEoOhyvrl]$/') && (sub($iN2,array("zIDv"),blank(0),0) || (sub($iN2,array("Dv"),blank(0),0) && in_array($lakAra,array("luN","liw")) )) )
 {
 	$text = two($iN2,array("zIDv","Dv"),$iN2,array("zIQv","Qv"),0);
 	storedata('8.3.79','sa',0);
@@ -5752,6 +5757,8 @@ if (sub(array("praanc","praaYc","prAnc","prAYc","pratianc","pratiaYc","pratyanc"
     $itprakriti = array_merge($itpratyaya,array("u"));
     //$dhatu = 1;
 } 
+
+$TAp=0; $DAp=0; $cAp=0; $GIn=0; $GIp=0; $GIS=0; $ajAdyataSTAp=0; $bahuvrihauva=0;// Setting everything to 0 because it is not relevant to tiGanta.
 if ($gender === "f" && ( sub($ugitprAtipadika,array("+"),blank(count($ugitprAtipadika)),0) || sub($ugitverbwords,array("+"),blank(0),0)) )
 {
     $text = one(array("+"),array("+NIp+"),0);
@@ -6562,7 +6569,6 @@ elseif ($gender === "f" && ($_GET['cond2_8_1']==="2" || sub($vanoracawords,array
     $text = two(array("van"),array("+"),array("var"),array("+NIp+"),1);        
 	storedata('4.1.7-3','st',8);
 	$bahuvrihauva=1;       
-    $bahuvrihauva=1;
     }
     elseif ($_GET['cond2_8_1_2']==="2" || (sub($kvanipwords,array("+"),blank(0),0)||sub($Gvanipwords,array("+"),blank(0),0)||sub($vanipwords,array("+"),blank(0),0) ) )
     {
@@ -7942,7 +7948,7 @@ elseif ( ($shat===1 || arr(array($fo),'/[c][a][t][u][r]$/')) && $so === "Am" && 
     $pada="pada"; // word gets pada saJjJA.
 } else { $Satcatur=0; }
 /* patch for aSTana A vibhaktau */
-if ( sub(array("azwan"),array("nAm"),blank(0),1) && $so === "Am" && ($samasa===0 || ($samasa===1 && $pradhana===1)))
+if ( sub(array("azwan"),array("nAm"),blank(0),0) && $so === "Am" && ($samasa===0 || ($samasa===1 && $pradhana===1)))
 {
     $text = two(array("azwan"),array("+nAm"),array("azwaA"),array("+nAm"),0);
 	storedata('7.2.84','sa',3);
@@ -7973,7 +7979,7 @@ if (sub(array("paTin","maTin","fBukzin"),blank(0),blank(0),0) && $bham===1 && !a
     $text = one(array("paTin","maTin","fBukzin"),array("paT","maT","fBukz"),0);
 	storedata('7.1.88','sa',3);
 }
-if (sub(array("paTin+I","maTin+I","fBukzin+I",),blank(0),blank(0),1) && $gender==="f" && $bham===1) // patch for supathI.
+if (sub(array("paTin+I","maTin+I","fBukzin+I",),blank(0),blank(0),0) && $gender==="f" && $bham===1) // patch for supathI.
 {
     $text = one(array("paTin+I","maTin+I","fBukzin+I",),array("paTI","maTI","fBukzI"),0);
 	storedata('7.1.88','sa',3);
@@ -8004,7 +8010,7 @@ if (sub(array("paTa","maTa"),blank(0),blank(0),0) && ($pathi===1 || $pathi1===1)
 /* sau ca (6.4.13) */
 $noin=array("ahan","Ahan","bahuvftrahan","bahupUzan","bahvaryaman"); // words where inhan.. doesn't apply.
 $acdir = array("A","A","I","I","U","U","F","F","F","F","e","o","E","O",);
-if (sub(array("in","han","pUzan","aryaman"),array("+"),array("su!"),1) && !in_array($fo,$noin) && in_array($so,array("su!")) && $sambuddhi===0)
+if (sub(array("in","han","pUzan","aryaman"),array("+"),array("su!"),0) && !in_array($fo,$noin) && in_array($so,array("su!")) && $sambuddhi===0)
 {
     $text = two($ac,array("n+"),$acdir,array("n+"),0);
 	storedata('6.4.13','sa',3);
@@ -8363,7 +8369,7 @@ if (sub(array("dvi"),array("+"),blank(0),0) && in_array($so,$sup) && ends(array(
 }
 $tyadadinamah = array("dv+a","tya+a","ta+a","ya+a","eta+a","ida+a","ada+a","eka+a","idaka+a"); // creating a set of words eligible for tyadAdInAmaH
 $tyadadinamah1 = array("dva","tya","ta","ya","eta","ida","ada","eka","idaka"); // creating a list of converted words after tyadAdInAmaH.
-if (sub($tyadadi,array("+"),blank(0),1) && !sub(array("dvi"),array("+"),blank(0),1) && in_array($so,$sup) && $idamoma===0 && $svamo===0 && $noatvasatva===0 )
+if (sub($tyadadi,array("+"),blank(0),0) && !sub(array("dvi"),array("+"),blank(0),0) && in_array($so,$sup) && $idamoma===0 && $svamo===0 && $noatvasatva===0 )
 {
     $text = one($tyadadi,$tyadadinamah,0);
 	storedata('7.2.102','sa',3);
@@ -9668,7 +9674,7 @@ if ( $Ap===1 && sub(array("A"),array("+"),array("s","t"),0) && in_array($so,arra
     $pada="pada"; // there is no pratyaya left now.
 }
 /* patch for varShABU sambodhana */
-if ($dhatu===1 && $first==="varzABU" && sub(array("varzABU"),array("+"),array("s"),1) && $pada==="pratyaya" )
+if ($dhatu===1 && $first==="varzABU" && sub(array("varzABU"),array("+"),array("s"),0) && $pada==="pratyaya" )
 {
     $text = two(array("varzABU"),array("+"),array("varzABu"),array("+"),1);
 	// Pending to refractor
@@ -11382,7 +11388,6 @@ if (sub(array('putrAdin'),blank(0),blank(0),0))
 /*    echo "<p class = sa >By nAdinyAkroze putrasya (".link_sutra("8.4.48").") - If Akroza is meant : The dvitva doesn't happen. Otherwise dvitva will happen.</p>\n";
     echo "<p class = sa >नादिन्याक्रोशे पुत्रस्य (८.४.४८) - यदि आक्रोश के अर्थ में प्रयुक्त हुआ है, तब द्वित्व नहीं होगा । अन्यथा द्वित्व होगा ।</p>\n";*/
 }
-/* vA hatajagdhayoH (vA 5022) */
 if (sub(array("putrahatI"),blank(0),blank(0),0))
 {
 storedata('8.4.48-2','sa',0);
@@ -11391,6 +11396,7 @@ if (sub(array('putrajagDI'),blank(0),blank(0),0))
 {
 storedata('8.4.48-2','sa',0);
 }
+$cayo=0;
 /* cayo dvitIyAH zari pauSkarasAderiti vAcyam (vA 5023) */
 /*if (sub(array("N","R"),prat('Sr'),blank(0),0))
 {
@@ -11645,10 +11651,17 @@ if(sub(array("apasparDeTAm","AnarcuH","AnarhuH","cucyuvize","tatyAja"),blank(0),
 	$text = one(array("apasparDeTAm","AnarcuH","AnarhuH","cucyuvize","tatyAja"),array("apaspfDeTAm","AnfcuH","AnfhuH","cicyuze","tityAja"),0);
 	storedata('6.1.35','sa',0);
 }
-display_from_storedata();
+if ($frontend!=="0")
+{
+	display_from_storedata();
+}
 /* Final Display */
-echo "<p class = sa >Final forms are :</p>\n";
-echo "<p class = sa >आखिरी रूप हैं :</p>\n";
+if ($frontend!=="0")
+{	
+	echo "<p class = sa >Final forms are :</p>\n";
+	echo "<p class = sa >आखिरी रूप हैं :</p>\n";
+}
+
 display(0);
 echo "<hr>\n";
 /* setting the $pada back to pratyaya for next use */

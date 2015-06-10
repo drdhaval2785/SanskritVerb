@@ -1230,6 +1230,7 @@ function ends($a,$b,$n)
             }
             if ($n===4) 
             {
+					$prat=array(0);
                     foreach ($pattern as $one)
                     {
                         foreach ($pattern as $two)
@@ -1241,7 +1242,6 @@ function ends($a,$b,$n)
                             }
                         }
                     }
-					if (!$prat) { $prat=array(0); }
                 if ( (strpos($aa,$bb)>0 && in_array(1,$prat) ) || $aa===$bb) 
                 {
                     $can[] = 1;
@@ -1824,6 +1824,12 @@ function verb_meaning_gana_number3($text)
 		echo "<p class = st >धातुः - ".convert($text)."</p>\n";
 		echo "<hr>\n";		
 	}
+}
+function verbset_from_number($number)
+{
+	$parts=explode('.',$number);
+	$verbset=str_replace(array("01","02","03","04","05","06","07","08","09","10",),array("BvAdi","adAdi","juhotyAdi","divAdi","svAdi","tudAdi","ruDAdi","tanAdi","kryAdi","curAdi",),$parts[0]);
+	return $verbset;
 }
 // for display of upasarga details.
 function upasarga_display($text)
@@ -3121,10 +3127,13 @@ function Am()
 /* function storedata to store necessary information for display later on. */
 function storedata($sutra_number,$style,$note)
 {
-	global $text, $storedata;
+	global $text, $storedata, $frontend;
 	if (!in_array($style,array("pa","hn","st","red"))) { $style="sa"; }
 	if (!isset($note)) { $note=0; }
-	$storedata[]=array($text,$sutra_number,$style,$note);
+	if ($frontend!=="0")
+	{
+		$storedata[]=array($text,$sutra_number,$style,$note);		
+	}
 }
 /* displaying from the storedata */
 function display_from_storedata()
