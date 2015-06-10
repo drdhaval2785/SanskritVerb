@@ -50,3 +50,5 @@ Wed, 10 Jun 2015 19:25:05
 verb = eDa!, gaNa = BvAdi, lakAra = lfw, transliteration = SLP1, vAcya = kartR, upasarga = 
 Wed, 10 Jun 2015 19:25:27
 verb = eDa!, gaNa = BvAdi, lakAra = lfw, transliteration = SLP1, vAcya = kartR, upasarga = 
+Wed, 10 Jun 2015 19:34:56
+verb = eDa!, gaNa = BvAdi, lakAra = lfw, transliteration = SLP1, vAcya = kartR, upasarga = 

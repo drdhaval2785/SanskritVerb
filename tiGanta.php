@@ -448,6 +448,9 @@ elseif ( in_array($us.$first,$toatmane) )
             echo "<p class = st >By ".$sutraenglish[$i]." :</p>\n"; 
             echo "<p class = st >".$sutradeva[$i]." :</p>\n";
             echo "<hr>\n";                    
+            fputs($outfile,"<p class = st >By ".$sutraenglish[$i]." :</p>\n"); 
+            fputs($outfile,"<p class = st >".$sutradeva[$i]." :</p>\n");
+            fputs($outfile,"<hr>\n");                    
         }
     }
     $verbpada="A";
@@ -627,35 +630,30 @@ if (in_array($lakAra,array("lfw","lfN","luw","ASIrliN","luN","liw","ArDaDAtukale
     {
         $id_dhAtu="sew";
 		gui2('seTverb');
-		print2('seTverb');
-    }
+   }
      /* svaratisUtisUyatidhUJUdito vA (7.2.44) */
     elseif (ends(array($fo),array("svf","zUN","DUY"),4) || ends(array($fo),$Uditverbs,4))
     {
         $id_dhAtu="vew";
 		gui2('7.2.44');
-		print2('7.2.44');
-    }
+   }
    /* RddhanoH sye (7.2.70) */
     elseif ( (ends(array($verb_without_anubandha),array("f",),1) || ends(array($fo),array("hana!",),4))&& in_array($lakAra,array("lfw","lfN")))
     {
         $id_dhAtu="sew";
 		gui2('7.2.70');
-		print2('7.2.70');
     }
     /* se'sici kRtacRtacCRdatRdanRtaH (7.2.57) */
     elseif ( ends(array($fo),array("kftI!","cfta!","Cfda!","tfda!","nfta!",),4) && in_array($lakAra,array("lfw","lfN")))
     {
         $id_dhAtu="vew";
 		gui2('7.2.57');
-		print2('7.2.57');
     }
     /* gameriT parasmaipadeSu (7.2.58) */
     elseif ( ends(array($fo),array("gamx!",),4) && in_array($lakAra,array("lfw","lfN")) && $verbpada==="p")
     {
         $id_dhAtu="sew";
 		gui2('7.2.58');
-		print2('7.2.58');
     }
     /* na vRdbhyazcaturbhyaH (7.2.59) */
     elseif ( ends(array($fo),array("vftu!","vfDu!","SfDu!","syandU!",),4) && in_array($lakAra,array("lfw","lfN")) )
@@ -664,7 +662,6 @@ if (in_array($lakAra,array("lfw","lfN","luw","ASIrliN","luN","liw","ArDaDAtukale
         $id_dhAtu="aniw";
 		$suffix = $tiG;
 		gui2('7.2.59');
-		print2('7.2.59');
     }
     /* tAsi ca klRpaH (7.2.60) */
     // sakArAdi. tAsi done elsewhere.
@@ -672,33 +669,28 @@ if (in_array($lakAra,array("lfw","lfN","luw","ASIrliN","luN","liw","ArDaDAtukale
     {
         $id_dhAtu="aniw";
 		gui2('7.2.60');
-		print2('7.2.60');
     }
     /* radhAdibhyazca (7.2.45) */
     elseif (ends(array($fo),array("raDa!","RaSa!","tfpa!","dfpa!","druha!","muha!","zRuha!","zRiha!"),4) )
     {
         $id_dhAtu="vew";
 		gui2('7.2.45');
-		print2('7.2.45');
     }
     /* niraH kuSaH (7.2.46) */
     elseif (ends(array($fo),array("kuza!"),4) && $us==="nis" )
     {
         $id_dhAtu="vew";
 		gui2('7.2.46');
-		print2('7.2.46');
     }
 	elseif (verb_itfinder($first)===array("sew"))
 	{
 		$id_dhAtu="sew";
 		gui2('seTverb');
-		print2('seTverb');
 	}
 	elseif (verb_itfinder($first)===array("aniw"))
 	{
 		$id_dhAtu="aniw";
 		gui2('aniTverb');
-		print2('aniTverb');
 	}
 }
 else
