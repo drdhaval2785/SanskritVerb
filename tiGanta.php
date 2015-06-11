@@ -437,22 +437,9 @@ elseif ( $_GET['cond42']==="1")
 	$verbpada=verb_pada('1.3.71');
 }
 /* nervizaH (1.3.47), parivyavebhyaH kriyaH (1.3.18), viparAbhyAM jeH (1.3.19), krIDo'nusaMparibhyazca (1.3.21), samavaparivibhyaH sthaH (1.3.22), udvibhyAM tapaH (1.3.27), AGo yamahanaH (1.3.28), samo gamyRcCipracCisvarAyartishruvidibhyaH (1.3.29), nisamupavibhyo hvaH (1.3.30), avAdgraH (1.3.51), jJAzRsmRdRzAM sanaH (1.3.57) */
-// Pending to refractor. Will have to separate the sUtras.
 elseif ( in_array($us.$first,$toatmane) )
 {
-    $suffix=$taG;
-    for($i=0;$i<count($toatmane);$i++)
-    {
-        if($us.$first===$toatmane[$i])
-        {
-            echo "<p class = st >By ".$sutraenglish[$i]." :</p>\n"; 
-            echo "<p class = st >".$sutradeva[$i]." :</p>\n";
-            echo "<hr>\n";                    
-            fputs($outfile,"<p class = st >By ".$sutraenglish[$i]." :</p>\n"); 
-            fputs($outfile,"<p class = st >".$sutradeva[$i]." :</p>\n");
-            fputs($outfile,"<hr>\n");                    
-        }
-    }
+	verb_pada1(); // Displaying the sUtra applicable.
     $verbpada="A";
 }
 /* vyAGparibhyo ramaH (1.3.83) */
@@ -697,6 +684,7 @@ else
 {
 	$id_dhAtu="";
 }
+
 /* a for loop for entering all sup pratyayas one by one. Sambuddhi is at the last after sup. */
 //$sup1= array("su!","O","jas","am","Ow","Sas","wA","ByAm","Bis","Ne","ByAm","Byas","Nasi!","ByAm","Byas","Nas","os","Am","Ni","os","sup","su!","O","jas"); // the last three members are for sambodhana forms.
 for ($w=0;$w<count($suffix);$w++) // running the loop till $sup1 is exhausted.
@@ -717,11 +705,13 @@ $so = $second; ; // remembering the original pratyayas. Sometimes we need to kno
 /* displaying the data back to the user */
 if ($sanAdi!=="")
 {
-echo "<p class = red >".convert($lakAra) ." लकार<br>".convert($fo)." + ".convert($sanAdi)." + ".convert($so)." <a href = tiGanta.html>Go Back</a></p>\n";    
+echo "<p class = red >".convert($lakAra) ." लकार<br>".convert($fo)." + ".convert($sanAdi)." + ".convert($so)." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n";
+fputs($outfile,"<p class = red >".convert($lakAra) ." लकार<br>".convert($fo)." + ".convert($sanAdi)." + ".convert($so)." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n<hr>\n");    
 }
 else
 {
-echo "<p class = red >".convert($lakAra) ." लकार<br>".convert($fo)." + ".convert($so)." <a href = tiGanta.html>Go Back</a></p>\n";    
+echo "<p class = red >".convert($lakAra) ." लकार<br>".convert($fo)." + ".convert($so)." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n";    
+fputs($outfile,"<p class = red >".convert($lakAra) ." लकार<br>".convert($fo)." + ".convert($so)." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n");    
 }
 
 /* for sambodhana, sambuddhi decision */
@@ -743,8 +733,7 @@ else
 /* for sambodhana, sambuddhi display */
 if ($sambuddhi===1)
 {
-    echo "<p class = red >This is sambuddhi form.</p>\n";
-    echo "</br>";
+	gui($text,'sambuddhi','red',0);
 }
 
 /* preprocessing for the sup pratyayas. */
@@ -775,9 +764,10 @@ $text[] = $input; // Defining first member of the array as $input (combined word
 /* special error message for vaca! dhAtu pra.pu.ba.va. */
 if ($so==="Ji" && ends(array($fo),array("vaca!"),4)  && $verbset==="adAdi")
 {
-echo "<p class = red >vac dhAtu doesn't have prathama puruSa bahuvacana form. :</p>\n";
+storedata('~1','red',0);
+/*echo "<p class = red >vac dhAtu doesn't have prathama puruSa bahuvacana form. :</p>\n";
 echo "<p class = red >वच्‌ धातु का प्रथम पुरुष बहुवचन का रूप नहीं होता है ।</p>\n";
-display(0);
+display(0);*/
 }
 /* na vRdbhyazcaturbhyaH (7.2.59) */
 if ( ends(array($fo),array("vftu!","vfDu!","SfDu!","syandU!",),4) && in_array($lakAra,array("lfw","lfN")) && in_array($so,$taG))
