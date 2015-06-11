@@ -607,9 +607,8 @@ elseif ( $pada==="pratyaya" && $lakAra!=="")
 $suffix=verb_suffixes($verbpada);
 
 /* idAgama decision */
-    //$verb_without_anubandha=scrape($first,0,2,1)[0];  // ejf
-    $temp = scrape1($first,0,2,1); 
-    $verb_without_anubandha=$temp[0];
+$temp = scrape1($first,0,2,1); 
+$verb_without_anubandha=$temp[0];
 
 if (in_array($lakAra,array("lfw","lfN","luw","ASIrliN","luN","liw","ArDaDAtukalew"))) // checking whether ArdhadhAtuka lakAra or not.
 {
@@ -686,7 +685,6 @@ else
 }
 
 /* a for loop for entering all sup pratyayas one by one. Sambuddhi is at the last after sup. */
-//$sup1= array("su!","O","jas","am","Ow","Sas","wA","ByAm","Bis","Ne","ByAm","Byas","Nasi!","ByAm","Byas","Nas","os","Am","Ni","os","sup","su!","O","jas"); // the last three members are for sambodhana forms.
 for ($w=0;$w<count($suffix);$w++) // running the loop till $sup1 is exhausted.
 {
 $second=$suffix[$w];    // defining the second word as su!, O, jas etc.
@@ -703,16 +701,7 @@ $fo = $first; // remembering the original prakRti. Sometimes we need to know wha
 $so = $second; ; // remembering the original pratyayas. Sometimes we need to know what was the original pratyaya.
 
 /* displaying the data back to the user */
-if ($sanAdi!=="")
-{
-echo "<p class = red >".convert($lakAra) ." लकार<br>".convert($fo)." + ".convert($sanAdi)." + ".convert($so)." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n";
-fputs($outfile,"<p class = red >".convert($lakAra) ." लकार<br>".convert($fo)." + ".convert($sanAdi)." + ".convert($so)." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n<hr>\n");    
-}
-else
-{
-echo "<p class = red >".convert($lakAra) ." लकार<br>".convert($fo)." + ".convert($so)." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n";    
-fputs($outfile,"<p class = red >".convert($lakAra) ." लकार<br>".convert($fo)." + ".convert($so)." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n");    
-}
+suffix_display();
 
 /* for sambodhana, sambuddhi decision */
 if ($w>20)

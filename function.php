@@ -1897,6 +1897,24 @@ function upasarga_display($text)
 		fputs($outfile,"<hr>\n");
 	}
 }
+// for display of lakAra and suffix details.
+function suffix_display()
+{
+	global $frontend, $outfile, $sanAdi;
+	if ($frontend!=="0")
+	{
+		if ($sanAdi!=="")
+		{
+		echo "<p class = red >".convert($lakAra) ." लकार<br>".convert($fo)." + ".convert($sanAdi)." + ".convert($so)." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n";
+		fputs($outfile,"<p class = red >".convert($lakAra) ." लकार<br>".convert($fo)." + ".convert($sanAdi)." + ".convert($so)." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n<hr>\n");    
+		}
+		else
+		{
+		echo "<p class = red >".convert($lakAra) ." लकार<br>".convert($fo)." + ".convert($so)." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n";    
+		fputs($outfile,"<p class = red >".convert($lakAra) ." लकार<br>".convert($fo)." + ".convert($so)." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n");    
+		}		
+	}
+}
 // for deciding verb padas.
 function verb_pada($sutra)
 {
