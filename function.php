@@ -1900,7 +1900,7 @@ function upasarga_display($text)
 // for display of lakAra and suffix details.
 function suffix_display()
 {
-	global $frontend, $outfile, $sanAdi;
+	global $frontend, $outfile, $sanAdi, $lakAra, $fo, $so;
 	if ($frontend!=="0")
 	{
 		if ($sanAdi!=="")
