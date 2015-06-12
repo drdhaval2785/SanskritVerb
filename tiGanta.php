@@ -737,8 +737,8 @@ elseif ($first === "") // if there is no prakRti. This doesn't happen in subanta
 }
 else // this option is used for subanta / tiGanta generation. $input is 'prakRti'+'pratyaya'.
 {
-$input = ltrim(chop($first."+".$sanAdi."+".$second));
-$input = str_replace("++","+",$input); // If $sanAdi is "", there would be two +s consecutively. To overcome this hurdle, this patch is created.
+	$input = ltrim(chop($first."+".$sanAdi."+".$second));
+	$input = str_replace("++","+",$input); // If $sanAdi is "", there would be two +s consecutively. To overcome this hurdle, this patch is created.
 }
 
 
@@ -754,9 +754,6 @@ $text[] = $input; // Defining first member of the array as $input (combined word
 if ($so==="Ji" && ends(array($fo),array("vaca!"),4)  && $verbset==="adAdi")
 {
 storedata('~1','red',0);
-/*echo "<p class = red >vac dhAtu doesn't have prathama puruSa bahuvacana form. :</p>\n";
-echo "<p class = red >वच्‌ धातु का प्रथम पुरुष बहुवचन का रूप नहीं होता है ।</p>\n";
-display(0);*/
 }
 /* na vRdbhyazcaturbhyaH (7.2.59) */
 if ( ends(array($fo),array("vftu!","vfDu!","SfDu!","syandU!",),4) && in_array($lakAra,array("lfw","lfN")) && in_array($so,$taG))
@@ -911,9 +908,7 @@ if (in_array($lakAra,$ArdhadhAtuka_lakAra))
     {
         $itpratyaya=array_merge($itpratyaya,array("N"));
         $it=array_merge($it,array("N"));
-        echo "<p class = pa >By vyaceH kuTAditvamanasIti vaktavyam (vA) :</p>\n"; 
-        echo "<p class = pa >वचेः कुटादित्वमनसीति वक्तव्यम्‌ (वा) :</p>\n";
-        display(0);
+		storedata('6.1.17-4','pa',0);
     }
     /* vija iT (1.2.2) */ 
     if ( ends(array($fo),array("o!vijI!"),4) && $ardhadhatuka===1 && in_array($lakAra,$ArdhadhAtuka_lakAra) && $id_dhAtu==="sew" && $id_pratyaya==="sew" && $verbset==="tudAdi")
@@ -970,6 +965,7 @@ if ( in_array($sanAdi,array("Aya","IyaN","RiN")) && $lakAra!=="" && $ardhadhatuk
 	storedata('3.1.31','sa',0);
     $verbpada="A";
 }
+
 /* Displaying general information about lakAras */
 /* laT vartamAne (3.2.123) */
 if (in_array($so,$tiG) && $pada==="pratyaya" && $lakAra==="law")
@@ -982,7 +978,6 @@ if (in_array($so,$tiG) && $pada==="pratyaya" && $lakAra==="liw")
 	storedata('3.2.115','pa',0);
 }
 /* anadyatane luT (3.3.15) */
-if (in_array($so,$tiG) && $pada==="pratyaya" && $lakAra==="luw")
 if (in_array($so,$tiG) && $pada==="pratyaya" && $lakAra==="luw")
 {
 	storedata('3.3.15','pa',0);
@@ -1036,7 +1031,7 @@ if (in_array($so,$tiGmadhyama) && $pada==="pratyaya" && $lakAra!=="")
 	storedata('1.4.105','pa',0);
 }
 /* prahAse ca manyopapade manyateruttama ekavacca (1.4.106) */
-// Pending. Not clear. Wii code when its example comes.
+// Pending. Not clear. Will code when its example comes.
 /* asmadyuttamaH (1.4.107) */
 if (in_array($so,$tiGuttama) && $pada==="pratyaya" && $lakAra!=="")
 {
@@ -1068,9 +1063,9 @@ if ($lakAra==="luN")
 	/* smottare laG ca (3.3.176) */
 	// pending.
 	/* cli luGi (3.1.43) */
-		$text = pr2(array("+"),$tiG,blank(0),array("+cli+"),$tiG,blank(0),$text);
-		storedata('3.1.43','sa',0);
-		$set=2;
+	$text = pr2(array("+"),$tiG,blank(0),array("+cli+"),$tiG,blank(0),$text);
+	storedata('3.1.43','sa',0);
+	$set=2;
 	/* zala igupadhAdaniTaH ksaH (3.1.45) */
 	if (ends(array($fo),array("kruSa!","diSa!","riSa!","ruSa!","liSa!","tviza!","dviza!","miha!","ruha!","liha!","duha!"),4) )
 	{
@@ -1128,10 +1123,9 @@ if ($lakAra==="luN")
 	/* zliSa AliGgane (??) see page 166 of sahajabodha part 2. */
 	elseif ( ends(array($fo),array("Sliza!"),4) && in_array($so,$tis) && $_GET['cond54']==="2" )
 	{
+		storedata('zliSa','pa',0);
+		storedata('3.1.55','sa',0);
 		$text = one(array("+cli+"),array("+aN+"),0);
-		//echo "<p class = sa >By zliSa AliGgane (??) and puSAdidyutAdilRditaH parasmaipadeSu (".link_sutra("3.1.55").") :</p>\n"; 
-		//echo "<p class = sa >श्लिष आलिङ्गने (??) तथा पुषादिद्युतादिलृदितः परस्मैपदेषु (३.१.५५) :</p>\n";
-		//display(0);
 		storedata('3.1.55','sa',0);
 		$it = array_merge($it,array("N"));
 		$itpratyaya = array_merge($itpratyaya,array("N"));
