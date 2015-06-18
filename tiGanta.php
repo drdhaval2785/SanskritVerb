@@ -701,7 +701,7 @@ $fo = $first; // remembering the original prakRti. Sometimes we need to know wha
 $so = $second; ; // remembering the original pratyayas. Sometimes we need to know what was the original pratyaya.
 
 /* displaying the data back to the user */
-suffix_display();
+suffix_display();	
 
 /* for sambodhana, sambuddhi decision */
 if ($w>20)
@@ -11598,9 +11598,14 @@ if ($frontend!=="0")
 {	
 	echo "<p class = sa >Final forms are :</p>\n";
 	echo "<p class = sa >आखिरी रूप हैं :</p>\n";
+	display(0);
+	echo "<hr>\n";
+	$ou[] = implode(', ',$text);
 }
-display(0);
-echo "<hr>\n";
+else
+{
+	$ou[] = implode(', ',$text);
+}
 
 
 
@@ -11616,6 +11621,9 @@ $TAp=0; $DAp=0; $cAp=0; $GIp=0; $GIn=0; $GIS=0; $kGiti=0; $abhyasta=0; $ajAdyata
 $storedata=array();
 $text=array();
 }
+
+$ou = array_map('convert',$ou);
+tablemaker($ou);
 
 /* Closing the HTML */
 echo "</body>

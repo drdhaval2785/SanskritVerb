@@ -3374,6 +3374,38 @@ function print_to_file($text,$sutra_number,$style,$note)
 		}				
 	}
 }
+/* function tablemaker */
+function tablemaker($ou)
+{
+	echo "<table border='1'>
+<tr>
+<td></td>
+<td>एकवचनम्‌</td>
+<td>द्विवचनम्‌</td>
+<td>बहुवचनम्‌</td>
+</tr>
+<tr>
+<td>प्रथमपुरुष</td>
+<td>$ou[0]</td>
+<td>$ou[1]</td>
+<td>$ou[2]</td>
+</tr>
+<tr>
+<td>मध्यमपुरुष</td>
+<td>$ou[3]</td>
+<td>$ou[4]</td>
+<td>$ou[5]</td>
+</tr>
+<tr>
+<td>उत्तमपुरुष</td>
+<td>$ou[6]</td>
+<td>$ou[7]</td>
+<td>$ou[8]</td>
+</tr>
+</table>
+";
+}
+
 
 
 
