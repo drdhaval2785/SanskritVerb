@@ -196,6 +196,11 @@ if ( in_array($vAcya,array("karma","bhAva")) && $pada==="pratyaya" && $lakAra!==
 {
 	$verbpada=verb_pada('1.3.13'); // See function.php for details of function.
 }
+/* Special patch for paNa dhAtu (see kAzikA on 3.1.28) */
+elseif ( $_GET['cond49']==="1")
+{
+	$verbpada="p";
+}
 /* luTi ca klRpaH (1.3.93) */
 elseif ( $fo==="kfpU!" && ($san===1 || in_array($lakAra,array("lfN","lfw","luw"))))
 {
@@ -970,7 +975,7 @@ if ( in_array($sanAdi,array("Aya","IyaN","RiN")) && $lakAra!=="" && $ardhadhatuk
 /* laT vartamAne (3.2.123) */
 if (in_array($so,$tiG) && $pada==="pratyaya" && $lakAra==="law")
 {
-	storedata('3.1.123','pa',0);
+	storedata('3.2.123','pa',0);
 }
 /* parokSe liT (3.2.115) */
 if (in_array($so,$tiG) && $pada==="pratyaya" && $lakAra==="liw")
@@ -1286,6 +1291,15 @@ if (sub(array("Sru"),array("+"),$tiG,0) && ends(array($fo),array("Sru"),4) && $s
     $vik=array_merge($vik,array("Snu"));
     $set=2;
 }
+/* dhivikRNvyora ca (3.1.80) */
+elseif (sub(array("Divi!","kfvi!"),array("+"),$tiG,0) && ends(array($fo),array("Divi!","kfvi!"),4) && $sarvadhatuka===1)
+{
+    $text=three(array("Divi!","kfvi!"),array("+"),$tiG,array("Divi!","kfvi!"),array("+u+"),$tiG,0);
+    $text=one(array("+u+u"),array("+u+"),0);
+	storedata('3.1.80','sa',0);
+    $vik=array_merge($vik,array("u"));
+    $set=2;
+}
 // first treatment of curAdi, because, it will take Nic before vikaraNa pratyaya.
 /* satyApapAzarUpavINAtUlazlokasenAlomatvacavarmacUrNacurAdibhyo Nic (3.1.25) */
 elseif (sub($curAdi,array("+"),$tiG,0) && ends(array($fo),$curAdi,4) && $sarvadhatuka===1 && $verbset==="curAdi")
@@ -1417,15 +1431,6 @@ elseif (sub($tudAdi,array("+"),$tiG,0) && ends(array($fo),$tudAdi,4) && $sarvadh
 elseif (sub($rudhAdi,array("+"),$tiG,0) && ends(array($fo),$rudhAdi,4) && $sarvadhatuka===1  && $verbset==="none")
 {
     $rudhAdibhyaH = 1;
-    $set=2;
-}
-/* dhivikRNvyora ca (3.1.80) */
-elseif (sub(array("Divi!","kfvi!"),array("+"),$tiG,0) && ends(array($fo),array("Divi!","kfvi!"),4) && $sarvadhatuka===1)
-{
-    $text=three(array("Divi!","kfvi!"),array("+"),$tiG,array("Divi!","kfvi!"),array("+u+"),$tiG,0);
-    $text=one(array("+u+u"),array("+u+"),0);
-	storedata('3.1.80','sa',0);
-    $vik=array_merge($vik,array("u"));
     $set=2;
 }
 /* tanAdikRJbhyaH uH (3.1.79) */
@@ -1831,12 +1836,12 @@ if ( sub(array("tfPa!","tuPa!","dfPa!","fPa!","guPa!","uBa!","SuBa!","tupa!","tf
     $text = two(array("tfPa!","tuPa!","dfPa!","fPa!","guPa!","uBa!","SuBa!","tupa!","tfha!"),array("Sa+"),array("tfmPa!","tumPa!","dfmPa!","fmPa!","gumPa!","umBa!","SumBa!","tumpa!","tfnha!"),array("Sa+"),0);        
 	storedata('7.1.59-1','sa',0);
 }
-/* sArvadhAtukamapit (1.1.7) */
+/* sArvadhAtukamapit (1.2.4) */
 if ( pr2(array("+"),$apit_sArvadhAtuka_pratyayas,blank(0),array("+fadfad"),$apit_sArvadhAtuka_pratyayas,blank(0),$text)!== $text && $sarvadhatuka===1 && !in_array("Sap",$vik) )
 {
     $it=array_merge($it,array("N"));
     $itpratyaya=array_merge($itpratyaya,array("N"));
-	storedata('1.1.7','sa',0);
+	storedata('1.2.4','sa',0);
 	if (pr2(pc('ik'),array("+"),$apit_sArvadhAtuka_pratyayas,pc('ik'),array("+fadfad"),$apit_sArvadhAtuka_pratyayas,$text)!== $text)
 	{
 		storedata('1.1.5','sa',0);
@@ -2313,7 +2318,7 @@ if (pr2(array("+"),array("tAs+rO","tAs+ras"),blank(0),array("+"),array("tArO","t
 if (sub(array("+"),array("sya"),array("a","e","o"),0))
 {
     $text=three(array("+"),array("sya"),array("a","e","o"),array("+"),array("sy"),array("a","e","o"),0);
-	storedata('6.1.17','sa',0);
+	storedata('6.1.97','sa',0);
 }
 /* anudAttasya cardupadhasyAnyatarasyAm (6.1.59) */ 
 if ( sub(array("f"),$hlplus,prat('Jl'),0) && ends(array($fo),array("sfpx!","spfSa!","mfSa!","kfza!","tfpa!","dfpa!"),4)  )
@@ -2915,14 +2920,14 @@ if ( sub($hl,array("ya+"),$ArdhadhAtuka_pratyayas,0) && $ardhadhatuka===1)
 /* patch for aG vikaraNa in luG lakAra */
 if ($lakAra==='luN')
 {
-	/* ato guNe (6.1.17) */ // patch for aG+Ji.
+	/* ato guNe (6.1.97) */ // patch for aG+Ji.
 	if (sub(array("a"),array("+a"),blank(0),0)  )
 	{
 		while(sub(array("a"),array("+a"),blank(0),0) !== false)
 		{
 				 $text = two(array("a"),array("+a"),blank(1),array("+a"),0);   
 		}      
-		storedata('6.1.17','sa',0);
+		storedata('6.1.97','sa',0);
 	}
 	$text = one(array("+a+"),array("+a"),0);
 }
@@ -4711,14 +4716,14 @@ if (sub(array("+"),array("ava","ama"),blank(0),0) && in_array($so,$tiG) )
     $text = two(array("+"),array("ava","ama"),array("+"),array("+Ava","+Ama"),0);
 	storedata('7.3.101','sa',0);
 }
-/* ato guNe (6.1.17) */
+/* ato guNe (6.1.97) */
 if (sub(array("a"),array("+a","+e","+o"),blank(0),0) && $pada === "pratyaya" && in_array($so,$tiG) )
 {
     while(sub(array("a"),array("+a","+e","+o"),blank(0),0) !== false)
     {
              $text = two(array("a"),array("+a","+e","+o"),blank(1),array("+a","+e","+o"),0);   
     }      
-	storedata('6.1.17','sa',0);
+	storedata('6.1.97','sa',0);
 }
 /* bahulaM Candasi (2.4.73) */
 if (sub(array("SAm","ama"),array("+"),blank(0),0) && ends(array($fo),array("Samu!","ama!"),4) && in_array($so,$tiG) && $veda===1)
@@ -9566,11 +9571,11 @@ $text = two(array("f","F","x","X"),array("f","F","x","X"),array("F","F","F","F")
 $text = two(array("x","X"),array("x","X"),array("F","F"),blank(2),0);
 storedata('6.1.101','sa',0);
 }
-/* ato guNe (6.1.17) */
+/* ato guNe (6.1.97) */
 if (sub(array("a"),array("a","e","o"),blank(0),0) && !sub(array("pra","upa"),array("a","e","o"),blank(0),0) && $pada === "pratyaya" )
 {
     $text = two(array("a"),array("a","e","o"),blank(1),array("a","e","o"),0);
-	storedata('6.1.17','sa',0);
+	storedata('6.1.97','sa',0);
 }
 /* hrasvasya guNaH (7.3.108) */ 
 if (arr($text,'/[iufx][+][s]/') && $so==="su!" && $sambuddhi===1 && $amba===0)
@@ -11182,9 +11187,7 @@ echo "<p class = sa >त्रिचतुर्भ्यां हायनस�
 }
 elseif(arr($text,'/([fF])([R])/') && $hohante===0 && $AcArya===0)
 {
-	// Pending to refractor.
-/*echo "<p class = sa >By RvarNAnnasya NatvaM vAcyam (vA 4969) :</p>\n";
-echo "<p class = sa >ऋवर्णान्नस्य णत्वं वाच्यम्‌ (वा ४९६९) :</p>\n";     */
+	storedata('8.4.1-1','sa',0);
 }
 elseif(arr($text,'/([rzf])([aAiIuUfFxXeoEOhyvrkKgGNpPbBmM+]*)([R])/') && $hohante===0 && $AcArya===0 )
 {
