@@ -1508,7 +1508,7 @@ if ( (sub($juhotyAdi,array("+Sap+"),$tiG,0) && ends(array($fo),$juhotyAdi,4) && 
 	zlu(); // pending to refractor.
 }
 /* adiprabhRtibhyaH zapaH (2.4.72) */
-if (sub($adAdi,array("+Sap+"),$tiG,0) && $sarvadhatuka===1 && ends(array($fo),$adAdi,4) )
+if (sub($adAdi,array("+Sap+"),$tiG,0) && $sarvadhatuka===1 && ends(array($fo),$adAdi,4) && $verbset==="adAdi")
 {
     $text=two(array("+Sap+"),$tiG,array("+"),$tiG,0);
 	storedata('2.4.72','sa',0);
@@ -1560,6 +1560,7 @@ if (sub(array("pA","GrA","DmA","sTA","mnA","dAR","dfzi!r","f","sf","Sadx!","zadx
     $text=three(array("pA","GrA","DmA","sTA","mnA","dAR","dfzi!r","f","sf","Sadx!","zadx!"),array("+"),$shitpratyaya,array("pib","jiGr","Dam","tizW","man","yacC","paSy","rcC","DO","SIy","sId"),array("+"),$shitpratyaya,0);
 	storedata('7.3.78','sa',0);
     $nomidelision=1; // We will remember this while doing halantyam and prevent halantyam application, because these are not upadeza
+	$vijait=1; // to prevent application of pugantalaghUpadhasya ca.
 }
 
 /* AdirJiTuDavaH (1.3.5) */
@@ -1873,7 +1874,7 @@ if (arr($text,'/[tTdDnsm]$/') && $vibhakti===1)
 $inbetweenpratyaya=array("ap","yan","Ric","RiN","san","IyaN");
 $inbetweeenreplace=array("a","ya","Ri","Ri","sa","Iya");
 /* halantyam (1.3.3) and tasya lopaH (1.3.9) */
-if (in_array($so,$tiG) && sub(array("!"),$hl,array("+"),0) && arr(array($fo),'/[!]['.pc('hl').']$/') )
+if (in_array($so,$tiG) && sub(array("!"),$hl,array("+"),0) && arr(array($fo),'/[!]['.pc('hl').']$/') && $nomidelision!==1 )
 {
 	storedata('1.3.3','sa',0);
 	$text=three(array("!"),$hl,array("+"),array("!"),blank(count($hl)),array("+"),0);
@@ -1907,7 +1908,10 @@ if (in_array($so,$tiG) && ( sub(array("+"),$inbetweenpratyaya,array("+"),0) || (
     $text=three($hlplus,$vikaraNa,array("+"),blank1("+",count($hlplus)),$vikaraNa,array("+"),0);
     }
 	$text=one(array("+si+"),array("+sic+"),0);
+	if ($nomidelision!==1)
+	{
 	$text=three($hl,array("+a+","+ca+"),$tiG1,blank(count($hl)),array("+a+","+ca+"),$tiG1,0);
+	}
 	storedata('1.3.9','sa',0);
 }
 /* cuTU (1.3.7) */
@@ -8808,7 +8812,7 @@ if (arr($text,'/[tTdDnsm]$/') && $vibhakti===1)
     $tusma=1;
 }
 /* halantyam (1.3.3) ant tasya lopaH (1.3.9) */
-elseif (arr($text,'/['.flat($hl).']$/') && $halGyAbbhyo!==1)
+elseif (arr($text,'/['.flat($hl).']$/') && $halGyAbbhyo!==1 && $nomidelision!==1)
 {
     itprat('/(['.flat($hl).']$)/');
 	storedata('1.3.3','pa',0);
@@ -8816,7 +8820,7 @@ elseif (arr($text,'/['.flat($hl).']$/') && $halGyAbbhyo!==1)
 	storedata('1.3.9','sa',0);
 }
 /* halantyam (1.3.3) and tasya lopaH */
-if (sub(array("+"),$inbetweenpratyaya,array("+"),0))
+if (sub(array("+"),$inbetweenpratyaya,array("+"),0) && $nomidelision!==1)
 {
     itprat('/['.flat($hl).'][+]/');
 	storedata('1.3.3','pa',0);
