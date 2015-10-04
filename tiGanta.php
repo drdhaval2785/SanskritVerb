@@ -1497,7 +1497,7 @@ if (sub(array("stamBu!","stumBu!","skamBu!","skumBu!",),array("+SnA"),array("+")
     $vik=array_merge($vik,array("Snu"));
 }
 /* juhotyAdibhyaH zluH (2.4.75), zlau (6.1.10) and kuhozcuH (7.4.62) */
-if ( (sub($juhotyAdi,array("+Sap+"),$tiG,0) && ends(array($fo),$juhotyAdi,4) && $sarvadhatuka===1) || $zluvat===1)
+if ( (sub($juhotyAdi,array("+Sap+"),$tiG,0) && ends(array($fo),$juhotyAdi,4) && $sarvadhatuka===1 && $verbset==="juhotyAdi") || $zluvat===1)
 {
     $text=three($juhotyAdi,array("+Sap+"),$tiG,$juhotyAdi,array("+"),$tiG,0);
 	storedata('2.4.75','sa',0);
@@ -1555,9 +1555,9 @@ if ( !in_array($fo,$allverbs) && sub(array("+Ric+Sap+","+RiN+Sap+"),$tiG,blank(0
     }
 }
 /* pAghrAdhmAsthAmnAdANdRzyartizadasadAM pibajighradhamatiSThamanayacCapazyarcCadhaushIyasIdAH (7.3.78) */
-if (sub(array("pA","GrA","DmA","sTA","mnA","dAR","dfzi!r","f","sf","Sadx!","zadx!"),array("+"),$shitpratyaya,0) && $lakAra!=="" && ends(array($fo),array("pA","GrA","DmA","sTA","mnA","dAR","dfzi!r","f","sf","Sadx!","zadx!","zWA"),4))
+if (sub(array("pA","GrA","DmA","sTA","mnA","dAR","dfSi!r","f","sf","Sadx!","zadx!"),array("+"),$shitpratyaya,0) && $lakAra!=="" && ends(array($fo),array("pA","GrA","DmA","sTA","mnA","dAR","dfSi!r","f","sf","Sadx!","zadx!","zWA"),4))
 {
-    $text=three(array("pA","GrA","DmA","sTA","mnA","dAR","dfzi!r","f","sf","Sadx!","zadx!"),array("+"),$shitpratyaya,array("pib","jiGr","Dam","tizW","man","yacC","paSy","rcC","DO","SIy","sId"),array("+"),$shitpratyaya,0);
+    $text=three(array("pA","GrA","DmA","sTA","mnA","dAR","dfSi!r","sf","f","Sadx!","zadx!"),array("+"),$shitpratyaya,array("pib","jiGr","Dam","tizW","man","yacC","paSy","DO","fcC","SIy","sId"),array("+"),$shitpratyaya,0);
 	storedata('7.3.78','sa',0);
     $nomidelision=1; // We will remember this while doing halantyam and prevent halantyam application, because these are not upadeza
 	$vijait=1; // to prevent application of pugantalaghUpadhasya ca.
@@ -1675,9 +1675,9 @@ if (sub(array("Samu!","tamu!","damu!","Sramu!","kzamu!","Bramu!","klamu!","madI!
     $nomidelision=1; // We will remember this while doing halantyam and prevent halantyam application, because these are not upadeza
 }
 /* SThivuklamyAcamAM ziti (7.3.75) */
-if (sub(array("zWivu!","klamu!","Acamu!"),array("+"),$shitpratyaya,0) && $lakAra!=="" && ends(array($fo),array("zWivu!","klamu!","Acamu!"),4) )
+if ( (sub(array("zWivu!","klamu!",),array("+"),$shitpratyaya,0) || (sub(array("camu!"),array("+"),$shitpratyaya,0) && $us==="A")) && $lakAra!=="" && ends(array($fo),array("zWivu!","klamu!","camu!"),4) )
 {
-    $text=three(array("zWivu!","klamu!","Acamu!"),array("+"),$shitpratyaya,array("zWIv","klAm","AcAm"),array("+"),$shitpratyaya,0);
+    $text=three(array("zWivu!","klamu!","camu!"),array("+"),$shitpratyaya,array("zWIv","klAm","cAm"),array("+"),$shitpratyaya,0);
 	storedata('7.3.75','sa',0);
     $nomidelision=1; // We will remember this while doing halantyam and prevent halantyam application, because these are not upadeza
 }
@@ -3902,11 +3902,11 @@ if ( sub(array("A+f","A+fcC","A+nf","A+nfcC","F"),array("+"),blank(0),0) && $lak
 	$text = two(array("A+f","A+fcC","A+nf","A+nfcC","F"),array("+"),array("A+ar","A+arcC","A+nar","A+narcC","ar"),array("+"),0);
 	storedata('7.4.11','sa',0);
 }
-/* dAderdhAtorghaH (8.2.33) */
+/* dAderdhAtorghaH (8.2.32) */
 if (sub($dade,blank(0),blank(0),0) && arr($text,'/['.pc('hl').'][+]['.pc("Jl").']/') )
 {
     $text = three(array("dah","dAh","dih","duh","dfh","drAh","druh"),array("+"),prat('Jl'),array("daG","dAG","diG","duG","dfG","drAG","druG"),array("+"),prat('Jl'),0);
-	storedata('8.2.33','sa',0);
+	storedata('8.2.32','sa',0);
     $hodha1 = 1; // 0 - doesn't prevent ho DhaH. 1 - prevents ho DhaH.
 } else { $hodha1 = 0; } 
 /* anudAttopadezavanatitanotyAdInAmanunAsikalopo jhali kGiti (6.4.37) */
@@ -4227,7 +4227,7 @@ if ( sub(array("goh","guh"),array("+"),$ac,0) && ends(array($fo),array("guhU!"),
     $text = three(array("goh","guh"),array("+"),$ac,array("gUh","gUh"),array("+"),$ac,0);
 	storedata('6.4.89','sa',0);
 }
-/* vrazcabhrasjamRjayajarAjabhrAjacChazAM ca (8.2.35) */
+/* vrazcabhrasjamRjayajarAjabhrAjacChazAM ca (8.2.36) */
 // TubhrAjR dIptau and ejR bhejR bhrAjR dIptau are different. This is pending to code.
 // parau vrajeH SaH padAnte (u 217) pending. 
 $vrasca = array("vfSc","sfj","mfj","yaj","rAj","BrAj","devej","parivrAj","Bfj","ftvij","mArj","vraSc","Brasj","sraj","sfaj","Barj","vrASc","vrAc","vrac","BrAj","BArj");
@@ -4242,13 +4242,13 @@ if ( sub($vrasca,array("+"),prat("Jl"),0)  && in_array($so,$tiG) && ends(array($
     {
     $text = one($vrasca,$vrashca,0);    
     }
-	storedata('8.2.35','sa',0);
+	storedata('8.2.36','sa',0);
     $vras = 1; // 0 - This sUtra has not applied. 1 - This sUtra has applied.
 }
-if (arr($text,'/[CS][+]/') && in_array($so,$tiG) )
+if (arr($text,'/[CS][+]['.pc('Jl').']/') && in_array($so,$tiG) )
 {
     $text = three(array("C","S"),array("+"),prat('Jl'),array("z","z"),array("+"),prat('Jl'),0);
-	storedata('8.2.35','sa',0);
+	storedata('8.2.36','sa',0);
     $vras=1;
 }
 /* nimittApAye naimittikasyApyapAyaH (paribhASA) */ 
@@ -4270,7 +4270,7 @@ if (sub(array("vivikz",),array("+"),blank(0),0) && in_array($so,$tiG))
 //    echo "<p class = sa >स्कोः संयोगाद्योरन्ते च इति कलोपे प्राप्ते कत्वस्य असिद्धत्वात्‌ संयोगान्तलोपः । सकारस्य लोपे 'निमित्ताभावे नैमित्तिकस्याप्यपायः' इति षत्वमपि निवर्तते । :</p>\n";
 //    display(0);    
     $text = two(array("viviS"),array("+"),array("viviz"),array("+"),0);
-	storedata('8.2.35','sa',0);
+	storedata('8.2.36','sa',0);
 }
 /* rakS, takS patch to bar application of skoH saMyogAdyorante ca */
 if (sub(array("takz","rakz"),array("+"),blank(0),0) && in_array($so,$tiG) && ends(array($sanAdi,array("Ric","RiN"))))
@@ -4321,49 +4321,49 @@ if (sub(array("cikIrz"),array("+"),blank(0),0) && in_array($so,$tiG) )
     $text = two(array("cikIrz"),array("+"),array("cikIr"),array("+"),0);
 	storedata('8.2.24','sa',0);
 }
-/* vA druhamuhaSNuhaSNihAm (8.2.34) */
+/* vA druhamuhaSNuhaSNihAm (8.2.33) */
 $druh = array("druh","muh","snuh","snih","droh","moh","snoh","sneh");
 if (sub($druh,blank(0),blank(0),0) && (arr($text,'/[+]$/') || arr($text,'/[+]['.pc("Jl").']/')) )
-{ 
+{
     $text = two(array("druh","muh","snuh","snih","droh","moh","snoh","sneh"),prat('Jl'),array("druG","muG","snuG","sniG","droG","moG","snoG","sneG"),prat('Jl'),1);
-	storedata('8.2.34','sa',0);
+	storedata('8.2.33','sa',0);
 }
-/* dAderdhAtorghaH (8.2.33) */
+/* dAderdhAtorghaH (8.2.32) */
 if (sub($dade,blank(0),blank(0),0) && (arr($text,'/[+]$/') || arr($text,'/[+]['.pc("Jl").']/')) )
 {
     $text = two(array("dah","dAh","dih","duh","dfh","drAh","druh"),prat('Jl'),array("daG","dAG","diG","duG","dfG","drAG","druG"),prat('Jl'),0);
-	storedata('8.2.33','sa',0);
+	storedata('8.2.32','sa',0);
     $hodha1 = 1; // 0 - doesn't prevent ho DhaH. 1 - prevents ho DhaH.
 }
-/* naho dhaH (8.2.35) */
+/* naho dhaH (8.2.34) */
 if (sub(array("nah","nAh"),blank(0),blank(0),0) && ends(array($fo),array("Raha!"),2) && (arr($text,'/[+]$/') || arr($text,'/[+]['.pc("Jl").']/')) )
 {
     $text = one(array("nah","nAh"),array("naD","nAD"),0);
-	storedata('8.2.35','sa',0);
+	storedata('8.2.34','sa',0);
     $hodha2 = 1; // 0 - doesn't prevent ho DhaH. 1 - prevents ho DhaH.  
 } else { $hodha2 = 0; } 
-/* AhasthaH (8.2.36) */
+/* AhasthaH (8.2.35) */
 if (in_array($first,array("Ah")) && (arr($text,'/[+]['.pc("Jl").']/')) )
 {
-    $text = one(array("Ah",),array("AT"),0);
-	storedata('8.2.36','sa',0);
+   $text = one(array("Ah",),array("AT"),0);
+	storedata('8.2.35','sa',0);
     $hodha3=1; // 0 - doesn't prevent ho DhaH. 1 - prevents ho DhaH.
 } else { $hodha3 = 0; } 
-/* ho DhaH (8.2.32) */ 
+/* ho DhaH (8.2.31) */ 
 if (arr($text,'/[h][+]/') && sub(array("h"),prat("Jl"),blank(0),0) && $hodha1===0 && $hodha2 === 0 && $hodha3 === 0 )
 {
     $text = two(array("h"),prat('Jl'),array("Q"),prat('Jl'),0);
-	storedata('8.2.32','sa',0);
+	storedata('8.2.31','sa',0);
 } 
 if (arr($text,'/[h][+]$/') && $pada ==="pada" && $hodha1===0 && $hodha2 === 0 && $hodha3 === 0 )
 { 
     $text = two(array("h"),array("+"),array("Q"),array("+"),0);
-	storedata('8.2.32','sa',0);
+	storedata('8.2.31','sa',0);
 }
 if (arr($text,'/[h]$/')  && $hodha1===0 && $hodha2 === 0 && $hodha3 === 0 )
 {
     $text = last(array("h"),array("Q"),0);
-	storedata('8.2.32','sa',0);
+	storedata('8.2.31','sa',0);
 }
 /* ekAco bazo bhaS jhaSantasya sdhvoH (8.2.37) */  
 if ( /*anekAca($verb_without_anubandha)==false &&*/ ( arr($text,'/[bgqd](['.pc('al').']*)[JBGQD][+][sD]/') || arr($text,'/[JBGQD][+]$/') || $pada==="pada") )
@@ -10250,7 +10250,7 @@ elseif (sub($hl,array("+"),blank(0),0) && ( $kvin===1 || ($kvip===1 && $fo==="di
 else { $kvinku=0; } 
 */ // bracketed. Output seems fine after bracketing. Kept in case we need it in future.
 
-/* vrazcabhrasjamRjayajarAjabhrAjacChazAM ca (8.2.35) */
+/* vrazcabhrasjamRjayajarAjabhrAjacChazAM ca (8.2.36) */
 // TubhrAjR dIptau and ejR bhejR bhrAjR dIptau are different. This is pending to code.
 // parau vrajeH SaH padAnte (u 217) pending. 
 $vrasca = array("vfSc","sfj","mfj","yaj","rAj","BrAj","devej","parivrAj","Bfj","ftvij");
@@ -10265,7 +10265,7 @@ if ( (sub($vrasca,array("+"),prat("Jl"),0) ||  ( sub($vrasca,array("+"),blank(0)
     {
     $text = one($vrasca,$vrashca,0);    
     }
-	storedata('8.2.35','sa',0);
+	storedata('8.2.36','sa',0);
     $vras1 = 1; // 0 - This sUtra has not applied. 1 - This sUtra has applied.
 } else { $vras1 = 0; }
 if (arr($text,'/[CS]$/'))
@@ -10280,7 +10280,7 @@ if (arr($text,'/[CS]$/'))
         {
             $text = last(array("C","S"),array("z","z"),0);                    
         }
-	storedata('8.2.35','sa',0);
+	storedata('8.2.36','sa',0);
     }
     else
     {
@@ -10292,7 +10292,7 @@ if (arr($text,'/[CS]$/'))
         {
                         $text = last(array("C","S"),array("z","z"),0);                    
         }
-	storedata('8.2.35','sa',0);
+	storedata('8.2.36','sa',0);
     }
     $vras3 = 1; // 0 - This sUtra has not applied. 1 - This sUtra has applied.
 } else { $vras3 =0; }
@@ -10308,7 +10308,7 @@ if (arr($text,'/[CS][+]/') && $pada === "pada")
         {
             $text = two(array("C","S"),array("+"),array("z","z"),array("+"),0);
         }
-	storedata('8.2.35','sa',0);
+	storedata('8.2.36','sa',0);
     }
     else
     {
@@ -10325,7 +10325,7 @@ if (arr($text,'/[CS][+]/') && $pada === "pada")
         {
              $text = two(array("C","S"),array("+"),array("z","z"),array("+"),0);
         }
-	storedata('8.2.35','sa',0);
+	storedata('8.2.36','sa',0);
     }
     $vras4 = 1; // 0 - This sUtra has not applied. 1 - This sUtra has applied.
 } else { $vras4 = 0; } 
@@ -10348,7 +10348,7 @@ if (sub(array("vivikz"),array("+"),blank(0),0) && $pada==='pada')
     echo "<p class = sa >स्कोः संयोगाद्योरन्ते च इति कलोपे प्राप्ते कत्वस्य असिद्धत्वात्‌ संयोगान्तलोपः । सकारस्य लोपे 'निमित्ताभावे नैमित्तिकस्याप्यपायः' इति षत्वमपि निवर्तते । :</p>\n";
     display(0);    */
     $text = two(array("viviS"),array("+"),array("viviz"),array("+"),0);
-	storedata('8.2.35','sa',0);
+	storedata('8.2.36','sa',0);
 }
 /* rakS, takS patch to bar application of skoH saMyogAdyorante ca */
 if (sub(array("takz","rakz"),array("+"),blank(0),0) && $pada === "pada" && $Nyanta===1)
@@ -10479,49 +10479,49 @@ else
 {
     $coku=0;
 }
-/* vA druhamuhaSNuhaSNihAm (8.2.34) */
+/* vA druhamuhaSNuhaSNihAm (8.2.33) */
 $druh = array("druh","muh","snuh","snih","droh","moh","snoh","sneh");
 if (sub($druh,blank(0),blank(0),0) && (arr($text,'/[+]$/') || arr($text,'/[+]['.pc("Jl").']/')) )
 { 
     $text = one(array("druh","muh","snuh","snih","droh","moh","snoh","sneh"),array("druG","muG","snuG","sniG","droG","moG","snoG","sneG"),1);
-	storedata('8.2.34','sa',0);
+	storedata('8.2.33','sa',0);
 }
-/* dAderdhAtorghaH (8.2.33) */
+/* dAderdhAtorghaH (8.2.32) */
 if (sub($dade,blank(0),blank(0),0) && (arr($text,'/[+]$/') || arr($text,'/[+]['.pc("Jl").']/')) )
 {
     $text = one(array("dah","dAh","dih","duh","dfh","drAh","druh"),array("daG","dAG","diG","duG","dfG","drAG","druG"),0);
-	storedata('8.2.33','sa',0);
+	storedata('8.2.32','sa',0);
     $hodha1 = 1; // 0 - doesn't prevent ho DhaH. 1 - prevents ho DhaH.
 }
-/* naho dhaH (8.2.35) */
+/* naho dhaH (8.2.34) */
 if (sub(array("nah"),blank(0),blank(0),2) && (arr($text,'/[+]$/') || arr($text,'/[+]['.pc("Jl").']/')) )
 {
     $text = one(array("nah",),array("naD"),0);
-	storedata('8.2.35','sa',0);
+	storedata('8.2.34','sa',0);
     $hodha2 = 1; // 0 - doesn't prevent ho DhaH. 1 - prevents ho DhaH.  
 } else { $hodha2 = 0; } 
-/* AhasthaH (8.2.36) */
+/* AhasthaH (8.2.35) */
 if (in_array($first,array("Ah")) && (arr($text,'/[+]['.pc("Jl").']/')) )
 {
     $text = one(array("Ah",),array("AT"),0);
-	storedata('8.2.36','sa',0);
+	storedata('8.2.35','sa',0);
     $hodha3=1; // 0 - doesn't prevent ho DhaH. 1 - prevents ho DhaH.
 } else { $hodha3 = 0; } 
-/* ho DhaH (8.2.32) */ 
+/* ho DhaH (8.2.31) */ 
 if (arr($text,'/[h][+]/') && sub(array("h"),prat("Jl"),blank(0),0) && $hodha1===0 && $hodha2 === 0 && $hodha3 === 0 && $kvinku===0)
 {
     $text = two(array("h"),prat('Jl'),array("Q"),prat('Jl'),0);
-	storedata('8.2.32','sa',0);
+	storedata('8.2.31','sa',0);
 } 
 if (arr($text,'/[h][+]$/') && $pada ==="pada" && $hodha1===0 && $hodha2 === 0 && $hodha3 === 0 && $kvinku===0)
 { 
     $text = two(array("h"),array("+"),array("Q"),array("+"),0);
-	storedata('8.2.32','sa',0);
+	storedata('8.2.31','sa',0);
 }
 if (arr($text,'/[h]$/')  && $hodha1===0 && $hodha2 === 0 && $hodha3 === 0 && $kvinku===0)
 {
     $text = last(array("h"),array("Q"),0);
-	storedata('8.2.32','sa',0);
+	storedata('8.2.31','sa',0);
 }
 /* ekAco bazo bhaS jhaSantasya sdhvoH (8.2.37) */  // Not good code. Think hard.
 if (sub($ekaco,array("+"),blank(0),0) && ( arr($text,'/[+][sd]/') || arr($text,'/[+]$/') || $pada==="pada"))

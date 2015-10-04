@@ -54,3 +54,83 @@ Fri, 11 Sep 2015 08:39:58
 verb = pA, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = 
 Request completed on :Fri, 11 Sep 2015 08:40:33
 ------------------------------
+Sun, 04 Oct 2015 08:48:03
+verb = zWivu!, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = 
+Request completed on :Sun, 04 Oct 2015 08:48:43
+------------------------------
+Sun, 04 Oct 2015 08:49:33
+verb = zWivu!, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = 
+Request completed on :Sun, 04 Oct 2015 08:50:15
+------------------------------
+Sun, 04 Oct 2015 08:51:01
+verb = camu!, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = A
+Sun, 04 Oct 2015 08:53:37
+verb = camu!, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = A
+Sun, 04 Oct 2015 08:54:33
+verb = camu!, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = A
+Sun, 04 Oct 2015 08:55:37
+verb = zasja!, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = 
+Sun, 04 Oct 2015 08:56:56
+verb = zasja!, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = 
+Sun, 04 Oct 2015 08:57:05
+verb = zasja!, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = 
+Sun, 04 Oct 2015 09:09:20
+verb = zasja!, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = 
+Sun, 04 Oct 2015 09:10:12
+verb = zasja!, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = 
+Sun, 04 Oct 2015 09:12:46
+verb = zasja!, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = 
+Sun, 04 Oct 2015 09:14:47
+verb = zasja!, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = 
+Sun, 04 Oct 2015 09:18:42
+verb = kfpU!, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = 
+Sun, 04 Oct 2015 09:19:23
+verb = kfpU!, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = 
+Request completed on :Sun, 04 Oct 2015 09:20:33
+------------------------------
+Sun, 04 Oct 2015 09:25:15
+verb = kfpU!, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = 
+Request completed on :Sun, 04 Oct 2015 09:26:27
+------------------------------
+Sun, 04 Oct 2015 09:27:29
+verb = raYja!, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = 
+Sun, 04 Oct 2015 09:31:09
+verb = zadx!, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = 
+Sun, 04 Oct 2015 09:32:18
+verb = Sadx!, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = 
+Request completed on :Sun, 04 Oct 2015 09:33:27
+------------------------------
+Sun, 04 Oct 2015 09:34:41
+verb = Sadx!, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = 
+Sun, 04 Oct 2015 13:00:11
+verb = sf, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = 
+Request completed on :Sun, 04 Oct 2015 13:01:13
+------------------------------
+Sun, 04 Oct 2015 13:02:40
+verb = sf, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = 
+Sun, 04 Oct 2015 13:03:41
+verb = sf, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = 
+Sun, 04 Oct 2015 13:07:10
+verb = sf, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = 
+Request completed on :Sun, 04 Oct 2015 13:08:08
+------------------------------
+Sun, 04 Oct 2015 13:09:23
+verb = f, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = 
+Sun, 04 Oct 2015 13:10:16
+verb = dfSi!r, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = 
+Sun, 04 Oct 2015 13:11:01
+verb = dfSi!r, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = 
+Request completed on :Sun, 04 Oct 2015 13:11:39
+------------------------------
+Sun, 04 Oct 2015 13:12:42
+verb = dAR, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = 
+Sun, 04 Oct 2015 13:15:10
+verb = dAR, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = 
+Sun, 04 Oct 2015 13:18:00
+verb = dAR, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = 
+Sun, 04 Oct 2015 13:32:55
+verb = dAR, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = 
+Sun, 04 Oct 2015 13:34:05
+verb = dAR, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = 
+Request completed on :Sun, 04 Oct 2015 13:34:44
+------------------------------
