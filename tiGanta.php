@@ -582,16 +582,17 @@ elseif ( ends(array($first),array("nigF","aSa!","Buja!","cala!","cupa!","kapi!",
 // Pending. Ni etc are very confusing at this stage. Will think later.
 // budha... is an exception to cittavat part (kAzikA)
 /* svaritaJitaH kartrabhiprAye kriyAphale (1.3.72) */
-elseif ( ends(array($first),$ubhaya,4) && $pada==="pratyaya" && $lakAra!=="")
+// Added in the next block.
+/*elseif ( ends(array($first),$ubhaya,4) && $pada==="pratyaya" && $lakAra!=="")
 {
 	$verbpada=verb_pada('1.3.72');
-}
+}*/
 /* In case the user has selected some gaNa, the pada has to correspond to that gaNa */
 elseif($verbset!=="none")
 {
     if (verb_padafinder($first)===array("u"))
     {
-		$verbpada=verb_pada('uBayapadI');
+		$verbpada=verb_pada('1.3.72');
     }
     elseif (verb_padafinder($first)===array("A"))
     {
@@ -1555,9 +1556,9 @@ if ( !in_array($fo,$allverbs) && sub(array("+Ric+Sap+","+RiN+Sap+"),$tiG,blank(0
     }
 }
 /* pAghrAdhmAsthAmnAdANdRzyartizadasadAM pibajighradhamatiSThamanayacCapazyarcCadhaushIyasIdAH (7.3.78) */
-if (sub(array("pA","GrA","DmA","sTA","mnA","dAR","dfSi!r","f","sf","Sadx!","zadx!"),array("+"),$shitpratyaya,0) && $lakAra!=="" && ends(array($fo),array("pA","GrA","DmA","sTA","mnA","dAR","dfSi!r","f","sf","Sadx!","zadx!","zWA"),4))
+if (sub(array("pA","GrA","DmA","zWA","mnA","dAR","dfSi!r","f","sf","Sadx!","zadx!"),array("+"),$shitpratyaya,0) && $lakAra!=="" && ends(array($fo),array("pA","GrA","DmA","zWA","mnA","dAR","dfSi!r","f","sf","Sadx!","zadx!","zWA"),4))
 {
-    $text=three(array("pA","GrA","DmA","sTA","mnA","dAR","dfSi!r","sf","f","Sadx!","zadx!"),array("+"),$shitpratyaya,array("pib","jiGr","Dam","tizW","man","yacC","paSy","DO","fcC","SIy","sId"),array("+"),$shitpratyaya,0);
+    $text=three(array("pA","GrA","DmA","zWA","mnA","dAR","dfSi!r","sf","f","Sadx!","zadx!"),array("+"),$shitpratyaya,array("piba","jiGra","Dama","tizWa","mana","yacCa","paSya","DO","fcCa","SIya","sIda"),array("+"),$shitpratyaya,0);
 	storedata('7.3.78','sa',0);
     $nomidelision=1; // We will remember this while doing halantyam and prevent halantyam application, because these are not upadeza
 	$vijait=1; // to prevent application of pugantalaghUpadhasya ca.
@@ -1592,9 +1593,9 @@ elseif (arr($text,'/^[z]/') || arr($text,'/^[R]/') || arr($text,'/[iu][r][d]/'))
 		{
 			$text=two(array("s"),$Tu,array("s"),$tu,0);
 			// Pending to refractor because of unability to handle paribhASAs in display. Only AS and vArtikas are taken as input. Some digitized paribhASA dataset has to be evolved.
-			echo "<p class = sa >By nimittApAye naimittikasyApyapAyaH (paribhASA) :</p>\n";
+			/*echo "<p class = sa >By nimittApAye naimittikasyApyapAyaH (paribhASA) :</p>\n";
 			echo "<p class = sa >निमित्तापाये नैमित्तिकस्याप्यपायः (परिभाषा) :</p>\n";
-			display(0);                    
+			display(0);*/                    
 		}
    }
    if (arr($text,'/^[R]/'))
@@ -2343,17 +2344,17 @@ if (sub(array("duh","dih","lih","guh",),array("+sa+"),array("t","T","d","D","n",
     $text = three(array("duh","dih","lih","guh",),array("+sa+"),array("t","T","d","D","n","v",),array("duh","dih","lih","guh",),array("+"),array("t","T","d","D","n","v",),1);
 	storedata('7.3.73','sa',0);
 }
-/* Ato GitaH (7.2.89) */
+/* Ato GitaH (7.2.81) */
 if ( arr($text,'/[a][+][A]/') && in_array($so,$tiG) ) // bad
 {
     $text=two(array("a"),array("+A"),array("a"),array("+iy+"),0);
-	storedata('7.2.89','sa',0);
+	storedata('7.2.81','sa',0);
 }
-/* Ato GitaH (7.2.89) */
+/* Ato GitaH (7.2.81) */
 if ( arr($text,'/[s][y][a][A]/') && in_array($so,$tiG) ) // bad
 {
     $text=two(array("sya"),array("A"),array("sya"),array("+iy+"),0);
-	storedata('7.2.89','sa',0);
+	storedata('7.2.81','sa',0);
 }
 /* ADuttamasya picca (3.4.92) */
 if ( pr2(array("+"),array("ni","va","ma","E","vahE","mahE"),blank(0),array("+"),array("Ani","Ava","Ama","AE","AvahE","AmahE"),blank(0),$text)!==$text && $lakAra==="low")
@@ -3013,19 +3014,19 @@ if (arr($text,'/[+][cjYwWqQR]/') && in_array($so,$tiG))
     $text = one(array("+jas","+wA","+jus","+Ri","+Ra"),array("+as","+A","+us","+i","+a"),0);
 	storedata('1.3.9','sa',0);
 }
-/* lopo vyorvali (6.4.65) */
+/* lopo vyorvali (6.1.66) */
 // patch for sIyuT
 if ( sub(array("+Iy","+sIy"),array("+"),prat("vl"),0) && !in_array($sanAdi,array("Ric")))
 {
     $text = three(array("+Iy","+sIy"),array("+"),prat("vl"),array("+I","+sI"),array(""),prat("vl"),0);    
-	storedata('6.4.65','sa',0);
+	storedata('6.1.66','sa',0);
 }
-/* lopo vyorvali (6.4.65) */
+/* lopo vyorvali (6.1.66) */
 // patch for Nijanta and ksa luG
 if ( sub(array("+a+iy","+sa+iy","+sya+iy"),array("+"),prat("vl"),0) )
 {
     $text = three(array("a+iy","+sa+iy"),array("+"),prat("vl"),array("a+i","+sa+i"),array("+"),prat("vl"),0);    
-	storedata('6.4.65','sa',0);
+	storedata('6.1.66','sa',0);
 }
 /* AdguNaH (6.1.87) patch for sya Agama */
 if (sub(array("sya+"),array("i+"),blank(0),0))

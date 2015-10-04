@@ -2898,7 +2898,6 @@ function abhyAsa_halAdi()
 				if ((preg_match('/[\+][a]/',$value) && $caG===1) || $lakAra==="liw")
 				{					
 					$parts=explode('+',$value);
-					print_r($parts);
 					$parts[1]=str_replace(array("h"),array("G"),$parts[1]);
 					$val4[] = implode('+',$parts);
 				}
