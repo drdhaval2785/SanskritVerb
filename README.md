@@ -36,3 +36,9 @@ Then machine will give you derivation of all forms of a particular verb.
 ##For offline usage - 
 
 Please run localhost/Sanskrit/tiGanta.html from your browser.
+
+# Versions
+
+v1.0.0 - 2 August 2015 - Initial release
+
+v1.0.1 - 5 October 2015 - Latest release

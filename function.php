@@ -2,7 +2,7 @@
 /* This code is developed by Dr. Dhaval Patel (drdhaval2785@gmail.com) of www.sanskritworld.in and Ms. Sivakumari Katuri.
   * Layout assistance by Mr Marcis Gasuns.
   * Available under GNU licence.
-  * Version 1.1 date 17/11/2013
+  * Version 1.0.1 date 5 October 2015
   * The latest source code is available at https://github.com/drdhaval2785/sanskrit
   * For setup, copy and paste sandhi.html, sandhi.php, function.php, mystyle.css, slp-dev.php and dev-slp.php to your localhost and server and run sandhi.html.
   * sandhi.html is the frontend for the code.
@@ -2248,10 +2248,10 @@ function toiast($text)
 
 function Adezapratyaya($text)
 {
-	global $ksa, $SaHsaH, $sic, $syatAsI, $us;
+	global $ksa, $SaHsaH, $sic, $syatAsI, $us, $fo;
 	foreach ($text as $value)
 	{
-		if (preg_match('/[iIuUfFxXeEoOhyvrlkKgGN][+][s]/',$value) && ($ksa===1 || $SaHsaH===1 || $sic===1 || $syatAsI===1 || $us!=="")) // patch for ksa
+		if (preg_match('/[iIuUfFxXeEoOhyvrlkKgGN][+][s]/',$value) && ($ksa===1 || $SaHsaH===1 || $sic===1 || $syatAsI===1 || $us!=="" || $fo==="Sru")) // patch for ksa
 		{
 			$val[]=preg_replace('/([iIuUfFxXeEoOhyvrlkKgGN])([+][s])/',"$1+z",$value);			
 		}

@@ -194,3 +194,17 @@ Sun, 04 Oct 2015 18:29:29
 verb = wuBrASf!, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = 
 Sun, 04 Oct 2015 18:30:13
 verb = wuBrASf!, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = 
+Mon, 05 Oct 2015 17:36:14
+verb = takzU!, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = 
+Mon, 05 Oct 2015 17:36:50
+verb = takzU!, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = 
+Request completed on :Mon, 05 Oct 2015 17:37:32
+------------------------------
+Mon, 05 Oct 2015 17:44:30
+verb = Sru, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = 
+Mon, 05 Oct 2015 17:46:13
+verb = Sru, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = 
+Mon, 05 Oct 2015 17:47:43
+verb = Sru, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = 
+Mon, 05 Oct 2015 17:50:05
+verb = Sru, gaNa = BvAdi, lakAra = law, transliteration = SLP1, vAcya = kartR, upasarga = 

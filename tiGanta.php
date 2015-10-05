@@ -2,7 +2,7 @@
  /* This code is developed by Dr. Dhaval Patel (drdhaval2785@gmail.com) of www.sanskritworld.in and Ms. Sivakumari Katuri.
   * Layout assistance by Mr Marcis Gasuns.
   * Available under GNU licence.
-  * Version 1.0.0 date 2 August 2015
+  * Version 1.0.1 date 5 October 2015
   * The latest source code is available at https://github.com/drdhaval2785/sanskrit
   * Acknowledgements: I extend my heartfelt thanks to Ananda Loponen for the code to convert devanagari and various sanskrit transliterations. That can be accessed at http://www.ingmardeboer.nl/php/diCrunch.php?act=help.
   * I also extend my gratitude to gloomy.penguin of stackoverflow.com, who helped me create dvitva and lopa functions, without which I would be handicapped.
@@ -4756,6 +4756,8 @@ if ( sub(array("a","i","u","f","x"),array("+s"),prat("Jl"),0) && in_array($so,$t
 $text = three(array("a","i","u","f","x"),array("+s"),prat("Jl"),array("a","i","u","f","x"),array("+"),prat("Jl"),0); 
 	storedata('8.2.27','sa',0);
 }
+echo $SaHsaH, $sic, $syatAsI;
+print_r(Adezapratyaya($text));
 /* AdezapratyayayoH (8.3.59) */
 if( in_array($so,$tiG) && (!arr($text,'/[+][s]$/') || $SaHsaH===1 || $sic===1 || $syatAsI===1 || ends(array($us),prat('ik'),1)) && !sub(array("+"),array("yAs"),array("+"),0) && Adezapratyaya($text)!==$text )
 {
