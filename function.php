@@ -371,9 +371,10 @@ return $text; // returning the result to the user.
 // 1 will mean that $text will not be replaced, but the replaced values will be added to it. Used in case of optional Adezas.
 function one($a,$b,$merge)
 {
-	 #echo "one started at ";
-	 #timestamp();
-    global $text; // taking $text from the subanta.php or sandhi.php and using it here.
+    global $text, $debug; // taking $text from the subanta.php or sandhi.php and using it here.
+	if ($debug===1){
+	echo "one started at ";
+	timestamp();}
     for($z=0;$z<count($text);$z++)
     {
         $p = $text[$z]; // $p is a word from the array $text.
@@ -409,9 +410,10 @@ return $text;  // giving the result to the user.
 // 11 - change at the end of word only.
 function two($a,$b,$c,$d,$merge) // the comments are the same as one function.
 {
-	 #echo "two started at ";
-	 #timestamp();
-    global $text;
+    global $text, $debug;
+	if ($debug===1){
+	echo "two started at ";
+	timestamp();}
     for ($z=0;$z<count($text);$z++)
     {$p = $text[$z];
           for($i=0;$i<count($a);$i++)
@@ -456,9 +458,11 @@ if (($merge === 1) || ($merge === 3) ||($merge === 5) ) // optional Adezas.
 // 0 will mean that the whole $text will be replaced with the new replaced values. Used in case of mandatory Adezas.
 // 1 will mean that $text will not be replaced, but the replaced values will be added to it. Used in case of optional Adezas.
 function three($a,$b,$c,$d,$e,$f,$merge) // comments are the same as one function.
-{global $text;
-	 #echo "three started at ";
-	 #timestamp();
+{
+	global $text, $debug;
+	if ($debug===1){
+	echo "three started at ";
+	timestamp();}
    for ($z=0;$z<count($text);$z++)
     {$p = $text[$z]; 
      for($i=0;$i<count($a);$i++)
@@ -1033,9 +1037,10 @@ return $output;
  */ 
  function sub($a,$b,$c,$repeat)
 {   
-     global $text;
-	 #echo "sub started at ";
-	 #timestamp();
+     global $text, $debug;
+	if ($debug===1){
+	echo "one started at ";
+	timestamp();}
      $needle = array();
     // for different length and all combinations
     if($repeat !== 1)
@@ -1086,8 +1091,9 @@ return $output;
             $can = 0; // match not found
         }
     }
-	#echo "sub ended at ";
-	#timestamp();
+	if ($debug===1){
+	echo "one ended at ";
+	timestamp();}
 if ($can === 1)
 {
     return true;
@@ -1102,8 +1108,10 @@ else
 // $a - pattern in regular expression.
 function arr($text,$a)
 {
-	 #echo "arr started at ";
-	 #timestamp();
+	global $debug;
+	if ($debug===1){
+	echo "arr started at ";
+	timestamp();}
     foreach ($text as $value)
     {
         if (preg_match($a,$value)) // if the regular expression matches the value of array member.
@@ -1116,8 +1124,9 @@ function arr($text,$a)
             $count[] = 0; // match not found
         }
     }
-	#echo "arr ended at ";
-	#timestamp();
+	if ($debug===1){
+	echo "arr ended at ";
+	timestamp();}
     if (in_array(1,$count))
     {
         return true; // if match found
@@ -1258,8 +1267,10 @@ function anekAca($a)
 // 0 -> doesn't start with but ends with it. 1 -> ends with it or is equal to it. 2 -> is equal to it., 3 -> starts with it but doesn't end with it. 4 -> ends in verb (upasargas don't bother)
 function ends($a,$b,$n)
 {
-	 #echo "ends started at ";
-	 #timestamp();
+	global $debug;
+	if ($debug===1){
+	echo "ends started at ";
+	timestamp();}
     $upasarga = array("pra","prati","api","parA","apa","upa","pari","anu","ava","vi","saM","su","ati","ni","nir","ut","aDi","dur","aBi","A"); 
     $pattern=array("pari","pary","pra","prA","pro","prati","praty","api","apy","parA","paro","apa","apA","apo","upa","upA","upo","anu","anU","anv","ava","avA","avo","vi","vy","saM","sam","san","su","sU","sv","ati","aty","ni","ny","nir","niH","nis","niz","ut","ud","uc","ul","aDi","aDy","dur","duH","dus","duz","aBi","aBy","A",);
     
@@ -1339,8 +1350,9 @@ function ends($a,$b,$n)
 
         }
     }
-	 #echo "ends ended at ";
-	 #timestamp();
+	if ($debug===1){
+	echo "ends ended at ";
+	timestamp();}
     if (in_array(1,$can))
     {
         return true; // if any time $can becomes 1, it means that match is found.
@@ -1768,10 +1780,13 @@ function mit1($array,$b,$merge)
 // 0 to 6 are in the array. after that we process.
 function scrape($a,$a1,$b,$c,$d,$e,$e1)
 {
-    global $verbdata;
-    for($i=0;$i<count($verbdata);$i++)
+    global $verbdata, $debug;
+	$verbdata1 = array_filter($verbdata, function($var) use ($a) { return preg_match("/$a/i", $var); });
+	$verbdata1 = array_unique($verbdata1);
+	$verbdata1 = array_values($verbdata1);
+    for($i=0;$i<count($verbdata1);$i++)
     {
-        $bomb=explode(':',$verbdata[$i]);
+        $bomb=explode(':',$verbdata1[$i]);
         $bomb[8]=$bomb[3].".".$bomb[4];
         $bomb[9]=str_replace(array("01","02","03","04","05","06","07","08","09","10",),array("BvAdi","adAdi","juhotyAdi","divAdi","svAdi","tudAdi","ruDAdi","tanAdi","kryAdi","curAdi",),$bomb[3]);
         if ($c===1 && $e!=="" && $d!=="")
@@ -1814,15 +1829,18 @@ function scrape($a,$a1,$b,$c,$d,$e,$e1)
 function scrape1($a,$a1,$b,$c)
 {
     global $verbdata;
-    for($i=0;$i<count($verbdata);$i++)
+	$verbdata1 = array_filter($verbdata, function($var) use ($a) { return preg_match("/$a/i", $var); });
+	$verbdata1 = array_unique($verbdata1);
+	$verbdata1 = array_values($verbdata1);
+    for($i=0;$i<count($verbdata1);$i++)
     {
-        $bomb=explode(':',$verbdata[$i]);
-        $bomb[8]=$bomb[3].".".$bomb[4];
-        $bomb[9]=str_replace(array("01","02","03","04","05","06","07","08","09","10",),array("BvAdi","adAdi","juhotyAdi","divAdi","svAdi","tudAdi","ruDAdi","tanAdi","kryAdi","curAdi",),$bomb[3]);
-            if($a===$bomb[$a1] )
-            {
-                $ret[]=$bomb[$b];
-            }
+		$bomb=explode(':',$verbdata1[$i]);
+		$bomb[8]=$bomb[3].".".$bomb[4];
+		$bomb[9]=str_replace(array("01","02","03","04","05","06","07","08","09","10",),array("BvAdi","adAdi","juhotyAdi","divAdi","svAdi","tudAdi","ruDAdi","tanAdi","kryAdi","curAdi",),$bomb[3]);
+			if($a===$bomb[$a1] )
+			{
+				$ret[]=$bomb[$b];
+			}
     }
     $ret=array_map('trim',$ret);
     return $ret;
@@ -1865,8 +1883,12 @@ function verb_meaning_gana_number1($text)
 }
 // for display in tiGanta.php in case the user has chosen the gaNa.
 function verb_meaning_gana_number2($text)
-{
-    global $verbset, $frontend, $outfile;
+{	
+   global $verbset, $frontend, $outfile;
+	global $debug;
+	if ($debug===1){
+	echo "verb_meaning_gana_number2 started at ";
+	timestamp();}
     $verbaccent=scrape($text,0,7,1,"",$verbset,9);
     $meaning=scrape($text,0,1,1,"",$verbset,9);
     $verbset1=scrape($text,0,9,1,"",$verbset,9);
@@ -1880,6 +1902,9 @@ function verb_meaning_gana_number2($text)
 		fputs($outfile,"<p class = st >".$verbaccent[0].' - '.convert($meaning[0]).', '.convert($verbset1[0]).' '.convert($number[0]).' '."</p>\n");
 		fputs($outfile,"<hr>\n");		
 	}
+	if ($debug===1){
+	echo "verb_meaning_gana_number2 ended at ";
+	timestamp();}
 }
 // for display in tiGanta.php in case the verb is not in our database.
 function verb_meaning_gana_number3($text)
@@ -1892,6 +1917,24 @@ function verb_meaning_gana_number3($text)
 		echo "<hr>\n";		
 		fputs($outfile,"<p class = st >dhAtuH - ".$text."</p>\n");
 		fputs($outfile,"<p class = st >धातुः - ".convert($text)."</p>\n");
+		fputs($outfile,"<hr>\n");		
+	}
+}
+// for display in tiGanta.php
+function verb_meaning_gana_number4($number)
+{
+	global $frontend, $outfile;
+    $verbaccent=scrape1($number,8,7,1);
+    $meaning=scrape1($number,8,1,1);
+    $verbset=scrape1($number,8,9,1);
+    $number=scrape1($number,8,8,1);
+	if ($frontend==='1')
+	{
+		echo "<p class = st >".toiast($verbaccent[0]).' - '.toiast($meaning[0]).', '.toiast($verbset[0]).' '.$number[0].' '."</p>\n";
+		echo "<p class = st >".$verbaccent[0].' - '.convert($meaning[0]).', '.convert($verbset[0]).' '.convert($number[0]).' '."</p>\n";
+		echo "<hr>\n";		
+		fputs($outfile,"<p class = st >".toiast($verbaccent[0]).' - '.toiast($meaning[0]).', '.toiast($verbset[0]).' '.$number[0].' '."</p>\n");
+		fputs($outfile,"<p class = st >".$verbaccent[0].' - '.convert($meaning[0]).', '.convert($verbset[0]).' '.convert($number[0]).' '."</p>\n");
 		fputs($outfile,"<hr>\n");		
 	}
 }
@@ -2189,8 +2232,10 @@ function pratyayareplace($a,$b,$test)
 // sub is not specific. For pratyayas, we test whether it is at end or not.
 function pr2($a,$b,$c,$d,$e,$f,$test)
 {
-	#echo "pr2 started at ";
-	#timestamp();
+	global $debug;
+	if ($debug===1){
+	echo "pr2 started at ";
+	timestamp();}
 	$out=array();
     foreach($test as $value)
     {
@@ -2220,8 +2265,9 @@ function pr2($a,$b,$c,$d,$e,$f,$test)
         }
         $counter=1;
     }
-	#echo "pr2 ended at ";
-	#timestamp();
+	if ($debug===1){
+	echo "pr2 ended at ";
+	timestamp();}
     return $out;
 }
 
@@ -3431,7 +3477,11 @@ function timestamp()
     list($usec, $sec) = explode(" ", microtime());
     echo ((float)$usec + (float)$sec).'<br/>';
 }
-
+function dibug($a)
+{
+	echo "Hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii DEBUG ", $a, " at ";
+	timestamp();
+}
 /* Functions which are not used in the code */
 /* Function f to find the nth letter in the word */
 function f($text,$n) // Not used in code.

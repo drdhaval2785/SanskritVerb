@@ -34,8 +34,6 @@ ini_set('max_execution_time', 36000);
 /* set memory limit to 100000 MB */
 ini_set("memory_limit","100000M");
 
-echo "Started generating forms<br/>";
-timestamp();
 /* Defining header for all HTMLs */
 $header = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
@@ -48,6 +46,7 @@ $header = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http:
 </head> 
 <body>
 ';
+$debug = 0; // 0 - no debugging. 1 - debugging on. It shows execution of some important time consuming scripts.
 
 /* Reading from the HTML input. */
 //$first = $_GET["first"]; // word entered by the user.
@@ -171,9 +170,13 @@ $itpratyaya = array(); // creating an array where we can store it markers of pra
 $samp = array(); // creating an array where we can store whethere samprasAraNa has happened or not.
 $Agama = array(); // storing Agamas.
 // rest of the variables will be defined at their particular occurence in the code.
-
+if ($debug===1) {dibug("1");}
 /* Displaying information about the verb to the user */
-if ($verbset!=="none")
+if ($number!=="")
+{
+    verb_meaning_gana_number4($number); // See function.php for details of function.
+}
+elseif ($verbset!=="none")
 {
     verb_meaning_gana_number2($first); // See function.php for details of function.
 }
@@ -495,7 +498,7 @@ elseif ( $verbset==='curAdi' )
 	$verbpada=verb_pada('1.3.74');
 }
 /* Nicazca (1.3.74) */
-elseif ( ends(array($first),$curAdi,4) && $verbset==="none" )
+elseif ($verbset==="none" &&  in_array($first,$curAdi)  )
 {
 	$verbpada=verb_pada('1.3.74');
 }
@@ -610,6 +613,7 @@ elseif ( $pada==="pratyaya" && $lakAra!=="")
 {
 	$verbpada=verb_pada('1.3.71');
 }
+if ($debug===1) {dibug("3");}
 
 /* Deciding suffixes based on parasmai, Atmane or ubhayapada of verbs. */
 $suffix=verb_suffixes($verbpada);
@@ -691,8 +695,7 @@ else
 {
 	$id_dhAtu="";
 }
-echo "decided the pada at ";
-timestamp();
+if ($debug===1) {dibug("4");}
 /* a for loop for entering all sup pratyayas one by one. Sambuddhi is at the last after sup. */
 for ($w=0;$w<count($suffix);$w++) // running the loop till $sup1 is exhausted.
 {
@@ -4756,7 +4759,6 @@ if ( sub(array("a","i","u","f","x"),array("+s"),prat("Jl"),0) && in_array($so,$t
 $text = three(array("a","i","u","f","x"),array("+s"),prat("Jl"),array("a","i","u","f","x"),array("+"),prat("Jl"),0); 
 	storedata('8.2.27','sa',0);
 }
-echo $SaHsaH, $sic, $syatAsI;
 /* AdezapratyayayoH (8.3.59) */
 if( in_array($so,$tiG) && (!arr($text,'/[+][s]$/') || $SaHsaH===1 || $sic===1 || $syatAsI===1 || ends(array($us),prat('ik'),1)) && !sub(array("+"),array("yAs"),array("+"),0) && Adezapratyaya($text)!==$text )
 {
@@ -11628,8 +11630,6 @@ $Agama=array();
 $TAp=0; $DAp=0; $cAp=0; $GIp=0; $GIn=0; $GIS=0; $kGiti=0; $abhyasta=0; $ajAdyataSTAp=0; $tusma=0; $upasarga_joined=0;
 $storedata=array();
 $text=array();
-echo "Ended generating forms<br/>";
-timestamp();
 
 }
 
