@@ -492,6 +492,9 @@ function three($a,$b,$c,$d,$e,$f,$merge) // comments are the same as one functio
         $text = array_unique($text);
         $text = array_values($text);
     }
+	if ($debug===1){
+	echo "three ended at ";
+	timestamp();}
     return $text;
 }
 /* function flatten is a function to flatten a multidimentional array */
@@ -1092,7 +1095,7 @@ return $output;
         }
     }
 	if ($debug===1){
-	echo "sub ended at ";
+	echo "sub ", $repeat, " ended at ";
 	timestamp();}
 if ($can === 1)
 {
@@ -1351,7 +1354,7 @@ function ends($a,$b,$n)
         }
     }
 	if ($debug===1){
-	echo "ends ended at ";
+	echo "ends ", $n, " ended at ";
 	timestamp();}
     if (in_array(1,$can))
     {
