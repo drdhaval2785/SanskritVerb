@@ -371,6 +371,8 @@ return $text; // returning the result to the user.
 // 1 will mean that $text will not be replaced, but the replaced values will be added to it. Used in case of optional Adezas.
 function one($a,$b,$merge)
 {
+	 #echo "one started at ";
+	 #timestamp();
     global $text; // taking $text from the subanta.php or sandhi.php and using it here.
     for($z=0;$z<count($text);$z++)
     {
@@ -407,6 +409,8 @@ return $text;  // giving the result to the user.
 // 11 - change at the end of word only.
 function two($a,$b,$c,$d,$merge) // the comments are the same as one function.
 {
+	 #echo "two started at ";
+	 #timestamp();
     global $text;
     for ($z=0;$z<count($text);$z++)
     {$p = $text[$z];
@@ -453,6 +457,8 @@ if (($merge === 1) || ($merge === 3) ||($merge === 5) ) // optional Adezas.
 // 1 will mean that $text will not be replaced, but the replaced values will be added to it. Used in case of optional Adezas.
 function three($a,$b,$c,$d,$e,$f,$merge) // comments are the same as one function.
 {global $text;
+	 #echo "three started at ";
+	 #timestamp();
    for ($z=0;$z<count($text);$z++)
     {$p = $text[$z]; 
      for($i=0;$i<count($a);$i++)
@@ -461,7 +467,7 @@ function three($a,$b,$c,$d,$e,$f,$merge) // comments are the same as one functio
         {
         for($k=0;$k<count($c);$k++)
             {
-            $p =  str_replace($a[$i].$b[$j].$c[$k],$d[$i].$e[$j].$f[$k],$p);       
+            $p =  str_replace($a[$i].$b[$j].$c[$k],$d[$i].$e[$j].$f[$k],$p);
            $p =  str_replace($a[$i]."+".$b[$j].$c[$k],$d[$i]."+".$e[$j].$f[$k],$p);       
            $p =  str_replace($a[$i].$b[$j]."+".$c[$k],$d[$i].$e[$j]."+".$f[$k],$p);       
            $p =  str_replace($a[$i]."+".$b[$j]."+".$c[$k],$d[$i]."+".$e[$j]."+".$f[$k],$p);       
@@ -651,6 +657,7 @@ return $arr; // returning the desired savarNa array.
 function display($n)
 {
     global $text; global $upasarga_joined; global $us; // bringing $text from main php function.
+	print_r($text);
     /* removal of two ++ signs */
     $text = one(array("++"),array("+"),0);
     if ($n === 1) // sending special messages.
@@ -1027,6 +1034,8 @@ return $output;
  function sub($a,$b,$c,$repeat)
 {   
      global $text;
+	 #echo "sub started at ";
+	 #timestamp();
      $needle = array();
     // for different length and all combinations
     if($repeat !== 1)
@@ -1077,6 +1086,8 @@ return $output;
             $can = 0; // match not found
         }
     }
+	#echo "sub ended at ";
+	#timestamp();
 if ($can === 1)
 {
     return true;
@@ -1085,13 +1096,14 @@ else
 {
     return false;
 }
-
 }
 /* function to search the occurence of a pattern in any of the member of an array */
 // $text - the array to search for the occurence of pattern
 // $a - pattern in regular expression.
 function arr($text,$a)
 {
+	 #echo "arr started at ";
+	 #timestamp();
     foreach ($text as $value)
     {
         if (preg_match($a,$value)) // if the regular expression matches the value of array member.
@@ -1104,6 +1116,8 @@ function arr($text,$a)
             $count[] = 0; // match not found
         }
     }
+	#echo "arr ended at ";
+	#timestamp();
     if (in_array(1,$count))
     {
         return true; // if match found
@@ -1244,6 +1258,8 @@ function anekAca($a)
 // 0 -> doesn't start with but ends with it. 1 -> ends with it or is equal to it. 2 -> is equal to it., 3 -> starts with it but doesn't end with it. 4 -> ends in verb (upasargas don't bother)
 function ends($a,$b,$n)
 {
+	 #echo "ends started at ";
+	 #timestamp();
     $upasarga = array("pra","prati","api","parA","apa","upa","pari","anu","ava","vi","saM","su","ati","ni","nir","ut","aDi","dur","aBi","A"); 
     $pattern=array("pari","pary","pra","prA","pro","prati","praty","api","apy","parA","paro","apa","apA","apo","upa","upA","upo","anu","anU","anv","ava","avA","avo","vi","vy","saM","sam","san","su","sU","sv","ati","aty","ni","ny","nir","niH","nis","niz","ut","ud","uc","ul","aDi","aDy","dur","duH","dus","duz","aBi","aBy","A",);
     
@@ -1323,6 +1339,8 @@ function ends($a,$b,$n)
 
         }
     }
+	 #echo "ends ended at ";
+	 #timestamp();
     if (in_array(1,$can))
     {
         return true; // if any time $can becomes 1, it means that match is found.
@@ -2171,6 +2189,8 @@ function pratyayareplace($a,$b,$test)
 // sub is not specific. For pratyayas, we test whether it is at end or not.
 function pr2($a,$b,$c,$d,$e,$f,$test)
 {
+	#echo "pr2 started at ";
+	#timestamp();
 	$out=array();
     foreach($test as $value)
     {
@@ -2200,6 +2220,8 @@ function pr2($a,$b,$c,$d,$e,$f,$test)
         }
         $counter=1;
     }
+	#echo "pr2 ended at ";
+	#timestamp();
     return $out;
 }
 
@@ -3404,9 +3426,11 @@ function tablemaker($ou)
 </table>
 ";
 }
-
-
-
+function timestamp()
+{
+    list($usec, $sec) = explode(" ", microtime());
+    echo ((float)$usec + (float)$sec).'<br/>';
+}
 
 /* Functions which are not used in the code */
 /* Function f to find the nth letter in the word */
