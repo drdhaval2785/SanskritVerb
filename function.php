@@ -1039,7 +1039,7 @@ return $output;
 {   
      global $text, $debug;
 	if ($debug===1){
-	echo "one started at ";
+	echo "sub ", $repeat, " started at ";
 	timestamp();}
      $needle = array();
     // for different length and all combinations
@@ -1092,7 +1092,7 @@ return $output;
         }
     }
 	if ($debug===1){
-	echo "one ended at ";
+	echo "sub ended at ";
 	timestamp();}
 if ($can === 1)
 {
@@ -1269,7 +1269,7 @@ function ends($a,$b,$n)
 {
 	global $debug;
 	if ($debug===1){
-	echo "ends started at ";
+	echo "ends ", $n, " started at ";
 	timestamp();}
     $upasarga = array("pra","prati","api","parA","apa","upa","pari","anu","ava","vi","saM","su","ati","ni","nir","ut","aDi","dur","aBi","A"); 
     $pattern=array("pari","pary","pra","prA","pro","prati","praty","api","apy","parA","paro","apa","apA","apo","upa","upA","upo","anu","anU","anv","ava","avA","avo","vi","vy","saM","sam","san","su","sU","sv","ati","aty","ni","ny","nir","niH","nis","niz","ut","ud","uc","ul","aDi","aDy","dur","duH","dus","duz","aBi","aBy","A",);
@@ -2030,8 +2030,10 @@ function verb_suffixes($pada)
 // for display in tiGanta.php in case the user has chosen the gaNa.
 function verb_padafinder($text)
 {
-    global $verbset;
-    $verbpada=scrape($text,0,5,1,"",$verbset,9);
+    /*global $verbset;
+    $verbpada=scrape($text,0,5,1,"",$verbset,9);*/
+	global $number;
+	$verbpada = scrape1($number,8,5,1);
 	$verbpada=array_unique($verbpada);
 	$verbpada=array_values($verbpada);
     return $verbpada;
@@ -3472,13 +3474,15 @@ function tablemaker($ou)
 </table>
 ";
 }
+$start_time = microtime(true);
 function timestamp()
 {
-    list($usec, $sec) = explode(" ", microtime());
-    echo ((float)$usec + (float)$sec).'<br/>';
+	global $start_time;
+	echo "<b>".(microtime(true) - $start_time)."</b>", "<br/>";
 }
 function dibug($a)
 {
+	global $time;
 	echo "Hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii DEBUG ", $a, " at ";
 	timestamp();
 }
