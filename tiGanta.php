@@ -2916,7 +2916,7 @@ if ( ($verbset==="tudAdi" || ($verbset==="none" && in_array($fo,$tudAdi)) ) && $
 	storedata('7.1.59','sa',0);
 }
 /* dhivikRNvyora ca (3.1.80) */
-if (sub(array("Dinv","kfnv"),array("+"),array("u+"),0) && ends(array($fo),array("Divi!","kfvi!"),4) )
+if (in_array($fo,array("Divi!","kfvi!")) && sub(array("Dinv","kfnv"),array("+"),array("u+"),0) )
 {
     $text=three(array("Dinv","kfnv"),array("+"),array("u+"),array("Dina","kfna"),array("+"),array("u+"),0);
 	storedata('3.1.80','sa',0);
@@ -2940,7 +2940,7 @@ if ( in_array($fo,array("GrA")) && in_array($so,$tiG)  && $luGset===5 && sub(arr
 	storedata('7.4.6','sa',0);
 }
 /* yasya halaH (6.4.49) */
-if ( arr($text,'/['.pc('hl').']([+]*)[ya]/') && sub(array("+"),$ArdhadhAtuka_pratyayas,array(""),0) && $ardhadhatuka===1)
+if (arr($text,'/['.pc('hl').']([+]*)[ya]/')  && $ardhadhatuka===1 && sub(array("+"),$ArdhadhAtuka_pratyayas,array(""),0))
 {
     $text = three($hl,array("ya+"),$ArdhadhAtuka_pratyayas,$hl,array("+"),$ArdhadhAtuka_pratyayas,0);
 	storedata('6.4.49','sa',0);
@@ -2972,7 +2972,7 @@ if ( in_array($fo,$curAdi_adanta) && $ardhadhatuka===1 && ($verbset==="none"||$v
     $atolopa=1;
 }
 /* ato lopaH (6.4.48) */
-if ( sub(array("a"),array("+Ri","+Ra"),blank(0),0) )
+if ( arr($text,'/[a][+][R][ai]/'))
 { 
 	$text = two(array("a"),array("+Ri","+Ra"),array(""),array("+Ri","+Ra"),0);
 	storedata('6.4.48','sa',0);
@@ -2980,13 +2980,13 @@ if ( sub(array("a"),array("+Ri","+Ra"),blank(0),0) )
 }
 /* aco JNiti (7.2.115) */ 
 // more on enumeration kind. Not used regexes deliberately.
-if ( sub($ac,array("+"),array("Ri+"),0) && $bhasyADhe!==1)
+if ( arr($text,'/['.pc('ac').'][+][R][i][+]/') && $bhasyADhe!==1)
 { 
     $text = three($ac,array("+"),array("Ri+"),vriddhi($ac),array("+"),array("Ri+"),0);
 	storedata('7.2.115','sa',0);
 }
 // patch for ArdhadhAtuka leT.
-if ( sub($ac,array("+"),blank(0),0) && $Nit===1 && $bhasyADhe!==1)
+if ( $Nit===1 && $bhasyADhe!==1 && arr($text,'/['.pc('ac').'][+]/') )
 {
     $text = two($ac,array("+"),vriddhi($ac),array("+"),1);
 	storedata('7.2.115','sa',0);
@@ -2994,38 +2994,39 @@ if ( sub($ac,array("+"),blank(0),0) && $Nit===1 && $bhasyADhe!==1)
 /* patch for sautra dhAtu Rta */
 $text=one(array("ft+Iya+"),array("ftIya+"),0);
 /* ho hanterJNinneSu (7.3.54) */
-if ( sub(array("han"),array("+"),blank(0),0) && arr(array($fo),'/[h][a][n]/') && !in_array($fo,array("ahan","dIrGAhan")) && (in_array("R",$it) || in_array("Y",$it) || in_array($sanAdi,array("Ric")) || in_array("R",$itpratyaya) || in_array("Y",$itpratyaya)) )
+if (arr(array($fo),'/[h][a][n]/') && !in_array($fo,array("ahan","dIrGAhan")) && (in_array("R",$it) || in_array("Y",$it) || in_array($sanAdi,array("Ric")) || in_array("R",$itpratyaya) || in_array("Y",$itpratyaya)) && sub(array("han"),array("+"),blank(0),0) )
 {
     $text = two(array("han"),array("+"),array("Gan"),array("+"),0);
 	storedata('7.3.54','sa',0);
     $hohante=1; // 0 - this sUtra has not applied. 1 - this sUtra has applied.
 } else { $hohante=0; }
+if ($debug===1) {dibug("3000");}
 /* ata upadhAyAH (7.2.116) */ 
 // more on enumeration kind. Not used regexes deliberately.
-if ( arr($text,'/[a]['.pc('hl').'][+][R][i][+]/') && $atolopa!==1 && $Naugami!==1 && $jAgro!==1)
+if ( $atolopa!==1 && $Naugami!==1 && $jAgro!==1 && arr($text,'/[a]['.pc('hl').'][+][R][i][+]/') )
 {
     $text = three(array("a"),$hl,array("+Ri+"),array("A"),$hl,array("+Ri+"),0);
 	storedata('7.2.116','sa',0);
 }
 // patch for ArdhadhAtuka leT.
-if ( sub(array("a"),$hl,blank(0),0) && $atolopa!==1 && $Naugami!==1 && $jAgro!==1 && $Nit===1)
+if ( $Nit===1 && $atolopa!==1 && $Naugami!==1 && $jAgro!==1 && sub(array("a"),$hl,blank(0),0))
 {
     $text = three(array("a"),$hl,array("+"),array("A"),$hl,array("+"),1);
 	storedata('7.2.116','sa',0);
 }
 /* hanasto'ciNNaloH (7.3.32) */ 
-if ( sub(array("GAn"),array("+Ri+"),blank(0),0) )
+if ( arr($text,'/GAn\+Ri\+/'))
 {
     $text = two(array("GAn"),array("+Ri+"),array("GAt"),array("+Ri+"),0);
 	storedata('7.3.32','sa',0);
 }
 /* mitAM hrasvaH (6.4.92) */ 
-if ( sub(array("A"),$hl,array("+Ri+"),0) && ends(array($fo),$mitcurAdiverbs,4) && ($verbset === "curAdi" || $verbset === "none" ) )
+if ( in_array($fo,$mitcurAdiverbs) && ($verbset === "curAdi" || $verbset === "none" ) && sub(array("A"),$hl,array("+Ri+"),0))
 {
     $text = three(array("A"),$hl,array("+Ri+"),array("a"),$hl,array("+Ri+"),0);
 	storedata('6.4.92','sa',0);
 }
-if ( sub(array("A"),$hl,array("+Ri+"),0) && ends(array($fo),$ghaTAdi_mit,4) && ($verbset === "BvAdi" || $verbset === "none" ) )
+if ( in_array($fo,$ghaTAdi_mit) && ($verbset === "BvAdi" || $verbset === "none" ) && sub(array("A"),$hl,array("+Ri+"),0) )
 {
     $text = three(array("A"),$hl,array("+Ri+"),array("a"),$hl,array("+Ri+"),0);
 	storedata('6.4.92','sa',0);
@@ -3040,14 +3041,14 @@ if (arr($text,'/[+][cjYwWqQR]/') && in_array($so,$tiG))
 }
 /* lopo vyorvali (6.1.66) */
 // patch for sIyuT
-if ( sub(array("+Iy","+sIy"),array("+"),prat("vl"),0) && !in_array($sanAdi,array("Ric")))
+if ( !in_array($sanAdi,array("Ric")) && arr($text,'/Iy/') && sub(array("+Iy","+sIy"),array("+"),prat("vl"),0))
 {
     $text = three(array("+Iy","+sIy"),array("+"),prat("vl"),array("+I","+sI"),array(""),prat("vl"),0);    
 	storedata('6.1.66','sa',0);
 }
 /* lopo vyorvali (6.1.66) */
 // patch for Nijanta and ksa luG
-if ( sub(array("+a+iy","+sa+iy","+sya+iy"),array("+"),prat("vl"),0) )
+if (arr($text,'/iy/') && sub(array("+a+iy","+sa+iy","+sya+iy"),array("+"),prat("vl"),0) )
 {
     $text = three(array("a+iy","+sa+iy"),array("+"),prat("vl"),array("a+i","+sa+i"),array("+"),prat("vl"),0);    
 	storedata('6.1.66','sa',0);
@@ -3059,7 +3060,10 @@ if (sub(array("sya+"),array("i+"),blank(0),0))
 	storedata('6.1.87','sa',0);
 }
 // patch to join sis with rest of pratyayas.
-$text = one(array("sis+"),array("sis"),0);
+if (arr($text,'/sis/'))
+{
+	$text = one(array("sis+"),array("sis"),0);
+}
 /* halGyAbbhyo dIrghAtsutisyapRktaM hal (6.1.68) and apRkta ekAlpratyayaH (1.2.41) */
 // GyAp pending. only hal handled now.
 if (arr($text,'/['.pc('hl').'][+][sts]$/') && in_array($so,array("su!","tip","sip",)) && $rudAdibhyaH!==1 && $itazca!==1)
@@ -3076,24 +3080,25 @@ if ((arr($text,'/['.pc('hl').'][+][sts]$/')  )&& in_array($so,array("su!","tip",
 /* eco'yavAyAvaH (7.1.78) */
 // For Ni.
 $ayavayavah = array("ay","av","Ay","Av");
-if (sub(prat('ec'),array("+i+",),blank(0),0))
+if (arr($text,'/['.pc('ec').'][+][i][+]/') )
 {
 	$text = two(prat('ec'),array("+i+",),$ayavayavah,array("+i+",),0);
 	storedata('7.1.78','sa',0);
 }
 /* ho hanterJNinneSu (7.3.54) */
-if ( sub(array("han"),array("+"),blank(0),0) && arr(array($fo),'/[h][a][n]/') && !in_array($fo,array("ahan","dIrGAhan")) && (in_array("R",$it) || in_array("Y",$it) || in_array($sanAdi,array("Ric")) || in_array("R",$itpratyaya) || in_array("Y",$itpratyaya)) )
+if ( arr(array($fo),'/[h][a][n]/') && !in_array($fo,array("ahan","dIrGAhan")) && (in_array("R",$it) || in_array("Y",$it) || in_array($sanAdi,array("Ric")) || in_array("R",$itpratyaya) || in_array("Y",$itpratyaya)) && sub(array("han"),array("+"),blank(0),0) )
 {
     $text = two(array("han"),array("+"),array("Gan"),array("+"),0);
 	storedata('7.3.54','sa',0);
     $hohante=1; // 0 - this sUtra has not applied. 1 - this sUtra has applied.
 } else { $hohante=0; }
 /* mitAM hrasvaH (6.4.92) */ 
-if ( sub(array("A"),$hl,array("+i+"),0) && ends(array($fo),$mitcurAdiverbs,4) && ($verbset === "curAdi" || $verbset === "none" ) )
+if (in_array($fo,$mitcurAdiverbs) && ($verbset === "curAdi" || $verbset === "none" ) && sub(array("A"),$hl,array("+i+"),0) )
 { 
     $text = three(array("A"),$hl,array("+i+"),array("a"),$hl,array("+i+"),0);
 	storedata('6.4.92','sa',0);
 }
+if ($debug===1) {dibug("3100");}
 /* SaH pratyayasya (1.3.6) */
 if (arr($text,'/[+][z]/') && $pada=== "pratyaya" && in_array($so,$tiG))
 {
