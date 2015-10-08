@@ -664,7 +664,6 @@ return $arr; // returning the desired savarNa array.
 function display($n)
 {
     global $text; global $upasarga_joined; global $us; // bringing $text from main php function.
-	print_r($text);
     /* removal of two ++ signs */
     $text = one(array("++"),array("+"),0);
     if ($n === 1) // sending special messages.
@@ -1831,8 +1830,10 @@ function scrape($a,$a1,$b,$c,$d,$e,$e1)
 // 0 to 6 are in the array. after that we process.
 function scrape1($a,$a1,$b,$c)
 {
-    global $verbdata;
+    global $verbdata, $debug;
+ 	if ($debug===1) {dibug("scrape1 start");}
 	$verbdata1 = array_filter($verbdata, function($var) use ($a) { return preg_match("/$a/i", $var); });
+ 	if ($debug===1) {dibug("scrape1 middle");}
 	$verbdata1 = array_unique($verbdata1);
 	$verbdata1 = array_values($verbdata1);
     for($i=0;$i<count($verbdata1);$i++)
@@ -1846,6 +1847,7 @@ function scrape1($a,$a1,$b,$c)
 			}
     }
     $ret=array_map('trim',$ret);
+ 	if ($debug===1) {dibug("scrape1 end");}
     return $ret;
 }
 // for ajax display in case the verb entered belongs to more than one gaNa.
@@ -1926,11 +1928,13 @@ function verb_meaning_gana_number3($text)
 // for display in tiGanta.php
 function verb_meaning_gana_number4($number)
 {
-	global $frontend, $outfile;
-    $verbaccent=scrape1($number,8,7,1);
+	global $frontend, $outfile, $debug;
+ 	if ($debug===1) {dibug("verb_meaning_gana_number4 start");}
+   $verbaccent=scrape1($number,8,7,1);
     $meaning=scrape1($number,8,1,1);
     $verbset=scrape1($number,8,9,1);
     $number=scrape1($number,8,8,1);
+ 	if ($debug===1) {dibug("verb_meaning_gana_number4 middle");}
 	if ($frontend==='1')
 	{
 		echo "<p class = st >".toiast($verbaccent[0]).' - '.toiast($meaning[0]).', '.toiast($verbset[0]).' '.$number[0].' '."</p>\n";
@@ -1940,6 +1944,7 @@ function verb_meaning_gana_number4($number)
 		fputs($outfile,"<p class = st >".$verbaccent[0].' - '.convert($meaning[0]).', '.convert($verbset[0]).' '.convert($number[0]).' '."</p>\n");
 		fputs($outfile,"<hr>\n");		
 	}
+ 	if ($debug===1) {dibug("verb_meaning_gana_number4 end");}
 }
 function verbset_from_number($number)
 {
