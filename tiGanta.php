@@ -5798,12 +5798,12 @@ elseif ($gender === "f" && $fo!=="pati" && sub(array("pati"),array("+"),blank(0)
 }
 if ($debug===1) {dibug("5800");}
 /* Udhaso'naG (5.4.131) */
-if ($gender==="f" && sub(array("UDas","oDas"),array("+"),blank(0),0) && $_GET['cond2_17']==="1")
+if ($gender==="f" && arr($text,'/[Uo]Das\+/') && $_GET['cond2_17']==="1")
 {
     $text = two(array("UDas","oDas"),array("+"),array("UDan","oDan"),array("+"),0); // for function two - please see function.php.
 	storedata('5.4.131','sa',0);
     /* saGkhyAvyayAderGIp (4.1.26) */
-    if ($gender==="f" && sub(array("UDan","oDan"),array("+"),blank(0),0) && $_GET['cond2_17_1']==="1")
+    if ($gender==="f" && arr($text,'/[uo]Dan\+/') && $_GET['cond2_17_1']==="1")
     {
         $text = two(array("UDan","oDan"),array("+"),array("UDan","oDan"),array("+NIp+"),0); 
 		storedata('4.1.26','st',0);
@@ -5815,7 +5815,7 @@ if ($gender==="f" && sub(array("UDas","oDas"),array("+"),blank(0),0) && $_GET['c
         $allopo=1; // 0 - allopa has not happened. 1 - allopa has happened.
     }
     /* bahuvrIherUdhaso NIz (4.1.25) */
-    if ($gender==="f" && sub(array("UDan","oDan"),array("+"),blank(0),0) && $_GET['cond2_17_1']==="2")
+    if ($gender==="f" && arr($text,'/[uo]Dan\+/')  && $_GET['cond2_17_1']==="2")
     {
         $text = two(array("UDan","oDan"),array("+"),array("UDan","oDan"),array("+NIz+"),0); 
 		storedata('4.1.25','st',8);
@@ -5828,7 +5828,7 @@ if ($gender==="f" && sub(array("UDas","oDas"),array("+"),blank(0),0) && $_GET['c
     }
 }
 /* striyAm (vA 3367) */
-elseif ($gender!=="f" && sub(array("UDas","oDas"),array("+"),blank(0),0) )
+elseif ($gender!=="f" && arr($text,'/[uo]Dan\+/') )
 {
 	storedata('5.4.131-1','sa',0);
 }
@@ -5955,13 +5955,13 @@ elseif ($gender === "f" && sub(array("jAnapada","kuRqa","goRa","sTala","BAja","n
     $ajAdyataSTAp=0;
 }
 /* nIlAdauSadhau (vA 2456) and prANini ca (vA 2458) */
-elseif ($gender === "f" && sub(array("nIla",),array("+NIz"),blank(0),0) )
+elseif ($gender === "f" && arr($text,'/nIla\+NIz/'))
 {
 	storedata('4.1.42-1','st',8);
 	storedata('4.1.42-2','st',8);
 }
 /* zoNAtprAcAm (4.1.43) */
-elseif ($gender === "f" && sub(array("SoRa"),array("+"),blank(0),0) )
+elseif ($gender === "f" && arr($text,'/SoRa\+/'))
 {
     $text = two(array("SoRa"),array("+"),array("SoRa"),array("+NIz+"),1);
 	storedata('4.1.43','st',8);
@@ -5977,7 +5977,7 @@ elseif ($gender === "f" && in_array($fo,array("saKi","aSiSu")) )
     $ajAdyataSTAp=0;
 }
 /* ito manuSyajAteH (4.1.65) */
-elseif ($gender === "f" && sub(array("i"),array("+"),blank(0),0) && AdivRddhi($text) )
+elseif ($gender === "f" && arr($text,'/i\+/') && AdivRddhi($text) )
 {
     $text = two($itmanuSyajAti,array("+"),$itmanuSyajAti,array("+NIz+"),0);
     $text = two($itmanuSyajAti,array("+NIz+NIz+"),$itmanuSyajAti,array("+NIz+"),0);
@@ -5986,7 +5986,7 @@ elseif ($gender === "f" && sub(array("i"),array("+"),blank(0),0) && AdivRddhi($t
     $ajAdyataSTAp=0;
 }
 /* bahvAdibhyazca (4.1.45), kRdikArAdaktinaH (ga 50) and sarvato'ktinnarthAdityeke (ga 51) */
-elseif ($gender === "f" && $_GET['cond2_21']==="2" && !sub(array("patn"),array("+"),blank(0),0) )
+elseif ($gender === "f" && $_GET['cond2_21']==="2" && !arr($text,'/patn\+/'))
 {
     $text = two(array("i"),array("+"),array("i"),array("+NIz+"),1);
 	storedata('4.1.45','st',8);	
@@ -6261,7 +6261,7 @@ elseif ($gender === "f" && ends(array($fo),array("pucCa"),0))
 }
 /* vArtikas to ajAdyataSTAp */
 /* sambhastrAjinaSaNapiNDebhyaH phalAt (vA 2497) */
-elseif( sub(array("samPala","BastraPala","ajinaPala","SaRaPala","piRqaPala"),array("+"),blank(0),0))
+elseif(arr($text,'/Pala/') && sub(array("samPala","BastraPala","ajinaPala","SaRaPala","piRqaPala"),array("+"),blank(0),0))
 {
     $text = one(array("+"),array("+wAp+"),0);
 	storedata('4.1.64-2','st',8);
@@ -6269,7 +6269,7 @@ elseif( sub(array("samPala","BastraPala","ajinaPala","SaRaPala","piRqaPala"),arr
     $TAp=1;
 }
 /* sadackARqaprAntaSataikebhyaH puSpAt (vA 1496) */
-elseif( sub(array("satpuzpa","prAkpuzpa","pratyakpuzpa","kARqapuzpa","prAntapuzpa","Satapuzpa","ekapuzpa"),array("+"),blank(0),0))
+elseif( arr($text,'/puzpa/') && sub(array("satpuzpa","prAkpuzpa","pratyakpuzpa","kARqapuzpa","prAntapuzpa","Satapuzpa","ekapuzpa"),array("+"),blank(0),0))
 {
     $text = one(array("+"),array("+wAp+"),0);
 	storedata('4.1.64-1','st',0);
@@ -6285,7 +6285,7 @@ elseif ($_GET['cond2_22']==="2" && sub(array("SUdra"),array("+"),blank(0),0) && 
     $TAp=1;
 }
 /* sadackARqaprAntaSataikebhyaH puSpAt (vA 1496) */
-elseif( sub(array("satpuzpa","prAkpuzpa","pratyakpuzpa","kARqapuzpa","prAntapuzpa","Satapuzpa","ekapuzpa"),array("+"),blank(0),0))
+elseif(arr($text,'/puzpa/') && sub(array("satpuzpa","prAkpuzpa","pratyakpuzpa","kARqapuzpa","prAntapuzpa","Satapuzpa","ekapuzpa"),array("+"),blank(0),0))
 {
     $text = one(array("+"),array("+wAp+"),0);
 	storedata('4.1.64-1','st',0);
@@ -6293,7 +6293,7 @@ elseif( sub(array("satpuzpa","prAkpuzpa","pratyakpuzpa","kARqapuzpa","prAntapuzp
     $TAp=1;
 }
 /* mUlAnnaJaH (vA 2500) */
-elseif( sub(array("amUla"),array("+"),blank(0),0) && $fo==="amUla")
+elseif(arr($text,'/amUla\+/') && $fo==="amUla")
 {
     $text = one(array("+"),array("+wAp+"),0);
 	storedata('4.1.64-4','st',0);
@@ -6687,7 +6687,7 @@ elseif ($_GET['cond2_14']==='1' && $anapatya===0 && $gender==="f" && $fo!=="mAma
     display(0);*/
 }
 /* TiDDhANaJdvayasajdadhnaJmAtractayapThakThaJkaJkvarapaH (4.1.15) exeption in zAnac */
-elseif (sub(array("syamARa","zyamARa"),array("+"),blank(0),0))
+elseif (arr($text,'/[sz]yamARa\+/') && sub(array("syamARa","zyamARa"),array("+"),blank(0),0))
 {
 	// pending to refractor
 /*    echo "<p class = pa >lAzrayamanubandhakAryaM nAdezAnAm (pa 70) prevents application of TiDDhANaJdvayasajdadhnaJmAtractayapThakThaJkaJkvarapaH (".link_sutra("4.1.15").") :</p>\n";
@@ -6719,6 +6719,7 @@ elseif ($gender==="f" && sub(array("vaDUwa","ciraRwa"),array("+"),blank(0),0) )
     display(8);*/
     $GIp=1; $ajAdyataSTAp = 0;
 }
+if ($debug===1) {dibug("6700");}
 /* common patch for Spha pratyaya */
 if (sub(array("+"),array("zPa"),array("+"),0))
 {
