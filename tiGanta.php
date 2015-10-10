@@ -46,7 +46,7 @@ $header = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http:
 </head> 
 <body>
 ';
-$debug = 0; // 0 - no debugging. 1 - debugging on. It shows execution of some important time consuming scripts.
+$debug = 1; // 0 - no debugging. 1 - debugging on. It shows execution of some important time consuming scripts.
 
 /* Reading from the HTML input. */
 //$first = $_GET["first"]; // word entered by the user.
@@ -8897,7 +8897,7 @@ elseif (arr($text,'/['.flat($hl).']$/') && $halGyAbbhyo!==1 && $nomidelision!==1
 }
 if ($debug===1) {dibug("8900");}
 /* halantyam (1.3.3) and tasya lopaH */
-if (sub(array("+"),$inbetweenpratyaya,array("+"),0) && $nomidelision!==1)
+if ($nomidelision!==1 && sub(array("+"),$inbetweenpratyaya,array("+"),0) )
 {
     itprat('/['.flat($hl).'][+]/');
 	storedata('1.3.3','pa',0);
@@ -8922,7 +8922,7 @@ if ( !itcheck(array("i"),1) && arr($text,'/[n][c][+]/') && $nance===1 ) // for f
 	storedata('6.4.30','sa',0);
 }
 /* kruJca */ 
-if ( sub(array("kruYc","krunc"),array("+"),blank(0),0) )
+if (arr($text,'/kru[nY]c\+/') )
 {
 	// Pending to refractor.
 /*    echo "<p class = pa >'RtvigdadhRksragdigaJcuyujikruJcAM ca' prohibits application of nalopa.</p>\n";
@@ -8931,7 +8931,7 @@ if ( sub(array("kruYc","krunc"),array("+"),blank(0),0) )
 	$kruJca=1;
 } else { $kruJca = 0; }
 /* defining dhatus with 'i' as it */
-if (sub(array("hiMs"),array("+"),blank(0),0))
+if (arr($text,'/hiMs\+/'))
 {
     $it=array_merge($it,array("i"));
     $itprakriti=array_merge($it,array("i"));
@@ -8976,7 +8976,7 @@ elseif ( ( $atu===1  )  && $so==="su!" && $sambuddhi===0 )
 	storedata('6.4.14','sa',3);
 }
 /* ugidacAM sarvanAmasthAne'dhAtoH (7.1.70) */ 
-if (sub(array("BavantI","BavatI"),array("+"),blank(0),0))
+if (arr($text,'/Bava/') && sub(array("BavantI","BavatI"),array("+"),blank(0),0))
 {
     $sarvanamasthana1 = 0;
 }
@@ -9053,7 +9053,7 @@ if ( $acaH===1)
 	storedata('6.3.138','sa',3);
 }
 /* ambArthanadyorhrasvaH (7.3.103) */
-if (sub(array("ambAqA","ambAlA","ambikA"),array("+"),blank(0),0) && $sambuddhi===1 && $so==="su!")
+if (arr($text,'/amb/') && sub(array("ambAqA","ambAlA","ambikA"),array("+"),blank(0),0) && $sambuddhi===1 && $so==="su!")
 {
 	storedata('7.3.107-2','pa',0); // Pending to check the number.
 }
@@ -9099,6 +9099,7 @@ if (arr($text,'/[+][v][i]$/')&& in_array($so,array("kvip","kvin")) && $taddhita 
     echo "<p class = sa >क्विप्‌, क्विन्‌ इत्यादि में वकार के बाद का इकार उच्चारणार्थ ही होता है ।</p>\n";
     display(0);*/
 }
+if ($debug===1) {dibug("9100");}
 /* verapRktasya (3.1.67) */
 if (arr($text,'/[+][v]$/')&& in_array($so,array("kvip","kvin")) && $taddhita === 0  && $sarva === 0 )
 {
@@ -9198,6 +9199,7 @@ if ($dhatu===1 && in_array($fo,array("dfnBU","karaBU","kAraBU","punarBU"))  && i
 //    echo "<p class = hn >दीर्घपाठे करपूर्वस्य उवङेव । ह्रस्वपाठे करपूर्वस्य यणेव इति विवेकः ।</p>\n";                
     }
 }   
+if ($debug===1) {dibug("9200");}
 /* varSAbhvazca (6.4.84) */ 
 if ($dhatu===1 && $first==="varzABU" && in_array($so,$acsup))
 {
@@ -9268,7 +9270,7 @@ if ($gender==="f")
     $text = three($hl,array("+A","+I"),array("+"),$hl,array("A","I"),array("+"),0);    
 }
 /* ami pUrvaH (6.1.107) */
-if ( sub(array("a","A","i","I","u","U","f","F","x"),array("+am"),blank(0),0))
+if ( arr($text,'/[aAiIuUfFx]\+am/'))
 {
     $text = two(array("a","A","i","I","u","U","f","F","x"),array("am"),array("a","A","i","I","u","U","f","F","x"),array("m"),0);
 	storedata('6.1.107','sa',0);
@@ -9295,6 +9297,7 @@ if (arr($text,'/['.flat($ac).'][nM][s][+]/') && ends(array($fo),array("mahat"),1
     $text = two($ac,array("ns+"),$acdir,array("ns+"),0);
 	storedata('6.4.10','sa',0);
 }
+if ($debug===1) {dibug("9300");}
 if ( ends(array($fo),array("Danuz"),1) && $sarvanamasthana1===1 && $sambuddhi===0)
 {
     $text = two($ac,array("nz+"),$acdir,array("nz+"),0);
@@ -9314,7 +9317,7 @@ if ( (arr($text,'/[fx][+][a]/')) && in_array($so,array("Nasi!","Nas")) && $pada=
 	storedata('8.2.24','sa',0);
 }
 /* auto'mzasoH (6.1.93) */
-if (sub(array("o"),array("+"),array("a"),0) && in_array($so,array("am","Sas")))
+if (arr($text,'/o\+a') && in_array($so,array("am","Sas")))
 {  
     $text = two(array("o"),array("+a"),array(""),array("+A"),0);
 	storedata('6.1,93','sa',0);
@@ -9357,7 +9360,7 @@ if ($so === "Am" && sub(array("tisf","catasf"),array("+"),blank(0),0))
     $natisf=1; // 0 - no prevention of nAmi. 1 - prevention of nAmi.
 } else { $natisf = 0; }
 /* explanation of prarINAm */
-if (sub(array("rI"),array("+"),array("nAm"),0) && arr(array($fo),'/[r][E]$/'))
+if (arr($text,'/rI\+nAm/') && arr(array($fo),'/[r][E]$/'))
 {
 	// Pending to refractor
 /*    echo "<p class = hn >According to mAdhava, rAyo hali applies here to convert it to prarANAm. But it is wrong according to Siddhantakaumudi.</p>\n";
@@ -9392,6 +9395,7 @@ else
     {
     $nami = 0; 
     }
+if ($debug===1) {dibug("9400");}
 /* bahuvacane jhalyet (7.3.103) */
 if ((in_array($so,array("Byas","sup","Bis")) || ($sut===1 && $sAmaAkam===0)) && arr($text,'/[a][+][Bs]/') && $start ===1)
 {
@@ -9433,7 +9437,7 @@ if ($Ne===1 && $start === 1)
 /* iko'savarNe zAkalyasya hrasvazca (6.1.127) */ // Right now coded for only dIrgha. Clarify wheter the hrasva preceding also included?
 $ik = array("i","I","u","U","f","F","x","X");
 $nonik = array("a","A","e","E","o","O");
-if (sub($ik,array("+"),$nonik,0) && $pada==="pada" && !in_array($so,$tiG) )
+if (arr($text,'/[iIuUfFxX]\+[aAeEoO]/') && $pada==="pada" && !in_array($so,$tiG) )
 {
 // for pragRhya, it is difficult to tell the machine that it is not to be combined. So we have added one additional space. e.g. "a" -> "a ".
 $text = two(array("i+","I+"),array("a","A","u","U","f","F","x","X","e","o","E","O"),array("i +","i +"),array("a","A","u","U","f","F","x","X","e","o","E","O"),1);
@@ -9449,7 +9453,7 @@ $changedupasarga1 = array("prar","apar","avar","upar");
 $changedupasarga2 = array("prAl","apAl","avAl","upAl");
 $changedupasarga3 = array("pral","apal","aval","upal");
 // for $verbs_ru and $verbs_changed, please see function.php.
-if ((sub($akarantaupasarga,$verbs_ru,blank(0),0) && !sub(array("prafRa"),blank(0),blank(0),0))||sub($akarantaupasarga,array("xkArIy"),blank(0),0))
+if (arr($text,'/f/') && (sub($akarantaupasarga,$verbs_ru,blank(0),0) && !sub(array("prafRa"),blank(0),blank(0),0))||sub($akarantaupasarga,array("xkArIy"),blank(0),0))
 {
     if (arr($text,'/[I][y]/'))
     {
@@ -9470,11 +9474,11 @@ $ak = array("a","A","i","I","u","U","f","F","x","X");
 $akrt = array("a ","A ","i ","I ","u ","U ","f ","F ","x ","X "); 
 if (arr($text,'/['.flat($ak).'][+][fx]/') && $start===1 && $pada ==="pada" && $upas ===0 )
 {
-if (sub($ak,array("f","x"),blank(0),0))
-{
-$text = two ($ak,array("f","x"),$akrt,array("f","x"),1);
-storedata('6.1.128','sa',0);
-}
+	if (sub($ak,array("f","x"),blank(0),0))
+	{
+	$text = two ($ak,array("f","x"),$akrt,array("f","x"),1);
+	storedata('6.1.128','sa',0);
+	}
 }
 if ($upas === 1)
 {
@@ -9494,7 +9498,7 @@ if ($upas === 1)
 /* IdUdeddvivacanaM pragRhyam (1.1.11) */
 // not possible to code till we get the word forms of all words and check whether it is dvivacana or not. Pending
 /* adaso mAt (1.1.12) */
-if (sub(array("amI"),blank(0),blank(0),0) && $fo === "amI" && $start===1)
+if (arr($text,'/amI/') && $fo === "amI" && $start===1)
 {
 $text = two (array("amI"),$ac,array("amI "),$ac,1);
 storedata('1.1.12','sa',0);
@@ -9504,6 +9508,7 @@ if (sub(array("amU"),blank(0),blank(0),0)&& $fo === "amU" &&$start===1)
 $text = two (array("amU"),$ac,array("amU "),$ac,1);
 storedata('1.1.12','sa',0);
 }
+if ($debug===1) {dibug("9500");}
 /* ze (1.1.13) */
 // Not possible to know whether one form has ze or not. ajax for feedback pending.
 /* nipAta ekAjanAG (1.1.14) */
