@@ -11040,26 +11040,26 @@ if (arr($text,'/H/') && sub($iN,array("H"),array("pAS","kalp","kAmy","ka","kAMy"
 	$inah = 1;
 } else { $inah = 0; }
 /* namaspurasorgatyoH (8.3.40) */
-if (sub(array("namaH","puraH"),$ku,blank(0),0))
+if (arr($text,'/aH/') && sub(array("namaH","puraH"),$ku,blank(0),0))
 {
     $text = two(array("namaH","puraH"),$ku,array("namas","puras"),$ku,1);
 	storedata('8.3.40','sa',0);
     $nama1 = 1; // 0 - This sUtra has not applied. 1 - This sUtra has applied.
 } else { $nama1 = 0; }
-if (sub(array("namaH","puraH"),$pu,blank(0),0) && $nama1 !==1)
+if (arr($text,'/aH/') && sub(array("namaH","puraH"),$pu,blank(0),0) && $nama1 !==1)
 {
     $text = two(array("namaH","puraH"),$pu,array("namas","puras"),$pu,1);
 	storedata('8.3.40','sa',0);
     $nama2 = 1; // 0 - This sUtra has not applied. 1 - This sUtra has applied.
 } else { $nama2 = 0; }
 /* tiraso'nyatarsyAm (8.3.42) */
-if (sub(array("tiraH"),$ku,blank(0),0))
+if (arr($text,'/aH/') && sub(array("tiraH"),$ku,blank(0),0))
 {
     $text = two (array('tiraH'),$ku,array('tiras'),$ku,1);
 	storedata('8.3.42','sa',0);
     $tir1 = 1; // 0 - This sUtra has not applied. 1 - This sUtra has applied.
 } else { $tir1 = 0; }
-if (sub(array("tiraH"),$pu,blank(0),0))
+if (arr($text,'/aH/') && sub(array("tiraH"),$pu,blank(0),0))
 {
  $text = two (array('tiraH'),$pu,array('tiras'),$pu,1);
 	storedata('8.3.42','sa',0);
@@ -11067,14 +11067,14 @@ if (sub(array("tiraH"),$pu,blank(0),0))
 } else { $tir2 = 0; }
 /* ataH kRkamikaMsakumbhapAtrakuzAkarNISvanavyayasya (8.3.46) */
 $atah = 0; // 0 - This sUtra has not applied. 1 - This sUtra has applied.
-if (sub(array("aH"),array("kAr","kAm","kAMs","kumBa","pAtra","kuSA","karRI"),blank(0),0) && $nama1 !== 1 && $nama2 !== 1   && $tir1===0 && $tir2===0 )
+if (arr($text,'/aH/') && sub(array("aH"),array("kAr","kAm","kAMs","kumBa","pAtra","kuSA","karRI"),blank(0),0) && $nama1 !== 1 && $nama2 !== 1   && $tir1===0 && $tir2===0 )
 {
     $text = two(array("aH"),array("kAr","kAm","kAMs","kumBa","pAtra","kuSA","karRI"),array('as'),array("kAr","kAm","kAMs","kumBa","pAtra","kuSA","karRI"),1);
 	storedata('8.3.46','sa',0);
     $atah = 1;
 }
 /* adhazzirasI pade */
-if (sub(array("aDaH","SiraH"),array("pada"),blank(0),0)  )
+if (arr($text,'/aH/') && sub(array("aDaH","SiraH"),array("pada"),blank(0),0)  )
 {
     $text = two(array("aDaH","SiraH"),array("pada"),array("aDas","Siras"),array("pada"),1);
 	storedata('8.3.47','sa',0);
@@ -11082,7 +11082,7 @@ if (sub(array("aDaH","SiraH"),array("pada"),blank(0),0)  )
 }
 /* so'padAdau (8.3.38), pAzakalpakakAmyeSviti vAcyam (vA 5033), anavyayasyeti vAcyam (vA 4902) and kAmye roreveti vAcyam (vA 4902) */ 
 // anavyayasyeti vAcyam (vA 4901) is pending to code.
-if (sub(array("H"),array("pAS","kalp","kAmy","ka"),blank(0),0) && $inah !== 1 && $nama1 !== 1 && $nama2 !== 1 && $dvi1===0 && $dvi2===0 && $isu1 ===0 && $isu2 ===0 && $tir1===0 && $tir2===0 && $muhu1 ===0  && $atah ===0)
+if ( $inah !== 1 && $nama1 !== 1 && $nama2 !== 1 && $dvi1===0 && $dvi2===0 && $isu1 ===0 && $isu2 ===0 && $tir1===0 && $tir2===0 && $muhu1 ===0  && $atah ===0 && arr($text,'/H/') && sub(array("H"),array("pAS","kalp","kAmy","ka"),blank(0),0))
 {
     $text = two(array("H"),array("kalp","kAmy","ka","kAMy"),array('s'),array("kalp","kAmy","ka","kAMy"),0);
     $text = two(array("H"),array("pAS"),array('s'),array("pAS"),0);
@@ -11098,14 +11098,15 @@ if (sub(array("H"),array("pAS","kalp","kAmy","ka"),blank(0),0) && $inah !== 1 &&
     echo "<p class = sa >सोऽपदादौ (८.३.३८), पाशकल्पककाम्येष्विति वाच्यम्‌ (वा ५०३३), अनव्ययस्येति वाच्यम्‌ (वा ४९०२) तथा काम्ये रोरेवेति वाच्यम् (वा ४९०२) :</p>\n";
     display(0);*/
 }
+if ($debug===1) {dibug("11100");}
 /* zarpare visarjanIyaH (8.3.35) */
-if (sub(array("H"),prat('Kr'),prat('Sr'),0) )
+if (arr($text,'/H/') && sub(array("H"),prat('Kr'),prat('Sr'),0) )
 {
 storedata('8.3.35','sa',0);
 $zarpare = 1; // 0 - This sUtra has not applied. 1 - This sUtra has applied. 2 - visarjanIyasya saH. 3 - vA zari.
 } else { $zarpare = 0; }
 /* kupvoH &k&pau ca (8.3.37) */ // <p class = hn >Note that we have used & as jihvAmUlIya and * as upadhmAnIya.
-if((sub(array("H"),$ku,blank(0),0)||sub(array("H"),$pu,blank(0),0)) && $kaska !== 1 && $zarpare ===0)
+if(arr($text,'/H/') && (sub(array("H"),$ku,blank(0),0)||sub(array("H"),$pu,blank(0),0)) && $kaska !== 1 && $zarpare ===0)
 {
 $text = two(array("H"),$ku,array("&"),$ku,1);
 $text = two(array("H"),$pu,array("&"),$pu,1);
@@ -11113,28 +11114,28 @@ storedata('8.3.37','sa',0);
 $kupvo = 1; // 0 - This sUtra has not applied. 1 - This sUtra has applied.
 } else {$kupvo = 0; }
 /* visarjanIyasya saH (8.3.34) */ 
-if(sub(array("H"),prat('Kr'),blank(0),0) && $zarpare !==1 && $kupvo ===0)
+if(arr($text,'/H/') && sub(array("H"),prat('Kr'),blank(0),0) && $zarpare !==1 && $kupvo ===0)
 {
 $text = two(array("H"),prat('Kr'),array("s"),prat('Kr'),0);
 storedata('8.3.34','sa',0);
 $zarpare = 2;
 }
 /* vA zari (8.3.36) */
-if(sub(array("s"),prat('Sr'),blank(0),0) && $zarpare === 2)
+if(arr($text,'/s([+]*)[Szs]/') && $zarpare === 2)
 {
 $text = two(array("s"),array("S","z","s"),array("H"),array("S","z","s"),1);
 storedata('8.3.36','sa',0);
 $zarpare = 3;
 }
 /* kharpare zari vA visargalopo vaktavyaH (vA 4906) */
-if(sub(array("H"),prat('Sr'),prat('Kr'),0) && $zarpare === 3)
+if(arr($text,'/H/') && sub(array("H"),prat('Sr'),prat('Kr'),0) && $zarpare === 3)
 {
 $text = three(array("H"),prat('Sr'),prat('Kr'),array(""),prat('Sr'),prat('Kr'),1);
 storedata('8.3.36-1','sa',0);
 }
 /* apadAntasya mUrdhanyaH (8.3.55), iNkoH (8.3.57) and AdezapratyayayoH (8.3.59) */
 // Not coded perfectly. This is only according to the need of vibhaktis. 
-if((sub($iN1,array("+s"),blank(0),0)) &&  (in_array($so,array("Am","sup"))|| in_array(1,$samp)) || ($fo==="adas" && in_array($so,array("Ne","Nasi!","Nas","Am","Ni"))) )
+if(arr($text,'\+s') && ((sub($iN1,array("+s"),blank(0),0)) &&  (in_array($so,array("Am","sup"))|| in_array(1,$samp)) || ($fo==="adas" && in_array($so,array("Ne","Nasi!","Nas","Am","Ni")))))
 {
 $text = two($iN1,array("+s"),$iN1,array("+z"),0);
 storedata('8.3.55','sa',0);
@@ -11143,7 +11144,7 @@ storedata('8.3.59','sa',0);
 }
 // this is the pending work, which I have started. is and us ending words usually take the 's' -> 'S' conversion. 
 $isusend = array("arcis","Arcis","avis","Avis","ASis","kravis","krivis","Cadis","Cardis","jyotis","tuvis","tris","dvis","pATis","barhis","Buvis","rocis","varhis","Socis","saDis","sarpis","havis","aprAyus","arus","Arus","asaScus","AsaScus","Ayus","Danus","cakzus","jayus","tanus","tapus","tarus","tasTus","parus","yajus","vapus","Arus",); // Here we will enumerate those which end with is, us, or any eligible cangdidate.
-if((sub($iN1,array("s+","Ms+"),blank(0),0)) && ends(array($fo),$isusend,1) && $pada==="pratyaya" )
+if(arr($text,'/s\+/') && ((sub($iN1,array("s+","Ms+"),blank(0),0)) && ends(array($fo),$isusend,1) && $pada==="pratyaya" ))
 {
 $text = two($iN1,array("s+",),$iN1,array("z+"),0);
 if ($gender==="n")
@@ -11184,7 +11185,7 @@ if ( (arr($text,'/['.flat($iN1).']([HSzs+]*)[s][uA]/')|| (arr($text,'/['.flat($i
 }
 
 /* hanteratpUrvasya (8.4.22) */
-if( sub($upasarga,array("han","Gn"),blank(0),0))
+if((arr($text,'/han/')||arr($text,'/Gn/')) && sub($upasarga,array("han","Gn"),blank(0),0))
 {
 $text = two($upasarga,array("han","Gn"),$upasarga,array("haR","Gn"),0);
 storedata('8.4.22','sa',0);
@@ -11194,6 +11195,7 @@ if( arr($text,'/[G][n]/') && arr(array($fo),'/[h][a][n]/') && !sub($upasarga,arr
 $text = one(array("han","Gn"),array("haR","Gn"),0);
 storedata('8.4.22','sa',0);
 }
+if ($debug===1) {dibug("11200");}
 /* raSAbhyAM no NaH samAnapade (8.4.1) */
 // pUrvasmAdapi vidhau sthAnivadbhAvaH , pUrvatrAsiddhe na sthAnivat (vA 433) and tasya doSaH saMyogAdilopalatvaNatveSu (vA 440) are pending to code.
 if($pada === "pratyaya" && sub(array("r","z"),array("n"),blank(0),0))
@@ -11550,10 +11552,11 @@ echo "<p class = hn >त्रिप्रभृतिषु शाकटाय�
 // It is not coded separately. It is sent as a message in all display function when 1 is selected as option. 
 /* dIrghAdAcAryANAm (8-4-52) */
 // Not coded separately, because we did dvitva only for $hrasva, and not for 'ac'. So this is already taken care of.
-/* jhalAM jaz jhaSi (8.4.53) */
-while(sub(array_diff(prat('Jl'),prat('jS')),prat('JS'),blank(0),0) !== false) // check whether we should remove jaz from jhal?
+if ($debug===1) {dibug("11550");}
+/* jhalAM jaz jhazi (8.4.53) */
+while(arr($text,'/[JBGQDKPCWTcwtkpSzsh]([+]*)[JBGQDjbgqd]/') !== false) // check whether we should remove jaz from jhal?
 {
-    if(sub(prat('Jl'),prat('JS'),blank(0),0))
+    if(arr($text,'/[JBGQDKPCWTcwtkpSzshjbgqd]([+]*)[JBGQDjbgqd]/'))
     {
     $text = two(prat('Jl'),prat('JS'),savarna(prat('Jl'),prat('jS')),prat('JS'),0);
 	storedata('8.4.53','sa',0);
