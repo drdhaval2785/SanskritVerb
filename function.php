@@ -731,7 +731,7 @@ function display($n)
 // new messages can be added if the message is of repeated nature.
 function display2($text,$n)
 {
-    global $upasarga_joined; global $us; // bringing $text from main php function.
+    global $upasarga_joined; global $us, $debug; // bringing $text from main php function.
 	foreach ($text as $val) { $out[] = str_replace("++","+",$val);}
 	$text = $out;
     if ($n === 1) // sending special messages.
@@ -773,6 +773,7 @@ function display2($text,$n)
         echo "<p class = pa>anupasarjanAt (".link_sutra("4.1.14").") :</p>\n";
         echo "<p class = pa>अनुपसर्जनात्‌ (४.१.१४) :</p>\n";
         }
+	if ($debug===1) {dibug('DISPLAY2 NOTES PRINT END');}
     for($i=1;$i<count($text)+1;$i++) // for all members of the $text array
     {
         if ($upasarga_joined===1 || $us==="")
@@ -784,6 +785,7 @@ function display2($text,$n)
         echo "<p class = form>$i - ".convert($us."+".$text[$i-1])."</p>\n"; // showing the output to the browser. e.g. 1. rAmaH. $i is for numbering. function convert converts the output into devanAgarI.
         }
     }
+	if ($debug===1) {dibug('DISPLAY2 ACTUAL PRINT END');}
     if ($n === 2) { $text1 = $text; $text = $text2; } // not useful because the display(2) is not used in the code. If it is used, this will work.
 }
 /* function print2 is specially designed to try with gui function. */
@@ -3219,7 +3221,7 @@ function storedata($sutra_number,$style,$note)
 /* displaying from the storedata */
 function display_from_storedata()
 {
-	global $storedata;
+	global $storedata, $debug;
 	foreach ($storedata as $value)
 	{
 		gui($value[0],$value[1],$value[2],$value[3]);
@@ -3238,10 +3240,11 @@ function print_from_storedata()
 // matches function makes the code fast. Earlier we were using a for loop over vdata / ASdata which was very costly. matches function is derived from the answer of Aleks G from http://stackoverflow.com/questions/12315536/search-for-php-array-element-containing-string
 function gui($text,$sutra_number,$style,$note)
 {
-	global $frontend, $storedata;
+	global $frontend, $storedata, $debug;
 	global $ASdata, $vdata, $miscdata, $upasarga_joined, $us, $otherdata; // bringing $text from main php function.
 	if (!in_array($style,array("pa","hn","st","red"))) { $style="sa"; }
 	if (!isset($note)) { $note=0; }
+	if ($debug===1) {dibug('GUI START');}
 	if (strpos($sutra_number,'~')!==false && $frontend==='1')
 	{
 		$matches = array_filter($otherdata, function($var) use ($sutra_number) { return strpos($var,$sutra_number.":")!==false; });
@@ -3266,6 +3269,7 @@ function gui($text,$sutra_number,$style,$note)
 		$sutra_no[$i] = $int[0];
 		$sutra_type[$i] = $int[1];
 		$sutra_dev[$i] = $int[2];
+		if ($debug===1) {dibug('GUI ASDATA ANALYSIS END');}
 		if ($sutra_no[$i] === $sutra_number)
 		{	
 			echo "<p class = ".$style." >By ".toiast($sutra_dev[$i])." (".link_sutra($sutra_number).") :</p>\n";
@@ -3302,6 +3306,7 @@ function gui($text,$sutra_number,$style,$note)
 			echo "<hr/>";
 		}				
 	}
+	if ($debug===1) {dibug('GUI END');}
 }
 /* Function gui2 to use in case we don't want to display the word (e.g. before entering prakriyA e.g. dhAtu pada etc. */
 // matches function makes the code fast. Earlier we were using a for loop over vdata / ASdata which was very costly. matches function is derived from the answer of Aleks G from http://stackoverflow.com/questions/12315536/search-for-php-array-element-containing-string
