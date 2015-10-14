@@ -3487,7 +3487,6 @@ function tablemaker($ou)
 </table>
 ";
 }
-$start_time = microtime(true);
 function timestamp()
 {
 	global $start_time;
