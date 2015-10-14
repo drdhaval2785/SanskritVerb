@@ -47,7 +47,7 @@ $header = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http:
 </head> 
 <body>
 ';
-$debug = 0; // 0 - no debugging. 1 - debugging on. It shows execution of some important time consuming scripts.
+$debug = 1; // 0 - no debugging. 1 - debugging on. It shows execution of some important time consuming scripts.
 
 /* Reading from the HTML input. */
 //$first = $_GET["first"]; // word entered by the user.
@@ -2941,8 +2941,10 @@ if ( in_array($fo,array("GrA")) && in_array($so,$tiG)  && $luGset===5 && sub(arr
     $text=three(array("ja+GrAp"),array("+"),array("Ri"),array("ja+Grip"),array("+"),array("Ri"),1);
 	storedata('7.4.6','sa',0);
 }
+if (arr($text,'/['.pc('hl').']([+]*)ya/')) {
+print_r($text);}
 /* yasya halaH (6.4.49) */
-if (arr($text,'/['.pc('hl').']([+]*)[ya]/')  && $ardhadhatuka===1 && sub(array("+"),$ArdhadhAtuka_pratyayas,array(""),0))
+if (arr($text,'/['.pc('hl').']([+]*)ya/')  && $ardhadhatuka===1 && sub(array("+"),$ArdhadhAtuka_pratyayas,array(""),0))
 {
     $text = three($hl,array("ya+"),$ArdhadhAtuka_pratyayas,$hl,array("+"),$ArdhadhAtuka_pratyayas,0);
 	storedata('6.4.49','sa',0);
@@ -2982,7 +2984,7 @@ if ( arr($text,'/[a][+][R][ai]/'))
 }
 /* aco JNiti (7.2.115) */ 
 // more on enumeration kind. Not used regexes deliberately.
-if ( arr($text,'/['.pc('ac').'][+][R][i][+]/') && $bhasyADhe!==1)
+if (arr($text,'/['.pc('ac').'][+][R][i][+]/') && $bhasyADhe!==1)
 { 
     $text = three($ac,array("+"),array("Ri+"),vriddhi($ac),array("+"),array("Ri+"),0);
 	storedata('7.2.115','sa',0);
@@ -3359,7 +3361,7 @@ elseif ($atolopa!==1 && ($sarvadhatuka===1 || $ardhadhatuka===1) && arr($text,'/
 	storedata('7.3.86','sa',0);
 }
 /* pugantalaghUpadhasya ca (7.3.86) */
-elseif ($atolopa!==1 && $ardhadhatuka===1 && $kGiti!==1  && $didhI!==1 && $vijait!==1 && $sIyuT!==1 && $ksa!==1 && $vijait!==1 && !ends($itpratyaya,array("k","N"),2) && pr2(array("i","u","f","x"),$hlplus,$ArdhadhAtuka_tiG_pratyayas,array("e","o","ar","al"),$hlplus,$ArdhadhAtuka_tiG_pratyayas,$text)!==$text )
+elseif ($atolopa!==1 && $ardhadhatuka===1 && $kGiti!==1  && $didhI!==1 && $vijait!==1 && $sIyuT!==1 && $ksa!==1 && $vijait!==1 && !ends($itpratyaya,array("k","N"),2) && arr($text,'/[iufx]([+]*)['.pc('hl').']\+/') && pr2(array("i","u","f","x"),$hlplus,$ArdhadhAtuka_tiG_pratyayas,array("e","o","ar","al"),$hlplus,$ArdhadhAtuka_tiG_pratyayas,$text)!==$text )
 {
     $text=pr2(array("i","u","f","x"),$hlplus,$ArdhadhAtuka_tiG_pratyayas,array("e","o","ar","al"),$hlplus,$ArdhadhAtuka_tiG_pratyayas,$text);
 	$text = three(array("GarR","tarR","arR","kzeR",),array("+"),array("sta","sTAs"),array("GfR","tfR","fR","kziR"),array("+"),array("sta","sTAs"),1); // see sahajabodha part 2 page 250.
@@ -3520,7 +3522,7 @@ if (($sarvadhatuka===1 || $ardhadhatuka===1) &&  (in_array("N",$it)||in_array("k
     $kGiti=1;
 }
 /* bhUsuvostiGi (7.3.88) */
-if ( ($sarvadhatuka===1 || $ardhadhatuka===1) && in_array($fo,array("BU","zUN")) && pr2(array("BU","sU"),array("+"),$sArvadhAtuka_tiG_pratyayas,array("Bu","su"),array("+"),$sArvadhAtuka_tiG_pratyayas,$text)!==$text )
+if ( ($sarvadhatuka===1 || $ardhadhatuka===1) && in_array($fo,array("BU","zUN")) && arr($text,'/[Bs]U\+/') && pr2(array("BU","sU"),array("+"),$sArvadhAtuka_tiG_pratyayas,array("Bu","su"),array("+"),$sArvadhAtuka_tiG_pratyayas,$text)!==$text )
 {
 	storedata('7.3.88','sa',0);
 	$bhUsuvo=1;
@@ -3916,14 +3918,14 @@ if ( arr($text,'/bu\+BUv\+/') && $lakAra==="liw")
 	storedata('7.4.73','sa',0);
 }
 /* aco JNiti patch for liT. */
-if ( in_array($so,array("tip")) && $lakAra==="liw" && (sub($ac,array("+"),$tiG1,0)||sub($ac,array("+"),$iDtiG,0)) )
+if ( in_array($so,array("tip")) && $lakAra==="liw" && arr($text,'/['.pc('ac').']\+/') && (sub($ac,array("+"),$tiG1,0)||sub($ac,array("+"),$iDtiG,0)) )
 {
     $text = pr2($ac,array("+"),$tiG1,vriddhi($ac),array("+"),$tiG1,$text);
     $text = pr2($ac,array("+"),$iDtiG,vriddhi($ac),array("+"),$iDtiG,$text);
 	storedata('7.2.115','sa',0);
 }
 /* aco JNiti patch for liT mip. */
-if ( in_array($so,array("mip")) && $lakAra==="liw" && (sub($ac,array("+"),$tiG1,0)||sub($ac,array("+"),$iDtiG,0)) )
+if ( in_array($so,array("mip")) && $lakAra==="liw" && arr($text,'/['.pc('ac').']\+/') && (sub($ac,array("+"),$tiG1,0)||sub($ac,array("+"),$iDtiG,0)) )
 {
     $text1 = pr2($ac,array("+"),$tiG1,vriddhi($ac),array("+"),$tiG1,$text);
     $text2 = pr2($ac,array("+"),$iDtiG,vriddhi($ac),array("+"),$iDtiG,$text);
