@@ -2,7 +2,7 @@
  /* This code is developed by Dr. Dhaval Patel (drdhaval2785@gmail.com) of www.sanskritworld.in and Ms. Sivakumari Katuri.
   * Layout assistance by Mr Marcis Gasuns.
   * Available under GNU licence.
-  * Version 1.0.1 date 5 October 2015
+  * Version 1.0.2 date 17 October 2015
   * The latest source code is available at https://github.com/drdhaval2785/sanskrit
   * Acknowledgements: I extend my heartfelt thanks to Ananda Loponen for the code to convert devanagari and various sanskrit transliterations. That can be accessed at http://www.ingmardeboer.nl/php/diCrunch.php?act=help.
   * I also extend my gratitude to gloomy.penguin of stackoverflow.com, who helped me create dvitva and lopa functions, without which I would be handicapped.
@@ -44,7 +44,7 @@ $header = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http:
 <!--... Defining CSS -->
 <link rel="stylesheet" type="text/css" href="mystyle.css">
 <!--... including Ajax jquery. -->
-</head> 
+</head>
 <body>
 ';
 $debug = 0; // 0 - no debugging. 1 - debugging on. It shows execution of some important time consuming scripts.
