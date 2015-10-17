@@ -47,7 +47,7 @@ $header = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http:
 </head> 
 <body>
 ';
-$debug = 1; // 0 - no debugging. 1 - debugging on. It shows execution of some important time consuming scripts.
+$debug = 0; // 0 - no debugging. 1 - debugging on. It shows execution of some important time consuming scripts.
 
 /* Reading from the HTML input. */
 //$first = $_GET["first"]; // word entered by the user.
@@ -1897,7 +1897,6 @@ if (in_array($so,$tiG) && arr(array($fo),'/[!]['.pc('hl').']$/') && $nomidelisio
 	$text=three(array("!"),$hl,array("+"),array("!"),blank(count($hl)),array("+"),0);
 	storedata('1.3.9','sa',0);
 }
-
 if ($debug===1) {dibug("1900");}
 /* halantyam (1.3.3) and tasya lopaH (1.3.9) */
 //if (in_array($so,$tiG) && ( sub(array("+"),$inbetweenpratyaya,array("+"),0) || (arr($text,'/['.flat($hl).']$/') && $tusma!==1) || sub($hl,array("+"),$vikaraNa,0) || $ad===1 || $rudhAdibhyaH===1 || in_array($lakAra,array("liw","luw","lfw","ASIrliN","luN","lfN","ArDaDAtukalew")) ))
