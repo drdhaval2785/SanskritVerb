@@ -76,23 +76,24 @@ tran - 'SLP1'
 upasarga - ''
 vAcya - 'kartR'
 */
-// Now start the input for commandline
-if (isset($argv[0]))
+// Input from commandline has to be in `php tiGanta.php 01.0001 law` format. Other details are fetched from verb number.
+if (isset($argv[0]) || $test===1)
 {
-	$first = $argv[1];
-	$verbset = $argv[2];
-	$lakAra = $argv[3];
-	$tran = $argv[4];
-	$us = $argv[5];
-	$vAcya = $argv[6];
-	$sanAdi = $argv[7];
-	if (!isset($argv[1])) { echo "Verb is not entered"; exit; }	
-	if (!isset($argv[2])) { echo "Verb gaNa is not entered"; exit; }
-	if (!isset($argv[3])) { $lakAra = 'law'; }
-	if (!isset($argv[4])) { $tran = 'SLP1'; }
-	if (!isset($argv[5])) { $us = ''; }
-	if (!isset($argv[6])) { $vAcya = 'kartR'; }	
-	if (!isset($argv[7])) { $sanAdi = ''; }	
+	$number = $argv[1];
+	$first = dhatu_from_number($number);
+	$verbset = verbset_from_number($number);
+	$lakAra = $argv[2];
+	$tran = $argv[3];
+	$us = $argv[4];
+	$vAcya = $argv[5];
+	$sanAdi = $argv[6];
+	if (!isset($argv[1])) { echo "Verb number is not entered"; exit; }
+	if (!isset($argv[2])) { $lakAra = 'law'; }
+	if (!isset($argv[3])) { $tran = 'SLP1'; }
+	if (!isset($argv[4])) { $us = ''; }
+	if (!isset($argv[5])) { $vAcya = 'kartR'; }	
+	if (!isset($argv[6])) { $sanAdi = ''; }	
+	$frontend="0";
 }
 /* Creating a log */
 mkdir ('verboutput');
@@ -101,10 +102,12 @@ fputs($logfile,date('D, d M Y H:i:s')."\n");
 fputs($logfile,"verb = $first, gaNa = $verbset, lakAra = $lakAra, transliteration = $tran, vAcya = $vAcya, upasarga = $us\n");
 if ($debug===1) {dibug("100");}
 
+if (!isset($argv[0]))
+{
 $outfile = fopen("verboutput//".$first."_".$verbset."_".$lakAra.".html", "wb");
-
 echo $header; // creating header. This will ensure that the HTML is shown with UTF-8 encoding with necessary stylesheet.
 fputs($outfile,$header);
+}
 if (!$verbset) { $verbset="none"; } // I dont think this is needed now. Test and remove. Pending.
 $verbset=trim($verbset);
 $fo = $first; // remembering the original prakRti. Sometimes we need to know what was the original prakRti.
@@ -1717,10 +1720,10 @@ if (sub(array("+"),$shitpratyaya,blank(0),0) && $lakAra!=="")
 	storedata('3.4.113','sa',0);
     $shit=1;
 }
-/* dAdhA ghvadAp (1.1.19) */
+/* dAdhA ghvadAp (1.1.20) */
 if ( in_array($fo,$ghuset) )
 {
-	storedata('1.1.19','sa',0);
+	storedata('1.1.20','sa',0);
     $ghu=1;
 } else { $ghu=0; }
 /* pvAdInAM hrasvaH (7.3.80) */
@@ -2713,6 +2716,12 @@ elseif ( ends($vik,array("Sapluk"),1) &&  pr2(array("u+"),$halAdi_pit_sArvadhAtu
     $text=pr2(array("u+"),$halAdi_pit_sArvadhAtuka_pratyayas,blank(0),array("O+"),$halAdi_pit_sArvadhAtuka_pratyayas,blank(0),$text);
 	storedata('7.3.89','sa',0);
 }
+/* ubhe abhyastam (6.1.5) */
+if ($abhyasta===1 && $jaksat===0)
+{
+	storedata('6.1.5','pa',0);
+	$ubheabhyasta=1;
+}
 /* adabhyastAt (7.1.4) */
 if ($abhyasta===1 && pr2(array("+"),array("anti","antu","an"),blank(0),array("+"),array("ati","atu","us"),blank(0),$text)!==$text)
 {
@@ -2896,18 +2905,18 @@ if (in_array($fo,array("prIY","DUY")) && in_array($so,$tiG) && sub(array("prI","
 	storedata('7.3.37-1','sa',0);
 }
 if ($debug===1) {dibug("2900");}
-/* Ato lopa iTi ca (7.4.64) */
+/* Ato lopa iTi ca (6.4.64) */
 if ( (in_array("N",$itpratyaya)||in_array("k",$itpratyaya) )  && $lakAra!=="" && $caG===1 && sub(array("A+"),array("a+"),blank(0),0))
 {
     $text=two(array("A"),array("+a+"),array(""),array("+a+"),0);
-	storedata('7.3.64','sa',0);
+	storedata('6.4.64','sa',0);
 }
-/* Ato lopa iTi ca (7.4.64) */
+/* Ato lopa iTi ca (6.4.64) */
 elseif (arr($text,'/[A][+]/') && (in_array("N",$itpratyaya)||in_array("k",$itpratyaya) ) && pr2(array("A"),array("+"),$tiG1,array("A"),array("+"),$tiG1,$text)!==$text && $lakAra!=="" )
 {
     $text=pr2(array("A"),array("+"),$tiG1,array("A"),array("+"),$tiG1,$text);
     $text=two($hl,array("+sic+"),$hl,array("A+sic+"),0);
-	storedata('7.4.64','sa',0);
+	storedata('6.4.64','sa',0);
 }
 /* ze mucAdInAm (7.1.59) */
 if ( ($verbset==="tudAdi" || ($verbset==="none" && in_array($fo,$tudAdi)) ) && $lakAra!=="" && sub($tudAdi_mucAdi,array("+"),array("a+"),0) )
@@ -3956,11 +3965,11 @@ if ( in_array($so,$tiG) && (in_array("N",$it)||in_array("k",$it)) && !arr($text,
     $text = pr2(array("man","han","gam","ram","nam","yam","van","tan","san","kzaR","kziR","fR","tfR","GfR","man",),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("ma","ha","ga","ra","na","ya","va","ta","sa","kza","kzi","f","tf","Gf","ma",),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,$text);
 	storedata('6.4.37','sa',0);
 }
-/* Ato lopa iTi ca (7.4.64) */
+/* Ato lopa iTi ca (6.4.64) */
 if (arr($text,'/A\+i/') && sub(array("A+"),array("i"),$tiG1,0) && $lakAra!=="" && in_array("iw",$Agama) )
 {
     $text=one(array("A+iTa"),array("+iTa"),0);
-	storedata('7.4.64','sa',0);
+	storedata('6.4.64','sa',0);
 }
 /* iDattyartivyayatInAm (7.2.66) */
 if (in_array($fo,array("adx!","ada!","f","vyeY")) && $lakAra==="liw" && $so==="sip" && !in_array("iw",$Agama) && sub(array("ad","f","vyay"),array("+"),$tiG1,0) )
@@ -7253,7 +7262,7 @@ if (arr($text,'/[zrsy]at/') && sub(array("jakzat","jAgrat","daridrat","SAsat","c
 	storedata('6.1.6','pa',0);
 } else { $jaksat=0; } // when the variables which are not initialised are used, we keep this else box. Otherwise for future uses, $jaksat will be null and PHP will send notices to browser.
 /* ubhe abhyastam (6.1.5) */
-if ($abhyasta===1 && $jaksat===0)
+if ($abhyasta===1 && $jaksat===0 && $ubheabhyasta!==1)
 {
 	storedata('6.1.5','pa',0);
 }
@@ -11714,7 +11723,7 @@ if ($frontend!=="0")
 }
 else
 {
-	$ou[] = implode(', ',$text);
+	$ou[] = implode(',',$text);
 }
 
 
@@ -11734,22 +11743,29 @@ if ($debug===1) {dibug('11740');}
 
 }
 
+if (isset($argv[0])|| $test ===1)
+{ 
+	$verblist = verblist();
+	wrongformlist($ou,$verblist);
+}
+else 
+{
 $ou = array_map('convert',$ou);
 tablemaker($ou);
-
 /* Closing the HTML */
 echo "</body>
 </html>";
 fputs($outfile,"</body>
 </html>");
 fclose($outfile);
+}
 
 /* Logging the end of execution in logfile */
 fputs($logfile,"Request completed on :".date('D, d M Y H:i:s')."\n");
 fputs($logfile,"------------------------------\n");
 fclose($logfile);
 if ($debug===1) {dibug('11760');}
-echo "Total time taken for execution of code is ";
-timestamp();
+//echo "Total time taken for execution of code is ";
+//timestamp();
 /* End of Code */
 ?>

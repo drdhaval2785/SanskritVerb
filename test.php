@@ -1,12 +1,5 @@
 <?php
-	$outfile = fopen("D:\\!sorting\\verboutput\\log1.txt", "w+");
-	ob_start(function($x) use($outfile) {
-		fwrite($outfile, $x);
-		echo $x;
-		return '';
-	});
-//	ob_start();
-	echo "yes  it is writing 1\n";
-	echo "yes  it is writing 2\n";
-	ob_end_flush();
+$inputtext = file_get_contents('verbforms_gerard.txt');
+$controllist = explode(',',$inputtext);
+print_r($controllist);
 ?>

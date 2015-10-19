@@ -1954,6 +1954,14 @@ function verbset_from_number($number)
 	$verbset=str_replace(array("01","02","03","04","05","06","07","08","09","10",),array("BvAdi","adAdi","juhotyAdi","divAdi","svAdi","tudAdi","ruDAdi","tanAdi","kryAdi","curAdi",),$parts[0]);
 	return $verbset;
 }
+function dhatu_from_number($number)
+{
+	global $frontend, $outfile, $debug;
+ 	if ($debug===1) {dibug("dhatu_from_number start");}
+   $first=scrape1($number,8,0,1);
+ 	if ($debug===1) {dibug("dhatu_from_number end");}
+	return $first[0];
+}
 // for display of upasarga details.
 function upasarga_display($text)
 {
@@ -3113,7 +3121,7 @@ function firstmember($a,$b)
 
 function zlu()
 {
-	global $text, $juhotyAdi, $tiG, $storedata;
+	global $first, $text, $juhotyAdi, $tiG, $storedata, $so, $pada;
 	// taking replacements directly from sahajabodha p 329. Only hu's process is shown. For everything else there is direct substitution.
 	$juhotyAdireplace=array("if","kiki","kikit","gigA","GiGf","jajan","tutur","dadA","daDan","daDA","diDiz","nenij","pipf","pipF","baBas","biBI","biBfMS","mimA","vevij","veviz","sisf","hihA","hahA","huhu","hihf","jihrI");
 	if(sub(array("quBfY","mAN","o!hAN"),array("+"),blank(0),0))
@@ -3138,6 +3146,7 @@ function zlu()
 	{
 		$text=two($juhotyAdi,array("+"),$juhotyAdireplace,array("+"),0);
 		storedata('6.1.10','sa',0);
+		storedata('7.4.59','sa',0);
 	}
 	
 	if (sub(array("kiki","kikit","gagA","GiGf","hahA","huhu","hihf","hihrI"),array("+"),$tiG,0))
@@ -3497,6 +3506,26 @@ function dibug($a)
 	global $time;
 	echo "Hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii DEBUG ", $a, " at ";
 	timestamp();
+}
+function verblist()
+{
+	$inputtext = file_get_contents('verbforms_gerard.txt');
+	$controllist = explode(',',$inputtext);
+	return $controllist;
+}
+function wrongformlist($list,$verblist)
+{
+	global $fo, $so, $number, $verbset, $lakAra;
+	$diff = array_diff($list,$verblist);
+	foreach($diff as $member)
+	{
+		$membersplit = explode(',',$member);
+		$diff1 = array_diff($membersplit,$verblist);
+		foreach($diff1 as $mem)
+		{
+			echo $mem."-($fo,$so,$lakAra,$number,$verbset)\n";
+		}
+	}
 }
 /* Functions which are not used in the code */
 /* Function f to find the nth letter in the word */
