@@ -5,7 +5,7 @@ Verb declention for Sanskrit
 
 #For using the code online: 
 
-Use http://lanover.com/lan/sanskrit/SanskritVerb/tiGanta.html for tiGanta generation (Verb declention).
+Use http://www.sanskritworld.in/sanskrittool/SanskritVerb/tiGanta.html for tiGanta generation (Verb conjugation).
 
 #For using the code offline on your computer: 
 
