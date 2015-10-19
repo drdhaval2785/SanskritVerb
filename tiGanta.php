@@ -11745,6 +11745,7 @@ if ($debug===1) {dibug('11740');}
 
 if (isset($argv[0])|| $test ===1)
 { 
+	print_r($ou);
 	$verblist = verblist();
 	wrongformlist($ou,$verblist);
 }

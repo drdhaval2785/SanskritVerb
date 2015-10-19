@@ -3515,7 +3515,7 @@ function verblist()
 }
 function wrongformlist($list,$verblist)
 {
-	global $fo, $so, $number, $verbset, $lakAra;
+	global $fo, $number, $verbset, $lakAra;
 	$diff = array_diff($list,$verblist);
 	foreach($diff as $member)
 	{
@@ -3523,7 +3523,10 @@ function wrongformlist($list,$verblist)
 		$diff1 = array_diff($membersplit,$verblist);
 		foreach($diff1 as $mem)
 		{
-			echo $mem."-($fo,$so,$lakAra,$number,$verbset)\n";
+			if (substr($mem,-1)==="H" && in_array(substr($mem,0,-1)."s",$verblist) ) { }
+			elseif (substr($mem,-1)==="H" && in_array(substr($mem,0,-1)."r",$verblist) ) { }
+			elseif (substr($mem,-1)==="d" && in_array(substr($mem,0,-1)."t",$verblist) ) { }
+			else { echo $mem."-($fo,$lakAra,$number,$verbset)\n"; }
 		}
 	}
 }
