@@ -3513,20 +3513,32 @@ function verblist()
 	$controllist = explode(',',$inputtext);
 	return $controllist;
 }
+function verbnumberlist()
+{
+	global $verbdata;
+	foreach($verbdata as $datum)
+	{
+		$split = explode(':',$datum);
+		echo "$split[3].$split[4] ";
+	}
+}
 function wrongformlist($list,$verblist)
 {
-	global $fo, $number, $verbset, $lakAra;
+	global $fo, $number, $verbset, $lakAra, $suffix, $suspectentryfile;
 	$diff = array_diff($list,$verblist);
-	foreach($diff as $member)
+	for($i=0;$i<18;$i++)
 	{
-		$membersplit = explode(',',$member);
-		$diff1 = array_diff($membersplit,$verblist);
-		foreach($diff1 as $mem)
+		if (isset($diff[$i]))
 		{
-			if (substr($mem,-1)==="H" && in_array(substr($mem,0,-1)."s",$verblist) ) { }
-			elseif (substr($mem,-1)==="H" && in_array(substr($mem,0,-1)."r",$verblist) ) { }
-			elseif (substr($mem,-1)==="d" && in_array(substr($mem,0,-1)."t",$verblist) ) { }
-			else { echo $mem."-($fo,$lakAra,$number,$verbset)\n"; }
+			$membersplit = explode(',',$diff[$i]);
+			$diff1 = array_diff($membersplit,$verblist);
+			foreach($diff1 as $mem)
+			{
+				if (substr($mem,-1)==="H" && in_array(substr($mem,0,-1)."s",$verblist) ) { }
+				elseif (substr($mem,-1)==="H" && in_array(substr($mem,0,-1)."r",$verblist) ) { }
+				elseif (substr($mem,-1)==="d" && in_array(substr($mem,0,-1)."t",$verblist) ) { }
+				else { fputs($suspectentryfile,$mem."-($fo,$lakAra,$suffix[$i],$verbset,$number)\n"); }
+			}
 		}
 	}
 }
