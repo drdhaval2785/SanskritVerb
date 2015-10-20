@@ -1527,7 +1527,7 @@ if ( ($sarvadhatuka===1 && $verbset==="juhotyAdi" && sub(array("+Sap+"),$tiG,bla
 	zlu(); // pending to refractor.
 }
 /* adiprabhRtibhyaH zapaH (2.4.72) */
-if ( $sarvadhatuka===1 && $verbset==="adAdi" && in_array($fo,$adAdi) && sub(array("+Sap+"),$tiG,0) )
+if ( $sarvadhatuka===1 && $verbset==="adAdi" && in_array($fo,$adAdi) && sub(array("+Sap+"),$tiG,blank(0),0) )
 {
     $text=two(array("+Sap+"),$tiG,array("+"),$tiG,0);
 	storedata('2.4.72','sa',0);
