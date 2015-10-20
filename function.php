@@ -3123,7 +3123,8 @@ function zlu()
 {
 	global $first, $text, $juhotyAdi, $tiG, $storedata, $so, $pada;
 	// taking replacements directly from sahajabodha p 329. Only hu's process is shown. For everything else there is direct substitution.
-	$juhotyAdireplace=array("if","kiki","kikit","gigA","GiGf","jajan","tutur","dadA","daDan","daDA","diDiz","nenij","pipf","pipF","baBas","biBI","biBfMS","mimA","vevij","veviz","sisf","hihA","hahA","huhu","hihf","jihrI");
+	$juhotyAdireplace1=array("if","kiki","kikit","gAgA","GiGf","jajan","tutur","dAdA","daDan","dADA","diDiz","nenij","pipf","pipF","baBas","biBI","biBfMS","mimA","vevij","veviz","sisf","hihA","hahA","huhu","hihf","jihrI");
+	$juhotyAdireplace2=array("if","kiki","kikit","gigA","GiGf","jajan","tutur","dadA","daDan","daDA","diDiz","nenij","pipf","pipF","baBas","biBI","biBfMS","mimA","vevij","veviz","sisf","hihA","hahA","huhu","hihf","jihrI");
 	if(sub(array("quBfY","mAN","o!hAN"),array("+"),blank(0),0))
 	{
 		$text=two(array("quBfY","mAN","o!hAN"),array("+"),array("biBf","mimA","jihA"),array("+"),0);
@@ -3144,8 +3145,9 @@ function zlu()
 	}
 	else
 	{
-		$text=two($juhotyAdi,array("+"),$juhotyAdireplace,array("+"),0);
+		$text=two($juhotyAdi,array("+"),$juhotyAdireplace1,array("+"),0);
 		storedata('6.1.10','sa',0);
+		$text=two($juhotyAdireplace1,array("+"),$juhotyAdireplace2,array("+"),0);
 		storedata('7.4.59','sa',0);
 	}
 	
