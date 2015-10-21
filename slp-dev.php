@@ -448,5 +448,11 @@ $text = str_replace("औं","ॐ",$text);
 return $text;
 }
 
+function slp_to_dev_file_converter($inputfile,$outputfile)
+{
+	$inputdata = file_get_contents($inputfile);
+	$outputdata = convert($inputdata);
+	file_put_contents($outputfile,$outputdata);
+}
 
 ?>

@@ -6611,10 +6611,7 @@ elseif ($gender === "f" && $_GET['cond2_9'] == "2" )
 elseif ($_GET['cond2_14']==='2' && sub(array("CAtra","bOBukza","SEkza","pOroha","sAMsTa","AvasTa","cOra","OpasTa","ArSa","kArma","vESvaDa","TApasa","sAtya","Anarta","SEbika",),array("+"),blank(0),0) )
 {
     $text = two(array("a"),array("+"),array("a"),array("+NIp+"),0);
-	// pending to refractor
-/*    echo "<p class = st >tAcCIlike Ne'pi (pa 68) :</p>\n";
-    echo "<p class = st >ताच्छीलिके णेऽपि (प ६८) :</p>\n";        
-    display(8);*/
+	storedata('par@87','sa',0);
     $GIp=1; $ajAdyataSTAp = 0;
 }
 /* naJsnaJIkakkhyuMstaruNatalunAnAmupasaGkhyAnam (vA 2425) */
@@ -6681,10 +6678,7 @@ elseif ($_GET['cond2_14']==='1' && $anapatya===0 && $gender==="f" && $fo!=="mAma
 /* TiDDhANaJdvayasajdadhnaJmAtractayapThakThaJkaJkvarapaH (4.1.15) exeption in zAnac */
 elseif (arr($text,'/[sz]yamARa\+/') && sub(array("syamARa","zyamARa"),array("+"),blank(0),0))
 {
-	// pending to refractor
-/*    echo "<p class = pa >lAzrayamanubandhakAryaM nAdezAnAm (pa 70) prevents application of TiDDhANaJdvayasajdadhnaJmAtractayapThakThaJkaJkvarapaH (".link_sutra("4.1.15").") :</p>\n";
-    echo "<p class = pa >लाश्रयमनुबन्धकार्यं नादेशानाम्‌ (प ७०) से टिड्ढाणञ्द्वयसज्दध्नञ्मात्रच्तयप्ठक्ठञ्कञ्क्वरपः (४.१.१५) बाधित होता है ।</p>\n";        
-    display(0);*/
+	storedata('par@69','sa',0);
 }
 /* TiDDhANaJdvayasajdadhnaJmAtractayapThakThaJkaJkvarapaH (4.1.15) */
 // TitkRdanta pending.
@@ -6869,7 +6863,7 @@ if ($GIn===1 )
     {
         if (sub(array("i","I","u","U","f","F","x","X","y","v"),prat('ac'),array("c"),0))
         {
-			// pending to refractor
+			storedata('par@56','pa',0);
 /*			echo "<p class = pa >Though iko yaNaci is antaraGga than lopa by acaH, its application is barred by 'akRtavyUhAH pANinIyAH (pa 57).</p>\n";
         echo "<p class = pa >इको यणचि से प्राप्त यण्‌ अन्तरङ्ग होने पर भी अकृतव्यूहाः पाणिनीयाः (प ५७) से वह अचः का बाध नहीं करता ।</p>\n";
         display(0);        */
@@ -6948,6 +6942,7 @@ if ($GIp===1 )
     {
         if (sub(array("i","I","u","U","f","F","x","X","y","v"),prat('ac'),array("c"),0))
         {
+			storedata('par@56','pa',0);
 			// pending to refractor
 			/*echo "<p class = pa >Though iko yaNaci is antaraGga than lopa by acaH, its application is barred by 'akRtavyUhAH pANinIyAH (pa 57).</p>\n";
         echo "<p class = pa >इको यणचि से प्राप्त यण्‌ अन्तरङ्ग होने पर भी अकृतव्यूहाः पाणिनीयाः (प ५७) से वह अचः का बाध नहीं करता ।</p>\n";
@@ -7035,6 +7030,7 @@ if ($GIS===1 )
     {
         if (sub(array("i","I","u","U","f","F","x","X","y","v"),prat('ac'),array("c"),0))
         {
+			storedata('par@56','pa',0);
 			// pending to refractor
 			/*echo "<p class = pa >Though iko yaNaci is antaraGga than lopa by acaH, its application is barred by 'akRtavyUhAH pANinIyAH (pa 57).</p>\n";
         echo "<p class = pa >इको यणचि से प्राप्त यण्‌ अन्तरङ्ग होने पर भी अकृतव्यूहाः पाणिनीयाः (प ५७) से वह अचः का बाध नहीं करता ।</p>\n";
@@ -7587,10 +7583,7 @@ if ($debug===1) {dibug("7600");}
 /* aGgakArye kRte punarnAGgakAryam (pa 93) */
 if ($so==="jas" && arr($text,'/ya\+/') && sub(array("vaya","yUya"),array("+"),array("am"),0) )
 {
-	// Pending to refractor
-/*    echo "<p class = pa >aGgakArye kRte punarnAGgakAryam (pa 93) prevents application of jasaH zI.</p>\n";
-    echo "<p class = pa >अङ्गकार्ये कृते पुनर्नाङ्गकार्यम्‌ (प ९३) से जसः शी का प्रतिषेध होता है ।</p>\n";
-    display(0);*/ 
+	storedata('par@92','pa',0);
 	$nojas=1;   
 } else { $nojas=0; }
 /* idamo maH (7.2.108) */
@@ -8262,6 +8255,7 @@ if ($bham===1 && arr($text,'/vasu!\+/') && sub(array("sedivasu!","vasu!"),array(
  	storedata('6.4.131','sa',3);
    if (sub(array("sed+u+asu!+"),blank(0),blank(0),0))
     {
+		storedata('par@56','pa',0);
 		// Pending to refractor
 //    echo "<p class = hn >Even though the iDAgama is antaraGga, it doesnt hold in samprasAraNa by 'akRtavyUhAH pANinIyAH'.</p>\n";
     }
@@ -9017,6 +9011,7 @@ if ( preg_match('/[aA][n][c]/',$fo) && $aniditAm === 1 && sub(array("ac","Ac"),a
 {
     if (sub(array("i","I","u","U","f","F","x","X","y","v"),prat('ac'),array("c"),0))
     {
+		storedata('par@56','pa',0);
 		// Pending to refractor
 /*    echo "<p class = pa >Though iko yaNaci is antaraGga than lopa by acaH, its application is barred by 'akRtavyUhAH pANinIyAH (pa 57).</p>\n";
     echo "<p class = pa >इको यणचि से प्राप्त यण्‌ अन्तरङ्ग होने पर भी अकृतव्यूहाः पाणिनीयाः (प ५७) से वह अचः का बाध नहीं करता ।</p>\n";
@@ -9608,6 +9603,7 @@ if (arr($text,'/[aAiIuUfFxX]\+[aO]/') && in_array($so,$prathama)  && $nadici ===
 {
     if (sub(array("a"),array("a","O"),blank(0),0)&& in_array($so,$prathama)  && $nadici === 0 && $nadici1 === 0)
     {
+		storedata('par@59','pa',0);
 		// Pending to refractor.
 /*        echo "<p class = hn >ato guNe (".link_sutra("6.1.96").") is exception to only akaH savarNe dIrghaH (".link_sutra("6.1.101").") and not to prathamayoH pUrvasavarNaH (".link_sutra("6.1.102")."), because of the paribhASA 'purastAdapavAdA anantarAnvidhInbAdhante nottarAn (pa 60). Therefore pURvasavarNadIrgha can occur. :</p>\n";
         echo "<p class = hn >'पुरस्तादपवादा अनन्तरान्विधीन्बाधन्ते नोत्तरान्‌ (प ६०) परिभाषा के कारण अतो गुणे (६.१.९६) सिर्फ अकः सवर्णे दीर्घः (६.१.१०१) का अपवाद है, प्रथमयोः पूर्वसवर्णः (६.१.१०२) का नहीं । अतः पूर्वसवर्णदीर्घ हो सकता है ।</p>\n";
