@@ -3530,6 +3530,20 @@ function verbnumberlist()
 		echo "$split[3].$split[4] ";
 	}
 }
+function abridged_verbnumberlist()
+{
+	global $verbdata;
+	$inputtext = file_get_contents('verblist_gerard.txt');
+	$verbsingerard = explode(',',$inputtext);
+	foreach($verbdata as $datum)
+	{
+		$split = explode(':',$datum);
+		if(in_array($split[2],$verbsingerard))
+		{
+		echo "$split[3].$split[4] ";
+		}
+	}
+}
 // $list is the array to test. $verblist is the established list of correct forms from Gerard's database. $strength may be set to "full" or "fast"
 function wrongformlist($list,$verblist,$strength="full")
 {
