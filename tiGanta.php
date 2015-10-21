@@ -923,7 +923,6 @@ if (in_array($lakAra,$ArdhadhAtuka_lakAra))
 		storedata('1.2.1','pa',0);
     }
     /* vyaceH kuTAditvamanasIti vaktavyam (vA) */
-	// pending to refractor, because unable to locate the vArtika.
     if ( in_array($fo,array("vyaca!")) && !sub(array("vyaca!"),array("+"),array("as"),0) && in_array($lakAra,$ArdhadhAtuka_lakAra) && $Nit===0 && $Jit===0)
     {
         $itpratyaya=array_merge($itpratyaya,array("N"));
@@ -2537,10 +2536,7 @@ if ($rudhAdibhyaH===1)
     if (sub(array("tfnah"),array("+"),blank(0),0))
     {
         $text = one(array("tfnah+"),array("tfRah+"),0);
-		// pending to refractor because of non identification of vArtika number.
-        echo "<p class = sa >By RvarNAnnasya NatvaM vAcyam (vA 4969) :</p>\n";
-        echo "<p class = sa >ऋवर्णान्नस्य णत्वं वाच्यम्‌ (वा ४९६९) :</p>\n";     
-        display(0);
+		storedata('8.4.1-1','sa',0);
     }
     /* tRNaha im (7.3.92) */
     if (pr2(array("tfRah"),array("+"),$halAdi_pit_sArvadhAtuka_pratyayas,array("tfRaih"),array("+"),$halAdi_pit_sArvadhAtuka_pratyayas,$text)!==$text && in_array($so,$tiG))
@@ -2905,7 +2901,6 @@ if (in_array($fo,array("prIY","DUY")) && in_array($so,$tiG) && sub(array("prI","
 	storedata('7.3.37-1','sa',0);
 }
 if ($debug===1) {dibug("2900");}
-print_r($itpratyaya);
 /* Ato lopa iTi ca (6.4.64) */
 if ( (in_array("N",$itpratyaya)||in_array("k",$itpratyaya) )  && $lakAra!=="" && $caG===1 && sub(array("A+"),array("a+"),blank(0),0) )
 {
@@ -4555,7 +4550,7 @@ if ($lakAra!=="")
         echo "<p class = hn >दीर्घपाठे करपूर्वस्य उवङेव । ह्रस्वपाठे करपूर्वस्य यणेव इति विवेकः ।</p>\n";                
         }
         display(0);  */
-    }   
+    }
     /* varSAbhvazca (6.4.84) */ 
     if ($first==="varzABU"  && sub(array($fo),array("+"),$ac,0) )
     {
@@ -5042,11 +5037,7 @@ if (in_array($fo,array("dvitIyA","tftIyA")) && in_array($so,array("Ne","Nasi!","
 elseif (in_array($fo,array("dvitIya","tftIya")) && in_array($so,array("Ne","Nasi!","Nas","Ni")))
 {
     $sarvafinal = 2;
-	// pending to refractor
-	/*
-    echo "<p class = pa >By vibhASAprakaraNe tIyasya GitsUpasaMkhyAnam (vA 242) :</p>\n";
-    echo "<p class = pa >विभाषाप्रकरणे तीयस्य ङित्सूपसङ्ख्यानम्‌ (वा २४२) :</p>\n";        
-    display(0); */
+	storedata('1.1.36-3','sa',0);
 }
 elseif ( in_array($_GET['cond1_1_1'],array("1","2")) || in_array($_GET['cond2_1_2_1'],array("1","2"))) // For these $_GET, pleas see ajax.php and ajax requirements.docx. the numbers refer to their documentation in docx file.
 {
@@ -5439,11 +5430,7 @@ elseif($_GET['cond1_12_5_1_1']==="2" && in_array($w,array(3,4,5,9,10,11,15,16,17
 elseif($_GET['cond1_12_5_1']==="2" && in_array($w,array(3,4,5,9,10,11,15,16,17)))
 {
     $asmadpada=1;    
-	// pending to refractor
-	/*
-    echo "<p class = pa >By ete vAMnAvAdaya AdezA ananvAdeze vA vaktavyAH (vA 4717). anvAdeze tu nityaM syuH. :</p>\n";
-    echo "<p class = pa >एते वांनावादय आदेशा अनन्वादेशे वा वक्तव्याः (वा ४७१७). अन्वादेशे तु नित्यं स्युः । :</p>\n";
-    display(0); */
+	storedata('8.1.26-1','pa',0);
 }
 elseif($_GET['cond1_12_5']==="2" && in_array($w,array(3,4,5,9,10,11,15,16,17)))
 {
@@ -11748,8 +11735,10 @@ if (isset($argv[0])|| $test ===1)
 { 
 	$suspectentryfile = fopen('suspectverbforms.txt','a+');
 	//print_r($ou);
-	$verblist = verblist();
-	wrongformlist($ou,$verblist);
+	$verblist = verbformlist();
+	$verbsingerard = verblist();
+	wrongformlist($ou,$verblist,"fast"); // Uncomment this if you want only the list of suspect verbs for which Gerard has database.
+	//wrongformlist($ou,$verblist,); // Uncomment this if you want to get the list of all suspect verbs for irrespecitve of Gerard's database.
 	fclose($suspecentryfile);
 }
 else 
