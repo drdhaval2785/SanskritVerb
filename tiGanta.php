@@ -2176,11 +2176,16 @@ if ( in_array($lakAra,array("viDiliN")) && sub(array("+yA"),array("+"),blank(0),
 $bhUsuvo=0;
 /* itazca (3.4.100) */
 $itazca=0; 
-if ( in_array($lakAra,array("laN","viDiliN","ASIrliN","luN","lfN",)) && pr2(array("+"),array("ti","anti","si","mi"),blank(0),array("+"),array("t","ant","s","m"),blank(0),$text)!==$text )
+if ( in_array($lakAra,array("laN","viDiliN","ASIrliN","luN","lfN",)) && $start===1 && pr2(array("+"),array("ti","anti","si","mi"),blank(0),array("+"),array("t","ant","s","m"),blank(0),$text)!==$text )
 {
     $text=pr2(array("+"),array("ti","anti","si","mi"),blank(0),array("+"),array("t","ant","s","m"),blank(0),$text);
 	storedata('3.4.100','sa',0);
 	$itazca=1;
+}
+// Patch for akzU! dhAtu. See https://github.com/drdhaval2785/SanskritVerb/issues/213
+if (arr($text,'/akz\+nu\+s/'))
+{
+	$text=one(array("akz+nu+s"),array("akz+nu+si"),0); 
 }
 /* liTastajhayorezirec (3.4.81) */
 if ($lakAra==="liw" && pr2(array("+"),array("ta","Ja"),blank(0),array("+"),array("e","ire"),blank(0),$text)!==$text)
@@ -4018,7 +4023,6 @@ if (  $ardhadhatuka===1 && $didhI!==1 && $kGiti!==1 && $bhUsuvo!==1 && arr($text
     $text=pr2(array("i","I","u","U","f","F","x","X",),array("+"),$ArdhadhAtuka_tiG_pratyayas,array("e","e","o","o","ar","ar","al","al",),array("+"),$ArdhadhAtuka_tiG_pratyayas,$text);
 	storedata('7.3.84','sa',0);
 }
-print_r($text);
 /* pugantalaghUpadhasya ca (7.3.86) */
 if ( $didhI!==1 && $kGiti!==1 && $vijait!==1 && $lakAra==="liw" && $ardhadhatuka===1 && arr($text,'/[iufF]['.pc('hl').']\+/') && (sub(array("i","u","f","x"),$hlplus,$tiG1,0) || sub(array("i","u","f","x"),$hlplus,$iDtiG,0) ) )
 {
