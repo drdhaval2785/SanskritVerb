@@ -454,5 +454,5 @@ function slp_to_dev_file_converter($inputfile,$outputfile)
 	$outputdata = convert($inputdata);
 	file_put_contents($outputfile,$outputdata);
 }
-
+#slp_to_dev_file_converter('suspectverbforms.txt','suspectverbforms_abridged_deva.txt');
 ?>

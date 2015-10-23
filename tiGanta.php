@@ -3265,7 +3265,8 @@ if ( in_array($fo,array("UrRuY"))  && $id_dhAtu==="sew" && $id_pratyaya==="sew" 
 if (arr($text,'/sic/') && sub(array("+sic+",),blank(0),blank(0),0) && in_array($so,$tiG) )
 {
 	storedata('1.3.3','sa',0);
-	storedata('1.3.2','sa',0);
+	storedata('1.3.2','sa',0);	
+	$text = two($hl,array("+sic+"),blank(count($hl)),array("+sic+"),0);
     $text = one(array("+sic+",),array("+s",),0);
 	storedata('1.3.9','sa',0);
 }
@@ -4011,12 +4012,13 @@ if ( $ardhadhatuka===1  && $didhI!==1  && $kGiti!==1 && $sIyuT!==1 && $bhUsuvo!=
 	storedata('7.3.84','sa',0);
 }
 /* sArvadhAtukArdhadhAtukayoH (7.3.84) */
-if ( ($sarvadhatuka===1 || $ardhadhatuka===1) && $didhI!==1 && $kGiti!==1 && $bhUsuvo!==1 && arr($text,'/[iIuUfFxX]\+/') && (pr2(array("i","I","u","U","f","F","x","X",),array("+i"),$ArdhadhAtuka_tiG_pratyayas,array("e","e","o","o","ar","ar","al","al",),array("+i"),$ArdhadhAtuka_tiG_pratyayas,$text)!==$text || pr2(array("i","I","u","U","f","F","x","X",),array("+"),$tiG1,array("e","e","o","o","ar","ar","al","al",),array("+"),$tiG1,$text)!==$text))
+if (  $ardhadhatuka===1 && $didhI!==1 && $kGiti!==1 && $bhUsuvo!==1 && arr($text,'/[iIuUfFxX]\+/') && (pr2(array("i","I","u","U","f","F","x","X",),array("+i"),$ArdhadhAtuka_tiG_pratyayas,array("e","e","o","o","ar","ar","al","al",),array("+i"),$ArdhadhAtuka_tiG_pratyayas,$text)!==$text || pr2(array("i","I","u","U","f","F","x","X",),array("+"),$ArdhadhAtuka_tiG_pratyayas,array("e","e","o","o","ar","ar","al","al",),array("+"),$ArdhadhAtuka_tiG_pratyayas,$text)!==$text))
 {
     $text=pr2(array("i","I","u","U","f","F","x","X",),array("+i"),$ArdhadhAtuka_tiG_pratyayas,array("e","e","o","o","ar","ar","al","al",),array("+i"),$ArdhadhAtuka_tiG_pratyayas,$text);
     $text=pr2(array("i","I","u","U","f","F","x","X",),array("+"),$ArdhadhAtuka_tiG_pratyayas,array("e","e","o","o","ar","ar","al","al",),array("+"),$ArdhadhAtuka_tiG_pratyayas,$text);
 	storedata('7.3.84','sa',0);
 }
+print_r($text);
 /* pugantalaghUpadhasya ca (7.3.86) */
 if ( $didhI!==1 && $kGiti!==1 && $vijait!==1 && $lakAra==="liw" && $ardhadhatuka===1 && arr($text,'/[iufF]['.pc('hl').']\+/') && (sub(array("i","u","f","x"),$hlplus,$tiG1,0) || sub(array("i","u","f","x"),$hlplus,$iDtiG,0) ) )
 {
@@ -4923,7 +4925,15 @@ if (arr($text,'/daridrA\+/') && in_array($fo,array("daridrA")) && $ardhadhatuka=
     $text=one(array("daridr+s"),array("daridrA+s"),0);
 	storedata('6.4.114-1','sa',0);	
 }
-
+/* apadAntasya mUrdhanyaH (8.3.55), iNkoH (8.3.57) and AdezapratyayayoH (8.3.59) */
+// Not coded perfectly. This is only for tiG pratyayas.
+if(arr($text,'/[iIuUfFxXeoEOhyvrl]\+s/') && in_array($so,$tiG) )
+{
+$text = two($iN1,array("+s"),$iN1,array("+z"),0);
+storedata('8.3.55','sa',0);
+storedata('8.3.57','sa',0);
+storedata('8.3.59','sa',0);
+}
 /* For verbs - remove all + marks. */
 if(in_array($so,$tiG))
 {
@@ -10205,7 +10215,6 @@ $text = one(array("++"),array("+"),0);
 $start++;
 }
 while ($text !== $original); // looping till all the applicable sUtras of sapAdasaptAdhyAyI are exhausted. i.e. the original ($original) and the output ($text) are the same.
-
 
 /* tripAdI functions */
 // tripAdI functions are always applied in serial manner because of 'pUrvatrAsiddham'. Therefor there is no possibility of a sUtra being applied out of turn (Except explicitly mentioned in grammar books.)
