@@ -2168,9 +2168,9 @@ if ( in_array($lakAra,array("viDiliN","ASIrliN")) && sub(array("+Iy+i","+sIy+i")
 	storedata('3.4.106','sa',0);
 }
 /* ato yeyaH (7.2.80) */
-if ( in_array($lakAra,array("viDiliN")) && sub(array("+yA"),array("+"),blank(0),0))
+if ( in_array($lakAra,array("viDiliN")) && sub(array("a+yA"),array("+"),blank(0),0))
 {
-    $text=three(array("+yA"),array("+"),blank(0),array("+iy"),array("+"),blank(0),0);
+    $text=three(array("a+yA"),array("+"),blank(0),array("a+iy"),array("+"),blank(0),0);
 	storedata('7.2.80','sa',0);
 }
 $bhUsuvo=0;
@@ -4672,8 +4672,9 @@ if ( in_array($so,array("Ji")) && $lakAra==="laN" && arr($text,'/A\+an/') )
 	storedata('3.4.111','sa',0);
 }
 /* usyapadAntasya (6.1.96) */
-if (arr($text,'/[aA]\+us/') )
+if (arr($text,'/[aA]([+]*)us/') )
 {
+	$text=one(array("+yAus"),array("+yus"),0); // See https://github.com/drdhaval2785/SanskritVerb/issues/215.
     $text=two(array("a","A"),array("+us"),array("",""),array("+us"),0);
 	$text=one(array("+s+us+","+us"),array("+sus","us"),0);
 	storedata('6.1.96','sa',0);
