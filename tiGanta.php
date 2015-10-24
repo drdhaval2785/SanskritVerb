@@ -1900,7 +1900,6 @@ if (in_array($so,$tiG) && arr(array($fo),'/[!]['.pc('hl').']$/') && $nomidelisio
 	storedata('1.3.9','sa',0);
 }
 if ($debug===1) {dibug("1900");}
-print_r($text);
 /* halantyam (1.3.3) and tasya lopaH (1.3.9) */
 //if (in_array($so,$tiG) && ( sub(array("+"),$inbetweenpratyaya,array("+"),0) || (arr($text,'/['.flat($hl).']$/') && $tusma!==1) || sub($hl,array("+"),$vikaraNa,0) || $ad===1 || $rudhAdibhyaH===1 || in_array($lakAra,array("liw","luw","lfw","ASIrliN","luN","lfN","ArDaDAtukalew")) ))
 if (in_array($so,$tiG) && ( sub(array("+"),$inbetweenpratyaya,array("+"),0) || (arr($text,'/['.flat($hl).']$/') && $tusma!==1) || sub($hl,array("+"),$vikaraNa,0) || $ad===1 || $rudhAdibhyaH===1))
@@ -1937,7 +1936,6 @@ if (in_array($so,$tiG) && ( sub(array("+"),$inbetweenpratyaya,array("+"),0) || (
 	}
 	storedata('1.3.9','sa',0);
 }
-print_r($text);
 /* cuTU (1.3.7) */
 if (arr($text,'/[+][c][a][+]/') && in_array($so,$tiG)) // for caG
 {
@@ -11589,11 +11587,11 @@ if ($dvitva===1)
 	}
 }
 if ($debug===1) {dibug('11600');}
-/* vA'vasAne (8.4.54) */
+/* vA'vasAne (8.4.56) */
 if (arr($text,'/['.pc('Jl').']$/'))
 {
 $text = last(prat('Jl'),savarna(prat('Jl'),prat('cr')),1);
-storedata('8.4.54','sa',0);
+storedata('8.4.56','sa',0);
 }
 /* khari ca (8.4.55) */ 
 $Jl1 = array("J","B","G","Q","D","j","b","g","q","d","K","P","C","W","T","c","w","t","k","p","S","z","s","h"); // complete jhal.
