@@ -2248,12 +2248,12 @@ if ( in_array($so,$tis) && !sub(array("+"),array("hi","ni"),blank(0),0) && pr2(a
 	storedata('3.4.100','sa',0);
     $itazca=1;
 } else {$itazca=0; }
-
+print_r($text);
 /* astisico'pRkte (7.3.96) */
 // asti pending.
-if ( ($sic!==0 && arr($text,'/[+][s][i][c][+]['.pc('hl').']$/')))
+if ( ($sic!==0 && arr($text,'/[+][s][i][c]['.pc('hl').']$/')))
 {
-	$text = two(array("+sic+"),$hl,array("+sic+I"),$hl,0);
+	$text = two(array("+sic",),$hl,array("+sic+I"),$hl,0);
 	storedata('7.3.96','sa',0);
 }
 /* Am etaH (3.4.90) */
@@ -3270,8 +3270,8 @@ if ( in_array($fo,array("UrRuY"))  && $id_dhAtu==="sew" && $id_pratyaya==="sew" 
 if (arr($text,'/sic/') && sub(array("+sic+",),blank(0),blank(0),0) && in_array($so,$tiG) )
 {
 	storedata('1.3.3','sa',0);
-	storedata('1.3.2','sa',0);	
-	$text = two($hl,array("+sic+"),blank(count($hl)),array("+sic+"),0);
+	storedata('1.3.2','sa',0);
+	//$text = two($hl,array("+sic+"),blank(count($hl)),array("+sic+"),0); // See https://github.com/drdhaval2785/SanskritVerb/issues/218.
     $text = one(array("+sic+",),array("+s",),0);
 	storedata('1.3.9','sa',0);
 }
@@ -3847,7 +3847,7 @@ if ($id_dhAtu==="sew" && $id_pratyaya==="sew" && !($yAsuT===1 && $lakAra==="ASIr
 	// Removing unwanted iDAgama which happenned accidentally
 	$text = one(array("+iyAs+","Ay+t","daridrA+is"),array("+yAs+","Ay+it","daridrA+s"),0);
 	$text = two(array("sfap","spfaS","mfaS","kfaz","tfap","dfap"),array("+i"),array("sarp","sparS","marS","karz","tarp","darp"),array("+i"),0); // not before iDAgama.
-	storedata('6.2.35','sa',0);
+	storedata('7.2.35','sa',0);
 	$Agama=array_merge($Agama,array("iw"));
 }
 if ($id_dhAtu==="vew" && $id_pratyaya==="sew" && !($yAsuT===1 && $lakAra==="ASIrliN")  && !in_array("iw",$Agama) && !in_array($sanAdi,array("Ric","RiN")) && $caG!==1 && $ksa!==1) // for veT dhAtus optional one.
