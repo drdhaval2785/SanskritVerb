@@ -4932,7 +4932,7 @@ if (arr($text,'/daridrA\+/') && in_array($fo,array("daridrA")) && $ardhadhatuka=
 }
 /* apadAntasya mUrdhanyaH (8.3.55), iNkoH (8.3.57) and AdezapratyayayoH (8.3.59) */
 // Not coded perfectly. This is only for tiG pratyayas.
-if(arr($text,'/[iIuUfFxXeoEOhyvrl]\+s/') && in_array($so,$tiG) )
+if(arr($text,'/[iIuUfFxXeoEOhyvrl]\+s/') && !arr($text,'/[iIuUfFxXeoEOhyvrl]\+s/') && in_array($so,$tiG) )
 {
 $text = two($iN1,array("+s"),$iN1,array("+z"),0);
 storedata('8.3.55','sa',0);
