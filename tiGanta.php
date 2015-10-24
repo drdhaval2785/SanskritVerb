@@ -9818,7 +9818,7 @@ if (sub($o,$y,blank(0),0) && $pada ==="pratyaya" && !sub($dhato,$y,blank(0),0))
     }
 }
 /* kSayyajayyau zakyArthe (6.1.81)*/
-if (sub(array("kze"),array("ya"),blank(0),0)  && $pada ==="pratyaya" && $start === 1)
+if (sub(array("kze"),array("ya"),blank(0),0)  && $pada ==="pratyaya" && $start === 1 && !in_array($so,$tiG))
 {
     $text = two(array("kze"),array("ya"),array("kzay"),array("ya"),1);
 	storedata('6.1.81','sa',0);
