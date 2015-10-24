@@ -1900,6 +1900,7 @@ if (in_array($so,$tiG) && arr(array($fo),'/[!]['.pc('hl').']$/') && $nomidelisio
 	storedata('1.3.9','sa',0);
 }
 if ($debug===1) {dibug("1900");}
+print_r($text);
 /* halantyam (1.3.3) and tasya lopaH (1.3.9) */
 //if (in_array($so,$tiG) && ( sub(array("+"),$inbetweenpratyaya,array("+"),0) || (arr($text,'/['.flat($hl).']$/') && $tusma!==1) || sub($hl,array("+"),$vikaraNa,0) || $ad===1 || $rudhAdibhyaH===1 || in_array($lakAra,array("liw","luw","lfw","ASIrliN","luN","lfN","ArDaDAtukalew")) ))
 if (in_array($so,$tiG) && ( sub(array("+"),$inbetweenpratyaya,array("+"),0) || (arr($text,'/['.flat($hl).']$/') && $tusma!==1) || sub($hl,array("+"),$vikaraNa,0) || $ad===1 || $rudhAdibhyaH===1))
@@ -1928,7 +1929,7 @@ if (in_array($so,$tiG) && ( sub(array("+"),$inbetweenpratyaya,array("+"),0) || (
     {
     $text=three($hlplus,$vikaraNa,array("+"),blank1("+",count($hlplus)),$vikaraNa,array("+"),0);
     }
-	$text=one(array("+si+"),array("+sic+"),0);
+	$text=one(array("+si+","sicmi"),array("+sic+","sic+mi"),0);
 	if ($nomidelision!==1 && arr($text,'/['.pc('hl').'][+]([c]*)[a][+]/'))
 	{
 	#$text=three($hl,array("+a+","+ca+"),$tiG1,blank(count($hl)),array("+a+","+ca+"),$tiG1,0);
@@ -1936,6 +1937,7 @@ if (in_array($so,$tiG) && ( sub(array("+"),$inbetweenpratyaya,array("+"),0) || (
 	}
 	storedata('1.3.9','sa',0);
 }
+print_r($text);
 /* cuTU (1.3.7) */
 if (arr($text,'/[+][c][a][+]/') && in_array($so,$tiG)) // for caG
 {
@@ -2248,7 +2250,6 @@ if ( in_array($so,$tis) && !sub(array("+"),array("hi","ni"),blank(0),0) && pr2(a
 	storedata('3.4.100','sa',0);
     $itazca=1;
 } else {$itazca=0; }
-print_r($text);
 /* astisico'pRkte (7.3.96) */
 // asti pending.
 if ( ($sic!==0 && arr($text,'/[+][s][i][c]['.pc('hl').']$/')))
