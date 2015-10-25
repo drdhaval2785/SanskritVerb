@@ -3780,14 +3780,12 @@ if ( $tAs===1  && !in_array("iw",$Agama) && (in_array($fo,array("saha!","luBa!",
 	$Agama=array_merge($Agama,array("iw"));
 }
 if ($debug===1) {dibug("3800");}
-/* sthAdhvoricca (??) */
+/* sthAdhvoricca (1.2.17) */
 // pending to refactor, because not able to trace the sUtra or vArtika.
 if ( in_array($fo,array("do","deN","qudAY","dAR","Dew","quDAY","zWA")) && sub(array("A+"),array("s"),blank(0),0) && $lakAra!=="" && $sic!==0 )
 {
     $text=two(array("A+"),array("s"),array("i+"),array("s"),0);
-    echo "<p class = sa >By sthAdhvoricca ( ) :</p>\n"; 
-    echo "<p class = sa >स्थाध्वोरिच्च ( ) :</p>\n";
-    display(0);    
+	storedata('1.2.17','sa',0);
 }
 /* ghumAsthAgApAjahAtisAM hali (6.4.66) */
 if ( in_array($fo,array("do","deN","qudAY","dAR","Dew","quDAY","mA","zWA","iN","pA","hA","sA","gAN")) && ends($it,array("N","k"),2) && sub(array("A+"),$ArdhadhAtuka_pratyayas,blank(0),0) && $lakAra!=="" )
