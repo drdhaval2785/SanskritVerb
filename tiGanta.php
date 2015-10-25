@@ -1604,10 +1604,7 @@ elseif (arr($text,'/^[z]/') || arr($text,'/^[R]/') || arr($text,'/[iu][r][d]/'))
 		if (arr($text,'/^[s][wWqQR]/'))
 		{
 			$text=two(array("s"),$Tu,array("s"),$tu,0);
-			// Pending to refactor because of unability to handle paribhASAs in display. Only AS and vArtikas are taken as input. Some digitized paribhASA dataset has to be evolved.
-			/*echo "<p class = sa >By nimittApAye naimittikasyApyapAyaH (paribhASA) :</p>\n";
-			echo "<p class = sa >निमित्तापाये नैमित्तिकस्याप्यपायः (परिभाषा) :</p>\n";
-			display(0);*/                    
+			storedata('par@56-1','sa',0);
 		}
    }
    if (arr($text,'/^[R]/'))
@@ -1617,10 +1614,7 @@ elseif (arr($text,'/^[z]/') || arr($text,'/^[R]/') || arr($text,'/[iu][r][d]/'))
 		if (arr($text,'/^[n][wWqQR]/'))
 		{
 			$text=two(array("n"),$Tu,array("n"),$tu,0);
-			// Pending to refactor because of unability to handle paribhASAs in display. Only AS and vArtikas are taken as input. Some digitized paribhASA dataset has to be evolved.
-			echo "<p class = sa >By nimittApAye naimittikasyApyapAyaH (paribhASA) :</p>\n";
-			echo "<p class = sa >निमित्तापाये नैमित्तिकस्याप्यपायः (परिभाषा) :</p>\n";
-			display(0);                    
+			storedata('par@56-1','sa',0);
 		}
    }
    if (arr($text,'/[iu][r][d]/'))
@@ -4296,10 +4290,7 @@ if (($vras===1 && sub(array("vfSz","vraSz"),blank(0),blank(0),0))  || sub(array(
 {
     $text = one(array("vfSz","vraSz"),array("vfsz","vrasz"),0);
     $text = one(array("cz"),array("z"),0);
-// Pending to refactor, because I am unable to locate the paribhASA
-//    echo "<p class = sa >By nimittApAye naimittikasyApyapAyaH (paribhASA) :</p>\n";
-//    echo "<p class = sa >निमित्तापाये नैमित्तिकस्याप्यपायः (परिभाषा) :</p>\n";
-//    display(0);
+	storedata('par@56-1','sa',0);
 }
 /* vivikz patch for overcoming skoH saMyogAdyorante ca */
 if (arr($text,'/vivikz\+/') && in_array($so,$tiG))
@@ -4436,10 +4427,7 @@ elseif (!in_array($so,$noco) && arr($text,'/['.flat($cu).'][+]$/') && in_array($
 if ($coku === 1 && sub(array("Y"),$ku,blank(0),0))
 {
 	$text = two(array("Y"),$ku,array("n"),$ku,0);
-	// pending to refactor
-/*    echo "<p class = sa >By nimittApAye naimittikasyApyapAyaH (pa) :</p>\n";
-    echo "<p class = sa >निमित्तापाये नैमित्तिकस्याप्यपायः (प) :</p>\n";
-    display(0);*/
+	storedata('par@56-1','sa',0);
 }
 /* vRRto vA (7.2.38) */ 
 if ( (in_array($fo,array("vfN","vfY")) || ends(array($verb_without_anubandha),array("F",),1)) && sub(array("ar"),array("+"),blank(0),0) && in_array($lakAra,$ArdhadhAtuka_lakAra) && in_array("iw",$Agama))
@@ -4852,11 +4840,8 @@ if (arr($text,'/['.pc('Jy').']\+/') && ( sub(array("N"),$ku,array("+"),0) || sub
     $text = three(array("Y"),$cu,array("+"),array("n"),blank(count($cu)),array("+"),0); 
     $text = three(array("R"),$Tu,array("+"),array("n"),blank(count($Tu)),array("+"),0); 
     $text = three(array("m"),$pu,array("+"),array("n"),blank(count($pu)),array("+"),0); 
-	// pending to refactor
-	/*    echo "<p class = sa >By saMyogAntasya lopaH (".link_sutra("8.2.23").") and nimittApAye naimittikasyApyapAyaH (pa) :</p>\n";
-    echo "<p class = sa >संयोगान्तस्य लोपः (८.२.२३) तथा निमित्तापाये नैमित्तिकस्याप्यपायः (प) :</p>\n";
-    display(0);            */
 	storedata('8.2.23','sa',0);	
+	storedata('par@56-1','sa',0);
 }
 /*elseif ( sub($hl,$hl,array("+"),0) && in_array($so,$tiG) && $ratsasya===0 && !arr($text,'/['.pc('hl').']['.pc('hl').'][+]['.pc('ac').']/') && $pada==="pada" )
 {
@@ -4901,10 +4886,7 @@ elseif ( (arr($text,'/M/') && sub(array("M"),$hl,array("+"),0) && in_array($so,$
     $text = two(array("M+"),$tu,array("n+"),$tu,0);
     $text = two(array("M+"),$pu,array("m+"),$pu,0);
     $text = two(array("M"),array("+"),array("m"),array("+"),0);
-	// pending to refactor.
-	/*    echo "<p class = sa >By nimittApAye naimittikasyApyapAyaH (pa) :</p>\n";
-    echo "<p class = sa >निमित्तापाये नैमित्तिकस्याप्यपायः (प) :</p>\n";
-    display(0); */
+	storedata('par@56-1','sa',0);
     }
 }
 if ($debug===1) {dibug("4900");}
@@ -10406,10 +10388,7 @@ if (($vras1===1 && sub(array("vfSz"),blank(0),blank(0),0)) || (($vras3 ===1 || $
 {
     $text = one(array("vfSz"),array("vfsz"),0);
     $text = one(array("cz"),array("z"),0);
-	// Pending to refactor
-/*    echo "<p class = sa >By nimittApAye naimittikasyApyapAyaH (paribhASA) :</p>\n";
-    echo "<p class = sa >निमित्तापाये नैमित्तिकस्याप्यपायः (परिभाषा) :</p>\n";
-    display(0);*/
+	storedata('par@56-1','sa',0);
 }
 /* vivikz patch for overcoming skoH saMyogAdyorante ca */
 if (arr($text,'/vivikz+/') && $pada==='pada')
@@ -10482,10 +10461,7 @@ if (  ( arr($text,'/N([+]*)[kKgGN]\+/') || arr($text,'/Y([+]*)[cCjJY]\+/') || ar
     $text = three(array("R"),$Tu,array("+"),array("n"),blank(count($Tu)),array("+"),0); 
     $text = three(array("m"),$pu,array("+"),array("n"),blank(count($pu)),array("+"),0); 
 	storedata('8.2.23','sa',0);
-	// Pending to refactor.
-/*    echo "<p class = sa >By saMyogAntasya lopaH (".link_sutra("8.2.23").") and nimittApAye naimittikasyApyapAyaH (pa) :</p>\n";
-    echo "<p class = sa >संयोगान्तस्य लोपः (८.२.२३) तथा निमित्तापाये नैमित्तिकस्याप्यपायः (प) :</p>\n";
-    display(0);            */
+	storedata('par@56-1','sa',0);
 }
 elseif ( arr($text,'/['.pc('hl').']([+]*)['.pc('hl').']\+/') && $bham===0 && $pada==="pada" && $ratsasya===0 && $vriddhireci===0 && !arr($text,'/['.pc('hl').']['.pc('hl').'][+]['.pc('ac').']/'))
 {
@@ -10506,10 +10482,7 @@ elseif ( (arr($text,'/s\+/') && sub(array("M"),array("s"),array("+"),0) && $pada
     $text = three(array("M"),array("s+"),$pu,array("m+"),blank(count($hl)),$pu,0); 
     $text = three(array("M"),array("s"),array("+"),array("m"),blank(count($hl)),array("+"),0); 
 	storedata('8.2.23','sa',0);
-	// Pending to refactor
-/*    echo "<p class = sa >By saMyogAntasya lopaH (".link_sutra("8.2.23").") and nimittApAye naimittikasyApyapAyaH (pa) :</p>\n";
-    echo "<p class = sa >संयोगान्तस्य लोपः (८.२.२३) तथा निमित्तापाये नैमित्तिकस्याप्यपायः (प) :</p>\n";
-    display(0);            */
+	storedata('par@56-1','sa',0);
 }
 elseif ( (arr($text,'/M([+]*)['.pc('hl').']\+/') && $pada==="pada" && $vriddhireci===0) )
 {
@@ -10523,10 +10496,7 @@ elseif ( (arr($text,'/M([+]*)['.pc('hl').']\+/') && $pada==="pada" && $vriddhire
     $text = three(array("M"),array("+"),$tu,array("n"),array("+"),$tu,0);
     $text = three(array("M"),array("+"),$pu,array("m"),array("+"),$pu,0);
     $text = two(array("M"),array("+"),array("m"),array("+"),0);
-	// Pending to refactor
-/*    echo "<p class = sa >By nimittApAye naimittikasyApyapAyaH (pa) :</p>\n";
-    echo "<p class = sa >निमित्तापाये नैमित्तिकस्याप्यपायः (प) :</p>\n";
-    display(0);*/
+	storedata('par@56-1','sa',0);
     }
 }
 /* jhalo jhali (8.2.26) */
