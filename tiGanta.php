@@ -4303,21 +4303,13 @@ if (arr($text,'/vivikz\+/') && in_array($so,$tiG))
 /* rakS, takS patch to bar application of skoH saMyogAdyorante ca */
 if ( in_array($sanAdi,array("Ric","RiN")) && sub(array("takz","rakz"),array("+"),blank(0),0) && in_array($so,$tiG) )
 {
-	// pending to refactor
-/*    echo "<p class = pa >skoH saMyogAdyorante ca doesn't apply here because of sthAnivadbhAva of Nilopa.</p>\n";
-    echo "<p class = hn >'pUrvatrAsiddhe na sthAnivat' (vA 433) doesn't apply here, because it is overruled by 'tasya doSaH saMyogAdilopalatvaNatveSu (vA 440).</p>\n";
-    echo "<p class = pa >तक्षिरक्षिभ्यां ण्यन्ताभ्यां क्विपि तु 'स्कोः..' इति न प्रवर्तते । णिलोपस्य स्थानिवद्भावात्‌ ।</p>\n";
-    echo "<p class = hn >'पूर्वत्रासिद्धे न स्थानिवत्‌' (वा ४४३) इह नास्ति । 'तस्य दोषः संयोगादिलोपलत्वणत्वेषु (वा ४४०) इति निषेधात्‌ ।</p>\n";*/
 	storedata('1.1.58-10','sa',0);
     $rakS=1; // 0 - doesn't prevent skoH saMyogAdyorante ca. 1 - prevents skoH saMyogAdyorante ca.
 } else { $rakS=0; }
 /* pipak, vivak, didhak patch to bar application of skoH saMyogAdyorante ca */
 if (arr($text,'/akz\+/') && sub(array("vivakz","diDakz","pipakz"),array("+"),blank(0),0) && in_array($so,$tiG))
 {
-	// pending to refactor
-/*    echo "<p class = pa >skoH saMyogAdyorante ca doesn't apply here because kutva is asiddha to it.</p>\n";
-    echo "<p class = pa >'स्कोः...' इति कलोपं प्रति कुत्वस्य असिद्धत्वात्‌ संयोगान्तलोपः ।</p>\n";
-    display(0); */
+	storedata('skoHc','sa',0);
     $pipakS=1; // 0 - doesn't prevent skoH saMyogAdyorante ca. 1 - prevents skoH saMyogAdyorante ca.
 } else { $pipakS=0; }
 if (in_array($fo,array("rudi!r","Yizvapa!","zvapa!","Svasa!","prARa!","ana!","jakza!")) && (pr2(array("rod","svap","Svas","prAR","an","jakz","rud"),array("+"),array("t","s"),array("rod","svap","Svas","prAR","an","jakz","rud"),array("+"),array("at","as"),$text)!==$text || ends(array($fo),array("jakza!"),4) ) && in_array($so,$tiG) )
@@ -4511,20 +4503,12 @@ if ($lakAra!=="")
     {
         $text = three(array("dfnBU","punarBU"),array("+"),$ac,array("dfnBv","punarBv"),array("+"),$ac,0);
         $text = three(array("karaBU","kAraBU"),array("+"),$ac,array("karaBv","kAraBv",),array("+"),$ac,1);
-		// pending to refactor
-		/*
-        echo "<p class = sa >By dRnkarapunaHpUrvasya bhuvo yaN vaktavyaH (vA 4118) :</p>\n";
+		storedata('6.4.84-2','sa',0);
         if (in_array($fo,array("karaBU","kAraBU")))
         {
         $text=one(array("karaBv+e","karaBU+A+e","karaBv+as","karaBU+A+as","karaBv+i","karaBU+Am","kAraBv+e","kAraBU+A+e","kAraBv+as","kAraBU+A+as","kAraBv+i","kAraBU+Am"),array("karaBU+e","karaBv+A+e","karaBU+as","karaBv+A+as","karaBU+i","karaBv+Am","kAraBU+e","kAraBv+A+e","kAraBU+as","kAraBv+A+as","kAraBU+i","kAraBv+Am",),0);
-        echo "<p class = hn >There is pAThabheda here. Some hold that there is dIrgha kAra word here. SK has adopted both the readings, therefore we have kept them optional.</p>\n";        
+		storedata('karaBU','sa',0);
         }
-        echo "<p class = sa >दृन्करपुनःपूर्वस्य भुवो यण्‌ वक्तव्यः (वा ४११८) :</p>\n";
-        if (in_array($fo,array("karaBU","kAraBU")))
-        {
-        echo "<p class = hn >दीर्घपाठे करपूर्वस्य उवङेव । ह्रस्वपाठे करपूर्वस्य यणेव इति विवेकः ।</p>\n";                
-        }
-        display(0);  */
     }
     /* varSAbhvazca (6.4.84) */ 
     if ($first==="varzABU"  && sub(array($fo),array("+"),$ac,0) )
@@ -4580,10 +4564,7 @@ if ($lakAra!=="")
     /* eranekAco'saMyogapUrvasya (6.4.82) */
     if ($dhatu===1 && arr($text,'/[iI][+]['.pc('ac').']/') && in_array($fo,array("unnI")) && $pada==="pratyaya" && anekAca($fo) && $nabhusu===0)
     {
-		// pending to refactor
-/*        echo "<p class = pa >As the vizeSaNa 'dhAtunA saMyogasya' mandates that the saMyoga has to belong to dhAtu only for prohibiting 'eranekAco..', the prohibition doesn't apply here.</p>\n";
-        echo "<p class = pa >धातुना संयोगस्य विशेषणादिह स्यादेव यण्‌ (एरनेकाचो इत्यनेन सूत्रेण) </p>\n";
-        display(0); */
+		storedata('eranekAc','sa',0);
         $unni=1; // 0 - the word is not unnI. 1 - the word is unnI
     } else { $unni=0; } 
     if ($dhatu===1 && (arr($text,'/['.flat($ac).']['.flat($hl).'][iI][+]['.flat($ac).']/')||$unni===1) && $pada==="pratyaya" && (anekAca($fo) || $abhyasta===1 )&& $nabhusu===0 )
@@ -4596,10 +4577,7 @@ if ($lakAra!=="")
     /* oH supi (6.4.83) */ 
     if ($dhatu===1 && in_array($fo,array("ullU")) && $pada==="pratyaya" && anekAca($fo) && $nabhusu===0 && $dfmBU===0)
     {
-		// pending to refactor
-/*        echo "<p class = pa >As the vizeSaNa 'dhAtunA saMyogasya' mandates that the saMyoga has to belong to dhAtu only for prohibiting 'oH supi', the prohibition doesn't apply here.</p>\n";
-        echo "<p class = pa >धातुना संयोगस्य विशेषणादिह स्यादेव यण्‌ (ओः सुपि इत्यनेन सूत्रेण) </p>\n";
-        display(0); */
+		storedata('osupi','sa',0);
         $ullU=1; // 0 - word is not ullU. 1 - word is ullU.
     } else { $ullU=0; }
     if ($dhatu===1 && ( arr($text,'/[uU][+]['.flat($ac).']/') || $ullU===1 )&& !sub(array("+"),array("u+"),blank(0),0) && $pada==="pratyaya" && anekAca($fo) && $nabhusu===0 && $dfmBU===0)
@@ -4864,11 +4842,8 @@ elseif ( (arr($text,'/s\+/') && sub(array("M"),array("s"),array("+"),0)  && in_a
     $text = three(array("M"),array("s+"),$tu,array("n+"),blank(count($hl)),$tu,0); 
     $text = three(array("M"),array("s+"),$pu,array("m+"),blank(count($hl)),$pu,0); 
     $text = three(array("M"),array("s"),array("+"),array("m"),blank(count($hl)),array("+"),0); 
-	// pending to refactor
-	/*    echo "<p class = sa >By saMyogAntasya lopaH (".link_sutra("8.2.23").") and nimittApAye naimittikasyApyapAyaH (pa) :</p>\n";
-    echo "<p class = sa >संयोगान्तस्य लोपः (८.२.२३) तथा निमित्तापाये नैमित्तिकस्याप्यपायः (प) :</p>\n";
-    display(0);            */
 	storedata('8.2.23','sa',0);	
+	storedata('par@56-1','sa',0);
 }
 elseif ( (arr($text,'/M/') && sub(array("M"),$hl,array("+"),0) && in_array($so,$tiG)) && $pada==="pada" )
 {
@@ -4979,30 +4954,18 @@ if ($debug===1) {dibug("5000");}
 $nityabahuvacana = array("kati","tri","catur","paYcan","saptan","azwan","navan","daSan","ap"); // list of words which are used in bahuvacanam always. New can be added.
 if (in_array($fo,$nityabahuvacana) && !in_array($so,$bahusup) && in_array($so,$sup))
 {
-	// pending to refactor
-	/*
-    echo "<p class = red >the word you entered is a nitya bahuvacanAnta word. Please check again.</p>\n"; // class red is for potential error messages.
-    echo "<p class = red >आपने जो शब्द दिया है, वह नित्य बहुवचनान्त है । कृपया जाँच कीजिए ।</p>\n";
-    display(0); */
+	storedata('nityabahu','red',0);
 }
 /* nityadvivacanAnta special messages */
 $nityadvivacana = array("dvi"); // list of words which are used in dvivacanam always.
 if (in_array($fo,$nityadvivacana) && !in_array($so,$dvisup) && in_array($so,$sup))
 {
-	// pending to refactor
-	/*
-    echo "<p class = red >the word you entered is a nitya dvivacanAnta word. Please check again.</p>\n";
-    echo "<p class = red >आपने जो शब्द दिया है, वह नित्य द्विवचनान्त है । कृपया जाँच कीजिए ।</p>\n";
-    display(0); */
+	storedata('nityadvi','red',0);
 }
 /* tyadAdi sambodhana special messages */
 if (in_array($fo,$tyadadi) && $so==="su!" && $sambuddhi===1)
 {
-	// pending to refactor
-	/*
-    echo "<p class = red >tyadAdi don't have sambodhana.</p>\n";
-    echo "<p class = red >त्यदादि का संबोधन नहीं होता है ।</p>\n";
-    display(0); */
+	storedata('tyadsam','red',0);
 }
 /* defining sarvanama status */
 // $sarvafinal. 1 - obligatory. 2 - optional. 0 - no sarvanamasaJjJA.
@@ -5046,10 +5009,7 @@ elseif ( $_GET['cond1_1_1_5']==="2" || $_GET['cond2_1_2_1_5']==="2" )
 elseif ( $_GET['cond1_1_1_6_1']==="2" || $_GET['cond2_1_2_1_6_1']==="2" )
 {
     $sarvafinal = 1;
-	// pending to refactor
-/*    echo "<p class = pa >pUrvaparAvaradakSiNottarAparAdharANi vyavasthAyAmasaJjJAyAm (ga sU 1) :</p>\n";
-    echo "<p class = pa >पूर्वपरावरदक्षिणोत्तरापराधराणि व्यवस्थायामसञ्ज्ञायाम्‌ (ग सू १) :</p>\n"; 
-    display(0); */
+	storedata('gasU1','pa',0);
     $purvapara=1; // 0 - pUrvaparA... will not apply. 1 - will apply
     $sarvanama=array_merge($sarvanama,array("pUrva","para","avara","dakziRa","uttara","apara","aDara","pUrvA","parA","avarA","dakziRA","uttarA","aparA","aDarA"));
 }
@@ -5060,9 +5020,7 @@ elseif ( $_GET['cond1_1_1_6_1']==="1" || $_GET['cond2_1_2_1_6_1']==="1" )
 elseif ( $_GET['cond1_1_1_6_2']==="2" || $_GET['cond2_1_2_1_6_2']==="2" )
 {
     $sarvafinal = 1;
-	// pending to refactor
-/*    echo "<p class = pa >svamajJAtidhanAkhyAyAm (ga sU 2) :</p>\n";
-    echo "<p class = pa >स्वमज्ञातिधनाख्यायाम्‌ (ग सू २) :</p>\n"; */
+	storedata('gasU2','pa',0);
     $sva=1; // 0 - svamajJAtidhanAkhyAyAm (1.1.35) doesn't apply. 1 - svamajJAtidhanAkhyAyAm (1.1.35) applies.           
     $sarvanama=array_merge($sarvanama,array("sva","svA")); // For most of the cases, sva / svA are not sarvanAma. In this particular case, they become sarvanAma.
 }
@@ -5074,17 +5032,13 @@ elseif ( $_GET['cond1_1_1_6_2']==="1" || $_GET['cond2_1_2_1_6_2']==="1" )
 elseif ( $_GET['cond1_1_1_6_3_1']==="1" || $_GET['cond2_1_2_1_6_3_1']==="1" )
 {
     $sarvafinal = 0;
-	// pending to refactor
-/*    echo "<p class = pa >'antaraM bahiryogopasaMvyanayoH' (ga sU 3) iti gaNasUtre 'apuri' iti vaktavyam (vA 240) :</p>\n";
-    echo "<p class = pa >'अन्तरं बहिर्योगोपसंव्यानयोः' (ग सू ३) इति गणसूत्रे 'अपुरि' इति वक्तव्यम्‌ (वा २४०) :</p>\n"; */
+	storedata('gasU3a','pa',0);
     $antara=0;           // 0 - antaraM bahiryogopasaMvyAnayoH (1.1.36) doesn't apply. 1 - antaraM bahiryogopasaMvyAnayoH (1.1.36) applies.
 }
 elseif ( $_GET['cond1_1_1_6_3_1']==="2" || $_GET['cond2_1_2_1_6_3_1']==="2" )
 {
     $sarvafinal = 1;
-	// pending to refactor
-/*    echo "<p class = pa >antaraM bahiryogopasaMvyAnayoH (ga sU 3) :</p>\n";
-    echo "<p class = pa >अन्तरं बहिर्योगोपसंव्यानयोः (ग सू ३) :</p>\n";*/
+	storedata('gasU3','pa',0);
     $antara=1;     
     $sarvanama=array_merge($sarvanama,array("antara","antarA"));
 }
@@ -5105,31 +5059,19 @@ elseif ( $_GET['cond1_1_1_6_4']==="2" && !in_array($fo,array("anyatara","anyatar
 elseif (ends(array($fo),array("anyatama","anyatamA"),1))
 {
     $sarvafinal = 0;
-	// pending to refactor
-	/*
-    echo "<p class = pa >As anyatama is not enumerated in sarvAdi and anyatara is specifically enumerated, anyatama doesn't have sarvanAma saJjJA. </p>\n";
-    echo "<p class = pa >सर्वादिगण में अन्यतर का गणन हुआ है और अन्यतम का नहीं है, इसलिए अन्यतम की सर्वनाम सञ्ज्ञा नहीं है ।</p>\n";        
-    display(0); */
+	storedata('anyatama','pa',0);
 	$sarvanama=array_diff($sarvanama,array("atama","atamA"));
 }
 elseif ( $_GET['cond1_1_1_6_5']==="1" || $_GET['cond2_1_2_1_6_5']==="1" )
 {
     $sarvafinal = 1;
-	// pending to refactor
-	/*
-    echo "<p class = pa >samaH sarvaparyAyaH.</p>\n";
-    echo "<p class = pa >समः सर्वपर्यायः ।</p>\n";        
-    display(0);   */
+	storedata('sama','pa',0);
     $sarvanama=array_merge($sarvanama,array("sama","samA"));
 }
 elseif ( $_GET['cond1_1_1_6_5']==="2" || $_GET['cond2_1_2_1_6_5']==="2" )
 {
     $sarvafinal = 0;
-	// pending to refactor
-	/*
-    echo "<p class = pa >tulyaparyAyastu neha gRhyate.</p>\n";
-    echo "<p class = pa >तुल्यपर्यायस्तु नेह गृह्यते ।</p>\n";        
-    display(0);   */
+	storedata('tulya','pa',0);
 }
 elseif ( $_GET['cond1_1_1']==="6" || $_GET['cond2_1_2_1']==="6" || in_array($fo,array("idam","tyad")) )
 {
@@ -5162,10 +5104,7 @@ if ($sarvafinal !==0)
     /* tadantasyApIyaM saJjJA | dvandve ca iti jJApakAt */
     if ( ends(array($fo),$sarvanama,0)||ends(array($fo),$sarvanamastri,0))
     {
-		storedata('1.1.27','pa',0);
-		// pending to refactor
-    /*    echo "<p class = pa >sarvAdIni sarvanAmAni (".link_sutra("1.1.27").") and tadantasyApIyaM saJjJA. dvandve ca iti jJApakAt :</p>\n";
-        echo "<p class = pa >सर्वादीनि सर्वनामानि (१.१.२७) तथा तदन्तस्यापीयं सञ्ज्ञा । द्वन्द्वे च इति ज्ञापकात्‌ :</p>\n";*/
+		storedata('dvandvesarva','pa',0);
     }
 }
 if ($debug===1) {dibug("5200");}
@@ -10390,32 +10329,21 @@ if (($vras1===1 && sub(array("vfSz"),blank(0),blank(0),0)) || (($vras3 ===1 || $
 if (arr($text,'/vivikz+/') && $pada==='pada')
 {
     $text = two(array("vivikz"),array("+"),array("viviS"),array("+"),0);
-	// Pending to refactor
-/*    echo "<p class = sa >As katva is asiddha to skoH saMyogAdyorante ca, saMyogAntalopa happens. 'S' is changed to 's' by nimittApAye naimittikasyApyapAyaH. :</p>\n";
-    echo "<p class = sa >स्कोः संयोगाद्योरन्ते च इति कलोपे प्राप्ते कत्वस्य असिद्धत्वात्‌ संयोगान्तलोपः । सकारस्य लोपे 'निमित्ताभावे नैमित्तिकस्याप्यपायः' इति षत्वमपि निवर्तते । :</p>\n";
-    display(0);    */
     $text = two(array("viviS"),array("+"),array("viviz"),array("+"),0);
 	storedata('8.2.36','sa',0);
+	storedata('skoni','sa',0);
 }
 /* rakS, takS patch to bar application of skoH saMyogAdyorante ca */
 if (arr($text,'/[tr]alz\+/') && $pada === "pada" && $Nyanta===1)
 {
-	// Pending to refactor
-/*    echo "<p class = pa >skoH saMyogAdyorante ca doesn't apply here because of sthAnivadbhAva of Nilopa.</p>\n";
-    echo "<p class = hn >'pUrvatrAsiddhe na sthAnivat' (vA 433) doesn't apply here, because it is overruled by 'tasya doSaH saMyogAdilopalatvaNatveSu (vA 440).</p>\n";
-    echo "<p class = pa >तक्षिरक्षिभ्यां ण्यन्ताभ्यां क्विपि तु 'स्कोः..' इति न प्रवर्तते । णिलोपस्य स्थानिवद्भावात्‌ ।</p>\n";
-    echo "<p class = hn >'पूर्वत्रासिद्धे न स्थानिवत्‌' (वा ४४३) इह नास्ति । 'तस्य दोषः संयोगादिलोपलत्वणत्वेषु (वा ४४०) इति निषेधात्‌ ।</p>\n";
-    display(0); */
+	storedata('takzi','sa',0);
     $rakS=1; // 0 - doesn't prevent skoH saMyogAdyorante ca. 1 - prevents skoH saMyogAdyorante ca.
 } else { $rakS=0; }
 /* pipak, vivak, didhak patch to bar application of skoH saMyogAdyorante ca */
 //if (sub(array("vivakz","diDakz","pipakz"),array("+"),blank(0),0) && $pada === "pada" && $san===1) // removed for checking whether $san makes any difference.
 if (arr($text,'/akz\+/') && sub(array("vivakz","diDakz","pipakz"),array("+"),blank(0),0) && $pada === "pada")
 {
-	// Pending to refactor.
-/*    echo "<p class = pa >skoH saMyogAdyorante ca doesn't apply here because kutva is asiddha to it.</p>\n";
-    echo "<p class = pa >'स्कोः...' इति कलोपं प्रति कुत्वस्य असिद्धत्वात्‌ संयोगान्तलोपः ।</p>\n";
-    display(0); */
+	storedata('skoHc','sa',0);
     $pipakS=1; // 0 - doesn't prevent skoH saMyogAdyorante ca. 1 - prevents skoH saMyogAdyorante ca.
 } else { $pipakS=0; }
 
