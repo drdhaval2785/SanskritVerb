@@ -5297,21 +5297,13 @@ else
 /* asmad / yuSmad -> nau / naH etc definition */
 if ($_GET['cond1_12']==="1" && in_array($w,array(3,4,5,9,10,11,15,16,17)) )
 {
-    $asmadpada=0;    
-	// pending to refactor
-	/*
-    echo "<p class = pa >Because the words asmad / yuSmad are not after a 'pada' , there won't be tvA/mA, nau/vAm, nas/vas, te/me Adezas:</p>\n";
-    echo "<p class = pa >'पदात्‌' नहीं होने से अस्मद्‌ / युष्मद्‌ के त्वा/मा, नौ/वाम्‌, नस्‌/वस्‌, ते/मे आदेश नहीं होंगे ।:</p>\n";
-    display(0);*/
+    $asmadpada=0; 
+	storedata('apadAt','pa',0);
 }
 elseif($_GET['cond1_12']==="2" && in_array($w,array(3,4,5,9,10,11,15,16,17)) )
 {
     $asmadpada=0;    
-	// pending to refactor
-	/*
-    echo "<p class = pa >Because the words asmad / yuSmad are used in the start of a 'pAda', there won't be tvA/mA, nau/vAm, nas/vas, te/me Adezas:</p>\n";
-    echo "<p class = pa >पाद के प्रारम्भ में प्रयुक्त होने से अस्मद्‌ / युष्मद्‌ के त्वा/मा, नौ/वाम्‌, नस्‌/वस्‌, ते/मे आदेश नहीं होंगे ।:</p>\n";
-    display(0); */
+	storedata('pAdAdi','pa',0);
 }
 elseif($_GET['cond1_12']==="3" && in_array($w,array(3,4,5,9,10,11,15,16,17)))
 {
@@ -5411,11 +5403,7 @@ if ($debug===1) {dibug("5500");}
 if ( sub(array("DvaMs","sraMs"),array("+"),blank(0),0) )
 {
     $text = two(array("DvaMs","sraMs"),array("+"),array("DvaMsu!","sraMsu!"),array("+"),0);
-	// pending to refactor
-	/*
-    echo "<p class = pa >This is an udit dhAtu.</p>\n";
-    echo "<p class = pa >यह एक उदित्‌ धातु है ।</p>\n";
-    display(0); */
+	storedata('DvaMs','pa',0);
 }
 /* strIliGga definitions */
 /* defining Abantatva */
@@ -5447,11 +5435,7 @@ if ($_GET['cond2_3_5']==='1')
     $eranekaca=2;
     $GI=0;
     $nadi=2;
-	// pending to refactor
-	/*
-    echo "<p class = pa >This word is declined like 'lakSmI' according to vRttikAra, and like its musculine counterpart according to kaiyaTa.</p>\n";
-    echo "<p class = pa >प्रधीशब्दस्य तु वृत्तिकारानां मते लक्ष्मीवद्रूपम्‌ । कैयटमते तु पुंवद्रूपम्‌ । :</p>\n";
-    display(0); */
+	storedata('praDI','pa',0);
 }
 if ($_GET['cond2_3_5']==='2')
 {
@@ -5470,22 +5454,14 @@ if ($_GET['cond2_3_6']==='1')
     $dhatu=1;
     $GI=0;
     $nityastri=1;
-	// pending to refactor
-	/*
-    echo "<p class = pa >This word is declined like 'zrI' according to vRttikAra, and like its musculine counterpart according to kaiyaTa.</p>\n";
-    echo "<p class = pa >सुष्ठु धीर्यस्याः, सुष्ठु ध्यायतीति वेति विग्रहे तु वृत्तिकारमते सुधीः श्रीवत्‍ । मतान्तरे तु पुंवत्‌ ।</p>\n";
-    display(0); */
+	storedata('suDI','pa',0);
 }
 if ($_GET['cond2_3_5']==='2')
 {
     $dhatu=1;
     $GI=0;
     $nityastri=1;
-	// pending to refactor
-	/*
-    echo "<p class = pa >This word is declined like 'zrI'.</p>\n";
-    echo "<p class = pa >'सुष्ठु धीः' इति विग्रहे तु श्रीवदेव ।।</p>\n";
-    display(0); */
+	storedata('suDI1','pa',0);
 }
 
 /* UkArAnta strIliGga - defining */
@@ -5899,11 +5875,7 @@ elseif ($gender === "f" && arr($text,'/i\+/') && AdivRddhi($text) )
 elseif ($gender === "f" && $_GET['cond2_21']==="2" && !arr($text,'/patn\+/'))
 {
     $text = two(array("i"),array("+"),array("i"),array("+NIz+"),1);
-	storedata('4.1.45','st',8);	
-	// pending to refactor the gaNasUtra.
-/*    echo "<p class = st >By bahvAdibhyazca (".link_sutra("4.1.45")."), kRdikArAdaktinaH (ga 50) :</p>\n";
-    echo "<p class = st >बह्वादिभ्यश्च (४.१.४५), कृदकारादक्तिनः (ग ५०) :</p>\n";        
-    display(8);*/
+	storedata('kfdakAr','st',8);
     $GIS=1;
     $ajAdyataSTAp=0;
 }
@@ -5911,11 +5883,7 @@ elseif ($gender === "f" && $_GET['cond2_21']==="2" && !arr($text,'/patn\+/'))
 elseif ($gender === "f" && $_GET['cond2_21']==="2" && sub(array("Sakawi","aSani","AtmamBari"),array("+"),blank(0),0) )
 {
     $text = two(array("i"),array("+"),array("i"),array("+NIz+"),1);
-	storedata('4.1.45','st',8);	
-	// pending to refactor the gaNasUtra.
-/*    echo "<p class = st >By bahvAdibhyazca (".link_sutra("4.1.45")."), kRdikArAdaktinaH (ga 50) and sarvato'ktinnarthAdityeke (ga 51) :</p>\n";
-    echo "<p class = st >बह्वादिभ्यश्च (४.१.४५), कृदकारादक्तिनः (ग ५०) तथा सर्वतोऽक्तिन्नर्थादित्येके (ग ५१) :</p>\n";        
-    display(8);*/
+	storedata('sarvato','st',8);	
     $GIS=1;
     $ajAdyataSTAp=0;
 }
