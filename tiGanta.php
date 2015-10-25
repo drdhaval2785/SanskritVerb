@@ -1292,7 +1292,6 @@ if ( $sic!==0 && $so==="Ji" && sub(array("A"),array("+"),array("Ji"),0) )
 	storedata('3.4.110','sa',0);
 }
 if ($debug===1) {dibug("1300");}
-print_r($text); echo $verbset;
 /* zruvaH zR ca (3.1.74) */
 if (in_array($fo,array("Sru")) && $sarvadhatuka===1 && sub(array("Sru"),array("+"),$tiG,0))
 {
@@ -3017,6 +3016,7 @@ if ( arr($text,'/GAn\+Ri\+/'))
 if ( in_array($fo,$mitcurAdiverbs) && ($verbset === "curAdi" || $verbset === "none" ) && sub(array("A"),$hl,array("+Ri+"),0))
 {
     $text = three(array("A"),$hl,array("+Ri+"),array("a"),$hl,array("+Ri+"),0);
+	$text = one(array("cap+Ri"),array("cAp+Ri"),0);
 	storedata('6.4.92','sa',0);
 }
 if ( in_array($fo,$ghaTAdi_mit) && ($verbset === "BvAdi" || $verbset === "none" ) && sub(array("A"),$hl,array("+Ri+"),0) )
@@ -3089,6 +3089,7 @@ if ( arr(array($fo),'/[h][a][n]/') && !in_array($fo,array("ahan","dIrGAhan")) &&
 if (in_array($fo,$mitcurAdiverbs) && ($verbset === "curAdi" || $verbset === "none" ) && sub(array("A"),$hl,array("+i+"),0) )
 { 
     $text = three(array("A"),$hl,array("+i+"),array("a"),$hl,array("+i+"),0);
+	$text = one(array("cap+i+"),array("cAp+i+"),0);
 	storedata('6.4.92','sa',0);
 }
 if ($debug===1) {dibug("3100");}
@@ -3775,7 +3776,6 @@ if ( $tAs===1  && !in_array("iw",$Agama) && (in_array($fo,array("saha!","luBa!",
 }
 if ($debug===1) {dibug("3800");}
 /* sthAdhvoricca (1.2.17) */
-// pending to refactor, because not able to trace the sUtra or vArtika.
 if ( in_array($fo,array("do","deN","qudAY","dAR","Dew","quDAY","zWA")) && sub(array("A+"),array("s"),blank(0),0) && $lakAra!=="" && $sic!==0 )
 {
     $text=two(array("A+"),array("s"),array("i+"),array("s"),0);
@@ -4296,11 +4296,7 @@ if (($vras===1 && sub(array("vfSz","vraSz"),blank(0),blank(0),0))  || sub(array(
 if (arr($text,'/vivikz\+/') && in_array($so,$tiG))
 {
     $text = two(array("vivikz",),array("+"),array("viviS"),array("+"),0);
-	// pending to refactor.
 	storedata('skoHsaM','sa',0);
-//    echo "<p class = sa >As katva is asiddha to skoH saMyogAdyorante ca, saMyogAntalopa happens. 'S' is changed to 's' by nimittApAye naimittikasyApyapAyaH. :</p>\n";
-//    echo "<p class = sa >स्कोः संयोगाद्योरन्ते च इति कलोपे प्राप्ते कत्वस्य असिद्धत्वात्‌ संयोगान्तलोपः । सकारस्य लोपे 'निमित्ताभावे नैमित्तिकस्याप्यपायः' इति षत्वमपि निवर्तते । :</p>\n";
-//    display(0);    
     $text = two(array("viviS"),array("+"),array("viviz"),array("+"),0);
 	storedata('8.2.36','sa',0);
 }
