@@ -1323,7 +1323,7 @@ elseif ($sarvadhatuka===1 && $verbset==="curAdi" && sub($curAdi,array("+"),blank
 {
     $text=two(array("+"),$tiG,array("+Ric+"),$tiG,0);
     $text=one(array("+Ric+Ric"),array("+Ric+"),0);
-	storedata('3.4.25','sa',0);
+	storedata('3.1.25','sa',0);
     if (sub(array("+"),$tiG,blank(0),0) && $sarvadhatuka===1)
     {
     $text=two(array("+"),$tiG,array("+Sap+"),$tiG,0);
@@ -2183,7 +2183,7 @@ if ( in_array($lakAra,array("laN","viDiliN","ASIrliN","luN","lfN",)) && $start==
 	$itazca=1;
 }
 // Patch for akzU! dhAtu. See https://github.com/drdhaval2785/SanskritVerb/issues/213
-if (arr($text,'/akz\+nu\+s/'))
+if (arr($text,'/akz\+nu\+s$/'))
 {
 	$text=one(array("akz+nu+s"),array("akz+nu+si"),0); 
 }
@@ -2791,11 +2791,11 @@ if ( in_array($fo,array("qukrIY","ji","iN")) && in_array($so,$tiG) && sub(array(
     $text=three(array("krI","ji","i"),array("+"),array("Ri"),array("krA","jA","A"),array("+"),array("Ri"),0);
 	storedata('6.1.48','sa',0);
 }
-/* cisphurorNau (6.1.53) */
+/* cisphurorNau (6.1.54) */
 if ( in_array($fo,array("ciY","sPura!")) && in_array($so,$tiG) && sub(array("ci","sPur"),array("+"),array("Ri+"),0) )
 {
     $text=three(array("ci","sPur"),array("+"),array("Ri+"),array("cA","sPAr"),array("+"),array("Ri+"),1);
-	storedata('6.1.53','sa',0);
+	storedata('6.1.54','sa',0);
 }
 /* sphAyo vaH (7.3.41) */
 if (in_array($fo,array("sPAyI!")) && sub(array("sPAy"),array("+"),array("Ri"),0) )
@@ -3432,11 +3432,11 @@ if ( $_GET['cond53']==='2' && sub(array("seD"),array("+"),array("i+"),0) )
     $text=three(array("seD"),array("+"),array("i+"),array("sAD"),array("+"),array("i+"),0);    
 	storedata('6.1.49','sa',0);
 }
-/* cisphurorNau (6.1.53) */
+/* cisphurorNau (6.1.54) */
 if ( in_array($fo,array("ciY","sPura!")) && in_array($so,$tiG) && sub(array("ce","sPor"),array("+"),array("i+"),0) && !sub(array("cA","sPAr"),array("+"),array("i+"),0) )
 {
     $text=three(array("ce","sPor"),array("+"),array("i+"),array("cA","sPAr"),array("+"),array("i+"),1);
-	storedata('6.1.53','sa',0);
+	storedata('6.1.54','sa',0);
 }
 // caG for ajAdi
 /* bhrAjabhAsabhASadIpajIvamIlapIDamnyatarasyAm (7.4.3) */
@@ -4931,7 +4931,8 @@ if (arr($text,'/daridrA\+/') && in_array($fo,array("daridrA")) && $ardhadhatuka=
 }
 /* apadAntasya mUrdhanyaH (8.3.55), iNkoH (8.3.57) and AdezapratyayayoH (8.3.59) */
 // Not coded perfectly. This is only for tiG pratyayas.
-if(arr($text,'/[iIuUfFxXeoEOhyvrl]\+s/') && !arr($text,'/[iIuUfFxXeoEOhyvrl]\+s/') && in_array($so,$tiG) )
+print_r($text);
+if(arr($text,'/[iIuUfFxXeoEOhyvrl]\+s/') && !arr($text,'/[iIuUfFxXeoEOhyvrl]\+s$/') && in_array($so,$tiG) )
 {
 $text = two($iN1,array("+s"),$iN1,array("+z"),0);
 storedata('8.3.55','sa',0);
