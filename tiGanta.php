@@ -11130,7 +11130,14 @@ if ( (arr($text,'/['.flat($iN1).']([HSzs+]*)[s][uA]/')|| (arr($text,'/['.flat($i
     $val=array();
 	storedata('8.3.58','sa',0);
 }
-
+print_r($text);
+/* upasargAt sunotisuvatisyatistautistobhatisthAsenayasedhasicasaJjasvaJjAm (8.3.65) */
+if(arr($text,'/[iyuv][+]([aAiIuUfFeEoOhyvr]*)s/') && in_array($fo,array("zuY","zu","zo","zwuY","zWA","ziDa!","zidU!","zica!","zanja!","zaYja!","zwuBu!")) && arr(array($us),'/[iu]$/'))
+{
+	$text=two(array("i+","y+","u+","v+"),array("s"),array("i+","y+","u+","v+"),array("z"),0);
+	$text=three(array("i+","y+","u+","v+"),prat('aw'),array("s"),array("i+","y+","u+","v+"),prat('aw'),array("z"),0);
+	storedata('8.3.65','sa',0);
+} 
 /* hanteratpUrvasya (8.4.22) */
 if((arr($text,'/han/')||arr($text,'/Gn/')) && sub($upasarga,array("han","Gn"),blank(0),0))
 {
