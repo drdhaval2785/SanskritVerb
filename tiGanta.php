@@ -7674,7 +7674,7 @@ if (arr($text,'/(jar)([aA])[+]/') && in_array($so,$acsup) )
     }
 /* paddannomAshRnnizasanyUSandoSanyakaJChakannudannAsaJChasprabhRtiSu (6.1.63) */
 // The random examples given under vibhASA GizyoH on page 147 are pending. Will do them after understanding fully. 
-    // kakuddoSaNI etc are pending. 
+// kakuddoSaNI etc are pending. 
 $paddanno = array("pAda","danta","nAsikA","mAsa","hfdaya","niSA","asfj","yUza","doz","yakft","Sakft","udaka","Asya");
 $paddanno1 = array("pad","dat","nas","mAs","hfd","niS","asan","yUzan","dozan","yakan","Sakan","udan","Asan");
 if ( in_array($so,$zasadi) && in_array($fo,$paddanno) && sub($paddanno,array("+"),blank(0),0) )
@@ -10987,7 +10987,7 @@ storedata('8.3.57','sa',0);
 storedata('8.3.59','sa',0);
 }
 // this is the pending work, which I have started. is and us ending words usually take the 's' -> 'S' conversion. 
-$isusend = array("arcis","Arcis","avis","Avis","ASis","kravis","krivis","Cadis","Cardis","jyotis","tuvis","tris","dvis","pATis","barhis","Buvis","rocis","varhis","Socis","saDis","sarpis","havis","aprAyus","arus","Arus","asaScus","AsaScus","Ayus","Danus","cakzus","jayus","tanus","tapus","tarus","tasTus","parus","yajus","vapus","Arus",); // Here we will enumerate those which end with is, us, or any eligible cangdidate.
+$isusend = array("arcis","Arcis","avis","Avis","ASis","kravis","krivis","Cadis","Cardis","jyotis","tuvis","tris","dvis","pATis","barhis","Buvis","rocis","varhis","Socis","saDis","sarpis","havis","aprAyus","arus","Arus","asaScus","AsaScus","Ayus","Danus","cakzus","jayus","tanus","tapus","tarus","tasTus","parus","yajus","vapus","Arus",); // Here we will enumerate those which end with is, us, or any eligible candidate.
 if(arr($text,'/s\+/') && ((sub($iN1,array("s+","Ms+"),blank(0),0)) && ends(array($fo),$isusend,1) && $pada==="pratyaya" ))
 {
 $text = two($iN1,array("s+",),$iN1,array("z+"),0);
