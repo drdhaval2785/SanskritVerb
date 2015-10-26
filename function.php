@@ -2,7 +2,7 @@
 /* This code is developed by Dr. Dhaval Patel (drdhaval2785@gmail.com) of www.sanskritworld.in and Ms. Sivakumari Katuri.
   * Layout assistance by Mr Marcis Gasuns.
   * Available under GNU licence.
-  * Version 1.0.1 date 5 October 2015
+  * Version 1.1.1 date 26 October 2015
   * The latest source code is available at https://github.com/drdhaval2785/sanskrit
   * For setup, copy and paste sandhi.html, sandhi.php, function.php, mystyle.css, slp-dev.php and dev-slp.php to your localhost and server and run sandhi.html.
   * sandhi.html is the frontend for the code.
@@ -287,8 +287,6 @@ $ArdhadhAtuka_remaining_pratyayas=array("Am","Ric","IyaN","yaN","san",);
 $ArdhadhAtuka_pratyayas=array("syati","syatas","syanti","syasi","syaTas","syaTa","syAmi","syAvas","syAmas","syat","syatAm","syan","syas","syatam","syata","syam","syAva","syAma","tA","tArO","tAras","tAsi","tAsTas","tAsTa","tAsmi","tAsvas","tAsmas","yAt","yAstAm","yAsus","yAs","yAstam","yAsta","yAsam","yAsva","yAsma","Ral","atus","us","Tal","aTus","a","Ral","va","ma","t","tAm","an","s","tam","ta","am","va","ma","sIt","sizwAm","sizus","sIs","sizwam","sizwa","sizam","sizva","sizma","at","atAm","an","as","atam","ata","am","Ava","Ama","at","atAm","an","as","atam","ata","am","Ava","Ama","sat","satAm","san","sas","satam","sata","sam","sAva","sAma","sIt","stAm","sus","sIs","stam","sta","sam","sva","sma","It","izwAm","izus","Is","izwam","izwa","izam","izva","izma","sati","satas","santi","sat","sad","san","sasi","sas","saTas","saTa","sami","sam","savas","sava","samas","sama","sAti","sAt","sAd","sAtas","sAnti","sAn","sAsi","sAs","sATas","sATa","sAmi","sAm","sAvas","sAva","sAmas","sAma","syate","syete","syante","syase","syeTe","syaDve","sye","syAvahe","syAmahe","syata","syetAm","syanta","syaTAs","syaeTAm","syaDvam","sye","syAvahi","syAmahi","tA","tArO","tAras","tAse","tAsATe","tADve","tAhe","tAsvahe","tAsmahe","sIzwa","sIyAstAm","sIran","sIzWAs","sIyAsTAm","sIDvam","sIya","sIvahi","sImahi","e","Ate","ire","se","ATe","Dve","e","vahe","mahe","ata","etAm","anta","aTAs","eTAm","aDvam","e","Avahi","Amahi","ata","etAm","anta","aTAs","eTAm","aDvam","e","Avahi","Amahi","sata","sAtAm","santa","saTAs","sATAm","saDvam","si","sAvahi","sAmahi","sta","sAtAm","sata","sTAs","sATAm","Dvam","si","svahi","smahi","izwa","izAtAm","izata","izWAs","izATAm","iQvam","izi","izvahi","izmahi","sate","satE","sEte","sante","santE","sase","sasE","sETe","saDve","saDvE","se","sE","savahe","savahE","samahe","samahE","sAte","sAtE","sEte","sAnte","sAntE","sAse","sAsE","sETe","sADve","sADvE","se","sE","sAvahe","sAvahE","sAmahe","sAmahE","Rvul","vuY","Ryat","GaY","Rini","Ra","Ryuw","aR","KukaY","Rvi","Yyuw","Rvin","GinuR","ukaY","uR","Rac","inuR","iY","Rvuc","Ramul","KamuY","tavya","tavyat","anIyar","yat","tfc","lyu","ac","zvun","Takan","vun","wa","in","Kac","qa","KizRuc","viw","vic","manin","vanip","ini","Kyun","tfn","izRuc","yuc","zAkan","Aluc","ru","Gurac","u","Uk","ra","Aru","lukan","varac","qu","zwran","itra","tumun","ap","aTuc","nan","a","ani","lyuw","Ga","Kal","se","sen","ase","asen","aDyE","aDyEn","tavE","taven","tosun","tvan","atfn","kyap","ka","wak","kvin","kaY","kvip","kaY","kvanip","kta","ktavatu","Nvanip","kAnac","kvasu","gsnu","kmarac","kurac","kvarap","kin","ki","najiN","kuk","ktri","naN","ktin","aN","ktic","kse","kasen","kaDyE","kaDyEn","taveN","kamul","kasun","ken","kenya","ktvA","ksa","caN","aN","sip","sya","tAs","cli","sic","ciR","u","yak","Am","Ric","IyaN","yaN","san","ista","isAtAm","isata","isTAs","isATAm","iDvam","isDvam","isi","isvahi","ismahi","sDvam");
 // ArdhadhAtuka seT pratyayas.
 $ArdhadhAtuka_seT_pratyayas=array("Tal","va","ma","se","Dve","vahe","mahe","kvasu","kta","ktavatu","ktvA","tumun","tavya","tavyat","tfc","tfn","tAs","tavE","taven","tosun","tvan","taveN","sic","sIyuw","san","sya","kse","se","sen","sip",);
-// ArdhadhAtuka aniT pratyayas.
-$ArdhadhAtuka_aniT_pratyayas=array(); // All except seT. But 'All' is pending. Will complete soon.
 $ajAdi_kitGit_ArdhadhAtuka_pratyayas=array("atus","u");
 $halAdi_kitGit_ArdhadhAtuka_pratyayas=array("ya");
 $other_ArdhadhAtuka_pratyayas=array("Ri");
@@ -2094,144 +2092,6 @@ function Adyanta($text,$a,$b)
     }
     return $val;
 }
-/* function to replace the tiG pratyayas as per sahajabodha text. */
-// Please note that when sUtras are taught to the machine, it will no longer be required. But till then, please bear with it.
-function tiGreplace()
-{
-    global $text;
-    global $lakAra;
-    global $set;
-    global $taG; global $tis; global $tiG; global $so;
-    $default_Atmane_1=array("ta","AtAm","anta","TAs","ATAm","Dvam","i","vahi","mahi");  
-    $tiG_law_Atmane_1=array("te","Ate","ante","se","ATe","Dve","i","vahe","mahe");
-    $tiG_law_parasmai_1=array("ti","tas","anti","si","Tas","Ta","mi","vas","mas");
-    $tiG_law_Atmane_1=array("te","ite","ante","se","iTe","Dve","e","vahe","mahe");
-    $tiG_low_parasmai_1=array("tu","tAm","antu","tAt","tam","ta","Ani","Ava","Ama"); // there is a blank pratyaya at ma.pu.
-    $tiG_low_Atmane_1=array("tAm","itAm","antAm","sva","iTAm","Dvam","E","AvahE","AmahE");
-    $tiG_laN_parasmai_1=array("t","tAm","an","s","tam","ta","am","va","ma");
-    $tiG_laN_Atmane_1=array("ta","itAm","anta","TAs","iTAm","Dvam","i","vahi","mahi");
-    $tiG_viDiliN_parasmai_1=array("it","itAm","iyus","is","itam","ita","iyam","iva","ima");
-    $tiG_viDiliN_Atmane_1=array("Ita","IyAtAm","Iran","ITAs","IyATAm","IDvam","Iya","Ivahi","Imahi");
-    $tiG_sArvaDAtukalew_parasmai_1=array("ati","atas","anti","asi","aTas","aTa","ami","avas","amas");
-    $tiG_sArvaDAtukalew_Atmane_1=array("ate","Ete","ante","ase","ETe","aDve","e","avahe","amahe");
-// second set pratyayas
-    $default_Atmane_2=array("ta","AtAm","anta","TAs","ATAm","Dvam","i","vahi","mahi");  
-    $tiG_law_Atmane_2=array("te","Ate","ante","se","ATe","Dve","i","vahe","mahe");
-    $tiG_law_parasmai_2=array("ti","tas","anti","si","Tas","Ta","mi","vas","mas");
-    $tiG_law_Atmane_2=array("te","Ate","ate","se","ATe","Dve","e","vahe","mahe");
-    $tiG_low_parasmai_2=array("tu","tAm","antu","tAt","tam","ta","Ani","Ava","Ama"); // there is tAt and hi missing.
-    $tiG_low_Atmane_2=array("tAm","AtAm","atAm","sva","ATAm","Dvam","E","AvahE","AmahE");
-    $tiG_laN_parasmai_2=array("t","tAm","an","s","tam","ta","am","va","ma");
-    $tiG_laN_Atmane_2=array("ta","AtAm","ata","TAs","ATAm","Dvam","i","vahi","mahi");
-    $tiG_viDiliN_parasmai_2=array("yAt","yAtAm","yus","yAs","yAtam","yAta","yAm","yAva","yAma");
-    $tiG_viDiliN_Atmane_2=array("Ita","IyAtAm","Iran","ITAs","IyATAm","IDvam","Iya","Ivahi","Imahi");
-    $tiG_sArvaDAtukalew_parasmai_2=array("ati","atas","anti","asi","aTas","aTa","ami","avas","amas");
-    $tiG_sArvaDAtukalew_Atmane_2=array("ate","Ete","ante","ase","ETe","aDve","e","avahe","amahe");
-   if($set===1)
-   {
-        if ($lakAra==="low" && in_array($so,$tis))
-        {
-            $text=pratyayareplace($tiG_law_parasmai_1,$tiG_low_parasmai_1,$text);
-        }        
-        if ($lakAra==="laN" && in_array($so,$tis))
-        {
-            $text=pratyayareplace($tiG_law_parasmai_1,$tiG_laN_parasmai_1,$text);
-        }        
-        if ($lakAra==="viDiliN" && in_array($so,$tis))
-        {
-            $text=pratyayareplace($tiG_law_parasmai_1,$tiG_viDiliN_parasmai_1,$text);
-        }        
-        if ($lakAra==="sArvadhAtukalew" && in_array($so,$tis))
-        {
-            $text=pratyayareplace($tiG_law_parasmai_1,$tiG_sArvaDAtukalew_parasmai_1,$text);
-        }        
-        if ($lakAra==="law" && in_array($so,$taG))
-        {
-            $text=pratyayareplace($default_Atmane_1,$tiG_law_Atmane_1,$text);
-        }        
-        if ($lakAra==="low" && in_array($so,$taG))
-        {
-            $text=pratyayareplace($default_Atmane_1,$tiG_low_Atmane_1,$text);
-        }        
-        if ($lakAra==="laN" && in_array($so,$taG))
-        {
-            $text=pratyayareplace($default_Atmane_1,$tiG_laN_Atmane_1,$text);
-        }        
-        if ($lakAra==="viDiliN" && in_array($so,$taG))
-        {
-            $text=pratyayareplace($default_Atmane_1,$tiG_viDiliN_Atmane_1,$text);
-        }               
-        if ($lakAra==="sArvadhAtukalew" && in_array($so,$taG))
-        {
-            $text=pratyayareplace($default_Atmane_1,$tiG_sArvaDAtukalew_Atmane_1,$text);
-        }               
-   }
-   if($set===2)
-   {
-        if ($lakAra==="low" && in_array($so,$tis))
-        {
-            $text=pratyayareplace($tiG_law_parasmai_2,$tiG_low_parasmai_2,$text);
-        }        
-        if ($lakAra==="laN" && in_array($so,$tis))
-        {
-            $text=pratyayareplace($tiG_law_parasmai_2,$tiG_laN_parasmai_2,$text);
-        }        
-        if ($lakAra==="viDiliN" && in_array($so,$tis))
-        {
-            $text=pratyayareplace($tiG_law_parasmai_2,$tiG_viDiliN_parasmai_2,$text);
-        }        
-        if ($lakAra==="sArvadhAtukalew" && in_array($so,$tis))
-        {
-            $text=pratyayareplace($tiG_law_parasmai_2,$tiG_sArvaDAtukalew_parasmai_2,$text);
-        }        
-        if ($lakAra==="law" && in_array($so,$taG))
-        {
-            $text=pratyayareplace($default_Atmane_2,$tiG_law_Atmane_2,$text);
-        }        
-        if ($lakAra==="low" && in_array($so,$taG))
-        {
-            $text=pratyayareplace($default_Atmane_2,$tiG_low_Atmane_2,$text);
-        }        
-        if ($lakAra==="laN" && in_array($so,$taG))
-        {
-            $text=pratyayareplace($default_Atmane_2,$tiG_laN_Atmane_2,$text);
-        }        
-        if ($lakAra==="viDiliN" && in_array($so,$taG))
-        {
-            $text=pratyayareplace($default_Atmane_2,$tiG_viDiliN_Atmane_2,$text);
-        }               
-        if ($lakAra==="sArvadhAtukalew" && in_array($so,$taG))
-        {
-            $text=pratyayareplace($default_Atmane_2,$tiG_sArvaDAtukalew_Atmane_2,$text);
-        }               
-   }
-    // patch for optional forms.
-   // Patch for sArvadhAtuka leT forms is pending. 
-    foreach ($text as $val1)
-    {
-        if (strpos($val1,"+tAt")!==false && $set===1)
-        {
-            $val2[]=$val1;
-            $val2[]=str_replace("+tAt","",$val1);
-        }
-        elseif (strpos($val1,"+tAt")!==false && $set===2)
-        {
-            $val2[]=$val1;
-            $val2[]=str_replace("+tAt","+hi",$val1);
-        }
-        elseif (strpos($val1,"+tu")!==false)
-        {
-            $val2[]=$val1;
-            $val2[]=str_replace("+tu","+tAt",$val1);
-        }        
-        else
-        {
-            $val2[]=$val1;
-        }
-    }
-    
-    return $val2;
-}
 /* function pratyayareplace to change pratyayas as per Sahajabodha */
 // sub is not specific. For pratyayas, we test whether it is at end or not.
 function pratyayareplace($a,$b,$test)
@@ -2840,7 +2700,7 @@ function abhyAsa_halAdi()
 			$parts[0]="viT";
 			$vyatha=1;
 		}
-		if (in_array($parts[0],array("dyut","svap"))) // pending to code for svap.
+		if (in_array($parts[0],array("dyut","svap")))
 		{
 			$parts[0]=str_replace(array("dyut","svap"),array("dit","sup"),$parts[0]);
 			$dyu=1;
@@ -3993,6 +3853,144 @@ function three1($text,$a,$b,$c,$d,$e,$f,$merge)
         }
     }
     return $text;
+}
+/* function to replace the tiG pratyayas as per sahajabodha text. */
+// Please note that when sUtras are taught to the machine, it will no longer be required. But till then, please bear with it.
+function tiGreplace()
+{
+    global $text;
+    global $lakAra;
+    global $set;
+    global $taG; global $tis; global $tiG; global $so;
+    $default_Atmane_1=array("ta","AtAm","anta","TAs","ATAm","Dvam","i","vahi","mahi");  
+    $tiG_law_Atmane_1=array("te","Ate","ante","se","ATe","Dve","i","vahe","mahe");
+    $tiG_law_parasmai_1=array("ti","tas","anti","si","Tas","Ta","mi","vas","mas");
+    $tiG_law_Atmane_1=array("te","ite","ante","se","iTe","Dve","e","vahe","mahe");
+    $tiG_low_parasmai_1=array("tu","tAm","antu","tAt","tam","ta","Ani","Ava","Ama"); // there is a blank pratyaya at ma.pu.
+    $tiG_low_Atmane_1=array("tAm","itAm","antAm","sva","iTAm","Dvam","E","AvahE","AmahE");
+    $tiG_laN_parasmai_1=array("t","tAm","an","s","tam","ta","am","va","ma");
+    $tiG_laN_Atmane_1=array("ta","itAm","anta","TAs","iTAm","Dvam","i","vahi","mahi");
+    $tiG_viDiliN_parasmai_1=array("it","itAm","iyus","is","itam","ita","iyam","iva","ima");
+    $tiG_viDiliN_Atmane_1=array("Ita","IyAtAm","Iran","ITAs","IyATAm","IDvam","Iya","Ivahi","Imahi");
+    $tiG_sArvaDAtukalew_parasmai_1=array("ati","atas","anti","asi","aTas","aTa","ami","avas","amas");
+    $tiG_sArvaDAtukalew_Atmane_1=array("ate","Ete","ante","ase","ETe","aDve","e","avahe","amahe");
+// second set pratyayas
+    $default_Atmane_2=array("ta","AtAm","anta","TAs","ATAm","Dvam","i","vahi","mahi");  
+    $tiG_law_Atmane_2=array("te","Ate","ante","se","ATe","Dve","i","vahe","mahe");
+    $tiG_law_parasmai_2=array("ti","tas","anti","si","Tas","Ta","mi","vas","mas");
+    $tiG_law_Atmane_2=array("te","Ate","ate","se","ATe","Dve","e","vahe","mahe");
+    $tiG_low_parasmai_2=array("tu","tAm","antu","tAt","tam","ta","Ani","Ava","Ama"); // there is tAt and hi missing.
+    $tiG_low_Atmane_2=array("tAm","AtAm","atAm","sva","ATAm","Dvam","E","AvahE","AmahE");
+    $tiG_laN_parasmai_2=array("t","tAm","an","s","tam","ta","am","va","ma");
+    $tiG_laN_Atmane_2=array("ta","AtAm","ata","TAs","ATAm","Dvam","i","vahi","mahi");
+    $tiG_viDiliN_parasmai_2=array("yAt","yAtAm","yus","yAs","yAtam","yAta","yAm","yAva","yAma");
+    $tiG_viDiliN_Atmane_2=array("Ita","IyAtAm","Iran","ITAs","IyATAm","IDvam","Iya","Ivahi","Imahi");
+    $tiG_sArvaDAtukalew_parasmai_2=array("ati","atas","anti","asi","aTas","aTa","ami","avas","amas");
+    $tiG_sArvaDAtukalew_Atmane_2=array("ate","Ete","ante","ase","ETe","aDve","e","avahe","amahe");
+   if($set===1)
+   {
+        if ($lakAra==="low" && in_array($so,$tis))
+        {
+            $text=pratyayareplace($tiG_law_parasmai_1,$tiG_low_parasmai_1,$text);
+        }        
+        if ($lakAra==="laN" && in_array($so,$tis))
+        {
+            $text=pratyayareplace($tiG_law_parasmai_1,$tiG_laN_parasmai_1,$text);
+        }        
+        if ($lakAra==="viDiliN" && in_array($so,$tis))
+        {
+            $text=pratyayareplace($tiG_law_parasmai_1,$tiG_viDiliN_parasmai_1,$text);
+        }        
+        if ($lakAra==="sArvadhAtukalew" && in_array($so,$tis))
+        {
+            $text=pratyayareplace($tiG_law_parasmai_1,$tiG_sArvaDAtukalew_parasmai_1,$text);
+        }        
+        if ($lakAra==="law" && in_array($so,$taG))
+        {
+            $text=pratyayareplace($default_Atmane_1,$tiG_law_Atmane_1,$text);
+        }        
+        if ($lakAra==="low" && in_array($so,$taG))
+        {
+            $text=pratyayareplace($default_Atmane_1,$tiG_low_Atmane_1,$text);
+        }        
+        if ($lakAra==="laN" && in_array($so,$taG))
+        {
+            $text=pratyayareplace($default_Atmane_1,$tiG_laN_Atmane_1,$text);
+        }        
+        if ($lakAra==="viDiliN" && in_array($so,$taG))
+        {
+            $text=pratyayareplace($default_Atmane_1,$tiG_viDiliN_Atmane_1,$text);
+        }               
+        if ($lakAra==="sArvadhAtukalew" && in_array($so,$taG))
+        {
+            $text=pratyayareplace($default_Atmane_1,$tiG_sArvaDAtukalew_Atmane_1,$text);
+        }               
+   }
+   if($set===2)
+   {
+        if ($lakAra==="low" && in_array($so,$tis))
+        {
+            $text=pratyayareplace($tiG_law_parasmai_2,$tiG_low_parasmai_2,$text);
+        }        
+        if ($lakAra==="laN" && in_array($so,$tis))
+        {
+            $text=pratyayareplace($tiG_law_parasmai_2,$tiG_laN_parasmai_2,$text);
+        }        
+        if ($lakAra==="viDiliN" && in_array($so,$tis))
+        {
+            $text=pratyayareplace($tiG_law_parasmai_2,$tiG_viDiliN_parasmai_2,$text);
+        }        
+        if ($lakAra==="sArvadhAtukalew" && in_array($so,$tis))
+        {
+            $text=pratyayareplace($tiG_law_parasmai_2,$tiG_sArvaDAtukalew_parasmai_2,$text);
+        }        
+        if ($lakAra==="law" && in_array($so,$taG))
+        {
+            $text=pratyayareplace($default_Atmane_2,$tiG_law_Atmane_2,$text);
+        }        
+        if ($lakAra==="low" && in_array($so,$taG))
+        {
+            $text=pratyayareplace($default_Atmane_2,$tiG_low_Atmane_2,$text);
+        }        
+        if ($lakAra==="laN" && in_array($so,$taG))
+        {
+            $text=pratyayareplace($default_Atmane_2,$tiG_laN_Atmane_2,$text);
+        }        
+        if ($lakAra==="viDiliN" && in_array($so,$taG))
+        {
+            $text=pratyayareplace($default_Atmane_2,$tiG_viDiliN_Atmane_2,$text);
+        }               
+        if ($lakAra==="sArvadhAtukalew" && in_array($so,$taG))
+        {
+            $text=pratyayareplace($default_Atmane_2,$tiG_sArvaDAtukalew_Atmane_2,$text);
+        }               
+   }
+    // patch for optional forms.
+   // Patch for sArvadhAtuka leT forms is pending. 
+    foreach ($text as $val1)
+    {
+        if (strpos($val1,"+tAt")!==false && $set===1)
+        {
+            $val2[]=$val1;
+            $val2[]=str_replace("+tAt","",$val1);
+        }
+        elseif (strpos($val1,"+tAt")!==false && $set===2)
+        {
+            $val2[]=$val1;
+            $val2[]=str_replace("+tAt","+hi",$val1);
+        }
+        elseif (strpos($val1,"+tu")!==false)
+        {
+            $val2[]=$val1;
+            $val2[]=str_replace("+tu","+tAt",$val1);
+        }        
+        else
+        {
+            $val2[]=$val1;
+        }
+    }
+    
+    return $val2;
 }
 
 /* An attempt to create an all encompassing function 
