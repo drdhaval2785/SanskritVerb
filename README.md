@@ -44,3 +44,7 @@ v1.0.0 - 2 August 2015 - Initial release
 v1.0.1 - 5 October 2015 - Major Bug Fixes
 
 v1.1.0 - 17 October 2015 - Time Optimization
+
+# For understanding the code
+
+Read [this](https://github.com/drdhaval2785/SanskritVerb/blob/master/understandcode.md)
