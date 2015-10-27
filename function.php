@@ -116,7 +116,7 @@ $taG=array("ta","AtAm","Ja","TAs","ATAm","Dvam","iw","vahi","mahiN");
 $tiGprathama=array("tip","tas","Ji","ta","AtAm","Ja",);
 $tiGmadhyama=array("sip","Tas","Ta","TAs","ATAm","Dvam",);
 $tiGuttama=array("mip","vas","mas","iw","vahi","mahiN");
-$tiG1=array("te","ite","ante","se","iTe","Dve","e","vahe","mahe","ti","tas","anti","si","Tas","Ta","mi","vas","mas","Ate","ATe","ta","itAm","anta","TAs","iTAm","Dvam","i","vahi","mahi","t","ant","s","m","tAm","tam","ta","am","AtAm","ATAm","va","ma","Ral","Ra","atus","us","Tal","Ta","aTus","a","va","ma","e","Ate","ire","se","ATe","Dve","e","vahe","mahe","O","ata"); // removal of anubandhas.
+$tiG1=array("te","ite","ante","se","iTe","Dve","e","vahe","mahe","ti","tas","anti","si","Tas","Ta","mi","vas","mas","Ate","ATe","ta","itAm","anta","TAs","iTAm","Dvam","i","vahi","mahi","t","ant","s","m","tAm","tam","ta","am","AtAm","ATAm","va","ma","Ral","Ra","atus","us","Tal","Ta","aTus","a","va","ma","e","Ate","ire","se","ATe","Dve","e","vahe","mahe","O","ata","Ral","atus","us","Tal","aTus","Ral","va","ma"); // removal of anubandhas.
 $shitpratyaya=array("Sap","Syan","Snu","Sa","Snam","SnA","SAyac","SAnac");
 $Nitpratyaya=array("");
 $Jitpratyaya=array("");
@@ -706,11 +706,11 @@ function display($n)
         }
     for($i=1;$i<count($text)+1;$i++) // for all members of the $text array
     {
-        if ($upasarga_joined===1 || $us==="")
+        if ($us==="")
         {
         echo "<p class = form>$i - ".convert($text[$i-1])."</p>\n"; // showing the output to the browser. e.g. 1. rAmaH. $i is for numbering. function convert converts the output into devanAgarI.
         }
-        elseif ($upasarga_joined===0)
+        elseif ($us!=="" )
         {
         echo "<p class = form>$i - ".convert($us."+".$text[$i-1])."</p>\n"; // showing the output to the browser. e.g. 1. rAmaH. $i is for numbering. function convert converts the output into devanAgarI.
         }
@@ -775,11 +775,11 @@ function display2($text,$n)
 	if ($debug===1) {dibug('DISPLAY2 NOTES PRINT END');}
     for($i=1;$i<count($text)+1;$i++) // for all members of the $text array
     {
-        if ($upasarga_joined===1 || $us==="")
+        if ($us==="")
         {
         echo "<p class = form>$i - ".convert($text[$i-1])."</p>\n"; // showing the output to the browser. e.g. 1. rAmaH. $i is for numbering. function convert converts the output into devanAgarI.
         }
-        elseif ($upasarga_joined===0)
+        elseif ($us!=="")
         {
         echo "<p class = form>$i - ".convert($us."+".$text[$i-1])."</p>\n"; // showing the output to the browser. e.g. 1. rAmaH. $i is for numbering. function convert converts the output into devanAgarI.
         }
