@@ -3154,7 +3154,6 @@ function gui($text,$sutra_number,$style,$note,$us)
 		{	
 			echo "<p class = ".$style." >By ".toiast($sutra_dev[$i])." (".link_sutra($sutra_number).") :</p>\n";
 			echo "<p class = ".$style." >".$sutra_dev[$i]." (".convert($sutra_number).") :</p>\n";
-			echo $us; print_r($text);
 			display2($text,$note,$us);
 		}		
 	}

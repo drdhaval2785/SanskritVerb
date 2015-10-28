@@ -1739,7 +1739,7 @@ if (in_array($so,array("ta","Ja")) && $lakAra==="liw")
 	storedata('3.4.81','sa',0);
 }
 /* jho'ntaH (7.1.3) */
-if (in_array($so,array("Ji")) && $lakAra!=="liw") // because liTastajhayorezirec.
+if (in_array($so,array("Ji")) && arr($text,'/Ji$/') && $lakAra!=="liw") // because liTastajhayorezirec.
 {
     $text=two(array("+"),array("Ji"),array("+"),array("anti"),0);
 	storedata('7.1.3','sa',0);
