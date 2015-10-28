@@ -728,9 +728,9 @@ function display($n)
 // 7 is for padasya, padAt, anudAttaM sarvamapAdAdau adhikAra.
 // 8 is for anupasarjanAt adhikAra.
 // new messages can be added if the message is of repeated nature.
-function display2($text,$n)
+function display2($text,$n,$us='')
 {
-    global $upasarga_joined; global $us, $debug; // bringing $text from main php function.
+    global $upasarga_joined, $debug; // bringing $text from main php function.
 	foreach ($text as $val) { $out[] = str_replace("++","+",$val);}
 	$text = $out;
     if ($n === 1) // sending special messages.
@@ -775,14 +775,7 @@ function display2($text,$n)
 	if ($debug===1) {dibug('DISPLAY2 NOTES PRINT END');}
     for($i=1;$i<count($text)+1;$i++) // for all members of the $text array
     {
-        if ($us==="")
-        {
-        echo "<p class = form>$i - ".convert($text[$i-1])."</p>\n"; // showing the output to the browser. e.g. 1. rAmaH. $i is for numbering. function convert converts the output into devanAgarI.
-        }
-        elseif ($us!=="")
-        {
-        echo "<p class = form>$i - ".convert($us."+".$text[$i-1])."</p>\n"; // showing the output to the browser. e.g. 1. rAmaH. $i is for numbering. function convert converts the output into devanAgarI.
-        }
+        echo "<p class = form>$i - ".convert(trim($us."+".$text[$i-1],'+'))."</p>\n"; // showing the output to the browser. e.g. 1. rAmaH. $i is for numbering. function convert converts the output into devanAgarI.
     }
 	if ($debug===1) {dibug('DISPLAY2 ACTUAL PRINT END');}
     if ($n === 2) { $text1 = $text; $text = $text2; } // not useful because the display(2) is not used in the code. If it is used, this will work.
@@ -2299,7 +2292,7 @@ function link_vartika($s) {
 
 function caG_halAdi()
 {
-	global $text; global $storedata;
+	global $text; global $storedata, $us;
 	foreach ($text as $value)
 	{
 		$parts=explode('+',$value);
@@ -2323,7 +2316,7 @@ return $text;
 }
 function caG_ajAdi()
 {
-	global $text; global $caG; global $fo; global $storedata;
+	global $text; global $caG; global $fo; global $storedata, $us;
 	foreach ($text as $value)
 	{
 		$parts=explode('+',$value);
@@ -2499,7 +2492,7 @@ return $text;
 }
 function liT_ajAdi()
 {
-	global $text, $caG, $lakAra, $verb_without_anubandha, $storedata; 
+	global $text, $caG, $lakAra, $verb_without_anubandha, $storedata, $us; 
 	/* ajAderdvitIyasya (6.1.2) */
 	if (anekAca($verb_without_anubandha) )
 	{
@@ -2658,7 +2651,7 @@ return $text;
 
 function liT_halAdi()
 {
-	global $text; global $storedata;
+	global $text; global $storedata, $us;
 	foreach ($text as $value)
 	{
 		$parts=explode('+',$value);
@@ -2683,7 +2676,7 @@ return $text;
 
 function abhyAsa_halAdi()
 {
-	global $text;	global $caG; global $lakAra; global $fo; global $storedata;
+	global $text;	global $caG; global $lakAra; global $fo; global $storedata, $us;
 	foreach ($text as $value)
 	{
 		$parts=explode('+',$value);
@@ -2863,7 +2856,7 @@ return $text;
 
 function san()
 {
-	global $text, $atolopa; global $storedata;
+	global $text, $atolopa; global $storedata, $us;
 	foreach ($text as $value)
 	{
 		$parts=explode('+',$value);
@@ -2982,7 +2975,7 @@ function firstmember($a,$b)
 
 function zlu()
 {
-	global $first, $text, $juhotyAdi, $tiG, $storedata, $so, $pada;
+	global $first, $text, $juhotyAdi, $tiG, $storedata, $so, $pada, $us;
 	// taking replacements directly from sahajabodha p 329. Only hu's process is shown. For everything else there is direct substitution.
 	$juhotyAdireplace1=array("if","kiki","kikit","gAgA","GiGf","jajan","tutur","dAdA","daDan","dADA","diDiz","nenij","pipf","pipF","baBas","biBI","biBfMS","mimA","vevij","veviz","sisf","hihA","hahA","huhu","hihf","jihrI");
 	$juhotyAdireplace2=array("if","kiki","kikit","gigA","GiGf","jajan","tutur","dadA","daDan","daDA","diDiz","nenij","pipf","pipF","baBas","biBI","biBfMS","mimA","vevij","veviz","sisf","hihA","hahA","huhu","hihf","jihrI");
@@ -3030,7 +3023,7 @@ function zlu()
 }
 function Am()
 {
-	global $lakAra, $fo, $verb_without_anubandha, $storedata; 
+	global $lakAra, $fo, $verb_without_anubandha, $storedata, $us; 
 	/* UrNotezca pratiSedho vaktavyaH (vA) */
 	if ($lakAra==="liw" && ends(array($fo),array("UrRuY"),4) )
 	{
@@ -3081,13 +3074,13 @@ function Am()
 /* function storedata to store necessary information for display later on. */
 function storedata($sutra_number,$style,$note)
 {
-	global $text, $storedata, $frontend;
+	global $text, $storedata, $frontend, $us;
 	$text = one(array("++"),array("+"),0); // To remove double consecutive + signs before storing.
 	if (!in_array($style,array("pa","hn","st","red"))) { $style="sa"; }
 	if (!isset($note)) { $note=0; }
 	if ($frontend!=="0")
 	{
-		$storedata[]=array($text,$sutra_number,$style,$note);		
+		$storedata[]=array($text,$sutra_number,$style,$note,$us);		
 	}
 }
 /* displaying from the storedata */
@@ -3096,7 +3089,7 @@ function display_from_storedata()
 	global $storedata, $debug;
 	foreach ($storedata as $value)
 	{
-		gui($value[0],$value[1],$value[2],$value[3]);
+		gui($value[0],$value[1],$value[2],$value[3],$value[4]);
 	}
 }
 /* printing from the storedata to HTML file */
@@ -3110,10 +3103,10 @@ function print_from_storedata()
 }
 /* Function gui to overcome issues pointed out in https://github.com/drdhaval2785/SanskritVerb/issues/125 */
 // matches function makes the code fast. Earlier we were using a for loop over vdata / ASdata which was very costly. matches function is derived from the answer of Aleks G from http://stackoverflow.com/questions/12315536/search-for-php-array-element-containing-string
-function gui($text,$sutra_number,$style,$note)
+function gui($text,$sutra_number,$style,$note,$us)
 {
 	global $frontend, $storedata, $debug;
-	global $ASdata, $vdata, $miscdata, $upasarga_joined, $us, $otherdata, $paribhASAdata; // bringing $text from main php function.
+	global $ASdata, $vdata, $miscdata, $upasarga_joined, $otherdata, $paribhASAdata; // bringing $text from main php function.
 	if (!in_array($style,array("pa","hn","st","red"))) { $style="sa"; }
 	if (!isset($note)) { $note=0; }
 	if ($debug===1) {dibug('GUI START');}
@@ -3129,7 +3122,7 @@ function gui($text,$sutra_number,$style,$note)
 		{
 		echo "<p class = ".$style." >$msg_eng[$i]</p>\n";
 		echo "<p class = ".$style." >$msg_dev[$i]</p>\n";
-		display2($text,$note);
+		display2($text,$note,$us);
 		}
 	}
 	elseif (strpos($sutra_number,'@')!==false && $frontend==='1')
@@ -3144,7 +3137,7 @@ function gui($text,$sutra_number,$style,$note)
 		{
 		echo "<p class = ".$style." >$msg_eng[$i]</p>\n";
 		echo "<p class = ".$style." >$msg_dev[$i]</p>\n";
-		display2($text,$note);
+		display2($text,$note,$us);
 		}
 	}
 	elseif (strpos($sutra_number,'-')===false && $frontend==='1') // AS numbers are 1.1.1 format. Vartikas are in 1.1.1-1 format. So, - is the delimiter which is differentiating point.
@@ -3161,7 +3154,8 @@ function gui($text,$sutra_number,$style,$note)
 		{	
 			echo "<p class = ".$style." >By ".toiast($sutra_dev[$i])." (".link_sutra($sutra_number).") :</p>\n";
 			echo "<p class = ".$style." >".$sutra_dev[$i]." (".convert($sutra_number).") :</p>\n";
-			display2($text,$note);
+			echo $us; print_r($text);
+			display2($text,$note,$us);
 		}		
 	}
 	elseif (strpos($sutra_number,'-')!==false && $frontend==='1')
@@ -3176,7 +3170,7 @@ function gui($text,$sutra_number,$style,$note)
 		{	
 			echo "<p class = ".$style." >By ".toiast($sutra_dev[$i])." (vA ".link_vartika($sutra_number).") :</p>\n";
 			echo "<p class = ".$style." >".convert($sutra_dev[$i])." (वा ".convert($sutra_number).") :</p>\n";
-			display2($text,$note);
+			display2($text,$note,$us);
 		}				
 	}
 	elseif ($frontend==='1') // For $miscdata for displaying miscellaneous information.
