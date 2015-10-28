@@ -1568,6 +1568,33 @@ if ( !in_array($fo,$allverbs) && sub(array("+Ric+Sap+","+RiN+Sap+"),$tiG,blank(0
 		storedata('6.4.163','sa',0);
     }
 }
+/* Creating a full aNgakArya of Nijantas */
+if (arr($text,'/\+Ric\+/') )
+{
+	if(arr($text,'/['.pc('ac').'][!]/'))
+	{
+		storedata('1.3.7','pa',0);			
+	}
+	storedata('1.3.8','pa',0);
+	storedata('1.3.3','pa',0);
+	$text=two($ac,array("!"),blank(count($ac)),array(""),0);
+	$text = one(array("+Ric+Sap+"),array("+i+a+"),0);
+	storedata('1.3.9','sa',0);
+	/* pugantalaghUpadhasya ca (7.3.86) and sArvadhAtukArdhadhAtukayoH (7.3.84) */
+	if (arr($text,'/[iIuUfFx](['.pc('hl').']*)\+i\+a/' ))
+	{
+		$hlam=array();
+		foreach ($hl as $av) {$hlam[] = $av."+i+a";}
+		$text=three(array("i","I","u","U","f","F","x"),$hl,array("+i+a"),array("e","e","o","o","ar","ar","al"),$hl,array("i+a"),0);
+		$text=three(array("i","I","u","U","f","F","x"),$hl,$hlam,array("e","e","o","o","ar","ar","al"),$hl,$hlam,0);
+		storedata('7.3.86','sa',0);
+	}
+	$text=two($hl,array("+i+a"),$hl,array("e+a"),0);
+	$text=two($hl,array("i+a"),$hl,array("e+a"),0);
+	storedata('7.3.84','sa',0);
+	$text=one(array("e+a+"),array("aya+"),0);
+	storedata('6.1.78','sa',0);
+}
 /* pAghrAdhmAsthAmnAdANdRzyartizadasadAM pibajighradhamatiSThamanayacCapazyarcCadhaushIyasIdAH (7.3.78) */
 if ($lakAra!=="" && in_array($fo,array("pA","GrA","DmA","zWA","mnA","dAR","dfSi!r","f","sf","Sadx!","zadx!","zWA")) && sub(array("pA","GrA","DmA","zWA","mnA","dAR","dfSi!r","f","sf","Sadx!","zadx!"),array("+"),$shitpratyaya,0) )
 {
