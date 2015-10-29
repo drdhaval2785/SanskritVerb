@@ -3434,7 +3434,7 @@ function abridged_verbnumberlist()
 // $list is the array to test. $verblist is the established list of correct forms from Gerard's database. $strength may be set to "full" or "fast"
 function wrongformlist($list,$verblist,$strength="full")
 {
-	global $verb_without_anubandha, $fo, $number, $verbset, $lakAra, $suffix, $suspectentryfile, $verbsingerard;
+	global $verb_without_anubandha, $first, $number, $verbset, $lakAra, $suffix, $suspectentryfile, $verbsingerard;
 	$diff = array_diff($list,$verblist);
 	if ($strength==="full"||in_array($verb_without_anubandha,$verbsingerard))
 	{
@@ -3449,7 +3449,7 @@ function wrongformlist($list,$verblist,$strength="full")
 					if (substr($mem,-1)==="H" && in_array(substr($mem,0,-1)."s",$verblist) ) { }
 					elseif (substr($mem,-1)==="H" && in_array(substr($mem,0,-1)."r",$verblist) ) { }
 					elseif (substr($mem,-1)==="d" && in_array(substr($mem,0,-1)."t",$verblist) ) { }
-					else { fputs($suspectentryfile,$mem."-($fo,$lakAra,$suffix[$i],$verbset,$number)\n"); }
+					else { fputs($suspectentryfile,$mem."-($first,$lakAra,$suffix[$i],$verbset,$number)\n"); }
 				}
 			}
 		}
