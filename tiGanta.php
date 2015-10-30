@@ -3946,6 +3946,17 @@ if ( arr($text,'/['.pc('ac').'](['.pc('hl').'M]*)[+][st]/')  && $lakAra==="luN" 
 	storedata('7.2.3','sa',0);
 }
 if ($debug===1) {dibug("3900");}
+/* astisico'pRkte (7.3.96) */
+// asti pending.
+if ( ($sic!==0 && arr($text,'/\+is([+]*)['.pc('hl').']$/')))
+{
+	$text = two(array("+is",),$hl,array("+is+I"),$hl,0);
+	storedata('7.3.96','sa',0);
+	$text = two(array("+is+I"),$hl,array("+i+I"),$hl,0);
+	storedata('8.2.28','sa',0);
+	$text = two(array("+i+I"),$hl,array("+I"),$hl,0);
+	storedata('6.1.97','sa',0);
+}
 /* pugantalaghUpadhasya ca (7.3.86) */
 if ( $atolopa!==1 && $ardhadhatuka===1 && $didhI!==1 && ($sIyuT===1||$sic===1) && $vijait!==1 && $kGiti!==1 && sub(array("i","u","f","x"),$hl,array("+sI","+isI"),0) && !arr($text,"/[+][i][y][+][t]$/") )
 {
