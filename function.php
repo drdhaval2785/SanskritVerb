@@ -2321,7 +2321,7 @@ function caG_ajAdi()
 	{
 		$parts=explode('+',$value);
 		$splitvowel=preg_split('/([aAiIuUfFxXeEoO])/',$parts[0],null,PREG_SPLIT_DELIM_CAPTURE);
-		if (preg_match('/^['.pc('ac').']/',$parts[0]) && preg_match('/[\+][a]/',$value) && preg_match('/[ndr]['.pc('hl').']/',$splitvowel[count($splitvowel)-3]) ) 
+		if (preg_match('/^['.pc('ac').']/',$parts[0]) && preg_match('/[\+][a]/',$value) && preg_match('/[ndrNYRm]['.pc('hl').']/',$splitvowel[count($splitvowel)-3]) ) 
 		{
 			$splitvowel=preg_split('/([aAiIuUfFxXeEoO])/',$parts[0],null,PREG_SPLIT_DELIM_CAPTURE);
 			$rep=substr($splitvowel[count($splitvowel)-3],1,1);
