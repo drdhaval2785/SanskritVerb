@@ -1832,7 +1832,7 @@ if (arr($text,'/\+Ric\+/'))
 	}
 	storedata('1.3.9','sa',0);
 	$text = one(array("+Ric+"),array("+i+"),0);
-	if (arr($text,'/a\+i\+/') && !arr($text,'/[NYRnm]['.pc('hl').']a\+i\+/'))
+	if (arr($text,'/a\+i\+/') && $lakAra!=="luN")
 	{
 		$text = one(array("a+i+"),array("+i+"),0);
 		storedata('6.4.48','sa',0);
@@ -1846,13 +1846,13 @@ if (arr($text,'/\+Ric\+/'))
 		$text=three(array("i","I","u","U","f","F","x"),$hl,$hlam,array("e","e","o","o","ar","ar","al"),$hl,$hlam,0);
 		storedata('7.3.86','sa',0);
 	}
-	$text=two($hl,array("+i+"),$hl,array("e+"),0);
-	$text=two($hl,array("i+"),$hl,array("e+"),0);
-	storedata('7.3.84','sa',0);
-	if (arr($text,'/e\+['.pc('ac').']/'))
+	if(arr($text,'/i\+['.pc('hl').']/'))
 	{
-	$text=two(array("e+"),$ac,array("ay+"),$ac,0);
-	storedata('6.1.78','sa',0);
+		$text=two($hl,array("+i+"),$hl,array("e+"),0);
+		$text=two($hl,array("i+"),$hl,array("e+"),0);
+		storedata('7.3.84','sa',0);
+		$text=two(array("e+"),$ac,array("ay+"),$ac,0);
+		storedata('6.1.78','sa',0);
 	}
 }
 /* AmaH (2.4.81) and kRJcAnuprayujyate liTi (3.1.40) */
