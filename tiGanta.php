@@ -866,6 +866,14 @@ if (in_array($lakAra,$ArdhadhAtuka_lakAra))
         $text=pr2(array("cakzi!N"),array("+"),$tiG,array("KyA"),array("+"),$tiG,$text);
 		storedata('2.4.54','sa',0);
     }
+	/* valAdAvArdhadhAtuke vikalpa iSyate (vA) */
+	// See page 83 of SK part 2
+	if ($fo==="aja!" && $ardhadhatuka===1 && sub(array("vi+vI","vI"),array("+"),prat('vl'),0))
+	{
+		$text = three(array("vi+vI","vI"),array("+"),prat('vl'),array("aj","aj"),array("+"),prat('vl'),1);
+		// pending to refactor.
+		storedata('7.2.35-1','sa',0);
+	}
     /* ajervyaghaJapoH (2.4.56) */ 
     if (in_array($fo,array("aja!")) && !sub(array("aja!"),array("+"),array("GaY","ap"),0))
     {
@@ -2612,16 +2620,6 @@ if ($lakAra==="liw" && arr($text,'/^['.pc('hl').']/'))
 	abhyAsa_halAdi();
 	$abhyAsa=1;
 }
-/* valAdAvArdhadhAtuke vikalpa iSyate (vA) */
-// See page 83 of SK part 2
-/*if ($fo==="aja!" && $ardhadhatuka===1 && sub(array("vi+vI","vI"),array("+"),prat('vl'),0))
-{
-	$text = three(array("vi+vI","vI"),array("+"),prat('vl'),array("aj","aj"),array("+"),prat('vl'),1);
-	// pending to refactor.
-    echo "<p class = sa >By valAdAvArdhadhAtuke vikalpa iSyate (vA) :</p>\n";
-    echo "<p class = sa >वलादावार्धधातुके विकल्प इष्यते (वा) :</p>\n";
-    display(0);
-}*/
 /* liTi dhAtoranabhyAsasya (6.1.8) */
 elseif ($lakAra==="liw" && arr($text,'/^['.pc('ac').']/'))
 {
@@ -3921,6 +3919,7 @@ if ($id_dhAtu==="vew" && $id_pratyaya==="sew" && !($yAsuT===1 && $lakAra==="ASIr
 	storedata('7.2.35','sa',0);
 	$Agama=array_merge($Agama,array("iw"));
 }
+print_r($text);
 // patch for Svi dhAtu
 if (in_array($fo,array("wuo!Svi")) && sub(array("Svi"),array("+"),prat('vl'),0) )
 {
@@ -3998,6 +3997,7 @@ if ( in_array($so,array("tip")) && $lakAra==="liw" && arr($text,'/['.pc('ac').']
 /* aco JNiti patch for liT mip. */
 if ( in_array($so,array("mip")) && $lakAra==="liw" && arr($text,'/['.pc('ac').']\+/') && (sub($ac,array("+"),$tiG1,0)||sub($ac,array("+"),$iDtiG,0)) )
 {
+	storedata('7.1.91','pa',0);
     $text1 = pr2($ac,array("+"),$tiG1,vriddhi($ac),array("+"),$tiG1,$text);
     $text2 = pr2($ac,array("+"),$iDtiG,vriddhi($ac),array("+"),$iDtiG,$text);
 	$text = array_merge($text,$text1,$text2);
