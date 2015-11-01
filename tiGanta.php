@@ -1842,7 +1842,7 @@ if (arr($text,'/\+Ric\+/'))
 	$text = one(array("+Ric+"),array("+i+"),0);
 	if (arr($text,'/a\+i\+/') && $lakAra!=="luN")
 	{
-		$text = one(array("a+i+"),array("+i+"),0);
+		$text = one(array("a+i+"),array("i+"),0);
 		storedata('6.4.48','sa',0);
 	}
 	/* pugantalaghUpadhasya ca (7.3.86) and sArvadhAtukArdhadhAtukayoH (7.3.84) */
@@ -1854,7 +1854,7 @@ if (arr($text,'/\+Ric\+/'))
 		$text=three(array("i","I","u","U","f","F","x"),$hl,$hlam,array("e","e","o","o","ar","ar","al"),$hl,$hlam,0);
 		storedata('7.3.86','sa',0);
 	}
-	if(arr($text,'/i\+['.pc('hl').']/'))
+	if(arr($text,'/['.pc('hl').']([+]*)i\+/'))
 	{
 		$text=two($hl,array("+i+"),$hl,array("e+"),0);
 		$text=two($hl,array("i+"),$hl,array("e+"),0);
