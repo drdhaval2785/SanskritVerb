@@ -1904,12 +1904,12 @@ if ( in_array($fo,$aniditverbs) && sub(array("+"),array("Syan","Sna","SnA","Snu"
     $aniditAm = 1; // 0 - this sUtra has not applied. 1 - this sUtra has applied.
 }
 /* aniditAM hala upadhAyAH kGiti (6.4.24) */ 
-if ( in_array($fo,$aniditverbs) && sub(array("+Sap",),array("+"),$apit_sArvadhAtuka_pratyayas,0) )
+/*if ( in_array($fo,$aniditverbs) && sub(array("+Sap",),array("+"),$apit_sArvadhAtuka_pratyayas,0) )
 {
     $text = three(array("N","Y","R","n","m","M"),$hl,array("+","a!+","i!r+","u!"),array("","","","","","",),$hl,array("+","a!+","i!r+","u!"),0);        
 	storedata('6.4.24','sa',0);
     $aniditAm = 1; // 0 - this sUtra has not applied. 1 - this sUtra has applied.
-}
+}*/ // See https://github.com/drdhaval2785/SanskritVerb/issues/278
 /* ze tRmphAdInAM numvAcyaH (vA) */ 
 if ( sub(array("tfPa!","tuPa!","dfPa!","fPa!","guPa!","uBa!","SuBa!","tupa!","tfha!"),array("Sa+"),blank(0),0) )
 {
@@ -3925,7 +3925,6 @@ if ($id_dhAtu==="vew" && $id_pratyaya==="sew" && !($yAsuT===1 && $lakAra==="ASIr
 	storedata('7.2.35','sa',0);
 	$Agama=array_merge($Agama,array("iw"));
 }
-print_r($text);
 /* valAdAvArdhadhAtuke vikalpa iSyate (vA) */
 // See page 83 of SK part 2
 if ($fo==="aja!" && $ardhadhatuka===1 && sub(array("vi+vI","vI","ve","vE"),array("+","+i"),prat('vl'),0))
