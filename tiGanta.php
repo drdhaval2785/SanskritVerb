@@ -2379,7 +2379,7 @@ if ( in_array($lakAra,array("luw")) && $tAs===1 && pr2(array("+"),array("tAs+"),
 	$text=one(array("tAs+qA"),array("tAs+A"),0);
 	storedata('1.3.9','sa',0);
 	$text=one(array("tAs+A"),array("tA"),0);
-	storedata('6.4.143','sa',0);
+	storedata('2.4.85-7','sa',0);
 	$syatAsI=1;
 }
 /* tAsastyorlopaH (7.4.50) */
