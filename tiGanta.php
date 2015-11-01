@@ -2308,7 +2308,6 @@ if ( in_array($so,$tis) && !sub(array("+"),array("hi","ni"),blank(0),0) && pr2(a
 	storedata('3.4.100','sa',0);
     $itazca=1;
 } else {$itazca=0; }
-print_r($text);
 /* astisico'pRkte (7.3.96) */
 // asti pending.
 if ( ($sic!==0 && arr($text,'/[+][s][i][c]([+]*)['.pc('hl').']$/')))
@@ -3926,12 +3925,13 @@ if ($id_dhAtu==="vew" && $id_pratyaya==="sew" && !($yAsuT===1 && $lakAra==="ASIr
 	storedata('7.2.35','sa',0);
 	$Agama=array_merge($Agama,array("iw"));
 }
+print_r($text);
 /* valAdAvArdhadhAtuke vikalpa iSyate (vA) */
 // See page 83 of SK part 2
-if ($fo==="aja!" && $ardhadhatuka===1 && sub(array("vi+vI","vI","ve"),array("+","+i"),prat('vl'),0))
+if ($fo==="aja!" && $ardhadhatuka===1 && sub(array("vi+vI","vI","ve","vE"),array("+","+i"),prat('vl'),0))
 {
-	$text = three(array("vi+vI","vI","ve"),array("+",),prat('vl'),array("aj","aj","aj"),array("+i"),prat('vl'),1);
-	$text = three(array("vi+vI","vI","ve"),array("+i",),prat('vl'),array("aj","aj","aj"),array("+i"),prat('vl'),1);
+	$text = three(array("vi+vI","vI","ve","vE"),array("+",),prat('vl'),array("aj","aj","aj","aj"),array("+i"),prat('vl'),1);
+	$text = three(array("vi+vI","vI","ve","vE"),array("+i",),prat('vl'),array("aj","aj","aj","aj"),array("+i"),prat('vl'),1);
 	// pending to refactor.
 	storedata('7.2.35-1','sa',0);
 	if($lakAra==="liw")
