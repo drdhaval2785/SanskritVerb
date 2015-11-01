@@ -2308,9 +2308,10 @@ if ( in_array($so,$tis) && !sub(array("+"),array("hi","ni"),blank(0),0) && pr2(a
 	storedata('3.4.100','sa',0);
     $itazca=1;
 } else {$itazca=0; }
+print_r($text);
 /* astisico'pRkte (7.3.96) */
 // asti pending.
-if ( ($sic!==0 && arr($text,'/[+][s][i][c]['.pc('hl').']$/')))
+if ( ($sic!==0 && arr($text,'/[+][s][i][c]([+]*)['.pc('hl').']$/')))
 {
 	$text = two(array("+sic",),$hl,array("+sic+I"),$hl,0);
 	storedata('7.3.96','sa',0);
@@ -3370,10 +3371,14 @@ if ( (in_array("N",$itpratyaya) || in_array("k",$itpratyaya))  && $kGiti!==1)
     $kGiti=1;
 }
 /* sici vRddhiH parasmaipadeSu (7.2.1) */
-if ( $sic===1 && in_array($so,$tis) && sub($ik,array("+"),array("s","is"),0) )
+//if ( $sic===1 && in_array($so,$tis) && sub($ik,array("+"),array("s","is"),0) )
+if ( $sic===1 && in_array($so,$tis) && sub($ik,array("+"),array("sI","isI"),0) )
 {
-    $text=three($ik,array("+"),array("s","is"),vriddhi($ik),array("+"),array("s","is"),0);
+    $text=three($ik,array("+"),array("sI","isI"),vriddhi($ik),array("+"),array("sI","isI"),0);
+    $text=one(array("sI+s"),array("+sIs"),0);
 	storedata('7.2.1','sa',0);
+	$kGiti=1;
+	$sicivRddhi=1;
 }
 /* udoSThyapUrvasya (7.1.102) */
 if ( in_array($fo,array("pF","PF","bF","BF","mF")) && sub(array("F"),array("+"),$apit_sArvadhAtuka_pratyayas,0) && in_array($so,$tiG) )
@@ -3952,7 +3957,7 @@ if (in_array($fo,array("raDa!","jaBI!")) && sub(array("raD","jaB"),array("+"),$a
 	storedata('7.1.61','sa',0);
 }
 /* vadavrajahalantasya acaH (7.2.3) */ 
-if ( arr($text,'/['.pc('ac').'](['.pc('hl').'M]*)[+][st]/')  && $lakAra==="luN"  && $sic!==0 && in_array($so,$tis) && $yamarama!==1)
+if ( arr($text,'/['.pc('ac').'](['.pc('hl').'M]*)[+][st]/')  && $lakAra==="luN"  && $sic!==0 && in_array($so,$tis) && $yamarama!==1 && $sicivRddhi!==1)
 {
 	foreach ($text as $value)
 		{
@@ -3966,7 +3971,7 @@ if ( arr($text,'/['.pc('ac').'](['.pc('hl').'M]*)[+][st]/')  && $lakAra==="luN" 
 if ($debug===1) {dibug("3900");}
 /* astisico'pRkte (7.3.96) */
 // asti pending.
-if ( ($sic!==0 && arr($text,'/\+is([+]*)['.pc('hl').']$/')))
+if ( ($sic!==0 && arr($text,'/\+([i]*)s([+]*)['.pc('hl').']$/')))
 {
 	$text = two(array("+is",),$hl,array("+is+I"),$hl,0);
 	storedata('7.3.96','sa',0);
@@ -11692,7 +11697,7 @@ $it = array();
 $itprakriti = array();
 $itpratyaya = array();
 $Agama=array();
-$TAp=0; $DAp=0; $cAp=0; $GIp=0; $GIn=0; $GIS=0; $kGiti=0; $abhyasta=0; $ajAdyataSTAp=0; $tusma=0; $upasarga_joined=0;
+$TAp=0; $DAp=0; $cAp=0; $GIp=0; $GIn=0; $GIS=0; $kGiti=0; $abhyasta=0; $ajAdyataSTAp=0; $tusma=0; $upasarga_joined=0; $sicivRddhi=0;
 $storedata=array();
 $text=array();
 if ($debug===1) {dibug('11740');}
