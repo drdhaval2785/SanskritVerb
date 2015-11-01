@@ -3103,8 +3103,10 @@ if ( !in_array($sanAdi,array("Ric")) && arr($text,'/Iy/') && sub(array("+Iy","+s
 // patch for Nijanta and ksa luG
 if (arr($text,'/iy/') && sub(array("+a+iy","+sa+iy","+sya+iy"),array("+"),prat("vl"),0) )
 {
-    $text = three(array("a+iy","+sa+iy"),array("+"),prat("vl"),array("a+i","+sa+i"),array("+"),prat("vl"),0);    
+    $text = three(array("a+iy","+sa+iy"),array("+"),prat("vl"),array("a+i","+sa+i"),array("+"),prat("vl"),0);
 	storedata('6.1.66','sa',0);
+    $text = one(array("a+i+"),array("e+"),0);
+	storedata('6.1.87','sa',0);
 }
 /* AdguNaH (6.1.87) patch for sya Agama */
 if (sub(array("sya+"),array("i+"),blank(0),0))
@@ -3919,7 +3921,6 @@ if ($id_dhAtu==="vew" && $id_pratyaya==="sew" && !($yAsuT===1 && $lakAra==="ASIr
 	storedata('7.2.35','sa',0);
 	$Agama=array_merge($Agama,array("iw"));
 }
-print_r($text);
 /* valAdAvArdhadhAtuke vikalpa iSyate (vA) */
 // See page 83 of SK part 2
 if ($fo==="aja!" && $ardhadhatuka===1 && sub(array("vi+vI","vI","ve"),array("+","+i"),prat('vl'),0))
@@ -9787,13 +9788,13 @@ if (sub(array("kze"),array("ya"),blank(0),0)  && $pada ==="pratyaya" && $start =
     $text = two(array("kze"),array("ya"),array("kzay"),array("ya"),1);
 	storedata('6.1.81','sa',0);
 }
-if (sub(array("je"),array("ya"),blank(0),0) && $pada ==="pratyaya" && $start === 1)
+if (sub(array("je"),array("ya"),blank(0),0) && $pada ==="pratyaya" && $start === 1 && !in_array($so,$tiG))
 {
     $text = two(array("je"),array("ya"),array("jay"),array("ya"),1);
 	storedata('6.1.81','sa',0);
 }
 /* krayyastadarthe (6.1.82) */
-if (sub(array("kre"),array("ya"),blank(0),0)  && $pada ==="pratyaya" && $start ===1)
+if (sub(array("kre"),array("ya"),blank(0),0)  && $pada ==="pratyaya" && $start ===1 && !in_array($so,$tiG))
 {    
     $text = two(array("kre"),array("ya"),array("kray"),array("ya"),1);
 	storedata('6.1.82','sa',0);
