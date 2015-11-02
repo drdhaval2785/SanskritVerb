@@ -3494,12 +3494,14 @@ function verbformlist()
 	$inputtext = file_get_contents('verbforms_gerard.txt');
 	$controllist = explode(',',$inputtext);
 	$okprelim = file('okforms.txt');
+	$okfinal=array();
 	foreach ($okprelim as $okp)
 	{
 		$okfinal[] = explode('-',$okp)[0];
 	}
 	$finallist = array_merge($controllist,$okfinal);
 	return $finallist;
+	//return $controllist;
 }
 function verblist()
 {

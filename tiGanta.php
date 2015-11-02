@@ -1964,7 +1964,6 @@ if ($debug===1) {dibug("1900");}
 //if (in_array($so,$tiG) && ( sub(array("+"),$inbetweenpratyaya,array("+"),0) || (arr($text,'/['.flat($hl).']$/') && $tusma!==1) || sub($hl,array("+"),$vikaraNa,0) || $ad===1 || $rudhAdibhyaH===1 || in_array($lakAra,array("liw","luw","lfw","ASIrliN","luN","lfN","ArDaDAtukalew")) ))
 if (in_array($so,$tiG) && ( sub(array("+"),$inbetweenpratyaya,array("+"),0) || (arr($text,'/['.pc('hl').']$/') && $tusma!==1) || sub($hl,array("+"),$vikaraNa,0) || $ad===1 || $rudhAdibhyaH===1 || pr2($hl,array("+"),array("va","ma"),blank(count($hl)),array("+"),array("va","ma"),0)!==$text) )
 {
-	echo "yes";
 	storedata('1.3.3','pa',0);
     if ( $rudhAdibhyaH===1)
     {
@@ -11712,10 +11711,13 @@ if (isset($argv[0])|| $test ===1)
 	$verblist = verbformlist();
 	$verbsingerard = verblist();
 	wrongformlist($ou,$verblist,"fast"); // Uncomment this if you want only the list of suspect verbs for which Gerard has database.
-	//wrongformlist($ou,$verblist,); // Uncomment this if you want to get the list of all suspect verbs for irrespecitve of Gerard's database.
+	//wrongformlist($ou,$verblist); // Uncomment this if you want to get the list of all suspect verbs for irrespecitve of Gerard's database.
 	generatedforms($ou,$generatedformfile);
 	fclose($suspecentryfile);
 	fclose($generatedformfile);
+	/*$susinput = file_get_contents('suspectverbforms.txt');
+	$susoutput = convert($susinput);
+	file_put_contents('suspectverbforms_deva.txt',$susoutput);*/
 }
 else 
 {
