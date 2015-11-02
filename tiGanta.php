@@ -1960,11 +1960,11 @@ if (in_array($so,$tiG) && arr(array($fo),'/[!]['.pc('hl').']$/') && $nomidelisio
 	storedata('1.3.9','sa',0);
 }
 if ($debug===1) {dibug("1900");}
-
 /* halantyam (1.3.3) and tasya lopaH (1.3.9) */
 //if (in_array($so,$tiG) && ( sub(array("+"),$inbetweenpratyaya,array("+"),0) || (arr($text,'/['.flat($hl).']$/') && $tusma!==1) || sub($hl,array("+"),$vikaraNa,0) || $ad===1 || $rudhAdibhyaH===1 || in_array($lakAra,array("liw","luw","lfw","ASIrliN","luN","lfN","ArDaDAtukalew")) ))
-if (in_array($so,$tiG) && ( sub(array("+"),$inbetweenpratyaya,array("+"),0) || (arr($text,'/['.flat($hl).']$/') && $tusma!==1) || sub($hl,array("+"),$vikaraNa,0) || $ad===1 || $rudhAdibhyaH===1))
+if (in_array($so,$tiG) && ( sub(array("+"),$inbetweenpratyaya,array("+"),0) || (arr($text,'/['.pc('hl').']$/') && $tusma!==1) || sub($hl,array("+"),$vikaraNa,0) || $ad===1 || $rudhAdibhyaH===1 || pr2($hl,array("+"),array("va","ma"),blank(count($hl)),array("+"),array("va","ma"),0)!==$text) )
 {
+	echo "yes";
 	storedata('1.3.3','pa',0);
     if ( $rudhAdibhyaH===1)
     {
@@ -1989,6 +1989,7 @@ if (in_array($so,$tiG) && ( sub(array("+"),$inbetweenpratyaya,array("+"),0) || (
     $text=three($hlplus,$vikaraNa,array("+"),blank1("+",count($hlplus)),$vikaraNa,array("+"),0);
     }
 	$text=one(array("+si+","sicmi"),array("+sic+","sic+mi"),0);
+	$text=pr2($hl,array("+"),array("va","ma"),blank(count($hl)),array("+"),array("va","ma"),$text);
 	if ($nomidelision!==1 && arr($text,'/['.pc('hl').'][+]([c]*)[a][+]/'))
 	{
 	#$text=three($hl,array("+a+","+ca+"),$tiG1,blank(count($hl)),array("+a+","+ca+"),$tiG1,0);
@@ -3880,7 +3881,7 @@ if ( ((in_array($fo,array("lI")) && $verbset==="kryAdi") || (in_array($fo,array(
 }
 /* patch for vI thali */
 // See page 83 of SK part 2
-if ($lakAra==="liw" && $so==="sip" && arr($text,'/[iIuUfFxXeEoO]\+/') && sub(prat('ic'),array("+"),$tiG1,0) )
+if ($lakAra==="liw" && $so==="sip" && arr($text,'/[iIuUfFxXeEoO]\+/') && sub(prat('ic'),array("+"),$tiG1,0) && $fo==="aja!")
 {
 	$id_dhAtu="vew";
 }

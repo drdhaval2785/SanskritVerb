@@ -3357,33 +3357,126 @@ function print_to_file($text,$sutra_number,$style,$note)
 /* function tablemaker */
 function tablemaker($ou)
 {
-	echo "<table border='1'>
-<tr>
-<td></td>
-<td>एकवचनम्‌</td>
-<td>द्विवचनम्‌</td>
-<td>बहुवचनम्‌</td>
-</tr>
-<tr>
-<td>प्रथमपुरुष</td>
-<td>$ou[0]</td>
-<td>$ou[1]</td>
-<td>$ou[2]</td>
-</tr>
-<tr>
-<td>मध्यमपुरुष</td>
-<td>$ou[3]</td>
-<td>$ou[4]</td>
-<td>$ou[5]</td>
-</tr>
-<tr>
-<td>उत्तमपुरुष</td>
-<td>$ou[6]</td>
-<td>$ou[7]</td>
-<td>$ou[8]</td>
-</tr>
-</table>
-";
+	global $verbpada;
+	if ($verbpada==='p')
+	{
+			echo "<table border='1'>
+		<tr>
+		<td>परस्मैपद</td>
+		<td>एकवचनम्‌</td>
+		<td>द्विवचनम्‌</td>
+		<td>बहुवचनम्‌</td>
+		</tr>
+		<tr>
+		<td>प्रथमपुरुष</td>
+		<td>$ou[0]</td>
+		<td>$ou[1]</td>
+		<td>$ou[2]</td>
+		</tr>
+		<tr>
+		<td>मध्यमपुरुष</td>
+		<td>$ou[3]</td>
+		<td>$ou[4]</td>
+		<td>$ou[5]</td>
+		</tr>
+		<tr>
+		<td>उत्तमपुरुष</td>
+		<td>$ou[6]</td>
+		<td>$ou[7]</td>
+		<td>$ou[8]</td>
+		</tr>
+		</table>
+		";
+	}
+	elseif ($verbpada==='A')
+	{
+			echo "<table border='1'>
+		<tr>
+		<td>आत्मनेपद</td>
+		<td>एकवचनम्‌</td>
+		<td>द्विवचनम्‌</td>
+		<td>बहुवचनम्‌</td>
+		</tr>
+		<tr>
+		<td>प्रथमपुरुष</td>
+		<td>$ou[0]</td>
+		<td>$ou[1]</td>
+		<td>$ou[2]</td>
+		</tr>
+		<tr>
+		<td>मध्यमपुरुष</td>
+		<td>$ou[3]</td>
+		<td>$ou[4]</td>
+		<td>$ou[5]</td>
+		</tr>
+		<tr>
+		<td>उत्तमपुरुष</td>
+		<td>$ou[6]</td>
+		<td>$ou[7]</td>
+		<td>$ou[8]</td>
+		</tr>
+		</table>
+		";
+	}
+	elseif ($verbpada==='u')
+	{
+			echo "<table border='1'>
+		<tr>
+		<td>परस्मैपद</td>
+		<td>एकवचनम्‌</td>
+		<td>द्विवचनम्‌</td>
+		<td>बहुवचनम्‌</td>
+		</tr>
+		<tr>
+		<td>प्रथमपुरुष</td>
+		<td>$ou[0]</td>
+		<td>$ou[1]</td>
+		<td>$ou[2]</td>
+		</tr>
+		<tr>
+		<td>मध्यमपुरुष</td>
+		<td>$ou[3]</td>
+		<td>$ou[4]</td>
+		<td>$ou[5]</td>
+		</tr>
+		<tr>
+		<td>उत्तमपुरुष</td>
+		<td>$ou[6]</td>
+		<td>$ou[7]</td>
+		<td>$ou[8]</td>
+		</tr>
+		</table>
+		";
+		echo "<hr/>";
+			echo "<table border='1'>
+		<tr>
+		<td>आत्मनेपद</td>
+		<td>एकवचनम्‌</td>
+		<td>द्विवचनम्‌</td>
+		<td>बहुवचनम्‌</td>
+		</tr>
+		<tr>
+		<td>प्रथमपुरुष</td>
+		<td>$ou[9]</td>
+		<td>$ou[10]</td>
+		<td>$ou[11]</td>
+		</tr>
+		<tr>
+		<td>मध्यमपुरुष</td>
+		<td>$ou[12]</td>
+		<td>$ou[13]</td>
+		<td>$ou[14]</td>
+		</tr>
+		<tr>
+		<td>उत्तमपुरुष</td>
+		<td>$ou[15]</td>
+		<td>$ou[16]</td>
+		<td>$ou[17]</td>
+		</tr>
+		</table>
+		";
+	}
+
 }
 function timestamp()
 {
@@ -3400,7 +3493,13 @@ function verbformlist()
 {
 	$inputtext = file_get_contents('verbforms_gerard.txt');
 	$controllist = explode(',',$inputtext);
-	return $controllist;
+	$okprelim = file('okforms.txt');
+	foreach ($okprelim as $okp)
+	{
+		$okfinal[] = explode('-',$okp)[0];
+	}
+	$finallist = array_merge($controllist,$okfinal);
+	return $finallist;
 }
 function verblist()
 {
