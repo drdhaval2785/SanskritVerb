@@ -1757,12 +1757,6 @@ if (in_array($so,array("ta","Ja")) && $lakAra==="liw")
     $text=two(array("+"),array("ta","Ja"),array("+"),array("eS","irec"),0);
 	storedata('3.4.81','sa',0);
 }
-/* jho'ntaH (7.1.3) */
-if (in_array($so,array("Ji")) && arr($text,'/Ji$/') && $lakAra!=="liw") // because liTastajhayorezirec.
-{
-    $text=two(array("+"),array("Ji"),array("+"),array("anti"),0);
-	storedata('7.1.3','sa',0);
-}
 /* AtmanepadeSvanataH (7.1.5) */
 if ( in_array($so,array("Ja")) && $set===2 && pr2(array("+"),array("Ja"),blank(0),array("+"),array("ata"),blank(0),$text)!==$text)
 {
@@ -1884,6 +1878,12 @@ if ($lakAra==="liw" && sub(array("+Am+"),$tiG,blank(0),0) )
 	$fo="qukfY";
 }
 if ($debug===1) {dibug("1800");}
+/* jho'ntaH (7.1.3) */
+if (in_array($so,array("Ji")) && arr($text,'/Ji$/') && $lakAra!=="liw") // because liTastajhayorezirec.
+{
+    $text=two(array("+"),array("Ji"),array("+"),array("anti"),0);
+	storedata('7.1.3','sa',0);
+}
 /* parasmaipadAnAM NalatususthalthusaNalvamAH (3.4.82) */
 if ($lakAra==="liw" && in_array($so,$tis) )
 {
@@ -1959,6 +1959,7 @@ if (in_array($so,$tiG) && arr(array($fo),'/[!]['.pc('hl').']$/') && $nomidelisio
 	$text=three(array("!"),$hl,array("+"),array("!"),blank(count($hl)),array("+"),0);
 	storedata('1.3.9','sa',0);
 }
+print_r($text);
 if ($debug===1) {dibug("1900");}
 /* halantyam (1.3.3) and tasya lopaH (1.3.9) */
 //if (in_array($so,$tiG) && ( sub(array("+"),$inbetweenpratyaya,array("+"),0) || (arr($text,'/['.flat($hl).']$/') && $tusma!==1) || sub($hl,array("+"),$vikaraNa,0) || $ad===1 || $rudhAdibhyaH===1 || in_array($lakAra,array("liw","luw","lfw","ASIrliN","luN","lfN","ArDaDAtukalew")) ))
@@ -2355,6 +2356,7 @@ if (sub($hrasva,array("C"),blank(0),0) && in_array($so,$tiG) )
 	$text = one(array("tC"),array("cC"),0);
 	storedata('8.4.40','sa',0);
 }
+if ($debug===1) {dibug("2300");}
 /* syatAsI lRlutoH (3.1.33) */
 if ( in_array($lakAra,array("lfw","lfN")) && pr2(array("+"),blank(0),$tiG1,array("+"),array("sya"),$tiG1,$text)!==$text)
 {
@@ -2362,7 +2364,6 @@ if ( in_array($lakAra,array("lfw","lfN")) && pr2(array("+"),blank(0),$tiG1,array
 	storedata('3.1.33','sa',0);
 	$syatAsI=1;
 } else {$syatAsI = 0; }
-if ($debug===1) {dibug("2300");}
 /* syatAsI lRlutoH (3.1.33) */
 if (  in_array($lakAra,array("luw")) && pr2(array("+"),blank(0),$tiG1,array("+"),array("tAs+"),$tiG1,$text)!==$text )
 {
