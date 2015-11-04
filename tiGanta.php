@@ -3105,7 +3105,7 @@ if (arr($text,'/iy/') && sub(array("+a+iy","+sa+iy","+sya+iy"),array("+"),prat("
 {
     $text = three(array("a+iy","+sa+iy"),array("+"),prat("vl"),array("a+i","+sa+i"),array("+"),prat("vl"),0);
 	storedata('6.1.66','sa',0);
-    $text = one(array("a+i+"),array("e+"),0);
+    $text = one(array("a+i+"),array("e"),0);
 	storedata('6.1.87','sa',0);
 }
 /* AdguNaH (6.1.87) patch for sya Agama */

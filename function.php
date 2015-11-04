@@ -3550,6 +3550,8 @@ function wrongformlist($list,$verblist,$strength="full")
 					if (substr($mem,-1)==="H" && in_array(substr($mem,0,-1)."s",$verblist) ) { }
 					elseif (substr($mem,-1)==="H" && in_array(substr($mem,0,-1)."r",$verblist) ) { }
 					elseif (substr($mem,-1)==="d" && in_array(substr($mem,0,-1)."t",$verblist) ) { }
+					elseif (substr($mem,-3)==="tAd" && in_array(substr($mem,0,-3)."tu",$verblist) ) { }
+					elseif (substr($mem,-3)==="tAt" && in_array(substr($mem,0,-3)."tu",$verblist) ) { }
 					else { fputs($suspectentryfile,$mem."-($first,$lakAra,$suffix[$i],$verbset,$number)\n"); }
 				}
 			}
