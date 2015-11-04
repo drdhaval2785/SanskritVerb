@@ -1848,7 +1848,7 @@ if (arr($text,'/\+Ric\+/'))
 		$text=three(array("i","I","u","U","f","F","x"),$hl,$hlam,array("e","e","o","o","ar","ar","al"),$hl,$hlam,0);
 		storedata('7.3.86','sa',0);
 	}
-	if(arr($text,'/['.pc('hl').']([+]*)i\+/'))
+	if(arr($text,'/['.pc('hl').']([+]*)i\+/') && !in_array($lakAra,array("ASIrliN")))
 	{
 		$text=two($hl,array("+i+"),$hl,array("e+"),0);
 		$text=two($hl,array("i+"),$hl,array("e+"),0);
@@ -1959,7 +1959,6 @@ if (in_array($so,$tiG) && arr(array($fo),'/[!]['.pc('hl').']$/') && $nomidelisio
 	$text=three(array("!"),$hl,array("+"),array("!"),blank(count($hl)),array("+"),0);
 	storedata('1.3.9','sa',0);
 }
-print_r($text);
 if ($debug===1) {dibug("1900");}
 /* halantyam (1.3.3) and tasya lopaH (1.3.9) */
 //if (in_array($so,$tiG) && ( sub(array("+"),$inbetweenpratyaya,array("+"),0) || (arr($text,'/['.flat($hl).']$/') && $tusma!==1) || sub($hl,array("+"),$vikaraNa,0) || $ad===1 || $rudhAdibhyaH===1 || in_array($lakAra,array("liw","luw","lfw","ASIrliN","luN","lfN","ArDaDAtukalew")) ))
@@ -3534,6 +3533,19 @@ if ( in_array($fo,$curAdi_adanta) && $ardhadhatuka===1 && ($verbset==="none"||$v
 }
 /* removing + from before Ni pratyayas */
 if(arr($text,'/['.pc('hl').']\+i\+/')) {$text = one(array("+i+"),array("i+"),0);}
+/* NeraniTi (6.4.51) */
+if (arr($text,'/i\+a/') && in_array($so,$tiG) && $lakAra==="luN" && $caG===1 && (in_array("iw",$Agama)||ends(array($sanAdi),array("Ric","RiN"),2)||in_array($fo,$curAdi_adanta) ))
+{
+	$text = three(array("i"),array("+"),array("a"),array(""),array("+"),array("a"),0);
+	storedata('6.4.51','sa',0);
+}
+/* NeraniTi (6.4.51) */
+elseif (arr($text,'/([+]*)i\+/') && in_array($so,$tiG) && $ardhadhatuka===1&& (in_array("iw",$Agama)||ends(array($sanAdi),array("Ric","RiN"),2)||in_array($fo,$curAdi_adanta) ))
+{
+	$text = one(array("i+"),array("+"),0);
+	$text = pr2(array("+yAs"),array("+"),array("s"),array("yAs"),array("+"),array("s"),$text);
+	storedata('6.4.51','sa',0);
+}
 /* guNo'rtisaMyogAdyoH (7.4.29) */
 if ( (in_array($sanAdi,array("yak")) || $lakAra==="ASIrliN") && (sub($hl,$hl,array("f+y"),0) || $fo==="f"))
 {
@@ -4578,18 +4590,6 @@ if ( arr($text,'/^[iIuU][+][eoEO]/') && $abhyAsa===1)
 	storedata('6.4.78','sa',0);
 }
 if ($debug===1) {dibug("4500");}
-/* NeraniTi (6.4.51) */
-if (arr($text,'/i\+a/') && in_array($so,$tiG) && $lakAra==="luN" && $caG===1 && (in_array("iw",$Agama)||ends(array($sanAdi),array("Ric","RiN"),2)||in_array($fo,$curAdi_adanta) ))
-{
-	$text = three(array("i"),array("+"),array("a"),array(""),array("+"),array("a"),0);
-	storedata('6.4.51','sa',0);
-}
-/* NeraniTi (6.4.51) */
-elseif (arr($text,'\+i\+') && in_array($so,$tiG) && $ardhadhatuka===1 && in_array("iw",$Agama))
-{
-	$text = one(array("+i+"),array("+"),0);
-	storedata('6.4.51','sa',0);
-}
 /* intermediate sandhis for vikaraNa pratyayas */
 if ($lakAra!=="")
 {
