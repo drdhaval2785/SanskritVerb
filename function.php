@@ -3493,15 +3493,16 @@ function verbformlist()
 {
 	$inputtext = file_get_contents('verbforms_gerard.txt');
 	$controllist = explode(',',$inputtext);
+	$inputtext1 = file_get_contents('verbforms_amba.txt');
+	$controllist1 = explode(',',$inputtext1);
 	$okprelim = file('okforms.txt');
 	$okfinal=array();
 	foreach ($okprelim as $okp)
 	{
 		$okfinal[] = explode('-',$okp)[0];
 	}
-	$finallist = array_merge($controllist,$okfinal);
+	$finallist = array_merge($controllist,$controllist1,$okfinal);
 	return $finallist;
-	//return $controllist;
 }
 function verblist()
 {
