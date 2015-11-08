@@ -1,4 +1,8 @@
 <?php
+/* This code is used for generating various arrays used in function.php and for testing purpose. 
+	Not much useful for non developers. 
+	Not much useful even for developers, because the output is already utilised at proper place.
+*/
 echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
@@ -377,7 +381,7 @@ for ($i=0;$i<count($var);$i++)
 echo '$vdata=array("'.implode('","',$output).'");'
 */
 /* gui function testing */
-$text = array("BU+Sap+tip");
+/*$text = array("BU+Sap+tip");
 $upasarga_joined=1;
 $op[] = array($text,'1.1.4','pa');
 $op[] = array($text,'1.1.5','sa',3);
@@ -387,5 +391,5 @@ $op[] = array($text,'1.1.15','hn');
 foreach ($op as $value)
 {
 	gui($value[0],$value[1],$value[2],$value[3]);
-}
+}*/
 ?>

@@ -2,13 +2,13 @@
 /* This code is developed by Dr. Dhaval Patel (drdhaval2785@gmail.com) of www.sanskritworld.in and Ms. Sivakumari Katuri.
   * Layout assistance by Mr Marcis Gasuns.
   * Available under GNU licence.
-  * Version 1.1.1 date 26 October 2015
-  * The latest source code is available at https://github.com/drdhaval2785/sanskrit
-  * For setup, copy and paste sandhi.html, sandhi.php, function.php, mystyle.css, slp-dev.php and dev-slp.php to your localhost and server and run sandhi.html.
-  * sandhi.html is the frontend for the code.
-  * function.php stores the frequently used functions in this code (The description on how to use the code is there in function.php.
-  * slp-dev.php is for converting SLP1 data to Devanagari. dev-slp.php is for converting Devanagari data to SLP1.
-  * Mystyle.css is stylesheet where you can change your preferences.
+  * Version 1.1.2 date 7 November 2015
+  * The latest source code is available at https://github.com/drdhaval2785/SanskritVerb
+  * For setup, copy and paste tiGanta.html, tiGanta.php, and scripts folder to your localhost and server and run tiGanta.html.
+  * tiGanta.html is the frontend for the code.
+  * scripts/function.php stores the frequently used functions in this code (The description on how to use the code is placed as comments in scripts/function.php.
+  * scripts/slp-dev.php is for converting SLP1 data to Devanagari. dev-slp.php is for converting Devanagari data to SLP1.
+  * scripts/ystyle.css is stylesheet where you can change your preferences for display.
   */
 
 /* Defining grammatical arrays */

@@ -2,19 +2,19 @@
  /* This code is developed by Dr. Dhaval Patel (drdhaval2785@gmail.com) of www.sanskritworld.in and Ms. Sivakumari Katuri.
   * Layout assistance by Mr Marcis Gasuns.
   * Available under GNU licence.
-  * Version 1.1.1 date 26 October 2015
-  * The latest source code is available at https://github.com/drdhaval2785/sanskrit
+  * Version 1.1.2 date 7 November 2015
+  * The latest source code is available at https://github.com/drdhaval2785/SanskritVerb .
   * Acknowledgements: The base book for coding has been Astadhyayi sahajabodha of Dr. Pushpa Dikshit, published by Pratibha Prakashan, Delhi.
   * I extend my heartfelt thanks to Ananda Loponen for the code to convert devanagari and various sanskrit transliterations. That can be accessed at http://www.ingmardeboer.nl/php/diCrunch.php?act=help.
   * I also extend my gratitude to gloomy.penguin of stackoverflow.com, who helped me create dvitva and lopa functions, without which I would be handicapped.
-  * For setup, copy and paste subanta.php, subanta.html, script.js, ajax.php, function.php, mystyle.css, slp-dev.php and dev-slp.php to your localhost and server and run subanta.html.
+  * For setup, copy and paste tiGanta.php, tiGanta.html, and scripts folder to your localhost and server and run tiGanta.html.
   * tiGanta.html is the frontend for the code.
-  * ajax.php and script.js are codes which asks for user feedback for particular words. 
-  * function.php stores the frequently used functions in this code (The description on how to use the code is there in function.php).
+  * scripts/ajax.php and scripts/script.js are codes which asks for user feedback for particular words. 
+  * scripts/function.php stores the frequently used functions in this code (The description on how to use the code is there in function.php).
   * tiGanta.php is the code which actually gives the output of the word derivation.
-  * slp-dev.php is for converting SLP1 data to Devanagari. 
-  * dev-slp.php is for converting Devanagari data to SLP1.
-  * Mystyle.css is stylesheet where you can change your preferences.
+  * scripts/slp-dev.php is for converting SLP1 data to Devanagari. 
+  * scripts/dev-slp.php is for converting Devanagari data to SLP1.
+  * scripts/ystyle.css is stylesheet where you can change your preferences.
   * The code uses jquery.
   * The description part uses Howard Kyoto protocol.
   * The coding uses SLP1 transliteration.
@@ -22,9 +22,9 @@
 $start_time = microtime(true);
 
 /* Including arrays and functions */
-include "function.php"; // includes the file function.php which is collection of functions used in this code.
-include "slp-dev.php"; // includes code for conversion from SLP to devanagari,
-include "dev-slp.php"; // includes code for devanagari to SLP.
+include "scripts/function.php"; // includes the file function.php which is collection of functions used in this code.
+include "scripts/slp-dev.php"; // includes code for conversion from SLP to devanagari,
+include "scripts/dev-slp.php"; // includes code for devanagari to SLP.
 
 /* hides error reports. */
 // If the warning is shown with line number of function.php and you are not able to trace the line which called it, turn the all error reporting on. It will help you locate the wrong entries in a reasonably narrow space, because there are so many notices around.
@@ -43,7 +43,7 @@ $header = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http:
 <!--... Defining UTF-8 as our default character set, so that devanagari is displayed properly. -->
 <meta charset="UTF-8">
 <!--... Defining CSS -->
-<link rel="stylesheet" type="text/css" href="mystyle.css">
+<link rel="stylesheet" type="text/css" href="scripts/mystyle.css">
 <!--... including Ajax jquery. -->
 </head>
 <body>

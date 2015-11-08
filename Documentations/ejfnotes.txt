@@ -1,3 +1,6 @@
+Background - I had sought Jim Funderburk's assistance to assign links to the sUtra numbers.
+The following is his note on the change in code he made somewhere near 16/12/2014.
+---------------------------------------------
 
 I had to change line 1136:
 $verb_without_anubandha=scrape($first,0,2,1)[0];
@@ -88,4 +91,6 @@ has the added links.
 
 http://127.0.0.1:4001/SanskritVerb-master/tiGanta.php?first=eDa!&upasarga=&lakAra=law&vAcya=kartR&tran=SLP1&sanAdi=&cond11=2&verbset=none&step=11
 
-
+Note by Dhaval - This alteration was done on 16/12/2014 and a lot of changes have been done after that.
+Therefore, the file tiGanta_ejf.php has been incorporated in tiGanta.php. It was kept there just to fall back to the original if the code didn't work.
+The code has worked miraculously well. Therefore, removing the tiGanta_ejf.php file now (7/11/2015).

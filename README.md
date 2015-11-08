@@ -27,11 +27,11 @@ Use http://www.sanskritworld.in/sanskrittool/SanskritVerb/tiGanta.html for tiGan
 
 #For tiGanta generation - 
 
-Install dev-slp.php, slp-dev.php, function.php, mystyle.css, tiGanta.html, tiGanta.php, ajax.php and script.js in your system and then input a word. 
+Install tiGanta.html, tiGanta.php and scripts folder in your system and then input a word. 
 
 Give the feedback if the machine asks for any. 
 
-Then machine will give you derivation of all forms of a particular verb.
+Then machine will give you conjugation of all forms of a particular verb.
 
 ##For offline usage - 
 
@@ -45,6 +45,10 @@ v1.0.1 - 5 October 2015 - Major Bug Fixes
 
 v1.1.0 - 17 October 2015 - Time Optimization
 
+v1.1.1 - 26 October 2015 - All inline issues from tiGanta.php and function.php noted as Github issues for easier tracking.
+
+v1.1.2 - 7 November 2015 - Code separated into Data, Documentations, scripts, testing and output folders and necessary corrections made in the code.
+
 # For understanding the code
 
-Read [this](https://github.com/drdhaval2785/SanskritVerb/blob/master/understandcode.md)
+Read [this](https://github.com/drdhaval2785/SanskritVerb/Documentations/blob/master/understandcode.md)

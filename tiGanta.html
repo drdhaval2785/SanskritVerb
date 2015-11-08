@@ -4,13 +4,13 @@
 <!--... Defining UTF-8 as our default character set, so that devanagari is displayed properly. -->
 <meta charset="UTF-8">
 <!--... Defining CSS -->
-<link rel="stylesheet" type="text/css" href="mystyle.css">
-  <link rel="stylesheet" href="jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="scripts/mystyle.css">
+  <link rel="stylesheet" href="scripts/jquery-ui.css">
 <!--... including Ajax jquery. This is local version of <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" ></script> so that I can work without internet connection-->
-<script src="ajaxcode.js" ></script>
-  <script src="jquery-ui.js"></script>
+<script src="scripts/ajaxcode.js" ></script>
+  <script src="scripts/jquery-ui.js"></script>
 <!--... script.js is javascript which we use to make the frontend interective for user feedback. Whenever the user clicks the radio button specified in script.js, the data is sent to ajax.php and then output from ajax.php is shown in the frontend. This process may continue as long as you want. -->
-<script src="script.js" ></script>
+<script src="scripts/script.js" ></script>
 <!--... Autocomplete module as suggested in https://github.com/drdhaval2785/SanskritVerb/issues/122 -->
 <script>
   $(function() {
@@ -88,7 +88,7 @@
 </div>
 <!--... Submit button -->
 <input type="submit">
-<!--... Sending the step id to subanta.php hidden. -->
+<!--... Sending the step id to tiGanta.php hidden. -->
 <input type="hidden" name="step" id="step" value="0" />
 </form>
 </div>
@@ -109,7 +109,7 @@ Correction submission: We will be greatful if you can send your corrections <a h
 Note: The source code for this program is available on Github <a href = "https://github.com/drdhaval2785/sanskritverb" target="_blank">here.</a><br>
 For those who find github clumsy, latest code can be accessed manually <a href="http://lanover.com/lan/sanskrit/SanskritVerb"  target="_blank">here</a>.<br>
 For those who want to install the code for offline usage, instruction can be seen in readme file <a href="https://github.com/drdhaval2785/sanskrit" target="_blank">here</a>.<br>        
-Places where we take user input can be accessed <a href="http://lanover.com/lan/sanskrit/SanskritVerb/ajax%20requirement.docx"  target="_blank">here</a>. <br>
+Places where we take user input can be accessed <a href="www.sanskritworld.in/sanskrittool/SanskritVerb/Documentations/ajax%20requirement.docx"  target="_blank">here</a>. <br>
 For better rendering of output, use <a href = "http://svayambhava.org/index.php/en/" target="_blank">Siddhanta font.</a></p>
 <!--... Disclaimer for IAST -->
 For <a href = "http://en.wikipedia.org/wiki/International_Alphabet_of_Sanskrit_Transliteration">IAST scheme</a>, please use the lowercase letters.</p>

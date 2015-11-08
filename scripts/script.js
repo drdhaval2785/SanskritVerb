@@ -4,7 +4,7 @@ $(document).ready(function() {
 	$.getData = function(){
 		$.ajax({
 				type: "POST", // data is transferred by POST
-				url: "ajax.php", // data is sent to ajax.php
+				url: "scripts/ajax.php", // data is sent to ajax.php
 				async   : false,
 				data: $( "form" ).serialize()
 				})

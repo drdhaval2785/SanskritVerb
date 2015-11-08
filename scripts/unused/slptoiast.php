@@ -1,4 +1,10 @@
 <?php
+/* A code to convert from SLP1 to IAST. 
+	Used in function.php in function toiast. 
+	Redundant now. 
+	Only for file conversion, this still has some value.
+	Ignore this file.
+*/
 $first=file_get_contents("d:\\!sorting\\normalsorted4.txt");
 // defining IAST letters.
 $iast = array("a","ā","i","ī","u","ū","ṛ","ṝ","ḷ","ḹ","e","ai","o","au","ṃ","ḥ","kh","ch","ṭh","th","ph","gh","jh","ḍh","dh","bh","ṅ","ñ","ṇ","k","c","ṭ","t","p","g","j","ḍ","d","b","n","m","y","r","l","v","s","h","ś","ṣ",);
