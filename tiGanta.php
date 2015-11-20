@@ -2382,13 +2382,16 @@ if (  in_array($lakAra,array("luw")) && pr2(array("+"),blank(0),$tiG1,array("+")
 /* luTaH prathamasya DAraurasaH (2.4.85) */
 if ( in_array($lakAra,array("luw")) && $tAs===1 && pr2(array("+"),array("tAs+"),array("ti","tas","anti","te","Ate","ante"),array("+"),array("tAss+"),$tiG1,$text)!==$text )
 {
-    $text=pr2(array("+"),array("tAs+"),array("ti","tas","anti","te","Ate","ante"),array("+"),array(""),array("tAs+qA","tAs+rO","tAs+ras","tA","tAs+rO","tAs+ras",),$text);
+    $text=pr2(array("+"),array("tAs+"),array("ti","tas","anti","te","Ate","ante"),array("+"),array(""),array("tAs+qA","tAs+rO","tAs+ras","tAs+qA","tAs+rO","tAs+ras",),$text);
 	storedata('2.4.85','sa',0);
-	storedata('1.3.7','pa',0);	
-	$text=one(array("tAs+qA"),array("tAs+A"),0);
-	storedata('1.3.9','sa',0);
-	$text=one(array("tAs+A"),array("tA"),0);
-	storedata('2.4.85-7','sa',0);
+	if (arr($text,'/tAs\+qA/'))
+	{
+		storedata('1.3.7','pa',0);	
+		$text=one(array("tAs+qA"),array("tAs+A"),0);
+		storedata('1.3.9','sa',0);
+		$text=one(array("tAs+A"),array("tA"),0);
+		storedata('2.4.85-7','sa',0);
+	}
 	$syatAsI=1;
 }
 /* tAsastyorlopaH (7.4.50) */
