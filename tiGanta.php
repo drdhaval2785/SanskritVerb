@@ -10131,17 +10131,17 @@ storedata('6.1.94-5','sa',0);
 for($i=0;$i<count($text);$i++)
 {
     $tttt = explode("at",$text[$i]); // exploding the word to check whether it is AmreDita. e.g. paTatpaTat will be split - paT. at, paT, at.
-    if (count($tttt) > 1 )
+    if (count($tttt) > 1 && !in_array($so,$tiG))
     {
-    if ($tttt[0] === $tttt[1]) // e.g. paT - paT.
-    {
-        $amredita = 1; // 0 - no AmreDita. 1 - AmreDita.
-        break;
-    }
-    else
-    {
-        $amredita = 0;
-    }
+		if ($tttt[0] === $tttt[1]) // e.g. paT - paT.
+		{
+			$amredita = 1; // 0 - no AmreDita. 1 - AmreDita.
+			break;
+		}
+		else
+		{
+			$amredita = 0;
+		}
     }
     else
     {
