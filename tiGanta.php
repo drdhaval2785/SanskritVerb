@@ -1894,7 +1894,6 @@ if ($lakAra==="liw" && sub(array("+Am+"),$tiG1,blank(0),0) )
 	$fo="qukfY";
 	$verb_without_anubandha="kf";
 }
-print_r($text);
 /* asaMyogAlliT kit (1.2.5) */
 if (!arr(array($verb_without_anubandha),'/['.pc('hl').']['.pc('hl').']$/') && $lakAra==="liw" && !in_array($so,array("tip","sip","mip")))
 {
@@ -1947,18 +1946,6 @@ if ( sub(array("tfPa!","tuPa!","dfPa!","fPa!","guPa!","uBa!","SuBa!","tupa!","tf
 {
     $text = two(array("tfPa!","tuPa!","dfPa!","fPa!","guPa!","uBa!","SuBa!","tupa!","tfha!"),array("Sa+"),array("tfmPa!","tumPa!","dfmPa!","fmPa!","gumPa!","umBa!","SumBa!","tumpa!","tfnha!"),array("Sa+"),0);        
 	storedata('7.1.59-1','sa',0);
-}
-/* sArvadhAtukamapit (1.2.4) */
-if ($sarvadhatuka===1 && !in_array("Sap",$vik) && pr2(array("+"),$apit_sArvadhAtuka_pratyayas,blank(0),array("+fadfad"),$apit_sArvadhAtuka_pratyayas,blank(0),$text)!== $text ) // See https://github.com/drdhaval2785/SanskritVerb/issues/267
-{
-    $it=array_merge($it,array("N"));
-    $itpratyaya=array_merge($itpratyaya,array("N"));
-	storedata('1.2.4','sa',0);
-	if (pr2(pc('ik'),array("+"),$apit_sArvadhAtuka_pratyayas,pc('ik'),array("+fadfad"),$apit_sArvadhAtuka_pratyayas,$text)!== $text)
-	{
-		storedata('1.1.5','sa',0);
-		$kGiti=1;	
-	}
 }
 /* mInAternigame (7.3.81) */
 if (in_array($fo,array("mIN")) && in_array($so,$tiG) && $veda===1 && sub(array("mIN",),$shitpratyaya,blank(0),0) )
@@ -2368,22 +2355,6 @@ elseif($number==="01.0998") // See https://github.com/drdhaval2785/SanskritVerb/
 {
 	$ancu=2;
 }
-/* aniditAM hala upadhAyAH kGiti (6.4.24) */ 
-if ( in_array($fo,$aniditverbs) && (in_array("N",$itpratyaya) || in_array("k",$itpratyaya)) && !in_array($sanAdi,array("Ric"))  && $so!=="mahiN")
-{
-	if ($ancu===2)
-	{
-		$text = three(array("N","Y","R","n","m","M"),$hl,array("+"),array("","","","","","",),$hl,array("+"),1);        
-		storedata('6.4.24','sa',0);
-		$aniditAm = 1; // 0 - this sUtra has not applied. 1 - this sUtra has applied.				
-	}
-	else
-	{
-		$text = three(array("N","Y","R","n","m","M"),$hl,array("+"),array("","","","","","",),$hl,array("+"),0);        
-		storedata('6.4.24','sa',0);
-		$aniditAm = 1; // 0 - this sUtra has not applied. 1 - this sUtra has applied.		
-	}
-}
 /* Che ca (6.1.73) */
 if (sub($hrasva,array("C"),blank(0),0) && in_array($so,$tiG) )
 {
@@ -2627,15 +2598,16 @@ if ($rudhAdibhyaH===1)
 	storedata('3.1.78','sa',0);
     $vik=array_merge($vik,array("Snam"));
     $set=2;
-    if (arr($text,'/[n][a][n]/'))
+    if (arr($text,'/[n][a][nNYRm]/'))
     {
-        $text = one(array("nan"),array("na"),0);
+        $text = two(array("na"),array("N","Y","R","n","m"),array("na"),array("","","","",""),0);
 		storedata('6.4.23','sa',0);
     }
     if (pr2(array("na"),$hlplus,$apit_sArvadhAtuka_pratyayas,array("n"),$hlplus,$apit_sArvadhAtuka_pratyayas,$text)!==$text)
     {
         $text = pr2(array("na"),$hlplus,$apit_sArvadhAtuka_pratyayas,array("n"),$hlplus,$apit_sArvadhAtuka_pratyayas,$text);
 		storedata('6.4.111','sa',0);
+		$znasorallopaH = 1;
     }
     if (sub(array("tfnah"),array("+"),blank(0),0))
     {
@@ -2651,12 +2623,40 @@ if ($rudhAdibhyaH===1)
 		storedata('6.1.87','sa',0);
     }
 }
+/* sArvadhAtukamapit (1.2.4) */
+if ($sarvadhatuka===1 && !in_array("Sap",$vik) && pr2(array("+"),$apit_sArvadhAtuka_pratyayas,blank(0),array("+fadfad"),$apit_sArvadhAtuka_pratyayas,blank(0),$text)!== $text  && $znasorallopaH!==1 ) // See https://github.com/drdhaval2785/SanskritVerb/issues/267
+{
+    $it=array_merge($it,array("N"));
+    $itpratyaya=array_merge($itpratyaya,array("N"));
+	storedata('1.2.4','pa',0);
+	if (pr2(pc('ik'),array("+"),$apit_sArvadhAtuka_pratyayas,pc('ik'),array("+fadfad"),$apit_sArvadhAtuka_pratyayas,$text)!== $text)
+	{
+		storedata('1.1.5','sa',0);
+		$kGiti=1;	
+	}
+}
 /* liTi dhAtoranabhyAsasya (6.1.8) */
 if ($lakAra==="liw" && arr($text,'/^['.pc('hl').']/'))
 {
 	liT_halAdi();
 	abhyAsa_halAdi();
 	$abhyAsa=1;
+}
+/* aniditAM hala upadhAyAH kGiti (6.4.24) */ 
+if ( in_array($fo,$aniditverbs) && (in_array("N",$itpratyaya) || in_array("k",$itpratyaya)) && !in_array($sanAdi,array("Ric"))  && $so!=="mahiN")
+{
+	if ($ancu===2)
+	{
+		$text = three(array("N","Y","R","n","m","M"),$hl,array("+"),array("","","","","","",),$hl,array("+"),1);        
+		storedata('6.4.24','sa',0);
+		$aniditAm = 1; // 0 - this sUtra has not applied. 1 - this sUtra has applied.				
+	}
+	else
+	{
+		$text = three(array("N","Y","R","n","m","M"),$hl,array("+"),array("","","","","","",),$hl,array("+"),0);        
+		storedata('6.4.24','sa',0);
+		$aniditAm = 1; // 0 - this sUtra has not applied. 1 - this sUtra has applied.		
+	}
 }
 /* liTi dhAtoranabhyAsasya (6.1.8) */
 elseif ($lakAra==="liw" && arr($text,'/^['.pc('ac').']/'))
@@ -3220,7 +3220,7 @@ if ( in_array($fo,array("Gasa!","Basa!")) && pr2(array("Gas","Bas"),array("+"),$
 	storedata('6.4.100','sa',0);
 }
 /* sArvadhAtukamapit (1.2.4) */
-if (  !in_array("Sap",$vik)  && $sarvadhatuka===1 && sub(array("+"),$apit_sArvadhAtuka_pratyayas,blank(0),0) && $kGiti!==1)
+if (  !in_array("Sap",$vik)  && $sarvadhatuka===1 && sub(array("+"),$apit_sArvadhAtuka_pratyayas,blank(0),0) && $kGiti!==1  && $znasorallopaH!==1)
 {
     $it=array_merge($it,array("N"));
     $itpratyaya=array_merge($itpratyaya,array("N"));
@@ -5015,9 +5015,10 @@ if (arr($text,'/daridrA\+/') && in_array($fo,array("daridrA")) && $ardhadhatuka=
     $text=one(array("daridr+s"),array("daridrA+s"),0);
 	storedata('6.4.114-1','sa',0);	
 }
+print_r($text);
 /* apadAntasya mUrdhanyaH (8.3.55), iNkoH (8.3.57) and AdezapratyayayoH (8.3.59) */
 // Not coded perfectly. This is only for tiG pratyayas.
-if(arr($text,'/[iIuUfFxXeoEOhyvrl]\+s/') && !arr($text,'/[iIuUfFxXeoEOhyvrl]\+s$/') && in_array($so,$tiG) )
+if(arr($text,'/[iIuUfFxXeoEOhyvrlkKgGN]\+s/') && !arr($text,'/[iIuUfFxXeoEOhyvrl]\+s$/') && in_array($so,$tiG) )
 {
 $text = two($iN1,array("+s"),$iN1,array("+z"),0);
 storedata('8.3.55','sa',0);
