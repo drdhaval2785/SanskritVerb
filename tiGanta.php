@@ -853,6 +853,8 @@ if (in_array($lakAra,$ArdhadhAtuka_lakAra))
     {
         $text=pr2(array("ada!"),array("+"),$tiG,array("Gasx!"),array("+"),$tiG,$text);
 		storedata('2.4.37','sa',0);
+		$fo = "Gasx!";
+		$it = array_merge($it,array("x"));
     }
     /* vA liTi (2.4.55) */ 
     if (in_array($fo,array("cakzi!N")) && $lakAra==="liw")
