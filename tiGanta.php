@@ -3402,7 +3402,7 @@ if ( ($sanDai=="san" || $lakAra==="liw") &&  sub(array("ci+ci"),array("+"),array
 	storedata('7.3.58','sa',0);
 }
 /* kGiti ca (1.1.5) */
-if ( (in_array("N",$itpratyaya) || in_array("k",$itpratyaya))  && $kGiti!==1)
+if ( (in_array("N",$itpratyaya) || in_array("k",$itpratyaya)) && !in_array($sanAdi,array("Ric")) && pr2(array("i","I","u","U","f","F","x","X"),array("+"),$tiG1,array("i","I","u","U","f","F","x","X"),array("+i"),$tiG1,$text)!==$text  && $kGiti!==1)
 {
 	storedata('1.1.5','sa',0);
     $kGiti=1;
@@ -5015,7 +5015,6 @@ if (arr($text,'/daridrA\+/') && in_array($fo,array("daridrA")) && $ardhadhatuka=
     $text=one(array("daridr+s"),array("daridrA+s"),0);
 	storedata('6.4.114-1','sa',0);	
 }
-print_r($text);
 /* apadAntasya mUrdhanyaH (8.3.55), iNkoH (8.3.57) and AdezapratyayayoH (8.3.59) */
 // Not coded perfectly. This is only for tiG pratyayas.
 if(arr($text,'/[iIuUfFxXeoEOhyvrlkKgGN]\+s/') && !arr($text,'/[iIuUfFxXeoEOhyvrl]\+s$/') && in_array($so,$tiG) )
