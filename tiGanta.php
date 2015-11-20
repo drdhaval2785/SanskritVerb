@@ -1736,6 +1736,21 @@ if (in_array($fo,$pvAdi) && sub(array("+"),$shitpratyaya,blank(0),0) && $fo!=="j
     $text=three(array("A","I","U","F",),array("+"),$shitpratyaya,array("a","i","u","f",),array("+"),$shitpratyaya,0);
 	storedata('7.3.80','sa',0);
 }
+/* idito numdhAtoH (7.1.58) */ # See https://github.com/drdhaval2785/SanskritVerb/issues/293 regarding location shifting.
+if ( in_array("i",$it) && $lakAra!=="" && in_array($fo,array("cakzi!N")) )
+{
+	storedata('anteidita','sa',0);
+}
+/* idito numdhAtoH (7.1.58) */ # See https://github.com/drdhaval2785/SanskritVerb/issues/299.
+elseif ( in_array("i",$it) && $lakAra!=="" && !in_array($fo,$irendiditverbs) )
+{
+	storedata('1.3.2','pa',0);
+	$text = two($iditverbs,array("+"),$iditverbs2,array("+"),0);
+	storedata('1.3.9','sa',0);
+    $text = two($iditverbs2,array("+"),$iditverbs1,array("+"),0);
+	storedata('7.1.58','sa',0);
+}
+
 /* pratyaya changes */
 /* jherjus (3.4.108) */
 if (in_array($so,array("Ji")) && ($lakAra==="ASIrliN"||$lakAra==="viDiliN") )
@@ -2095,17 +2110,6 @@ if (in_array($fo,array("hana!")) && $lakAra==="ASIrliN")
 {
 	$text=two(array("han"),array("+"),array("vaD"),array("+"),0);
 	storedata('2.4.42','sa',0);
-}
-/* idito numdhAtoH (7.1.58) */ # See https://github.com/drdhaval2785/SanskritVerb/issues/293 regarding location shifting.
-if ( in_array("i",$it) && $lakAra!=="" && in_array($fo,array("cakzi!N")) )
-{
-	storedata('anteidita','sa',0);
-}
-/* idito numdhAtoH (7.1.58) */
-elseif ( in_array("i",$it) && $lakAra!=="" && !in_array($fo,$irendiditverbs) )
-{
-    $text = two($iditverbs2,array("+"),$iditverbs1,array("+"),0);
-	storedata('7.1.58','sa',0);
 }
 $taGplus=array_merge($taG,array("anta","mahi","ata","i","ran")); // including the altered forms.
 /* sArvadhAtuka leT - treatment of pratyayas */
@@ -4946,7 +4950,6 @@ if ((arr($text,('/[r][+][hyvrlYmGRnJBGQDjbgqdKPCWTcwtkpzS]$/')) && $pada === "pr
 	storedata('8.2.24','sa',0);
     $ratsasya=1; // 0 - doesn't prevent saMyogAntasya lopaH. 1 - prevents saMyogAntasya lopaH.
 } else { $ratsasya=0; }
-print_r($text);
 /* saMyogAntasya lopaH (8.2.23) */
 if (arr($text,'/['.pc('Jy').']\+/') && ( sub(array("N"),$ku,array("+"),0) || sub(array("Y"),$cu,array("+"),0) || sub(array("R"),$Tu,array("+"),0) ||sub(array("m"),$pu,array("+"),0) ) && $ratsasya===0 && $pada==="pada" && in_array($so,$tiG) && !sub(array("+"),array("A"),blank(0),0) && $ancu!==2) // patch for nimittApAye naimittikasyApAyaH. Also see https://github.com/drdhaval2785/SanskritVerb/issues/295 for $ancu correction.
 {
@@ -5001,7 +5004,6 @@ elseif ( (arr($text,'/M/') && sub(array("M"),$hl,array("+"),0) && in_array($so,$
 	storedata('par@56-1','sa',0);
     }
 }
-print_r($text);
 if ($debug===1) {dibug("4900");}
 /* daridrAterArdhadhAtuke vivakSite Alopo vAcyaH (vA) */
 if (arr($text,'/daridrA\+/') && in_array($fo,array("daridrA")) && $ardhadhatuka===1)
