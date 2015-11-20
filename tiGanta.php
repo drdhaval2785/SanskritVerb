@@ -3144,7 +3144,7 @@ if ( !in_array($sanAdi,array("Ric")) && arr($text,'/Iy/') && sub(array("+Iy","+s
 }
 /* lopo vyorvali (6.1.66) */
 // patch for Nijanta and ksa luG
-if (arr($text,'/iy/') && sub(array("+a+iy","+sa+iy","+sya+iy"),array("+"),prat("vl"),0) )
+if (arr($text,'/iy/') && sub(array("+a+iy","+sa+iy","+sya+iy","ya+iy"),array("+"),prat("vl"),0) )
 {
     $text = three(array("a+iy","+sa+iy"),array("+"),prat("vl"),array("a+i","+sa+i"),array("+"),prat("vl"),0);
 	storedata('6.1.66','sa',0);
