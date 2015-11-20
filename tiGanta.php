@@ -11657,21 +11657,21 @@ $text = two($hl,$duplicate,$hl,$dup,1);
 storedata('8.4.64','sa',0);
 }
 /* jharo jhari savarNe (8.4.65) */ 
-if(arr($text,'/['.pc('hl').']['.pc('Jr').']['.pc('Jr').']/'))
-{
 for ($i=0;$i<count(prat('Jr'));$i++)
-{$kkk = array("k","K","g","G"); 
-$ccc = array("c","C","j","J",);
-$www = array("w","W","q","Q",); 
-$ttt = array("t","T","d","D",);
-$ppp = array("p","P","b","B"); // savarNa groups.
-$text = three(prat('hl'),$kkk,$kkk,prat('hl'),blank(4),$kkk,1);
-$text = three(prat('hl'),$ccc,$ccc,prat('hl'),blank(4),$ccc,1);
-$text = three(prat('hl'),$www,$www,prat('hl'),blank(4),$www,1);
-$text = three(prat('hl'),$ttt,$ttt,prat('hl'),blank(4),$ttt,1);
-$text = three(prat('hl'),$ppp,$ppp,prat('hl'),blank(4),$ppp,1);
-}
-storedata('8.4.65','sa',0);
+{
+	if (arr($text,'/['.pc('hl').']['.prat('Jr')[$i].']['.prat('Jr')[$i].']/') )
+	{
+	$kkk = array("k","K","g","G"); 
+	$ccc = array("c","C","j","J",);
+	$www = array("w","W","q","Q",); 
+	$ttt = array("t","T","d","D",);
+	$ppp = array("p","P","b","B"); // savarNa groups.
+	$text = three(prat('hl'),$ccc,$ccc,prat('hl'),blank(4),$ccc,1);
+	$text = three(prat('hl'),$www,$www,prat('hl'),blank(4),$www,1);
+	$text = three(prat('hl'),$ttt,$ttt,prat('hl'),blank(4),$ttt,1);
+	$text = three(prat('hl'),$ppp,$ppp,prat('hl'),blank(4),$ppp,1);
+	storedata('8.4.65','sa',0);
+	}
 }
 /* nipAta forms */ 
 /* apaspRdhethAmAnRcurAnRhuzcicyuSetityAhAzrAtAHzritamAzIrAzIrtAH (6.1.35) */ 
