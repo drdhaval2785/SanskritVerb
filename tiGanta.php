@@ -1346,6 +1346,7 @@ elseif ( $verbset==="curAdi" && sub($curAdi,array("+"),blank(0),0) && sub(array(
 	storedata('3.1.68','sa',0);
     $vik=array_merge($vik,array("Sap"));
     }
+	$vik=array_merge($vik,array("Ric"));
     $set=1; // defining set as per sahajabodha groups.
 }
 // For pratipadikas.
@@ -1825,8 +1826,8 @@ elseif ($lakAra==="liw" && ends(array($fo),array("YiBI","hrI","quBfY","hu"),4) )
 /* kAspratyayAdAmamantre liTi (3.1.35) */
 elseif ($lakAra==="liw" && $veda===0 && (anekAca($verb_without_anubandha) || $sanAdi!=='' || $verbset==="curAdi" || $fo==="kAsf!") )
 {
-    $text=two(array("+"),$tiG,array("+Am+"),$tiG,0);
-    $text=two(array("+Am+Am+"),$tiG,array("+Am+"),$tiG,0);
+    $text=two(array("+"),$tiG1,array("+Am+"),$tiG1,0);
+    $text=two(array("+Am+Am+"),$tiG1,array("+Am+"),$tiG1,0);
 	storedata('3.1.35','sa',0);
 }
 /* curAdi Ric handling */
@@ -1873,9 +1874,9 @@ if (arr($text,'/\+Ric\+/'))
 	}
 }
 /* AmaH (2.4.81) and kRJcAnuprayujyate liTi (3.1.40) */
-if ($lakAra==="liw" && sub(array("+Am+"),$tiG,blank(0),0) )
+if ($lakAra==="liw" && sub(array("+Am+"),$tiG1,blank(0),0) )
 {
-	$text=three(array("+Am+"),array("",),$tiG,array("+Am+"),array("kf+"),$tiG,0);
+	$text=three(array("+Am+"),array("",),$tiG1,array("+Am+"),array("kf+"),$tiG1,0);
 	//$text=one(array("+Am+kf+"),array("+Am+BU+"),1); // Trying for kf only right now.
 	//$text=one(array("+Am+kf+"),array("+Am+as+"),1);
 	storedata('2.4.81','sa',0);
@@ -1891,7 +1892,23 @@ if ($lakAra==="liw" && sub(array("+Am+"),$tiG,blank(0),0) )
 	$us=$us.$sp[0];
 	$text=$val;
 	$fo="qukfY";
+	$verb_without_anubandha="kf";
 }
+print_r($text);
+/* asaMyogAlliT kit (1.2.5) */
+if (!arr(array($verb_without_anubandha),'/['.pc('hl').']['.pc('hl').']$/') && $lakAra==="liw" && !in_array($so,array("tip","sip","mip")))
+{
+	storedata('1.2.5','pa',0);
+	$it = array_merge($it,array("k"));
+	$itpratyaya = array_merge($itpratyaya,array("k"));
+}
+/* asaMyogAlliT kit (1.2.5) */
+if ($verb_without_anubandha==="cakz" && $lakAra==="liw" && !in_array($so,array("tip","sip","mip")))
+{
+	storedata('1.2.5','pa',0);
+	$it = array_merge($it,array("k"));
+	$itpratyaya = array_merge($itpratyaya,array("k"));
+}	
 if ($debug===1) {dibug("1800");}
 /* jho'ntaH (7.1.3) */
 if (in_array($so,array("Ji")) && arr($text,'/Ji$/') && $lakAra!=="liw") // because liTastajhayorezirec.
@@ -1932,7 +1949,7 @@ if ( sub(array("tfPa!","tuPa!","dfPa!","fPa!","guPa!","uBa!","SuBa!","tupa!","tf
 	storedata('7.1.59-1','sa',0);
 }
 /* sArvadhAtukamapit (1.2.4) */
-if ( $sarvadhatuka===1 && !in_array("Sap",$vik)) // && (pr2(array("+"),$apit_sArvadhAtuka_pratyayas,blank(0),array("+fadfad"),$apit_sArvadhAtuka_pratyayas,blank(0),$text)!== $text )) // See https://github.com/drdhaval2785/SanskritVerb/issues/267
+if ($sarvadhatuka===1 && !in_array("Sap",$vik) && pr2(array("+"),$apit_sArvadhAtuka_pratyayas,blank(0),array("+fadfad"),$apit_sArvadhAtuka_pratyayas,blank(0),$text)!== $text ) // See https://github.com/drdhaval2785/SanskritVerb/issues/267
 {
     $it=array_merge($it,array("N"));
     $itpratyaya=array_merge($itpratyaya,array("N"));
@@ -2039,21 +2056,7 @@ if (in_array($fo,array("vaca!",)) && $lakAra==="luN" && sub(array("vac"),array("
 {
 	$text = one(array("vac+a+"),array("vauc+a+"),0);
 	storedata('7.4.20','sa',0);
-}	
-/* asaMyogAlliT kit (1.2.5) */
-if (!arr(array($verb_without_anubandha),'/['.pc('hl').']['.pc('hl').']$/') && $lakAra==="liw" && !in_array($so,array("tip","sip","mip")))
-{
-	storedata('1.2.5','pa',0);
-	$it = array_merge($it,array("k"));
-	$itpratyaya = array_merge($itpratyaya,array("k"));
 }
-/* asaMyogAlliT kit (1.2.5) */
-if ($verb_without_anubandha==="cakz" && $lakAra==="liw" && !in_array($so,array("tip","sip","mip")))
-{
-	storedata('1.2.5','pa',0);
-	$it = array_merge($it,array("k"));
-	$itpratyaya = array_merge($itpratyaya,array("k"));
-}	
 /* zAsa idaGhaloH (6.4.34) */
 if ( in_array($fo,array("SAsu!")) && $lakAra==="luN" && sub(array("SAs"),array("+a+"),blank(0),0) )
 {
