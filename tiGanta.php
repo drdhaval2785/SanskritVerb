@@ -2554,7 +2554,7 @@ elseif (arr(array($verb_without_anubandha),'/[aAiIuUFeEoO]$/') && $id_dhAtu==="a
 elseif (!in_array($fo,array("qukfY","sf","quBfY","vfN","vfY","zwuY","dru","sru","Sru")) && $lakAra==="liw" && in_array($so,array("sip","vas","mas","TAs","Dvam","vahi","mahiN")))
 {
 	if ($id_dhAtu!=="vew") { $id_dhAtu="sew"; }
-	storedata('7.2.13','sa',0);
+	storedata('7.2.13-krAdiniyamaH','sa',0);
 }
 /* upadeze'tvataH (7.2.62) and Rto bhAradvAjasya (7.2.63) */
 elseif (arr(array($verb_without_anubandha),'/[a]/') && $id_dhAtu==="aniw" && $lakAra==="liw" && in_array($so,array("sip")))
