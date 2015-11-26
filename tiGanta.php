@@ -1871,8 +1871,11 @@ if (arr($text,'/\+Ric\+/'))
 		$text=two($hl,array("+i+"),$hl,array("e+"),0);
 		$text=two($hl,array("i+"),$hl,array("e+"),0);
 		storedata('7.3.84','sa',0);
-		$text=two(array("e+"),$ac,array("ay+"),$ac,0);
-		storedata('6.1.78','sa',0);
+		if (arr($text,'/e\+['.pc('ac').']/'))
+		{
+			$text=two(array("e+"),$ac,array("ay+"),$ac,0);
+			storedata('6.1.78','sa',0);			
+		}
 	}
 }
 /* AmaH (2.4.81) and kRJcAnuprayujyate liTi (3.1.40) */
@@ -1980,7 +1983,6 @@ if (in_array($so,$tiG) && arr(array($fo),'/[!]['.pc('hl').']$/') && $nomidelisio
 	$text=three(array("!"),$hl,array("+"),array("!"),blank(count($hl)),array("+"),0);
 	storedata('1.3.9','sa',0);
 }
-echo $tusma;
 if ($debug===1) {dibug("1900");}
 /* halantyam (1.3.3) and tasya lopaH (1.3.9) */
 if (in_array($so,$tiG) && ( sub(array("+"),$inbetweenpratyaya,array("+"),0) || (arr($text,'/['.pc('hl').']$/') && $tusma!==1) || sub($hl,array("+"),$vikaraNa,0) || $rudhAdibhyaH===1 || pr2($hl,array("+"),array("va","ma"),blank(count($hl)),array("+"),array("va","ma"),$text)!==$text) ) # $ad === 1 removed because of https://github.com/drdhaval2785/SanskritVerb/issues/318
@@ -2017,7 +2019,6 @@ if (in_array($so,$tiG) && ( sub(array("+"),$inbetweenpratyaya,array("+"),0) || (
 	}
 	storedata('1.3.9','sa',0);
 }
-print_r($text);
 /* cuTU (1.3.7) */
 if (arr($text,'/[+][c][a][+]/') && in_array($so,$tiG)) // for caG
 {
