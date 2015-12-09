@@ -1331,8 +1331,10 @@ elseif ( $verbset==="curAdi" && sub($curAdi,array("+"),blank(0),0) && sub(array(
 	if($Nizri===1)
 	{
 		$text=two(array("+cli+"),$tiG,array("+Ric+cli+"),$tiG,0);
+		$text=one(array("Ric+Ric+"),array("Ric+"),0);
 		storedata('3.1.25','sa',0);
 		$text=two(array("Ric+cli+"),$tiG,array("+Ric+caN+"),$tiG,0);
+		$text=two(array("Ric+Ric+"),$tiG,array("Ric+"),$tiG,0);
 		storedata('3.1.48','sa',0);
 	}
 	else 
@@ -1424,7 +1426,7 @@ elseif ($sarvadhatuka===1 && in_array($verbset,array("BvAdi","adAdi","juhotyAdi"
 elseif ( $sarvadhatuka===1 && $verbset==="none" && sub(array("+"),$tiG,blank(0),0) && in_array($fo,$curAdi))
 {
     $text=two(array("+"),$tiG,array("+Ric+"),$tiG,0);
-    $text=one(array("+Ric+Ric"),array("+Ric+"),0);
+    $text=one(array("+Ric+Ric"),array("+Ric"),0);
 	storedata('3.1.25','sa',0);
     if (sub(array("+"),$tiG,blank(0),0) && $sarvadhatuka===1)
     {
@@ -2462,6 +2464,12 @@ if ( arr($text,'/[s][y][a][A]/') && in_array($so,$tiG) ) // bad
 {
     $text=two(array("sya"),array("A"),array("sya"),array("+iy+"),0);
 	storedata('7.2.81','sa',0);
+}
+/* lopo vyorvali (6.1.66) */
+if ( arr($text,'/a[+]iy[+]['.pc('vl').']/') && in_array($so,$tiG) ) 
+{
+    $text=two(array("a+iy+"),prat('vl'),array("a+i+"),prat('vl'),0);
+	storedata('6.1.66','sa',0);
 }
 /* ADuttamasya picca (3.4.92) */
 if ( $lakAra==="low" && pr2(array("+"),array("ni","va","ma","E","vahE","mahE"),blank(0),array("+"),array("Ani","Ava","Ama","AE","AvahE","AmahE"),blank(0),$text)!==$text )
