@@ -3491,11 +3491,11 @@ function dibug($a)
 }
 function verbformlist()
 {
-	$inputtext = file_get_contents('verbforms_gerard.txt');
+	$inputtext = file_get_contents('Data/verbforms_gerard.txt');
 	$controllist = explode(',',$inputtext);
-	$inputtext1 = file_get_contents('verbforms_amba.txt');
+	$inputtext1 = file_get_contents('Data/verbforms_amba.txt');
 	$controllist1 = explode(',',$inputtext1);
-	$okprelim = file('okforms.txt');
+	$okprelim = file('Data/okforms.txt');
 	$okfinal=array();
 	foreach ($okprelim as $okp)
 	{
@@ -3506,7 +3506,7 @@ function verbformlist()
 }
 function verblist()
 {
-	$inputtext = file_get_contents('verblist_gerard.txt');
+	$inputtext = file_get_contents('Data/verblist_gerard.txt');
 	$controllist = explode(',',$inputtext);
 	return $controllist;
 }
@@ -3522,7 +3522,7 @@ function verbnumberlist()
 function abridged_verbnumberlist()
 {
 	global $verbdata;
-	$inputtext = file_get_contents('verblist_gerard.txt');
+	$inputtext = file_get_contents('Data/verblist_gerard.txt');
 	$verbsingerard = explode(',',$inputtext);
 	foreach($verbdata as $datum)
 	{

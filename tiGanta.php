@@ -68,7 +68,7 @@ $frontend = $_GET['frontend']; // Whether to display sUtras in frontend or not. 
 global $storedata;
 if (!$verbset) { $verbset = scrape1($number,8,9,1)[0]; } // for overcoming issue in https://github.com/drdhaval2785/SanskritVerb/issues/97
 /* Now trying to make program equally compatible with commandline.
-The proposed structure is php tiGanta.php verb verbset lakAra tran upasarga vAcya 
+The proposed structure is php tiGanta.php verb verbset lakAra tran upasarga vAcya
 defaults:
 verb - no default (mandatory to feed)
 verbset - 'none'
@@ -3567,7 +3567,7 @@ if ($caG===1 && $sanAdi==="Ric")
 }
 /* ato lopaH (6.4.48) */
 //if ( sub(array("a+"),$vikaraNa_ArdhadhAtuka_pratyayas,$tiG1,0) || pr2(array("a+"),$ArdhadhAtuka_pratyayas,blank(0),array("+"),$ArdhadhAtuka_pratyayas,blank(0),$text)!==$text )
-if ( in_array($fo,$curAdi_adanta) && $ardhadhatuka===1 && ($verbset==="none"||$verbset==="curAdi"))
+if ( arr($text,'a[+]') && in_array($fo,$curAdi_adanta) && $ardhadhatuka===1 && ($verbset==="none"||$verbset==="curAdi"))
 {
 	$text = one(array("+a+","a+i+"),array("+a","i+"),0);
     $text = three(array("a+"),$vikaraNa_ArdhadhAtuka_pratyayas,$tiG1,array(""),$vikaraNa_ArdhadhAtuka_pratyayas,$tiG1,0);
