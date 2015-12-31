@@ -4265,7 +4265,7 @@ elseif ( $lakAra==="luN" && $sic!==0 && in_array($so,$tis) && in_array($fo,array
 /* hmyantakSaNazvasajAgRNizvyeditAm (7.2.5) */
 elseif ( $sic===1 && in_array($so,$tis) && ( arr($text,'/['.pc('ac').'][hmy]\+is/') || sub(array("kzaR","Svas","jAgf","Svi"),array("+is"),blank(0),0) || in_array($sanAdi,array("Ric","RiN")) || in_array($fo,$editverbs) ) )
 {
-	storedata('7.2.5','sa',0);
+	$hmyanta = 1;
 	$novrddhi=1;
 }
 /* ato halAderlaghoH (7.2.7) */
@@ -4321,6 +4321,12 @@ if ( in_array($so,$tiG) && $lakAra==="luN" && arr($text,'/\+isI/') &&sub(array("
     $text = two(array("i"),array("I"),array("I"),blank(2),0);
 	storedata('6.1.101','sa',0);
     }
+}
+/* hmyantakSaNazvasajAgRNizvyeditAm (7.2.5) */
+if ( $hmyanta===1 )
+{
+	storedata('7.2.5','sa',0);
+	$novrddhi=1;
 }
 /* mRjervRddhiH (7.2.114) */
 if ( $ardhadhatuka===1 && arr($text,'/j\+/') && ends($itpratyaya,array("k","N"),2) && sub(array("mfj","marj"),array("+","+i"),$ac,0) && in_array($so,$tiG) )
