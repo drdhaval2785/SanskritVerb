@@ -1856,8 +1856,8 @@ if (arr($text,'/\+Ric\+/'))
 	}
 	storedata('1.3.3','pa',0);
 	storedata('1.3.7','pa',0);
-	$text=one(array('+Ric+caN+'),array('+i+a+'),0);
-	$text = one(array("+Ric+"),array("+i+"),0);
+	$text=one(array('+Ric+caN+'),array('i+a+'),0);
+	$text = one(array("+Ric+"),array("i+"),0);
 	storedata('1.3.9','sa',0);
 	if (arr($text,'/a\+i\+/') && $lakAra!=="luN")
 	{
@@ -1873,7 +1873,7 @@ if (arr($text,'/\+Ric\+/'))
 		$text=three(array("i","I","u","U","f","F","x"),$hl,$hlam,array("e","e","o","o","ar","ar","al"),$hl,$hlam,0);
 		storedata('7.3.86','sa',0);
 	}
-	if(arr($text,'/['.pc('hl').']([+]*)i\+/') && !in_array($lakAra,array("ASIrliN")))
+	if(arr($text,'/['.pc('hl').']([+]*)i\+/') && !in_array($lakAra,array("ASIrliN")) && $caG!==1)
 	{
 		$text=two($hl,array("+i+"),$hl,array("e+"),0);
 		$text=two($hl,array("i+"),$hl,array("e+"),0);
@@ -3592,16 +3592,17 @@ if ( arr($text,'a[+]') && in_array($fo,$curAdi_adanta) && $ardhadhatuka===1 && (
 	storedata('6.4.48','sa',0);
     $atolopa=1;
 }
+print_r($text); echo $caG;
 /* removing + from before Ni pratyayas */
 if(arr($text,'/['.pc('hl').']\+i\+/')) {$text = one(array("+i+"),array("i+"),0);}
 /* NeraniTi (6.4.51) */
-if (arr($text,'/i\+a/') && in_array($so,$tiG) && $lakAra==="luN" && $caG===1 && (in_array("iw",$Agama)||ends(array($sanAdi),array("Ric","RiN"),2)||in_array($fo,$curAdi_adanta) ))
+if (arr($text,'/i\+a/') && in_array($so,$tiG) && $lakAra==="luN" && $caG===1 && (!in_array("iw",$Agama)||ends(array($sanAdi),array("Ric","RiN"),2)||in_array($fo,$curAdi_adanta) ))
 {
 	$text = three(array("i"),array("+"),array("a"),array(""),array("+"),array("a"),0);
 	storedata('6.4.51','sa',0);
 }
 /* NeraniTi (6.4.51) */
-elseif (arr($text,'/([+]*)i\+/') && in_array($so,$tiG) && $ardhadhatuka===1&& (in_array("iw",$Agama)||ends(array($sanAdi),array("Ric","RiN"),2)||in_array($fo,$curAdi_adanta) ))
+elseif (arr($text,'/([+]*)i\+/') && in_array($so,$tiG) && $ardhadhatuka===1&& (!in_array("iw",$Agama)||ends(array($sanAdi),array("Ric","RiN"),2)||in_array($fo,$curAdi_adanta) ))
 {
 	$text = one(array("i+"),array("+"),0);
 	$text = pr2(array("+yAs"),array("+"),array("s"),array("yAs"),array("+"),array("s"),$text);
