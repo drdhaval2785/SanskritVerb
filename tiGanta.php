@@ -1840,20 +1840,26 @@ if (arr($text,'/\+Ric\+/'))
 	if(arr($text,'/['.pc('ac').'][!]/'))
 	{
 		storedata('1.3.2','pa',0);			
+		$text = two($ac,array('!'),blank(count($ac)),array(''),0);
+		storedata('1.3.9','sa',0);			
+	}
+	/* ata upadhAyAH (7.2.116) */
+	// more on enumeration kind. Not used regexes deliberately.
+	if ( arr($text,'/[a]['.pc('hl').'][+]Ric[+]/') )
+	{
+		$text = three(array("a"),$hl,array("+Ric+"),array("A"),$hl,array("+Ric+"),0);
+		storedata('7.2.116','sa',0);
 	}
 	if(arr($text,'/\+Ric\+S/'))
 	{
 		storedata('1.3.8','pa',0);
 	}
 	storedata('1.3.3','pa',0);
-	$text=two($ac,array("!"),blank(count($ac)),array(""),0);
-	if(arr($text,'/\+Ric\+caN\+/'))
-	{
-		storedata('1.3.7','pa',0);
-		$text=one(array('+Ric+caN+'),array('+i+a+'),0);
-	}
-	storedata('1.3.9','sa',0);
+	print_r($text);
+	storedata('1.3.7','pa',0);
+	$text=one(array('+Ric+caN+'),array('+i+a+'),0);
 	$text = one(array("+Ric+"),array("+i+"),0);
+	storedata('1.3.9','sa',0);
 	if (arr($text,'/a\+i\+/') && $lakAra!=="luN")
 	{
 		$text = one(array("a+i+"),array("i+"),0);
@@ -3106,7 +3112,7 @@ if (arr(array($fo),'/[h][a][n]/') && !in_array($fo,array("ahan","dIrGAhan")) && 
     $hohante=1; // 0 - this sUtra has not applied. 1 - this sUtra has applied.
 } else { $hohante=0; }
 if ($debug===1) {dibug("3000");}
-/* ata upadhAyAH (7.2.116) */ 
+/* ata upadhAyAH (7.2.116) */
 // more on enumeration kind. Not used regexes deliberately.
 if ( $atolopa!==1 && $Naugami!==1 && $jAgro!==1 && arr($text,'/[a]['.pc('hl').'][+][R][i][+]/') )
 {
