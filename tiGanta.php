@@ -3592,7 +3592,6 @@ if ( arr($text,'a[+]') && in_array($fo,$curAdi_adanta) && $ardhadhatuka===1 && (
 	storedata('6.4.48','sa',0);
     $atolopa=1;
 }
-print_r($text); echo $caG;
 /* removing + from before Ni pratyayas */
 if(arr($text,'/['.pc('hl').']\+i\+/')) {$text = one(array("+i+"),array("i+"),0);}
 /* NeraniTi (6.4.51) */
