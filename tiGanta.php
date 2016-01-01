@@ -1855,7 +1855,6 @@ if (arr($text,'/\+Ric\+/'))
 		storedata('1.3.8','pa',0);
 	}
 	storedata('1.3.3','pa',0);
-	print_r($text);
 	storedata('1.3.7','pa',0);
 	$text=one(array('+Ric+caN+'),array('+i+a+'),0);
 	$text = one(array("+Ric+"),array("+i+"),0);
@@ -1889,10 +1888,13 @@ if (arr($text,'/\+Ric\+/'))
 /* AmaH (2.4.81) and kRJcAnuprayujyate liTi (3.1.40) */
 if ($lakAra==="liw" && sub(array("+Am+"),$tiG1,blank(0),0) )
 {
+	$beforeampratyaya = $text;
+	$text = two(array("+Am+"),$tiG,array("+Am+"),blank(count($tiG)),0);
+	storedata('2.4.81','sa',0);
+	$text = $beforeampratyaya;
 	$text=three(array("+Am+"),array("",),$tiG1,array("+Am+"),array("kf+"),$tiG1,0);
 	//$text=one(array("+Am+kf+"),array("+Am+BU+"),1); // Trying for kf only right now.
 	//$text=one(array("+Am+kf+"),array("+Am+as+"),1);
-	storedata('2.4.81','sa',0);
 	storedata('3.1.40','sa',0);
 	$kaspratyaya=1;
 	$text = one(array("ay+Am"),array("ayAm"),0);
