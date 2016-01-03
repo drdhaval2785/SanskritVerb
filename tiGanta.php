@@ -3874,7 +3874,6 @@ if (in_array($fo,array("jyA")) && in_array("N",$it) && $so!=="mahiN")
     $text=two(array("jI"),array("+"),array("ji"),array("+"),0);
 	storedata('7.3.80','sa',0);
 }
-print_r($text);
 /* znA'bhyastayorAtaH (6.4.112) */
 // For znA
 if (arr($text,'/\+nA\+/') && sub(array("+nA"),array("+ant"),blank(0),0) && (in_array("N",$it)||in_array("k",$it)) && in_array("SnA",$vik))
@@ -4860,10 +4859,16 @@ if (arr($text,'/jahA\+/') && sub(array("jahA"),array("+"),$halAdi_apit_sArvadhAt
     $text=three(array("jahA"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("jahi"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,1);
 	storedata('6.4.116','sa',0);
 }
+print_r($text);
 /* I halyaghoH (6.4.113) */
 if (arr($text,'/\+nA\+/') && sub(array("+"),array("nA+"),$halAdi_apit_sArvadhAtuka_pratyayas,0) && (in_array("N",$it)||in_array("N",$it)))
 {
     $text=two(array("+nA+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("+nI+"),$halAdi_apit_sArvadhAtuka_pratyayas,0);
+	storedata('6.4.113','sa',0);
+}
+if (arr($text,'/\+nA\+yA/') && sub(array("+"),array("nA+yA"),blank(0),0) ) # https://github.com/drdhaval2785/SanskritVerb/issues/335
+{
+    $text=one(array("+nA+yA"),array("+nI+yA"),0);
 	storedata('6.4.113','sa',0);
 }
 if (arr($text,'/A\+/') && sub(array("A"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,0) && (in_array("N",$it)||in_array("k",$it)) && $abhyasta===1)
