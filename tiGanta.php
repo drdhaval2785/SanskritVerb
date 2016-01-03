@@ -14,7 +14,7 @@
   * tiGanta.php is the code which actually gives the output of the word derivation.
   * scripts/slp-dev.php is for converting SLP1 data to Devanagari. 
   * scripts/dev-slp.php is for converting Devanagari data to SLP1.
-  * scripts/ystyle.css is stylesheet where you can change your preferences.
+  * scripts/mystyle.css is stylesheet where you can change your preferences.
   * The code uses jquery.
   * The description part uses Howard Kyoto protocol.
   * The coding uses SLP1 transliteration.
@@ -3243,8 +3243,9 @@ if ( in_array($fo,array("Gasa!","Basa!")) && pr2(array("Gas","Bas"),array("+"),$
 	storedata('6.4.100','sa',0);
 }
 /* sArvadhAtukamapit (1.2.4) */
-if (  !in_array("Sap",$vik)  && $sarvadhatuka===1 && sub(array("+"),$apit_sArvadhAtuka_pratyayas,blank(0),0) && $kGiti!==1  && $znasorallopaH!==1)
+if (  !in_array("Sap",$vik) && !in_array("N",$itpratyaya) && $sarvadhatuka===1 && sub(array("+"),$apit_sArvadhAtuka_pratyayas,blank(0),0) && $kGiti!==1  && $znasorallopaH!==1)
 {
+	echo "yes";
     $it=array_merge($it,array("N"));
     $itpratyaya=array_merge($itpratyaya,array("N"));
 	storedata('1.2.4','pa',0);
