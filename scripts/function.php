@@ -2492,7 +2492,7 @@ return $text;
 }
 function liT_ajAdi()
 {
-	global $text, $caG, $lakAra, $verb_without_anubandha, $storedata, $us; 
+	global $text, $caG, $lakAra, $verb_without_anubandha, $storedata, $us, $verbset; 
 	/* ajAderdvitIyasya (6.1.2) */
 	if (anekAca($verb_without_anubandha) )
 	{
@@ -2628,7 +2628,7 @@ function liT_ajAdi()
 			}
 		}
 		/* aznotezca (7.4.72) */
-		if ($parts[1]==="aS") 
+		if ($parts[1]==="aS" && $verbset==="tanAdi") 
 		{
 			foreach ($text as $value)
 			{
