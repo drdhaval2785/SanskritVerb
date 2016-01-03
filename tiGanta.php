@@ -3874,6 +3874,14 @@ if (in_array($fo,array("jyA")) && in_array("N",$it) && $so!=="mahiN")
     $text=two(array("jI"),array("+"),array("ji"),array("+"),0);
 	storedata('7.3.80','sa',0);
 }
+print_r($text);
+/* znA'bhyastayorAtaH (6.4.112) */
+// For znA
+if (arr($text,'/\+nA\+/') && sub(array("+nA"),array("+ant"),blank(0),0) && (in_array("N",$it)||in_array("k",$it)) && in_array("SnA",$vik))
+{
+    $text=two(array("+nA"),array("+ant"),array("n"),array("+ant"),0);
+	storedata('6.4.112','sa',0);
+}
 /* na mAGyoge (6.4.74) */
 if ( in_array($lakAra,array("luN","laN","lfN",)) && $_GET['cond50']==='1')
 {
