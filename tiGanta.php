@@ -1118,6 +1118,10 @@ if ($lakAra==="luN")
 	{
 		$text = one(array("+cli+"),array("+aN+"),0);
 		storedata('3.1.52','sa',0);
+		storedata('1.3.3','pa',0);
+		$text = one(array("+aN+"),array("+a+"),0);
+		storedata('1.3.9','sa',0);
+		$asyati = 1;
 		$it = array_merge($it,array("N"));
 		$itpratyaya = array_merge($itpratyaya,array("N"));
 	}
@@ -3847,7 +3851,7 @@ if ( (arr($text,'/['.pc('hl').']['.pc('hl').'][A][+][y]/')) && in_array($so,$tiG
 	storedata('6.4.68','sa',0);
 }
 /* skoH saMyogAdyorante ca (8.2.29) */
-if ( (arr($text,'/[s]['.flat($hl).']$/') || arr($text,'/vr[aA]Sc\+/')) && in_array($so,$tiG) && in_array($lakAra,array("ASIrliN"))) // for ASIrliN
+if ( (arr($text,'/[s]['.flat($hl).']$/') || arr($text,'/vr[aA]Sc\+/')) && in_array($so,$tiG) && in_array($lakAra,array("ASIrliN")) && $asyati!==1) // for ASIrliN
 {
 	foreach ($hl as $value) { $ska[] = "s".$value; }
 	$text = last($ska,$hl,0);
@@ -4312,7 +4316,7 @@ if ( arr($text,'/vaDa\+i/') )
     $atolopa=1;
 }
 /* skoH saMyogAdyorante ca (8.2.29) */
-if ( (arr($text,'/[s]['.flat($hl).'][+]/') || arr($text,'/vrASc\+/') ) && in_array($so,$tiG) && in_array($lakAra,array("luN"))) // for luN
+if ( (arr($text,'/[s]['.flat($hl).'][+]/') || arr($text,'/vrASc\+/') ) && in_array($so,$tiG) && in_array($lakAra,array("luN")) && $asyati!==1) // for luN
 {
 	foreach ($hl as $value) { $ska[] = "s".$value."+"; }
 	$text = one($ska,$hlplus,0);
