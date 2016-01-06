@@ -2628,7 +2628,7 @@ function liT_ajAdi()
 			}
 		}
 		/* aznotezca (7.4.72) */
-		if ($parts[1]==="aS" && $verbset==="tanAdi") 
+		if ($parts[1]==="aS" && $verbset==="svAdi") 
 		{
 			foreach ($text as $value)
 			{
