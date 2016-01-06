@@ -3834,12 +3834,6 @@ if (arr($text,'/as\+Di/') && in_array($so,$tiG) && ends(array($fo),array("asa!",
     $text=two(array("as"),array("+Di"),array("e"),array("+Di"),0);
 	storedata('6.4.119','sa',0);
 }
-/* dhi ca (8.2.25) */
-if ( $lakAra!=="" && arr($text,'/s\+D/') && in_array($so,$tiG))
-{
-    $text = one(array("s+D"),array("+D"),0);
-	storedata('8.2.25','sa',0);
-}
 /* erliGi (6.4.67) */
 if ( (in_array($fo,array("mA","zWA","gE","pA","o!hAk","zo")) || $ghu===1) && in_array($so,$tiG) && in_array($lakAra,array("ASIrliN")) && arr($text,'//A\+y') && $verbset!=="adAdi" ) // not applicable to pA of adAdi. Not applicable to sIyuT.
 {
@@ -4031,6 +4025,12 @@ if (in_array($fo,array("wuo!Svi")) && sub(array("Svi"),array("+"),prat('vl'),0) 
 {
 	$text = three(array("Svi","Su+Su"),array("+"),prat('vl'),array("Svi","Su+Su"),array("+i"),prat('vl'),0);
 	storedata('7.2.35','sa',0);
+}
+/* dhi ca (8.2.25) */
+if ( $lakAra!=="" && arr($text,'/s\+D/') && in_array($so,$tiG))
+{
+    $text = one(array("s+D"),array("+D"),0);
+	storedata('8.2.25','sa',0);
 }
 /* radhijabhoraci (7.1.61) */
 if (in_array($fo,array("raDa!","jaBI!")) && sub(array("raD","jaB"),array("+"),$ac,0) )
@@ -4859,7 +4859,6 @@ if (arr($text,'/jahA\+/') && sub(array("jahA"),array("+"),$halAdi_apit_sArvadhAt
     $text=three(array("jahA"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("jahi"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,1);
 	storedata('6.4.116','sa',0);
 }
-print_r($text);
 /* I halyaghoH (6.4.113) */
 if (arr($text,'/\+nA\+/') && sub(array("+"),array("nA+"),$halAdi_apit_sArvadhAtuka_pratyayas,0) && (in_array("N",$it)||in_array("N",$it)))
 {
