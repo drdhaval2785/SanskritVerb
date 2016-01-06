@@ -2255,6 +2255,12 @@ if ( in_array($lakAra,array("viDiliN")) && sub(array("a+yA"),array("+"),blank(0)
 {
     $text=three(array("a+yA"),array("+"),blank(0),array("a+iy"),array("+"),blank(0),0);
 	storedata('7.2.80','sa',0);
+	if (arr($text,'/\+jus$/'))
+	{
+		storedata('1.3.7','pa',0);
+		$text=one(array('+jus'),array('+us'),0);
+		storedata('1.3.9','sa',0);
+	}
 }
 $bhUsuvo=0;
 /* itazca (3.4.100) */
