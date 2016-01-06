@@ -3095,9 +3095,10 @@ if ($lakAra==='luN')
 	$text = one(array("+a+"),array("+a"),0);
 }
 /* ato lopaH (6.4.48) */
-if ( arr($text,'/[a][+][R][ai]/'))
+if ( arr($text,'/[a][+][R][ai]/') || arr($text,'/ai\+a/'))
 { 
 	$text = two(array("a"),array("+Ri","+Ra"),array(""),array("+Ri","+Ra"),0);
+	$text = one(array("ai+a"),array("i+a"),0);
 	storedata('6.4.48','sa',0);
     $atolopa=1;
 }
@@ -3593,7 +3594,6 @@ if ($caG===1 && $sanAdi==="Ric")
 	//san();
 }
 /* ato lopaH (6.4.48) */
-//if ( sub(array("a+"),$vikaraNa_ArdhadhAtuka_pratyayas,$tiG1,0) || pr2(array("a+"),$ArdhadhAtuka_pratyayas,blank(0),array("+"),$ArdhadhAtuka_pratyayas,blank(0),$text)!==$text )
 if ( arr($text,'a[+]') && in_array($fo,$curAdi_adanta) && $ardhadhatuka===1 && ($verbset==="none"||$verbset==="curAdi"))
 {
 	$text = one(array("+a+","a+i+"),array("+a","i+"),0);
