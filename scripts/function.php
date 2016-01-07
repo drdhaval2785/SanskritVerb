@@ -45,7 +45,7 @@ $hrasva = array("a","i","u","f","x"); // hrasva letters
 $guna = array ("e","o"); // guNa letters
 $vruddhi = array("E","O"); // vRddhi letters
 $aa = array("a","A"); // a, A
-$upasarga = array("pra","prati","api","parA","apa","upa","pari","anu","ava","vi","saM","su","ati","ni","nir","ut","aDi","dur","aBi","A"); // upasargas
+$upasarga = array("pra","prati","api","parA","apa","upa","pari","anu","ava","vi","saM","su","ati","ni","nir","ut","aDi","dur","aBi","A"); // upaaargas
 $upasarga_combinations = array("ati,atinis,atipra,ativi,ativyA,atisam,atyati,atyaBi,atyA,atyud,atyupa,aDi,aDini,aDinis,aDivi,aDyava,aDyA,aDyupa,anu,anuni,anunis,anuparA,anupari,anuparyA,anupra,anuprati,anuvi,anuvyava,anuvyA,anusam,anusampra,anUd,anvapa,anvava,anvA,apa,apani,apanis,apaparA,apaparyA,apapra,apavyA,apA,apAti,api,apipari,apod,apyati,aBi,aBini,aBinis,aBiparA,aBipari,aBiparyA,aBipra,aBivi,aBivyA,aBisamA,aBisam,aByati,aByaDi,aByanu,aByapa,aByava,aByA,aByudA,aByud,aByupa,aByupA,aByupAva,ava,avani,avA,A,utpra,udava,udA,ud,udvi,unni,upa,upani,upanis,upanyA,upapari,upaparyA,upapra,upavi,upavyA,upasaṁni,upasamA,upasam,upA,upAti,upAva,upodA,upod,upopa,duHsam,duranu,durava,durA,durud,durupa,durni,duzpari,duzpra,dus,ni,nipra,nirati,niraDi,niranu,nirapa,niraBi,niraBi,nirava,nirupA,nirvi,nivyA,nizpra,nisu,nis,nyA,parA,pari,parini,parinis,paripra,parivi,parivyA,parisam,paryaDi,paryanu,paryava,paryA,paryud,paryupa,pra,praNi,prati,pratini,pratinis,pratiparA,pratipari,pratipra,prativi,prativyA,pratisam,pratyaDi,pratyanu,pratyapa,pratyapi,pratyaBi,pratyava,pratyA,pratyudA,pratyud,pratyupa,pratyupA,pravi,pravyA,prasam,prA,prADi,prod,vi,vini,vinis,viparA,vipari,viparyA,vipra,viprati,visam,vyati,vyanu,vyanvA,vyapa,vyapA,vyaBi,vyava,vyA,vyud,vyupa,saṁvi,saṁvyava,saṁvyA,sanni,samati,samaDi,samanu,samanuvi,samanvA,samapa,samapi,samaBi,samaBivyA,samaBisam,samaBisampra,samaByava,samaByA,samaByud,samava,samava,samavA,samA,samudA,samud,samupa,samupA,sam,samparA,sampari,sampra,samprati,samprA,samprod,sampvari,su,supari,suvi,susamA,svanu,svaBi,svaByA,");
 $verbs_ru = array("fkz","fc","fC","fj","fYj","fR","ft","fd","fD","fn","fP","fBukz","fmP","fS","fz","fh"); // verbs starging with R.
 $verbs_changed = array("kz","c","C","j","Yj","R","t","d","D","n","P","Bukz","mP","S","z","h"); // verbs with removal of R.
@@ -62,7 +62,8 @@ foreach ($hl as $value){ $hlplus[] = $value."+"; } // defining $hlplus
 $iN1 = array("i","I","u","U","f","F","x","X","e","o","E","O","h","y","v","r","l","k","K","g","G","N"); // iN and kavarga combined.
 $iN2 = array("i","I","u","U","f","F","x","X","e","o","E","O","h","y","v","r","l",); // iN
 $pratya =  array("aR","ak","ik","uk","eN","ac","ic","ec","Ec","aw","aR","iR","yaR","am","yam","Yam","Nam","yaY","Jaz","Baz","aS","haS","vaS","JaS","jaS","vaS","Cav","yay","may","Jay","Kay","cay","yar","Jar","Kar","car","Sar","al","hal","val","ral","Jal","Sal"); // valid pratyAhAras according to pANinIya vyAkaraNa
-$sup = array("su!","Ow","jas","am","O","Sas","wA","ByAm","Bis","Ne","ByAm","Byas","Nasi!","ByAm","Byas","Nas","os","Am","Ni","os","sup"); // sup pratyayas
+$sup = array("su!","O","jas","am","O","Sas","wA","ByAm","Bis","Ne","ByAm","Byas","Nasi!","ByAm","Byas","Nas","os","Am","Ni","os","sup"); // sup pratyayas
+$sup1 = array("su!","O","jas","am","Ow","Sas","wA","ByAm","Bis","Ne","ByAm","Byas","Nasi!","ByAm","Byas","Nas","os","Am","Ni","os","sup","su!","O","jas"); // sup pratyayas + sambodhana 
 $acsup = array("O","jas","am","Ow","Sas","wA","Ne","Nasi!","Nas","os","Am","Ni","os"); // sup pratyayas which start with a vowel
 $hlsup = array("su!","ByAm","Bis","Byas","sup"); // sup pratyayas which start with a consonant
 $prathama = array("su!","O","jas","am","Ow","Sas"); // sup pratyayas of first two vibhaktis
@@ -1971,8 +1972,8 @@ function upasarga_display($text)
 // for display of lakAra and suffix details.
 function suffix_display()
 {
-	global $frontend, $outfile, $sanAdi, $lakAra, $fo, $so;
-	if ($frontend!=="0")
+	global $frontend, $outfile, $sanAdi, $lakAra, $fo, $so, $type;
+	if ($frontend!=="0" && $type==="tiGanta")
 	{
 		if ($sanAdi!=="")
 		{
@@ -1984,6 +1985,11 @@ function suffix_display()
 		echo "<p class = red >".convert($lakAra) ." लकार<br>".convert($fo)." + ".convert($so)." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n";    
 		fputs($outfile,"<p class = red >".convert($lakAra) ." लकार<br>".convert($fo)." + ".convert($so)." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n");    
 		}		
+	}
+	elseif ($frontend!=="0" && $type==="subanta")
+	{
+		echo "<p class = red >".convert($fo)." + ".convert($so)." <a href = subanta.html>Go Back</a></p>\n<hr>\n";    
+		fputs($outfile,"<p class = red >".convert($fo)." + ".convert($so)." <a href = subanta.html>Go Back</a></p>\n<hr>\n");    		
 	}
 }
 // for deciding verb padas.
@@ -3477,6 +3483,67 @@ function tablemaker($ou)
 		";
 	}
 
+}
+/* function tablemaker1 for subanta */
+function tablemaker1($ou)
+{
+		echo "<table border='1'>
+		<tr>
+		<th>विभक्तिः/वचनम्‌</th>
+		<th>एकवचनम्‌</th>
+		<th>द्विवचनम्‌</th>
+		<th>बहुवचनम्‌</th>
+		</tr>
+		<tr>
+		<td>प्रथमा</td>
+		<td>$ou[0]</td>
+		<td>$ou[1]</td>
+		<td>$ou[2]</td>
+		</tr>
+		<tr>
+		<td>द्वितीया</td>
+		<td>$ou[3]</td>
+		<td>$ou[4]</td>
+		<td>$ou[5]</td>
+		</tr>
+		<tr>
+		<td>तृतीया</td>
+		<td>$ou[6]</td>
+		<td>$ou[7]</td>
+		<td>$ou[8]</td>
+		</tr>
+		<tr>
+		<td>चतुर्थी</td>
+		<td>$ou[9]</td>
+		<td>$ou[10]</td>
+		<td>$ou[11]</td>
+		</tr>
+		<tr>
+		<td>पञ्चमी</td>
+		<td>$ou[12]</td>
+		<td>$ou[13]</td>
+		<td>$ou[14]</td>
+		</tr>
+		<tr>
+		<td>षष्ठी</td>
+		<td>$ou[15]</td>
+		<td>$ou[16]</td>
+		<td>$ou[17]</td>
+		</tr>
+		<tr>
+		<td>सप्तमी</td>
+		<td>$ou[18]</td>
+		<td>$ou[19]</td>
+		<td>$ou[20]</td>
+		</tr>
+		<tr>
+		<td>सम्बोधनम्‌</td>
+		<td>$ou[21]</td>
+		<td>$ou[22]</td>
+		<td>$ou[23]</td>
+		</tr>
+		</table>
+		";
 }
 function timestamp()
 {

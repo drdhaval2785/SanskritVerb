@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<!--... Defining UTF-8 as our default character set, so that devanagari is displayed properly. -->
+<meta charset="UTF-8">
+<!--... Defining CSS -->
+<link rel="stylesheet" type="text/css" href="scripts/mystyle.css">
+  <link rel="stylesheet" href="scripts/jquery-ui.css">
+<!--... including Ajax jquery. -->
+<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" ></script> -->
+<script src="scripts/ajaxcode.js" ></script>
+  <script src="scripts/jquery-ui.js"></script>
+<!--... script.js is javascript which we use to make the frontend interective for user feedback. Whenever the user clicks the radio button specified in script.js, the data is sent to ajax.php and then output from ajax.php is shown in the frontend. This process may continue as long as you want. -->
+<script src="scripts/script.js" ></script>
+</head>
+<body>
+
+<div>
+<!--... submitting data to subanta.php. -->
+<form action="panini.php" method = "get" id="frm">
+<!--... first is the input word, which the user enters. -->
+प्रकृतिः : <input type="text" name="first" required id="first" autofocus="autofocus" >   <font color="red" size="2">Mandatory field.</font><br>
+<!--... Defining gender of the word. -->
+<input type="radio" name="gender" value="m" required autocomplete="off" >पुँल्लिङ्ग
+<input type="radio" name="gender" value="f" required autocomplete="off" >स्त्रीलिङ्ग
+<input type="radio" name="gender" value="n" required autocomplete="off" >नपुंसकलिङ्ग
+<font color="red" size="2">Mandatory field. Wait for ajax to load.</font><br>
+<!--... Defining transliteration of the word. Default is kept as Devanagari. User may change it according to his wish. -->
+<input type="radio" name="tran" value="Devanagari">Devanagari
+<input type="radio" name="tran" value="IAST">IAST
+<input type="radio" name="tran" value="SLP1" checked>SLP1<br>
+<input type="hidden" name="frontend" value="1" checked>
+<!--... Divs to record the output from ajax.php. step1, step2, step3 etc are the levels. see ajax.php to decide where ajax will send its output. Maximum user feedback level for our coding was 6. So, kept it 6. It can be easily added if need be. -->
+<div id="response">
+    <div id="step1" class="innerStep"></div>
+    <div id="step2" class="innerStep"></div>
+    <div id="step3" class="innerStep"></div>
+    <div id="step4" class="innerStep"></div>
+    <div id="step5" class="innerStep"></div>
+    <div id="step6" class="innerStep"></div>
+</div>
+<!--... Submit button -->
+<input type="submit">
+<!--... Sending the step id to subanta.php hidden. -->
+<input type="hidden" name="step" id="step" value="0" />
+<input type="hidden" name="type" id="subanta" value="subanta" />
+</form>
+</div>
+
+<!--... Information about the code. -->
+<p class = hn>
+Developed by: Dr. Dhaval Patel & Dr. Sivakumari Katuri.
+Layout assistance by: Mr. Marcis Gasuns.<br>
+Available under <a href="http://www.gnu.org/copyleft/gpl.html" traget="_blank">GNU licence</a>. <br>
+Disclaimer: Despite our best efforts, intricacies of Sanskrit language may limit our declention machine. We owe no responsibility for wrong declention. User discretion is advised. <br>
+Correction submission: We will be greatful if you can send your corrections <a href="https://github.com/drdhaval2785/SanskritSubanta/issues/new" traget="_blank">here</a>. <br>
+Note: The source code for this program is available on Github <a href = "https://github.com/drdhaval2785/sanskritsubanta" target="_blank">here.</a><br>
+For those who find github clumsy, latest code can be accessed manually <a href="http://lanover.com/lan/sanskrit/"  target="_blank">here</a>.<br>
+For those who want to install the code for offline usage, instruction can be seen in readme file <a href="https://github.com/drdhaval2785/sanskrit" target="_blank">here</a>.<br>        
+Places where we take user input can be accessed <a href="http://lanover.com/lan/sanskrit/ajax%20requirement.docx"  target="_blank">here</a>. <br>
+For better rendering of output, use <a href = "http://svayambhava.org/index.php/en/" target="_blank">Siddhanta font.</a></p>
+<!--... Disclaimer for IAST -->
+For <a href = "http://en.wikipedia.org/wiki/International_Alphabet_of_Sanskrit_Transliteration">IAST scheme</a>, please use the lowercase letters.</p>
+<!--... SLP1 letter set. code works primarily on SLP1. Other transliterations are first converted to SLP1 and then processed. -->
+<p>For SLP1, use this scheme for entering words: </p>
+aAiIuUfFxXeEoOMH</br>
+kKgGN</br>
+cCjJY</br>
+wWqQR</br>
+tTdDn</br>
+pPbBm</br>
+yrlvSzsh;
+</body>
+</html>
