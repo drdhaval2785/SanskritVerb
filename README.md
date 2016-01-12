@@ -49,6 +49,8 @@ v1.1.1 - 26 October 2015 - All inline issues from tiGanta.php and function.php n
 
 v1.1.2 - 7 November 2015 - Code separated into Data, Documentations, scripts, testing and output folders and necessary corrections made in the code.
 
+v1.2.0 - 12 january 2016 - Merged SanskritSubanta code into SanskritVerb. Now there is only one code 'panini.php' which gives subanta / tiGanta / sandhi etc depending on the input HTML file.
+
 # For understanding the code
 
 Read [this](https://github.com/drdhaval2785/SanskritVerb/Documentations/blob/master/understandcode.md)
