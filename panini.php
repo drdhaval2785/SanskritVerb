@@ -2077,13 +2077,14 @@ if (in_array($so,$tiG) && ( sub(array("+"),$inbetweenpratyaya,array("+"),0) || (
     }
 	$text=one(array("+si+","sicmi"),array("+sic+","sic+mi"),0);
 	$text=pr2($hl,array("+"),array("va","ma"),blank(count($hl)),array("+"),array("va","ma"),$text);
-	if ($nomidelision!==1 && arr($text,'/['.pc('hl').'][+]([c]*)[a][+]/'))
+	if ($nomidelision!==1 && arr($text,'/['.pc('hl').'][+]([c]*)[a][+]/') && $caG===1)
 	{
-	#$text=three($hl,array("+a+","+ca+"),$tiG1,blank(count($hl)),array("+a+","+ca+"),$tiG1,0);
-	$text=two($hl,array("+a+","+ca+"),blank(count($hl)),array("+a+","+ca+"),0);
+		$text=three($hl,array("+a+","+ca+"),$tiG1,blank(count($hl)),array("+a+","+ca+"),$tiG1,0);
+		#$text=two($hl,array("+a+","+ca+"),blank(count($hl)),array("+a+","+ca+"),0);
 	}
 	storedata('1.3.9','sa',0);
 }
+print_r($text);
 /* cuTU (1.3.7) */
 if (arr($text,'/[+][c][a][+]/') && in_array($so,$tiG)) // for caG
 {
