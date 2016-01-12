@@ -1832,6 +1832,15 @@ if (in_array($so,array("ta","Ja")) && $lakAra==="liw")
     $text=two(array("+"),array("ta","Ja"),array("+"),array("eS","irec"),0);
 	storedata('3.4.81','sa',0);
 }
+/* upadeze'janunAsika it (1.3.2)*/ 
+// as idit is necessary for numAgama, it is placed here. otherwise with Sap, there is problem in mit function.
+if (arr($text,'/['.flat($ac).'][!]/') && in_array($so,$tiG) )
+{
+    it('/(['.flat($ac).'][!])/');
+	storedata('1.3.2','sa',0);
+    $text = two($ac,array("!"),blank(count($ac)),array(""),0);
+	storedata('1.3.9','sa',0);
+}
 /* AtmanepadeSvanataH (7.1.5) */
 if ( in_array($so,array("Ja")) && $set===2 && pr2(array("+"),array("Ja"),blank(0),array("+"),array("ata"),blank(0),$text)!==$text)
 {
@@ -1861,6 +1870,7 @@ elseif ($lakAra==="liw" && (arr(array($verb_without_anubandha),'/^[IUFXeEoO]/') 
 {
 	print_r($text);
     $text=pr2(array("+"),$tiG,blank(0),array("+Am+"),$tiG,blank(0),$text);
+    $text=pr2(array("+"),array("eS","e","irec","ire"),blank(0),array("+Am+"),array("eS","e","irec","ire"),blank(0),$text);
 	print_r($text);
 	storedata('3.1.36','sa',0);
 }
