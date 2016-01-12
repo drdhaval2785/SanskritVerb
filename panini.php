@@ -3843,19 +3843,6 @@ if ( $so==="sip" && $lakAra==="low" && (arr($text,'/juhu\+hi/') || arr($text,'/[
     $text=two(prat('Jl'),array("+hi"),prat('Jl'),array("+Di"),0);
 	storedata('6.4.101','sa',0);
 }
-/* znasorallopaH (6.4.111) */
-// znam pending.
-if ( (in_array($fo,array("asa!")) && $verbset==="adAdi" ) && (in_array("N",$it)||in_array("k",$it)) && pr2(array("as"),array("+"),$apit_sArvadhAtuka_pratyayas,array("s"),array("+"),$apit_sArvadhAtuka_pratyayas,$text)!==$text )
-{
-    $text=pr2(array("as"),array("+"),$apit_sArvadhAtuka_pratyayas,array("s"),array("+"),$apit_sArvadhAtuka_pratyayas,$text);
-	storedata('6.4.111','sa',0);
-}
-/* tAsastyorlopaH (7.4.50) */
-if ( (in_array($fo,array("asa!")) && $verbset==="adAdi" ) && arr($text,'/as\+s/') )
-{
-    $text=two(array("as"),array("+s"),array("a"),array("+s"),0);
-	storedata('7.4.50','sa',0);
-}
 /* hanterjaH (6.4.36) */
 if ( arr($text,'/han\+hi/') && in_array($so,$tiG) )
 {
@@ -3955,6 +3942,13 @@ elseif ( in_array($lakAra,array("luN","laN","lfN",)) )
 {
     $text=Adyanta($text,"a",1);
 	storedata('6.4.71','sa',0);
+}
+/* znasorallopaH (6.4.111) */
+// znam pending.
+if ( (in_array($fo,array("asa!")) && $verbset==="adAdi" ) && (in_array("N",$it)||in_array("k",$it)) && pr2(array("as"),array("+"),$apit_sArvadhAtuka_pratyayas,array("s"),array("+"),$apit_sArvadhAtuka_pratyayas,$text)!==$text )
+{
+    $text=pr2(array("as"),array("+"),$apit_sArvadhAtuka_pratyayas,array("s"),array("+"),$apit_sArvadhAtuka_pratyayas,$text);
+	storedata('6.4.111','sa',0);
 }
 /* iNvadika iti vaktavyam (vA) */
 if ( in_array($fo,array("ik")))
@@ -4113,7 +4107,6 @@ if ( arr($text,'/['.pc('ac').'](['.pc('hl').'M]*)[+][st]/')  && $lakAra==="luN" 
 }
 if ($debug===1) {dibug("3900");}
 /* astisico'pRkte (7.3.96) */
-// asti pending.
 if ( ($sic!==0 && arr($text,'/\+([i]*)s([+]*)['.pc('hl').']$/')))
 {
 	$text = two(array("+is",),$hl,array("+is+I"),$hl,0);
@@ -4130,6 +4123,12 @@ if ( arr($text,'/as[+][st]$/') && $number==="02.0060" && $lakAra==="laN")
 {
 	$text = pr2(array("as"),array("+"),array("s","t"),array("as"),array("+"),array("Is","It"),$text);
 	storedata('7.3.96','sa',0);
+}
+/* tAsastyorlopaH (7.4.50) */
+if ( (in_array($fo,array("asa!")) && $verbset==="adAdi" ) && arr($text,'/as\+s/') )
+{
+    $text=two(array("as"),array("+s"),array("a"),array("+s"),0);
+	storedata('7.4.50','sa',0);
 }
 /* pugantalaghUpadhasya ca (7.3.86) */
 if ( $atolopa!==1 && $ardhadhatuka===1 && $didhI!==1 && ($sIyuT===1||$sic===1) && $vijait!==1 && $kGiti!==1 && sub(array("i","u","f","x"),$hl,array("+sI","+isI"),0) && !arr($text,"/[+][i][y][+][t]$/") )
