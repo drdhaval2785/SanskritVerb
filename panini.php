@@ -2390,7 +2390,7 @@ if ( in_array($so,$tis) && !sub(array("+"),array("hi","ni"),blank(0),0) && pr2(a
     $itazca=1;
 } else {$itazca=0; }
 /* astisico'pRkte (7.3.96) */
-// asti pending.
+// sic
 if ( ($sic!==0 && arr($text,'/[+][s][i][c]([+]*)['.pc('hl').']$/')))
 {
 	$text = two(array("+sic",),$hl,array("+sic+I"),$hl,0);
@@ -4122,6 +4122,14 @@ if ( ($sic!==0 && arr($text,'/\+([i]*)s([+]*)['.pc('hl').']$/')))
 	storedata('8.2.28','sa',0);
 	$text = two(array("+i+I"),$hl,array("+I"),$hl,0);
 	storedata('6.1.97','sa',0);
+}
+/* astisico'pRkte (7.3.96) */
+// asti
+// nyAsa says that अस्तिग्रहणं लङर्थम्‌.
+if ( arr($text,'/as[+][st]$/') && $number==="02.0060" && $lakAra==="laN")
+{
+	$text = pr2(array("as"),array("+"),array("s","t"),array("as"),array("+"),array("Is","It"),$text);
+	storedata('7.3.96','sa',0);
 }
 /* pugantalaghUpadhasya ca (7.3.86) */
 if ( $atolopa!==1 && $ardhadhatuka===1 && $didhI!==1 && ($sIyuT===1||$sic===1) && $vijait!==1 && $kGiti!==1 && sub(array("i","u","f","x"),$hl,array("+sI","+isI"),0) && !arr($text,"/[+][i][y][+][t]$/") )
