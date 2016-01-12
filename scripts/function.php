@@ -3106,7 +3106,7 @@ function Am()
 		storedata('UrRote','sa',0);
 	}
 	/* ijAdezca gurumato'nRcCaH (3.1.36) */
-	elseif ($lakAra==="liw" && arr(array($verb_without_anubandha),'/^[IUFXeEoO]/') && !ends(array($fo),array("fCa!"),4) )
+	elseif ($lakAra==="liw" && (arr(array($verb_without_anubandha),'/^[IUFXeEoO]/') || arr(array($verb_without_anubandha),'/^[iufx]['.pc('hl').']['.pc('hl').']/')) && !ends(array($fo),array("fCa!"),4) )
 	{
 		$text=two(array("+"),$tiG,array("+Am+"),$tiG,0);
 		storedata('3.1.36','sa',0);

@@ -1857,9 +1857,11 @@ if ($lakAra==="liw" && ends(array($fo),array("UrRuY"),4) )
 	storedata('3.1.36-6','sa',0);
 }
 /* ijAdezca gurumato'nRcCaH (3.1.36) */
-elseif ($lakAra==="liw" && arr(array($verb_without_anubandha),'/^[IUFXeEoO]/') && !ends(array($fo),array("fCa!"),4) )
+elseif ($lakAra==="liw" && (arr(array($verb_without_anubandha),'/^[IUFXeEoO]/') || arr(array($verb_without_anubandha),'/^[iufx]['.pc('hl').']['.pc('hl').']/')) && !ends(array($fo),array("fCa!"),4) )
 {
-    $text=two(array("+"),$tiG,array("+Am+"),$tiG,0);
+	print_r($text);
+    $text=pr2(array("+"),$tiG,blank(0),array("+Am+"),$tiG,blank(0),$text);
+	print_r($text);
 	storedata('3.1.36','sa',0);
 }
 /* dayAyAysazca (3.1.37) */
@@ -1947,12 +1949,12 @@ if ($lakAra==="liw" && sub(array("+Am+"),$tiG1,blank(0),0) )
 	$text = two(array("+Am+"),$tiG,array("+Am+"),blank(count($tiG)),0);
 	storedata('2.4.81','sa',0);
 	$text = $beforeampratyaya;
-	$text=three(array("+Am+"),array("",),$tiG1,array("+Am+"),array("kf+"),$tiG1,0);
+	$text=one(array("+Am+"),array("+Am+kf+"),0);
 	//$text=one(array("+Am+kf+"),array("+Am+BU+"),1); // Trying for kf only right now.
 	//$text=one(array("+Am+kf+"),array("+Am+as+"),1);
 	storedata('3.1.40','sa',0);
 	$kaspratyaya=1;
-	$text = one(array("ay+Am"),array("ayAm"),0);
+	$text = one(array("+Am+"),array("Am+"),0);
 	$val=array();
 	foreach ($text as $mem)
 	{
@@ -2059,7 +2061,7 @@ if (in_array($so,$tiG) && ( sub(array("+"),$inbetweenpratyaya,array("+"),0) || (
     }
     $text=three(array("+"),$inbetweenpratyaya,array("+"),array("+"),$inbetweeenreplace,array("+"),0);
 	$text=three($hl,array("+"),array("jus",),blank(count($hl)),array("+"),array("jus",),0); // patch for jus, because it prevents application of halantyam artificially because of na vibhaktau tusmAH (s at end).
-    if ($ad===1 || in_array($lakAra,array("liw","luw","lfw","ASIrliN","luN","lfN","ArDaDAtukalew")))
+    if ( ($ad===1 || in_array($lakAra,array("liw","luw","lfw","ASIrliN","luN","lfN","ArDaDAtukalew"))) && arr(array($fo),'/['.pc('hl').']$/'))
     {
         $text=three($hl,array("+"),$tiG1,blank(count($hl)),array("+"),$tiG1,0);
     }
@@ -2077,14 +2079,13 @@ if (in_array($so,$tiG) && ( sub(array("+"),$inbetweenpratyaya,array("+"),0) || (
     }
 	$text=one(array("+si+","sicmi"),array("+sic+","sic+mi"),0);
 	$text=pr2($hl,array("+"),array("va","ma"),blank(count($hl)),array("+"),array("va","ma"),$text);
-	if ($nomidelision!==1 && arr($text,'/['.pc('hl').'][+]([c]*)[a][+]/') && $caG===1)
+	if ($nomidelision!==1 && arr($text,'/['.pc('hl').'][+]([c]*)[a][+]/') && ends(array($fo),'/['.pc('hl').']$/') )
 	{
 		$text=three($hl,array("+a+","+ca+"),$tiG1,blank(count($hl)),array("+a+","+ca+"),$tiG1,0);
 		#$text=two($hl,array("+a+","+ca+"),blank(count($hl)),array("+a+","+ca+"),0);
 	}
 	storedata('1.3.9','sa',0);
 }
-print_r($text);
 /* cuTU (1.3.7) */
 if (arr($text,'/[+][c][a][+]/') && in_array($so,$tiG)) // for caG
 {
@@ -11836,6 +11837,8 @@ $itprakriti = array();
 $itpratyaya = array();
 $Agama=array();
 $TAp=0; $DAp=0; $cAp=0; $GIp=0; $GIn=0; $GIS=0; $kGiti=0; $abhyasta=0; $ajAdyataSTAp=0; $tusma=0; $upasarga_joined=0; $sicivRddhi=0;
+$temp = scrape1($first,0,2,1); 
+$verb_without_anubandha=$temp[0];
 $storedata=array();
 $text=array();
 if ($debug===1) {dibug('11740');}
