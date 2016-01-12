@@ -1209,12 +1209,11 @@ if ($lakAra==="luN")
 		storedata('zliSa','pa',0);
 		storedata('3.1.55','sa',0);
 		$text = one(array("+cli+"),array("+aN+"),0);
-		storedata('3.1.55','sa',0);
 		$it = array_merge($it,array("N"));
 		$itpratyaya = array_merge($itpratyaya,array("N"));
 	}
 	/* puSAdidyutAdilRditaH parasmaipadeSu (3.1.55) */
-	elseif ( (in_array($fo,$divAdi_puSAdi)||in_array($fo,$bhvAdi_dyutAdi)||in_array($fo,$lRdit)) && in_array($so,$tis) )
+	elseif ( (in_array($fo,$divAdi_puSAdi)||in_array($fo,$bhvAdi_dyutAdi)||in_array($fo,$lRdit)) && $fo!=="Apx!" && in_array($so,$tis) )
 	{
 		$text = one(array("+cli+"),array("+aN+"),0);
 		storedata('3.1.55','sa',0);
