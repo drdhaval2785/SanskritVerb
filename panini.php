@@ -1320,7 +1320,7 @@ if ($lakAra==="luN")
 		$luGset=9;
 	}
 	/* gAtisthAghupAbhUbhyaH sicaH parasmaipadeSu (2.4.77) */
-		if (ends(array($fo),array("iR","zWA","do","deN","qudAY","dAR","quDAY","pA","BU"),4) && !(ends(array($fo),array("pA"),4) && $verbset==="adAdi") && $sic===1 && in_array($so,$tis))
+		if (ends(array($fo),array("iR","zWA","do","deN","qudAY","dAR","quDAY","pA","BU","asa!"),4) && !(ends(array($fo),array("pA"),4) && $verbset==="adAdi") && !(ends(array($fo),array("asa!"),4) && $verbset==="BvAdi") && $sic===1 && in_array($so,$tis))
 		{
 			$text = one(array("+sic+"),array("+"),0);
 			storedata('2.4.77','sa',0);
@@ -3727,7 +3727,7 @@ if (($sarvadhatuka===1 || $ardhadhatuka===1) &&  (in_array("N",$it)||in_array("k
     $kGiti=1;
 }
 /* bhUsuvostiGi (7.3.88) */
-if ( ($sarvadhatuka===1 || $ardhadhatuka===1) && in_array($fo,array("BU","zUN")) && arr($text,'/[Bs]U\+/') && pr2(array("BU","sU"),array("+"),$sArvadhAtuka_tiG_pratyayas,array("Bu","su"),array("+"),$sArvadhAtuka_tiG_pratyayas,$text)!==$text )
+if ( ($sarvadhatuka===1 || $ardhadhatuka===1) && in_array($fo,array("BU","zUN","asa!")) && arr($text,'/[Bs]U\+/') && pr2(array("BU","sU"),array("+"),$sArvadhAtuka_tiG_pratyayas,array("Bu","su"),array("+"),$sArvadhAtuka_tiG_pratyayas,$text)!==$text )
 {
 	storedata('7.3.88','sa',0);
 	$bhUsuvo=1;
