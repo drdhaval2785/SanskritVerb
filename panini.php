@@ -1868,10 +1868,8 @@ if ($lakAra==="liw" && ends(array($fo),array("UrRuY"),4) )
 /* ijAdezca gurumato'nRcCaH (3.1.36) */
 elseif ($lakAra==="liw" && (arr(array($verb_without_anubandha),'/^[IUFXeEoO]/') || arr(array($verb_without_anubandha),'/^[iufx]['.pc('hl').']['.pc('hl').']/')) && !ends(array($fo),array("fCa!"),4) )
 {
-	print_r($text);
     $text=pr2(array("+"),$tiG,blank(0),array("+Am+"),$tiG,blank(0),$text);
     $text=pr2(array("+"),array("eS","e","irec","ire"),blank(0),array("+Am+"),array("eS","e","irec","ire"),blank(0),$text);
-	print_r($text);
 	storedata('3.1.36','sa',0);
 }
 /* dayAyAysazca (3.1.37) */
@@ -2061,8 +2059,9 @@ if (in_array($so,$tiG) && arr(array($fo),'/[!]['.pc('hl').']$/') && $nomidelisio
 	storedata('1.3.9','sa',0);
 }
 if ($debug===1) {dibug("1900");}
+print_r($text);
 /* halantyam (1.3.3) and tasya lopaH (1.3.9) */
-if (in_array($so,$tiG) && ( sub(array("+"),$inbetweenpratyaya,array("+"),0) || (arr($text,'/['.pc('hl').']$/') && $tusma!==1) || sub($hl,array("+"),$vikaraNa,0) || $rudhAdibhyaH===1 || pr2($hl,array("+"),array("va","ma"),blank(count($hl)),array("+"),array("va","ma"),$text)!==$text) ) # $ad === 1 removed because of https://github.com/drdhaval2785/SanskritVerb/issues/318
+if (in_array($so,$tiG) && (arr($text,'/['.pc('hl').'][+]/') ||sub(array("+"),$inbetweenpratyaya,array("+"),0) || (arr($text,'/['.pc('hl').']$/') && $tusma!==1) || sub($hl,array("+"),$vikaraNa,0) || $rudhAdibhyaH===1 || pr2($hl,array("+"),array("va","ma"),blank(count($hl)),array("+"),array("va","ma"),$text)!==$text) ) # $ad === 1 removed because of https://github.com/drdhaval2785/SanskritVerb/issues/318
 {
 	storedata('1.3.3','pa',0);
     if ( $rudhAdibhyaH===1)
@@ -2071,13 +2070,13 @@ if (in_array($so,$tiG) && ( sub(array("+"),$inbetweenpratyaya,array("+"),0) || (
     }
     $text=three(array("+"),$inbetweenpratyaya,array("+"),array("+"),$inbetweeenreplace,array("+"),0);
 	$text=three($hl,array("+"),array("jus",),blank(count($hl)),array("+"),array("jus",),0); // patch for jus, because it prevents application of halantyam artificially because of na vibhaktau tusmAH (s at end).
-    if ( ($ad===1 || in_array($lakAra,array("liw","luw","lfw","ASIrliN","luN","lfN","ArDaDAtukalew"))) && arr(array($fo),'/['.pc('hl').']$/'))
+	if ( ($ad===1 || in_array($lakAra,array("liw","luw","lfw","ASIrliN","luN","lfN","ArDaDAtukalew"))) && arr(array($fo),'/['.pc('hl').']$/'))
     {
         $text=three($hl,array("+"),$tiG1,blank(count($hl)),array("+"),$tiG1,0);
     }
     if ($tusma!==1)
     {
-        itprat('/(['.flat($hl).']$)/');
+		if ( $so!=="mahiN") {itprat('/(['.flat($hl).']$)/');}
         $text = last($hl,blank(count($hl)),0);   
     }
 	$text = one(array("i!r"),array("i!"),0);
