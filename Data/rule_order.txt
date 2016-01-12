@@ -1,0 +1,502 @@
+Appendix 1: Rule order in NLP order model for subantaprakaraNa of SiddhAntakaumudI.
+As this is culled out from actual code, it includes some code related information which the user can ignore for the time being.
+As the code is constant upgradation - the interested researcher is advised to access the current code at https://github.com/drdhaval2785/SanskritSubanta/blob/master/subanta.php.
+The pattern to look for is /* and */. This is the heading of the code block.
+ 
+1.	Including arrays and functions
+2.	hides error reports.
+3.	set execution time to an hour
+4.	Reading from the HTML input.
+5.	Defining the variables used in the code and their default values .
+6.	a for loop for entering all sup pratyayas one by one. Sambuddhi is at the last after sup.
+7.	Code for converting from IAST to SLP1
+8.	Code for converting from devanagari - SLP1
+9.	displaying the data back to the user
+10.	for sambodhana vibhaktis display
+11.	preprocessing for the sup pratyayas.
+12.	main coding part starts from here. Based on Siddhantakaumudi text.
+13.	Defining an array $text.
+14.	displaying general information about the sup vibhaktis
+15.	arthavadadhAturapratyayaH prAtipadikam (1.2.45), kRttaddhitasamAsAzca (1.2.46), pratyayaH (3.1.1), parazca (3.1.2), GyAppradipadikAt (4.1.1), svaujasamauTCaSTAbhyAmbhisGebhyAmbhyasGasibhyAmbhyasGasosAmGyossup (4.1.2), vibhaktizca (1.4.104), supaH (1.4.103)
+16.	dvyekayordvivacanaikavacane (1.4.22)
+17.	bahuSu bahuvacanam (1.4.21)
+18.	sarUpANAmekazeSa ekavibhaktau (1.2.64)
+19.	ekavacanaM sambuddhiH (2.3.49)
+20.	nityabahuvacanAnta special messages
+21.	nityadvivacanAnta special messages
+22.	tyadAdi sambodhana special messages
+23.	defining sarvanama status
+24.	vibhASAprakaraNe tIyasya GitsUpasaMkhyAnam (vA 242)
+25.	sarvAdIni sarvanAmAni (1.1.27)
+26.	defininig eranekAca
+27.	defining oH supi variable
+28.	GI definition
+29.	makArAnta pulliGga dhAtu definition
+30.	idam, idakam anvAdeza definition
+31.	nakArAnta pulliGga ShanvAat definition
+32.	jakArAnta pulliGga kvin pratyaya definition
+33.	tyadAdi gauNatva definition
+34.	asmad / yuSmad -> nau / naH etc definition
+35.	ancu definitions
+36.	defining goanc
+37.	defining Nyanta
+38.	defining dhatus
+39.	defining kvip
+40.	strIliGga definitions
+41.	defining Abantatva
+42.	nityastrIliGga definition
+43.	praDI definition
+44.	sulU definition
+45.	suDI definition
+46.	UkArAnta strIliGga - defining
+47.	punarBU definition
+48.	bhASitapuMska definition
+49.	tRtIyAdiSu bhASitapuMskaM puMvadgAlavasya (7.1.74)
+50.	defining kRt pratyayas
+51.	kRdatiG (3.1.93)
+52.	Defining pada and bham
+53.	suDanapuMsakasya (1.1.43)
+54.	bahuguNavatuDati saGkhyA (1.1.28)
+55.	Dati ca (1.1.25)
+56.	SNAntA Sat (1.1.24)
+57.	defining "SaT"
+58.	same in all lingas - special messages
+59.	checking for presence of aJcu verb.
+60.	zatRvat finder
+61.	atvanta finder
+62.	na SaTsvasrAdibhyaH (4.1.10)
+63.	striyAM ca (7.1.96)
+64.	Rnnebhyo Gip (4.1.5)
+65.	dRnkarapunaHpUrvasya bhuvo yaN vaktavyaH (vA 4118)
+66.	yU stryAkhyau nadI (1.4.3) and prathamaliGgagrahaNaJca (vA 1036)
+67.	abhyasta definition
+68.	jakSityAdayaH SaT (6.1.6)
+69.	ubhe abhyastam (6.1.5)
+70.	tyadAdiSu dRSo'nAlocane kaJca (3.2.60)
+71.	kvin pratyaya from asRj
+72.	no kvin pratyaya from viSvasRj
+73.	spRSo'nudake kvin (3.2.58)
+74.	Defining $vasu
+75.	Defining ugit
+76.	dRnkarapunaHpUrvasya bhuvo yaN vaktavyaH (vA 4118)
+77.	adDDatarAdibhyaH paJcabhyaH (7.1.25) and ekatarAtpratiSedho vaktavyaH (vA 4287)
+78.	maghavA bahulam (6.4.128)
+79.	arvaNastrasAvanaJa (6.4.127)
+80.	patch for dRz
+81.	RtvigdadhRksragdiguSNigaJcuyujikruJcAM ca (3.2.59)
+82.	rAyo hali (7.2.85)
+83.	hrasvo napuMsake prAtipadikasya (1.2.47)
+84.	ato'm (7.1.24)
+85.	defining whether the first word is asmad / yuzmad
+86.	Whole replacements for asmad / yuSmad
+87.	yuSmadasmadoH SaSThIcaturthIdvitIyAsthayorvAMnAvau (8.1.20)
+88.	bahuvacanasya vasnasau (8.1.21)
+89.	temayAvekavacanasya (8.1.22)
+90.	tvAmau dvitIyAyAH (8.1.23)
+91.	pratyaya Adeza for yuSmad / asmad
+92.	yuSmadasmadbhyAM Gaso'z (7.1.27)
+93.	Geprathamayoram (7.1.28)
+94.	zaso na (7.1.29)
+95.	bhyaso bhyam (7.1.30)
+96.	paJcamyA at (7.1.32)
+97.	ekavacanasya ca (7.1.32)
+98.	prakRti Adezas for asmad / yuSmad
+99.	yo'ci (7.2.89)
+100.	yuSmadasmadoranAdeze (7.2.86)
+101.	dvitIyAyAJca (7.2.87)
+102.	zeSe lopaH (7.2.90)
+103.	maparyantasya Adezas for asmad / yuSmad
+104.	yUyavayau jasi (7.2.93)
+105.	tvAhau sau (7.2.94)
+106.	tubhyamahyau Gayi (7.2.95)
+107.	tavamamau Gasi (7.2.96)
+108.	tvamAvekavacane (7.2.97)
+109.	yuvAvau dvivacane (7.2.92)
+110.	ato guNe patch
+111.	prathamAyAzca dvivacane bhASAyAm (7.2.88)
+112.	aGgakArye kRte punarnAGgakAryam (pa 93)
+113.	idamo maH (7.2.108)
+114.	ido'y puMsi (7.2.111)
+115.	yaH sau (7.2.110)
+116.	anvAdeze napuMsake enadvaktavyaH (vA 1569)
+117.	svamornapuMsakAt (7.1.23)
+118.	kimaH kaH (7.2.103)
+119.	Rnnebhyo GIp (4.1.5)
+120.	aSTana A vibhaktau (7.2.84)
+121.	aSTAbhya auz (7.1.21)
+122.	pratyayasya lukzlulupaH (1.1.61)
+123.	SaDbhyo luk (7.1.22)
+124.	pratyayalope pratyayalakSaNam (1.1.62) and na lumatAGgasya (1.1.63)
+125.	jazzasoH ziH (7.1.20)
+126.	zi sarvanAmasthAnam (1.1.42)
+127.	declaring sarvanamasthana1 variable
+128.	am sambuddhau (7.1.99)
+129.	puMso'suG (7.1.89)
+130.	yujerasamAse (7.1.71)
+131.	A sarvanAmnaH (6.3.91)
+132.	defining tri variable for tisRcatasR
+133.	tricaturoH striyAM tisRcatasR (7.2.99)
+134.	caturanaDuhorAmudAttaH (7.1.98)
+135.	sAvanaDuhaH (7.1.82)
+136.	jarAyA jarasanyatarasyAm (7.2.101)
+137.	paddannomAshRnnizasanyUSandoSanyakaJChakannudannAsaJChasprabhRtiSu (6.1.63)
+138.	mAMsapRtanAsAnUnAM mAMspRtsnavo vAcyAH SasAdau vA (vA 3416)
+139.	asthidadhisakthyakSNAmanaGudAttaH (7.1.75)
+140.	saGkhyAvisAyapUrvasyAhnasyAhannanyatarasyAM Gau (6.3.110)
+141.	sakhyurasambuddhau (7.1.92)
+142.	anaG sau (7.1.93) and Gicca (1.1.53)
+143.	alo'ntyAtpUrva upadhA (1.1.65)
+144.	diva aut (7.1.84)
+145.	diva ut (6.1.131)
+146.	zeSo ghyasakhi (1.4.7)
+147.	na mu ne (8.2.3)
+148.	yaci bham (1.4.14) and A kaDArAdekA saJjJA (1.4.1)
+149.	svAdiSvasarvanAmasthAne (1.4.17)
+150.	SaTcaturbhyazca (7.1.55)
+151.	patch for aSTana A vibhaktau
+152.	nopadhAyAH (6.4.7)
+153.	pAdaH pat (6.4.130)
+154.	TeH (6.4.143)
+155.	bhasya TerlopaH (7.1.88)
+156.	pathimathyRbhukSAmAt (7.1.85)
+157.	ito'tsarvanAmasthAne (7.1.85)
+158.	tho'nthaH (7.1.87)
+159.	sambuddhau napuMsakAnAM nalopo vA vAcyaH (vA)
+160.	sau ca (6.4.13)
+161.	inhanpUSAryamNAM zau (6.4.12)
+162.	sarvanAmasthAne cAsambuddhau (6.4.8)
+163.	tRjvatkroSTuH (7.1.95), vibhASA tRtIyAdiSvaci (7.1.97) and numaciratRjvadbhAvebhyo nuT pUrvavipratiSedhena (vA 4374)
+164.	AGo nA'striyAm (7.3.120)
+165.	defining some sets
+166.	iko'ci vibhaktau (7.1.73)
+167.	vA'mzasoH (6.4.80)
+168.	lomno'patyeSu bahuSvakAro vaktavyaH (vA 2560)
+169.	aci ra RtaH (7.2.100)
+170.	RduzanaspurudaMso&nehasAM ca (7.1.94)
+171.	Rto GitsarvanAmasthAnayoH (7.3.110)
+172.	aptRntRcsvasRnaptRneSTRtvaSTRkSattRhotRpotRprazAstRRNAm (6.4.11)
+173.	apo bhi (7.4.48)
+174.	Ato dhAtoH (6.4.140)
+175.	na saMyogAdvamantAt (6.4.137)
+176.	zvayuvamaghonAmataddhite (6.4.133)
+177.	vAha UTh (6.4.132)
+178.	vasoH samprasAraNam (6.4.131)
+179.	samprasAraNAcca (6.1.108)
+180.	na samprasAraNe samprasAraNam (6.2.37)
+181.	napuMsakAcca (7.1.19)
+182.	auGaH zyAM pratiSedho vAcyaH (vA)
+183.	paddannomAshRnnizasanyUSandoSanyakaJChakannudannAsaJChasprabhRtiSu (6.1.63) special case kakuddoSaNI
+184.	bhasya (6.4.129) and allopo'naH (6.4.134) and vibhASA GizyoH (6.4.236) and na saMyogAdvamantAt (6.4.137)
+185.	ho hanterJNinneSu (7.3.54)
+186.	jasi ca (7.3.109)
+187.	trestrayaH (7.1.53)
+188.	viSvagdevayozca TeradryaJcatAvapratyaye (6.3.92)
+189.	patch for iko yaNaci
+190.	adasa au sulopazca (7.2.107)
+191.	tyadAdInAmaH (7.2.102)
+192.	ajAdyataSTAp (4.1.4)
+193.	akaH savarNe dIrghaH (6.1.101)
+194.	adasa au sulopazca (7.2.107)
+195.	tadoH saH sAvanantyayoH (7.2.106)
+196.	sarvanAmnaH smai (7.1.14)
+197.	GasiGyoH smAtsminau (7.1.15)
+198.	pUrvAdibhyo navabhyo vA (7.1.16)
+199.	TAGasiGasAminAtsyAH (7.1.12)
+200.	Ami sarvanAmnaH suT (7.1.15)
+201.	sAma Akam (7.1.33)
+202.	dvitIyATaussvenaH (2.4.34)
+203.	idamo'nvAdeze'zanudAttastRtIyAdau (2.4.32)
+204.	nAnarthake'lo'ntyavidhiranabhyAsavikAre (vA 490)
+205.	Adyantavadekasmin
+206.	goto Nit (7.1.90) and oto Niditi vAcyam (vA 5035)
+207.	aco JNiti (7.2.115)
+208.	RRta iddhAtoH (7.1.100)
+209.	ambArthanadyorhrasvaH (7.3.103)
+210.	idudbhAym (7.3.117)
+211.	GerAmnadyAmnIbhyaH (7.3.116)
+212.	aut (7.3.118)
+213.	ANnadyAH (7.3.112)
+214.	acca gheH (7.3.119)
+215.	gherGiti (7.3.111)
+216.	auGaH ApaH (7.1.18)
+217.	sambuddhau ca (7.3.106)
+218.	sarvanAmnaH syADDhrasvazca (7.3.114)
+219.	hali lopaH (7.2.113)
+220.	anApyakaH (7.2.112)
+221.	AGi cApaH (7.3.105)
+222.	vibhASA diksamAse bahuvrIhau (1.1.28)
+223.	yADApaH (7.3.113)
+224.	nedamadasorakoH (7.1.11)
+225.	jasaH zI (7.1.17)
+226.	pUrvaparAvaradakSiNottarAparAdharANi vyavasthAyAmasaJjJAyAm (1.1.34)
+227.	svamajJAtidhanAkhyAyAm (1.1.35)
+228.	antaraM bahiryogopasaMvyAnayoH (1.1.36)
+229.	vibhASA jasi
+230.	na bahuvrIhau
+231.	tRtIyAsamAse
+232.	dvandve ca
+233.	prathamacaramatayAlpArdhakatipayanemAzca (1.1.33)
+234.	dvandve ca (1.1.31)
+235.	upadeze'janunAsika it (1.3.2) // Temporary patch. Not coded perfectly.
+236.	patch for saMyogAntalopa of maghavan
+237.	AdirGiTuDavaH (1.3.5)
+238.	cuTU (1.3.7)
+239.	SaH pratyayasya (1.3.6)
+240.	GeryaH (7.1.13)
+241.	lazakvataddhite (1.3.8)
+242.	na vibhaktau tusmAH (1.3.4)
+243.	halantyam (1.3.3) and tasya lopaH
+244.	it additions in case of kvin and kvip
+245.	nAJceH pUjAyAm (6.4.30)
+246.	kruJca
+247.	defining dhatus with 'i' as it
+248.	aniditAM hala upadhAyAH kGiti (6.4.24)
+249.	samaH sami (6.3.93)
+250.	sahasya sadhriH (6.3.95)
+251.	tirasastiryalope (6.3.94)
+252.	atvasantasya cAdhAtoH (6.4.14)
+253.	ugidacAM sarvanAmasthAne'dhAtoH (7.1.70)
+254.	uda It (6.4.139)
+255.	acaH (6.4.138)
+256.	cau (6.3.138)
+257.	shatR
+258.	nAbhyAsAcChatuH (7.1.78)
+259.	vA napuMsakasya (7.1.79)
+260.	zapzyanornityam (7.1.81)
+261.	AcChInadyornum (7.1.80)
+262.	special message for ikAra of kvip, kvin etc.
+263.	verapRktasya (3.1.67)
+264.	GasiGasozca (6.1.110)
+265.	hrasvanadyApo nuT (7.1.54)
+266.	bahUrji exception to napuMsakasya jhalacaH (7.1.72)
+267.	beBid, cecCid exception to napuMsakasya jhalacaH (7.1.72)
+268.	svap patch
+269.	napuMsakasya jhalacaH (7.1.72)
+270.	sarvanAmasthAne cAsambuddhau (6.4.8)
+271.	dRnkarapunaHpUrvasya bhuvo yaN vaktavyaH (vA 4118)
+272.	varSAbhvazca (6.8.84)
+273.	na bhUsudhiyoH (6.4.85)
+274.	kvau luptaM na sthAnivat (vA 431)
+275.	aci znudhAtubhruvAM yvoriyaGuvaGau (6.4.77)
+276.	gatikAraketarapUrvapadasya yaN neSyate (vA 5034)
+277.	eranekAco'saMyogapUrvasya (6.4.82)
+278.	oH supi (6.4.83)
+279.	ami pUrvaH (6.1.107)
+280.	sAntamahataH saMyogasya (6.4.10)
+281.	Rta ut (6.1.111)
+282.	auto'mzasoH (6.1.93)
+283.	ato bhisa ais (7.1.9)
+284.	yasyeti ca (6.4.148)
+285.	do-while loop for sapAdasaptAdhyAyI
+286.	osi ca (7.3.104)
+287.	na tisRcatasR (6.4.4)
+288.	explanation of prarINAm
+289.	nAmi (6.4.3) and nR ca (6.4.6)
+290.	bahuvacane jhalyet (7.3.103)
+291.	supi ca (7.3.102)
+292.	pragRhya section
+293.	plutapragRhyA aci nityam (6.1.125)
+294.	iko'savarNe zAkalyasya hrasvazca (6.1.127) // Right now coded for only dIrgha. Clarify wheter the hrasva preceding also included?
+295.	upasargAdRti dhAtau (6.1.11) and vA supyApizaleH (6.1.12)
+296.	RtyakaH (6.1.128)
+297.	vAkyasya TeH pluta udAttaH (8.2.82)
+298.	pratyabhivAde'zUdre (8.2.83)
+299.	dUrAddhUte ca (8.2.84)
+300.	haihe prayoge haihayoH (8.2.85)
+301.	guronanRto'nantyasyApyekaikasya prAcAm (8.2.86)
+302.	aplutavadupasthite (6.1.129)
+303.	I3 cAkravarmaNasya (6.1.130)
+304.	IdUdeddvivacanaM pragRhyam (1.1.11)
+305.	adaso mAt (1.1.12)
+306.	ze (1.1.13)
+307.	nipAta ekAjanAG (1.1.14)
+308.	ot (1.1.15)
+309.	sambuddhau zAkalyasyetAvanArSe (1.1.16)
+310.	UYaH (1.1.17)
+311.	U! (1.1.18)
+312.	maya uYo vo vA (8.3.33)
+313.	IdUtau ca saptamyarthe (1.1.19)
+314.	zakandhvAdiSu pararUpaM vAcyam (vA 3632)
+315.	omAGozca (6.1.95)
+316.	ATazca (6.1.90)
+317.	striyAH (6.4.79)
+318.	nAdici (6.1.104)
+319.	dIrghAjjasi ca (6.1.105)
+320.	prathamayoH pUrvasavarNaH (6.1.102)
+321.	tasmAcChaso naH puMsi (6.1.103)
+322.	Rti savarNe R vA (vA 3640) and lRti savarNe lR vA (vA 3641)
+323.	akaH savarNe dIrghaH (6.1.101)
+324.	ato guNe (6.1.17)
+325.	hrasvasya guNaH (7.3.108)
+326.	halGyAbbhyo dIrghAtsutisyapRktaM hal (6.1.68) and apRkta ekAlpratyayaH (1.2.41)
+327.	patch for varShABU sambodhana
+328.	eGhrasvAtsambuddheH (6.1.69) and ekavacanaM sambuddhiH (2.3.49) // removed the last letter, not as in sutra. Look out for issues if any crops up.
+329.	dazca (7.2.109)
+330.	iko yaNaci (6.1.77)
+331.	sarvatra vibhASA goH (6.1.122)
+332.	avaG sphoTAyanasya (6.1.123)
+333.	indre ca (6.1.124)
+334.	eGaH padAntAdati (6.1.109)
+335.	eco'yavAyAvaH (7.1.78)
+336.	vAnto yi pratyaye (6.1.71), goryutau CandasyupasaMkhyAnam (vA 3543), adhvaparimANe ca (vA 3544) dhAtostannimittasyaiva (6.1.80)
+337.	kSayyajayyau zakyArthe (6.1.81)
+338.	krayyastadarthe (6.1.82)
+339.	khyatyAtparasya (6.1.112)
+340.	Exceptions to sasajuSo ruH
+341.	etattadoH sulopo'konaJsamAse hali (6.1.132)
+342.	so'ci lope cetpAdapUraNam (6.1.134)
+343.	aniditAM patch for sraMs and dhvaMs
+344.	vasusraMsudhvaMsvanaDuhAM daH (8.2.72)
+345.	saMyogAnta patch for asmad / yuSmad
+346.	patch for asiddhatva of SakAra of pratyaya as in pipaThiS
+347.	patch for asiddhatva of SakAra of doS
+348.	sasajuSo ruH (8.2.66)
+349.	ahan(8.2.68) and ro'supi (8.2.69) and rUparAtrirathantareSu vAcyam (vA 4847)
+350.	samaH suTi (8.3.5) // have used @ as mark of anunAsika u of ru.
+351.	khyAYAdeze na (vA 1591)
+352.	pumaH khayyampare (8.3.6)
+353.	nazChavyaprazAn (8.3.7)
+354.	nRUnpe (8.3.10)
+355.	svatavAn pAyau (8.3.11)
+356.	kAnAmreDite (8.3.12)
+357.	ato roraplutAdaplute (6.1.113)
+358.	hazi ca (6.1.114)
+359.	ekaH pUrvaparayoH (6.1.84)
+360.	akSAdUhinyAmupasaMkhyAnam (vA 3604)
+361.	svAdireriNoH (vA 3606)
+362.	/*prAdUhoDhoDyeSaiSyeSu (vA 3605)
+363.	Rte ca tRtIyAsamAse (vA 3607)
+364.	pravatsatarakambalavasanadazArNAnAmRNe (vA 3608-9)
+365.	etyedhatyuThsu (6.1.89)
+366.	AdguNaH (6.1.87)
+367.	uraNraparaH (1.1.51)
+368.	eGi pararUpam (6.1.94)
+369.	eve cAniyoge (vA 3631)
+370.	vA supyapizaleH (6.1.92)
+371.	aco'ntyAdi Ti (1.1.64)
+372.	otvoShThayoH samAse vA (vA 3634)
+373.	nAmreDitasyAntasya tu vA (6.1.99), tasya paramAmreDitam (8.1.2)
+374.	avyaktAnukaraNasyAta itau (6.1.98)
+375.	vRddhireci (6.1.88)
+376.	udaH sthAstambhvoH pUrvasya (8.1.61)
+377.	saMhitAyAm (6.1.72)
+378.	Che ca (6.1.73)
+379.	AGmAGozca (6.1.74)
+380.	dIrghAt (6.1.75) and padAntAdvA (6.1.76)
+381.	yasmAtpratyayavidhistadAdi pratyaye'Ggam (2.4.13)
+382.	creating a + elision for two ++ simultaneously.
+383.	tripAdI functions
+384.	na NisambuddhyoH (8.2.8)
+385.	patches for maghavA bahulam
+386.	NAvuttarapade pratiSedho vaktavyaH (vA 4785)
+387.	sambuddhau napuMsakAnAM nalopo vA vAcyaH (vA 4786)
+388.	na lopaH prAtipadikAntasya (8.2.7)
+389.	nalopaH supsvarasaJjJAtugvidhiSu kRti (8.2.2)
+390.	patch for udan Adeza of udaka
+391.	nazervA (8.2.63)
+392.	kvinpratyayasya kuH (8.2.62) defining
+393.	vrazcabhrasjamRjayajarAjabhrAjacChazAM ca (8.2.35)
+394.	nimittApAye naimittikasyApyapAyaH (paribhASA)
+395.	vivikz patch for overcoming skoH saMyogAdyorante ca
+396.	rakS, takS patch to bar application of skoH saMyogAdyorante ca
+397.	pipak, vivak, didhak patch to bar application of skoH saMyogAdyorante ca
+398.	skoH saMyogAdyorante ca (8.2.29)
+399.	patch for cikIrz
+400.	rAtsasya (8.2.24)
+401.	saMyogAntasya lopaH (8.2.23)
+402.	coH kuH (8.2.30)
+403.	vA druhamuhaSNuhaSNihAm (8.2.34)
+404.	dAderdhAtorghaH (8.2.33)
+405.	naho dhaH (8.2.35)
+406.	AhasthaH (8.2.36)
+407.	ho DhaH (8.2.32)
+408.	ekAco bazo bhaS jhaSantasya sdhvoH (8.2.37)  // Not good code. Think hard.
+409.	jhalAM jazo'nte (8.2.39)
+410.	kvinpratyaya patch for asRj
+411.	kvinpratyayasya kuH (8.2.62)
+412.	vizvasya vasurAToH (6.3.128)
+413.	bhobhagoaghoapUrvasya yo'zi (8.3.17) :
+414.	SaDhoH kassi (8.2.41)
+415.	mo no dhAtoH (8.2.64)
+416.	rvorupadhAyA dIrgha ikaH (8.2.76)
+417.	hali ca (8.2.77)
+418.	eta Idbahuvacane (8.2.81)
+419.	adaso'serdAdu do maH (8.2.80)
+420.	vyorlaghuprayatnataraH zAkaTAyanasya (8.3.18)
+421.	roH supi (8.3.16)
+422.	kharavasAnayorvisarjanIyaH (8.3.15)
+423.	Dho Dhe lopaH (8.3.13)
+424.	ro ri (8.3.14)
+425.	Dhralope pUrvasya dIrgho'NaH (6.3.111)
+426.	lopaH zAkalyasya (8.3.19) and vyorlaghuprayatnataraH zAkaTAyanasya (8.3.18)
+427.	hali sarveSAm (8.3.22)
+428.	oto gArgyasya (8.3.20)
+429.	uJi ca pade (8.3.21)
+430.	mo rAji samaH kvau (8.3.25)
+431.	mo'nusvAraH (8.3.23)
+432.	nazcApadAntasya jhali (8.3.24)
+433.	he mapare vA (8.3.26) and yavalapare yavalA veti vaktavyam (vA 4902)
+434.	napare naH (8.3.27)
+435.	GNoH kukTukzari (8.3.28)
+436.	DaH si dhuT (8.3.29)
+437.	nazca (8.3.30)
+438.	zi tuk (8.3.31)
+439.	Gamo hrasvAdaci GamuNnityam (8.3.32)
+440.	saheH sADaH saH (8.3.56)
+441.	sampuGkAnAM so vaktavyaH (vA 4892)
+442.	samo vA lopameke (bhASya)
+443.	dvistrizcaturiti kRtvo'rthe (8.3.43)
+444.	muhusaH pratiSedhaH (vA 4911)
+445.	kaskAdiSu ca (8.3.48)
+446.	isusoH sAmarthye (8.3.44) and nityaM samAse'nuttarapadasthasya (8.3.45)
+447.	idudupadhasya cApratyayasya (8.3.41)
+448.	ekAdezazAstranimittikasya na Satvam | kaskAdiSu bhrAtuSputrazabdasya pAThAt (vA 4915)
+449.	iNaH SaH (8.3.39)
+450.	namaspurasorgatyoH (8.3.40)
+451.	tiraso'nyatarsyAm (8.3.42)
+452.	ataH kRkamikaMsakumbhapAtrakuzAkarNISvanavyayasya (8.3.46)
+453.	adhazzirasI pade
+454.	so'padAdau (8.3.38), pAzakalpakakAmyeSviti vAcyam (vA 5033), anavyayasyeti vAcyam (vA 4902) and kAmye roreveti vAcyam (vA 4902)
+455.	zarpare visarjanIyaH (8.3.35)
+456.	kupvoH &k&pau ca (8.3.37)
+457.	visarjanIyasya saH (8.3.34)
+458.	vA zari (8.3.36)
+459.	kharpare zari vA visargalopo vaktavyaH (vA 4906)
+460.	apadAntasya mUrdhanyaH (8.3.55), iNkoH (8.3.57) and AdezapratyayayoH (8.3.59)
+461.	numvisarjanIyazarvyavAye'pi (8.3.58)
+462.	hanteratpUrvasya (8.4.22)
+463.	raSAbhyAM no NaH samAnapade (8.4.1)
+464.	ekAjuttarapade NaH (8.4.12)
+465.	Patch to remove the + sign
+466.	aTkupvAGnumvyavAye'pi (8.4.2) and na padAntasya (8.4.37)
+467.	RvarNAnnasya NatvaM vAcyam (vA 4969)
+468.	na padAntasya 8.4.37)
+469.	stoH zcunA zcuH (8.4.40)
+470.	stoH zcunA zcuH (8.4.40) and zAt (8.4.44)
+471.	anAmnavatinagarINAmiti vAcyam (vA 5016)
+472.	stoH STunA STuH (8.4.41) and na padAntATToranAm (8.4.41) and toH Si (8.4.43)
+473.	yaro'nunAsike'nunAsiko vA (8.4.45)
+474.	nAdinyAkroze putrasya (8.4.48)
+475.	vA hatajagdhayoH (vA 5022)
+476.	cayo dvitIyAH zari pauSkarasAderiti vAcyam (vA 5023)
+477.	/*anaci ca (8.4.47)
+478.	By anaci ca (according to mahAbhASya example of vAkk)
+479.	zaraH khayaH (vA 5019)
+480.	aco rahAbhyAM dve (8.4.46)
+481.	triprabhRtiSu zAkaTAyanasya (8.4.50)
+482.	sarvatra zAkalyasya (8.4.51)
+483.	dIrghAdAcAryANAm (8-4-52)
+484.	jhalAM jaz jhaSi (8.4.53)
+485.	yaNo mayo dve vAcye (vA 5018) yaN in paJcamI and may in SaSThI)
+486.	yaNo mayo dve vAcye (vA 5018) may in paJcamI and yaN in SaSThI)
+487.	vA'vasAne (8.4.54)
+488.	khari ca (8.4.55)
+489.	aNo'pragRhyasyAnunAsikaH (8.4.57)
+490.	anusvArasya yayi parasavarNaH (8.4.58) and vA padAntasya (8.4.59)
+491.	torli (8.4.60)
+492.	jhayo ho'nyatarasyAm (8.4.62)
+493.	zazCho'Ti (8.4.63) and ChatvamamIti vAcyam (vA 5025)
+494.	halo yamAM yami lopaH (8.4.64)
+495.	jharo jhari savarNe (8.4.65)
+496.	Final Display
+497.	setting the $pada back to pratyaya for next use

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /* This code is borrowed most probably from php.net examples site. But I am unable to trace it now. */
 function html2txt($document){ 
 $search = array('@<script[^>]*?>.*?</script>@si',  // Strip out javascript 
@@ -276,7 +276,7 @@ $main['scr'] = array(
 	
 	40 => "ऽ", // apostrophe (avagraha)
 	41 => "’", // Latin apostrophe (’)
-	42 => "", // Abbreviation
+	42 => "॰", // Abbreviation
 	
 	116 => "ख", // kha
 	115 => "क", // ka

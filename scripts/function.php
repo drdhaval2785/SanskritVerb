@@ -310,6 +310,43 @@ $verb_sutra_pada=array("1.3.13:A","1.3.15:p","1.3.16:p","1.3.14:A","1.3.20:A","1
 $toatmane=array("niviSa!","parikrIY","vikrIY","avakrIY","viji","parAji","AkrIqf!","anukrIqf!","samkrIqf!","parikrIqf!","samsTA","avasTA","prasTA","visTA","udtapa!","vitapa!","Ayama!","Ahana!","samgamx!","samfcCa!","sampracCa!","samsvf","samf","samzru","samvidx!","nihveY","samhveY","upahveY","vihveY","avagf","jijYA","SuSru","susmf","didfSir",);
 $sutraenglish=array("nerviSaH (1.3.17)","parivyavebhyaH kriyaH (1.3.18)","parivyavebhyaH kriyaH (1.3.18)","parivyavebhyaH kriyaH (1.3.18)","viparAbhyAM jeH (1.3.19)","viparAbhyAM jeH (1.3.19)","krIDo'nusaMparibhyazca (1.3.21)","krIDo'nusaMparibhyazca (1.3.21)","krIDo'nusaMparibhyazca (1.3.21)","krIDo'nusaMparibhyazca (1.3.21)","samavaparivibhyaH sthaH (1.3.22)","samavaparivibhyaH sthaH (1.3.22)","samavaparivibhyaH sthaH (1.3.22)","samavaparivibhyaH sthaH (1.3.22)","udvibhyAM tapaH (1.3.27)","udvibhyAM tapaH (1.3.27)","AGo yamahanaH (1.3.28)","AGo yamahanaH (1.3.28)","samo gamyRcCipracCisvarAyartishruvidibhyaH (1.3.29)","samo gamyRcCipracCisvarAyartishruvidibhyaH (1.3.29)","samo gamyRcCipracCisvarAyartishruvidibhyaH (1.3.29)","samo gamyRcCipracCisvarAyartishruvidibhyaH (1.3.29)","samo gamyRcCipracCisvarAyartishruvidibhyaH (1.3.29)","samo gamyRcCipracCisvarAyartishruvidibhyaH (1.3.29)","samo gamyRcCipracCisvarAyartishruvidibhyaH (1.3.29)","nisamupavibhyo hvaH (1.3.30)","nisamupavibhyo hvaH (1.3.30)","nisamupavibhyo hvaH (1.3.30)","nisamupavibhyo hvaH (1.3.30)","avAdgraH (1.3.51)","jJAzrusmRdRzAM sanaH (1.3.57)","jJAzrusmRdRzAM sanaH (1.3.57)","jJAzrusmRdRzAM sanaH (1.3.57)","jJAzrusmRdRzAM sanaH (1.3.57)",);
 $sutradeva=array("नेर्विशः (१.३.१७)","परिव्यवेभ्यः क्रियः (१.३.१८)","परिव्यवेभ्यः क्रियः (१.३.१८)","परिव्यवेभ्यः क्रियः (१.३.१८)","विपराभ्यां जेः (१.३.१९)","विपराभ्यां जेः (१.३.१९)","क्रीडोऽनुसंपरिभ्यश्च (१.३.२०)","क्रीडोऽनुसंपरिभ्यश्च (१.३.२०)","क्रीडोऽनुसंपरिभ्यश्च (१.३.२०)","क्रीडोऽनुसंपरिभ्यश्च (१.३.२०)","समवप्रविभ्यः स्थः (१.३.२२)","समवप्रविभ्यः स्थः (१.३.२२)","समवप्रविभ्यः स्थः (१.३.२२)","समवप्रविभ्यः स्थः (१.३.२२)","उद्विभ्यां तपः (१.३.२७)","उद्विभ्यां तपः (१.३.२७)","आङो यमहनः (१.३.२८)","आङो यमहनः (१.३.२८)","समो गम्यृच्छिप्रच्छिस्वरत्यर्तिश्रुविदिभ्यः (१.३.२९)","समो गम्यृच्छिप्रच्छिस्वरत्यर्तिश्रुविदिभ्यः (१.३.२९)","समो गम्यृच्छिप्रच्छिस्वरत्यर्तिश्रुविदिभ्यः (१.३.२९)","समो गम्यृच्छिप्रच्छिस्वरत्यर्तिश्रुविदिभ्यः (१.३.२९)","समो गम्यृच्छिप्रच्छिस्वरत्यर्तिश्रुविदिभ्यः (१.३.२९)","समो गम्यृच्छिप्रच्छिस्वरत्यर्तिश्रुविदिभ्यः (१.३.२९)","समो गम्यृच्छिप्रच्छिस्वरत्यर्तिश्रुविदिभ्यः (१.३.२९)","निसमुपविभ्यो ह्वः (१.३.३०)","निसमुपविभ्यो ह्वः (१.३.३०)","निसमुपविभ्यो ह्वः (१.३.३०)","निसमुपविभ्यो ह्वः (१.३.३०)","अवाद्ग्रः (१.३.५१)","ज्ञाश्रुस्मृदृशां सनः (१.३.५७)","ज्ञाश्रुस्मृदृशां सनः (१.३.५७)","ज्ञाश्रुस्मृदृशां सनः (१.३.५७)","ज्ञाश्रुस्मृदृशां सनः (१.३.५७)",);
+
+/* Function to find Asya and prayatna of a given letter */
+// asyaprayatna.php removed and subsumed in this function.
+function asyaprayatna($text)
+{
+	global $kantha, $talu, $murdha, $danta, $oshtha, $nasika, $kanthatalu, $kanthoshtha, $dantoshtha, $sprushta, $ishatsprushta, $vivruta, $samvruta, $aghosha, $vivara, $shvasa, $alpaprana, $ghosha, $samvara, $nada, $mahaprana, $ac;
+	$i=0;
+	if (in_array($text,$kantha)) { $sthana[$i] = "kantha"; $i++; }
+	if (in_array($text,$talu)) { $sthana[$i] =  "talu"; $i++; }
+	if (in_array($text,$murdha)) { $sthana[$i] = "murdha"; $i++; }
+	if (in_array($text,$danta)) { $sthana[$i] = "danta"; $i++; }
+	if (in_array($text,$oshtha)) { $sthana[$i] = "oshtha"; $i++; }
+	if (in_array($text,$nasika)) { $sthana[$i] = "nasika"; $i++; }
+	if (in_array($text,$kanthatalu)) { $sthana[$i] = "kanthatalu(kantha,talu)"; $i++; }
+	if (in_array($text,$kanthoshtha)) { $sthana[$i] = "kanthoshtha(kantha,oshtha)"; $i++;}
+	if (in_array($text,$dantoshtha)) { $sthana[$i] = "dantooshtha(danta,oshtha)"; $i++; }
+	$j=0;
+	if (in_array($text,$sprushta)) { $abhyantara[$j] = "sprushta"; $j++; }
+	if (in_array($text,$ishatsprushta)) { $abhyantara[$j] = "ishatsprushta"; $j++; }
+	if (in_array($text,$vivruta)) { $abhyantara[$j] = "vivruta"; $j++; }
+	if (in_array($text,$samvruta)) { $abhyantara[$j] = "samvruta"; $j++; }
+	$k=0;
+	if (in_array($text,$aghosha)) { $bahya[$k] = "aghosha"; $k++; }
+	if (in_array($text,$vivara)) { $bahya[$k] = "vivAra"; $k++; }
+	if (in_array($text,$shvasa)) { $bahya[$k] = "shvasa"; $k++; }
+	if (in_array($text,$alpaprana)) { $bahya[$k] = "alpaprana"; $k++; }
+	if (in_array($text,$ghosha)) { $bahya[$k] = "ghosha"; $k++; }
+	if (in_array($text,$samvara)) { $bahya[$k] = "samvara"; $k++; }
+	if (in_array($text,$nada)) { $bahya[$k] = "nada"; $k++; }
+	if (in_array($text,$mahaprana)) { $bahya[$k] = "mahaprana"; $k++; }
+	if (in_array($text,$ac)) { $bahya[$k] = "udatta"; $k++; }
+	if (in_array($text,$ac)) { $bahya[$k] = "anuudatta"; $k++; }
+	if (in_array($text,$ac)) { $bahya[$k] = "svarita"; $k++; }
+	$output = array($sthana,$abhyantara,$bahya);
+	$a = "The sthana is: ".implode(",",$sthana).".</br>\n"."The abhyantara prayatna is: ".implode(",",$abhyantara).".</br>\n"."The bahya prayatna is: ".implode(",",$bahya);
+	echo $a;	
+}
 /* Function to find pratyAhAra from given two letters */ 
 // Enter your letters in the arguments like prat('Jl') will mean pratyAhAra jhal.
 function prat($text)  // prat for pratyAhAra
@@ -707,11 +744,11 @@ function display($n)
         }
     for($i=1;$i<count($text)+1;$i++) // for all members of the $text array
     {
-        if ($us==="")
+        if (($us==="" && $type==="tiGanta") || $type!=="tiGanta")
         {
         echo "<p class = form>$i - ".convert($text[$i-1])."</p>\n"; // showing the output to the browser. e.g. 1. rAmaH. $i is for numbering. function convert converts the output into devanAgarI.
         }
-        elseif ($us!=="" )
+        elseif ($us!=="" && $type==="tiGanta")
         {
         echo "<p class = form>$i - ".convert($us."+".$text[$i-1])."</p>\n"; // showing the output to the browser. e.g. 1. rAmaH. $i is for numbering. function convert converts the output into devanAgarI.
         }
@@ -1973,23 +2010,56 @@ function upasarga_display($text)
 function suffix_display()
 {
 	global $frontend, $outfile, $sanAdi, $lakAra, $fo, $so, $type;
-	if ($frontend!=="0" && $type==="tiGanta")
+	if ($type==="tiGanta")
 	{
-		if ($sanAdi!=="")
+		if ($frontend!=="0")
 		{
-		echo "<p class = red >".convert($lakAra) ." लकार<br>".convert($fo)." + ".convert($sanAdi)." + ".convert($so)." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n";
-		fputs($outfile,"<p class = red >".convert($lakAra) ." लकार<br>".convert($fo)." + ".convert($sanAdi)." + ".convert($so)." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n<hr>\n");    
-		}
+			if ($sanAdi!=="")
+			{
+			echo "<p class = red >".convert($lakAra) ." लकार<br>".convert($fo)." + ".convert($sanAdi)." + ".convert($so)." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n";
+			fputs($outfile,"<p class = red >".convert($lakAra) ." लकार<br>".convert($fo)." + ".convert($sanAdi)." + ".convert($so)." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n<hr>\n");    
+			}
+			else
+			{
+			echo "<p class = red >".convert($lakAra) ." लकार<br>".convert($fo)." + ".convert($so)." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n";    
+			fputs($outfile,"<p class = red >".convert($lakAra) ." लकार<br>".convert($fo)." + ".convert($so)." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n");    
+			}		
+		}		
 		else
 		{
-		echo "<p class = red >".convert($lakAra) ." लकार<br>".convert($fo)." + ".convert($so)." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n";    
-		fputs($outfile,"<p class = red >".convert($lakAra) ." लकार<br>".convert($fo)." + ".convert($so)." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n");    
+			if ($sanAdi!=="")
+			{
+			fputs($outfile,"<p class = red >".convert($lakAra) ." लकार<br>".convert($fo)." + ".convert($sanAdi)." + ".convert($so)." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n<hr>\n");    
+			}
+			else
+			{
+			fputs($outfile,"<p class = red >".convert($lakAra) ." लकार<br>".convert($fo)." + ".convert($so)." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n");    
+			}		
 		}		
 	}
-	elseif ($frontend!=="0" && $type==="subanta")
+	elseif ($type==="subanta")
 	{
-		echo "<p class = red >".convert($fo)." + ".convert($so)." <a href = subanta.html>Go Back</a></p>\n<hr>\n";    
-		fputs($outfile,"<p class = red >".convert($fo)." + ".convert($so)." <a href = subanta.html>Go Back</a></p>\n<hr>\n");    		
+		if ($frontend!=="0")
+		{
+			echo "<p class = red >".convert($fo)." + ".convert($so)." <a href = subanta.html>Go Back</a></p>\n<hr>\n";    
+			fputs($outfile,"<p class = red >".convert($fo)." + ".convert($so)." <a href = subanta.html>Go Back</a></p>\n<hr>\n");    
+		}		
+		else
+		{
+			fputs($outfile,"<p class = red >".convert($fo)." + ".convert($so)." <a href = subanta.html>Go Back</a></p>\n<hr>\n");    
+		}				
+	}
+	elseif ($type==="sandhi")
+	{
+		if ($frontend!=="0")
+		{
+			echo "<p class = red >".convert($fo)." + ".convert($so)." <a href = sandhi.html>Go Back</a></p>\n<hr>\n";    
+			fputs($outfile,"<p class = red >".convert($fo)." + ".convert($so)." <a href = sandhi.html>Go Back</a></p>\n<hr>\n");    
+		}		
+		else
+		{
+			fputs($outfile,"<p class = red >".convert($fo)." + ".convert($so)." <a href = sandhi.html>Go Back</a></p>\n<hr>\n");    
+		}				
 	}
 }
 // for deciding verb padas.
@@ -3832,7 +3902,7 @@ function nosavarna($c)
 /* Function to find savarna of a given letter from the given array. Not used in code. */
 function sl($text,$array) // Known issue - words having two Asyas.
 {
-    global $kantha,$talu,$murdha,$danta,$oshtha,$nasika,$kanthatalu,$kanthoshtha,$dantoshtha,$sprushta,$ishatsprushta,$vivruta,$samvruta,$aghosha,$alpaprana,$ghosha,$mahaprana,$ac,$udatta,$anudatta,$svarita,$shvasa,$nada,$vivara,$samvara,$hl,$ru,$e;
+    global $kantha,$talu,$murdha,$danta,$oshtha,$nasika,$kanthatalu,$kanthoshtha,$dantoshtha,$sprushta,$ishatsprushta,$vivruta,$samvruta,$aghosha,$alpaprana,$ghosha,$mahaprana,$ac,$udatta,$anudatta,$svarita,$shvasa,$nada,$vivara,$samvara,$hl,$ru,$e,$type;
     // defining an array for sthAna
 $i=0;
 if (in_array($text,$kantha)) { $sthana[$i] = $kantha; $i++; }
@@ -3864,29 +3934,29 @@ if (in_array($text,$ac)) { $svar[$u] = $udatta; $u++; }
 if(empty($sthana)===FALSE)
 {
 $sthanasamya = array_intersect(flatten($sthana),$array); 
-//echo "The letters in the pratyAhAra with same sthAna (Asya) as the letter input are: ".implode(",",$sthanasamya)."</br>";    
+	if ($type==="savarna") {echo "The letters in the pratyAhAra with same sthAna (Asya) as the letter input are: ".implode(",",$sthanasamya)."</br>"; }
 }
 if(empty($abhyantara)===false)
 {
 $abhyantarasamya = array_intersect(flatten($abhyantara),$array);
-//echo "The letters in the pratyAhAra with the same Abhyantara prayatna as the letter input are: ".implode(",",$abhyantarasamya)."</br>";    
+	if ($type==="savarna") {echo "The letters in the pratyAhAra with the same Abhyantara prayatna as the letter input are: ".implode(",",$abhyantarasamya)."</br>"; }
 }
 if(empty($ghosh)===FALSE)
 {
 $ghoshasamya = array_intersect(flatten($ghosh),$array);
-//echo "The letters in the pratyAhAra with the same ghoSa as the letter input are: ".implode(",",$ghoshasamya)."</br>";    
+	if ($type==="savarna") {echo "The letters in the pratyAhAra with the same ghoSa as the letter input are: ".implode(",",$ghoshasamya)."</br>"; }
 }
 if(empty($prana)===FALSE)
 {
 $pranasamya = array_intersect(flatten($prana),$array);
-//echo "The letters in the pratyAhAra with the same prANa as the letter input are: ".implode(",",$pranasamya)."</br>";    
+	if ($type==="savarna") {echo "The letters in the pratyAhAra with the same prANa as the letter input are: ".implode(",",$pranasamya)."</br>"; }
 }
 if(empty($svar)===false)
 {
 if(in_array($text,$ac)) 
         { $svarasamya = array_intersect(flatten($svar),$array,$ac); 
-//echo "The letters in the pratyAhAra with the same udAtta/anudAtta/svarita as the letter input are: ".implode(",",$svarasamya)."</br>";
-        }    
+			if ($type==="savarna") {echo "The letters in the pratyAhAra with the same udAtta/anudAtta/svarita as the letter input are: ".implode(",",$svarasamya)."</br>"; }
+        } 
 }
 if(empty($sthanasamya)===false && empty($abhyantarasamya)===false && empty($ghoshasamya)===false && empty($pranasamya)===false)
 { $l = array_intersect($sthanasamya,$abhyantarasamya,$ghoshasamya,$pranasamya); }
@@ -3905,7 +3975,7 @@ if(in_array($text,$hl))
 {
     if(empty($sthanasamya)===false&&empty($abhyantarasamya)===false&&empty($ghoshasamya)===false&&empty($pranasamya)===FALSE&&empty($l)===false) 
     {//echo "four match";
-            $savarna = implode(", ",$l);     
+           $savarna = implode(", ",$l);     
     }
     elseif (empty($sthanasamya)===false&&empty($abhyantarasamya)===false&&empty($ghoshasamya)===false&&empty($m)===false)
     {//echo "three match";

@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+</head>
+<body>
+
+<div>
+<form action="panini.php" method = "get" id="frm">
+First Word: <input type="text" name="first"><br>
+Second Word: <input type="text" name="sec"><br>
+<input type="radio" name="trans" value="Devanagari" checked>Devanagari
+<input type="radio" name="trans" value="IAST">IAST
+<input type="radio" name="trans" value="SLP1">SLP1<br>
+<input type="radio" name="pada" value="pada" checked>पद + पद
+<input type="radio" name="pada" value="pratyaya">प्रातिपदिक + प्रत्यय
+<input type="submit">
+<input type="hidden" name="type" id="sandhi" value="sandhi" />
+<input type="hidden" name="frontend" id="1" value="1" />
+</form>
+</div>
+
+<p class = hn>
+Developed by: Dr. Dhaval Patel & Dr. Sivakumari Katuri.
+Layout assistance by: Mr. Marcis Gasuns.
+Available under GNU licence.
+Note: The source code for this program is available <a href = "https://github.com/drdhaval2785/sanskrit" target="_blank">here.</a>
+For better rendering of output, use <a href = "http://svayambhava.org/index.php/en/" target="_blank">Siddhanta font.</a></p>
+For <a href = "http://en.wikipedia.org/wiki/International_Alphabet_of_Sanskrit_Transliteration">IAST scheme</a>, please use the lowercase letters.</p>
+<p class = pa>In case you want to test subanta generation by this machine, use the following in the second word. </br>
+    su! O jas am Ow Sas wA ByAm Bis Ne ByAm Byas Nasi! ByAm Byas Nas os Am Ni os sup </p>
+<p>For SLP1, use this scheme for entering words: </p>
+aAiIuUfFxXeEoOMH</br>
+kKgGN</br>
+cCjJY</br>
+wWqQR</br>
+tTdDn</br>
+pPbBm</br>
+yrlvSzsh;
+</body>
+</html>

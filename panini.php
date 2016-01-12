@@ -56,8 +56,7 @@ $first = toslp($_GET["first"]); // to change the word input in devanagari / IAST
 $us = $_GET["upasarga"]; // upasarga. Added on 14 Dec 2014.
 $tran = $_GET['tran']; // "Devanagari" - devanagari, "IAST" - IAST, "SLP1" - SLP1 transliteration.
 $lakAra = $_GET['lakAra']; // There are 12 possible lakAras (mentioned in tiGanta.html)
-//$gender = $_GET['gender']; // "m" - male. "f" - female. "n" - neuter.
-$gender = "";
+$gender = $_GET['gender']; // "m" - male. "f" - female. "n" - neuter.
 $vAcya = $_GET['vAcya']; // kartR, karma, bhAva
 if (!$vAcya) { $vAcya="kartR"; } // If it is not set, consider it as kartR (because it is the most common one)
 $sanAdi = $_GET['sanAdi']; // Default is ''. There are 12 sanAdi groups (mentioned in tiGanta.html)
@@ -66,9 +65,12 @@ $verbset = verbset_from_number($number); // bhvAdi, adAdi etc. Fetched via ajax.
 $frontend = $_GET['frontend']; // Whether to display sUtras in frontend or not. Fetched via tiGanta.html
 //$frontend = '0';
 $type = $_GET['type'];
+$letter = $_GET['letter'];
+$pr = $_GET['pratya'];
+$inprat = $_GET['pratyahara'];
 //$type = 'subanta';
 global $storedata;
-if (!$verbset) { $verbset = scrape1($number,8,9,1)[0]; } // for overcoming issue in https://github.com/drdhaval2785/SanskritVerb/issues/97
+if (!$verbset && $type==="tiGanta") { $verbset = scrape1($number,8,9,1)[0]; } // for overcoming issue in https://github.com/drdhaval2785/SanskritVerb/issues/97
 /* Now trying to make program equally compatible with commandline.
 The proposed structure is php tiGanta.php verb verbset lakAra tran upasarga vAcya
 defaults:
@@ -79,8 +81,33 @@ tran - 'SLP1'
 upasarga - ''
 vAcya - 'kartR'
 */
+/* input from asyaprayatna.html */
+if ($type==="asyaprayatna")
+{
+	asyaprayatna($letter);
+	exit();
+}
+elseif ($type==="savarna")
+{
+	$sav = sl($letter,prat($inprat));
+	echo "savarNa of '".$letter."' in pratyAhAra '".$inprat."' is: ".$sav;
+	exit();
+}
+/* input from pratyahara.html */
+elseif ($type==="pratyahara")
+{
+	$pratyahara = prat($pr);
+	print_r($pratyahara);
+	exit();
+}
+/* input from stri.html */
+elseif ($type==="stri")
+{
+	$gender = "f";
+	$type = "subanta";
+}
 // Input from commandline has to be in `php tiGanta.php 01.0001 law` format. Other details are fetched from verb number.
-if ($type==="tiGanta" && (isset($argv[0]) || $test===1) )
+elseif ($type==="tiGanta" && (isset($argv[0]) || $test===1) )
 {
 	$number = $argv[1];
 	$first = dhatu_from_number($number);
@@ -634,8 +661,14 @@ if ($type==='tiGanta')
 if ($debug===1) {dibug("600");}
 
 if ($type==='subanta') { $suffix = $sup1; }
+elseif ($type==='stri') { $suffix = array("su!"); }
+elseif ($type==="sandhi")
+{
+	$suffix = array($_GET['sec']);
+	$pada = $_GET['pada'];
+}
 /* Deciding suffixes based on parasmai, Atmane or ubhayapada of verbs. */
-if ($type==='tiGanta') 
+elseif ($type==='tiGanta') 
 {
 	$suffix=verb_suffixes($verbpada);
 	/* idAgama decision */
@@ -8461,8 +8494,7 @@ if ($debug===1) {dibug("8400");}
 if ($gender==="f" && sub(array("a+"),$sup,blank(0),0) && in_array($so,$sup) && ($SaTsvasrAdi=0 || sub(array("a+"),$sup,blank(0),0)) && $ajAdyataSTAp===0)
 {
     $text = two(array("a+"),$sup,array("A+"),$sup,0);
-    echo "<p class = st >By ajAdyataSTAp (".link_sutra("4.1.4").") :</p>\n";
-    echo "<p class = st >अजाद्यतष्टाप्‌ (४.१.४) :</p>\n";
+	storedata('4.1.4','st',0);
     $Ap=1;
 }
 /* akaH savarNe dIrghaH (6.1.101) */
@@ -11757,7 +11789,7 @@ if( $veda===1 && sub(array("apasparDeTAm","AnarcuH","AnarhuH","cucyuvize","tatyA
 	storedata('6.1.35','sa',0);
 }
 if ($debug===1) {dibug('11700');}
-$us='';
+//$us='';
 /* Displaying the sUtras and sequential changes of $frontend is not set to 0. */
 if ($frontend!=="0")
 {
