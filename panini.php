@@ -2266,6 +2266,8 @@ if ( in_array($lakAra,array("viDiliN","ASIrliN")) && in_array($so,$tis) )
 		storedata('3.4.104','sa',0);
 		$Git=0;
 		$kit = 1; $itpratyaya=array_merge($itpratyaya,array("k")); $it=array_merge($it,array("k")); 
+		$kGiti = 1;
+		storedata('1.1.5','sa',0);
 	}
 } else {$yAsuT=0;}
 /* suT tithoH (3.4.107) */
@@ -3943,7 +3945,6 @@ elseif ( in_array($lakAra,array("luN","laN","lfN",)) )
     $text=Adyanta($text,"a",1);
 	storedata('6.4.71','sa',0);
 }
-print_r($it); print_r($text);
 /* znasorallopaH (6.4.111) */
 // znam pending.
 if ( (in_array($fo,array("asa!")) && $verbset==="adAdi" ) && (in_array("N",$it)||in_array("k",$it)) && pr2(array("as"),array("+","+yA+"),$apit_sArvadhAtuka_pratyayas,array("s"),array("+","+yA+"),$apit_sArvadhAtuka_pratyayas,$text)!==$text )
