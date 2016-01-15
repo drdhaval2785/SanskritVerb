@@ -3695,7 +3695,7 @@ if (arr($text,'/i\+a/') && in_array($so,$tiG) && $lakAra==="luN" && $caG===1 && 
 /* NeraniTi (6.4.51) */
 elseif (arr($text,'/([+]*)i\+/') && in_array($so,$tiG) && $ardhadhatuka===1&& (!in_array("iw",$Agama)||ends(array($sanAdi),array("Ric","RiN"),2)||in_array($fo,$curAdi_adanta) ))
 {
-	$text = one(array("i+"),array("+"),0);
+	$text = change('/^[a-zA-Z+]+([+]*)i\+/','$1+');
 	$text = pr2(array("+yAs"),array("+"),array("s"),array("yAs"),array("+"),array("s"),$text);
 	storedata('6.4.51','sa',0);
 }
