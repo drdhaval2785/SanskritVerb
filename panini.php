@@ -4007,7 +4007,7 @@ if ($id_dhAtu==="sew" && $id_pratyaya==="sew" && $tAs===1  && !in_array("iw",$Ag
 	$Agama=array_merge($Agama,array("iw"));
 }
 /* tISasahalubharuSariSaH (7.2.48) */
-if ( $tAs===1  && !in_array("iw",$Agama) && (in_array($fo,array("saha!","luBa!","ruza!","riza!"))|| (in_array($fo,array("iza!",)) && $verbset==="divAdi")) && sub(array("ez","sah","loB","roz","rez"),array("+tA"),blank(0),0) ) 
+if ( $tAs===1  && !in_array("iw",$Agama) && (in_array($fo,array("saha!","luBa!","ruza!","riza!"))|| (in_array($fo,array("iza!",)) && $verbset==="tudAdi")) && sub(array("ez","sah","loB","roz","rez"),array("+tA"),blank(0),0) ) 
 {
     $text=one(array("+"),array("+i"),1);
 	storedata('7.2.48','sa',0);
