@@ -1730,7 +1730,7 @@ if (in_array($fo,$iditverbs))
     $it=array_merge($it,array("i"));
 }
 /* iSugamiyamAM CaH (7.3.77) */
-if ( in_array($fo,array("iza!","gamx!","yama!")) && sub(array("iza!","gamx!","yama!"),array("+"),$shitpratyaya,0) && $lakAra!=="")
+if ( in_array($fo,array("iza!","gamx!","yama!")) && sub(array("iza!","gamx!","yama!"),array("+"),$shitpratyaya,0) && in_array($lakAra,array("BvAdi","tudAdi")))
 {
     $text=three(array("iza!","gamx!","yama!"),array("+"),$shitpratyaya,array("iC","gaC","yaC"),array("+"),$shitpratyaya,0);
 	storedata('7.3.77','sa',0);
