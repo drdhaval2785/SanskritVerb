@@ -2102,17 +2102,22 @@ if (in_array($so,$tiG) && (arr($text,'/['.pc('hl').'][+]/') ||sub(array("+"),$in
 	$text = one(array("i!r"),array("i!"),0);
 	$text = two($hl,array("+ran"),blank(count($hl)),array("+ran"),0);
     $text=two($hlplus,array("Ri+"),blank1("+",count($hlplus)),array("Ri+"),0);
+	print_r($text);
     if ($nomidelision!==1 && ends(array($fo),$hl,0)) // Addition of ends function is to prevent application to kF -> kir converted halanta, which are not there in upadeza.
     {
-    $text=three($hlplus,$vikaraNa,array("+"),blank1("+",count($hlplus)),$vikaraNa,array("+"),0);
+		$text=three($hlplus,$vikaraNa,array("+"),blank1("+",count($hlplus)),$vikaraNa,array("+"),0);
     }
 	$text=one(array("+si+","sicmi"),array("+sic+","sic+mi"),0);
-	$text=pr2($hl,array("+"),array("va","ma"),blank(count($hl)),array("+"),array("va","ma"),$text);
+	if(preg_match('/['.pc('hl').']$/',$fo)) 
+	{
+		$text=pr2($hl,array("+"),array("va","ma"),blank(count($hl)),array("+"),array("va","ma"),$text);		
+	}
 	if ($nomidelision!==1 && arr($text,'/['.pc('hl').'][+]([c]*)[a][+]/') && ends(array($fo),'/['.pc('hl').']$/') )
 	{
 		$text=three($hl,array("+a+","+ca+"),$tiG1,blank(count($hl)),array("+a+","+ca+"),$tiG1,0);
 		#$text=two($hl,array("+a+","+ca+"),blank(count($hl)),array("+a+","+ca+"),0);
 	}
+	print_r($text);
 	storedata('1.3.9','sa',0);
 }
 /* cuTU (1.3.7) */
