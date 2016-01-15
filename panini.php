@@ -2578,6 +2578,8 @@ if ( arr($text,'/a[+]iy[+]['.pc('vl').']/') && in_array($so,$tiG) )
 {
     $text=two(array("a+iy+"),prat('vl'),array("a+i+"),prat('vl'),0);
 	storedata('6.1.66','sa',0);
+    $text=two(array("a+i+"),prat('vl'),array("e+"),prat('vl'),0);
+	storedata('6.1.87','sa',0);
 }
 /* ADuttamasya picca (3.4.92) */
 if ( $lakAra==="low" && pr2(array("+"),array("ni","va","ma","E","vahE","mahE"),blank(0),array("+"),array("Ani","Ava","Ama","AE","AvahE","AmahE"),blank(0),$text)!==$text )
