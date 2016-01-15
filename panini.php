@@ -107,11 +107,12 @@ elseif ($type==="stri")
 	$type = "subanta";
 }
 // Input from commandline has to be in `php tiGanta.php 01.0001 law` format. Other details are fetched from verb number.
-elseif ($type==="tiGanta" && (isset($argv[0]) || $test===1) )
+elseif (in_array($argv[2],array("law","liw","luw","lfw","sArvaDAtukalew","ArDaDAtukalew","low","laN","ASIrliN","viDiliN","luN","lfN")) || $test===1)
 {
 	$number = $argv[1];
 	$first = dhatu_from_number($number);
 	$verbset = verbset_from_number($number);
+	echo $first;
 	$lakAra = $argv[2];
 	$tran = $argv[3];
 	$us = $argv[4];
@@ -124,6 +125,7 @@ elseif ($type==="tiGanta" && (isset($argv[0]) || $test===1) )
 	if (!isset($argv[5])) { $vAcya = 'kartR'; }	
 	if (!isset($argv[6])) { $sanAdi = ''; }	
 	$frontend="0";
+	$type="tiGanta";
 }
 /* Creating a log */
 if ($type==='tiGanta') {
@@ -137,15 +139,16 @@ elseif ($type==='subanta') {
 	$logfile = fopen('nounoutput//log.txt','a+'); 
 	fputs($logfile,date('D, d M Y H:i:s')."\n");
 	fputs($logfile,"verb = $first, transliteration = $tran\n");
+	echo $header; // creating header. This will ensure that the HTML is shown with UTF-8 encoding with necessary stylesheet.
 }
 if ($debug===1) {dibug("100");}
 
 if (!isset($argv[0]) and $type==='tiGanta')
 {
-$outfile = fopen("verboutput//".$first."_".$verbset."_".$lakAra.".html", "wb");
-fputs($outfile,$header);
+	$outfile = fopen("verboutput//".$first."_".$verbset."_".$lakAra.".html", "wb");
+	fputs($outfile,$header);
+	echo $header; // creating header. This will ensure that the HTML is shown with UTF-8 encoding with necessary stylesheet.
 }
-echo $header; // creating header. This will ensure that the HTML is shown with UTF-8 encoding with necessary stylesheet.
 $verbset=trim($verbset);
 $fo = $first; // remembering the original prakRti. Sometimes we need to know what was the original prakRti.
 /* Defining the variables used in the code and their default values .
@@ -1385,8 +1388,7 @@ elseif (in_array($so,$tiG) && in_array($fo,array("Divi!","kfvi!")) && $sarvadhat
 }
 // first treatment of curAdi, because, it will take Nic before vikaraNa pratyaya.
 /* satyApapAzarUpavINAtUlazlokasenAlomatvacavarmacUrNacurAdibhyo Nic (3.1.25) */
-//elseif ($sarvadhatuka===1 && $verbset==="curAdi" && sub($curAdi,array("+"),blank(0),0) && sub(array("+"),$tiG,blank(0),0) && in_array($fo,$curAdi) )
-elseif (in_array($so,$tiG) &&  $verbset==="curAdi" && sub($curAdi,array("+"),blank(0),0) && sub(array("+"),$tiG,blank(0),0) && in_array($fo,$curAdi) )
+elseif (in_array($so,$tiG) &&  $verbset==="curAdi" && in_array($fo,$curAdi) )// && sub($curAdi,array("+"),blank(0),0) && sub(array("+"),$tiG,blank(0),0) ) # Trying to remove time consuming sub function.
 {
 	if($Nizri===1)
 	{
@@ -1929,6 +1931,20 @@ if (arr($text,'/\+Ric\+/'))
 	$text=one(array('+Ric+caN+'),array('i+a+'),0);
 	$text = one(array("+Ric+"),array("i+"),0);
 	storedata('1.3.9','sa',0);
+	/* ato lopaH (6.4.48) */
+	if ( arr($text,'/ai[+]/') && in_array($fo,$curAdi_adanta) && $ardhadhatuka===1 && ($verbset==="none"||$verbset==="curAdi"))
+	{
+		$text = one(array("+a+","a+i+"),array("+a","i+"),0);
+		$text = three(array("a+"),$vikaraNa_ArdhadhAtuka_pratyayas,$tiG1,array(""),$vikaraNa_ArdhadhAtuka_pratyayas,$tiG1,0);
+		$text = pr2(array("a+"),$ArdhadhAtuka_pratyayas,blank(0),array("+"),$ArdhadhAtuka_pratyayas,blank(0),$text);
+		if (in_array($fo,$curAdi_adanta))
+		{
+			$text = one(array("ai+"),array("i+"),0);
+		}
+		$text = one(array("Ay+sya",),array("Aya+sya"),0);
+		storedata('6.4.48','sa',0);
+		$atolopa=1;
+	}
 	if (arr($text,'/a\+i\+/') && $lakAra!=="luN")
 	{
 		$text = one(array("a+i+"),array("i+"),0);
@@ -3660,16 +3676,6 @@ if ($caG===1 && $sanAdi==="Ric")
 {
 	//san();
 }
-/* ato lopaH (6.4.48) */
-if ( arr($text,'a[+]') && in_array($fo,$curAdi_adanta) && $ardhadhatuka===1 && ($verbset==="none"||$verbset==="curAdi"))
-{
-	$text = one(array("+a+","a+i+"),array("+a","i+"),0);
-    $text = three(array("a+"),$vikaraNa_ArdhadhAtuka_pratyayas,$tiG1,array(""),$vikaraNa_ArdhadhAtuka_pratyayas,$tiG1,0);
-    $text = pr2(array("a+"),$ArdhadhAtuka_pratyayas,blank(0),array("+"),$ArdhadhAtuka_pratyayas,blank(0),$text);
-	$text = one(array("Ay+sya",),array("Aya+sya"),0);
-	storedata('6.4.48','sa',0);
-    $atolopa=1;
-}
 /* removing + from before Ni pratyayas */
 if(arr($text,'/['.pc('hl').']\+i\+/')) {$text = one(array("+i+"),array("i+"),0);}
 /* NeraniTi (6.4.51) */
@@ -3686,7 +3692,7 @@ elseif (arr($text,'/([+]*)i\+/') && in_array($so,$tiG) && $ardhadhatuka===1&& (!
 	storedata('6.4.51','sa',0);
 }
 /* guNo'rtisaMyogAdyoH (7.4.29) */
-if ( (in_array($sanAdi,array("yak")) || $lakAra==="ASIrliN") && (sub($hl,$hl,array("f+y"),0) || $fo==="f"))
+if ( (in_array($sanAdi,array("yak")) || $lakAra==="ASIrliN") && (arr($text,'/['.pc('hl').']['.pc('hl').']f[+]y/') || $fo==="f"))
 {
 	$text=one(array("f+y"),array("ar+y"),0);
 	storedata('7.4.29','sa',0);
@@ -9760,7 +9766,7 @@ if ($prathamayoh ===1 && $so === "Sas" && $gender==="m")
 $ruti1 = array("f","F","x","X");
 $ruti2 = array("f");
 $lruti2 = array("x");
-if (sub($ruti1,array("f","x"),blank(0),0))
+if (arr($text,'/[fFxX][+]*[fx]/'))
 {
 $text = two($ruti1,array("f"),blank(count($ruti1)),$ruti2,1);
 $text = two($ruti1,array("x"),blank(count($ruti1)),$lruti2,1);
@@ -9770,7 +9776,7 @@ storedata('6.1.101-2','sa',0);
 /* akaH savarNe dIrghaH (6.1.101) */ 
 $ak1 = array("a","a","A","A","i","i","I","I","u","u","U","U","f","f","F","F","f","f","F","F","x","x","X","X","x","x","X","X");
 $ak2 = array("a","A","a","A","i","I","i","I","u","U","u","U","f","F","f","F","x","X","x","X","f","F","f","F","x","X","x","X");
-if (sub($ak1,$ak2,blank(28),1))
+if (arr($text,'/[aAiIuUfFxX][+]*[aAiIuUfFxX]/') && sub($ak1,$ak2,blank(28),1))
 {
 $text = two(array("a","A"),array("a","A"),array("A","A"),blank(2),0);
 $text = two(array("i","I"),array("i","I"),array("I","I"),blank(2),0);
@@ -9780,7 +9786,7 @@ $text = two(array("x","X"),array("x","X"),array("F","F"),blank(2),0);
 storedata('6.1.101','sa',0);
 }
 /* ato guNe (6.1.97) */
-if (sub(array("a"),array("a","e","o"),blank(0),0) && !sub(array("pra","upa"),array("a","e","o"),blank(0),0) && $pada === "pratyaya" )
+if (arr($text,'/[a][+]*[aeo]/') && sub(array("a"),array("a","e","o"),blank(0),0) && !sub(array("pra","upa"),array("a","e","o"),blank(0),0) && $pada === "pratyaya" )
 {
     $text = two(array("a"),array("a","e","o"),blank(1),array("a","e","o"),0);
 	storedata('6.1.97','sa',0);
@@ -9917,19 +9923,19 @@ $y = array("y");
 $ab = array("av","Av");
 $dhato = array("urRo","ro","no","sno","kzo","kzRo","Do","Dro","do","dro","sro","so","ko","Go","qo","cyo","jyo","pro","plo","ro","ho","Sro","hno","dyo","sko","po","lo","kno","mo","Bo","urRO","rO","snO","kzO","kzRO","DO","DrO","dO","drO","srO","sO","kO","GO","qO","cyO","jyO","prO","plO","rO","hO","SrO","hnO","dyO","skO","pO","lO","knO","mO","BO","Co","zo","So");
 $dhato1 = array("urRa","ra","na","sna","kza","kzRa","Da","Dra","da","dra","sra","sa","ka","Ga","qa","cya","jya","pra","pla","ra","ha","Sra","hna","dya","ska","pa","la","kna","ma","Ba","urRA","rA","snA","kzA","kzRA","DA","DrA","dA","drA","srA","sA","kA","GA","qA","cyA","jyA","prA","plA","rA","hA","SrA","hnA","dyA","skA","pA","lA","knA","mA","BA","Ca","za","Sa");
-if (arr($text,'/o/') && sub($dhato,$y,blank(0),0) && $pada ==="pratyaya" && $start ===1)
+if ($type!=="tiGanta" && arr($text,'/o/') && sub($dhato,$y,blank(0),0) && $pada ==="pratyaya" && $start ===1)
 {
 $text = two($dhato,$y,$dhato1,array("vy"),0);
 storedata('6.1.77','sa',0);
 } 
-if (sub($o,$y,blank(0),0) && $pada ==="pratyaya" && !sub($dhato,$y,blank(0),0))
+if (arr($text,'/[oO][+]*[y]/') && $pada ==="pratyaya" && !sub($dhato,$y,blank(0),0))
 {
-    if (sub(array("gav"),$y,blank(0),0))
+    if (arr($text,'/gav[+]*y/'))
     {
     $text = two($o,$y,$ab,$y,0);
 	storedata('6.1.71','sa',0);
     }
-    elseif (sub(array("o","O"),array("yat"),blank(0),0))
+    elseif (arr($text,'/[oO][+]*yat/'))
     {
 	storedata('6.1.77','sa',0);
     }
@@ -9940,18 +9946,18 @@ if (sub($o,$y,blank(0),0) && $pada ==="pratyaya" && !sub($dhato,$y,blank(0),0))
     }
 }
 /* kSayyajayyau zakyArthe (6.1.81)*/
-if (sub(array("kze"),array("ya"),blank(0),0)  && $pada ==="pratyaya" && $start === 1 && !in_array($so,$tiG))
+if (arr($text,'/kze[+]*ya/') && $pada ==="pratyaya" && $start === 1 && !in_array($so,$tiG))
 {
     $text = two(array("kze"),array("ya"),array("kzay"),array("ya"),1);
 	storedata('6.1.81','sa',0);
 }
-if (sub(array("je"),array("ya"),blank(0),0) && $pada ==="pratyaya" && $start === 1 && !in_array($so,$tiG))
+if (arr($text,'/je[+]*ya/') && $pada ==="pratyaya" && $start === 1 && !in_array($so,$tiG))
 {
     $text = two(array("je"),array("ya"),array("jay"),array("ya"),1);
 	storedata('6.1.81','sa',0);
 }
 /* krayyastadarthe (6.1.82) */
-if (sub(array("kre"),array("ya"),blank(0),0)  && $pada ==="pratyaya" && $start ===1 && !in_array($so,$tiG))
+if (arr($text,'/kre[+]*ya/') && $pada ==="pratyaya" && $start ===1 && !in_array($so,$tiG))
 {    
     $text = two(array("kre"),array("ya"),array("kray"),array("ya"),1);
 	storedata('6.1.82','sa',0);
@@ -9970,7 +9976,7 @@ if (arr($text,'/[mn]y\+/') && sub(array("lUny","kzAmy","prastImy"),array("+"),bl
 
 /* Exceptions to sasajuSo ruH */
 /* etattadoH sulopo'konaJsamAse hali (6.1.132) */
-if (arr($text,'/as/') && sub(array("sas","ezas"),$hl,blank(0),0)  && !sub(array("asa","anEza"),array("s"),$hl,0) && in_array($fo,array("sas","ezas")))
+if (arr($text,'/[sz]as/') && sub(array("sas","ezas"),$hl,blank(0),0)  && !sub(array("asa","anEza"),array("s"),$hl,0) && in_array($fo,array("sas","ezas")))
 {
     $text = two(array("sas","ezas"),$hl,array("sa ","eza "),$hl,1);
 	storedata('6.1.132','sa',0);
@@ -9992,12 +9998,12 @@ if (arr($text,'/aMs/') && sub(array("sraMs","DvaMs"),blank(0),blank(0),0))
 }
 /* vasusraMsudhvaMsvanaDuhAM daH (8.2.72) */
 $vasu1 = array("sras","Dvas","anaquh");
-if (sub($vasu1,array("+"),blank(0),0)  && $pada ==="pada")
+if ($pada ==="pada" && sub($vasu1,array("+"),blank(0),0) )
 {
     $text = two(array("sras","Dvas","anaquh"),array("+"),array("srad","Dvad","anaqud"),array("+"),0);
 	storedata('8.2.72','sa',0);
 }
-if ((arr($text,'/vas\+/') &&sub(array("vidvas","sedivas","uzivas","Suzruvas","upeyivas","anASvas"),array("+"),blank(0),0))  && $pada ==="pada" && !arr($text,'/[s][+]$/'))
+if ((arr($text,'/vas\+/') && sub(array("vidvas","sedivas","uzivas","Suzruvas","upeyivas","anASvas"),array("+"),blank(0),0))  && $pada ==="pada" && !arr($text,'/[s][+]$/'))
 {
     $text = one(array("vidvas","sedivas","uzivas","Suzruvas","upeyivas","anASvas"),array("vidvad","sedivad","uzivad","Suzruvad","upeyivad","anASvad"),0);
 	storedata('8.2.72','sa',0);
@@ -10292,7 +10298,7 @@ storedata('6.1.98','sa',0);
 /* vRddhireci (6.1.88) */
 $aa = array("a","A"); // a and A
 $vrrdhi = array("E","O","E","O","E","O","E","O"); // vRddhi of 'ec'.
-if (sub($aa,prat("ec"),blank(0),0) )
+if (arr($text,'/[aA][+]*[EO]/') )
 {
 $text = one(array("a+e","a+E","a+o","a+O","A+e","A+E","A+o","A+O"),array("E+","E+","O+","O+","E+","E+","O+","O+"),0);
 $text = two($aa,prat('ec'),blank(2),$vrrdhi,0);
@@ -10300,7 +10306,7 @@ storedata('6.1.88','sa',0);
 $vriddhireci=1; // 0 - this sUtra has not applied. 1 - this sUtra has appied.
 } else {$vriddhireci=0; }
 /* udaH sthAstambhvoH pUrvasya (8.1.61) */
-if(sub(array("ud","ut"),array("sTA","stam","stan"),blank(0),0))
+if(arr($text,'/u[dt][+]*s[tT]/') && sub(array("ud","ut"),array("sTA","stam","stan"),blank(0),0))
 {
 $text = two(array("ud","ut"),array('sTA','stam',"stan"),array("ud","ut"),array('TTA','Ttam','Ttan'),0);
 storedata('8.1.61','sa',0);
@@ -10308,7 +10314,7 @@ storedata('8.1.61','sa',0);
 /* saMhitAyAm (6.1.72) */ 
 // This is adhikArasUtra. Nothing to code here.
 /* Che ca (6.1.73) */
-if (sub($hrasva,array("C"),blank(0),0))
+if (arr($text,'/[aiufx][+]*C/'))
 {
 $text = two(array("a","i","u","f","x"),array("C"),array("at","it","ut","ft","xt"),array("C"),0);
 storedata('6.1.73','sa',0);
@@ -10730,14 +10736,15 @@ if (( arr($text,'/[+][sd]/') || arr($text,'/[+]$/') || $pada==="pada") && sub($e
 /* jhalAM jazo'nte (8.2.39) */
 if (arr($text,'/['.pc('Jl').']$/') )
 {
+	/*
     if ($r2 ===1) 
          {
 			 // Pending to refactor.
             // echo "<p class = sa >jhalAM jazo'nte is barred by sasajuSo ruH for second word. <hr>\n"; echo "<p class = sa >द्वितीय पद के लिए ससजुषो रुः से झलां जशोऽन्ते बाधित हुआ है । <hr>\n";          
-         }    
-    else 
+         }    */
+	if ($r2!==1 || !isset($r2))
         {
-            $text = last(prat('Jl'),savarna(prat('Jl'),prat('jS')),0);            
+            $text = pr2(prat('Jl'),blank(0),blank(0),savarna(prat('Jl'),prat('jS')),blank(0),blank(0),$text);            
         }
 		storedata('8.2.39','sa',0);
 }
@@ -11824,7 +11831,6 @@ if ($frontend!=="0")
 	if($debug===1) {dibug('PRINT_FROM_STOREDATA END');}*/
 }
 if ($debug===1) {dibug('11710');}
-
 /* Final Display */
 if ($frontend!=="0")
 {	
@@ -11838,7 +11844,6 @@ else
 {
 	$ou[] = implode(',',$text);
 }
-
 
 
 /* setting the $pada back to pratyaya for next use */

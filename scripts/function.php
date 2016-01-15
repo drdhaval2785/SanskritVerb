@@ -3618,7 +3618,7 @@ function tablemaker1($ou)
 function timestamp()
 {
 	global $start_time;
-	echo "<b>".(microtime(true) - $start_time)."</b>", "<br/>";
+	echo "<b>".(microtime(true) - $start_time)."</b>", "<br/>\n";
 }
 function dibug($a)
 {
@@ -3682,15 +3682,19 @@ function wrongformlist($list,$verblist,$strength="full")
 			if (isset($diff[$i]))
 			{
 				$membersplit = explode(',',$diff[$i]);
-				$diff1 = array_diff($membersplit,$verblist);
-				foreach($diff1 as $mem)
+				//$diff1 = array_diff($membersplit,$verblist);
+				foreach($membersplit as $mem)
 				{
-					if (substr($mem,-1)==="H" && in_array(substr($mem,0,-1)."s",$verblist) ) { }
-					elseif (substr($mem,-1)==="H" && in_array(substr($mem,0,-1)."r",$verblist) ) { }
-					elseif (substr($mem,-1)==="d" && in_array(substr($mem,0,-1)."t",$verblist) ) { }
-					elseif (substr($mem,-3)==="tAd" && in_array(substr($mem,0,-3)."tu",$verblist) ) { }
-					elseif (substr($mem,-3)==="tAt" && in_array(substr($mem,0,-3)."tu",$verblist) ) { }
-					else { fputs($suspectentryfile,$mem."-($first,$lakAra,$suffix[$i],$verbset,$number)\n"); }
+					if (!in_array($mem,$verblist))
+					{
+						if (substr($mem,-1)==="H" && in_array(substr($mem,0,-1)."s",$verblist) ) { }
+						elseif (substr($mem,-1)==="H" && in_array(substr($mem,0,-1)."r",$verblist) ) { }
+						elseif (substr($mem,-1)==="d" && in_array(substr($mem,0,-1)."t",$verblist) ) { }
+						elseif (substr($mem,-3)==="tAd" && in_array(substr($mem,0,-3)."tu",$verblist) ) { }
+						elseif (substr($mem,-3)==="tAt" && in_array(substr($mem,0,-3)."tu",$verblist) ) { }
+						elseif (preg_match('/AYcak/',$mem) ) { }
+						else { fputs($suspectentryfile,$mem."-($first,$lakAra,$suffix[$i],$verbset,$number)\n"); }
+					}
 				}
 			}
 		}
@@ -3699,7 +3703,7 @@ function wrongformlist($list,$verblist,$strength="full")
 // Function which puts the output of tiGanta.php into a file.
 function generatedforms($list,$outputfile)
 {
-	global $fo, $number, $lakAra, $suffix;
+	global $fo, $number, $lakAra;
 	$tiplist = array("<3.1/>","<3.2/>","<3.3/>","<2.1/>","<2.2/>","<2.3/>","<1.1/>","<1.2/>","<1.3/>","<3.1/>","<3.2/>","<3.3/>","<2.1/>","<2.2/>","<2.3/>","<1.1/>","<1.2/>","<1.3/>",);
 	for($i=0;$i<count($list);$i++)
 	{

@@ -32,7 +32,7 @@ do
 	for VALUE2 in "${LIST2[@]}"
 	do
 		echo "started $VALUE2 lakAra analysis"
-		php tiGanta.php ${VALUE1} ${VALUE2}
+		php panini.php ${VALUE1} ${VALUE2}
 	done
 	((number++))
 	echo 
