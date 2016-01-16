@@ -2774,7 +2774,7 @@ if ($lakAra==="liw" && arr($text,'/^['.pc('hl').']/'))
 	$abhyAsa=1;
 }
 /* aniditAM hala upadhAyAH kGiti (6.4.24) */ 
-if ( in_array($fo,$aniditverbs) && (in_array("N",$itpratyaya) || in_array("k",$itpratyaya)) && !in_array($sanAdi,array("Ric"))  && $so!=="mahiN")
+if ( in_array($fo,$aniditverbs) && (in_array("N",$itpratyaya) || in_array("k",$itpratyaya)) && !in_array($sanAdi,array("Ric"))  && $so!=="mahiN" && arr($text,'/[NYRnmM]['.pc('hl').'][+]/'))
 {
 	if ($ancu===2)
 	{
@@ -3701,9 +3701,25 @@ if (arr($text,'/i\+a/') && in_array($so,$tiG) && $lakAra==="luN" && $caG===1 && 
 /* NeraniTi (6.4.51) */
 elseif (arr($text,'/([+]*)i\+/') && in_array($so,$tiG) && $ardhadhatuka===1&& (!in_array("iw",$Agama)||ends(array($sanAdi),array("Ric","RiN"),2)||in_array($fo,$curAdi_adanta)) && !in_array($so,$taG))
 {
+	$text = three(array("i+yAs","+yAs"),array("+"),array(""),array("+yAs","+yAs"),array("+"),array(""),0);
 	$text = change('/^([a-zA-Z]+)([+]*)i\+([^+]*)$/','$1$2+');
-	$text = pr2(array("+yAs"),array("+"),array("s"),array("yAs"),array("+"),array("s"),$text);
 	storedata('6.4.51','sa',0);
+}
+/* aniditAM hala upadhAyAH kGiti (6.4.24) */ 
+if ( in_array($fo,$aniditverbs) && (in_array("N",$itpratyaya) || in_array("k",$itpratyaya)) && !in_array($sanAdi,array("Ric"))  && $so!=="mahiN" && arr($text,'/[NYRnmM]['.pc('hl').'][+]/')) # For application after NeraniTi
+{
+	if ($ancu===2)
+	{
+		$text = three(array("N","Y","R","n","m","M"),$hl,array("+"),array("","","","","","",),$hl,array("+"),1);        
+		storedata('6.4.24','sa',0);
+		$aniditAm = 1; // 0 - this sUtra has not applied. 1 - this sUtra has applied.				
+	}
+	else
+	{
+		$text = three(array("N","Y","R","n","m","M"),$hl,array("+"),array("","","","","","",),$hl,array("+"),0);        
+		storedata('6.4.24','sa',0);
+		$aniditAm = 1; // 0 - this sUtra has not applied. 1 - this sUtra has applied.		
+	}
 }
 /* guNo'rtisaMyogAdyoH (7.4.29) */
 if ( (in_array($sanAdi,array("yak")) || $lakAra==="ASIrliN") && (arr($text,'/['.pc('hl').']['.pc('hl').']f[+]y/') || $fo==="f"))

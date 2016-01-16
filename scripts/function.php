@@ -2397,7 +2397,6 @@ function caG_ajAdi()
 	{
 		$parts=explode('+',$value);
 		$splitvowel=preg_split('/([aAiIuUfFxXeEoO])/',$parts[0],null,PREG_SPLIT_DELIM_CAPTURE);
-		print_r($splitvowel);
 		if (preg_match('/^['.pc('ac').']/',$parts[0]) && preg_match('/[\+][ae]/',$value) && arr($splitvowel,'/[ndrNYRm]['.pc('hl').']/') )
 		{
 			$splitvowel=preg_split('/([aAiIuUfFxXeEoO])/',$parts[0],null,PREG_SPLIT_DELIM_CAPTURE);
@@ -2506,7 +2505,6 @@ function caG_ajAdi()
 			storedata('7.4.59','sa',0);
 		}
 		global $liT_Adeza;
-		print $parts[0]; print_r($text);
 		/* kuhozcuH (7.4.62) */
 		if (preg_match('/[kKgGNh]/',$parts[0]) )
 		{
