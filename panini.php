@@ -5062,17 +5062,17 @@ if( in_array($so,$tiG) && (!arr($text,'/[+][s]$/') || $SaHsaH===1 || $sic===1 ||
     $text = Adezapratyaya($text); // created a new function on 15/12/2014
 	storedata('8.3.59','sa',0);
 }
-/* vibhASeTaH (8.3.80) */
-if( in_array($so,$tiG) && (arr($text,'/[iIuUfFxXeEoOhyvrl]\+izIDv/') || (arr($text,'/[iIuUfFxXeEoOhyvrl]\+iDv/') ) //&& in_array($lakAra,array("luN","liw")) )) && arr(array($verb_without_anubandha),'/[iIuUfFxXeEoOhyvrl]$/') ) # See https://github.com/drdhaval2785/SanskritVerb/issues/373
+/* vibhASeTaH (8.3.79) */
+if( in_array($so,$tiG) && (arr($text,'/[iIuUfFxXeEoOhyvrl]\+izIDv/') || (arr($text,'/[iIuUfFxXeEoOhyvrl]\+iDv/') && in_array($lakAra,array("luN","liw")) )) && arr(array($verb_without_anubandha),'/[iIuUfFxXeEoOhyvrl]$/')  )
 {
 	$text = two($iN2,array("+izIDv","+iDv"),$iN2,array("+izIQv","+iQv"),1);
-	storedata('8.3.80','sa',0);
+	storedata('8.3.79','sa',0);
 }
-/* iNaH SIdhvaMluGliTAM dho'GgAt (8.3.79) */
-elseif( in_array($so,$tiG) && ((arr($text,'/zIDv/') && sub($iN2,array("zIDv"),blank(0),0)) || ( (arr($text,'/Dv/') &&sub($iN2,array("Dv"),blank(0),0)) && in_array($lakAra,array("luN","liw")) )) )//&& arr(array($verb_without_anubandha),'/[iIuUfFxXeEoOhyvrl]$/') ) # See https://github.com/drdhaval2785/SanskritVerb/issues/373
+/* iNaH SIdhvaMluGliTAM dho'GgAt (8.3.78) */
+elseif( in_array($so,$tiG) && ((arr($text,'/zIDv/') && sub($iN2,array("zIDv"),blank(0),0)) || ( (arr($text,'/Dv/') &&sub($iN2,array("Dv"),blank(0),0)) && in_array($lakAra,array("luN","liw")) )) && arr(array($verb_without_anubandha),'/[iIuUfFxXeEoOhyvrl]$/') )
 {
 	$text = two($iN2,array("zIDv","Dv"),$iN2,array("zIQv","Qv"),0);
-	storedata('8.3.79','sa',0);
+	storedata('8.3.78','sa',0);
 }
 /* halGyAbbhyo dIrghAtsutisyapRktaM hal (6.1.68) and apRkta ekAlpratyayaH (1.2.41) */
 // GyAp pending. only hal handled now.
