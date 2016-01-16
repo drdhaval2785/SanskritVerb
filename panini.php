@@ -1932,7 +1932,7 @@ if (arr($text,'/\+Ric\+/'))
 	$text = one(array("+Ric+"),array("i+"),0);
 	storedata('1.3.9','sa',0);
 	/* ato lopaH (6.4.48) */
-	if ( arr($text,'/ai[+]/') && in_array($fo,$curAdi_adanta) && $ardhadhatuka===1 && ($verbset==="none"||$verbset==="curAdi"))
+	if ( arr($text,'/ai[+]/') && in_array($fo,$curAdi_adanta) && ($verbset==="none"||$verbset==="curAdi"))
 	{
 		$text = one(array("+a+","a+i+"),array("+a","i+"),0);
 		$text = three(array("a+"),$vikaraNa_ArdhadhAtuka_pratyayas,$tiG1,array(""),$vikaraNa_ArdhadhAtuka_pratyayas,$tiG1,0);
@@ -2578,7 +2578,7 @@ if ( arr($text,'/a[+]iy[+]['.pc('vl').']/') && in_array($so,$tiG) )
 {
     $text=two(array("a+iy+"),prat('vl'),array("a+i+"),prat('vl'),0);
 	storedata('6.1.66','sa',0);
-    $text=two(array("a+i+"),prat('vl'),array("e+"),prat('vl'),0);
+    $text=two(array("a+i+"),prat('vl'),array("e"),prat('vl'),0);
 	storedata('6.1.87','sa',0);
 }
 /* ADuttamasya picca (3.4.92) */
@@ -3689,13 +3689,13 @@ if(arr($text,'/['.pc('hl').']\+i\+/')) {$text = one(array("+i+"),array("i+"),0);
 /* NeraniTi (6.4.51) */
 if (arr($text,'/i\+a/') && in_array($so,$tiG) && $lakAra==="luN" && $caG===1 && (!in_array("iw",$Agama)||ends(array($sanAdi),array("Ric","RiN"),2)||in_array($fo,$curAdi_adanta) ))
 {
-	$text = three(array("i"),array("+"),array("a"),array(""),array("+"),array("a"),0);
+	$text = change('/(i)([+]a)/','$2');
 	storedata('6.4.51','sa',0);
 }
 /* NeraniTi (6.4.51) */
 elseif (arr($text,'/([+]*)i\+/') && in_array($so,$tiG) && $ardhadhatuka===1&& (!in_array("iw",$Agama)||ends(array($sanAdi),array("Ric","RiN"),2)||in_array($fo,$curAdi_adanta)) && !in_array($so,$taG))
 {
-	$text = change('/^([a-zA-Z+]+)([+]*)i\+/','$1$2+');
+	$text = change('/^([a-zA-Z]+)([+]*)i\+([^+]*)$/','$1$2+');
 	$text = pr2(array("+yAs"),array("+"),array("s"),array("yAs"),array("+"),array("s"),$text);
 	storedata('6.4.51','sa',0);
 }
