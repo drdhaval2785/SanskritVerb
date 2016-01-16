@@ -2103,10 +2103,10 @@ if (in_array($so,$tiG) && (arr($text,'/['.pc('hl').'][+]/') ||sub(array("+"),$in
         $text = last($hl,blank(count($hl)),0);   
     }
 	$text = one(array("i!r"),array("i!"),0);
-	$text = two($hl,array("+ran"),blank(count($hl)),array("+ran"),0);
     $text=two($hlplus,array("Ri+"),blank1("+",count($hlplus)),array("Ri+"),0);
     if ($nomidelision!==1 && ends(array($fo),$hl,0)) // Addition of ends function is to prevent application to kF -> kir converted halanta, which are not there in upadeza.
     {
+		$text = two($hl,array("+ran"),blank(count($hl)),array("+ran"),0);
 		$text=three($hlplus,$vikaraNa,array("+"),blank1("+",count($hlplus)),$vikaraNa,array("+"),0);
     }
 	$text=one(array("+si+","sicmi"),array("+sic+","sic+mi"),0);
@@ -5063,13 +5063,13 @@ if( in_array($so,$tiG) && (!arr($text,'/[+][s]$/') || $SaHsaH===1 || $sic===1 ||
 	storedata('8.3.59','sa',0);
 }
 /* vibhASeTaH (8.3.80) */
-if( in_array($so,$tiG) && arr(array($verb_without_anubandha),'/[iIuUfFxXeEoOhyvrl]$/') && (arr($text,'/[iIuUfFxXeEoOhyvrl]\+izIDv/') || (arr($text,'/[iIuUfFxXeEoOhyvrl]\+iDv/') && in_array($lakAra,array("luN","liw")) )) )
+if( in_array($so,$tiG) && (arr($text,'/[iIuUfFxXeEoOhyvrl]\+izIDv/') || (arr($text,'/[iIuUfFxXeEoOhyvrl]\+iDv/') ) //&& in_array($lakAra,array("luN","liw")) )) && arr(array($verb_without_anubandha),'/[iIuUfFxXeEoOhyvrl]$/') ) # See https://github.com/drdhaval2785/SanskritVerb/issues/373
 {
 	$text = two($iN2,array("+izIDv","+iDv"),$iN2,array("+izIQv","+iQv"),1);
 	storedata('8.3.80','sa',0);
 }
 /* iNaH SIdhvaMluGliTAM dho'GgAt (8.3.79) */
-elseif( in_array($so,$tiG) && arr(array($verb_without_anubandha),'/[iIuUfFxXeEoOhyvrl]$/') && ((arr($text,'/zIDv/') && sub($iN2,array("zIDv"),blank(0),0)) || ( (arr($text,'/Dv/') &&sub($iN2,array("Dv"),blank(0),0)) && in_array($lakAra,array("luN","liw")) )) )
+elseif( in_array($so,$tiG) && ((arr($text,'/zIDv/') && sub($iN2,array("zIDv"),blank(0),0)) || ( (arr($text,'/Dv/') &&sub($iN2,array("Dv"),blank(0),0)) && in_array($lakAra,array("luN","liw")) )) )//&& arr(array($verb_without_anubandha),'/[iIuUfFxXeEoOhyvrl]$/') ) # See https://github.com/drdhaval2785/SanskritVerb/issues/373
 {
 	$text = two($iN2,array("zIDv","Dv"),$iN2,array("zIQv","Qv"),0);
 	storedata('8.3.79','sa',0);
