@@ -2397,10 +2397,11 @@ function caG_ajAdi()
 	{
 		$parts=explode('+',$value);
 		$splitvowel=preg_split('/([aAiIuUfFxXeEoO])/',$parts[0],null,PREG_SPLIT_DELIM_CAPTURE);
-		if (preg_match('/^['.pc('ac').']/',$parts[0]) && preg_match('/[\+][a]/',$value) && preg_match('/[ndrNYRm]['.pc('hl').']/',$splitvowel[count($splitvowel)-3]) )
+		print_r($splitvowel);
+		if (preg_match('/^['.pc('ac').']/',$parts[0]) && preg_match('/[\+][ae]/',$value) && arr($splitvowel,'/[ndrNYRm]['.pc('hl').']/') )
 		{
 			$splitvowel=preg_split('/([aAiIuUfFxXeEoO])/',$parts[0],null,PREG_SPLIT_DELIM_CAPTURE);
-			$rep=substr($splitvowel[count($splitvowel)-3],1,1);
+			$rep=substr($splitvowel[2],1,1);
 			$parts[0]=implode('',$splitvowel)."+".$rep.$splitvowel[count($splitvowel)-2];
 			$nandra=1;
 		}		
@@ -2505,12 +2506,13 @@ function caG_ajAdi()
 			storedata('7.4.59','sa',0);
 		}
 		global $liT_Adeza;
+		print $parts[0]; print_r($text);
 		/* kuhozcuH (7.4.62) */
-		if (preg_match('/[kKgGNh]/',$parts[0]) ) 
+		if (preg_match('/[kKgGNh]/',$parts[0]) )
 		{
 			foreach ($text as $value)
 			{
-				if (preg_match('/[\+][a]/',$value) && $caG===1)
+				if (preg_match('/[\+][ae]/',$value) && $caG===1)
 				{
 					$parts=explode('+',$value);
 					$parts[0]=str_replace(array("k","K","g","G","N","h"),array("c","C","j","J","Y","j"),$parts[0]);

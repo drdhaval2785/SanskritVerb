@@ -1926,13 +1926,19 @@ if (arr($text,'/\+Ric\+/'))
 	{
 		storedata('1.3.8','pa',0);
 	}
+	if (arr($text,'//') && $caG===1)
+	{
+		$text = one(array("+Ric+"),array("+"),0);
+		storedata('6.4.51','sa',0);
+	}
 	storedata('1.3.3','pa',0);
 	storedata('1.3.7','pa',0);
 	$text=one(array('+Ric+caN+'),array('i+a+'),0);
 	$text = one(array("+Ric+"),array("i+"),0);
+	$text = one(array("+caN+"),array("+a+"),0);
 	storedata('1.3.9','sa',0);
 	/* ato lopaH (6.4.48) */
-	if ( arr($text,'/ai[+]/') && in_array($fo,$curAdi_adanta) && ($verbset==="none"||$verbset==="curAdi"))
+	if ( arr($text,'/ai[+]/') && in_array($fo,$curAdi_adanta) && ($verbset==="none"||$verbset==="curAdi") && $caG!==1)
 	{
 		$text = one(array("+a+","a+i+"),array("+a","i+"),0);
 		$text = three(array("a+"),$vikaraNa_ArdhadhAtuka_pratyayas,$tiG1,array(""),$vikaraNa_ArdhadhAtuka_pratyayas,$tiG1,0);
@@ -3176,7 +3182,7 @@ if (arr($text,'/['.pc('hl').']([+]*)ya\+/')  && $ardhadhatuka===1 && sub(array("
 if ($lakAra==='luN')
 {
 	/* ato guNe (6.1.97) */ // patch for aG+Ji.
-	if (sub(array("a"),array("+a"),blank(0),0)  )
+	if ($caG!==1 && sub(array("a"),array("+a"),blank(0),0)  )
 	{
 		while(sub(array("a"),array("+a"),blank(0),0) !== false)
 		{
