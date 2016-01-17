@@ -503,6 +503,11 @@ if ($type==='tiGanta')
 	{
 		$verbpada=verb_pada('1.3.29-2');
 	}
+	/* samo gamyRcCipracCisvarAyartishruvidibhyaH (1.3.29) patch for vida! because there are more than one gaNas. */
+	elseif ( in_array($first,array("vida!")) && $us==="sam" && $verbset==="adAdi") 
+	{
+		$verbpada=verb_pada('1.3.29');
+	}
 	/* nervizaH (1.3.47), parivyavebhyaH kriyaH (1.3.18), viparAbhyAM jeH (1.3.19), krIDo'nusaMparibhyazca (1.3.21), samavaparivibhyaH sthaH (1.3.22), udvibhyAM tapaH (1.3.27), AGo yamahanaH (1.3.28), samo gamyRcCipracCisvarAyartishruvidibhyaH (1.3.29), nisamupavibhyo hvaH (1.3.30), avAdgraH (1.3.51), jJAzRsmRdRzAM sanaH (1.3.57) */
 	elseif ( in_array($us.$first,$toatmane) )
 	{
@@ -3704,15 +3709,17 @@ if(arr($text,'/['.pc('hl').']\+i\+/')) {$text = one(array("+i+"),array("i+"),0);
 /* NeraniTi (6.4.51) */
 if (arr($text,'/i\+a/') && in_array($so,$tiG) && $lakAra==="luN" && $caG===1 && (!in_array("iw",$Agama)||ends(array($sanAdi),array("Ric","RiN"),2)||in_array($fo,$curAdi_adanta) ))
 {
+	echo "1";
 	$text = change('/(i)([+]a)/','$2');
 	storedata('6.4.51','sa',0);
 }
 /* NeraniTi (6.4.51) */
 elseif (arr($text,'/([+]*)i\+/') && in_array($so,$tiG) && $ardhadhatuka===1&& (!in_array("iw",$Agama)||ends(array($sanAdi),array("Ric","RiN"),2)||in_array($fo,$curAdi_adanta)) )#&& !in_array($so,$taG))
 {
+	echo "2";
 	$text = three(array("i+yAs","+yAs"),array("+"),array(""),array("+yAs","+yAs"),array("+"),array(""),0);
-	$text = change('/^([a-zA-Z]+)([+]*)i\+([^+]*)$/','$1$2+');
-	$text = change('/i[+](['.pc('al').']+)$/','+$1');
+	$text = change('/^([a-zA-Z]+)([+]*)i\+([^+]*)$/','$1$2+$3');
+	$text = change('/i[+](['.pc('al').'MH]+)$/','+$1');
 	storedata('6.4.51','sa',0);
 }
 /* aniditAM hala upadhAyAH kGiti (6.4.24) */ 
