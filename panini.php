@@ -2316,6 +2316,7 @@ if ( in_array($lakAra,array("viDiliN","ASIrliN")) && in_array($so,$tis) )
 	storedata('3.4.103','sa',0);
 	$Git=1;
 	$yAsuT = 1;
+	$itpratyaya=array_merge($itpratyaya,array("N")); $it=array_merge($it,array("N")); 
 	/* kidAziSi (3.4.104) */
 	if ( in_array($lakAra,array("ASIrliN")) && in_array($so,$tis) )
 	{
@@ -4010,11 +4011,17 @@ elseif ( in_array($lakAra,array("luN","laN","lfN",)) )
     $text=Adyanta($text,"a",1);
 	storedata('6.4.71','sa',0);
 }
+print_r($text); echo $fo, $verbset; print_r($it); print_r($itpratyaya);
 /* znasorallopaH (6.4.111) */
 // znam pending.
-if ( (in_array($fo,array("asa!")) && $verbset==="adAdi" ) && (in_array("N",$it)||in_array("k",$it)) && pr2(array("as"),array("+","+yA+"),$apit_sArvadhAtuka_pratyayas,array("s"),array("+","+yA+"),$apit_sArvadhAtuka_pratyayas,$text)!==$text )
+if ( (in_array($fo,array("asa!")) && $verbset==="adAdi" ) && (in_array("N",$it)||in_array("k",$it)) && pr2(array("as"),array("+",),$apit_sArvadhAtuka_pratyayas,array("s"),array("+",),$apit_sArvadhAtuka_pratyayas,$text)!==$text )
 {
-    $text=pr2(array("as"),array("+","+yA+"),$apit_sArvadhAtuka_pratyayas,array("s"),array("+","+yA+"),$apit_sArvadhAtuka_pratyayas,$text);
+    $text=pr2(array("as"),array("+",),$apit_sArvadhAtuka_pratyayas,array("s"),array("+",),$apit_sArvadhAtuka_pratyayas,$text);
+	storedata('6.4.111','sa',0);
+}
+if ( (in_array($fo,array("asa!")) && $verbset==="adAdi" ) && (in_array("N",$it)||in_array("k",$it)) && arr($text,'/as[+]yA[+]/') )
+{
+    $text=change('/^as[+]yA[+]/','syA+');
 	storedata('6.4.111','sa',0);
 }
 /* iNvadika iti vaktavyam (vA) */
@@ -11844,7 +11851,6 @@ if (arr($text,'/['.pc('hl').']([+]*)[NYRnmyrlv][NYRnmyrlv]/') && sub($hl,$duplic
 $text = two($hl,$duplicate,$hl,$dup,1);
 storedata('8.4.64','sa',0);
 }
-print_r($text);
 /* jharo jhari savarNe (8.4.65) */ 
 $kkk = array("k","K","g","G"); 
 $ccc = array("c","C","j","J",);
