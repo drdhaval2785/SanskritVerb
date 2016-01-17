@@ -903,9 +903,10 @@ if (in_array($lakAra,$ArdhadhAtuka_lakAra))
 		storedata('6.1.33','sa',0);
     }
     /* liTyanyatarasyAm (2.4.40) */ 
+	// Pending to make it optional. liT function for ajAdi and halAdi are separate. Handling them simultaneously is not possible right now.
     if (in_array($fo,array("ada!")) && $lakAra==="liw")
     {
-        $text=three(array("ada!"),array("+"),$tiG,array("Gasx!"),array("+"),$tiG,1);
+        $text=three(array("ada!"),array("+"),$tiG,array("Gasx!"),array("+"),$tiG,0);
 		storedata('2.4.40','sa',0);
     }
     /* luGsanorghaslR (2.4.37) */ 
@@ -2167,6 +2168,13 @@ if (in_array($fo,array("RaSa!","mana!")) && sub(array("naS","man"),array("+aN+")
 {
 	$text = two(array("naS","man"),array("+a+"),array("neS","men"),array("+a+"),1);
 	storedata('6.4.120-4','sa',0);
+}
+/* Patch for aN Agama */
+if (arr($text,'/[+]aN[+]/'))
+{
+	storedata('1.3.3','pa',0);
+	$text = one(array("+aN+"),array("+a+"),0);
+	storedata('1.3.9','sa',0);
 }
 /* Nau ca saMzcaGoH (6.1.31) */
 if ( $lakAra==="luN" && $luGset===5 && sub(array("Svi"),array("+Ri+"),array("a+"),0) ) 
