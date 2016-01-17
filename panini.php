@@ -3383,7 +3383,6 @@ if ( in_array($fo,array("janI!","jYA")) && in_array($so,$tiG) && sub(array("jan"
     $text=three(array("jan","jYA"),array("+"),$shitpratyayareplace,array("jA","jA"),array("+"),$shitpratyayareplace,0);
 	storedata('7.3.79','sa',0);
 }
-print_r($text);
 /* dIdhIvevITAm (1.1.6) */
 $didhI=0;
 if ( in_array($fo,array("dIDIN","vevIN")) && ($sarvadhatuka===1 || $ardhadhatuka===1))
