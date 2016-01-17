@@ -2089,10 +2089,11 @@ if ($debug===1) {dibug("1900");}
 if (in_array($so,$tiG) && (arr($text,'/['.pc('hl').'][+]/') ||sub(array("+"),$inbetweenpratyaya,array("+"),0) || (arr($text,'/['.pc('hl').']$/') && $tusma!==1) || sub($hl,array("+"),$vikaraNa,0) || $rudhAdibhyaH===1 || pr2($hl,array("+"),array("va","ma"),blank(count($hl)),array("+"),array("va","ma"),$text)!==$text) ) # $ad === 1 removed because of https://github.com/drdhaval2785/SanskritVerb/issues/318
 {
 	storedata('1.3.3','pa',0);
+	/*
     if ( $rudhAdibhyaH===1)
     {
     $text=two($hl,array("+"),blank(count($hl)),array("+"),0);        
-    }
+    }*/
     $text=three(array("+"),$inbetweenpratyaya,array("+"),array("+"),$inbetweeenreplace,array("+"),0);
 	if ($lakAra!=="ASIrliN") # See https://github.com/drdhaval2785/SanskritVerb/issues/371
 	{
@@ -3694,14 +3695,12 @@ if(arr($text,'/['.pc('hl').']\+i\+/')) {$text = one(array("+i+"),array("i+"),0);
 /* NeraniTi (6.4.51) */
 if (arr($text,'/i\+a/') && in_array($so,$tiG) && $lakAra==="luN" && $caG===1 && (!in_array("iw",$Agama)||ends(array($sanAdi),array("Ric","RiN"),2)||in_array($fo,$curAdi_adanta) ))
 {
-	echo "1";
 	$text = change('/(i)([+]a)/','$2');
 	storedata('6.4.51','sa',0);
 }
 /* NeraniTi (6.4.51) */
 elseif (arr($text,'/([+]*)i\+/') && in_array($so,$tiG) && $ardhadhatuka===1&& (!in_array("iw",$Agama)||ends(array($sanAdi),array("Ric","RiN"),2)||in_array($fo,$curAdi_adanta)) )#&& !in_array($so,$taG))
 {
-	echo "2";
 	$text = three(array("i+yAs","+yAs"),array("+"),array(""),array("+yAs","+yAs"),array("+"),array(""),0);
 	$text = change('/^([a-zA-Z]+)([+]*)i\+([^+]*)$/','$1$2+');
 	$text = change('/i[+](['.pc('al').']+)$/','+$1');
