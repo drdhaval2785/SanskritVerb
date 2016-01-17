@@ -1138,7 +1138,6 @@ if (in_array($fo,array("jakza!","jAgf","daridrA","ASAsu!","cakAsf!","dIDIN","vev
 $vik=array();
 $luGset=0;
 if ($debug===1) {dibug("1050");}
-
 if ($lakAra==="luN")
 {
 	$luGset=1;
@@ -1283,8 +1282,8 @@ if ($lakAra==="luN")
 		//$text = one(array("+cli+"),array("+caN+"),0);
 		$Nizri=1;
 		//storedata('3.1.48','sa',0);
-		$it = array_merge($it,array("N"));
-		$itpratyaya = array_merge($itpratyaya,array("N"));
+		//$it = array_merge($it,array("N"));
+		//$itpratyaya = array_merge($itpratyaya,array("N"));
 		$luGset=5;
 		$caG=1;
 	}
@@ -1926,7 +1925,7 @@ if (arr($text,'/\+Ric\+/'))
 	{
 		storedata('1.3.8','pa',0);
 	}
-	if (arr($text,'//') && $caG===1)
+	if (arr($text,'/^['.pc('hl').']/') && $caG===1)
 	{
 		$text = one(array("+Ric+"),array("+"),0);
 		storedata('6.4.51','sa',0);
@@ -3193,10 +3192,10 @@ if ($lakAra==='luN')
 	$text = one(array("+a+"),array("+a"),0);
 }
 /* ato lopaH (6.4.48) */
-if ( arr($text,'/[a][+][R][ai]/') || arr($text,'/ai\+a/'))
+if ( arr($text,'/[a][+][R][ai]/') || arr($text,'/ai\+a/') || arr($text,'/[+]aa/'))
 { 
 	$text = two(array("a"),array("+Ri","+Ra"),array(""),array("+Ri","+Ra"),0);
-	$text = one(array("ai+a"),array("i+a"),0);
+	$text = one(array("ai+a","+aa"),array("i+a","+a"),0);
 	storedata('6.4.48','sa',0);
     $atolopa=1;
 }
@@ -3695,14 +3694,17 @@ if(arr($text,'/['.pc('hl').']\+i\+/')) {$text = one(array("+i+"),array("i+"),0);
 /* NeraniTi (6.4.51) */
 if (arr($text,'/i\+a/') && in_array($so,$tiG) && $lakAra==="luN" && $caG===1 && (!in_array("iw",$Agama)||ends(array($sanAdi),array("Ric","RiN"),2)||in_array($fo,$curAdi_adanta) ))
 {
+	echo "1";
 	$text = change('/(i)([+]a)/','$2');
 	storedata('6.4.51','sa',0);
 }
 /* NeraniTi (6.4.51) */
-elseif (arr($text,'/([+]*)i\+/') && in_array($so,$tiG) && $ardhadhatuka===1&& (!in_array("iw",$Agama)||ends(array($sanAdi),array("Ric","RiN"),2)||in_array($fo,$curAdi_adanta)) && !in_array($so,$taG))
+elseif (arr($text,'/([+]*)i\+/') && in_array($so,$tiG) && $ardhadhatuka===1&& (!in_array("iw",$Agama)||ends(array($sanAdi),array("Ric","RiN"),2)||in_array($fo,$curAdi_adanta)) )#&& !in_array($so,$taG))
 {
+	echo "2";
 	$text = three(array("i+yAs","+yAs"),array("+"),array(""),array("+yAs","+yAs"),array("+"),array(""),0);
 	$text = change('/^([a-zA-Z]+)([+]*)i\+([^+]*)$/','$1$2+');
+	$text = change('/i[+](['.pc('al').']+)$/','+$1');
 	storedata('6.4.51','sa',0);
 }
 /* aniditAM hala upadhAyAH kGiti (6.4.24) */ 
