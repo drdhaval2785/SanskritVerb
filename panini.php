@@ -4011,7 +4011,6 @@ elseif ( in_array($lakAra,array("luN","laN","lfN",)) )
     $text=Adyanta($text,"a",1);
 	storedata('6.4.71','sa',0);
 }
-print_r($text); echo $fo, $verbset; print_r($it); print_r($itpratyaya);
 /* znasorallopaH (6.4.111) */
 // znam pending.
 if ( (in_array($fo,array("asa!")) && $verbset==="adAdi" ) && (in_array("N",$it)||in_array("k",$it)) && pr2(array("as"),array("+",),$apit_sArvadhAtuka_pratyayas,array("s"),array("+",),$apit_sArvadhAtuka_pratyayas,$text)!==$text )
