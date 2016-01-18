@@ -2755,9 +2755,16 @@ if ($rudhAdibhyaH===1)
         $text = two(array("na"),array("N","Y","R","n","m"),array("na"),array("","","","",""),0);
 		storedata('6.4.23','sa',0);
     }
+	/* znasorallopaH (6.4.111) */
     if (pr2(array("na"),$hlplus,$apit_sArvadhAtuka_pratyayas,array("n"),$hlplus,$apit_sArvadhAtuka_pratyayas,$text)!==$text)
     {
         $text = pr2(array("na"),$hlplus,$apit_sArvadhAtuka_pratyayas,array("n"),$hlplus,$apit_sArvadhAtuka_pratyayas,$text);
+		storedata('6.4.111','sa',0);
+		$znasorallopaH = 1;
+    }
+    if (arr($text,'/na['.pc('hl').']+[+]I/'))
+    {
+        $text = change('/na(['.pc('hl').']+)[+]I/','n$1+I');
 		storedata('6.4.111','sa',0);
 		$znasorallopaH = 1;
     }
@@ -3995,6 +4002,7 @@ if ( (in_array($fo,array("asa!")) && $verbset==="adAdi" ) && (in_array("N",$it)|
     $text=change('/^as[+]yA[+]/','syA+');
 	storedata('6.4.111','sa',0);
 }
+print_r($text);
 /* iNvadika iti vaktavyam (vA) */
 if ( in_array($fo,array("ik")))
 {
