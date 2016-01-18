@@ -2411,7 +2411,7 @@ function caG_ajAdi()
 			$parts[0]=implode('',$splitvowel)."+".$rep.$splitvowel[count($splitvowel)-2];
 			$bakara=1;
 		}		
-		elseif (preg_match('/^['.pc('ac').']/',$parts[0]) && preg_match('/[\+][a]/',$value) ) 
+		elseif (preg_match('/^['.pc('ac').']/',$parts[0]) && preg_match('/[\+][ae]/',$value) )
 		{
 			$splitvowel=preg_split('/([aAiIuUfFxXeEoO])/',$parts[0],null,PREG_SPLIT_DELIM_CAPTURE);
 			$parts[0]=implode('',$splitvowel)."+".$splitvowel[count($splitvowel)-3].$splitvowel[count($splitvowel)-2];
@@ -2530,7 +2530,7 @@ function caG_ajAdi()
 		{
 			foreach ($text as $value)
 			{
-				if (preg_match('/[\+][a]/',$value) && $caG===1)
+				if (preg_match('/[\+][ae]/',$value) && $caG===1)
 				{
 					$parts=explode('+',$value);
 					$parts[0]=str_replace(array("J","B","G","Q","D","K","P","C","W","T"),array("j","b","g","q","d","k","p","c","w","t"),$parts[0]);
