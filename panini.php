@@ -1943,11 +1943,16 @@ if (arr($text,'/\+Ric\+/'))
 	$text = one(array("+caN+"),array("+a+"),0);
 	storedata('1.3.9','sa',0);
 	/* ato lopaH (6.4.48) */
-	if ( arr($text,'/ai[+]/') && in_array($fo,$curAdi_adanta) && ($verbset==="none"||$verbset==="curAdi") && $caG!==1)
+	if ( arr($text,'/ai[+]/') && in_array($fo,$curAdi_adanta) && ($verbset==="none"||$verbset==="curAdi"))
 	{
+		if ($ardhadhatuka===1 && $id_dhAtu==="aniw")
+		{
+			$text = one(array("ai+"),array("a+"),0);
+			storedata('6.4.51','sa',0);			
+		}
 		$text = one(array("+a+","a+i+"),array("+a","i+"),0);
-		$text = three(array("a+"),$vikaraNa_ArdhadhAtuka_pratyayas,$tiG1,array(""),$vikaraNa_ArdhadhAtuka_pratyayas,$tiG1,0);
-		$text = pr2(array("a+"),$ArdhadhAtuka_pratyayas,blank(0),array("+"),$ArdhadhAtuka_pratyayas,blank(0),$text);
+		//$text = three(array("a+"),$vikaraNa_ArdhadhAtuka_pratyayas,$tiG1,array(""),$vikaraNa_ArdhadhAtuka_pratyayas,$tiG1,0);
+		//$text = pr2(array("a+"),$ArdhadhAtuka_pratyayas,blank(0),array("+"),$ArdhadhAtuka_pratyayas,blank(0),$text);
 		if (in_array($fo,$curAdi_adanta))
 		{
 			$text = one(array("ai+"),array("i+"),0);
@@ -3705,22 +3710,6 @@ if ($caG===1 && $sanAdi==="Ric")
 {
 	//san();
 }
-/* removing + from before Ni pratyayas */
-if(arr($text,'/['.pc('hl').']\+i\+/')) {$text = one(array("+i+"),array("i+"),0);}
-/* NeraniTi (6.4.51) */
-if (arr($text,'/i\+a/') && in_array($so,$tiG) && $lakAra==="luN" && $caG===1 && (!in_array("iw",$Agama)||ends(array($sanAdi),array("Ric","RiN"),2)||in_array($fo,$curAdi_adanta) ))
-{
-	$text = change('/(i)([+]a)/','$2');
-	storedata('6.4.51','sa',0);
-}
-/* NeraniTi (6.4.51) */
-elseif (arr($text,'/([+]*)i\+/') && in_array($so,$tiG) && $ardhadhatuka===1&& (!in_array("iw",$Agama)||ends(array($sanAdi),array("Ric","RiN"),2)||in_array($fo,$curAdi_adanta)) )#&& !in_array($so,$taG))
-{
-	$text = three(array("i+yAs","+yAs"),array("+"),array(""),array("+yAs","+yAs"),array("+"),array(""),0);
-	$text = change('/^([a-zA-Z]+)([+]*)i\+([^+]*)$/','$1$2+$3');
-	$text = change('/i[+](['.pc('al').'MH]+)$/','+$1');
-	storedata('6.4.51','sa',0);
-}
 /* aniditAM hala upadhAyAH kGiti (6.4.24) */ 
 if ( in_array($fo,$aniditverbs) && (in_array("N",$itpratyaya) || in_array("k",$itpratyaya)) && !in_array($sanAdi,array("Ric"))  && $so!=="mahiN" && arr($text,'/[NYRnmM]['.pc('hl').'][+]/')) # For application after NeraniTi
 {
@@ -3736,24 +3725,6 @@ if ( in_array($fo,$aniditverbs) && (in_array("N",$itpratyaya) || in_array("k",$i
 		storedata('6.4.24','sa',0);
 		$aniditAm = 1; // 0 - this sUtra has not applied. 1 - this sUtra has applied.		
 	}
-}
-/* guNo'rtisaMyogAdyoH (7.4.29) */
-if ( (in_array($sanAdi,array("yak")) || $lakAra==="ASIrliN") && (arr($text,'/['.pc('hl').']['.pc('hl').']f[+]y/') || $fo==="f"))
-{
-	$text=one(array("f+y"),array("ar+y"),0);
-	storedata('7.4.29','sa',0);
-}
-/* riGzayagliGkSu (7.4.28) */
-elseif ( (in_array($sanAdi,array("yak")) || $lakAra==="ASIrliN") && sub(array("f"),array("+y"),blank(0),0) )
-{
-    $text=two(array("f"),array("+y"),array("ri"),array("+y"),0);
-	storedata('7.4.28','sa',0);
-}
-/* akRtsArvadhAtukayordIrghaH (7.4.25) */
-elseif (  in_array($so,$tiG) && $sarvadhatuka!==1 && $kRt!==1 && (in_array("N",$itpratyaya) || in_array("k",$itpratyaya)) && $lakAra!=="liw" && !arr($text,'/^[y][a][+][y]/') && sub($ac,array("+"),array("y"),0) && !sub($ac,array("+"),array("y+a"),0) )
-{
-    $text=three($ac,array("+"),array("y"),dirgha($ac),array("+"),array("y"),0);
-	storedata('7.4.25','sa',0);
 }
 if ($debug===1) {dibug("3500");}
 
@@ -4153,6 +4124,40 @@ if (in_array($fo,array("wuo!Svi")) && sub(array("Svi"),array("+"),prat('vl'),0) 
 {
 	$text = three(array("Svi","Su+Su"),array("+"),prat('vl'),array("Svi","Su+Su"),array("+i"),prat('vl'),0);
 	storedata('7.2.35','sa',0);
+}
+/* removing + from before Ni pratyayas */
+if(arr($text,'/['.pc('hl').']\+i\+/')) {$text = one(array("+i+"),array("i+"),0);}
+/* NeraniTi (6.4.51) */
+if (arr($text,'/i\+a/') && in_array($so,$tiG) && $lakAra==="luN" && $caG===1 && (!in_array("iw",$Agama)||ends(array($sanAdi),array("Ric","RiN"),2)||in_array($fo,$curAdi_adanta) && !in_array("iw",$Agama)))
+{
+	$text = change('/(i)([+]a)/','$2');
+	storedata('6.4.51','sa',0);
+}
+/* NeraniTi (6.4.51) */
+elseif (arr($text,'/([+]*)i\+/') && in_array($so,$tiG) && $ardhadhatuka===1&& (!in_array("iw",$Agama)||ends(array($sanAdi),array("Ric","RiN"),2)||in_array($fo,$curAdi_adanta))  && !in_array("iw",$Agama))#&& !in_array($so,$taG))
+{
+	$text = three(array("i+yAs","+yAs"),array("+"),array(""),array("+yAs","+yAs"),array("+"),array(""),0);
+	$text = change('/^([a-zA-Z]+)([+]*)i\+([^+]*)$/','$1$2+$3');
+	$text = change('/i[+](['.pc('al').'MH]+)$/','+$1');
+	storedata('6.4.51','sa',0);
+}
+/* guNo'rtisaMyogAdyoH (7.4.29) */
+if ( (in_array($sanAdi,array("yak")) || $lakAra==="ASIrliN") && (arr($text,'/['.pc('hl').']['.pc('hl').']f[+]y/') || $fo==="f"))
+{
+	$text=one(array("f+y"),array("ar+y"),0);
+	storedata('7.4.29','sa',0);
+}
+/* riGzayagliGkSu (7.4.28) */
+elseif ( (in_array($sanAdi,array("yak")) || $lakAra==="ASIrliN") && sub(array("f"),array("+y"),blank(0),0) )
+{
+    $text=two(array("f"),array("+y"),array("ri"),array("+y"),0);
+	storedata('7.4.28','sa',0);
+}
+/* akRtsArvadhAtukayordIrghaH (7.4.25) */
+elseif (  in_array($so,$tiG) && $sarvadhatuka!==1 && $kRt!==1 && (in_array("N",$itpratyaya) || in_array("k",$itpratyaya)) && $lakAra!=="liw" && !arr($text,'/^[y][a][+][y]/') && sub($ac,array("+"),array("y"),0) && !sub($ac,array("+"),array("y+a"),0) )
+{
+    $text=three($ac,array("+"),array("y"),dirgha($ac),array("+"),array("y"),0);
+	storedata('7.4.25','sa',0);
 }
 /* dhi ca (8.2.25) */
 if ( $lakAra!=="" && arr($text,'/s\+D/') && in_array($so,$tiG))
@@ -5157,7 +5162,6 @@ if (arr($text,'/['.pc('Jy').']\+/') && ( sub(array("N"),$ku,array("+"),0) || sub
     $text = three(array("m"),$pu,array("+"),array("n"),blank(count($pu)),array("+"),0); 
 	storedata('8.2.23','sa',0);	
 	storedata('par@56-1','sa',0);
-	echo "1";
 }
 /*elseif ( sub($hl,$hl,array("+"),0) && in_array($so,$tiG) && $ratsasya===0 && !arr($text,'/['.pc('hl').']['.pc('hl').'][+]['.pc('ac').']/') && $pada==="pada" )
 {
