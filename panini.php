@@ -1950,7 +1950,7 @@ if (arr($text,'/\+Ric\+/'))
 			$text = one(array("ai+"),array("a+"),0);
 			storedata('6.4.51','sa',0);			
 		}
-		$text = one(array("+a+","a+i+"),array("+a","i+"),0);
+		$text = one(array("a+i+"),array("i+"),0);
 		//$text = three(array("a+"),$vikaraNa_ArdhadhAtuka_pratyayas,$tiG1,array(""),$vikaraNa_ArdhadhAtuka_pratyayas,$tiG1,0);
 		//$text = pr2(array("a+"),$ArdhadhAtuka_pratyayas,blank(0),array("+"),$ArdhadhAtuka_pratyayas,blank(0),$text);
 		if (in_array($fo,$curAdi_adanta))
@@ -2740,7 +2740,8 @@ if ( $sic!==0 && $so==="Ji" && sub(array("A"),array("+"),array("Ji"),0) )
 /* rudhAdi gaNa is special in the sense that its vikaraNa is a mit pratyaya. So making a special provision for the same. */
 if ($rudhAdibhyaH===1)
 {
-    $text = mit('/['.pc('hl').'][+]/','na',0);
+    $text = change('/^(['.pc('al').']*['.pc('ac').'])(['.pc('hl').']+)[+]/','$1na$2+');
+	//mit('/['.pc('hl').'][+]/','na',0);
 /*    echo "<p class = sa >By rudhAdibhyaH znam (".link_sutra("3.1.78").") :</p>\n"; 
     echo "<p class = pa >By midaco'ntyAtparaH, lazakvataddhite, halantyam and tasya lopaH.</p>\n"; 
     echo "<p class = sa >रुधादिभ्यः श्नम्‌ (३.१.७८) :</p>\n";
