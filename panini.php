@@ -1848,6 +1848,7 @@ if (in_array($so,array("ta","Ja")) && $lakAra==="liw")
 // as idit is necessary for numAgama, it is placed here. otherwise with Sap, there is problem in mit function.
 if (arr($text,'/['.flat($ac).'][!]/') && in_array($so,$tiG) )
 {
+	$text = change('/i[!]r[+]/','+');
     it('/(['.flat($ac).'][!])/');
 	storedata('1.3.2','sa',0);
     $text = two($ac,array("!"),blank(count($ac)),array(""),0);
@@ -2089,7 +2090,7 @@ if (arr($text,'/[tTdDnsm]$/') && $vibhakti===1)
 $inbetweenpratyaya=array("ap","yan","Ric","RiN","san","IyaN");
 $inbetweeenreplace=array("a","ya","Ri","Ri","sa","Iya");
 /* halantyam (1.3.3) and tasya lopaH (1.3.9) */
-if (in_array($so,$tiG) && arr(array($fo),'/[!]['.pc('hl').']$/') && $nomidelision!==1 &&sub(array("!"),$hl,array("+"),0) )
+if (in_array($so,$tiG) && arr(array($fo),'/[!]['.pc('hl').']$/') && $nomidelision!==1 && sub(array("!"),$hl,array("+"),0) )
 {
 	storedata('1.3.3','pa',0);
 	$text=three(array("!"),$hl,array("+"),array("!"),blank(count($hl)),array("+"),0);
@@ -2151,6 +2152,7 @@ if (arr($text,'/[+][c][a][+]/') && in_array($so,$tiG)) // for caG
 // as idit is necessary for numAgama, it is placed here. otherwise with Sap, there is problem in mit function.
 if (arr($text,'/['.flat($ac).'][!]/') && in_array($so,$tiG) )
 {
+	$text = change('/i[!]r[+]/','+');
     it('/(['.flat($ac).'][!])/');
 	storedata('1.3.2','sa',0);
     $text = two($ac,array("!"),blank(count($ac)),array(""),0);
