@@ -1939,8 +1939,8 @@ if (arr($text,'/\+Ric\+/'))
 	}
 	storedata('1.3.3','pa',0);
 	storedata('1.3.7','pa',0);
-	$text=one(array('+Ric+caN+'),array('i+a+'),0);
-	$text = one(array("+Ric+"),array("i+"),0);
+	$text=one(array('+Ric+caN+'),array('+i+a+'),0);
+	$text = one(array("+Ric+"),array("+i+"),0);
 	$text = one(array("+caN+"),array("+a+"),0);
 	storedata('1.3.9','sa',0);
 	/* ato lopaH (6.4.48) */
@@ -4004,7 +4004,6 @@ if ( (in_array($fo,array("asa!")) && $verbset==="adAdi" ) && (in_array("N",$it)|
     $text=change('/^as[+]yA[+]/','syA+');
 	storedata('6.4.111','sa',0);
 }
-print_r($text);
 /* iNvadika iti vaktavyam (vA) */
 if ( in_array($fo,array("ik")))
 {
