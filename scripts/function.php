@@ -3692,6 +3692,7 @@ function wrongformlist($list,$verblist,$strength="full")
 						elseif (substr($mem,-1)==="d" && in_array(substr($mem,0,-1)."t",$verblist) ) { }
 						elseif (substr($mem,-3)==="tAd" && in_array(substr($mem,0,-3)."tu",$verblist) ) { }
 						elseif (substr($mem,-3)==="tAt" && in_array(substr($mem,0,-3)."tu",$verblist) ) { }
+						elseif (substr($mem,-5)==="Dvam" && in_array(substr($mem,0,-5)."Qvam",$verblist) ) { }
 						elseif (preg_match('/AYcak/',$mem) ) { }
 						else { fputs($suspectentryfile,$mem."-($first,$lakAra,$suffix[$i],$verbset,$number)\n"); }
 					}
