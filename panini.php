@@ -2350,7 +2350,6 @@ if ( in_array($lakAra,array("viDiliN","ASIrliN")) && sub(array("+Iy+i","+sIy+i")
     $text=two(array("+Iy","+sIy"),array("+i"),array("+Iy","+sIy"),array("+a"),0);
 	storedata('3.4.106','sa',0);
 }
-print_r($text);
 /* ato yeyaH (7.2.80) */
 if ( in_array($lakAra,array("viDiliN")) && sub(array("a+yA"),array("+"),blank(0),0))
 {
@@ -4597,6 +4596,7 @@ if ( $didhI!==1 && $kGiti!==1 && $bhUsuvo!==1 && arr($text,'/[iIuUfFxX]\+/') && 
     $text=three(array("i","I","u","U","f","F","x","X",),array("+"),array("sI","isI"),array("e","e","o","o","ar","ar","al","al",),array("+"),array("sI","isI"),0);
 	storedata('7.3.84','sa',0);
 }
+
 /* ato lopaH (6.4.48) */
 //if ( sub(array("Aya"),array("+is","+It","+Is"),blank(0),0) || sub(array("a"),array("+i+"),blank(0),0) )
 if (arr($text,'/Aya\+/') && sub(array("Aya"),array("+is","+It","+Is"),blank(0),0)  )
