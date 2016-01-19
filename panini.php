@@ -979,27 +979,6 @@ if ($debug===1) {dibug("900");}
 /* atideza sUtras for GidvadbhAva before ArdhadhAtuka. sahajabodha 2 p. 40 */
 if (in_array($lakAra,$ArdhadhAtuka_lakAra))
 {
-    /* gAGkuTAdibhyo'JNinGit (1.2.1) */ 
-    if ( in_array($fo,array("iN")) && sub(array("gAN"),array("+"),blank(0),0) && in_array($lakAra,$ArdhadhAtuka_lakAra) && $Nit===0 && $Jit===0)
-    {
-        $itpratyaya=array_merge($itpratyaya,array("N"));
-        $it=array_merge($it,array("N"));
-		storedata('1.2.1','pa',0);
-    }
-    /* gAGkuTAdibhyo'JNinGit (1.2.1) */ 
-    if ( ((in_array($fo,$tudAdi_kuTAdi) && ($verbset==="tudAdi" || $verbset==="none" )) || in_array($fo,array("gAN")) ) && in_array($lakAra,$ArdhadhAtuka_lakAra) && $Nit===0 && $Jit===0)
-    {
-        $itpratyaya=array_merge($itpratyaya,array("N"));
-        $it=array_merge($it,array("N"));
-		storedata('1.2.1','pa',0);
-    }
-    /* vyaceH kuTAditvamanasIti vaktavyam (vA) */
-    if ( in_array($fo,array("vyaca!")) && !sub(array("vyaca!"),array("+"),array("as"),0) && in_array($lakAra,$ArdhadhAtuka_lakAra) && $Nit===0 && $Jit===0)
-    {
-        $itpratyaya=array_merge($itpratyaya,array("N"));
-        $it=array_merge($it,array("N"));
-		storedata('6.1.17-4','pa',0);
-    }
     /* vija iT (1.2.2) */ 
     if ( in_array($fo,array("o!vijI!")) && $ardhadhatuka===1 && in_array($lakAra,$ArdhadhAtuka_lakAra) && $id_dhAtu==="sew" && $id_pratyaya==="sew" && $verbset==="tudAdi")
     {
@@ -3404,6 +3383,27 @@ if ( in_array($fo,array("janI!","jYA")) && in_array($so,$tiG) && sub(array("jan"
 {
     $text=three(array("jan","jYA"),array("+"),$shitpratyayareplace,array("jA","jA"),array("+"),$shitpratyayareplace,0);
 	storedata('7.3.79','sa',0);
+}
+/* gAGkuTAdibhyo'JNinGit (1.2.1) */ 
+if ( in_array($fo,array("iN")) && sub(array("gAN"),array("+"),blank(0),0) && in_array($lakAra,$ArdhadhAtuka_lakAra) && $Nit===0 && $Jit===0 && !in_array("R",$it) && !in_array("Y",$it))
+{
+	$itpratyaya=array_merge($itpratyaya,array("N"));
+	$it=array_merge($it,array("N"));
+	storedata('1.2.1','pa',0);
+}
+/* gAGkuTAdibhyo'JNinGit (1.2.1) */ 
+if ( ((in_array($fo,$tudAdi_kuTAdi) && ($verbset==="tudAdi" || $verbset==="none" )) || in_array($fo,array("gAN")) ) && in_array($lakAra,$ArdhadhAtuka_lakAra) && $Nit===0 && $Jit===0 && !in_array("R",$it) && !in_array("Y",$it))
+{
+	$itpratyaya=array_merge($itpratyaya,array("N"));
+	$it=array_merge($it,array("N"));
+	storedata('1.2.1','pa',0);
+}
+/* vyaceH kuTAditvamanasIti vaktavyam (vA) */
+if ( in_array($fo,array("vyaca!")) && !sub(array("vyaca!"),array("+"),array("as"),0) && in_array($lakAra,$ArdhadhAtuka_lakAra) && $Nit===0 && $Jit===0 && !in_array("R",$it) && !in_array("Y",$it))
+{
+	$itpratyaya=array_merge($itpratyaya,array("N"));
+	$it=array_merge($it,array("N"));
+	storedata('6.1.17-4','pa',0);
 }
 /* dIdhIvevITAm (1.1.6) */
 $didhI=0;
