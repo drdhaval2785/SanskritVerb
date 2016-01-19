@@ -2345,8 +2345,9 @@ if ( in_array($lakAra,array("viDiliN","ASIrliN")) && sub(array("+"),array("t","T
     /* liGaH salopo'nantyasya (7.2.79) */
     if ( in_array($lakAra,array("viDiliN")) && sub(array("+yAs+"),array("s"),$al,0))
     {
-        $text=three(array("+yAs"),array("s"),$al,array("+yA"),array(""),$al,0);
+        $text=three(array("+yAs+"),array("s"),$al,array("+yA"),array(""),$al,0);
 		storedata('7.2.79','sa',0);
+		print_r($text);
     }
     if ( in_array($lakAra,array("viDiliN")) && pr2(array("sIy+s"),$taG,blank(0),array("Iy+"),$taG,blank(0),$text)!== $text )
     {
@@ -3860,9 +3861,9 @@ if ( arr($text,'/da[dD]A/') && sub(array("dadA","daDA"),array("+"),$apit_sArvadh
 	storedata('6.4.112','sa',0);
 }
 /* znA'bhyastayorAtaH (6.4.112) */
-if (arr($text,'/A\+/') && $abhyasta===1 && sub(array("A"),array("+"),$apit_sArvadhAtuka_pratyayas,0) && (in_array("N",$it)||in_array("k",$it)))
+if (arr($text,'/A\+/') && $abhyasta===1 && sub(array("A"),array("+"),$apit_sArvadhAtuka_pratyayas,0) && (in_array("N",$it)||in_array("k",$it)) && !arr($text,'/[+]yA[+][mv]a/'))
 {
-    $text=three(array("A"),array("+"),$apit_sArvadhAtuka_pratyayas,array(""),array("+"),$apit_sArvadhAtuka_pratyayas,0);
+    $text=pr2(array("A"),array("+"),$apit_sArvadhAtuka_pratyayas,array(""),array("+"),$apit_sArvadhAtuka_pratyayas,$text);
 	storedata('6.4.112','sa',0);
 }
 /* gamahanajanakhanaghasAM lopaH kGiti (6.4.98) */
