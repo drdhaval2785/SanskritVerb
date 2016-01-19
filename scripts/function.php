@@ -2676,7 +2676,7 @@ function liT_ajAdi()
 			storedata('7.4.70','sa',0);
 		}
 		/* tasmAnnuDdvihalaH (7.4.71) */
-		if (preg_match('/['.pc('hl').']['.pc('hl').']/',$parts[1]) || preg_match('/[f]/',$parts[1])) 
+		if (preg_match('/['.pc('hl').']['.pc('hl').']/',$parts[1]) || preg_match('‌‌/^[f]['.pc('hl').']/',$parts[1])) 
 		{
 			foreach ($text as $value)
 			{
@@ -2693,7 +2693,7 @@ function liT_ajAdi()
 				}
 			}
 			$text=$val2;
-			if (preg_match('/[f]/',$parts[1]))
+			if (preg_match('/^n[f]/',$parts[1]))
 			{
 				storedata('7.4.71','sa',0);
 				storedata('nuqviDO fkAra','sa',0);
