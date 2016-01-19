@@ -2756,9 +2756,11 @@ if ($rudhAdibhyaH===1)
 		storedata('6.4.111','sa',0);
 		$znasorallopaH = 1;
     }
-    if (arr($text,'/na['.pc('hl').']+[+]I/'))
+    if (arr($text,'/na['.pc('hl').']+[+]I/') || arr($text,'/na['.pc('hl').']+[+]yA/'))
     {
+		storedata('1.2.4','pa',0);
         $text = change('/na(['.pc('hl').']+)[+]I/','n$1+I');
+        $text = change('/na(['.pc('hl').']+)[+]yA/','n$1+yA');
 		storedata('6.4.111','sa',0);
 		$znasorallopaH = 1;
     }
