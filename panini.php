@@ -1610,6 +1610,7 @@ if ( ($sarvadhatuka===1 && $verbset==="juhotyAdi" && sub(array("+Sap+"),$tiG,bla
     $vik=array("Slu");
     $set=2;
     $abhyasta=1;
+	$abhyAsa=1;
 	zlu();
 }
 /* adiprabhRtibhyaH zapaH (2.4.72) */
@@ -4362,10 +4363,10 @@ if ( $didhI!==1 && $kGiti!==1 && $vijait!==1 && $lakAra==="liw" && $ardhadhatuka
 	storedata('7.3.86','sa',0);
 }
 /* abhyAsasyAsavarNe (6.4.78) */
-if ( arr($text,'/^[iIuU][+][eoEO]/') && $abhyAsa===1)
+if ( arr($text,'/^[iIuU][+]*[aAfFxeoEO]/') && $abhyAsa===1)
 {
-    $text=change('/^([iI])([+][eoEO])/','$1y$2');
-    $text=change('/^([uU])([+][eoEO])/','$1v$2');
+    $text=change('/^([iI])([+]*[aAfFxeoEO])/','$1y$2');
+    $text=change('/^([uU])([+]*[aAfFxeoEO])/','$1v$2');
 	storedata('6.4.78','sa',0);
 }
 if ($lakAra==="liw" && arr($text,'/['.pc('hl').'][iI][+][aAiIuUfFxXeEoO]/') && !arr($text,'/['.pc('hl').']['.pc('hl').'][iI][+][aAiIuUfFxXeEoO]/') )
