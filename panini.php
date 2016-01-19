@@ -3977,6 +3977,13 @@ if (arr($text,'/\+nA\+/') && sub(array("+nA"),array("+ant"),blank(0),0) && (in_a
     $text=two(array("+nA"),array("+ant"),array("n"),array("+ant"),0);
 	storedata('6.4.112','sa',0);
 }
+/* abhyAsasyAsavarNe (6.4.78) */
+if ( arr($text,'/^[iIuU][+]*[aAfFxeoEO]/') && $abhyAsa===1)
+{
+    $text=change('/^([iI])([+]*[aAfFxeoEO])/','$1y$2');
+    $text=change('/^([uU])([+]*[aAfFxeoEO])/','$1v$2');
+	storedata('6.4.78','sa',0);
+}
 /* na mAGyoge (6.4.74) */
 if ( in_array($lakAra,array("luN","laN","lfN",)) && $_GET['cond50']==='1')
 {
@@ -4361,13 +4368,6 @@ if ( $didhI!==1 && $kGiti!==1 && $vijait!==1 && $lakAra==="liw" && $ardhadhatuka
 		$text=three(array("e","o","ar","al"),$hl,array("+sI"),array("i","u","f","x"),$hl,array("+sI"),0);	
 	}
 	storedata('7.3.86','sa',0);
-}
-/* abhyAsasyAsavarNe (6.4.78) */
-if ( arr($text,'/^[iIuU][+]*[aAfFxeoEO]/') && $abhyAsa===1)
-{
-    $text=change('/^([iI])([+]*[aAfFxeoEO])/','$1y$2');
-    $text=change('/^([uU])([+]*[aAfFxeoEO])/','$1v$2');
-	storedata('6.4.78','sa',0);
 }
 if ($lakAra==="liw" && arr($text,'/['.pc('hl').'][iI][+][aAiIuUfFxXeEoO]/') && !arr($text,'/['.pc('hl').']['.pc('hl').'][iI][+][aAiIuUfFxXeEoO]/') )
 {
