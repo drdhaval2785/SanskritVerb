@@ -3500,7 +3500,6 @@ if (in_array($fo,array("Brasja!")) && $ardhadhatuka===1 && sub(array("Brasj"),ar
     $text = three(array("Brasj"),array("+"),blank(0),array("Barj"),array("+"),blank(0),1);
 	storedata('6.4.47','sa',0);
 }
-print_r($text);
 /* liGsicAvAtmanepadeSu (1.2.12) */
 if (in_array($so,$taG) && ($sic===1||$sIyuT===1) && ($id_dhAtu==="aniw" || $id_pratyaya==="aniw") && arr($text,'/\+s/') && sub($ik,$hlplus,array("s"),0) )
 {
