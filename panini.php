@@ -3574,6 +3574,12 @@ if ( $sic===1 && in_array($so,$tis) && sub($ik,array("+"),array("sI","isI"),0) )
 	$kGiti=1;
 	$sicivRddhi=1;
 }
+/* RcCatyRRtAm (7.4.11) */
+if ($lakAra==="liw" && (in_array($fo,array("f","fCa!")) || ends(array($fo),array("F"),1) ) && sub(array("A+f","A+fcC","A+nf","A+nfcC","F"),array("+"),blank(0),0) )
+{
+	$text = two(array("A+f","A+fcC","A+nf","A+nfcC","F"),array("+"),array("A+ar","A+arcC","A+nar","A+narcC","ar"),array("+"),0);
+	storedata('7.4.11','sa',0);
+}
 /* udoSThyapUrvasya (7.1.102) */
 if ( in_array($fo,array("pF","PF","bF","BF","mF")) && sub(array("F"),array("+"),$apit_sArvadhAtuka_pratyayas,0) && in_array($so,$tiG) )
 {
@@ -4299,12 +4305,6 @@ if ( $lakAra==="liw" && in_array("k",$itpratyaya) && sub(array("Sa+SF","da+dF","
 {
 	$text = two(array("Sa+SF","da+dF","pa+pF"),array("+"),array("Sa+Sf","da+df","pa+pf"),array("+"),1);
 	storedata('7.4.12','sa',0);
-}
-/* RcCatyRRtAm (7.4.11) */
-if ($lakAra==="liw" && (in_array($fo,array("f","fCa!")) || ends(array($fo),array("F"),1) ) && sub(array("A+f","A+fcC","A+nf","A+nfcC","F"),array("+"),blank(0),0) )
-{
-	$text = two(array("A+f","A+fcC","A+nf","A+nfcC","F"),array("+"),array("A+ar","A+arcC","A+nar","A+narcC","ar"),array("+"),0);
-	storedata('7.4.11','sa',0);
 }
 /* dAderdhAtorghaH (8.2.32) */
 if (arr($text,'/['.pc('hl').'][+]['.pc("Jl").']/') && sub($dade,blank(0),blank(0),0) )
