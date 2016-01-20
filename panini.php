@@ -3581,15 +3581,9 @@ if ( in_array($fo,array("pF","PF","bF","BF","mF")) && sub(array("F"),array("+"),
 	storedata('7.1.102','sa',0);
 }
 /* RRta iddhAtoH (7.1.100) */
-elseif (arr($text,'/F\+nA\+/') && ($sarvadhatuka===1 || $ardhadhatuka===1) )
+elseif (arr($text,'/F\+/') && in_array($so,$tiG))
 {
-    $text=three(array("F"),array("+"),array("nA+"),array("ir"),array("+"),array("nA+"),0);
-	storedata('7.1.100','sa',0);
-}
-/* RRta iddhAtoH (7.1.100) */
-elseif (arr($text,'/F\+/') && pr2(array("F"),array("+"),$apit_sArvadhAtuka_pratyayas,array("ir"),array("+"),$apit_sArvadhAtuka_pratyayas,$text)!==$text && $sarvadhatuka===1 )
-{
-    $text=three(array("F"),array("+"),$apit_sArvadhAtuka_pratyayas,array("ir"),array("+"),$apit_sArvadhAtuka_pratyayas,0);
+    $text=two(array("F"),array("+"),array("ir"),array("+"),0);
 	storedata('7.1.100','sa',0);
 }
 elseif ($vras===1) // escaping this - because vrazca... is tripAdI function.
