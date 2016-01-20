@@ -1892,6 +1892,12 @@ elseif ($lakAra==="liw" && $veda===0 && (anekAca($verb_without_anubandha) || $sa
     $text=two(array("+Am+Am+"),$tiG1,array("+Am+"),$tiG1,0);
 	storedata('3.1.35','sa',0);
 }
+/* kRpo ro laH (8.2.18) */
+if (in_array($fo,array("kfpa!","kfpU!")) && sub(array("kfp"),array("+"),blank(0),0) )
+{
+    $text=two(array("kfp"),array("+"),array("kxp"),array("+"),0);
+	storedata('8.2.18','sa',0);
+}
 /* curAdi Ric handling */
 if (arr($text,'/\+Ric\+/'))
 {
@@ -2101,7 +2107,6 @@ if (in_array($so,$tiG) && (arr($text,'/['.pc('hl').'][+]/') ||sub(array("+"),$in
 	$text = one(array("i!r"),array("i!"),0);
 	//$text = change('/(^[^+]+)['.pc('hl').']([+]jus)/','$1$2'); // Check why this was kept here. Gave wrong form of kftI! rudhAdi viDiliN Ji, so commented out
     $text=two($hlplus,array("Ri+"),blank1("+",count($hlplus)),array("Ri+"),0);
-	print_r($text);
     if ($nomidelision!==1 && ends(array($fo),$hl,0)) // Addition of ends function is to prevent application to kF -> kir converted halanta, which are not there in upadeza.
     {
 		$text = two($hl,array("+ran"),blank(count($hl)),array("+ran"),0);
@@ -2710,7 +2715,6 @@ if ( $sic!==0 && $so==="Ji" && sub(array("A"),array("+"),array("Ji"),0) )
 	$text = three(array("A"),array("+"),array("Ji"),array("A"),array("+"),array("jus"),0);
 	storedata('3.4.110','sa',0);
 }
-print_r($text);
 /* rudhAdi gaNa is special in the sense that its vikaraNa is a mit pratyaya. So making a special provision for the same. */
 if ($rudhAdibhyaH===1)
 {
@@ -2960,12 +2964,6 @@ if (in_array($fo,$pvAdi) && $shit===1 && $fo!=="jyA" && ( $verbset==="kryAdi" ||
 {
     $text=three(array("A","I","U","F",),$shitpratyayareplace,array("+"),array("a","i","u","f",),$shitpratyayareplace,array("+"),0);
 	storedata('7.3.80','sa',0);
-}
-/* kRpo ro laH (8.2.18) */
-if (in_array($fo,array("kfpa!","kfpU!")) && sub(array("kfp"),array("+"),blank(0),0) )
-{
-    $text=two(array("kfp"),array("+"),array("kxp"),array("+"),0);
-	storedata('8.2.18','sa',0);
 }
 /* upadhAyAzca (7.1.101) */
 if (arr($text,'/[F]/') && sub(array("F"),$hl,array("+"),0) && in_array($so,$tiG)) 
