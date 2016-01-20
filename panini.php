@@ -3574,7 +3574,6 @@ if ( $sic===1 && in_array($so,$tis) && sub($ik,array("+"),array("sI","isI"),0) )
 	$kGiti=1;
 	$sicivRddhi=1;
 }
-print_r($text);
 /* udoSThyapUrvasya (7.1.102) */
 if ( in_array($fo,array("pF","PF","bF","BF","mF")) && sub(array("F"),array("+"),$apit_sArvadhAtuka_pratyayas,0) && in_array($so,$tiG) )
 {
@@ -3607,14 +3606,14 @@ elseif(arr($text,'/p\+i\+/') && sub(array("fp","hrIp","vlIp","rIp","knUp","kzmAp
 	storedata('7.3.86','sa',0);
 }
 /* pugantalaghUpadhasya ca (7.3.86) */
-elseif ($atolopa!==1 && ($sarvadhatuka===1 || $ardhadhatuka===1) && arr($text,'/[iufx]['.pc('hl').'][+]/')  && $didhI!==1 && $vijait!==1 && sub(array("i","u","f","x"),$hl,array("+u+","+i+","+a+","+et","+eT","+isy","+syeT","+sya"),0) && !in_array("N",$itpratyaya) && !in_array("k",$itpratyaya))
+elseif ($atolopa!==1 && $verbset!=="tudAdi" && ($sarvadhatuka===1 || $ardhadhatuka===1) && arr($text,'/[iufx]['.pc('hl').'][+]/')  && $didhI!==1 && $vijait!==1 && sub(array("i","u","f","x"),$hl,array("+u+","+i+","+a+","+et","+eT","+isy","+syeT","+sya"),0) && !in_array("N",$itpratyaya) && !in_array("k",$itpratyaya))
 {
     $text=three(array("i","u","f","x"),$hl,array("+u+","+i+","+a+"),array("e","o","ar","al"),$hl,array("+u+","+i+","+a+"),0);
 	$text=three(array("i","u","f","x"),$hl,array("+et","+eT","+isy","+syeT","+sya"),array("e","o","ar","al"),$hl,array("+et","+eT","+isy","+syeT","+sya"),0);
 	storedata('7.3.86','sa',0);
 }
 /* pugantalaghUpadhasya ca (7.3.86) */
-elseif ($atolopa!==1 && $ardhadhatuka===1 && $kGiti!==1  && $didhI!==1 && $vijait!==1 && $sIyuT!==1 && $ksa!==1 && $vijait!==1 && !ends($itpratyaya,array("k","N"),2) && arr($text,'/[iufx]([+]*)['.pc('hl').']\+/') && pr2(array("i","u","f","x"),$hlplus,$ArdhadhAtuka_tiG_pratyayas,array("e","o","ar","al"),$hlplus,$ArdhadhAtuka_tiG_pratyayas,$text)!==$text )
+elseif ($atolopa!==1 && $verbset!=="tudAdi" && $ardhadhatuka===1 && $kGiti!==1  && $didhI!==1 && $vijait!==1 && $sIyuT!==1 && $ksa!==1 && $vijait!==1 && !ends($itpratyaya,array("k","N"),2) && arr($text,'/[iufx]([+]*)['.pc('hl').']\+/') && pr2(array("i","u","f","x"),$hlplus,$ArdhadhAtuka_tiG_pratyayas,array("e","o","ar","al"),$hlplus,$ArdhadhAtuka_tiG_pratyayas,$text)!==$text )
 {
     $text=pr2(array("i","u","f","x"),$hlplus,$ArdhadhAtuka_tiG_pratyayas,array("e","o","ar","al"),$hlplus,$ArdhadhAtuka_tiG_pratyayas,$text);
 	$text = three(array("GarR","tarR","arR","kzeR",),array("+"),array("sta","sTAs"),array("GfR","tfR","fR","kziR"),array("+"),array("sta","sTAs"),1); // see sahajabodha part 2 page 250.
@@ -3626,13 +3625,13 @@ elseif ( ($sarvadhatuka===1 || $ardhadhatuka===1) && in_array($fo,array("Riji!r"
 	storedata('7.3.87','pa',0);
 }
 /* pugantalaghUpadhasya ca (7.3.86) */
-elseif ( $atolopa!==1 && ($sarvadhatuka===1 || $ardhadhatuka===1) && arr($text,'/[iufx]['.pc('hl').'][+]/') && pr2(array("i","u","f","x"),$hlplus,$pit_sArvadhAtuka_pratyayas,array("e","o","ar","al"),$hlplus,$pit_sArvadhAtuka_pratyayas,$text)!==$text && !arr($text,"/[+][i][y][+][t]$/")  && $didhI!==1 && $kGiti===0 && $ksa!==1 && $vijait!==1)
+elseif ( $atolopa!==1 && ($sarvadhatuka===1 || $ardhadhatuka===1) && arr($text,'/[iufx]['.pc('hl').'][+]/') && pr2(array("i","u","f","x"),$hlplus,$pit_sArvadhAtuka_pratyayas,array("e","o","ar","al"),$hlplus,$pit_sArvadhAtuka_pratyayas,$text)!==$text && !arr($text,"/[+][i][y][+][t]$/")  && $didhI!==1 && $kGiti===0 && $ksa!==1 && $vijait!==1 && $verbset!=="tudAdi" )
 {
     $text=pr2(array("i","u","f","x"),$hlplus,$pit_sArvadhAtuka_pratyayas,array("e","o","ar","al"),$hlplus,$pit_sArvadhAtuka_pratyayas,$text);
 	storedata('7.3.86','sa',0);
 }
 /* pugantalaghUpadhasya ca (7.3.86) */
-elseif ( $atolopa!==1 && $ardhadhatuka===1 && arr($text,'/[iufx]['.pc('hl').'][+]/') && pr2(array("i","u","f","x"),$hlplus,$ArdhadhAtuka_pratyayas,array("e","o","ar","al"),$hlplus,$ArdhadhAtuka_pratyayas,$text)!==$text && !arr($text,"/[+][i][y][+][t]$/")  && $didhI!==1 && $kGiti!==1 && $sIyuT!==1 && $ksa!==1 && $vijait!==1)
+elseif ( $atolopa!==1 && $ardhadhatuka===1 && arr($text,'/[iufx]['.pc('hl').'][+]/') && pr2(array("i","u","f","x"),$hlplus,$ArdhadhAtuka_pratyayas,array("e","o","ar","al"),$hlplus,$ArdhadhAtuka_pratyayas,$text)!==$text && !arr($text,"/[+][i][y][+][t]$/")  && $didhI!==1 && $kGiti!==1 && $sIyuT!==1 && $ksa!==1 && $vijait!==1 && $verbset!=="tudAdi" )
 {
     $text=pr2(array("i","u","f","x"),$hlplus,$ArdhadhAtuka_pratyayas,array("e","o","ar","al"),$hlplus,$ArdhadhAtuka_pratyayas,$text);
 	storedata('7.3.86','sa',0);
@@ -3651,7 +3650,7 @@ elseif ( $atolopa!==1 && $ardhadhatuka===1 && arr($text,'/[iufxIUFX]['.pc('hl').
 } 
 /* pugantalaghUpadhasya ca (7.3.86) */
 // for pratyayas deleted by halGyAb..
-elseif ( $atolopa!==1 && ($sarvadhatuka===1 || $ardhadhatuka===1) && arr($text,'/[iufx]['.pc('hl').'][+]$/') && pr2(array("i","u","f","x"),$hlplus,blank(0),array("e","o","ar","al"),$hlplus,blank(0),$text)!==$text  && $didhI!==1 && $ksa!==1 && $vijait!==1)
+elseif ( $atolopa!==1 && ($sarvadhatuka===1 || $ardhadhatuka===1) && arr($text,'/[iufx]['.pc('hl').'][+]$/') && pr2(array("i","u","f","x"),$hlplus,blank(0),array("e","o","ar","al"),$hlplus,blank(0),$text)!==$text  && $didhI!==1 && $ksa!==1 && $vijait!==1 && $verbset!=="tudAdi")
 {
     $text=pr2(array("i","u","f","x"),$hlplus,blank(0),array("e","o","ar","al"),$hlplus,blank(0),$text);
 	storedata('7.3.86','sa',0);
@@ -4383,7 +4382,7 @@ if (  $ardhadhatuka===1 && $didhI!==1 && $kGiti!==1 && $bhUsuvo!==1 && arr($text
 	storedata('7.3.84','sa',0);
 }
 /* pugantalaghUpadhasya ca (7.3.86) */
-if ( $didhI!==1 && $kGiti!==1 && $vijait!==1 && $lakAra==="liw" && $ardhadhatuka===1 && arr($text,'/[iufF]['.pc('hl').']\+/') && (sub(array("i","u","f","x"),$hlplus,$tiG1,0) || sub(array("i","u","f","x"),$hlplus,$iDtiG,0) ) )
+if ( $didhI!==1 && $kGiti!==1 && $vijait!==1 && $lakAra==="liw" && $ardhadhatuka===1 && arr($text,'/[iufF]['.pc('hl').']\+/') && (sub(array("i","u","f","x"),$hlplus,$tiG1,0) || sub(array("i","u","f","x"),$hlplus,$iDtiG,0) )  && $verbset!=="tudAdi" )
 {
 	$text=three(array("i","u","f","x"),$hlplus,$iDtiG,array("e","o","ar","al"),$hlplus,$iDtiG,0);
 	$text=three(array("i","u","f","x"),$hlplus,$tiG1,array("e","o","ar","al"),$hlplus,$tiG1,0);
