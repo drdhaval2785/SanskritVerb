@@ -3574,7 +3574,6 @@ if ( $sic===1 && in_array($so,$tis) && sub($ik,array("+"),array("sI","isI"),0) )
 	$kGiti=1;
 	$sicivRddhi=1;
 }
-print_r($text);
 /* udoSThyapUrvasya (7.1.102) */
 if ( in_array($fo,array("pF","PF","bF","BF","mF")) && sub(array("F"),array("+"),$apit_sArvadhAtuka_pratyayas,0) && in_array($so,$tiG) )
 {
@@ -3607,9 +3606,8 @@ elseif(arr($text,'/p\+i\+/') && sub(array("fp","hrIp","vlIp","rIp","knUp","kzmAp
 	storedata('7.3.86','sa',0);
 }
 /* pugantalaghUpadhasya ca (7.3.86) */
-elseif ($atolopa!==1 && ($sarvadhatuka===1 || $ardhadhatuka===1) && arr($text,'/[iufx]['.pc('hl').'][+]/')  && $didhI!==1 && $vijait!==1 && sub(array("i","u","f","x"),$hl,array("+u+","+i+","+a+"),0) && !in_array("N",$itpratyaya) && !in_array("k",$itpratyaya))
+elseif ($atolopa!==1 && ($sarvadhatuka===1 || $ardhadhatuka===1) && arr($text,'/[iufx]['.pc('hl').'][+]/')  && $didhI!==1 && $vijait!==1 && sub(array("i","u","f","x"),$hl,array("+u+","+i+","+a+","+et","+eT"),0) && !in_array("N",$itpratyaya) && !in_array("k",$itpratyaya))
 {
-	echo "1";
     $text=three(array("i","u","f","x"),$hl,array("+u+","+i+","+a+"),array("e","o","ar","al"),$hl,array("+u+","+i+","+a+"),0);
 	$text=three(array("i","u","f","x"),$hl,array("+et","+eT",),array("e","o","ar","al"),$hl,array("+et","+eT",),0);
 	storedata('7.3.86','sa',0);
