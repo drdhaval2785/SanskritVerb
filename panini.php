@@ -2083,11 +2083,6 @@ if ($debug===1) {dibug("1900");}
 if (in_array($so,$tiG) && (arr($text,'/['.pc('hl').'][+]/') ||sub(array("+"),$inbetweenpratyaya,array("+"),0) || (arr($text,'/['.pc('hl').']$/') && $tusma!==1) || sub($hl,array("+"),$vikaraNa,0) || $rudhAdibhyaH===1 || pr2($hl,array("+"),array("va","ma"),blank(count($hl)),array("+"),array("va","ma"),$text)!==$text) ) # $ad === 1 removed because of https://github.com/drdhaval2785/SanskritVerb/issues/318
 {
 	storedata('1.3.3','pa',0);
-	/*
-    if ( $rudhAdibhyaH===1)
-    {
-    $text=two($hl,array("+"),blank(count($hl)),array("+"),0);        
-    }*/
     $text=three(array("+"),$inbetweenpratyaya,array("+"),array("+"),$inbetweeenreplace,array("+"),0);
 	/*
 	if ($lakAra!=="ASIrliN" && preg_match('/['.pc('hl').']$/',$verb_without_anubandha)) # See https://github.com/drdhaval2785/SanskritVerb/issues/371
@@ -2104,8 +2099,9 @@ if (in_array($so,$tiG) && (arr($text,'/['.pc('hl').'][+]/') ||sub(array("+"),$in
         $text = last($hl,blank(count($hl)),0);   
     }
 	$text = one(array("i!r"),array("i!"),0);
-	$text = change('/(^[^+]+)['.pc('hl').']([+]jus)/','$1$2');
+	//$text = change('/(^[^+]+)['.pc('hl').']([+]jus)/','$1$2'); // Check why this was kept here. Gave wrong form of kftI! rudhAdi viDiliN Ji, so commented out
     $text=two($hlplus,array("Ri+"),blank1("+",count($hlplus)),array("Ri+"),0);
+	print_r($text);
     if ($nomidelision!==1 && ends(array($fo),$hl,0)) // Addition of ends function is to prevent application to kF -> kir converted halanta, which are not there in upadeza.
     {
 		$text = two($hl,array("+ran"),blank(count($hl)),array("+ran"),0);
@@ -2714,16 +2710,11 @@ if ( $sic!==0 && $so==="Ji" && sub(array("A"),array("+"),array("Ji"),0) )
 	$text = three(array("A"),array("+"),array("Ji"),array("A"),array("+"),array("jus"),0);
 	storedata('3.4.110','sa',0);
 }
+print_r($text);
 /* rudhAdi gaNa is special in the sense that its vikaraNa is a mit pratyaya. So making a special provision for the same. */
 if ($rudhAdibhyaH===1)
 {
     $text = change('/^(['.pc('al').']*['.pc('ac').'])(['.pc('hl').']+)[+]/','$1na$2+');
-	//mit('/['.pc('hl').'][+]/','na',0);
-/*    echo "<p class = sa >By rudhAdibhyaH znam (".link_sutra("3.1.78").") :</p>\n"; 
-    echo "<p class = pa >By midaco'ntyAtparaH, lazakvataddhite, halantyam and tasya lopaH.</p>\n"; 
-    echo "<p class = sa >रुधादिभ्यः श्नम्‌ (३.१.७८) :</p>\n";
-    echo "<p class = pa >मिदचोऽन्त्यात्परः, लशक्वतद्धिते, हलन्त्यम्‌ तथा तस्य लोपः ।</p>\n";
-    display(0);    */
 	storedata('3.1.78','sa',0);
     $vik=array_merge($vik,array("Snam"));
     $set=2;
@@ -3155,7 +3146,6 @@ elseif (arr($text,'/[A][+]['.pc('ac').']/') && (in_array("N",$itpratyaya)||in_ar
 	storedata('6.4.64','sa',0);
 }
 /* ze mucAdInAm (7.1.59) */
-print_r($text);
 if ( ($verbset==="tudAdi" || ($verbset==="none" && in_array($fo,$tudAdi)) ) && $lakAra!=="" && sub($tudAdi_mucAdi,array("+"),array("a+","e"),0) )
 {
     $mucAdireplace=array("munc","lunp","vind","linp","zinc","Kind","kfnt","pinS");
@@ -11778,7 +11768,7 @@ if ($dvitva===1)
 // Not coded separately, because we did dvitva only for $hrasva, and not for 'ac'. So this is already taken care of.
 if ($debug===1) {dibug("11550");}
 /* jhalAM jaz jhazi (8.4.53) */
-while(arr($text,'/[JBGQDKPCWTcwtkpSzsh]([+]*)[JBGQDjbgqd]/') !== false) // check whether we should remove jaz from jhal?
+while(arr($text,'/[JBGQDKPCWTcwtkpSzsh]([+]*)[JBGQDjbgqd]/')) // check whether we should remove jaz from jhal?
 {
     if(arr($text,'/[JBGQDKPCWTcwtkpSzshjbgqd]([+]*)[JBGQDjbgqd]/'))
     {
