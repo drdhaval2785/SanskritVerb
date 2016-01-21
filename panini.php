@@ -1954,12 +1954,12 @@ if (arr($text,'/\+Ric\+/'))
 		storedata('6.4.48','sa',0);
 	}
 	/* pugantalaghUpadhasya ca (7.3.86) and sArvadhAtukArdhadhAtukayoH (7.3.84) */
-	if (arr($text,'/[iIuUfFx](['.pc('hl').']*)\+i\+/' ))
+	if (arr($text,'/[iufx](['.pc('hl').']*)\+i\+/' ))
 	{
 		$hlam=array();
 		foreach ($hl as $av) {$hlam[] = $av."+i+";}
-		$text=three(array("i","I","u","U","f","F","x"),$hl,array("+i+"),array("e","e","o","o","ar","ar","al"),$hl,array("i+"),0);
-		$text=three(array("i","I","u","U","f","F","x"),$hl,$hlam,array("e","e","o","o","ar","ar","al"),$hl,$hlam,0);
+		$text=three(array("i","u","f","x"),$hl,array("+i+"),array("e","o","ar","al"),$hl,array("i+"),0);
+		$text=three(array("i","u","f","x"),$hl,$hlam,array("e","o","ar","al"),$hl,$hlam,0);
 		storedata('7.3.86','sa',0);
 	}
 	if(arr($text,'/['.pc('hl').']([+]*)i\+/') && !in_array($lakAra,array("ASIrliN")) && $caG!==1)
