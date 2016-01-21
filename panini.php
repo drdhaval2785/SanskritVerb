@@ -11901,6 +11901,13 @@ if( $veda===1 && sub(array("apasparDeTAm","AnarcuH","AnarhuH","cucyuvize","tatyA
 	$text = one(array("apasparDeTAm","AnarcuH","AnarhuH","cucyuvize","tatyAja"),array("apaspfDeTAm","AnfcuH","AnfhuH","cicyuze","tityAja"),0);
 	storedata('6.1.35','sa',0);
 }
+print_r($text);
+/* lopo vyorvali (6.1.66) */
+if ( arr($text,'/[vy][+]*['.pc('vl').']/') && in_array($so,$tiG) ) 
+{
+    $text=change('/([vy])([+]*['.pc('vl').'])/','$2');
+	storedata('6.1.66','sa',0);
+}
 if ($debug===1) {dibug('11700');}
 //$us='';
 /* Displaying the sUtras and sequential changes of $frontend is not set to 0. */
