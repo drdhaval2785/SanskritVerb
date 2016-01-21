@@ -4009,6 +4009,7 @@ if ( arr($text,'/^[iIuU][+]*[aAfFxeoEO]/') && $abhyAsa===1)
     $text=change('/^([iI])([+]*[aAfFxeoEO])/','$1y$2');
     $text=change('/^([uU])([+]*[aAfFxeoEO])/','$1v$2');
 	storedata('6.4.78','sa',0);
+	$abhyAsasyAsavarNe=1;
 }
 /* na mAGyoge (6.4.74) */
 if ( in_array($lakAra,array("luN","laN","lfN",)) && $_GET['cond50']==='1')
@@ -4379,7 +4380,7 @@ if (  $ardhadhatuka===1 && $didhI!==1 && $kGiti!==1 && $bhUsuvo!==1 && arr($text
 	storedata('7.3.84','sa',0);
 }
 /* pugantalaghUpadhasya ca (7.3.86) */
-if ( $didhI!==1 && $kGiti!==1 && $vijait!==1 && $lakAra==="liw" && $ardhadhatuka===1 && arr($text,'/[iufF]['.pc('hl').']\+/') && (sub(array("i","u","f","x"),$hlplus,$tiG1,0) || sub(array("i","u","f","x"),$hlplus,$iDtiG,0) )  && !($verbset==="tudAdi" && $sarvadhatuka===1) )
+if ( $didhI!==1 && $kGiti!==1 && $vijait!==1 && $lakAra==="liw" && $ardhadhatuka===1 && arr($text,'/[iufF]['.pc('hl').']\+/') && (sub(array("i","u","f","x"),$hlplus,$tiG1,0) || sub(array("i","u","f","x"),$hlplus,$iDtiG,0) )  && !($verbset==="tudAdi" && $sarvadhatuka===1) && $abhyAsasyAsavarNe!==1)
 {
 	$text=three(array("i","u","f","x"),$hlplus,$iDtiG,array("e","o","ar","al"),$hlplus,$iDtiG,0);
 	$text=three(array("i","u","f","x"),$hlplus,$tiG1,array("e","o","ar","al"),$hlplus,$tiG1,0);
