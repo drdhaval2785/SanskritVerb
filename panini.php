@@ -1925,7 +1925,7 @@ if (arr($text,'/\+Ric\+/'))
 	}
 	storedata('1.3.3','pa',0);
 	storedata('1.3.7','pa',0);
-	$text=one(array('+Ric+caN+'),array('+i+a+'),0);
+	$text=one(array('+Ric+caN+'),array('i+a+'),0);
 	$text = one(array("+Ric+"),array("+i+"),0);
 	$text = one(array("+caN+"),array("+a+"),0);
 	storedata('1.3.9','sa',0);
@@ -2077,7 +2077,6 @@ if (arr($text,'/[tTdDnsm]$/') && $vibhakti===1)
 } else {$tusma=0; }
 $inbetweenpratyaya=array("ap","yan","Ric","RiN","san","IyaN");
 $inbetweeenreplace=array("a","ya","Ri","Ri","sa","Iya");
-print_r($text);
 /* halantyam (1.3.3) and tasya lopaH (1.3.9) */
 if (in_array($so,$tiG) && arr(array($fo),'/[!]['.pc('hl').']$/') && $nomidelision!==1 && sub(array("!"),$hl,array("+"),0) )
 {
@@ -4380,7 +4379,7 @@ if (  $ardhadhatuka===1 && $didhI!==1 && $kGiti!==1 && $bhUsuvo!==1 && arr($text
 	storedata('7.3.84','sa',0);
 }
 /* pugantalaghUpadhasya ca (7.3.86) */
-if ( $didhI!==1 && $kGiti!==1 && $vijait!==1 && $lakAra==="liw" && $ardhadhatuka===1 && arr($text,'/[iufF]['.pc('hl').']\+/') && (sub(array("i","u","f","x"),$hlplus,$tiG1,0) || sub(array("i","u","f","x"),$hlplus,$iDtiG,0) )  && $verbset!=="tudAdi" )
+if ( $didhI!==1 && $kGiti!==1 && $vijait!==1 && $lakAra==="liw" && $ardhadhatuka===1 && arr($text,'/[iufF]['.pc('hl').']\+/') && (sub(array("i","u","f","x"),$hlplus,$tiG1,0) || sub(array("i","u","f","x"),$hlplus,$iDtiG,0) )  && !($verbset==="tudAdi" && $sarvadhatuka===1) )
 {
 	$text=three(array("i","u","f","x"),$hlplus,$iDtiG,array("e","o","ar","al"),$hlplus,$iDtiG,0);
 	$text=three(array("i","u","f","x"),$hlplus,$tiG1,array("e","o","ar","al"),$hlplus,$tiG1,0);
