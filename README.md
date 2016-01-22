@@ -13,25 +13,31 @@ Use http://www.sanskritworld.in/sanskrittool/SanskritVerb/tiGanta.html for tiGan
 
 2. Install XAMPP. 
 
-3. Locate XAMPP directory. Usually it is c://xampp 
+3. Install [Git](https://git-scm.com/downloads) .
 
-4. go to xampp/htdocs directory. 
+4. Locate XAMPP directory. Usually it is c://xampp 
 
-5. Create a directory named sanskrit. 
+5. Right-click on xampp-control.exe and select 'Run As Administrator'
 
-6. Copy paste the files mentioned in the next section in sanskrit directory. (Step 1-5 are one time job). 
+6. In the right-top corner, click on 'Config'.
 
-7. Go to xampp folder and click on xampp-control. 
+7. Tick Apache, FileZilla, Tomcat, MySQL and Mercury in 'Autostart of modules' section.
 
-8. Click start for Apache, MySQL, Filezilla. (You have to do step 7,8 all time you start your computer. Your computer functions as server for your html and php files.)
+8. Click 'Save'.
 
-#For tiGanta generation - 
+9. Close 'XAMPP Control Panel'.
 
-Install tiGanta.html, tiGanta.php and scripts folder in your system and then input a word. 
+10. go to xampp/htdocs directory. 
 
-Give the feedback if the machine asks for any. 
+11. Copy [install.sh](https://github.com/drdhaval2785/SanskritVerb/blob/master/install.sh) in that directory.
 
-Then machine will give you conjugation of all forms of a particular verb.
+12. Click on install.sh. 
+
+13. This will fetch the latest code and data for local usage.
+
+This is a one time exercise. Once you have installed the code, you should only open your browser (Mozilla / Chrome / IE etc.) and type localhost/Sanskrit/tiGanta.html.
+
+This will give you frontend to interact with the machine.
 
 ##For offline usage - 
 
