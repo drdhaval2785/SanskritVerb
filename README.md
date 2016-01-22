@@ -13,11 +13,11 @@ Use http://www.sanskritworld.in/sanskrittool/SanskritVerb/tiGanta.html for tiGan
 
 2. Install XAMPP. 
 
-3. Install [Git](https://git-scm.com/downloads) .
+3. Install Git from https://git-scm.com/downloads .
 
 4. Locate XAMPP directory. Usually it is c://xampp 
 
-5. Right-click on xampp-control.exe and select 'Run As Administrator'
+5. Right-click on xampp-control.exe and select 'Run As Administrator'. (For steps 5-8, if in doubt, please see [this](http://stackoverflow.com/questions/20960296/how-to-start-apache-and-mysql-automatically-when-windows-8-comes-up))
 
 6. In the right-top corner, click on 'Config'.
 
