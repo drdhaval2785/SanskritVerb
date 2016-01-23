@@ -1743,9 +1743,9 @@ if (in_array($fo,array("kramu!")) && sub(array("kramu!",),array("+"),$shitpratya
     $nomidelision=1; // We will remember this while doing halantyam and prevent halantyam application, because these are not upadeza
 }
 /* zamAmaSTAnAM dIrghaH zyani (7.3.74) */
-if (in_array($fo,array("Samu!","tamu!","damu!","Sramu!","kzamu!","Bramu!","klamu!","madI!","mada!"))  && sub(array("Samu!","tamu!","damu!","Sramu!","kzamu!","Bramu!","klamu!","madI!","mada!"),array("+"),array("Syan"),0) && $lakAra!=="")
+if (in_array($fo,array("Samu!","tamu!","damu!","Sramu!","kzamU!","Bramu!","klamu!","madI!","mada!"))  && sub(array("Samu!","tamu!","damu!","Sramu!","kzamU!","Bramu!","klamu!","madI!","mada!"),array("+"),array("Syan"),0) && $lakAra!=="")
 {
-    $text=two(array("Samu!","tamu!","damu!","Sramu!","kzamu!","Bramu!","klamu!","madI!","mada!"),array("+Syan"),array("SAm","tAm","dAm","SrAm","kzAm","BrAm","klAm","mAd","mAd"),array("+Syan"),0);
+    $text=two(array("Samu!","tamu!","damu!","Sramu!","kzamU!","Bramu!","klamu!","madI!","mada!"),array("+Syan"),array("SAm","tAm","dAm","SrAm","kzAm","BrAm","klAm","mAd","mAd"),array("+Syan"),0);
 	storedata('7.3.74','sa',0);
     $nomidelision=1; // We will remember this while doing halantyam and prevent halantyam application, because these are not upadeza
 }
