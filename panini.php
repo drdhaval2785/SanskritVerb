@@ -3594,6 +3594,9 @@ if ($lakAra==="liw" && (in_array($fo,array("f","fCa!")) || ends(array($fo),array
 	$text = two(array("A+f","A+fcC","A+nf","A+nfcC","F"),array("+"),array("A+ar","A+arcC","A+nar","A+narcC","ar"),array("+"),0);
 	storedata('7.4.11','sa',0);
 }
+print_r($text);
+echo $atolopa, $verbset, $sarvadhatuka, $ardhadhatuka, $kGiti, $didhI, $vijait, $sIyuT, $ksa, $vijait, $caG;
+print_r($itpratyaya);
 /* udoSThyapUrvasya (7.1.102) */
 if ( in_array($fo,array("pF","PF","bF","BF","mF")) && sub(array("F"),array("+"),$apit_sArvadhAtuka_pratyayas,0) && in_array($so,$tiG) )
 {
@@ -3606,9 +3609,9 @@ elseif (arr($text,'/F\+/') && in_array($so,$tiG))
     $text=two(array("F"),array("+"),array("ir"),array("+"),0);
 	storedata('7.1.100','sa',0);
 }
-elseif ($vras===1) // escaping this - because vrazca... is tripAdI function.
+/*elseif ($vras===1) // escaping this - because vrazca... is tripAdI function.
 {
-}
+}*/
 elseif(arr($text,'/gup\+Ay/'))
 {
 	$text = one(array("gup+Ay",),array("gopAy",),0); // for accomodating Aya pratyaya
@@ -3627,7 +3630,7 @@ elseif ($atolopa!==1 && !($verbset==="tudAdi" && $sarvadhatuka===1) && ($sarvadh
 	storedata('7.3.86','sa',0);
 }
 /* pugantalaghUpadhasya ca (7.3.86) */
-elseif ($atolopa!==1 && !($verbset==="tudAdi" && $sarvadhatuka===1) && $ardhadhatuka===1 && $kGiti!==1  && $didhI!==1 && $vijait!==1 && $sIyuT!==1 && $ksa!==1 && $vijait!==1 && !ends($itpratyaya,array("k","N"),2) && arr($text,'/[iufx]([+]*)['.pc('hl').']\+/') && pr2(array("i","u","f","x"),$hlplus,$ArdhadhAtuka_tiG_pratyayas,array("e","o","ar","al"),$hlplus,$ArdhadhAtuka_tiG_pratyayas,$text)!==$text  && $caG!==1)
+elseif ($atolopa!==1)// && $ardhadhatuka===1 && $kGiti!==1  && $didhI!==1 && $vijait!==1 && $sIyuT!==1 && $ksa!==1 && $vijait!==1&& !in_array("k",$itpratyaya) && !in_array("N",$itpratyaya) && arr($text,'/[iufx]([+]*)['.pc('hl').']\+/') && pr2(array("i","u","f","x"),$hlplus,$ArdhadhAtuka_tiG_pratyayas,array("e","o","ar","al"),$hlplus,$ArdhadhAtuka_tiG_pratyayas,$text)!==$text  && $caG!==1)
 {
     $text=pr2(array("i","u","f","x"),$hlplus,$ArdhadhAtuka_tiG_pratyayas,array("e","o","ar","al"),$hlplus,$ArdhadhAtuka_tiG_pratyayas,$text);
 	$text = three(array("GarR","tarR","arR","kzeR",),array("+"),array("sta","sTAs"),array("GfR","tfR","fR","kziR"),array("+"),array("sta","sTAs"),1); // see sahajabodha part 2 page 250.
@@ -3682,6 +3685,7 @@ elseif ($didhI!==1 && $bhUsuvo!==1  && $kGiti!==1 && arr($text,'/nu/') && pr2(ar
     $text=pr2(array("nu+"),$pit_sArvadhAtuka_pratyayas,blank(0),array("no+"),$pit_sArvadhAtuka_pratyayas,blank(0),$text);    
 	storedata('7.3.84','sa',0);
 }
+print_r($text);
 if ($debug===1) {dibug("3400");}
 foreach ($tiG1 as $value) {$iDtiG = "i".$value;} // defining iDtiG i.e. iDAgama+tiG1.
 /* sidhyaterapAralaukike (6.1.49) */
