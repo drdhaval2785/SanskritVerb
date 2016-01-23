@@ -4182,13 +4182,13 @@ if (in_array($fo,array("wuo!Svi")) && sub(array("Svi"),array("+"),prat('vl'),0) 
 /* removing + from before Ni pratyayas */
 if(arr($text,'/['.pc('hl').']\+i\+/')) {$text = one(array("+i+"),array("i+"),0);}
 /* NeraniTi (6.4.51) */
-if (arr($text,'/i\+a/') && in_array($so,$tiG) && $lakAra==="luN" && $caG===1 && (!in_array("iw",$Agama)||ends(array($sanAdi),array("Ric","RiN"),2)||in_array($fo,$curAdi_adanta) && !in_array("iw",$Agama)))
+if (arr($text,'/i\+a/') && in_array($so,$tiG) && $lakAra==="luN" && $caG===1 && (!in_array("iw",$Agama)||ends(array($sanAdi),array("Ric","RiN"),2)||in_array($fo,$curAdi_adanta) && !in_array("iw",$Agama)) && ($verbset==="curAdi" || in_array($sanAdi,array("Ric","RiN"))) )
 {
 	$text = change('/(i)([+]a)/','$2');
 	storedata('6.4.51','sa',0);
 }
 /* NeraniTi (6.4.51) */
-elseif (arr($text,'/([+]*)i\+/') && in_array($so,$tiG) && $ardhadhatuka===1&& (!in_array("iw",$Agama)||ends(array($sanAdi),array("Ric","RiN"),2)||in_array($fo,$curAdi_adanta))  && !in_array("iw",$Agama))#&& !in_array($so,$taG))
+elseif (arr($text,'/([+]*)i\+/') && in_array($so,$tiG) && $ardhadhatuka===1&& (!in_array("iw",$Agama)||ends(array($sanAdi),array("Ric","RiN"),2)||in_array($fo,$curAdi_adanta))  && !in_array("iw",$Agama) && ($verbset==="curAdi" || in_array($sanAdi,array("Ric","RiN"))) )
 {
 	$text = three(array("i+yAs","+yAs"),array("+"),array(""),array("+yAs","+yAs"),array("+"),array(""),0);
 	$text = change('/^([a-zA-Z]+)([+]*)i\+([^+]*)$/','$1$2+$3');
