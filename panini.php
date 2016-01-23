@@ -4042,7 +4042,6 @@ elseif ( in_array($lakAra,array("luN","laN","lfN",)) )
     $text=Adyanta($text,"a",1);
 	storedata('6.4.71','sa',0);
 }
-print_r($text);
 /* znasorallopaH (6.4.111) */
 // znam pending.
 if ( (in_array($fo,array("asa!")) && $verbset==="adAdi" ) && (in_array("N",$it)||in_array("k",$it)) && pr2(array("as"),array("+",),$apit_sArvadhAtuka_pratyayas,array("s"),array("+",),$apit_sArvadhAtuka_pratyayas,$text)!==$text )
@@ -5074,7 +5073,6 @@ if (arr($text,'/\+nA\+/') && sub(array("+nA"),array("+"),$apit_sArvadhAtuka_prat
     $text=three(array("+nA"),array("+"),$apit_sArvadhAtuka_pratyayas,array("n"),array("+"),$apit_sArvadhAtuka_pratyayas,0);
 	storedata('6.4.112','sa',0);
 }
-print_r($text);
 /* janasanakhanAM saJjhaloH (6.4.42) */
 // sannanta pending.
 //if ( sub(array("jan","san","Kan"),array("+"),prat("Jl"),0) && pr2(array("jan","san","Kan"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("jaA","saA","KaA"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,$text)!==$text && (in_array("N",$it)||in_array("k",$it)) && in_array($so,$tiG) ) // kGiti is temporarily deactivated.
