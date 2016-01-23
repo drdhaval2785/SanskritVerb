@@ -1908,13 +1908,6 @@ if (arr($text,'/\+Ric\+/'))
 		$text = two($ac,array('!'),blank(count($ac)),array(''),0);
 		storedata('1.3.9','sa',0);			
 	}
-	/* ata upadhAyAH (7.2.116) */
-	// more on enumeration kind. Not used regexes deliberately.
-	if ( arr($text,'/[a]['.pc('hl').'][+]Ric[+]/') )
-	{
-		$text = three(array("a"),$hl,array("+Ric+"),array("A"),$hl,array("+Ric+"),0);
-		storedata('7.2.116','sa',0);
-	}
 	if(arr($text,'/\+Ric\+S/'))
 	{
 		storedata('1.3.8','pa',0);
@@ -3074,16 +3067,6 @@ if ($caG===1 && arr($text,'/^['.pc('hl').']/'))
 	abhyAsa_halAdi();
 	$abhyAsa=1;
 }
-/* dIrgho laghoH (7.4.94) */
-if (arr($text,'/^[^+]*[aiufx][+]/') && $lakAra==="luN" && $caG===1)
-{
-	$text = change('/^([^+]*)[a][+]/','$1A');
-	$text = change('/^([^+]*)[i][+]/','$1I');
-	$text = change('/^([^+]*)[u][+]/','$1U');
-	$text = change('/^([^+]*)[f][+]/','$1F');
-	$text = change('/^([^+]*)[x][+]/','$1F');
-	storedata('7.4.94','sa',0);
-}
 
 /* lopo vyorvali (6.1.66) */
 if ( arr($text,'/a[+]iy[+]['.pc('vl').']/') && in_array($so,$tiG) ) 
@@ -3727,9 +3710,19 @@ if ($caG===1 && arr($text,'/^['.pc('ac').']/') )
 	caG_ajAdi();
 }
 // trial san function
-if ($caG===1 && $sanAdi==="Ric")
+if ($caG===1 && ($sanAdi==="Ric" || $verbset==="curAdi"))
 {
-	//san();
+	san();
+}
+/* dIrgho laghoH (7.4.94) */
+if (arr($text,'/^[^+]*[aiufx][+]/') && $lakAra==="luN" && $caG===1)
+{
+	$text = change('/^([^+]*)[a][+]/','$1A+');
+	$text = change('/^([^+]*)[i][+]/','$1I+');
+	$text = change('/^([^+]*)[u][+]/','$1U+');
+	$text = change('/^([^+]*)[f][+]/','$1F+');
+	$text = change('/^([^+]*)[x][+]/','$1F+');
+	storedata('7.4.94','sa',0);
 }
 /* aniditAM hala upadhAyAH kGiti (6.4.24) */ 
 if ( in_array($fo,$aniditverbs) && (in_array("N",$itpratyaya) || in_array("k",$itpratyaya)) && !in_array($sanAdi,array("Ric"))  && $so!=="mahiN" && arr($text,'/[NYRnmM]['.pc('hl').'][+]/')  && !in_array("i",$it) && $lakAra!=="viDiliN") # For application after NeraniTi
@@ -4201,6 +4194,13 @@ elseif (arr($text,'/([+]*)i\+/') && in_array($so,$tiG) && $ardhadhatuka===1&& (!
 	$text = change('/^([a-zA-Z]+)([+]*)i\+([^+]*)$/','$1$2+$3');
 	$text = change('/i[+](['.pc('al').'MH]+)$/','+$1');
 	storedata('6.4.51','sa',0);
+}
+/* ata upadhAyAH (7.2.116) */
+// more on enumeration kind. Not used regexes deliberately.
+if ( arr($text,'/[a]['.pc('hl').'][+]i[+]/') )
+{
+	$text = three(array("a"),$hl,array("+i+"),array("A"),$hl,array("+i+"),0);
+	storedata('7.2.116','sa',0);
 }
 /* guNo'rtisaMyogAdyoH (7.4.29) */
 if ( (in_array($sanAdi,array("yak")) || $lakAra==="ASIrliN") && (arr($text,'/['.pc('hl').']['.pc('hl').']f[+]y/') || $fo==="f"))
@@ -11956,7 +11956,7 @@ $it = array();
 $itprakriti = array();
 $itpratyaya = array();
 $Agama=array();
-$TAp=0; $DAp=0; $cAp=0; $GIp=0; $GIn=0; $GIS=0; $kGiti=0; $abhyasta=0; $ajAdyataSTAp=0; $tusma=0; $upasarga_joined=0; $sicivRddhi=0;
+$TAp=0; $DAp=0; $cAp=0; $GIp=0; $GIn=0; $GIS=0; $kGiti=0; $abhyasta=0; $ajAdyataSTAp=0; $tusma=0; $upasarga_joined=0; $sicivRddhi=0; $atolopa=0;
 $temp = scrape1($first,0,2,1); 
 $verb_without_anubandha=$temp[0];
 $storedata=array();
