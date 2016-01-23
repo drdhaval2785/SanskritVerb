@@ -2682,7 +2682,7 @@ elseif (arr(array($verb_without_anubandha),'/[aAiIuUFeEoO]$/') && $id_dhAtu==="a
 /* kRsRbhRvRstudrusruzruvo liTi (7.2.13) */
 elseif (!in_array($fo,array("qukfY","sf","quBfY","vfN","vfY","zwuY","dru","sru","Sru")) && $lakAra==="liw" && in_array($so,array("sip","vas","mas","TAs","Dvam","vahi","mahiN")))
 {
-	if ($id_dhAtu!=="vew") { $id_dhAtu="sew"; }
+	$id_dhAtu="sew";
 	storedata('7.2.13-krAdiniyamaH','sa',0);
 }
 /* upadeze'tvataH (7.2.62) and Rto bhAradvAjasya (7.2.63) */
@@ -3594,9 +3594,6 @@ if ($lakAra==="liw" && (in_array($fo,array("f","fCa!")) || ends(array($fo),array
 	$text = two(array("A+f","A+fcC","A+nf","A+nfcC","F"),array("+"),array("A+ar","A+arcC","A+nar","A+narcC","ar"),array("+"),0);
 	storedata('7.4.11','sa',0);
 }
-print_r($text);
-echo $atolopa, $verbset, $sarvadhatuka, $ardhadhatuka, $kGiti, $didhI, $vijait, $sIyuT, $ksa, $vijait, $caG;
-print_r($itpratyaya);
 /* udoSThyapUrvasya (7.1.102) */
 if ( in_array($fo,array("pF","PF","bF","BF","mF")) && sub(array("F"),array("+"),$apit_sArvadhAtuka_pratyayas,0) && in_array($so,$tiG) )
 {
@@ -3685,7 +3682,6 @@ elseif ($didhI!==1 && $bhUsuvo!==1  && $kGiti!==1 && arr($text,'/nu/') && pr2(ar
     $text=pr2(array("nu+"),$pit_sArvadhAtuka_pratyayas,blank(0),array("no+"),$pit_sArvadhAtuka_pratyayas,blank(0),$text);    
 	storedata('7.3.84','sa',0);
 }
-print_r($text);
 if ($debug===1) {dibug("3400");}
 foreach ($tiG1 as $value) {$iDtiG = "i".$value;} // defining iDtiG i.e. iDAgama+tiG1.
 /* sidhyaterapAralaukike (6.1.49) */
