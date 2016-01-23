@@ -2089,7 +2089,7 @@ if (in_array($so,$tiG) && (arr($text,'/['.pc('hl').'][+]/') ||sub(array("+"),$in
 	{
 		$text=three($hl,array("+"),array("jus",),blank(count($hl)),array("+"),array("jus",),0); // patch for jus, because it prevents application of halantyam artificially because of na vibhaktau tusmAH (s at end).
 	}*/
-	if ( ($ad===1 || in_array($lakAra,array("liw","luw","lfw","ASIrliN","luN","lfN","ArDaDAtukalew"))) && arr(array($fo),'/['.pc('hl').']$/'))
+	if ( ($ad===1 || in_array($lakAra,array("liw","luw","lfw","ASIrliN","luN","lfN","ArDaDAtukalew"))) && arr(array($fo),'/['.pc('hl').']$/') && !arr(array($fo),'/i[!]r/'))
     {
         $text=three($hl,array("+"),$tiG1,blank(count($hl)),array("+"),$tiG1,0);
     }
