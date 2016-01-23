@@ -1640,7 +1640,7 @@ if ( !in_array($fo,$allverbs) && sub(array("+Ric+Sap+","+RiN+Sap+"),$tiG,blank(0
     }
 }
 /* pAghrAdhmAsthAmnAdANdRzyartizadasadAM pibajighradhamatiSThamanayacCapazyarcCadhaushIyasIdAH (7.3.78) */
-if (in_array($so,$tiG) && $lakAra!=="" && in_array($fo,array("pA","GrA","DmA","zWA","mnA","dAR","dfSi!r","f","sf","Sadx!","zadx!","zWA")) && sub(array("pA","GrA","DmA","zWA","mnA","dAR","dfSi!r","f","sf","Sadx!","zadx!"),array("+"),$shitpratyaya,0) )
+if (in_array($so,$tiG) && $lakAra!=="" && in_array($fo,array("pA","GrA","DmA","zWA","mnA","dAR","dfSi!r","f","sf","Sadx!","zadx!","zWA")) && sub(array("pA","GrA","DmA","zWA","mnA","dAR","dfSi!r","f","sf","Sadx!","zadx!"),array("+"),$shitpratyaya,0) && !($fo==="f" && $verbset==="svAdi") )
 {
     $text=three(array("pA","GrA","DmA","zWA","mnA","dAR","dfSi!r","sf","f","Sadx!","zadx!"),array("+"),$shitpratyaya,array("piba","jiGra","Dama","tizWa","mana","yacCa","paSya","DO","fcCa","SIya","sIda"),array("+"),$shitpratyaya,0);
 	storedata('7.3.78','sa',0);
@@ -1954,7 +1954,7 @@ if (arr($text,'/\+Ric\+/'))
 		storedata('6.4.48','sa',0);
 	}
 	/* pugantalaghUpadhasya ca (7.3.86) and sArvadhAtukArdhadhAtukayoH (7.3.84) */
-	if (arr($text,'/[iufx](['.pc('hl').']*)\+i\+/' ))
+	if (arr($text,'/[iufx](['.pc('hl').']{1})\+i\+/' ))
 	{
 		$hlam=array();
 		foreach ($hl as $av) {$hlam[] = $av."+i+";}

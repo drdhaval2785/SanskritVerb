@@ -2676,7 +2676,7 @@ function liT_ajAdi()
 			storedata('7.4.70','sa',0);
 		}
 		/* tasmAnnuDdvihalaH (7.4.71) */
-		if (preg_match('/['.pc('hl').']['.pc('hl').']/',$parts[1]) || preg_match('‌‌/^[f]['.pc('hl').']/',$parts[1])) 
+		if (preg_match('/f['.pc('hl').']/',$parts[1]) || preg_match('/['.pc('hl').']['.pc('hl').']/',$parts[1]) )
 		{
 			foreach ($text as $value)
 			{
@@ -3259,7 +3259,7 @@ function gui($text,$sutra_number,$style,$note,$us)
 		{	
 			echo "<p class = ".$style." >By ".toiast($sutra_dev[$i])." :</p>\n";
 			echo "<p class = ".$style." >".convert($sutra_dev[$i])." :</p>\n";
-			echo "<hr/>";
+			display2($text,$note,$us);
 		}				
 	}
 	if ($debug===1) {dibug('GUI END');}
