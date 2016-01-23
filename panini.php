@@ -3897,9 +3897,9 @@ if (arr($text,'/A\+/') && $abhyasta===1 && sub(array("A"),array("+"),$apit_sArva
 	storedata('6.4.112','sa',0);
 }
 /* gamahanajanakhanaghasAM lopaH kGiti (6.4.98) */
-if (in_array($fo,array("gamx!","hana!","jana!","Gasa!","Kanu!","janI!")) && ends($itpratyaya,array("k","N"),2) && sub(array("gam","Gan","jan","Gas","Kan"),array("+"),blank(0),0) && in_array($so,$tiG) )
+if (in_array($fo,array("gamx!","hana!","jana!","Gasa!","Kanu!","janI!")) && ends($itpratyaya,array("k","N"),2) && sub(array("gam","Gan","jan","Gas","Kan"),array("+"),$ac,0) && in_array($so,$tiG) )
 {
-    $text=two(array("gam","Gan","jan","Gas","Kan"),array("+"),array("gm","Gn","jn","Gs","Kn"),array("+"),0);
+    $text=three(array("gam","Gan","jan","Gas","Kan"),array("+"),$ac,array("gm","Gn","jn","Gs","Kn"),array("+"),$ac,0);
 	storedata('6.4.98','sa',0);
 }
 /* aDgArgyagAlavayoH (7.3.99) */
