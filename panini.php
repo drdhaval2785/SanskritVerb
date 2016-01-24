@@ -3893,9 +3893,16 @@ if ( arr($text,'/da[dD]A/') && sub(array("dadA","daDA"),array("+"),$apit_sArvadh
 	storedata('6.4.112','sa',0);
 }
 /* znA'bhyastayorAtaH (6.4.112) */
-if (arr($text,'/A\+/') && $abhyasta===1 && sub(array("A"),array("+"),$apit_sArvadhAtuka_pratyayas,0) && (in_array("N",$it)||in_array("k",$it)) && !arr($text,'/[+]yA[+][mv]a/'))
+if (arr($text,'/A[+]/') && $abhyasta===1 && pr2(array("A"),array("+"),$apit_sArvadhAtuka_pratyayas,array(""),array("+"),$apit_sArvadhAtuka_pratyayas,$text)!==$text && !arr($text,'/[+]yA[+][mv]a/'))
 {
     $text=pr2(array("A"),array("+"),$apit_sArvadhAtuka_pratyayas,array(""),array("+"),$apit_sArvadhAtuka_pratyayas,$text);
+	storedata('6.4.112','sa',0);
+}
+/* znA'bhyastayorAtaH (6.4.112) */
+// Patch for liT (Because asaMyogAlliT kit)
+if (arr($text,'/A[+]/') && $abhyasta===1 && pr2(array("A"),array("+"),array("atus","aTus","a"),array(""),array("+"),array("atus","aTus","a"),$text)!==$text)
+{
+    $text=pr2(array("A"),array("+"),array("atus","aTus","a"),array(""),array("+"),array("atus","aTus","a"),$text);
 	storedata('6.4.112','sa',0);
 }
 /* gamahanajanakhanaghasAM lopaH kGiti (6.4.98) */
