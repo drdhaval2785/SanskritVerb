@@ -3081,9 +3081,9 @@ function zlu()
 		storedata('7.4.59','sa',0);
 	}
 	
-	if (sub(array("kiki","kikit","gagA","GiGf","hahA","huhu","hihf","hihrI"),array("+"),$tiG,0))
+	if (sub(array("kiki","kikit","gagA","GiGf","hahA","huhu","hihf","hihrI","gigA"),array("+"),$tiG,0))
 	{
-		$text=three(array("kiki","kikit","gagA","GiGf","hahA","huhu","hihf","hihrI"),array("+"),$tiG,array("ciki","cikit","jagA","JiGf","JahA","Juhu","Jihf","JihrI"),array("+"),$tiG,0);
+		$text=three(array("kiki","kikit","gagA","GiGf","hahA","huhu","hihf","hihrI","gigA"),array("+"),$tiG,array("ciki","cikit","jagA","JiGf","JahA","Juhu","Jihf","JihrI","jigA"),array("+"),$tiG,0);
 		storedata('7.4.62','sa',0);
 	}
 	if (sub(array("JiGf","JahA","Juhu","Jihf","JihrI"),array("+"),$tiG,0))
