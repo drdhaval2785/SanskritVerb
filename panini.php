@@ -3412,7 +3412,7 @@ if ( in_array($fo,array("iN")) && sub(array("gAN"),array("+"),blank(0),0) && in_
 	storedata('1.2.1','pa',0);
 }
 /* gAGkuTAdibhyo'JNinGit (1.2.1) */ 
-if ( ((in_array($fo,$tudAdi_kuTAdi) && ($verbset==="tudAdi" || $verbset==="none" )) || in_array($fo,array("gAN")) ) && in_array($lakAra,$ArdhadhAtuka_lakAra) && $Nit===0 && $Jit===0 && !in_array("R",$it) && !in_array("Y",$it))
+if ( ((in_array($fo,$tudAdi_kuTAdi) && ($verbset==="tudAdi" || $verbset==="none" )) ) && in_array($lakAra,$ArdhadhAtuka_lakAra) && $Nit===0 && $Jit===0 && !in_array("R",$it) && !in_array("Y",$it))
 {
 	$itpratyaya=array_merge($itpratyaya,array("N"));
 	$it=array_merge($it,array("N"));
@@ -3931,9 +3931,9 @@ if (arr($text,'/A[+]/') && $abhyasta===1 && pr2(array("A"),array("+"),$apit_sArv
 }
 /* znA'bhyastayorAtaH (6.4.112) */
 // Patch for liT (Because asaMyogAlliT kit)
-if (arr($text,'/A[+]/') && $abhyasta===1 && pr2(array("A"),array("+"),array("atus","aTus","a"),array(""),array("+"),array("atus","aTus","a"),$text)!==$text)
+if (arr($text,'/A[+]/') && $abhyasta===1 && pr2(array("A"),array("+"),array("atus","aTus","a","ire"),array(""),array("+"),array("atus","aTus","a","ire"),$text)!==$text)
 {
-    $text=pr2(array("A"),array("+"),array("atus","aTus","a"),array(""),array("+"),array("atus","aTus","a"),$text);
+    $text=pr2(array("A"),array("+"),array("atus","aTus","a","ire"),array(""),array("+"),array("atus","aTus","a","ire"),$text);
 	storedata('6.4.112','sa',0);
 }
 /* gamahanajanakhanaghasAM lopaH kGiti (6.4.98) */
@@ -4128,7 +4128,7 @@ if ( in_array($fo,array("do","deN","qudAY","dAR","Dew","quDAY","zWA")) && sub(ar
 	storedata('1.2.17','sa',0);
 }
 /* ghumAsthAgApAjahAtisAM hali (6.4.66) */
-if ( in_array($fo,array("do","deN","qudAY","dAR","Dew","quDAY","mA","zWA","iN","pA","hA","sA","gAN")) && ends($it,array("N","k"),2) && sub(array("A+"),$ArdhadhAtuka_pratyayas,blank(0),0) && $lakAra!=="" )
+if ( in_array($fo,array("do","deN","qudAY","dAR","Dew","quDAY","mA","zWA","iN","pA","hA","sA","gAN")) && ends($it,array("N","k"),2) && arr($text,'/a[+]['.pc('ac').']/') && sub(array("A+"),$ArdhadhAtuka_pratyayas,blank(0),0) && $lakAra!=="" )
 {
     $text=two(array("A+"),$ArdhadhAtuka_pratyayas,array("I+"),$ArdhadhAtuka_pratyayas,0);
 	storedata('6.4.66','sa',0);
