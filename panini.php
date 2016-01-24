@@ -1812,6 +1812,12 @@ if (in_array($so,array("Ji")) && ($lakAra==="ASIrliN"||$lakAra==="viDiliN") )
 	storedata('3.4.108','sa',0);
     $jherjus=1;
 }
+/* laGaH zAkaTAyanasyaiva (3.4.111) */
+if ( in_array($so,array("Ji")) && $lakAra==="laN" && arr($text,'/A\+Ji/') )
+{
+    $text=one(array("A+Ji"),array("A+jus"),1);
+	storedata('3.4.111','sa',0);
+}
 /* jhasya ran (3.4.105) */
 if (in_array($so,array("Ja")) && in_array($lakAra,array("viDiliN","ASIrliN")) && pr2(array("+"),array("Ja"),blank(0),array("+"),array("ran"),blank(0),$text)!==$text)
 {
@@ -5002,12 +5008,6 @@ if (arr($text,'/\+u\+hi/') && sub($ac,$hl,array("+u+hi"),0) && in_array($so,$tiG
 {
     $text=three($ac,$hl,array("+u+hi"),$ac,$hl,array("+u"),0);
 	storedata('6.1.106','sa',0);
-}
-/* laGaH zAkaTAyanasyaiva (3.4.111) */
-if ( in_array($so,array("Ji")) && $lakAra==="laN" && arr($text,'/A\+an/') )
-{
-    $text=one(array("A+an"),array("A+us"),1);
-	storedata('3.4.111','sa',0);
 }
 /* lopazcAsyAnyatarasyAM mvoH (6.4.107) */
 // u pratyaya pending.
