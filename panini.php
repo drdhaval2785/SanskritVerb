@@ -2771,6 +2771,7 @@ if ($lakAra==="liw" && arr($text,'/^['.pc('hl').']/'))
 	liT_halAdi();
 	abhyAsa_halAdi();
 	$abhyAsa=1;
+	$abhyasta=1;
 }
 /* aniditAM hala upadhAyAH kGiti (6.4.24) */ 
 if ( in_array($fo,$aniditverbs) && (in_array("N",$itpratyaya) || in_array("k",$itpratyaya)) && !in_array($sanAdi,array("Ric"))  && $so!=="mahiN" && arr($text,'/[NYRnmM]['.pc('hl').'][+]/')  && !in_array("i",$it) && $lakAra!=="viDiliN")
@@ -2793,6 +2794,7 @@ elseif ($lakAra==="liw" && arr($text,'/^['.pc('ac').']/'))
 {
 	liT_ajAdi();
 	$abhyAsa=1;
+	$abhyasta=1;
 }
 /* liTi vayo yaH (6.1.38) and vazcAsyAnyatarasyAM kiti (6.1.39) */
 if (in_array($fo,array("veY")) && $lakAra==="liw" && in_array("k",$itpratyaya) && sub(array("vay"),array("+"),blank(0),0))
@@ -11467,21 +11469,26 @@ $text = one(array("+"),array(""),0);
 }
 
 
+$ras = '/([rzfF])([aAiIuUfFxXeoEOhyvrkKgGNpPbBmM+]*)([n])/';
+$rasend = '/([rzfF])([aAiIuUfFxXeoEOhyvrkKgGNpPbBmM+]*)([n])$/';
+$rasgrep= '/([rzfF][aAiIuUfFxXeoEOhyvrkKgGNpPbBmM+]*[n])/';
+$ras1 = '$1$2R'; 
 /* AcAryAdaNatvaM ca (vA 2477) */
 if (arr($text,'/AcAryAnI/'))
 {
 	storedata('4.1.49-6','sa',0);
     $AcArya=1;
-} else {$AcArya=0; }
+}
+/* kSubhnAdiSu ca (8.4.39) */
+elseif (arr($text,'/kzuBn/') && $fo==="kzuBa!" && $verbset==="kryAdi")
+{
+	storedata('8.4.39','pa',0);
+}
 /* aTkupvAGnumvyavAye'pi (8.4.2) and na padAntasya (8.4.37) */
 /* RvarNAnnasya NatvaM vAcyam (vA 4969) */
 /* na padAntasya 8.4.37) */
 // The issue is identifying samAnapada. Can't be coded properly as of now.
-$ras = '/([rzfF])([aAiIuUfFxXeoEOhyvrkKgGNpPbBmM+]*)([n])/';
-$rasend = '/([rzfF])([aAiIuUfFxXeoEOhyvrkKgGNpPbBmM+]*)([n])$/';
-$rasgrep= '/([rzfF][aAiIuUfFxXeoEOhyvrkKgGNpPbBmM+]*[n])/';
-$ras1 = '$1$2R'; 
-if (arr($text,$rasend) && $hohante===0 && $AcArya===0 )
+elseif (arr($text,$rasend) && $hohante===0 && $AcArya===0 )
 {
 storedata('8.4.37','pa',0);
 }
