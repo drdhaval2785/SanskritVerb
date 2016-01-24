@@ -1847,6 +1847,11 @@ if ( in_array($so,array("Ja")) && $set===2 && pr2(array("+"),array("Ja"),blank(0
     $text=pr2(array("+"),array("Ja"),blank(0),array("+"),array("ata"),blank(0),$text);
 	storedata('7.1.5','sa',0);
 }
+/* AtmanepadeSvanataH (7.1.5) */
+elseif ( in_array($so,array("Ja")) && preg_match('/[A]$/',$verb_without_anubandha) && ends(array("Sap","Sa"),$vik,2) && pr2(array("+"),array("Ja"),blank(0),array("+"),array("ata"),blank(0),$text)!==$text)
+{
+	echo "no jhontaH";
+}
 /* jho'ntaH (7.1.3) */
 elseif (in_array($so,array("Ja")) && $lakAra!=="liw") // because liTastajhayorezirec.
 {
@@ -2399,6 +2404,20 @@ if ( $lakAra==="low" && pr2(array("+"),array("si"),blank(0),array("+"),array("hi
     $text=pr2(array("+"),array("si"),blank(0),array("+"),array("hi"),blank(0),$text);
 	storedata('3.4.87','sa',0);
 }
+/* AtmanepadeSvanataH (7.1.5) */
+if ( in_array($so,array("Ja")) && preg_match('/[A]$/',$verb_without_anubandha) && ends(array("Sap","Sa"),$vik,2) && pr2(array("+"),array("Ja"),blank(0),array("+"),array("ata"),blank(0),$text)!==$text)
+{
+    $text=pr2(array("+"),array("Ja"),blank(0),array("+"),array("ata"),blank(0),$text);
+	storedata('7.1.5','sa',0);
+}
+/* Patch to prevent Ato GitaH (7.2.81) in gAN etc*/
+// See https://github.com/drdhaval2785/SanskritVerb/issues/421
+if ( arr($text,'/A[+]a[+][Aai]/') && in_array($so,$tiG) )
+{
+	$text = one(array("A+a+A","A+a+a","A+a+i"),array("A+A","A+a","A+i"),0);
+	storedata('6.1.9','sa',0);
+	$set=2;
+}
 if ($debug===1) {dibug("2200");}
 /* thAsasse (3.4.80) */
 if ( $pada === "pratyaya" && in_array($so,array("TAs")) && in_array($lakAra,array("law","liw","luw","lfw","sArvaDAtukalew","ArDaDAtukalew","low")) && sub(array("+"),array("TAs","saTAs","sATAs"),blank(0),0) )
@@ -2575,6 +2594,12 @@ if ( $ksa===1 && $luGset===7 && in_array($so,$taG)  && in_array($fo,array("duha!
 {
     $text = three(array("duh","dih","lih","guh",),array("+sa+"),array("t","T","d","D","n","v",),array("duh","dih","lih","guh",),array("+"),array("t","T","d","D","n","v",),1);
 	storedata('7.3.73','sa',0);
+}
+/* AtmanepadeSvanataH (7.1.5) */
+if ( in_array($so,array("Ja")) && $set===2 && pr2(array("+"),array("Ja"),blank(0),array("+"),array("ata"),blank(0),$text)!==$text)
+{
+    $text=pr2(array("+"),array("Ja"),blank(0),array("+"),array("ata"),blank(0),$text);
+	storedata('7.1.5','sa',0);
 }
 /* Ato GitaH (7.2.81) */
 if ( arr($text,'/[a][+][A]/') && in_array($so,$tiG) ) // bad
@@ -10408,7 +10433,7 @@ storedata('6.1.98','sa',0);
 /* vRddhireci (6.1.88) */
 $aa = array("a","A"); // a and A
 $vrrdhi = array("E","O","E","O","E","O","E","O"); // vRddhi of 'ec'.
-if (arr($text,'/[aA][+]*[EO]/') )
+if (arr($text,'/[aA][+]*[EOeo]/') )
 {
 $text = one(array("a+e","a+E","a+o","a+O","A+e","A+E","A+o","A+O"),array("E+","E+","O+","O+","E+","E+","O+","O+"),0);
 $text = two($aa,prat('ec'),blank(2),$vrrdhi,0);
