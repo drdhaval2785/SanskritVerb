@@ -1010,6 +1010,16 @@ if ( sub(array("gupU!","viCa!","pana!"),array("+"),blank(0),0) || ($fo==="DUpa!"
     $text=three(array("gupU!","DUpa!","viCa!","pana!","paRa!"),array("+"),$tiG,array("gupU!","DUpa!","viCa!","pana!","paRa!"),array("+Aya+"),$tiG,0);
 	storedata('3.1.28','sa',0);
     $sanAdi="Aya";
+	storedata('1.3.2','pa',0);
+	$text = change('/['.pc('ac').'][!][+]Aya/','+Aya');
+	$text = change('/fta[!][+]IyaN/','ft+IyaN');
+	$text = change('/kamu[!][+]RiN/','kam+RiN');
+	storedata('1.3.9','sa',0);
+	if (arr($text,'/gup[+]Aya/'))
+	{
+		$text = change('/gup[+]Aya/','gopAya');
+		storedata('7.3.86','sa',0);
+	}
 }
 /* RterIyaG (3.1.29) */
 if ( in_array($fo,array("fta!")) && $pada==="pratyaya" && $lakAra!=="")
@@ -1018,6 +1028,9 @@ if ( in_array($fo,array("fta!")) && $pada==="pratyaya" && $lakAra!=="")
 	storedata('3.1.29','sa',0);
     $sanAdi="IyaN";
     $verbpada="A";
+	storedata('1.3.2','pa',0);
+	$text = change('/fta[!][+]IyaN/','ft+IyaN');
+	storedata('1.3.9','sa',0);
 }
 /* kamerNiG (3.1.30) */
 if ( in_array($fo,array("kamu!")) && $pada==="pratyaya" && $lakAra!=="")
@@ -1026,14 +1039,18 @@ if ( in_array($fo,array("kamu!")) && $pada==="pratyaya" && $lakAra!=="")
 	storedata('3.1.30','sa',0);
     $sanAdi="RiN";
     $verbpada="A";
+	storedata('1.3.2','pa',0);
+	$text = change('/kamu[!][+]RiN/','kam+RiN');
+	storedata('1.3.9','sa',0);
 }
 /* AyAdaya ArdhadhAtuke vA (3.1.31) */
-if ( in_array($sanAdi,array("Aya","IyaN","RiN")) && $lakAra!=="" && $ardhadhatuka===1)
+// Right now it is difficult to handle optional forms in this case. Commenting it out
+/*if ( in_array($sanAdi,array("Aya","IyaN","RiN")) && $lakAra!=="" && $ardhadhatuka===1)
 {
     $text=two(array("+"),array("Aya+","IyaN+","RiN+"),array("+"),array("","",""),1);
 	storedata('3.1.31','sa',0);
     $verbpada="A";
-}
+}*/
 
 /* Displaying general information about lakAras */
 /* laT vartamAne (3.2.123) */
@@ -1903,6 +1920,11 @@ elseif ($lakAra==="liw" && $veda===0 && (anekAca($verb_without_anubandha) || $sa
     $text=two(array("+"),$tiG1,array("+Am+"),$tiG1,0);
     $text=two(array("+Am+Am+"),$tiG1,array("+Am+"),$tiG1,0);
 	storedata('3.1.35','sa',0);
+	if(arr($text,'/[a][+]Am/')) // For gopAya+Am
+	{
+		$text = one(array("a+Am"),array("+Am"),0);
+		storedata('6.1.101','sa',0);
+	}
 }
 /* kRpo ro laH (8.2.18) */
 if (in_array($fo,array("kfpa!","kfpU!")) && sub(array("kfp"),array("+"),blank(0),0) )
@@ -3886,18 +3908,6 @@ if ( ((in_array($fo,array("lI")) && $verbset==="kryAdi") || (in_array($fo,array(
     $text=three(array("le","lE"),array("+"),blank(0),array("lA","lA"),array("+"),blank(0),1);    
 	storedata('6.1.50','sa',0);
 }
-/* na bhakurChurAm (8.2.79) */
-// bham pending
-if ( in_array($so,$tiG) && arr($text,'/[kC]u[rv]\+/'))
-{
-	storedata('8.2.79','pa',0);
-}
-/* hali ca (8.2.77) */
-elseif ( in_array($so,$tiG) && arr($text,'/[rv]\+/') && sub(array("i","u","f"),array("r+","v+"),$halAdi_apit_sArvadhAtuka_pratyayas,0) )
-{
-    $text=three(array("i","u","f"),array("r+","v+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("I","U","F"),array("r+","v+"),$halAdi_apit_sArvadhAtuka_pratyayas,0);
-	storedata('8.2.77','sa',0);
-}
 /* otaH zyani (7.3.71) */
 if (arr($text,'/o\+ya\+/') && sub(array("o"),array("+ya+"),$sArvadhAtuka_pratyayas,0) && in_array($so,$tiG) )
 {
@@ -4233,6 +4243,18 @@ elseif (arr($text,'/([+]*)i\+/') && in_array($so,$tiG) && $ardhadhatuka===1&& (!
 	$text = change('/^([a-zA-Z]+)([+]*)i\+([^+]*)$/','$1$2+$3');
 	$text = change('/i[+](['.pc('al').'MH]+)$/','+$1');
 	storedata('6.4.51','sa',0);
+}
+/* na bhakurChurAm (8.2.79) */
+// bham pending
+if ( in_array($so,$tiG) && arr($text,'/[kC]u[rv]\+/'))
+{
+	storedata('8.2.79','pa',0);
+}
+/* hali ca (8.2.77) */
+elseif ( in_array($so,$tiG) && arr($text,'/[rv]\+/') && sub(array("i","u","f"),array("r+","v+"),$halAdi_apit_sArvadhAtuka_pratyayas,0) )
+{
+    $text=three(array("i","u","f"),array("r+","v+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("I","U","F"),array("r+","v+"),$halAdi_apit_sArvadhAtuka_pratyayas,0);
+	storedata('8.2.77','sa',0);
 }
 /* ata upadhAyAH (7.2.116) */
 // more on enumeration kind. Not used regexes deliberately.
@@ -12005,11 +12027,11 @@ if ($debug===1) {dibug('11740');}
 
 if ((isset($argv[0])|| $test ===1) )
 { 
-	$suspectentryfile = fopen('suspectverbforms.txt','a+');
+	//$suspectentryfile = fopen('suspectverbforms.txt','a+');
 	$generatedformfile = fopen('generatedforms.xml','a+');
-	$verblist = verbformlist();
-	$verbsingerard = verblist();
-	wrongformlist($ou,$verblist,"fast"); // Uncomment this if you want only the list of suspect verbs for which Gerard has database.
+	//$verblist = verbformlist();
+	//$verbsingerard = verblist();
+	//wrongformlist($ou,$verblist,"fast"); // Uncomment this if you want only the list of suspect verbs for which Gerard has database.
 	//wrongformlist($ou,$verblist); // Uncomment this if you want to get the list of all suspect verbs for irrespecitve of Gerard's database.
 	generatedforms($ou,$generatedformfile);
 	fclose($suspecentryfile);
