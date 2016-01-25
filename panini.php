@@ -2131,13 +2131,13 @@ if (in_array($so,$tiG) && (arr($text,'/['.pc('hl').'][+]/') ||sub(array("+"),$in
 		$text = change('/(^[^+]+)['.pc('hl').']([+]jus)/','$1$2'); // Check why this was kept here. Gave wrong form of kftI! rudhAdi viDiliN Ji, so commented out
 	}
     $text=two($hlplus,array("Ri+"),blank1("+",count($hlplus)),array("Ri+"),0);
-    if ($nomidelision!==1 && ends(array($fo),$hl,0)) // Addition of ends function is to prevent application to kF -> kir converted halanta, which are not there in upadeza.
+    if ($nomidelision!==1 && ends(array($fo),$hl,0) && !arr(array($fo),'/i[!]r$/')) // Addition of ends function is to prevent application to kF -> kir converted halanta, which are not there in upadeza.
     {
 		$text = two($hl,array("+ran"),blank(count($hl)),array("+ran"),0);
 		$text=three($hlplus,$vikaraNa,array("+"),blank1("+",count($hlplus)),$vikaraNa,array("+"),0);
     }
 	$text=one(array("+si+","sicmi"),array("+sic+","sic+mi"),0);
-	if(preg_match('/['.pc('hl').']$/',$fo)) 
+	if(preg_match('/['.pc('hl').']$/',$fo) && !arr(array($fo),'/i[!]r$/')) 
 	{
 		$text=pr2($hl,array("+"),array("va","ma"),blank(count($hl)),array("+"),array("va","ma"),$text);		
 	}
@@ -11515,7 +11515,7 @@ if ( arr($text,'/['.pc('ac').' ][+]['.pc('hl').'MH]/') || arr($text,'/[+]$/')  |
 $text = one(array("+"),array(""),0);
 }
 if ( arr($text,'/['.pc('hl').'][+]['.pc('ac').']/') )
-{  
+{
 $text = one(array("+"),array(""),0);
 }
 $ras = '/([rzfF])([aAiIuUfFxXeoEOhyvrkKgGNpPbBmM+]*)([n])/';
