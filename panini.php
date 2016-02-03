@@ -2,7 +2,7 @@
  /* This code is developed by Dr. Dhaval Patel (drdhaval2785@gmail.com) of www.sanskritworld.in and Ms. Sivakumari Katuri.
   * Layout assistance by Mr Marcis Gasuns.
   * Available under GNU licence.
-  * Version 1.1.2 date 7 November 2015
+  * Version 1.4.0 date 3 January 2016
   * The latest source code is available at https://github.com/drdhaval2785/SanskritVerb .
   * Acknowledgements: The base book for coding has been Astadhyayi sahajabodha of Dr. Pushpa Dikshit, published by Pratibha Prakashan, Delhi.
   * I extend my heartfelt thanks to Ananda Loponen for the code to convert devanagari and various sanskrit transliterations. That can be accessed at http://www.ingmardeboer.nl/php/diCrunch.php?act=help.
@@ -819,7 +819,8 @@ elseif ($first === "") // if there is no prakRti. This doesn't happen in subanta
 }
 else // this option is used for subanta / tiGanta generation. $input is 'prakRti'+'pratyaya'.
 {
-	$input = ltrim(chop($first."+".$sanAdi."+".$lakAra));
+	$nonpurelakara = str_replace(array("viDiliN","ASIrliN","sArvaDAtukalew","ArDaDAtukalew"),array("liN","liN","lew","lew"),$lakAra);
+	$input = ltrim(chop($first."+".$sanAdi."+".$nonpurelakara));
 	$input = str_replace("++","+",$input); // If $sanAdi is "", there would be two +s consecutively. To overcome this hurdle, this patch is created.
 }
 
@@ -1085,6 +1086,7 @@ if (in_array($so,$tiG) && $pada==="pratyaya" && $lakAra!=="")
 	storedata('1.3.3','pa',0);
 	storedata('1.3.2','pa',0);
 	$text = pr2(array("+"),array($lakAra),blank(0),array("+"),array("l"),blank(0),$text);
+	$text = pr2(array("+"),array("liN","lew"),blank(0),array("+"),array("l"),blank(0),$text);
 	storedata('1.3.9','sa',0);
 	$text = pr2(array("+"),array("l"),blank(0),array("+"),array($second),blank(0),$text);
 	storedata('3.4.78','sa',0);
@@ -3133,6 +3135,19 @@ if ($caG===1 && arr($text,'/^['.pc('hl').']/'))
 	abhyAsa_halAdi();
 	$abhyAsa=1;
 }
+print_r($text); echo $kGiti, $didhI;
+
+/* sArvadhAtukArdhadhAtukayoH (7.3.84) */
+if ( $didhI!==1 && $kGiti!==1 && !($lakAra==="liw" && in_array($fo,array("uN"))) && arr($text,'/[iIuUfFxX]\+[uiae]\+/') && ($sarvadhatuka===1 || $ardhadhatuka===1) && !($ad===1 && sub(array("i","I","u","U","f","F","x","X"),array("+"),$ajAdi_apit_sArvadhAtuka_pratyayas,0) ) )
+{
+    $text=two(array("i","I","u","U","f","F","x","X",),array("+u+","+I+","+a+","+e"),array("e","e","o","o","ar","ar","al","al",),array("+u+","+I+","+a+","+e"),0);
+	storedata('7.3.84','sa',0);
+	if (arr($text,'/[eo][+]['.pc('ac').']/'))
+	{
+		$text=two(array("e+","o+"),$ac,array("ay+","av+"),$ac,0);
+		storedata('6.1.78','sa',0);
+	}
+}
 
 /* lopo vyorvali (6.1.66) */
 if ( arr($text,'/a[+]iy[+]['.pc('vl').']/') && in_array($so,$tiG) ) 
@@ -3870,11 +3885,12 @@ if ( $sarvadhatuka===1  && in_array($fo,array("BU","zUN","asa!")) && arr($text,'
 	$bhUsuvo=1;
 }
 /* sArvadhAtukArdhadhAtukayoH (7.3.84) */
-if ( $didhI!==1 && $kGiti!==1 && !($lakAra==="liw" && in_array($fo,array("uN"))) && arr($text,'/[iIuUfFxX]\+[uia]\+/') && ($sarvadhatuka===1 || $ardhadhatuka===1) && !($ad===1 && sub(array("i","I","u","U","f","F","x","X"),array("+"),$ajAdi_apit_sArvadhAtuka_pratyayas,0) ) )
+if ( $didhI!==1 && $kGiti!==1 && !($lakAra==="liw" && in_array($fo,array("uN"))) && arr($text,'/[iIuUfFxX]\+[uiae]\+/') && ($sarvadhatuka===1 || $ardhadhatuka===1) && !($ad===1 && sub(array("i","I","u","U","f","F","x","X"),array("+"),$ajAdi_apit_sArvadhAtuka_pratyayas,0) ) )
 {
-    $text=two(array("i","I","u","U","f","F","x","X",),array("+u+","+I+","+a+"),array("e","e","o","o","ar","ar","al","al",),array("+u+","+I+","+a+"),0);
+    $text=two(array("i","I","u","U","f","F","x","X",),array("+u+","+I+","+a+","+e"),array("e","e","o","o","ar","ar","al","al",),array("+u+","+I+","+a+","+e"),0);
 	storedata('7.3.84','sa',0);
 }
+print_r($text);
 /* sArvadhAtukArdhadhAtukayoH (7.3.84) */
 // for curAdis.
 if ($vik===array("Sap")  && $didhI!==1  && $bhUsuvo!==1 && $kGiti!==1 && arr($text,'/i\+a\+/') && sub($hl,array("i+"),array("a+"),0))
