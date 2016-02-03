@@ -71,6 +71,7 @@ $inprat = $_GET['pratyahara'];
 //$type = 'subanta';
 $removed_sutras = explode(',',$_GET['removed_sutras']);
 $removed_sutras = array_map('trim',$removed_sutras);
+droppedsutra($removed_sutras);
 global $storedata;
 if (!$verbset && $type==="tiGanta") { $verbset = scrape1($number,8,9,1)[0]; } // for overcoming issue in https://github.com/drdhaval2785/SanskritVerb/issues/97
 /* Now trying to make program equally compatible with commandline.

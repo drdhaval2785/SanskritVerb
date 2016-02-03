@@ -8,7 +8,7 @@
   * tiGanta.html is the frontend for the code.
   * scripts/function.php stores the frequently used functions in this code (The description on how to use the code is placed as comments in scripts/function.php.
   * scripts/slp-dev.php is for converting SLP1 data to Devanagari. dev-slp.php is for converting Devanagari data to SLP1.
-  * scripts/ystyle.css is stylesheet where you can change your preferences for display.
+  * scripts/mystyle.css is stylesheet where you can change your preferences for display.
   */
 
 /* Defining grammatical arrays */
@@ -2006,10 +2006,19 @@ function upasarga_display($text)
 		fputs($outfile,"<hr>\n");
 	}
 }
+/* Display warning message for dropped sUtra */
+function droppedsutra($removed_sutras)
+{
+	if (count($removed_sutras)>0 && $removed_sutras[0]!=="")
+	{
+		$removed_sutras = array_map('link_sutra',$removed_sutras);
+		echo "<p class = drop >You have chosen to prevent application of these sUtras - ".implode(', ',$removed_sutras)."<br/>They will be highlighted in this colour, but would not be applied.</p>\n<hr>\n";
+	}
+}
 // for display of lakAra and suffix details.
 function suffix_display()
 {
-	global $frontend, $outfile, $sanAdi, $lakAra, $fo, $so, $type;
+	global $frontend, $outfile, $sanAdi, $lakAra, $fo, $so, $type, $removed_sutras;
 	if ($type==="tiGanta")
 	{
 		if ($frontend!=="0")
@@ -3162,6 +3171,7 @@ function storedata($sutra_number,$style,$note)
 	{
 		$prevdata = array_pop($storedata);
 		$text = $prevdata[0];
+		$storedata[]=array($text,$sutra_number,'drop',$note,$us);
 	}
 }
 /* displaying from the storedata */
@@ -3188,7 +3198,7 @@ function gui($text,$sutra_number,$style,$note,$us)
 {
 	global $frontend, $storedata, $debug;
 	global $ASdata, $vdata, $miscdata, $upasarga_joined, $otherdata, $paribhASAdata; // bringing $text from main php function.
-	if (!in_array($style,array("pa","hn","st","red"))) { $style="sa"; }
+	if (!in_array($style,array("pa","hn","st","red","drop"))) { $style="sa"; }
 	if (!isset($note)) { $note=0; }
 	if ($debug===1) {dibug('GUI START');}
 	if (strpos($sutra_number,'~')!==false && $frontend==='1')

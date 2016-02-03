@@ -67,7 +67,7 @@ padding-bottom: 2px;
  padding-right: 20px;
  padding-left: 20px;
  }
-/* taddhitas */
+/* strIliNga */
 p.st {
  color: black;
  background-color:hotpink ;
@@ -81,6 +81,16 @@ padding-bottom: 2px;
 p.ta {
  color: black;
  background-color:cyan ;
+ font-family: "Siddhanta";
+ padding-top: 2px;
+padding-bottom: 2px;
+ padding-right: 20px;
+ padding-left: 20px;
+}
+/* Dropped_sUtras */
+p.drop {
+ color: black;
+ background-color:#ff6600 ;
  font-family: "Siddhanta";
  padding-top: 2px;
 padding-bottom: 2px;
