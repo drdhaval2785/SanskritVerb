@@ -57,6 +57,10 @@ v1.1.2 - 7 November 2015 - Code separated into Data, Documentations, scripts, te
 
 v1.2.0 - 12 january 2016 - Merged SanskritSubanta code into SanskritVerb. Now there is only one code 'panini.php' which gives subanta / tiGanta / sandhi etc depending on the input HTML file.
 
+v1.3.0 - 22 January 2016 - Commentaries available for local viewing.
+
+v1.4.0 - 3 February 2016 - Option to deactivate some sUtras of Paninian grammar, to understand its importance in the structure of Astadhyayi.
+
 # For understanding the code
 
 Read [this](https://github.com/drdhaval2785/SanskritVerb/Documentations/blob/master/understandcode.md)

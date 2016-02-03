@@ -3150,13 +3150,18 @@ function Am()
 /* function storedata to store necessary information for display later on. */
 function storedata($sutra_number,$style,$note)
 {
-	global $text, $storedata, $frontend, $us;
+	global $text, $storedata, $frontend, $us, $removed_sutras;
 	$text = one(array("++"),array("+"),0); // To remove double consecutive + signs before storing.
 	if (!in_array($style,array("pa","hn","st","red"))) { $style="sa"; }
 	if (!isset($note)) { $note=0; }
-	if ($frontend!=="0")
+	if ($frontend!=="0" && !in_array($sutra_number,$removed_sutras))
 	{
 		$storedata[]=array($text,$sutra_number,$style,$note,$us);		
+	}
+	elseif (in_array($sutra_number,$removed_sutras))
+	{
+		$prevdata = array_pop($storedata);
+		$text = $prevdata[0];
 	}
 }
 /* displaying from the storedata */
