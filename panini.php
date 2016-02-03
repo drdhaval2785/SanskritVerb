@@ -3135,7 +3135,6 @@ if ($caG===1 && arr($text,'/^['.pc('hl').']/'))
 	abhyAsa_halAdi();
 	$abhyAsa=1;
 }
-print_r($text); echo $kGiti, $didhI;
 
 /* sArvadhAtukArdhadhAtukayoH (7.3.84) */
 if ( $didhI!==1 && $kGiti!==1 && !($lakAra==="liw" && in_array($fo,array("uN"))) && arr($text,'/[iIuUfFxX]\+[uiae]\+/') && ($sarvadhatuka===1 || $ardhadhatuka===1) && !($ad===1 && sub(array("i","I","u","U","f","F","x","X"),array("+"),$ajAdi_apit_sArvadhAtuka_pratyayas,0) ) )
@@ -3374,11 +3373,11 @@ if (arr($text,'/sis/'))
 }
 /* halGyAbbhyo dIrghAtsutisyapRktaM hal (6.1.68) and apRkta ekAlpratyayaH (1.2.41) */
 // GyAp pending. only hal handled now.
-if (arr($text,'/['.pc('hl').'][+][sts]$/') && in_array($so,array("su!","tip","sip",)) && $rudAdibhyaH!==1 && $itazca!==1)
+if (arr($text,'/['.pc('hl').'][+][sts]$/') && !arr($text,'/s[+]s$/') && in_array($so,array("su!","tip","sip",)) && $rudAdibhyaH!==1 && $itazca!==1)
 {
 	storedata('1.2.41','pa',0);
 }
-if ((arr($text,'/['.pc('hl').'][+][sts]$/')  )&& in_array($so,array("su!","tip","sip")) && $rudAdibhyaH!==1 && $itazca!==1)
+if (arr($text,'/['.pc('hl').'][+][sts]$/') && !arr($text,'/s[+]s$/') && in_array($so,array("su!","tip","sip")) && $rudAdibhyaH!==1 && $itazca!==1)
 {
     $text = two($hl,array("+s","+t"),$hl,array("+","+"),0);
 	storedata('7.3.54','sa',0);
@@ -3890,7 +3889,6 @@ if ( $didhI!==1 && $kGiti!==1 && !($lakAra==="liw" && in_array($fo,array("uN")))
     $text=two(array("i","I","u","U","f","F","x","X",),array("+u+","+I+","+a+","+e"),array("e","e","o","o","ar","ar","al","al",),array("+u+","+I+","+a+","+e"),0);
 	storedata('7.3.84','sa',0);
 }
-print_r($text);
 /* sArvadhAtukArdhadhAtukayoH (7.3.84) */
 // for curAdis.
 if ($vik===array("Sap")  && $didhI!==1  && $bhUsuvo!==1 && $kGiti!==1 && arr($text,'/i\+a\+/') && sub($hl,array("i+"),array("a+"),0))
@@ -5260,11 +5258,11 @@ elseif( in_array($so,$tiG) && ((arr($text,'/zIDv/') && sub($iN2,array("zIDv"),bl
 }
 /* halGyAbbhyo dIrghAtsutisyapRktaM hal (6.1.68) and apRkta ekAlpratyayaH (1.2.41) */
 // GyAp pending. only hal handled now.
-if (arr($text,'/['.pc('hl').'][+][sts]$/') && in_array($so,array("su!","tip","sip",)))
+if (arr($text,'/['.pc('hl').'][+][sts]$/') && !arr($text,'/s[+]s$/') && in_array($so,array("su!","tip","sip",)))
 {
 	storedata('1.2.41','pa',0);
 }
-if ((arr($text,'/['.pc('hl').'][+][sts]$/')  )&& in_array($so,array("su!","tip","sip")))
+if (arr($text,'/['.pc('hl').'][+][sts]$/')  && !arr($text,'/s[+]s$/') && in_array($so,array("su!","tip","sip")))
 {
     $text = two($hl,array("+s","+t"),$hl,array("+","+"),0);
 	storedata('6.1.68','sa',0);
