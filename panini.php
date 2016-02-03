@@ -1140,13 +1140,11 @@ if (in_array($lakAra,array("law","low","laN","viDiliN","sArvaDAtukalew"))  && su
 if ( in_array($lakAra,array("lfw","lfN","luw","ASIrliN","luN","ArDaDAtukalew")) && sub(array("+"),$tiG,blank(0),0) )
 {
     $ardhadhatuka=1;
-	storedata('3.4.114','pa',0);
 }
 /* liT ca (3.4.115) */ 
 if ( in_array($lakAra,array("liw")) && sub(array("+"),$tiG,blank(0),0) )
 {
     $ardhadhatuka=1;
-	storedata('3.4.115','pa',0);
 }
 /* Adding vikaraNas */
 $vik=array();
@@ -4171,6 +4169,16 @@ if ($lakAra==="liw" && $so==="sip" && arr($text,'/[iIuUfFxXeEoO]\+/') && sub(pra
 }
 /* patch for yAsuT Agama to combine it with the next pratyaya. because it would not be getting iDAgama. */
 $text = one(array("+yA+"),array("+yA"),0);
+/* ArdhadhAtukaM zeSaH (3.4.114) */ 
+if ( in_array($lakAra,array("lfw","lfN","luw","ASIrliN","luN","ArDaDAtukalew"))  )
+{
+	storedata('3.4.114','pa',0);
+}
+/* liT ca (3.4.115) */ 
+if ( in_array($lakAra,array("liw")) )
+{
+	storedata('3.4.115','pa',0);
+}
 /* Adding iDAgama actually */
 if ($id_dhAtu==="sew" && $id_pratyaya==="sew" && !($yAsuT===1 && $lakAra==="ASIrliN")  && !in_array("iw",$Agama) && $caG!==1 && $ksa!==1) // for seT dhAtus
 {
