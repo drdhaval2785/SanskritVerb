@@ -2824,6 +2824,13 @@ if ($sarvadhatuka===1 && !in_array("Sap",$vik) )//&& pr2(array("+"),$apit_sArvad
 		storedata('1.1.5','sa',0);
 	}
 }
+/* bhuvo vugluGliToH (6.4.88) */
+if ( arr($text,'/[B][U][+][R'.pc('ac').']/') && in_array($lakAra,array("luN","liw")))
+{
+    $text = two(array("BU+"),$ac,array("BUv+"),$ac,0);
+    $text = one(array("BU+R"),array("BUv+R"),0);
+	storedata('6.4.88','sa',0);	
+}
 /* liTi dhAtoranabhyAsasya (6.1.8) */
 if ($lakAra==="liw" && arr($text,'/^['.pc('hl').']/'))
 {
@@ -3859,7 +3866,7 @@ if (($sarvadhatuka===1 || $ardhadhatuka===1) &&  (in_array("N",$it)||in_array("k
     $kGiti=1;
 }
 /* bhUsuvostiGi (7.3.88) */
-if ( ($sarvadhatuka===1 || $ardhadhatuka===1) && in_array($fo,array("BU","zUN","asa!")) && arr($text,'/[Bs]U\+/') && pr2(array("BU","sU"),array("+"),$sArvadhAtuka_tiG_pratyayas,array("Bu","su"),array("+"),$sArvadhAtuka_tiG_pratyayas,$text)!==$text )
+if ( $sarvadhatuka===1  && in_array($fo,array("BU","zUN","asa!")) && arr($text,'/[Bs]U\+/') && pr2(array("BU","sU"),array("+"),$sArvadhAtuka_tiG_pratyayas,array("Bu","su"),array("+"),$sArvadhAtuka_tiG_pratyayas,$text)!==$text )
 {
 	storedata('7.3.88','sa',0);
 	$bhUsuvo=1;
@@ -4263,6 +4270,12 @@ if ( arr($text,'/[a]['.pc('hl').'][+]i[+]/') )
 	$text = three(array("a"),$hl,array("+i+"),array("A"),$hl,array("+i+"),0);
 	storedata('7.2.116','sa',0);
 }
+/* bhuvo vugluGliToH (6.4.88) */
+if ( arr($text,'/[B][U][+]['.pc('ac').']/') && in_array($lakAra,array("luN","liw")))
+{
+    $text = two(array("BU+"),$ac,array("BUv+"),$ac,0);
+	storedata('6.4.88','sa',0);	
+}
 /* guNo'rtisaMyogAdyoH (7.4.29) */
 if ( (in_array($sanAdi,array("yak")) || $lakAra==="ASIrliN") && (arr($text,'/['.pc('hl').']['.pc('hl').']f[+]y/') || $fo==="f"))
 {
@@ -4345,15 +4358,6 @@ if ( arr($text,'/u\+i/') && sub(array("UrRunu","UrRu"),array("+"),array("i"),0) 
 {
     $text=two(array("UrRunu","UrRu"),array("+i"),array("UrRuno","UrRo"),array("+i"),1);
 	storedata('7.3.84','sa',0);
-}
-/* bhuvo vugluGliToH (6.4.88) */
-if ( arr($text,'/[B][U][+]['.pc('ac').']/') && in_array($lakAra,array("luN","liw")))
-{
-    $text = two(array("BU+"),$ac,array("BUv+"),$ac,0);
-	storedata('6.4.88','sa',0);	
-//    echo "<p class = hn >Because of asiddhavadatrAbhAt (6.4.22), vuk is asiddha to uvaG. Therefore, uvaG may be applicable, but according to vugyuTAvuvaGyaNoH siddhau vaktavyau (vA), it is made siddha.</p>\n"; 
-//    echo "<p class = hn >असिद्धवदत्राभात्‌ (६.४.२२) इति वुकोऽसिद्धत्वादुवङि प्राप्ते वुग्युटावुवङ्‍यणोः सिद्धौ वक्तव्यौ (वा) इत्यनेन उवङ्‌ निषिध्यते ।</p>\n";
-//    display(0);
 }
 /* bhavateraH (7.4.73) */
 if ( arr($text,'/bu\+BUv\+/') && $lakAra==="liw")
