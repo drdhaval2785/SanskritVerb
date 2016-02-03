@@ -5262,7 +5262,7 @@ elseif( in_array($so,$tiG) && ((arr($text,'/zIDv/') && sub($iN2,array("zIDv"),bl
 // GyAp pending. only hal handled now.
 if (arr($text,'/['.pc('hl').'][+][sts]$/') && in_array($so,array("su!","tip","sip",)))
 {
-	storedata('1.2.21','pa',0);
+	storedata('1.2.41','pa',0);
 }
 if ((arr($text,'/['.pc('hl').'][+][sts]$/')  )&& in_array($so,array("su!","tip","sip")))
 {
