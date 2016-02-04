@@ -2121,54 +2121,50 @@ if (in_array($so,$tiG) && arr(array($fo),'/[!]['.pc('hl').']$/') && $nomidelisio
 	$text=three(array("!"),$hl,array("+"),array("!"),blank(count($hl)),array("+"),0);
 	storedata('1.3.9','sa',0);
 }
+/* halantyam (1.3.3) and tasya lopaH (1.3.9) */
+// Patch for removal of verb halantyam
+if (in_array($so,$tiG) && arr(array($fo),'/['.pc('hl').']$/') && !arr(array($fo),'/i[!]r$/') )
+{
+	storedata('1.3.3','pa',0);
+	$text=change('/^([^+]*)['.pc('hl').'][+]/','$1+');
+	$text=three(array("+"),$inbetweenpratyaya,array("+"),array("+"),$inbetweeenreplace,array("+"),0);
+	$text = one(array("i!r"),array("i!"),0);
+	$text = change('/(^[^+]+)['.pc('hl').']([+]jus)/','$1$2'); // Check why this was kept here. Gave wrong form of kftI! rudhAdi viDiliN Ji, so commented out
+	$text=two($hlplus,array("Ri+"),blank1("+",count($hlplus)),array("Ri+"),0);
+	storedata('1.3.9','sa',0);
+}
 if ($debug===1) {dibug("1900");}
 /* halantyam (1.3.3) and tasya lopaH (1.3.9) */
 if (in_array($so,$tiG) && (arr($text,'/['.pc('hl').'][+]/') ||sub(array("+"),$inbetweenpratyaya,array("+"),0) || (arr($text,'/['.pc('hl').']$/') && $tusma!==1) || sub($hl,array("+"),$vikaraNa,0) || $rudhAdibhyaH===1 || pr2($hl,array("+"),array("va","ma"),blank(count($hl)),array("+"),array("va","ma"),$text)!==$text) ) # $ad === 1 removed because of https://github.com/drdhaval2785/SanskritVerb/issues/318
 {
-	if ( ($ad===1 || in_array($lakAra,array("liw","luw","lfw","ASIrliN","luN","lfN","ArDaDAtukalew"))) && arr(array($first),'/['.pc('hl').']$/') && !arr(array($first),'/i[!]r/'))
-    {
-		echo "1";
-		storedata('1.3.3','pa',0);
-        $text=three($hl,array("+"),$tiG1,blank(count($hl)),array("+"),$tiG1,0);
 		if ($tusma!==1)
 		{
+			storedata('1.3.3','pa',0);
 			$text = last($hl,blank(count($hl)),0);
-		}
-		storedata('1.3.9','sa',0);
-    }
-	else
-	{
-		echo "2";
-		storedata('1.3.3','pa',0);
-		$text=three(array("+"),$inbetweenpratyaya,array("+"),array("+"),$inbetweeenreplace,array("+"),0);
-		if ($tusma!==1)
-		{
 			if ( $so!=="mahiN") {itprat('/(['.flat($hl).']$)/');}
 			$text = last($hl,blank(count($hl)),0);   
+			storedata('1.3.9','sa',0);
 		}
-		$text = one(array("i!r"),array("i!"),0);
-		if (preg_match('/['.pc('hl').']$/',$fo)) 
-		{
-			$text = change('/(^[^+]+)['.pc('hl').']([+]jus)/','$1$2'); // Check why this was kept here. Gave wrong form of kftI! rudhAdi viDiliN Ji, so commented out
-		}
-		$text=two($hlplus,array("Ri+"),blank1("+",count($hlplus)),array("Ri+"),0);
 		if ($nomidelision!==1 && ends(array($fo),$hl,0) && !arr(array($fo),'/i[!]r$/')) // Addition of ends function is to prevent application to kF -> kir converted halanta, which are not there in upadeza.
 		{
+			storedata('1.3.3','pa',0);
 			$text = two($hl,array("+ran"),blank(count($hl)),array("+ran"),0);
 			$text=three($hlplus,$vikaraNa,array("+"),blank1("+",count($hlplus)),$vikaraNa,array("+"),0);
+			storedata('1.3.9','sa',0);
 		}
 		$text=one(array("+si+","sicmi"),array("+sic+","sic+mi"),0);
 		if(preg_match('/['.pc('hl').']$/',$fo) && !arr(array($fo),'/i[!]r$/')) 
 		{
+			storedata('1.3.3','pa',0);
 			$text=pr2($hl,array("+"),array("va","ma"),blank(count($hl)),array("+"),array("va","ma"),$text);		
+			storedata('1.3.9','pa',0);
 		}
 		if ($nomidelision!==1 && arr($text,'/['.pc('hl').'][+]([c]*)[a][+]/') && ends(array($fo),'/['.pc('hl').']$/') )
 		{
+			storedata('1.3.3','pa',0);
 			$text=three($hl,array("+a+","+ca+"),$tiG1,blank(count($hl)),array("+a+","+ca+"),$tiG1,0);
-			#$text=two($hl,array("+a+","+ca+"),blank(count($hl)),array("+a+","+ca+"),0);
+			storedata('1.3.9','sa',0);
 		}
-		storedata('1.3.9','sa',0);
-	}
 }
 /* cuTU (1.3.7) */
 if (arr($text,'/[+][c][a][+]/') && in_array($so,$tiG)) // for caG
