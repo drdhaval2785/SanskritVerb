@@ -2349,7 +2349,14 @@ $tisremoved=array("ti","tas","anti","jus","si","Tas","Ta","mi","vas","mas","tAm"
 /* yAsuT parasmaipadeSUdAtto Gicca (3.4.103) */
 if ( in_array($lakAra,array("viDiliN","ASIrliN")) && in_array($so,$tis) )
 {
-    $text=pr2(array("+"),$tisremoved,blank(0),array("+yAs+"),$tisremoved,blank(0),$text);
+    $text=pr2(array("+"),$tisremoved,blank(0),array("+yAsuw+"),$tisremoved,blank(0),$text);
+	storedata('3.4.103','sa',0);
+	storedata('1.3.3','pa',0);
+	$text=one(array("yAsuw"),array("yAsu"),0);
+	storedata('1.3.9','sa',0);
+	storedata('1.3.2','pa',0);
+	$text=one(array("+yAsu+"),array("+yAs+"),0);
+	storedata('1.3.9','sa',0);
 	storedata('3.4.103','sa',0);
 	$Git=1;
 	$yAsuT = 1;
