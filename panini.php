@@ -3971,7 +3971,7 @@ if (arr($text,'/A[+]/') && $abhyasta===1 && pr2(array("A"),array("+"),array("atu
 	storedata('6.4.112','sa',0);
 }
 /* gamahanajanakhanaghasAM lopaH kGiti (6.4.98) */
-if (in_array($fo,array("gamx!","hana!","jana!","Gasa!","Kanu!","janI!")) && ends($itpratyaya,array("k","N"),2) && sub(array("gam","Gan","jan","Gas","Kan"),array("+"),$ac,0) && in_array($so,$tiG) && $aG!==1)
+if (in_array($fo,array("gamx!","hana!","jana!","Gasa!","Kanu!","janI!","ada!")) && ends($itpratyaya,array("k","N"),2) && sub(array("gam","Gan","jan","Gas","Kan"),array("+"),$ac,0) && in_array($so,$tiG) && $aG!==1)
 {
     $text=three(array("gam","Gan","jan","Gas","Kan"),array("+"),$ac,array("gm","Gn","jn","Gs","Kn"),array("+"),$ac,0);
 	storedata('6.4.98','sa',0);
