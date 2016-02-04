@@ -2103,7 +2103,7 @@ if (arr($text,'/[+][lSkKgGN]/') && $taddhita === 0  && in_array($so,$tiG) )
 }
 /* na vibhaktau tusmAH (1.3.4) */
 //if (arr($text,'/[tTdDnsm]$/') && $pada=== "pratyaya" && sub(array("+"),$navibhaktau,blank(0),0) && in_array($so,$tiG))
-if (arr($text,'/[tTdDnsm]$/') && $vibhakti===1)
+if (arr($text,'/[tTdDnsm]$/') && $vibhakti===1 && $tusma!==1)
 {
 	storedata('1.3.4','sa',0);
     $tusma=1;
@@ -9200,13 +9200,13 @@ if (((arr($text,'/[+][lSkKgGN]/'))||$sarva2===1||$purva===1) && $taddhita === 0 
 }
 /* na vibhaktau tusmAH (1.3.4) */
 //if (arr($text,'/[tTdDnsm]$/') && $pada=== "pratyaya" && ( in_array($so,$navibhaktau) || sub(array("+"),$navibhaktau,blank(0),0) ) && $wa === 0 && $wa1 === 0)
-if (arr($text,'/[tTdDnsm]$/') && $vibhakti===1)
+if (arr($text,'/[tTdDnsm]$/') && $vibhakti===1 && $tusma!==1)
 {
-	storedata('1.3.4','pa',0);
+	storedata('1.3.4','sa',0);
     $tusma=1;
 }
 /* halantyam (1.3.3) ant tasya lopaH (1.3.9) */
-elseif (arr($text,'/['.flat($hl).']$/') && $halGyAbbhyo!==1 && $nomidelision!==1)
+if (arr($text,'/['.flat($hl).']$/') && $halGyAbbhyo!==1 && $nomidelision!==1 && $tusma!==1)
 {
     itprat('/(['.flat($hl).']$)/');
 	storedata('1.3.3','pa',0);
