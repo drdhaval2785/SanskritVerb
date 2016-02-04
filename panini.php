@@ -757,7 +757,7 @@ elseif ($type==='tiGanta')
 		elseif (verb_itfinder($first)===array("aniw"))
 		{
 			$id_dhAtu="aniw";
-			gui2('aniTverb');
+			gui2('7.2.10');
 		}
 	}
 	else
