@@ -2127,15 +2127,18 @@ if (in_array($so,$tiG) && (arr($text,'/['.pc('hl').'][+]/') ||sub(array("+"),$in
 {
 	if ( ($ad===1 || in_array($lakAra,array("liw","luw","lfw","ASIrliN","luN","lfN","ArDaDAtukalew"))) && arr(array($first),'/['.pc('hl').']$/') && !arr(array($first),'/i[!]r/'))
     {
+		echo "1";
 		storedata('1.3.3','pa',0);
         $text=three($hl,array("+"),$tiG1,blank(count($hl)),array("+"),$tiG1,0);
+		if ($tusma!==1)
+		{
+			$text = last($hl,blank(count($hl)),0);
+		}
 		storedata('1.3.9','sa',0);
     }
-	elseif (($ad===1 || in_array($lakAra,array("liw","luw","lfw","ASIrliN","luN","lfN","ArDaDAtukalew"))) && $tusma===1)
-	{
-	}
 	else
 	{
+		echo "2";
 		storedata('1.3.3','pa',0);
 		$text=three(array("+"),$inbetweenpratyaya,array("+"),array("+"),$inbetweeenreplace,array("+"),0);
 		if ($tusma!==1)
@@ -2736,6 +2739,7 @@ elseif (in_array($fo,array("qukfY","sf","quBfY","vfN","vfY","zwuY","dru","sru","
 elseif (arr(array($verb_without_anubandha),'/[aAiIuUFeEoO]$/') && $id_dhAtu==="aniw" && $lakAra==="liw" && in_array($so,array("sip")))
 {
 	$id_dhAtu="vew";
+	$thalyaniT=1;
 	storedata('7.2.61','sa',0);
 	storedata('7.2.63','sa',0);
 }
@@ -2749,6 +2753,7 @@ elseif (!in_array($fo,array("qukfY","sf","quBfY","vfN","vfY","zwuY","dru","sru",
 elseif (arr(array($verb_without_anubandha),'/[a]/') && $id_dhAtu==="aniw" && $lakAra==="liw" && in_array($so,array("sip")))
 {
 	$id_dhAtu="vew";
+	$thalyaniT=1;
 	storedata('7.2.62','sa',0);
 	storedata('7.2.63','sa',0);
 }
@@ -3953,15 +3958,22 @@ if (arr($text,'/biBI/') && sub(array("biBI"),array("+"),$halAdi_apit_sArvadhAtuk
 	storedata('6.4.115','sa',0);
 }
 /* znA'bhyastayorAtaH (6.4.112) */
-if ( arr($text,'/da[dD]A/') && sub(array("dadA","daDA"),array("+"),$apit_sArvadhAtuka_pratyayas,0) && (in_array("N",$it)||in_array("k",$it)))
+/*if ( arr($text,'/da[dD]A/') && sub(array("dadA","daDA"),array("+"),$apit_sArvadhAtuka_pratyayas,0) && (in_array("N",$it)||in_array("k",$it)))
 {
     $text=three(array("dadA","daDA"),array("+"),$apit_sArvadhAtuka_pratyayas,array("dad","daD"),array("+"),$apit_sArvadhAtuka_pratyayas,0);
 	storedata('6.4.112','sa',0);
-}
+}*/
 /* znA'bhyastayorAtaH (6.4.112) */
 if (arr($text,'/A[+]/') && $abhyasta===1 && pr2(array("A"),array("+"),$apit_sArvadhAtuka_pratyayas,array(""),array("+"),$apit_sArvadhAtuka_pratyayas,$text)!==$text && !arr($text,'/[+]yA[+][mv]a/'))
 {
-    $text=pr2(array("A"),array("+"),$apit_sArvadhAtuka_pratyayas,array(""),array("+"),$apit_sArvadhAtuka_pratyayas,$text);
+	if ($so==="sip" && $lakAra==="liw")
+	{
+		$text=array_merge($text,pr2(array("A"),array("+"),$apit_sArvadhAtuka_pratyayas,array(""),array("+"),$apit_sArvadhAtuka_pratyayas,$text));
+	}
+	else
+	{
+		$text=pr2(array("A"),array("+"),$apit_sArvadhAtuka_pratyayas,array(""),array("+"),$apit_sArvadhAtuka_pratyayas,$text);
+	}
 	storedata('6.4.112','sa',0);
 }
 /* znA'bhyastayorAtaH (6.4.112) */
@@ -4221,17 +4233,7 @@ if ($id_dhAtu==="sew" && $id_pratyaya==="sew" && !($yAsuT===1 && $lakAra==="ASIr
 }
 if ($id_dhAtu==="vew" && $id_pratyaya==="sew" && !($yAsuT===1 && $lakAra==="ASIrliN")  && !in_array("iw",$Agama) && !in_array($sanAdi,array("Ric","RiN")) && $caG!==1 && $ksa!==1) // for veT dhAtus optional one.
 {
-	$text2= array();
-	foreach ($text as $value)
-	{
-		$parts = explode('+',$value);
-		if (preg_match('/^['.pc('vl').']/',$parts[count($parts)-1]))
-		{
-		$parts[count($parts)-1]="i".$parts[count($parts)-1];
-		}
-		$text2[]=implode('+',$parts);
-	}
-	$text = array_merge($text,$text2);
+	$text = change('/(['.pc('hl').'][+])(['.pc('vl').'])/','$1i$2');
 	$text = one(array("tfap+isya","dfap+isya","gopAya+sya","u+vay+Ta"),array("tfap+sya","dfap+sya","gopAya+isya","u+vay+iTa"),0); // for veT dhAtus tRp and dRp - iDAgama doesn't apply after amAgama.
 	// Removing unwanted iDAgama which happenned accidentally
 	$text = one(array("+iyAs+","Ay+t","vaD+s","gopAya+s","gopAya+s","gup+is"),array("+yAs+","Ay+it","vaD+is","gopAya+is","gopAya+is","gup+s"),0);
