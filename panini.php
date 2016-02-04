@@ -11925,7 +11925,7 @@ if ($cayo!==1)
         }
     }
 }
-if (arr($text,'/['.pc('cr').']([+]*)['.pc('Kr').']/') || $dhut === 1) // parjanyavallakSaNapravRttiH.
+elseif (arr($text,'/['.pc('cr').']([+]*)['.pc('Kr').']/') || $dhut === 1) // parjanyavallakSaNapravRttiH.
 {
 	storedata('8.4.55','sa',0);
 }
