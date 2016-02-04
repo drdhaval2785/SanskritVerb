@@ -817,13 +817,17 @@ elseif ($first === "") // if there is no prakRti. This doesn't happen in subanta
 {
     $input = ltrim(chop($second));
 }
-else // this option is used for subanta / tiGanta generation. $input is 'prakRti'+'pratyaya'.
+elseif ($type==="tiGanta") // this option is used for subanta / tiGanta generation. $input is 'prakRti'+'pratyaya'.
 {
 	$nonpurelakara = str_replace(array("viDiliN","ASIrliN","sArvaDAtukalew","ArDaDAtukalew"),array("liN","liN","lew","lew"),$lakAra);
 	$input = ltrim(chop($first."+".$sanAdi."+".$nonpurelakara));
 	$input = str_replace("++","+",$input); // If $sanAdi is "", there would be two +s consecutively. To overcome this hurdle, this patch is created.
 }
-
+else 
+{
+	$input = ltrim(chop($first."+".$second));
+	$input = str_replace("++","+",$input);
+}
 
 /* main coding part starts from here. Based on Siddhantakaumudi text. */
 /* Defining an array $text. */
@@ -2121,8 +2125,7 @@ if ($debug===1) {dibug("1900");}
 /* halantyam (1.3.3) and tasya lopaH (1.3.9) */
 if (in_array($so,$tiG) && (arr($text,'/['.pc('hl').'][+]/') ||sub(array("+"),$inbetweenpratyaya,array("+"),0) || (arr($text,'/['.pc('hl').']$/') && $tusma!==1) || sub($hl,array("+"),$vikaraNa,0) || $rudhAdibhyaH===1 || pr2($hl,array("+"),array("va","ma"),blank(count($hl)),array("+"),array("va","ma"),$text)!==$text) ) # $ad === 1 removed because of https://github.com/drdhaval2785/SanskritVerb/issues/318
 {
-	
-	if ( ($ad===1 || in_array($lakAra,array("liw","luw","lfw","ASIrliN","luN","lfN","ArDaDAtukalew"))) && arr(array($fo),'/['.pc('hl').']$/') && !arr(array($fo),'/i[!]r/'))
+	if ( ($ad===1 || in_array($lakAra,array("liw","luw","lfw","ASIrliN","luN","lfN","ArDaDAtukalew"))) && arr(array($first),'/['.pc('hl').']$/') && !arr(array($first),'/i[!]r/'))
     {
 		storedata('1.3.3','pa',0);
         $text=three($hl,array("+"),$tiG1,blank(count($hl)),array("+"),$tiG1,0);
@@ -2130,7 +2133,6 @@ if (in_array($so,$tiG) && (arr($text,'/['.pc('hl').'][+]/') ||sub(array("+"),$in
     }
 	elseif (($ad===1 || in_array($lakAra,array("liw","luw","lfw","ASIrliN","luN","lfN","ArDaDAtukalew"))) && $tusma===1)
 	{
-		
 	}
 	else
 	{
@@ -3377,7 +3379,6 @@ if (arr($text,'/sis/'))
 	$text = one(array("sis+"),array("sis"),0);
 }
 /* halGyAbbhyo dIrghAtsutisyapRktaM hal (6.1.68) and apRkta ekAlpratyayaH (1.2.41) */
-// GyAp pending. only hal handled now.
 if (arr($text,'/['.pc('hl').'][+][sts]$/') && !arr($text,'/s[+]s$/') && in_array($so,array("su!","tip","sip",)) && $rudAdibhyaH!==1 && $itazca!==1)
 {
 	storedata('1.2.41','pa',0);
@@ -5093,7 +5094,6 @@ if (arr($text,'/\+u\+hi/') && sub($ac,$hl,array("+u+hi"),0) && in_array($so,$tiG
 	storedata('6.1.106','sa',0);
 }
 /* lopazcAsyAnyatarasyAM mvoH (6.4.107) */
-// u pratyaya pending.
 if (arr($text,'/['.pc('ac').']\+nu\+/') && sub($ac,array("+nu+"),array("vas","mas","vahe","mahe","va","ma","vahi","mahi",),0) && in_array($so,$tiG) )
 {
     $text=three($ac,array("+nu+"),array("vas","mas","vahe","mahe","va","ma","vahi","mahi",),$ac,array("+n+"),array("vas","mas","vahe","mahe","va","ma","vahi","mahi",),1);
@@ -9547,7 +9547,6 @@ if ( $dhatu===1 && (arr($text,'/[B][U][+]/')||$fo==="suDI") && arr($text,'/[iuIU
 /* kvau luptaM na sthAnivat (vA 431) */
 // Not displayed because it is difficult to teach sthnanivadbhav to machine now. Will come back to it if I can teach it some day.
 /* aci znudhAtubhruvAM yvoriyaGuvaGau (6.4.77) */
-// znu pending. 
 if (($dhatu===1||$fo==="BrU") && arr($text,'/[iuIU][+]['.flat($ac).']/') && $pada==="pratyaya" && ($eranekaca===0 || ($eranekaca===1 && anekAca($fo)===false ) || (arr($text,'/[B][U][+]/')||$fo==="suDI") ) && $dfmBU===0 && !sub(array("+"),array("I"),array("+"),0) )
 {
     $text = three(array("i","I","u","U"),array("+"),$ac,array("iy","iy","uv","uv"),array("+"),$ac,0);
@@ -10675,7 +10674,7 @@ else { $kvinku=0; }
 
 /* vrazcabhrasjamRjayajarAjabhrAjacChazAM ca (8.2.36) */
 // TubhrAjR dIptau and ejR bhejR bhrAjR dIptau are different. This is pending to code.
-// parau vrajeH SaH padAnte (u 217) pending. 
+// parau vrajeH SaH padAnte (u 217) pending.
 $vrasca = array("vfSc","sfj","mfj","yaj","rAj","BrAj","devej","parivrAj","Bfj","ftvij");
 $vrashca = array("vfSz","sfz","mfz","yaz","rAz","BrAz","devez","parivrAz","Bfz","ftviz");
 if (arr($text,'/[cj]/') && $_GET['cond1_9_3']!=="2" && ($kvinku===0 || ($fo==="asfj" && in_array($so,array("su!","am")))) && (sub($vrasca,array("+"),prat("Jl"),0) ||  ( sub($vrasca,array("+"),blank(0),0) && $pada==="pada")) )
@@ -10812,7 +10811,6 @@ if ((arr($text,('/[r][+][hyvrlYmGRnJBGQDjbgqdKPCWTcwtkpzS]$/')) && $pada === "pr
 } else { $ratsasya=0; }
 if ($debug===1) {dibug("10500");}
 /* saMyogAntasya lopaH (8.2.23) */
-// coding pending because not clear. And also 'yaNaH pratiSedho vAcyaH' prohibits its application.
 if (  ( arr($text,'/N([+]*)[kKgGN]\+/') || arr($text,'/Y([+]*)[cCjJY]\+/') || arr($text,'/R([+]*)[wWqQR]\+/') || arr($text,'/m([+]*)[pPbBm]\+/') ) && $ratsasya===0 && $pada==="pada" && $vriddhireci===0 && !sub(array("+"),array("A"),blank(0),0) ) // patch for nimittApAye naimittikasyApAyaH.
 {
     $text = three(array("N"),$ku,array("+"),array("n"),blank(count($ku)),array("+"),0); 
@@ -11053,7 +11051,6 @@ if ($dhatu===1 && arr($text,'/[iIuUfFxX]r\+/') && ((sub(array("i","I","u","U","f
 }
 /* hali ca (8.2.77) */
 $rvverb=array("ir","Ir","Ir","ur","kIv","kur","kfv","klIv","kziv","kzIv","kzIv","kzur","kzur","Kur","Kur","gir","gur","gUr","gUr","Gur","GUr","cir","cIv","cIv","cur","cUr","Cur","jIv","jur","jUr","tir","1tIv","tIv","3tIv","tur","tUr","div","div","div","dIv","dIv","DIv","Dur","Dur","Druv","niv","nIv","pIv","pur","pUr","Bur","mIv","mIv","mur","mur","mUr","mUr","rIv","SUr","Sriv","SrIv","zWiv","zWIv","siv","siv","sIv","sur","sUr","sTiv","sPur","sriv","srIv","hur",);
-// pending to code for how to apply this to whole $rvverb. Right now just coded for pratidivan
 if (arr($text,'/divn/'))
 {
     $dhatu=1;
