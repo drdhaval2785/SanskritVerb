@@ -3169,7 +3169,6 @@ if ($caG===1 && arr($text,'/^['.pc('hl').']/'))
 	abhyAsa_halAdi();
 	$abhyAsa=1;
 }
-print_r($text);
 /* sArvadhAtukArdhadhAtukayoH (7.3.84) */
 // Patch for znu. See https://github.com/drdhaval2785/SanskritVerb/issues/451
 if (arr($text,'/[+]nu[+]tu$/') )
@@ -5095,7 +5094,7 @@ if ($lakAra!=="" && $type==="tiGanta")
 		storedata('osupi','sa',0);
         $ullU=1; // 0 - word is not ullU. 1 - word is ullU.
     } else { $ullU=0; }
-    if ($dhatu===1 && ( arr($text,'/[uU][+]['.flat($ac).']/') || $ullU===1 )&& !sub(array("+"),array("u+"),blank(0),0) && $pada==="pratyaya" && anekAca($fo) && $nabhusu===0 && $dfmBU===0)
+    if ($dhatu===1 && ( arr($text,'/['.pc('hl').'][uU][+]['.flat($ac).']/') || $ullU===1 )&& !sub(array("+"),array("u+"),blank(0),0) && $pada==="pratyaya" && anekAca($fo) && $nabhusu===0 && $dfmBU===0 && !arr($text,'/['.pc('hl').']['.pc('hl').'][uU][+]['.flat($ac).']/'))
     {
         $text = three(array("u","U"),array("+"),$ac,array("v","v"),array("+"),$ac,0);
 		storedata('6.4.83','sa',3);
