@@ -2122,6 +2122,7 @@ $inbetweeenreplace=array("a","ya","Ri","Ri","sa","Iya");
 /* halantyam (1.3.3) and tasya lopaH (1.3.9) */
 if (in_array($so,$tiG) && arr(array($fo),'/[!]['.pc('hl').']$/') && $nomidelision!==1 && sub(array("!"),$hl,array("+"),0) )
 {
+	echo "halantyam-1";
 	storedata('1.3.3','pa',0);
 	$text=three(array("!"),$hl,array("+"),array("!"),blank(count($hl)),array("+"),0);
 	storedata('1.3.9','sa',0);
@@ -2130,7 +2131,9 @@ if (in_array($so,$tiG) && arr(array($fo),'/[!]['.pc('hl').']$/') && $nomidelisio
 // Patch for removal of verb halantyam
 if (in_array($so,$tiG) && arr(array($fo),'/['.pc('hl').']$/') && !arr(array($fo),'/i[!]r$/') )
 {
+	echo "halantyam-2";
 	storedata('1.3.3','pa',0);
+	$text=three($hlplus,$vikaraNa,array("+"),blank1("+",count($hlplus)),$vikaraNa,array("+"),0);
 	$text=change('/^([^+]*)['.pc('hl').'][+]/','$1+');
 	$text = one(array("i!r"),array("i!"),0);
 	$text = change('/(^[^+]+)['.pc('hl').']([+]jus)/','$1$2'); // Check why this was kept here. Gave wrong form of kftI! rudhAdi viDiliN Ji, so commented out
@@ -2141,36 +2144,36 @@ if ($debug===1) {dibug("1900");}
 /* halantyam (1.3.3) and tasya lopaH (1.3.9) */
 if (in_array($so,$tiG) && (arr($text,'/['.pc('hl').'][+]/') ||sub(array("+"),$inbetweenpratyaya,array("+"),0) || (arr($text,'/['.pc('hl').']$/') && $tusma!==1) || sub($hl,array("+"),$vikaraNa,0) || $rudhAdibhyaH===1 || pr2($hl,array("+"),array("va","ma"),blank(count($hl)),array("+"),array("va","ma"),$text)!==$text) ) # $ad === 1 removed because of https://github.com/drdhaval2785/SanskritVerb/issues/318
 {
+	$ininin = $text;
 		if ($tusma!==1)
 		{
-			storedata('1.3.3','pa',0);
 			$text=three(array("+"),$inbetweenpratyaya,array("+"),array("+"),$inbetweeenreplace,array("+"),0);
 			$text = last($hl,blank(count($hl)),0);
 			if ( $so!=="mahiN") {itprat('/(['.flat($hl).']$)/');}
 			$text = last($hl,blank(count($hl)),0);   
-			storedata('1.3.9','sa',0);
 		}
 		if ($nomidelision!==1 && !arr(array($fo),'/i[!]r$/')) // Addition of ends function is to prevent application to kF -> kir converted halanta, which are not there in upadeza.
 		{
-			storedata('1.3.3','pa',0);
 			$text=three(array("+"),$inbetweenpratyaya,array("+"),array("+"),$inbetweeenreplace,array("+"),0);
 			$text = two($hl,array("+ran"),blank(count($hl)),array("+ran"),0);
-			$text=three($hlplus,$vikaraNa,array("+"),blank1("+",count($hlplus)),$vikaraNa,array("+"),0);
-			storedata('1.3.9','sa',0);
 		}
 		$text=one(array("+si+","sicmi"),array("+sic+","sic+mi"),0);
 		if(preg_match('/['.pc('hl').']$/',$fo) && !arr(array($fo),'/i[!]r$/')) 
 		{
-			storedata('1.3.3','pa',0);
 			$text=pr2($hl,array("+"),array("va","ma"),blank(count($hl)),array("+"),array("va","ma"),$text);		
-			storedata('1.3.9','pa',0);
 		}
 		if ($nomidelision!==1 && arr($text,'/['.pc('hl').'][+]([c]*)[a][+]/') && ends(array($fo),'/['.pc('hl').']$/') )
 		{
-			storedata('1.3.3','pa',0);
 			$text=three($hl,array("+a+","+ca+"),$tiG1,blank(count($hl)),array("+a+","+ca+"),$tiG1,0);
-			storedata('1.3.9','sa',0);
 		}
+	if ($text!==$ininin)
+	{
+		$outoutout = $text;
+		$text = $ininin;
+		storedata('1.3.3','pa',0);
+		$text = $outoutout;
+		storedata('1.3.9','sa',0);
+	}
 }
 /* cuTU (1.3.7) */
 if (arr($text,'/[+][c][a][+]/') && in_array($so,$tiG)) // for caG
@@ -9222,6 +9225,7 @@ elseif (arr($text,'/[tTdDnsm]$/') && $vibhakti===1)
 /* halantyam (1.3.3) ant tasya lopaH (1.3.9) */
 if (arr($text,'/['.flat($hl).']$/') && $halGyAbbhyo!==1 && $nomidelision!==1 && $tusma!==1)
 {
+	echo "halantyam-4";
     itprat('/(['.flat($hl).']$)/');
 	storedata('1.3.3','pa',0);
     $text = last(prat('hl'),blank(count(prat('hl'))),0);
@@ -9231,6 +9235,7 @@ if ($debug===1) {dibug("8900");}
 /* halantyam (1.3.3) and tasya lopaH */
 if ($nomidelision!==1 && sub(array("+"),$inbetweenpratyaya,array("+"),0) )
 {
+	echo "halantyam-5";
     itprat('/['.flat($hl).'][+]/');
 	storedata('1.3.3','pa',0);
     $text=two(prat('hl'),array("+"),blank(count(prat('hl'))),array("+"),0);
@@ -9560,7 +9565,6 @@ if ( $dhatu===1 && (arr($text,'/[B][U][+]/')||$fo==="suDI") && arr($text,'/[iuIU
 } else { $nabhusu = 0; }
 /* kvau luptaM na sthAnivat (vA 431) */
 // Not displayed because it is difficult to teach sthnanivadbhav to machine now. Will come back to it if I can teach it some day.
-print_r($text);
 /* aci znudhAtubhruvAM yvoriyaGuvaGau (6.4.77) */
 if (($dhatu===1||$fo==="BrU") && arr($text,'/[iuIU][+]*['.flat($ac).']/') && $pada==="pratyaya" && ($eranekaca===0 || ($eranekaca===1 && anekAca($fo)===false ) || (arr($text,'/[B][U][+]/')||$fo==="suDI") ) && $dfmBU===0 && !sub(array("+"),array("I"),array("+"),0) )
 {

@@ -56,7 +56,7 @@ def compare(inputfile,outputfile):
 	for (a,b,c,d,e) in verbdetails:
 		if alternatives(a,baseverbforms):
 			print a,b,c,d,e
-			fout.write(a+':'+b+':'+c+':'+d+':'+e+'\n')
+			fout.write(a+'-('+d+','+b+','+c+','+e+')\n')
 	fout.close()
 	
 compare('generatedforms.xml','suspectforms/latest.txt')

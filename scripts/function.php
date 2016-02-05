@@ -3720,7 +3720,7 @@ function wrongformlist($list,$verblist,$strength="full")
 function generatedforms($list,$outputfile)
 {
 	global $fo, $number, $lakAra;
-	$tiplist = array("<3.1/>","<3.2/>","<3.3/>","<2.1/>","<2.2/>","<2.3/>","<1.1/>","<1.2/>","<1.3/>","<3.1/>","<3.2/>","<3.3/>","<2.1/>","<2.2/>","<2.3/>","<1.1/>","<1.2/>","<1.3/>",);
+	$tiplist = array("<tip/>","<tas/>","<Ji/>","<sip/>","<Tas/>","<Ta/>","<mip/>","<vas/>","<mas/>","<ta/>","<AtAm/>","<Ja/>","<TAs/>","<ATAm/>","<Dvam/>","<iw/>","<vahi/>","<mahiN/>",);
 	for($i=0;$i<count($list);$i++)
 	{
 		$split=explode(',',$list[$i]);
