@@ -2945,7 +2945,7 @@ function san()
 	foreach ($text as $value)
 	{
 		$parts=explode('+',$value);
-		if (preg_match('/[a]$/',$parts[0]) && !preg_match('/^['.pc('ac').']['.pc('hl').']['.pc('hl').']/',$parts[1]) && !preg_match('/^[AIUFXeoEO]/',$parts[1]) && !in_array($parts[1],array("smar","dar","tvar","praT","mrad","star","spaS")) )
+		if (preg_match('/[a]$/',$parts[0]) && !preg_match('/^['.pc('hl').']*['.pc('ac').']['.pc('hl').']['.pc('hl').']/',$parts[1]) && !preg_match('/^[AIUFXeoEO]/',$parts[1]) && !in_array($parts[1],array("smar","dar","tvar","praT","mrad","star","spaS")) )
 		{
 			$parts[0]=preg_replace('/([a])$/','i',$parts[0]);
 			$sanyata=1;
@@ -3010,11 +3010,11 @@ function san()
 	{
 		storedata('7.4.81','sa',0);
 	}
-
+	print_r($text); echo $atolopa;
 	foreach ($text as $value)
 	{
 		$parts=explode('+',$value);
-		if (preg_match('/[aiufx]$/',$parts[0]) && !preg_match('/^['.pc('ac').']['.pc('hl').']['.pc('hl').']/',$parts[1]) && !preg_match('/^['.pc('hl').']['.pc('hl').']/',$parts[1]) && !preg_match('/^[AIUFXeoEO]/',$parts[1]) && !preg_match('/^['.pc('hl').'][AIUFXeoEO]/',$parts[1]) && $atolopa!==1 && !in_array($parts[1],array("smar","dar","tvar","praT","mrad","star","spaS")) )
+		if (arr(array($value),'/^[^+]*[aiufx][+]['.pc('hl').']*['.pc('ac').']['.pc('hl').']/') && !arr(array($value),'/^[^+]*[aiufx][+]['.pc('hl').']*['.pc('ac').']['.pc('hl').']['.pc('hl').']/') && $atolopa!==1 && !in_array($parts[1],array("smar","dar","tvar","praT","mrad","star","spaS")) )
 		{
 			$parts[0]=preg_replace('/([a])$/','A',$parts[0]);
 			$parts[0]=preg_replace('/([i])$/','I',$parts[0]);
@@ -3026,6 +3026,7 @@ function san()
 		$val2[]=implode('+',$parts);
 	}
 	$text = $val2;
+	print_r($text);
 	/* dIrgho laghoH (7.4.94) */
 	if ($dirgholagho===1)
 	{

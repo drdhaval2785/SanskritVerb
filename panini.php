@@ -3823,11 +3823,13 @@ if ($caG===1 && arr($text,'/^['.pc('ac').']/') )
 	caG_ajAdi();
 }
 // trial san function
-if ($caG===1 && ($sanAdi==="Ric" || $verbset==="curAdi"))
+if ($caG===1 && ($sanAdi==="Ric" || $verbset==="curAdi") && !in_array($fo,$curAdi_adanta))
 {
+	storedata('7.4.93','pa',0);
 	san();
 }
 /* dIrgho laghoH (7.4.94) */
+/*
 if (arr($text,'/^[^+]*[aiufx][+]/') && $lakAra==="luN" && $caG===1)
 {
 	$text = change('/^([^+]*)[a][+]/','$1A+');
@@ -3836,7 +3838,7 @@ if (arr($text,'/^[^+]*[aiufx][+]/') && $lakAra==="luN" && $caG===1)
 	$text = change('/^([^+]*)[f][+]/','$1F+');
 	$text = change('/^([^+]*)[x][+]/','$1F+');
 	storedata('7.4.94','sa',0);
-}
+}*/
 /* aniditAM hala upadhAyAH kGiti (6.4.24) */ 
 if ( in_array($fo,$aniditverbs) && (in_array("N",$itpratyaya) || in_array("k",$itpratyaya)) && !in_array($sanAdi,array("Ric"))  && $so!=="mahiN" && arr($text,'/[NYRnmM]['.pc('hl').'][+]/')  && !in_array("i",$it) && $lakAra!=="viDiliN") # For application after NeraniTi
 {
