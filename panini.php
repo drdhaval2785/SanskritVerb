@@ -115,7 +115,6 @@ elseif (in_array($argv[2],array("law","liw","luw","lfw","sArvaDAtukalew","ArDaDA
 	$number = $argv[1];
 	$first = dhatu_from_number($number);
 	$verbset = verbset_from_number($number);
-	echo $first;
 	$lakAra = $argv[2];
 	$tran = $argv[3];
 	$us = $argv[4];
@@ -2141,7 +2140,6 @@ $inbetweeenreplace=array("a","ya","Ri","Ri","sa","Iya");
 /* halantyam (1.3.3) and tasya lopaH (1.3.9) */
 if (in_array($so,$tiG) && arr(array($fo),'/[!]['.pc('hl').']$/') && $nomidelision!==1 && sub(array("!"),$hl,array("+"),0) )
 {
-	echo "halantyam-1";
 	storedata('1.3.3','pa',0);
 	$text=three(array("!"),$hl,array("+"),array("!"),blank(count($hl)),array("+"),0);
 	storedata('1.3.9','sa',0);
@@ -2150,7 +2148,6 @@ if (in_array($so,$tiG) && arr(array($fo),'/[!]['.pc('hl').']$/') && $nomidelisio
 // Patch for removal of verb halantyam
 if (in_array($so,$tiG) && arr(array($fo),'/['.pc('hl').']$/') && !arr(array($fo),'/i[!]r$/') )
 {
-	echo "halantyam-2";
 	storedata('1.3.3','pa',0);
 	$text=three($hlplus,$vikaraNa,array("+"),blank1("+",count($hlplus)),$vikaraNa,array("+"),0);
 	$text=change('/^([^+]*)['.pc('hl').'][+]/','$1+');
@@ -4013,12 +4010,14 @@ if (arr($text,'/A[+]/') && $abhyasta===1 && pr2(array("A"),array("+"),array("atu
     $text=pr2(array("A"),array("+"),array("atus","aTus","a","ire"),array(""),array("+"),array("atus","aTus","a","ire"),$text);
 	storedata('6.4.112','sa',0);
 }
+print_r($text);
 /* gamahanajanakhanaghasAM lopaH kGiti (6.4.98) */
-if (in_array($fo,array("gamx!","hana!","jana!","Gasa!","Kanu!","janI!","ada!")) && ends($itpratyaya,array("k","N"),2) && sub(array("gam","Gan","jan","Gas","Kan"),array("+"),$ac,0) && in_array($so,$tiG) && $aG!==1)
+if (in_array($fo,array("gamx!","hana!","jana!","Gasa!","Kanu!","janI!","ada!")) && ends($itpratyaya,array("k","N"),2) && sub(array("gam","Gan","jan","Gas","Kan"),array("+"),$ac,0) && in_array($so,$tiG) && $aG!==1 && !in_array("N",$it))
 {
     $text=three(array("gam","Gan","jan","Gas","Kan"),array("+"),$ac,array("gm","Gn","jn","Gs","Kn"),array("+"),$ac,0);
 	storedata('6.4.98','sa',0);
 }
+print_r($text);
 /* aDgArgyagAlavayoH (7.3.99) */
 if (in_array($fo,array("rudi!r","Yizvapa!","zvapa!","Svasa!","prARa!","ana!","jakza!")) && pr2(array("rod","svap","Svas","prAR","an","jakz","rud"),array("+"),array("t","s"),array("rod","svap","Svas","prAR","an","jakz","rud"),array("+"),array("at","as"),$text)!==$text && in_array($so,$tiG) )
 {
@@ -9251,7 +9250,6 @@ elseif (arr($text,'/[tTdDnsm]$/') && $vibhakti===1)
 /* halantyam (1.3.3) ant tasya lopaH (1.3.9) */
 if (arr($text,'/['.flat($hl).']$/') && $halGyAbbhyo!==1 && $nomidelision!==1 && $tusma!==1)
 {
-	echo "halantyam-4";
     itprat('/(['.flat($hl).']$)/');
 	storedata('1.3.3','pa',0);
     $text = last(prat('hl'),blank(count(prat('hl'))),0);
@@ -9261,7 +9259,6 @@ if ($debug===1) {dibug("8900");}
 /* halantyam (1.3.3) and tasya lopaH */
 if ($nomidelision!==1 && sub(array("+"),$inbetweenpratyaya,array("+"),0) )
 {
-	echo "halantyam-5";
     itprat('/['.flat($hl).'][+]/');
 	storedata('1.3.3','pa',0);
     $text=two(prat('hl'),array("+"),blank(count(prat('hl'))),array("+"),0);

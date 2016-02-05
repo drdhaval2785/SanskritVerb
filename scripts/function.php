@@ -3010,7 +3010,6 @@ function san()
 	{
 		storedata('7.4.81','sa',0);
 	}
-	print_r($text); echo $atolopa;
 	foreach ($text as $value)
 	{
 		$parts=explode('+',$value);
@@ -3026,7 +3025,6 @@ function san()
 		$val2[]=implode('+',$parts);
 	}
 	$text = $val2;
-	print_r($text);
 	/* dIrgho laghoH (7.4.94) */
 	if ($dirgholagho===1)
 	{
