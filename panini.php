@@ -1945,6 +1945,25 @@ elseif ($lakAra==="liw" && $veda===0 && (anekAca($verb_without_anubandha) || $sa
 /* curAdi Ric handling */
 if (arr($text,'/\+Ric\+/'))
 {
+	/* ata upadhAyAH (7.2.116) */
+	// more on enumeration kind. Not used regexes deliberately.
+	if ( $atolopa!==1 && $Naugami!==1 && $jAgro!==1 && arr($text,'/[a]['.pc('hl').'][+][R][i]c[+]/') )
+	{
+		$text = three(array("a"),$hl,array("+Ric+"),array("A"),$hl,array("+Ric+"),0);
+		storedata('7.2.116','sa',0);
+	}
+	/* mitAM hrasvaH (6.4.92) */ 
+	if ( in_array($fo,$mitcurAdiverbs) && ($verbset === "curAdi" || $verbset === "none" ) && sub(array("A"),$hl,array("+Ric+"),0))
+	{
+		$text = three(array("A"),$hl,array("+Ric+"),array("a"),$hl,array("+Ric+"),0);
+		$text = one(array("cap+Ric"),array("cAp+Ric"),0);
+		storedata('6.4.92','sa',0);
+	}
+	if ( in_array($fo,$ghaTAdi_mit) && ($verbset === "BvAdi" || $verbset === "none" ) && sub(array("A"),$hl,array("+Ric+"),0) )
+	{
+		$text = three(array("A"),$hl,array("+Ric+"),array("a"),$hl,array("+Ric+"),0);
+		storedata('6.4.92','sa',0);
+	} 
 	if(arr($text,'/['.pc('ac').'][!]/'))
 	{
 		storedata('1.3.2','pa',0);			
@@ -2145,16 +2164,15 @@ if ($debug===1) {dibug("1900");}
 if (in_array($so,$tiG) && (arr($text,'/['.pc('hl').'][+]/') ||sub(array("+"),$inbetweenpratyaya,array("+"),0) || (arr($text,'/['.pc('hl').']$/') && $tusma!==1) || sub($hl,array("+"),$vikaraNa,0) || $rudhAdibhyaH===1 || pr2($hl,array("+"),array("va","ma"),blank(count($hl)),array("+"),array("va","ma"),$text)!==$text) ) # $ad === 1 removed because of https://github.com/drdhaval2785/SanskritVerb/issues/318
 {
 	$ininin = $text;
+	$text=three(array("+"),$inbetweenpratyaya,array("+"),array("+"),$inbetweeenreplace,array("+"),0);
 		if ($tusma!==1)
 		{
-			$text=three(array("+"),$inbetweenpratyaya,array("+"),array("+"),$inbetweeenreplace,array("+"),0);
 			$text = last($hl,blank(count($hl)),0);
 			if ( $so!=="mahiN") {itprat('/(['.flat($hl).']$)/');}
 			$text = last($hl,blank(count($hl)),0);   
 		}
 		if ($nomidelision!==1 && !arr(array($fo),'/i[!]r$/')) // Addition of ends function is to prevent application to kF -> kir converted halanta, which are not there in upadeza.
 		{
-			$text=three(array("+"),$inbetweenpratyaya,array("+"),array("+"),$inbetweeenreplace,array("+"),0);
 			$text = two($hl,array("+ran"),blank(count($hl)),array("+ran"),0);
 		}
 		$text=one(array("+si+","sicmi"),array("+sic+","sic+mi"),0);
@@ -3321,6 +3339,7 @@ if (arr(array($fo),'/[h][a][n]/') && !in_array($fo,array("ahan","dIrGAhan")) && 
     $hohante=1; // 0 - this sUtra has not applied. 1 - this sUtra has applied.
 } else { $hohante=0; }
 if ($debug===1) {dibug("3000");}
+print_r($text);
 /* ata upadhAyAH (7.2.116) */
 // more on enumeration kind. Not used regexes deliberately.
 if ( $atolopa!==1 && $Naugami!==1 && $jAgro!==1 && arr($text,'/[a]['.pc('hl').'][+][R][i][+]/') )
