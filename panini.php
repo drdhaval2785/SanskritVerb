@@ -3169,7 +3169,14 @@ if ($caG===1 && arr($text,'/^['.pc('hl').']/'))
 	abhyAsa_halAdi();
 	$abhyAsa=1;
 }
-
+print_r($text);
+/* sArvadhAtukArdhadhAtukayoH (7.3.84) */
+// Patch for znu. See https://github.com/drdhaval2785/SanskritVerb/issues/451
+if (arr($text,'/[+]nu[+]tu$/') )
+{
+	$text = one(array("+nu+tu"),array("+no+tu"),0);
+	storedata('7.3.84','sa',0);
+}
 /* sArvadhAtukArdhadhAtukayoH (7.3.84) */
 if ( $didhI!==1 && $kGiti!==1 && !($lakAra==="liw" && in_array($fo,array("uN"))) && arr($text,'/[iIuUfFxX]\+[uiae]\+/') && ($sarvadhatuka===1 || $ardhadhatuka===1) && !($ad===1 && sub(array("i","I","u","U","f","F","x","X"),array("+"),$ajAdi_apit_sArvadhAtuka_pratyayas,0) ) )
 {
@@ -5118,12 +5125,12 @@ if (arr($text,'/F\+/') && in_array($so,$tiG))
 if (arr($text,'/['.pc('ac').']\+nu\+hi/') && in_array($so,$tiG) )
 {
     $text=three($ac,array("+"),array("nu+hi"),$ac,array("+"),array("nu"),0);
-	storedata('6.1.106','sa',0);
+	storedata('6.4.106','sa',0);
 }
 if (arr($text,'/\+u\+hi/') && sub($ac,$hl,array("+u+hi"),0) && in_array($so,$tiG) )
 {
     $text=three($ac,$hl,array("+u+hi"),$ac,$hl,array("+u"),0);
-	storedata('6.1.106','sa',0);
+	storedata('6.4.106','sa',0);
 }
 /* lopazcAsyAnyatarasyAM mvoH (6.4.107) */
 if (arr($text,'/['.pc('ac').']\+nu\+/') && sub($ac,array("+nu+"),array("vas","mas","vahe","mahe","va","ma","vahi","mahi",),0) && in_array($so,$tiG) )
