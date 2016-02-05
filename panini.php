@@ -2107,11 +2107,16 @@ if (arr($text,'/[+][lSkKgGN]/') && $taddhita === 0  && in_array($so,$tiG) )
 }
 /* na vibhaktau tusmAH (1.3.4) */
 //if (arr($text,'/[tTdDnsm]$/') && $pada=== "pratyaya" && sub(array("+"),$navibhaktau,blank(0),0) && in_array($so,$tiG))
-if (arr($text,'/[tTdDnsm]$/') && $vibhakti===1 && $tusma!==1)
+if (arr(array($so),'/[tTdDnsm]$/') && $vibhakti===1 && $tusma!==1)
 {
 	storedata('1.3.4','sa',0);
     $tusma=1;
-} else {$tusma=0; }
+}
+elseif (arr($text,'/[tTdDnsm]$/') && $vibhakti===1)
+{
+    $tusma=1;
+}
+else {$tusma=0; }
 $inbetweenpratyaya=array("ap","yan","Ric","RiN","san","IyaN");
 $inbetweeenreplace=array("a","ya","Ri","Ri","sa","Iya");
 /* halantyam (1.3.3) and tasya lopaH (1.3.9) */
@@ -2353,7 +2358,6 @@ if ( in_array($lakAra,array("viDiliN","ASIrliN")) && in_array($so,$tis) )
 	storedata('1.3.2','pa',0);
 	$text=one(array("+yAsu+"),array("+yAs+"),0);
 	storedata('1.3.9','sa',0);
-	storedata('3.4.103','sa',0);
 	$Git=1;
 	$yAsuT = 1;
 	$itpratyaya=array_merge($itpratyaya,array("N")); $it=array_merge($it,array("N")); 
@@ -9204,10 +9208,13 @@ if (((arr($text,'/[+][lSkKgGN]/'))||$sarva2===1||$purva===1) && $taddhita === 0 
 	storedata('1.3.9','sa',0);
 }
 /* na vibhaktau tusmAH (1.3.4) */
-//if (arr($text,'/[tTdDnsm]$/') && $pada=== "pratyaya" && ( in_array($so,$navibhaktau) || sub(array("+"),$navibhaktau,blank(0),0) ) && $wa === 0 && $wa1 === 0)
-if (arr($text,'/[tTdDnsm]$/') && $vibhakti===1 && $tusma!==1)
+if (arr(array($so),'/[tTdDnsm]$/') && $vibhakti===1 && $tusma!==1)
 {
 	storedata('1.3.4','sa',0);
+    $tusma=1;
+}
+elseif (arr($text,'/[tTdDnsm]$/') && $vibhakti===1)
+{
     $tusma=1;
 }
 /* halantyam (1.3.3) ant tasya lopaH (1.3.9) */
