@@ -21,6 +21,22 @@ def triming(lst):
 		output.append(member)
 	return output
 
+def alternatives(word,verblist):
+	if word[-1]=="H" and word[:-1]+'s' in verblist:
+		pass
+	elif word[-1]=="H" and word[:-1]+'r' in verblist:
+		pass
+	elif word[-1]=="d" and word[:-1]+'t' in verblist:
+		pass
+	elif word[-3:]=="tAd" and word[:-3]+'tu' in verblist:
+		pass
+	elif word[-3:]=="tAt" and word[:-3]+'tu' in verblist:
+		pass
+	elif word[-4:]=="Dvam" and word[:-4]+'Qvam' in verblist:
+		pass
+	elif not word in verblist:
+		return True
+
 def compare(inputfile,outputfile):
 	fout = codecs.open(outputfile,'w','utf-8')
 	tree = etree.parse(inputfile)
@@ -38,7 +54,7 @@ def compare(inputfile,outputfile):
 	print 'Input file has', len(verbforms), 'entries'
 	print 'Base data has', len(baseverbforms), 'entries'
 	for (a,b,c,d,e) in verbdetails:
-		if not a in baseverbforms:
+		if alternatives(a,baseverbforms):
 			print a,b,c,d,e
 			fout.write(a+':'+b+':'+c+':'+d+':'+e+'\n')
 	fout.close()

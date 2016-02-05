@@ -2132,7 +2132,6 @@ if (in_array($so,$tiG) && arr(array($fo),'/['.pc('hl').']$/') && !arr(array($fo)
 {
 	storedata('1.3.3','pa',0);
 	$text=change('/^([^+]*)['.pc('hl').'][+]/','$1+');
-	$text=three(array("+"),$inbetweenpratyaya,array("+"),array("+"),$inbetweeenreplace,array("+"),0);
 	$text = one(array("i!r"),array("i!"),0);
 	$text = change('/(^[^+]+)['.pc('hl').']([+]jus)/','$1$2'); // Check why this was kept here. Gave wrong form of kftI! rudhAdi viDiliN Ji, so commented out
 	$text=two($hlplus,array("Ri+"),blank1("+",count($hlplus)),array("Ri+"),0);
@@ -2145,14 +2144,16 @@ if (in_array($so,$tiG) && (arr($text,'/['.pc('hl').'][+]/') ||sub(array("+"),$in
 		if ($tusma!==1)
 		{
 			storedata('1.3.3','pa',0);
+			$text=three(array("+"),$inbetweenpratyaya,array("+"),array("+"),$inbetweeenreplace,array("+"),0);
 			$text = last($hl,blank(count($hl)),0);
 			if ( $so!=="mahiN") {itprat('/(['.flat($hl).']$)/');}
 			$text = last($hl,blank(count($hl)),0);   
 			storedata('1.3.9','sa',0);
 		}
-		if ($nomidelision!==1 && ends(array($fo),$hl,0) && !arr(array($fo),'/i[!]r$/')) // Addition of ends function is to prevent application to kF -> kir converted halanta, which are not there in upadeza.
+		if ($nomidelision!==1 && !arr(array($fo),'/i[!]r$/')) // Addition of ends function is to prevent application to kF -> kir converted halanta, which are not there in upadeza.
 		{
 			storedata('1.3.3','pa',0);
+			$text=three(array("+"),$inbetweenpratyaya,array("+"),array("+"),$inbetweeenreplace,array("+"),0);
 			$text = two($hl,array("+ran"),blank(count($hl)),array("+ran"),0);
 			$text=three($hlplus,$vikaraNa,array("+"),blank1("+",count($hlplus)),$vikaraNa,array("+"),0);
 			storedata('1.3.9','sa',0);
@@ -2620,13 +2621,6 @@ if (sub(array("+"),array("sya"),array("a","e","o"),0))
 {
     $text=three(array("+"),array("sya"),array("a","e","o"),array("+"),array("sy"),array("a","e","o"),0);
 	storedata('6.1.97','sa',0);
-}
-/* anudAttasya cardupadhasyAnyatarasyAm (6.1.59) */ 
-if (in_array($fo,array("sfpx!","spfSa!","mfSa!","kfza!","tfpa!","dfpa!")) && arr($text,'/[f]['.pc('hl').'][+]['.pc('Jl').']/') )
-{
-    $text = three(array("sfp","spfS","mfS","kfz","tfp","dfp"),array("+"),prat('Jl'),array("sfap","spfaS","mfaS","kfaz","tfap","dfap"),array("+"),prat('Jl'),1);
-    $text = three(array("sfap","spfaS","mfaS","kfaz","tfap","dfap"),array("+"),array("sa+"),array("sfp","spfS","mfS","kfz","tfp","dfp"),array("+"),array("sa+"),0);
-	storedata('6.1.59','sa',0);
 }
 /* ksasyAci (7.3.72) */
 if ( in_array($so,$tiG) && $ksa===1 && sub(array("+sa+"),$ac,blank(0),0) ) 
@@ -4218,6 +4212,7 @@ if ( in_array($lakAra,array("liw")) )
 {
 	storedata('3.4.115','pa',0);
 }
+print_r($text);
 /* Adding iDAgama actually */
 if ($id_dhAtu==="sew" && $id_pratyaya==="sew" && !($yAsuT===1 && $lakAra==="ASIrliN")  && !in_array("iw",$Agama) && $caG!==1 && $ksa!==1) // for seT dhAtus
 {
@@ -4271,6 +4266,13 @@ if (in_array($fo,array("wuo!Svi")) && sub(array("Svi"),array("+"),prat('vl'),0) 
 {
 	$text = three(array("Svi","Su+Su"),array("+"),prat('vl'),array("Svi","Su+Su"),array("+i"),prat('vl'),0);
 	storedata('7.2.35','sa',0);
+}
+/* anudAttasya cardupadhasyAnyatarasyAm (6.1.59) */ 
+if (in_array($fo,array("sfpx!","spfSa!","mfSa!","kfza!","tfpa!","dfpa!")) && arr($text,'/[f]['.pc('hl').'][+]['.pc('Jl').']/') )
+{
+    $text = three(array("sfp","spfS","mfS","kfz","tfp","dfp"),array("+"),prat('Jl'),array("sfap","spfaS","mfaS","kfaz","tfap","dfap"),array("+"),prat('Jl'),1);
+    $text = two(array("sfap","spfaS","mfaS","kfaz","tfap","dfap"),array("+sa+"),array("sfp","spfS","mfS","kfz","tfp","dfp"),array("+sa+"),0); // For sijvA vaktavyaH
+	storedata('6.1.59','sa',0);
 }
 /* removing + from before Ni pratyayas */
 if(arr($text,'/['.pc('hl').']\+i\+/')) {$text = one(array("+i+"),array("i+"),0);}
@@ -4353,6 +4355,7 @@ if ( arr($text,'/['.pc('ac').'](['.pc('hl').'M]*)[+][st]/')  && $lakAra==="luN" 
 	}
 	$text = $aca; $aca=array();
 	$text = one(array("+sA+t",),array("+sa+t"),0);
+	$text = change('/Ar([zp][+]sa[+])/','f$1');
 	storedata('7.2.3','sa',0);
 }
 if ($debug===1) {dibug("3900");}

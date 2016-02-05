@@ -2358,9 +2358,9 @@ function link_sutra($s) {
 function link_vartika($s) {
  /* $s is a string of form X.Y.Z where X,Y,Z are digits
    Returns a string   
-   <a href="http://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/X/X.Y.Z.htm">X.Y.Z</a>
+   <a href="Data/allsutrani/X.Y.Z.htm">X.Y.Z</a>
   e.g., if s = "3.4.113", returns
-   <a href="http://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.4.113.htm">3.4.113</a>
+   <a href="Data/allsutrani/3.4.113.htm">3.4.113</a>
  */
  $parts = preg_split('/[.-]/',$s);
  if (count($parts) != 4) {  // error checking
@@ -2371,7 +2371,7 @@ function link_vartika($s) {
  $Y=$parts[1];
  $Z=$parts[2];
  $W=$parts[3];
- $ans = "<a href=\"http://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/$X/$X.$Y.$Z.htm\">$X.$Y.$Z-$W</a>";
+ $ans = "<a href=\"Data/allsutrani/$X.$Y.$Z.htm\" target=\"_blank\">$X.$Y.$Z-$W</a>";
  return $ans;
 }
 
