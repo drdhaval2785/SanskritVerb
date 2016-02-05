@@ -4212,7 +4212,6 @@ if ( in_array($lakAra,array("liw")) )
 {
 	storedata('3.4.115','pa',0);
 }
-print_r($text);
 /* Adding iDAgama actually */
 if ($id_dhAtu==="sew" && $id_pratyaya==="sew" && !($yAsuT===1 && $lakAra==="ASIrliN")  && !in_array("iw",$Agama) && $caG!==1 && $ksa!==1) // for seT dhAtus
 {
@@ -9561,10 +9560,12 @@ if ( $dhatu===1 && (arr($text,'/[B][U][+]/')||$fo==="suDI") && arr($text,'/[iuIU
 } else { $nabhusu = 0; }
 /* kvau luptaM na sthAnivat (vA 431) */
 // Not displayed because it is difficult to teach sthnanivadbhav to machine now. Will come back to it if I can teach it some day.
+print_r($text);
 /* aci znudhAtubhruvAM yvoriyaGuvaGau (6.4.77) */
-if (($dhatu===1||$fo==="BrU") && arr($text,'/[iuIU][+]['.flat($ac).']/') && $pada==="pratyaya" && ($eranekaca===0 || ($eranekaca===1 && anekAca($fo)===false ) || (arr($text,'/[B][U][+]/')||$fo==="suDI") ) && $dfmBU===0 && !sub(array("+"),array("I"),array("+"),0) )
+if (($dhatu===1||$fo==="BrU") && arr($text,'/[iuIU][+]*['.flat($ac).']/') && $pada==="pratyaya" && ($eranekaca===0 || ($eranekaca===1 && anekAca($fo)===false ) || (arr($text,'/[B][U][+]/')||$fo==="suDI") ) && $dfmBU===0 && !sub(array("+"),array("I"),array("+"),0) )
 {
-    $text = three(array("i","I","u","U"),array("+"),$ac,array("iy","iy","uv","uv"),array("+"),$ac,0);
+    $text = change('/([iI])([+]*['.pc('ac').'])/','iy$2');
+    $text = change('/([uU])([+]*['.pc('ac').'])/','uv$2');
 	storedata('6.4.77','sa',0);
 }
 /* gatikAraketarapUrvapadasya yaN neSyate (vA 5034) */
