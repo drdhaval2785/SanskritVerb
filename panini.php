@@ -3691,7 +3691,6 @@ if ($lakAra==="liw" && (in_array($fo,array("f","fCa!")) || ends(array($fo),array
 	$text = two(array("A+f","A+fcC","A+nf","A+nfcC","F"),array("+"),array("A+ar","A+arcC","A+nar","A+narcC","ar"),array("+"),0);
 	storedata('7.4.11','sa',0);
 }
-print_r($text);
 /* udoSThyapUrvasya (7.1.102) */
 if ( in_array($fo,array("pF","PF","bF","BF","mF")) && sub(array("F"),array("+"),$apit_sArvadhAtuka_pratyayas,0) && in_array($so,$tiG) )
 {

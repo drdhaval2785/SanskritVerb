@@ -3719,14 +3719,14 @@ function wrongformlist($list,$verblist,$strength="full")
 // Function which puts the output of tiGanta.php into a file.
 function generatedforms($list,$outputfile)
 {
-	global $fo, $number, $lakAra;
+	global $first, $number, $lakAra;
 	$tiplist = array("<tip/>","<tas/>","<Ji/>","<sip/>","<Tas/>","<Ta/>","<mip/>","<vas/>","<mas/>","<ta/>","<AtAm/>","<Ja/>","<TAs/>","<ATAm/>","<Dvam/>","<iw/>","<vahi/>","<mahiN/>",);
 	for($i=0;$i<count($list);$i++)
 	{
 		$split=explode(',',$list[$i]);
 		foreach($split as $member)
 		{
-			fputs($outputfile,'<f form="'.$member.'"><root name="'.$fo.'" num="'.$number.'"/><'.$lakAra.'/>'.$tiplist[$i]."</f>\n");
+			fputs($outputfile,'<f form="'.$member.'"><root name="'.$first.'" num="'.$number.'"/><'.$lakAra.'/>'.$tiplist[$i]."</f>\n");
 		}
 	}
 }
