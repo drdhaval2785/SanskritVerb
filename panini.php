@@ -1640,6 +1640,12 @@ if ( $sarvadhatuka===1 && $verbset==="adAdi" && in_array($fo,$adAdi) && sub(arra
     $vik=array("Sapluk");
     $set=2;
 }
+/* kRpo ro laH (8.2.18) */
+if (arr($text,'/kfp/') )
+{
+    $text=one(array("kfp"),array("kxp"),0);
+	storedata('8.2.18','sa',0);
+}
 /* Nau prAtipadikasya iSThavatkAryaM bhavatIti vaktavyam (vA) */
 if ( !in_array($fo,$allverbs) && sub(array("+Ric+Sap+","+RiN+Sap+"),$tiG,blank(0),0) )
 {
@@ -10668,12 +10674,6 @@ if (arr($text,'/an\+/') && sub(array("udan","Asan"),array("+"),array("ByAm","Bir
 	storedata('8.2.7','sa',0);
 }
 if ($debug===1) {dibug("10300");}
-/* kRpo ro laH (8.2.18) */
-if (arr($text,'/kfp/') )
-{
-    $text=one(array("kfp"),array("kxp"),0);
-	storedata('8.2.18','sa',0);
-}
 /* nazervA (8.2.63) */
 if (arr($text,'/[n][a][S][+]/') && $pada==="pada")
 {
