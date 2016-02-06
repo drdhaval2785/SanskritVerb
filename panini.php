@@ -4038,12 +4038,6 @@ if ( arr($text,'/han\+hi/') && in_array($so,$tiG) )
 	storedata('6.4.36','sa',0);
     $hanterjaH=1;
 }
-/* gamahanajanakhanaghasAM kGityanaGi (6.4.98) */
-if (in_array($fo,array("hana!","gamx!","jana!","Kana!","Gasa!")) && pr2(array("han","gam","jan","Kan","Gas"),array("+"),$ajAdi_apit_sArvadhAtuka_pratyayas,array("hn","gm","jn","Kn","Gs"),array("+"),$ajAdi_apit_sArvadhAtuka_pratyayas,$text)!==$text && in_array($so,$tiG)  && $aG!==1)
-{
-    $text = pr2(array("han","gam","jan","Kan","Gas"),array("+"),$ajAdi_apit_sArvadhAtuka_pratyayas,array("hn","gm","jn","Kn","Gs"),array("+"),$ajAdi_apit_sArvadhAtuka_pratyayas,$text);
-	storedata('6.4.98','sa',0);
-}
 /* vA gamaH (1.2.13) */
 if ($fo==="gamx!" && in_array($so,$taG) && ($sic===1||$sIyuT===1) )
 {
@@ -4280,6 +4274,13 @@ if (in_array($fo,array("wuo!Svi")) && sub(array("Svi"),array("+"),prat('vl'),0) 
 {
 	$text = three(array("Svi","Su+Su"),array("+"),prat('vl'),array("Svi","Su+Su"),array("+i"),prat('vl'),0);
 	storedata('7.2.35','sa',0);
+}
+/* gamahanajanakhanaghasAM kGityanaGi (6.4.98) */
+if (in_array($fo,array("hana!","gamx!","jana!","Kana!","Gasa!","ada!")) && (pr2(array("han","gam","jan","Kan","Gas"),array("+"),$ajAdi_apit_sArvadhAtuka_pratyayas,array("hn","gm","jn","Kn","Gs"),array("+"),$ajAdi_apit_sArvadhAtuka_pratyayas,$text)!==$text || arr($text,'/[+]i[vm]a$/')) && in_array($so,$tiG)  && $aG!==1)
+{
+    $text = pr2(array("han","gam","jan","Kan","Gas"),array("+"),$ajAdi_apit_sArvadhAtuka_pratyayas,array("hn","gm","jn","Kn","Gs"),array("+"),$ajAdi_apit_sArvadhAtuka_pratyayas,$text);
+    $text = pr2(array("han","gam","jan","Kan","Gas"),array("+"),array("iva","ima"),array("hn","gm","jn","Kn","Gs"),array("+"),array("iva","ima"),$text);
+	storedata('6.4.98','sa',0);
 }
 /* anudAttasya cardupadhasyAnyatarasyAm (6.1.59) */ 
 if (in_array($fo,array("sfpx!","spfSa!","mfSa!","kfza!","tfpa!","dfpa!")) && arr($text,'/[f]['.pc('hl').'][+]['.pc('Jl').']/') )
@@ -4561,7 +4562,7 @@ elseif ( sub(array("va+vaj","va+vaK","va+vaw","va+vaW","va+vaR","va+van","va+val
 	storedata('6.4.126','sa',0);
 }
 /* gamahanajanakhanaghasAM lopaH kGiti (6.4.98) */
-elseif (in_array($fo,array("gamx!","hana!","jana!","Gasa!","Kanu!","janI!")) && sub(array("gam","Gan","jan","Gas","Kan"),array("+"),blank(0),0) && in_array($so,$tiG)  && $aG!==1)
+elseif (in_array($fo,array("gamx!","hana!","jana!","Gasa!","Kanu!","janI!","ada!")) && sub(array("gam","Gan","jan","Gas","Kan"),array("+"),blank(0),0) && in_array($so,$tiG)  && $aG!==1)
 {
 }
 /* ata ekahalmadhye'nAdezAderliTi (6.4.120) */
