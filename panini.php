@@ -1044,6 +1044,12 @@ if ( in_array($fo,array("kamu!")) && $pada==="pratyaya" && $lakAra!=="")
 	storedata('1.3.2','pa',0);
 	$text = change('/kamu[!][+]RiN/','kam+RiN');
 	storedata('1.3.9','sa',0);
+	storedata('1.3.3','pa',0);
+	storedata('1.3.7','pa',0);
+	$text = change('/kam[+]RiN/','kam+i');
+	storedata('1.3.9','sa',0);	
+	$text = one(array("kam+i"),array("kAmi"),0);
+	storedata('7.2.116','sa',0);
 }
 /* AyAdaya ArdhadhAtuke vA (3.1.31) */
 // Right now it is difficult to handle optional forms in this case. Commenting it out
@@ -2042,6 +2048,13 @@ if ($lakAra==="liw" && sub(array("+Am+"),$tiG1,blank(0),0) )
 	//$text=one(array("+Am+kf+"),array("+Am+BU+"),1); // Trying for kf only right now.
 	//$text=one(array("+Am+kf+"),array("+Am+as+"),1);
 	storedata('3.1.40','sa',0);
+	if (arr($text,'/[i][+]Am[+]/'))
+	{
+		$text = change('/[i][+]Am[+]/','e+Am+');
+		storedata('7.3.84','sa',0);
+		$text = change('/e[+]Am[+]/','ayAm+');
+		storedata('6.1.78','sa',0);
+	}
 	$kaspratyaya=1;
 	$text = one(array("+Am+"),array("Am+"),0);
 	$val=array();
