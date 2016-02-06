@@ -49,3 +49,5 @@ verboutput/*.*
 UoHyd_all_forms.txt
 wrongformfinder.sh
 Data/allsutrani/*.*
+suspectverbforms/*.*
+generatedforms/*.*
