@@ -626,7 +626,7 @@ if ($type==='tiGanta')
 	}
 	/* budhayudhanazajaneGprudrusrubhyo NeH (1.3.86) */
 	// NeH coding pending.
-	elseif ( in_array($first,array("buDa!","yuDa!","naSa!","iN","pru","dru","sru")) && $vAcya==="kartR")
+	elseif ( in_array($first,array("buDa!","yuDa!","naSa!","iN","pru","dru","sru")) && $vAcya==="kartR" && ($verbset==="curAdi"||$sanAdi==="Ric"))
 	{
 		$verbpada=verb_pada('1.3.86');
 	}
@@ -780,7 +780,6 @@ $upasarga_joined=0;
 /* Remembering the SLP1 input words and pratyaya. */
 $fo = $first; // remembering the original prakRti. Sometimes we need to know what was the original prakRti.
 $so = $second; ; // remembering the original pratyayas. Sometimes we need to know what was the original pratyaya.
-
 /* displaying the data back to the user */
 suffix_display();	
 
