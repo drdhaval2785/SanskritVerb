@@ -51,3 +51,4 @@ wrongformfinder.sh
 Data/allsutrani/*.*
 suspectforms/*.*
 generatedforms/*.*
+nounoutput/*.*

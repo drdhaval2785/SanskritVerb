@@ -147,9 +147,9 @@ if ($debug===1) {dibug("100");}
 
 if (!isset($argv[0]) and $type==='tiGanta')
 {
-	$outfile = fopen("verboutput//".$first."_".$verbset."_".$lakAra.".html", "wb");
-	fputs($outfile,$header);
-	echo $header; // creating header. This will ensure that the HTML is shown with UTF-8 encoding with necessary stylesheet.
+	//$outfile = fopen("verboutput//".$first."_".$verbset."_".$lakAra.".html", "wb");
+	//fputs($outfile,$header);
+	//echo $header; // creating header. This will ensure that the HTML is shown with UTF-8 encoding with necessary stylesheet.
 }
 $verbset=trim($verbset);
 $fo = $first; // remembering the original prakRti. Sometimes we need to know what was the original prakRti.
@@ -2929,7 +2929,6 @@ elseif ( in_array("k",$itpratyaya) && in_array($fo,array("brUY","Yizvapa!","yaja
 	storedata('6.1.15','sa',0);
     $text = samprasarana(array("uac","suap","iaj","uap","ue","vie","hie","uad","Su"),0);
 }
-print_r($text);
 /* RRta iddhAtoH (7.1.100) */
 if (arr($text,'/F\+/') && in_array($so,$tiG) && ($sarvadhatuka===1 || in_array("Sa",$vik)))
 {
