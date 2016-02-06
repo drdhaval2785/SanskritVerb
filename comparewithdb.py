@@ -37,6 +37,12 @@ def alternatives(word,verblist):
 	elif not word in verblist:
 		return True
 
+def scrapeokforms(okformsfile):
+	fin = codecs.open(okformsfile,'r','utf-8')
+	data = fin.readlines()
+	output = [member.split('-')[0] for member in data]
+	return output
+
 def compare(inputfile,outputfile):
 	fout = codecs.open(outputfile,'w','utf-8')
 	tree = etree.parse(inputfile)
@@ -49,7 +55,9 @@ def compare(inputfile,outputfile):
 	gerard = open('Data/verbforms_gerard.txt').read()
 	gerardverbforms = gerard.split(',')
 	gerardverbforms = triming(gerardverbforms)
-	baseverbforms = ambaverbforms+gerardverbforms
+	okforms = scrapeokforms('Data/okforms.txt')
+	okforms = triming(okforms)
+	baseverbforms = ambaverbforms+gerardverbforms+okforms
 	baseverbforms = list(set(baseverbforms))
 	print 'Input file has', len(verbforms), 'entries'
 	print 'Base data has', len(baseverbforms), 'entries'

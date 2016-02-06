@@ -149,7 +149,7 @@ if (!isset($argv[0]) and $type==='tiGanta')
 {
 	//$outfile = fopen("verboutput//".$first."_".$verbset."_".$lakAra.".html", "wb");
 	//fputs($outfile,$header);
-	//echo $header; // creating header. This will ensure that the HTML is shown with UTF-8 encoding with necessary stylesheet.
+	echo $header; // creating header. This will ensure that the HTML is shown with UTF-8 encoding with necessary stylesheet.
 }
 $verbset=trim($verbset);
 $fo = $first; // remembering the original prakRti. Sometimes we need to know what was the original prakRti.
