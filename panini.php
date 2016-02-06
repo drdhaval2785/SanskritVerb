@@ -1088,7 +1088,7 @@ if (in_array($so,$tiG) && $pada==="pratyaya" && $lakAra!=="")
 	storedata('3.4.77','pa',0);
 	storedata('1.3.3','pa',0);
 	storedata('1.3.2','pa',0);
-	$text = pr2(array("+"),$lakAralist,blank(0),array("+"),array("l"),blank(0),$text);
+	$text = pr2(array("+"),array($lakAra),blank(0),array("+"),array("l"),blank(0),$text);
 	$text = pr2(array("+"),array("liN","lew"),blank(0),array("+"),array("l"),blank(0),$text);
 	storedata('1.3.9','sa',0);
 	$text = pr2(array("+"),array("l"),blank(0),array("+"),array($second),blank(0),$text);
