@@ -779,35 +779,35 @@ if($_POST['step']==='11_1')
             $html .= '<div id="step22">';
             $html .= '<input required type="radio" value="1" name="cond11_1" > गत्यर्थक या हिंसार्थक है ';
             $html .= '<input required type="radio" value="2" name="cond11_1" > इतरेतर, अन्योन्य या परस्पर के समीप में है ';
-            $html .= '<input required type="radio" value="3" name="cond11_1" > उपर में से कोई नहीं ';
+            $html .= '<input required type="radio" value="3" name="cond11_1" checked > उपर में से कोई नहीं ';
             $html .= '</div>';            
 }
 if($_POST['step']==='11' && ends($arrWord,array("qudAY"),2) && $us==="A")
 {
             $html .= '<div id="step33">';
             $html .= '<input required type="radio" value="1" name="cond14" > विहरण ';
-            $html .= '<input required type="radio" value="2" name="cond14" > अविहरण ';
+            $html .= '<input required type="radio" value="2" name="cond14" checked> अविहरण ';
             $html .= '</div>';            
 }
 if($_POST['step']==='14_1')
 {
             $html .= '<div id="step33">';
             $html .= '<input required type="radio" value="1" name="cond14_1" > स्वाङ्गविहरण ';
-            $html .= '<input required type="radio" value="2" name="cond14_1" > पराङ्गविहरण ';
+            $html .= '<input required type="radio" value="2" name="cond14_1" checked > पराङ्गविहरण ';
             $html .= '</div>';            
 }
 if($_POST['step']==='11' && ends($arrWord,array("zWA"),2))
 {
             $html .= '<div id="step33">';
             $html .= '<input required type="radio" value="1" name="cond15" > प्रकाशन या स्थेय के अर्थ में प्रयुक्त है ';
-            $html .= '<input required type="radio" value="2" name="cond15" > नहीं ';
+            $html .= '<input required type="radio" value="2" name="cond15" checked > नहीं ';
             $html .= '</div>';            
 }
 if($_POST['step']==='11' && ends($arrWord,array("zWA"),2) && $us==="ud")
 {
             $html .= '<div id="step33">';
             $html .= '<input required type="radio" value="1" name="cond16" > ऊर्ध्वकर्म में प्रयुक्त है ';
-            $html .= '<input required type="radio" value="2" name="cond16" > नहीं ';
+            $html .= '<input required type="radio" value="2" name="cond16" checked > नहीं ';
             $html .= '</div>';            
 }
 if($_POST['step']==='11' && ends($arrWord,array("zWA"),2) && $us==="upa")
@@ -815,28 +815,28 @@ if($_POST['step']==='11' && ends($arrWord,array("zWA"),2) && $us==="upa")
             $html .= '<div id="step33">';
             $html .= '<input required type="radio" value="1" name="cond17" > मन्त्रकरण है ';
             $html .= '<input required type="radio" value="2" name="cond17" > अकर्मक है ';
-            $html .= '<input required type="radio" value="3" name="cond17" > उपर में से कोई नहीं ';
+            $html .= '<input required type="radio" value="3" name="cond17" checked > उपर में से कोई नहीं ';
             $html .= '</div>';            
 }
 if($_POST['step']==='11' && ends($arrWord,array("hveY"),2) && $us==="A")
 {
             $html .= '<div id="step33">';
             $html .= '<input required type="radio" value="1" name="cond18" > स्पर्धा के अर्थ में है ';
-            $html .= '<input required type="radio" value="2" name="cond18" > नहीं ';
+            $html .= '<input required type="radio" value="2" name="cond18" checked > नहीं ';
             $html .= '</div>';            
 }
 if($_POST['step']==='11' && ends($arrWord,array("kfY"),4) && !in_array($us,array("aDi","vi")) )
 {
             $html .= '<div id="step33">';
             $html .= '<input required type="radio" value="1" name="cond19" > गन्धन, अवक्षेपण, सेवन, साहसिक्य, प्रतियत्न, प्रकथन या उपयोग के अर्थ में प्रयुक्त है ';
-            $html .= '<input required type="radio" value="2" name="cond19" > नहीं ';
+            $html .= '<input required type="radio" value="2" name="cond19" checked > नहीं ';
             $html .= '</div>';            
 }
 if($_POST['step']==='11' && ends($arrWord,array("kfY"),2) && $us==="aDi" )
 {
             $html .= '<div id="step33">';
             $html .= '<input required type="radio" value="1" name="cond20" > प्रहसन ';
-            $html .= '<input required type="radio" value="2" name="cond20" > नहीं ';
+            $html .= '<input required type="radio" value="2" name="cond20" checked > नहीं ';
             $html .= '</div>';            
 }
 if($_POST['step']==='11' && ends($arrWord,array("kfY"),2) && $us==="vi")
@@ -844,49 +844,49 @@ if($_POST['step']==='11' && ends($arrWord,array("kfY"),2) && $us==="vi")
             $html .= '<div id="step33">';
             $html .= '<input required type="radio" value="1" name="cond21" > शब्दकर्म ';
             $html .= '<input required type="radio" value="2" name="cond21" > अकर्मक ';
-            $html .= '<input required type="radio" value="3" name="cond21" > उपर में से कोई नहीं ';
+            $html .= '<input required type="radio" value="3" name="cond21" checked > उपर में से कोई नहीं ';
             $html .= '</div>';            
 }
 if($_POST['step']==='11' && ends($arrWord,array("RIY"),2) && $us==="vi")
 {
             $html .= '<div id="step33">';
             $html .= '<input required type="radio" value="1" name="cond23" > दूर करने की क्रिया शरीर से भिन्न है (अशरीरे कर्मणि) ';
-            $html .= '<input required type="radio" value="2" name="cond23" > नहीं ';
+            $html .= '<input required type="radio" value="2" name="cond23" checked > नहीं ';
             $html .= '</div>';            
 }
 elseif($_POST['step']==='11' && ends($arrWord,array("nIY","RIY"),4) )
 {
             $html .= '<div id="step33">';
             $html .= '<input required type="radio" value="1" name="cond22" > सम्मानन, उत्सञ्जन, आचार्यकरण, ज्ञान, भृति, विगणन या व्यय के अर्थ में प्रयुक्त है ';
-            $html .= '<input required type="radio" value="2" name="cond22" > नहीं ';
+            $html .= '<input required type="radio" value="2" name="cond22" checked > नहीं ';
             $html .= '</div>';            
 }
 if($_POST['step']==='11' && ends($arrWord,array("kramu!"),2) && in_array($us,array("","parA","upa")))
 {
             $html .= '<div id="step33">';
             $html .= '<input required type="radio" value="1" name="cond24" > वृत्ति, सर्ग या तायन के अर्थ में प्रयुक्त है ';
-            $html .= '<input required type="radio" value="2" name="cond24" > नहीं ';
+            $html .= '<input required type="radio" value="2" name="cond24" checked > नहीं ';
             $html .= '</div>';            
 }
 if($_POST['step']==='11' && ends($arrWord,array("kramu!"),2) && $us==="A")
 {
             $html .= '<div id="step33">';
             $html .= '<input required type="radio" value="1" name="cond25" > उद्गमन ';
-            $html .= '<input required type="radio" value="2" name="cond25" > नहीं ';
+            $html .= '<input required type="radio" value="2" name="cond25" checked > नहीं ';
             $html .= '</div>';            
 }
 if($_POST['step']==='11' && ends($arrWord,array("kramu!"),2) && $us==="vi")
 {
             $html .= '<div id="step33">';
             $html .= '<input required type="radio" value="1" name="cond26" > पादविहरण ';
-            $html .= '<input required type="radio" value="2" name="cond26" > नहीं ';
+            $html .= '<input required type="radio" value="2" name="cond26" checked > नहीं ';
             $html .= '</div>';            
 }
 if($_POST['step']==='11' && ends($arrWord,array("jYA",),2) && in_array($us,array("sam","prati")) )
 {
             $html .= '<div id="step33">';
             $html .= '<input required type="radio" value="1" name="cond28" > अनाध्यान ';
-            $html .= '<input required type="radio" value="2" name="cond28" > नहीं ';
+            $html .= '<input required type="radio" value="2" name="cond28" checked > नहीं ';
             $html .= '</div>';            
 }
 elseif($_POST['step']==='11' && ends($arrWord,array("jYA"),4) )
@@ -894,14 +894,14 @@ elseif($_POST['step']==='11' && ends($arrWord,array("jYA"),4) )
             $html .= '<div id="step33">';
             $html .= '<input required type="radio" value="1" name="cond27" > अपह्नव ';
             $html .= '<input required type="radio" value="2" name="cond27" > अकर्मक ';
-            $html .= '<input required type="radio" value="3" name="cond27" > अन्य ';
+            $html .= '<input required type="radio" value="3" name="cond27" checked > अन्य ';
             $html .= '</div>';            
 }
 if($_POST['step']==='11' && ends($arrWord,array("vada!"),2) && $us==="anu")
 {
             $html .= '<div id="step33">';
             $html .= '<input required type="radio" value="1" name="cond30" > स्पष्ट वाणी वालो का सहोच्चारण है और अकर्मक है ';
-            $html .= '<input required type="radio" value="2" name="cond30" > अन्य ';
+            $html .= '<input required type="radio" value="2" name="cond30"  checked> अन्य ';
             $html .= '</div>';            
 }
 elseif($_POST['step']==='11' && ends($arrWord,array("vada!"),4) )
@@ -910,112 +910,112 @@ elseif($_POST['step']==='11' && ends($arrWord,array("vada!"),4) )
             $html .= '<input required type="radio" value="1" name="cond29" > भासन, उपसम्भाषा, ज्ञान, यत्न, विमति या उपमन्त्रण के अर्थ में है ';
             $html .= '<input required type="radio" value="2" name="cond29" > स्पष्ट वाणी वालों का सहोच्चारण ';
             $html .= '<input required type="radio" value="3" name="cond29" > स्पष्ट वाणी वालों का सहोच्चारण विप्रलाप में है ';
-            $html .= '<input required type="radio" value="4" name="cond29" > अन्य ';
+            $html .= '<input required type="radio" value="4" name="cond29"  checked> अन्य ';
             $html .= '</div>';            
 }
 if($_POST['step']==='11' && ends($arrWord,array("kramu!"),2) && in_array($us,array("pra","upa")))
 {
             $html .= '<div id="step33">';
             $html .= '<input required type="radio" value="1" name="cond31" > आदिकर्म ';
-            $html .= '<input required type="radio" value="2" name="cond31" > अन्य ';
+            $html .= '<input required type="radio" value="2" name="cond31" checked > अन्य ';
             $html .= '</div>';            
 }
 if($_POST['step']==='11' && ends($arrWord,array("gf"),2) && $us==="sam")
 {
             $html .= '<div id="step33">';
             $html .= '<input required type="radio" value="1" name="cond32" > प्रतिज्ञान ';
-            $html .= '<input required type="radio" value="2" name="cond32" > अन्य ';
+            $html .= '<input required type="radio" value="2" name="cond32" checked > अन्य ';
             $html .= '</div>';            
 }
 if($_POST['step']==='11' && ends($arrWord,array("cara!","cara!"),2) && $us==="ud")
 {
             $html .= '<div id="step33">';
             $html .= '<input required type="radio" value="1" name="cond33" > सकर्मक ';
-            $html .= '<input required type="radio" value="2" name="cond33" > नहीं ';
+            $html .= '<input required type="radio" value="2" name="cond33" checked > नहीं ';
             $html .= '</div>';            
 }
 if($_POST['step']==='11' && ends($arrWord,array("cara!"),2) && $us==="sam")
 {
             $html .= '<div id="step33">';
             $html .= '<input required type="radio" value="1" name="cond34" > तृतीयायुक्त है ';
-            $html .= '<input required type="radio" value="2" name="cond34" > नहीं ';
+            $html .= '<input required type="radio" value="2" name="cond34" checked > नहीं ';
             $html .= '</div>';            
 }
 if($_POST['step']==='11' && ends($arrWord,array("dAR"),2) && $us==="sampra")
 {
             $html .= '<div id="step33">';
             $html .= '<input required type="radio" value="1" name="cond35" > तृतीयायुक्त है और चतुर्थी के अर्थ में प्रयुक्त है ';
-            $html .= '<input required type="radio" value="2" name="cond35" > नहीं ';
+            $html .= '<input required type="radio" value="2" name="cond35" checked > नहीं ';
             $html .= '</div>';            
 }
 if($_POST['step']==='11' && ends($arrWord,array("yama!"),2) && $us==="upa")
 {
             $html .= '<div id="step33">';
             $html .= '<input required type="radio" value="1" name="cond36" > स्वकरण ';
-            $html .= '<input required type="radio" value="2" name="cond36" > नहीं ';
+            $html .= '<input required type="radio" value="2" name="cond36" checked > नहीं ';
             $html .= '</div>';            
 }
 if($_POST['step']==='11' && ends($arrWord,array("yuji!r"),2) && in_array($us,array("pra","upa")))
 {
             $html .= '<div id="step33">';
             $html .= '<input required type="radio" value="1" name="cond37" > यज्ञपात्र ';
-            $html .= '<input required type="radio" value="2" name="cond37" > यज्ञपात्र नहीं है ';
+            $html .= '<input required type="radio" value="2" name="cond37" checked > यज्ञपात्र नहीं है ';
             $html .= '</div>';            
 }
 if($_POST['step']==='11' && ends($arrWord,array("Buja!"),4) )
 {
             $html .= '<div id="step33">';
             $html .= '<input required type="radio" value="1" name="cond38" > अवन ';
-            $html .= '<input required type="radio" value="2" name="cond38" > अन्य ';
+            $html .= '<input required type="radio" value="2" name="cond38"  checked> अन्य ';
             $html .= '</div>';            
 }
 if( ends($arrWord,array("YiBI","smiN","zmiN"),4) ) // akartrabhiprAyo'yamArambhaH iti kAzikA. Therefore, not keeping step=11.
 {
             $html .= '<div id="step33">';
             $html .= '<input required type="radio" value="1" name="cond39" > हेतुभये ';
-            $html .= '<input required type="radio" value="2" name="cond39" > नहीं ';
+            $html .= '<input required type="radio" value="2" name="cond39" checked > नहीं ';
             $html .= '</div>';            
 }
 if( ends($arrWord,array("gfDu!","vaYcu!","vancu!"),2) ) // akartrabhiprAyo'yamArambhaH iti kAzikA. Therefore, not keeping step=11.
 {
             $html .= '<div id="step33">';
             $html .= '<input required type="radio" value="1" name="cond40" > प्रलम्भन ';
-            $html .= '<input required type="radio" value="2" name="cond40" > अन्य ';
+            $html .= '<input required type="radio" value="2" name="cond40" checked > अन्य ';
             $html .= '</div>';            
 }
 if( ends($arrWord,array("lIN","lI",),4) ) // akartrabhiprAyo'yamArambhaH iti kAzikA. Therefore, not keeping step=11.
 {
             $html .= '<div id="step33">';
             $html .= '<input required type="radio" value="1" name="cond41" > सम्मानन, शालीनीकरण या प्रलम्भन के अर्थ में प्रयुक्त है ';
-            $html .= '<input required type="radio" value="2" name="cond41" > नहीं ';
+            $html .= '<input required type="radio" value="2" name="cond41" checked > नहीं ';
             $html .= '</div>';            
 }
 if( ends($arrWord,array("kfY","qukfY"),4) ) // akartrabhiprAyo'yamArambhaH iti kAzikA. Therefore, not keeping step=11.
 {
             $html .= '<div id="step33">';
             $html .= '<input required type="radio" value="1" name="cond42" > मिथ्या उपपद में है और अभ्यास के अर्थ में प्रयुक्त है ';
-            $html .= '<input required type="radio" value="2" name="cond42" > नहीं ';
+            $html .= '<input required type="radio" value="2" name="cond42" checked > नहीं ';
             $html .= '</div>';            
 }
 if($_POST['step']==='11' && ends($arrWord,array("yama!"),2) && in_array($us,array("sam","ud","A")) )
 {
             $html .= '<div id="step33">';
             $html .= '<input required type="radio" value="1" name="cond43" > ग्रन्थविषयक ';
-            $html .= '<input required type="radio" value="2" name="cond43" > अन्य ';
+            $html .= '<input required type="radio" value="2" name="cond43" checked > अन्य ';
             $html .= '</div>';            
 }
 if($_POST['step']==='11' && ends($arrWord,array("ramu!"),2) && $us==="upa")
 {
             $html .= '<div id="step33">';
             $html .= '<input required type="radio" value="1" name="cond44" > अकर्मक ';
-            $html .= '<input required type="radio" value="2" name="cond44" > अन्य ';
+            $html .= '<input required type="radio" value="2" name="cond44" checked > अन्य ';
             $html .= '</div>';            
 }
 if($_POST['step']==='11' && ends($arrWord,array("takzU!"),4) )
 {
             $html .= '<div id="step33">';
             $html .= '<input required type="radio" value="1" name="cond45" > तनूकरणे ';
-            $html .= '<input required type="radio" value="2" name="cond45" > अन्य ';
+            $html .= '<input required type="radio" value="2" name="cond45" checked > अन्य ';
             $html .= '</div>';            
 }
 if(($_POST['step']==='11' || $_POST['step']==='12' || $_POST['step']==='13') && ends($arrWord,$nonuniqueverbs,2) )
@@ -1032,21 +1032,21 @@ if($_POST['step']==='11' && ends($arrWord,array("gupa!","tija!","kita!"),4) )
 {
             $html .= '<div id="step33">';
             $html .= '<input required type="radio" value="1" name="cond47" > निन्दा, क्षमा या व्याधिप्रतीकार के अर्थ में प्रयुक्त है ';
-            $html .= '<input required type="radio" value="2" name="cond47" > नहीं ';
+            $html .= '<input required type="radio" value="2" name="cond47" checked > नहीं ';
             $html .= '</div>';            
 }
 if($_POST['step']==='11' && ends($arrWord,array("mAna!","baDa!","dAna!","SAna!"),4) )
 {
             $html .= '<div id="step33">';
             $html .= '<input required type="radio" value="1" name="cond48" > जिज्ञासा, वैरूप्य, आर्जव या निशान के अर्थ में प्रयुक्त है ';
-            $html .= '<input required type="radio" value="2" name="cond48" > नहीं ';
+            $html .= '<input required type="radio" value="2" name="cond48" checked > नहीं ';
             $html .= '</div>';            
 }
 if($_POST['step']==='11' && ends($arrWord,array("paRa!"),4) )
 {
             $html .= '<div id="step33">';
             $html .= '<input required type="radio" value="1" name="cond49" > स्तुति ';
-            $html .= '<input required type="radio" value="2" name="cond49" > व्यवहार ';
+            $html .= '<input required type="radio" value="2" name="cond49" checked > व्यवहार ';
             $html .= '</div>';            
 }
 if( in_array($_POST['step'],array('11','12','13')) && in_array($lakAra,array("laN","luN","lfN")) )

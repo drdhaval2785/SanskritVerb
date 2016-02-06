@@ -3182,13 +3182,6 @@ if ($caG===1 && arr($text,'/^['.pc('hl').']/'))
 	$abhyAsa=1;
 }
 /* sArvadhAtukArdhadhAtukayoH (7.3.84) */
-// Patch for znu. See https://github.com/drdhaval2785/SanskritVerb/issues/451
-if (arr($text,'/[+]nu[+]tu$/') )
-{
-	$text = one(array("+nu+tu"),array("+no+tu"),0);
-	storedata('7.3.84','sa',0);
-}
-/* sArvadhAtukArdhadhAtukayoH (7.3.84) */
 if ( $didhI!==1 && $kGiti!==1 && $caG!==1 && !($lakAra==="liw" && in_array($fo,array("uN"))) && arr($text,'/[iIuUfFxX]\+[uiae]\+/') && ($sarvadhatuka===1 || $ardhadhatuka===1) && !($ad===1 && sub(array("i","I","u","U","f","F","x","X"),array("+"),$ajAdi_apit_sArvadhAtuka_pratyayas,0) ) )
 {
     $text=two(array("i","I","u","U","f","F","x","X",),array("+u+","+I+","+a+","+e"),array("e","e","o","o","ar","ar","al","al",),array("+u+","+I+","+a+","+e"),0);
@@ -3951,6 +3944,13 @@ if ( ($sarvadhatuka===1 || $ardhadhatuka===1)   && $didhI!==1 && $bhUsuvo!==1 &&
 	storedata('7.3.84','sa',0);
 }
 $text = one(array("sI+t","sI+s"),array("sIt","sIs"),0); // See https://github.com/drdhaval2785/SanskritVerb/issues/281
+/* sArvadhAtukArdhadhAtukayoH (7.3.84) */
+// Patch for znu. See https://github.com/drdhaval2785/SanskritVerb/issues/451
+if (arr($text,'/[+]nu[+]tu$/') || arr($text,'/[+]u[+]tu$/') )
+{
+	$text = one(array("+nu+tu","+u+tu"),array("+no+tu","+o+tu"),0);
+	storedata('7.3.84','sa',0);
+}
 /* sArvadhAtukArdhadhAtukayoH (7.3.84) */
 if ( ($sarvadhatuka===1 || $ardhadhatuka===1)   && $didhI!==1 && $bhUsuvo!==1 && $kGiti!==1 && arr($text,'/[iIuUfFxX]\+/') && pr2(array("i","I","u","U","f","F","x","X",),array("+"),$halAdi_pit_sArvadhAtuka_pratyayas,array("e","e","o","o","ar","ar","al","al",),array("+"),$halAdi_pit_sArvadhAtuka_pratyayas,$text)!==$text )
 {
