@@ -12097,6 +12097,7 @@ $it = array();
 $itprakriti = array();
 $itpratyaya = array();
 $Agama=array();
+$sanAdi="";
 $TAp=0; $DAp=0; $cAp=0; $GIp=0; $GIn=0; $GIS=0; $kGiti=0; $abhyasta=0; $ajAdyataSTAp=0; $tusma=0; $upasarga_joined=0; $sicivRddhi=0; $atolopa=0;
 $temp = scrape1($first,0,2,1); 
 $verb_without_anubandha=$temp[0];
