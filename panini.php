@@ -1845,7 +1845,7 @@ if (in_array($so,array("Ji")) && ($lakAra==="ASIrliN"||$lakAra==="viDiliN") )
     $jherjus=1;
 }
 /* laGaH zAkaTAyanasyaiva (3.4.111) */
-if ( in_array($so,array("Ji")) && $lakAra==="laN" && arr($text,'/A\+Ji/') )
+if ( in_array($so,array("Ji")) && $lakAra==="laN" && arr($text,'/A\+Ji/') && !arr($text,'/\+SnA\+Ji$/'))
 {
     $text=one(array("A+Ji"),array("A+jus"),1);
 	storedata('3.4.111','sa',0);
