@@ -1350,6 +1350,7 @@ if ($lakAra==="luN")
 			storedata('2.4.77','sa',0);
 			$sic=0;
 			$luGset=1;
+			//$sarvadhatuka=1;
 		}
 	/* vibhASA ghrAdheTzAcCAsaH (2.4.78) */
 		if (in_array($fo,array("GrA","Dew","So","Co","zo",)) && $sic===1)
@@ -2168,7 +2169,7 @@ if (in_array($so,$tiG) && (arr($text,'/['.pc('hl').'][+]/') ||sub(array("+"),$in
 			if ( $so!=="mahiN") {itprat('/(['.flat($hl).']$)/');}
 			$text = last($hl,blank(count($hl)),0);   
 		}
-		if ($nomidelision!==1 && !arr(array($fo),'/i[!]r$/')) // Addition of ends function is to prevent application to kF -> kir converted halanta, which are not there in upadeza.
+		if ($nomidelision!==1 && !arr(array($fo),'/i[!]r$/') && $sarvadhatuka===1) // Addition of ends function is to prevent application to kF -> kir converted halanta, which are not there in upadeza.
 		{
 			$text = two($hl,array("+ran"),blank(count($hl)),array("+ran"),0);
 		}
