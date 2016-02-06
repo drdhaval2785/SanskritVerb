@@ -2929,6 +2929,13 @@ elseif ( in_array("k",$itpratyaya) && in_array($fo,array("brUY","Yizvapa!","yaja
 	storedata('6.1.15','sa',0);
     $text = samprasarana(array("uac","suap","iaj","uap","ue","vie","hie","uad","Su"),0);
 }
+print_r($text);
+/* RRta iddhAtoH (7.1.100) */
+if (arr($text,'/F\+/') && in_array($so,$tiG) && ($sarvadhatuka===1 || in_array("Sa",$vik)))
+{
+    $text=two(array("F"),array("+"),array("ir"),array("+"),0);
+	storedata('7.1.100','sa',0);
+}
 /* grahijyAvayivyadhivaSTivicativRzcatipRcCatibhRjjatInAM Giti ca (6.1.16) */
 if ($so!=="mahiN" && in_array($fo,array("jyA","graha!","vaya!","vyaDa!","vaSa!","vyaca!","o!vraScU!","praCa!","Brasja!")) && ((sub(array("jyA","grah","vay","vyaD","vaS","vyac","vraSc","pracC","Brasj"),array("+"),$apit_sArvadhAtuka_pratyayas,0) && $sarvadhatuka===1) || in_array("N",$itpratyaya) || in_array("k",$itpratyaya)) )
 {
@@ -5119,12 +5126,6 @@ if ($lakAra!=="" && $type==="tiGanta")
 	}
 }
 if ($debug===1) {dibug("4650");}
-/* RRta iddhAtoH (7.1.100) */
-if (arr($text,'/F\+/') && in_array($so,$tiG))
-{
-    $text=two(array("F"),array("+"),array("ir"),array("+"),0);
-	storedata('7.1.100','sa',0);
-}
 /* Adding aDAgama and other pratyaya works which are done after aGgakArya */
 /* Candasyapi dRzyate */
 // Pending. Page 249 of Sahajabodha part 1. Vedic in nature.
