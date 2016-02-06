@@ -2168,9 +2168,9 @@ if (in_array($so,$tiG) && (arr($text,'/['.pc('hl').'][+]/') ||sub(array("+"),$in
 			if ( $so!=="mahiN") {itprat('/(['.flat($hl).']$)/');}
 			$text = last($hl,blank(count($hl)),0);   
 		}
-		if ($nomidelision!==1 && !arr(array($fo),'/i[!]r$/') && $sarvadhatuka===1) // Addition of ends function is to prevent application to kF -> kir converted halanta, which are not there in upadeza.
+		if ($nomidelision!==1 && !arr(array($fo),'/i[!]r$/') && $sarvadhatuka===1 ) // Addition of ends function is to prevent application to kF -> kir converted halanta, which are not there in upadeza.
 		{
-			$text = two($hl,array("+ran"),blank(count($hl)),array("+ran"),0);
+			$text = change('/([+][^+]*)['.pc('hl').']([+]ran)$/','$1R2');
 		}
 		$text=one(array("+si+","sicmi"),array("+sic+","sic+mi"),0);
 		if(preg_match('/['.pc('hl').']$/',$fo) && !arr(array($fo),'/i[!]r$/')) 
