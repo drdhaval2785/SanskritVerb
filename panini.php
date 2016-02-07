@@ -5058,7 +5058,7 @@ if ($lakAra!=="" && $type==="tiGanta")
     /* kvau luptaM na sthAnivat (vA 431) */
     // Not displayed because it is difficult to teach sthnanivadbhav to machine now. Will come back to it if I can teach it some day.
     /* aci znudhAtubhruvAM yvoriyaGuvaGau (6.4.77) */
-    if (arr($text,'kur\+u') && sub(array("kur+u"),array("+"),$ajAdi_apit_sArvadhAtuka_pratyayas,0) )
+    if (arr($text,'kur\+u') && sub(array("kur+u"),array("+"),$ajAdi_apit_sArvadhAtuka_pratyayas,0) && $sIyuT!==1 )
     {
         $text=two(array("kur+u+"),$ajAdi_apit_sArvadhAtuka_pratyayas,array("kurv+"),$ajAdi_apit_sArvadhAtuka_pratyayas,0);
 		storedata('6.1.77','sa',0);
@@ -5071,7 +5071,8 @@ if ($lakAra!=="" && $type==="tiGanta")
 		$text = change('/^[u][+][u]/','U');
 		storedata('6.1.101','sa',0);
 	}
-    if (($dhatu===1||$fo==="BrU") && arr($text,'/[iuIU][+]['.flat($ac).']/') && $pada==="pratyaya" && ( anekAca($fo)===false  || in_array($so,$tiG) || (arr($text,'/[B][U][+]/')||$fo==="suDI") ) && $dfmBU===0 && $didhI!==1 && $nabhusu!==1 && !sub(array("+"),array("I"),array("+"),0) && ($abhyasta!==1 || in_array($fo,array("hrI"))))
+	print_r($text);
+    if (($dhatu===1||$fo==="BrU") && arr($text,'/[iuIU][+]['.flat($ac).']/') && $pada==="pratyaya" && ( anekAca($fo)===false  || in_array($so,$tiG) || (arr($text,'/[B][U][+]/')||$fo==="suDI") ) && $dfmBU===0 && $didhI!==1 && $nabhusu!==1 && !sub(array("+"),array("I"),array("+"),0) && ($abhyasta!==1 || in_array($fo,array("hrI"))) && $sIyuT!==1)
     {
         $text = two(array("i+","I+","u+","U+"),$ac,array("iy+","iy+","uv+","uv+"),$ac,0);
 		$text = one(array("uv+uv+"),array("u+uv+"),0);
@@ -5079,11 +5080,12 @@ if ($lakAra!=="" && $type==="tiGanta")
 //        echo "<p class = hn >gatikAraketarapUrvapadasya yaN neSyate (vA 5034) mandates that eranekAco.../oH supi rule doesn't apply in cases where the pUrvapada is neither gati nor kAraka. iyaG or uvaG is applied in that case. :</p>\n";
 //        echo "<p class = hn >गतिकारकेतरपूर्वपदस्य यण्‌ नेष्यते (वा ५०३४) से गति / कारक से भिन्न पूर्वपद होने पर एरनेकाचो.../ओः सुपि सूत्र नहीं लागू होता । इयङ्‌ या उवङ्‌ की प्रवृत्ति होती है । :</p>\n";
 	}
-    if (arr($text,'/\+nu\+['.pc('ac').']/') )
+    if (arr($text,'/\+nu\+['.pc('ac').']/') && $sIyuT!==1)
     {
         $text = two(array("+nu+"),$ac,array("+nuv+"),$ac,0);
 		storedata('6.4.77','sa',0);
     }
+	print_r($text);
     /* ATazca (6.1.90) */
     if (arr($text,'/A['.pc('ac').']/') && in_array("Aw",$Agama) )
     {
@@ -9599,7 +9601,7 @@ if ( $dhatu===1 && (arr($text,'/[B][U][+]/')||$fo==="suDI") && arr($text,'/[iuIU
 /* kvau luptaM na sthAnivat (vA 431) */
 // Not displayed because it is difficult to teach sthnanivadbhav to machine now. Will come back to it if I can teach it some day.
 /* aci znudhAtubhruvAM yvoriyaGuvaGau (6.4.77) */
-if (($dhatu===1||$fo==="BrU") && arr($text,'/[iuIU][+]*['.flat($ac).']/') && $pada==="pratyaya" && ($eranekaca===0 || ($eranekaca===1 && anekAca($fo)===false ) || (arr($text,'/[B][U][+]/')||$fo==="suDI") ) && $dfmBU===0 && !sub(array("+"),array("I"),array("+"),0) )
+if (($dhatu===1||$fo==="BrU") && arr($text,'/[iuIU][+]*['.flat($ac).']/') && $pada==="pratyaya" && ($eranekaca===0 || ($eranekaca===1 && anekAca($fo)===false ) || (arr($text,'/[B][U][+]/')||$fo==="suDI") ) && $dfmBU===0 && !sub(array("+"),array("I"),array("+"),0) && $sIyuT!==1)
 {
     $text = change('/([iI])([+]*['.pc('ac').'])/','iy$2');
     $text = change('/([uU])([+]*['.pc('ac').'])/','uv$2');
