@@ -5217,7 +5217,7 @@ if (arr($text,'/A\+/') && sub(array("A"),array("+"),$halAdi_apit_sArvadhAtuka_pr
 /* znA'bhyastayorAtaH (6.4.112) */
 // For znA
 $text = two(array("+nA+Iy+"),$ac,array("+nA+Iy"),$ac,0);
-if (arr($text,'/\+nA\+/') && sub(array("+nA"),array("+"),$apit_sArvadhAtuka_pratyayas,0) && (in_array("N",$it)||in_array("k",$it)) && in_array("SnA",$vik))
+if (arr($text,'/\+nA\+/') && sub(array("+nA"),array("+"),$apit_sArvadhAtuka_pratyayas,0) && in_array("SnA",$vik) )//&& (in_array("N",$it)||in_array("k",$it)) )
 {
     $text=three(array("+nA"),array("+"),$apit_sArvadhAtuka_pratyayas,array("n"),array("+"),$apit_sArvadhAtuka_pratyayas,0);
 	storedata('6.4.112','sa',0);
@@ -11615,6 +11615,7 @@ $ras = '/([rzfF])([aAiIuUfFxXeoEOhyvrkKgGNpPbBmM+]*)([n])/';
 $rasend = '/([rzfF])([aAiIuUfFxXeoEOhyvrkKgGNpPbBmM+]*)([n])$/';
 $rasgrep= '/([rzfF][aAiIuUfFxXeoEOhyvrkKgGNpPbBmM+]*[n])/';
 $ras1 = '$1$2R'; 
+print_r($text);
 /* AcAryAdaNatvaM ca (vA 2477) */
 if (arr($text,'/AcAryAnI/'))
 {
@@ -11633,8 +11634,9 @@ elseif (arr($text,$rasend) && $hohante===0 && $AcArya===0 )
 {
 	storedata('8.4.37','pa',0);
 }
-elseif (arr($text,$ras) && !arr($text,$rasend) && $hohante===0 && $_GET['cond2_16_2_1']!=="2" && !sub(array("UruBinn"),blank(0),blank(0),0)) 
+elseif (arr($text,$ras) && $hohante===0 && $_GET['cond2_16_2_1']!=="2" && !sub(array("UruBinn"),blank(0),blank(0),0) )
 { 
+	$inloop=$text;
     foreach ($text as $value)
     {
         if (preg_match('/([rzfF])([aAiIuUfFxXeoEOhyvrkKgGNpPbBmM+]*)([n])/',$value) )
@@ -11648,22 +11650,25 @@ elseif (arr($text,$ras) && !arr($text,$rasend) && $hohante===0 && $_GET['cond2_1
         $value1[] = $value;    
         }
     }
-$text = $value1;
-$value1 = array();
-if(arr($text,'/hAyaR/') && sub(array("trihAyaR","caturhAyaR",),blank(0),blank(0),0) && $hohante===0 && $_GET['cond2_16_2_1']==="1")
-{
-	// Pending to refactor
-/*echo "<p class = sa >By tricaturbhyAM hAyanasya NatvaM vAcyam (vA 5038) :</p>\n";
-echo "<p class = sa >त्रिचतुर्भ्यां हायनस्य णत्वं वाच्यम्‌ (वा ५०३८) :</p>\n";     */
-}
-elseif(arr($text,'/([fF])([aAiIuUfFxXeoEOhyvrkKgGNpPbBmM+]*)([R])/') && $hohante===0)
-{
-	storedata('8.4.1-1','sa',0);
-}
-elseif(arr($text,'/([rzf])([aAiIuUfFxXeoEOhyvrkKgGNpPbBmM+]*)([R])/') && $hohante===0)
-{
-	storedata('8.4.2','sa',0);
-}
+	$text = $value1;
+	$value1 = array();
+	if ($inloop!==$text)
+	{
+		if(arr($text,'/hAyaR/') && sub(array("trihAyaR","caturhAyaR",),blank(0),blank(0),0) && $hohante===0 && $_GET['cond2_16_2_1']==="1")
+		{
+			// Pending to refactor
+		/*echo "<p class = sa >By tricaturbhyAM hAyanasya NatvaM vAcyam (vA 5038) :</p>\n";
+		echo "<p class = sa >त्रिचतुर्भ्यां हायनस्य णत्वं वाच्यम्‌ (वा ५०३८) :</p>\n";     */
+		}
+		elseif(arr($text,'/([fF])([aAiIuUfFxXeoEOhyvrkKgGNpPbBmM+]*)([R])/') && $hohante===0)
+		{
+			storedata('8.4.1-1','sa',0);
+		}
+		elseif(arr($text,'/([rzf])([aAiIuUfFxXeoEOhyvrkKgGNpPbBmM+]*)([R])/') && $hohante===0)
+		{
+			storedata('8.4.2','sa',0);
+		}
+	}
 }
 if ($debug===1) {dibug("11300");}
 /* stoH zcunA zcuH (8.4.40) */
