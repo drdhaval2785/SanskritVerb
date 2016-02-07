@@ -1962,7 +1962,7 @@ if (arr($text,'/\+Ric\+/'))
 {
 	/* ata upadhAyAH (7.2.116) */
 	// more on enumeration kind. Not used regexes deliberately.
-	if ( $atolopa!==1 && $Naugami!==1 && $jAgro!==1 && arr($text,'/[a]['.pc('hl').'][+][R][i]c[+]/') )
+	if ( $atolopa!==1 && $Naugami!==1 && $jAgro!==1 && arr($text,'/[a]['.pc('hl').'][+][R][i]c[+]/') && !(arr(array($verb_without_anubandha),'/^['.pc('hl').']/')&&$caG===1))
 	{
 		$text = three(array("a"),$hl,array("+Ric+"),array("A"),$hl,array("+Ric+"),0);
 		storedata('7.2.116','sa',0);
@@ -3841,8 +3841,9 @@ if ($caG===1 && arr($text,'/^['.pc('ac').']/') )
 	//$text = one(array("+i+"),array("i+"),0);
 	caG_ajAdi();
 }
+print_r($text);
 // trial san function
-if ($caG===1 && ($sanAdi==="Ric" || $verbset==="curAdi") && !in_array($fo,$curAdi_adanta))
+if ($caG===1 && ($sanAdi==="Ric" || $verbset==="curAdi") && !in_array($fo,$curAdi_adanta) && arr($text,'/^[^+]*[+]['.pc('hl').']{0,1}[aiuf]['.pc('hl').']{0,1}/'))
 {
 	storedata('7.4.93','pa',0);
 	san();
