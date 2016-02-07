@@ -10603,7 +10603,6 @@ if ($us!=="" && in_array($so,$tiG) && $upasarga_joined!==1)
     $pada="pada";
 	$us='';
 }
-
 /* tripAdI functions */
 // tripAdI functions are always applied in serial manner because of 'pUrvatrAsiddham'. Therefor there is no possibility of a sUtra being applied out of turn (Except explicitly mentioned in grammar books.)
 // Therefore we have kept them in their order as per aSTAdhyAyI. Where there is violation, we have placed a patch.
@@ -11101,7 +11100,7 @@ if (arr($text,'/divn/'))
 {
     $dhatu=1;
 }
-if ($dhatu===1 && (arr($text,'/[rv]['.pc('hl').']/')|| arr($text,'/[v][n][+]/') ) && $karoti!==1  && !($us==="nis" && in_array($so,$tiG)) && sub($ik,array("r","v"),$hl,0) )
+if ($dhatu===1 && $lakAra!=="liw" && (arr($text,'/[rv]['.pc('hl').']/')|| arr($text,'/[v][n][+]/') ) && $karoti!==1  && !($us==="nis" && in_array($so,$tiG)) && sub($ik,array("r","v"),$hl,0) )
 {
     $text = three(array("i","I","u","U","f","F","x","X",),array("r","v"),$hl,array("I","I","U","U","F","F","F","F",),array("r","v"),$hl,0);
 	storedata('8.2.77','sa',0);
