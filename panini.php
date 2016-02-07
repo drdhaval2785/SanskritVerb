@@ -1379,11 +1379,6 @@ if ( $sic!==0 && $so==="Ji" )
 	$text = two(array("+sic+"),array("Ji"),array("+sic+"),array("jus"),0);
 	storedata('3.4.109','sa',0);
 }
-if ( $abhyasta===1 && $so==="Ji" )
-{
-	$text = two(array("+"),array("Ji"),array("+"),array("jus"),0);
-	storedata('3.4.109','sa',0);
-}
 /* AtaH (3.4.110) */
 if ( $sic!==0 && $so==="Ji" && sub(array("A"),array("+"),array("Ji"),0) )
 {
@@ -1639,6 +1634,12 @@ if ( $sarvadhatuka===1 && $verbset==="adAdi" && in_array($fo,$adAdi) && sub(arra
     $ad=1;
     $vik=array("Sapluk");
     $set=2;
+}
+/* sijabhyastavidibhyazca (3.4.109) */
+if ( $abhyasta===1 && $so==="Ji" )
+{
+	$text = two(array("+"),array("Ji"),array("+"),array("jus"),0);
+	storedata('3.4.109','sa',0);
 }
 /* kRpo ro laH (8.2.18) */
 if (arr($text,'/kfp/') )
@@ -3958,9 +3959,9 @@ if ( ($sarvadhatuka===1 || $ardhadhatuka===1)   && $didhI!==1 && $bhUsuvo!==1 &&
 $text = one(array("sI+t","sI+s"),array("sIt","sIs"),0); // See https://github.com/drdhaval2785/SanskritVerb/issues/281
 /* sArvadhAtukArdhadhAtukayoH (7.3.84) */
 // Patch for znu. See https://github.com/drdhaval2785/SanskritVerb/issues/451
-if (arr($text,'/[+]nu[+]tu$/') || arr($text,'/[+]u[+]tu$/') )
+if (arr($text,'/[+]nu[+]tu$/') || arr($text,'/[+]u[+]tu$/') || arr($text,'/f[+]tu$/') || arr($text,'/f[+]us$/') )
 {
-	$text = one(array("+nu+tu","+u+tu"),array("+no+tu","+o+tu"),0);
+	$text = one(array("+nu+tu","+u+tu","f+tu","f+us"),array("+no+tu","+o+tu","ar+tu","ar+us"),0);
 	storedata('7.3.84','sa',0);
 }
 /* sArvadhAtukArdhadhAtukayoH (7.3.84) */
