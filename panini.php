@@ -1881,6 +1881,7 @@ if (in_array($so,array("ta","Ja")) && $lakAra==="liw")
 if (arr($text,'/['.flat($ac).'][!]/') && in_array($so,$tiG) )
 {
 	$text = change('/i[!]r[+]/','+');
+	$text = change('/U[!]z[+]/','+');
     it('/(['.flat($ac).'][!])/');
 	storedata('1.3.2','pa',0);
     $text = two($ac,array("!"),blank(count($ac)),array(""),0);
@@ -2168,7 +2169,7 @@ if (in_array($so,$tiG) && arr(array($fo),'/[!]['.pc('hl').']$/') && $nomidelisio
 }
 /* halantyam (1.3.3) and tasya lopaH (1.3.9) */
 // Patch for removal of verb halantyam
-if (in_array($so,$tiG) && arr(array($fo),'/['.pc('hl').']$/') && !arr(array($fo),'/i[!]r$/') )
+if (in_array($so,$tiG) && arr(array($fo),'/['.pc('hl').']$/') && !arr(array($fo),'/i[!]r$/') && !arr(array($fo),'/U[!]z$/') )
 {
 	storedata('1.3.3','pa',0);
 	$text=three($hlplus,$vikaraNa,array("+"),blank1("+",count($hlplus)),$vikaraNa,array("+"),0);
