@@ -1374,7 +1374,7 @@ if ( !in_array($luGset,array(9)) && $lakAra==='luN')
 	$id_dhAtu='aniw';
 }
 /* sijabhyastavidibhyazca (3.4.109) */
-if ( $sic!==0 && $so==="Ji" )
+if ( $sic!==0 && $so==="Ji" && in_array($lakAra,array("laN","ASIrliN","viDiliN","luN","lfN")))
 {
 	$text = two(array("+sic+"),array("Ji"),array("+sic+"),array("jus"),0);
 	storedata('3.4.109','sa',0);
@@ -1636,7 +1636,7 @@ if ( $sarvadhatuka===1 && $verbset==="adAdi" && in_array($fo,$adAdi) && sub(arra
     $set=2;
 }
 /* sijabhyastavidibhyazca (3.4.109) */
-if ( $abhyasta===1 && $so==="Ji" )
+if ( $abhyasta===1 && $so==="Ji"  && in_array($lakAra,array("laN","ASIrliN","viDiliN","luN","lfN")))
 {
 	$text = two(array("+"),array("Ji"),array("+"),array("jus"),0);
 	storedata('3.4.109','sa',0);
@@ -12067,8 +12067,13 @@ if( $veda===1 && sub(array("apasparDeTAm","AnarcuH","AnarhuH","cucyuvize","tatyA
 	$text = one(array("apasparDeTAm","AnarcuH","AnarhuH","cucyuvize","tatyAja"),array("apaspfDeTAm","AnfcuH","AnfhuH","cicyuze","tityAja"),0);
 	storedata('6.1.35','sa',0);
 }
+/* pratizeDe svaradIrGayalopezu lopAjAdeSaH na sTAnivat (1.1.58-1) */
+if ( arr($text,'/[vy][+]*['.pc('vl').']/') && in_array($so,$tiG) && in_array("6.1.77",sutrasfromstoredata()))
+{
+	storedata('1.1.58-1','pa',0);
+}
 /* lopo vyorvali (6.1.66) */
-if ( arr($text,'/[vy][+]*['.pc('vl').']/') && in_array($so,$tiG) ) 
+elseif ( arr($text,'/[vy][+]*['.pc('vl').']/') && in_array($so,$tiG) && !in_array("6.1.77",sutrasfromstoredata()))
 {
     $text=change('/([vy])([+]*['.pc('vl').'])/','$2');
 	storedata('6.1.66','sa',0);

@@ -3173,6 +3173,17 @@ function storedata($sutra_number,$style,$note)
 		$storedata[]=array($text,$sutra_number,'drop',$note,$us);
 	}
 }
+/* Read applied sUtras from storedata */
+function sutrasfromstoredata()
+{
+	global $storedata;
+	$output = array();
+	foreach ($storedata as $value)
+	{
+		$output[]=$value[1];
+	}
+	return $output;
+}
 /* displaying from the storedata */
 function display_from_storedata()
 {
