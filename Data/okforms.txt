@@ -1327,3 +1327,5 @@ aGasizyata-(Gasx!,lfN,Ta,BvAdi,01.0812)
 aGasizyam-(Gasx!,lfN,mip,BvAdi,01.0812)
 aGasizyAva-(Gasx!,lfN,vas,BvAdi,01.0812)
 aGasizyAma-(Gasx!,lfN,mas,BvAdi,01.0812)
+AniDve-(ana!,liw,Ta,04.0072)
+
