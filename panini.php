@@ -3701,7 +3701,6 @@ if ( (in_array("N",$itpratyaya) || in_array("k",$itpratyaya)) && !in_array($sanA
 	storedata('1.1.5','sa',0);
     $kGiti=1;
 }
-print_r($text);
 /* sici vRddhiH parasmaipadeSu (7.2.1) */
 if ( $sic===1 && in_array($so,$tis) && sub($ik,array("+"),array("sI","isI","stAm","istAm","sus","isus","stam","istam","sta","ista","sam","isam","sva","isva","sma","isma"),0) )
 {
@@ -3717,6 +3716,7 @@ if ($lakAra==="liw" && (in_array($fo,array("f","fCa!")) || ends(array($fo),array
 	$text = two(array("A+f","A+fcC","A+nf","A+nfcC","F"),array("+"),array("A+ar","A+arcC","A+nar","A+narcC","ar"),array("+"),0);
 	storedata('7.4.11','sa',0);
 }
+print_r($text); echo $atolopa;
 /* udoSThyapUrvasya (7.1.102) */
 if ( in_array($fo,array("pF","PF","bF","BF","mF")) && sub(array("F"),array("+"),$apit_sArvadhAtuka_pratyayas,0) && in_array($so,$tiG) )
 {
@@ -12116,7 +12116,7 @@ $itprakriti = array();
 $itpratyaya = array();
 $Agama=array();
 $sanAdi="";
-$TAp=0; $DAp=0; $cAp=0; $GIp=0; $GIn=0; $GIS=0; $kGiti=0; $abhyasta=0; $ajAdyataSTAp=0; $tusma=0; $upasarga_joined=0; $sicivRddhi=0; $atolopa=0;
+$TAp=0; $DAp=0; $cAp=0; $GIp=0; $GIn=0; $GIS=0; $kGiti=0; $abhyasta=0; $ajAdyataSTAp=0; $tusma=0; $upasarga_joined=0; $sicivRddhi=0; $atolopa=0; $caG=0; $aG=0;
 $temp = scrape1($first,0,2,1); 
 $verb_without_anubandha=$temp[0];
 $storedata=array();
