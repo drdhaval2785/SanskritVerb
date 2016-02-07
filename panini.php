@@ -567,7 +567,7 @@ if ($type==='tiGanta')
 		$verbpada=verb_pada('1.3.74');
 	}
 	/* dyudbhyo luGi (1.3.91) */
-	elseif ( $vAcya==="kartR" && $lakAra==="luN" && in_array($first,array("dyuta!","SvitA!","YimidA!","midA!","YizvidA!","zvidA!","svidA!","YikzvidA!","kzvidA!","ruca!","Guwa!","ruwa!","luwa!","luWa!","SuBa!","kzuBa!","RaBa!","naBa!","tuBa!","sransu!","sraMsu!","Dvansu!","DvaMsu!","Bransu!","BraMsu!","BranSu!","BraMSu!","sranBu!","sraMBu!","sramBu!","vftu!","vrDu!","SfDu!","syandU!","kfpU!","kxpU!")) )
+	elseif ( $vAcya==="kartR" && $lakAra==="luN" && in_array($first,array("dyuta!","SvitA!","YimidA!","midA!","YizvidA!","zvidA!","svidA!","YikzvidA!","kzvidA!","ruca!","Guwa!","ruwa!","luwa!","luWa!","SuBa!","kzuBa!","RaBa!","naBa!","tuBa!","sransu!","sraMsu!","Dvansu!","DvaMsu!","Bransu!","BraMsu!","BranSu!","BraMSu!","sranBu!","sraMBu!","sramBu!","vftu!","vrDu!","SfDu!","syandU!","kfpU!","kxpU!")) && $verbset==="BvAdi")
 	{
 		$verbpada=verb_pada('1.3.91');
 	}
@@ -3701,6 +3701,7 @@ if ( (in_array("N",$itpratyaya) || in_array("k",$itpratyaya)) && !in_array($sanA
 	storedata('1.1.5','sa',0);
     $kGiti=1;
 }
+print_r($text);
 /* sici vRddhiH parasmaipadeSu (7.2.1) */
 if ( $sic===1 && in_array($so,$tis) && sub($ik,array("+"),array("sI","isI","stAm","istAm","sus","isus","stam","istam","sta","ista","sam","isam","sva","isva","sma","isma"),0) )
 {
