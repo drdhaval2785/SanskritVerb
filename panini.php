@@ -1355,6 +1355,7 @@ if ($lakAra==="luN")
 			storedata('2.4.77','sa',0);
 			$sic=0;
 			$luGset=1;
+			$gAtisthA=1;
 			//$sarvadhatuka=1;
 		}
 	/* vibhASA ghrAdheTzAcCAsaH (2.4.78) */
@@ -3701,10 +3702,9 @@ if ( (in_array("N",$itpratyaya) || in_array("k",$itpratyaya)) && !in_array($sanA
     $kGiti=1;
 }
 /* sici vRddhiH parasmaipadeSu (7.2.1) */
-//if ( $sic===1 && in_array($so,$tis) && sub($ik,array("+"),array("s","is"),0) )
-if ( $sic===1 && in_array($so,$tis) && sub($ik,array("+"),array("sI","isI"),0) )
+if ( $sic===1 && in_array($so,$tis) && sub($ik,array("+"),array("sI","isI","stAm","istAm","sus","isus","stam","istam","sta","ista","sam","isam","sva","isva","sma","isma"),0) )
 {
-    $text=three($ik,array("+"),array("sI","isI"),vriddhi($ik),array("+"),array("sI","isI"),0);
+    $text=three($ik,array("+"),array("sI","isI","stAm","istAm","sus","isus","stam","istam","sta","ista","sam","isam","sva","isva","sma","isma"),vriddhi($ik),array("+"),array("sI","isI","stAm","istAm","sus","isus","stam","istam","sta","ista","sam","isam","sva","isva","sma","isma"),0);
     $text=one(array("sI+s"),array("+sIs"),0);
 	storedata('7.2.1','sa',0);
 	$kGiti=1;
@@ -3933,7 +3933,7 @@ if (($sarvadhatuka===1 || $ardhadhatuka===1) &&  (in_array("N",$it)||in_array("k
     $kGiti=1;
 }
 /* bhUsuvostiGi (7.3.88) */
-if ( ($sarvadhatuka===1 || $verbset==="adAdi" ) && in_array($fo,array("BU","zUN","asa!")) && arr($text,'/[Bs]U\+/') && pr2(array("BU","sU"),array("+"),$sArvadhAtuka_tiG_pratyayas,array("Bu","su"),array("+"),$sArvadhAtuka_tiG_pratyayas,$text)!==$text )
+if ( ($sarvadhatuka===1 || $verbset==="adAdi" || $gAtisthA===1) && in_array($fo,array("BU","zUN","asa!")) && arr($text,'/[Bs]U\+/') )
 {
 	storedata('7.3.88','sa',0);
 	$bhUsuvo=1;
