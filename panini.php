@@ -4320,7 +4320,7 @@ if (in_array($fo,array("hana!","gamx!","jana!","Kana!","Gasa!","ada!")) && (pr2(
 if (in_array($fo,array("sfpx!","spfSa!","mfSa!","kfza!","tfpa!","dfpa!")) && arr($text,'/[f]['.pc('hl').'][+]['.pc('Jl').']/') )
 {
     $text = three(array("sfp","spfS","mfS","kfz","tfp","dfp"),array("+"),prat('Jl'),array("sfap","spfaS","mfaS","kfaz","tfap","dfap"),array("+"),prat('Jl'),1);
-    $text = two(array("sfap","spfaS","mfaS","kfaz","tfap","dfap"),array("+sa+"),array("sfp","spfS","mfS","kfz","tfp","dfp"),array("+sa+"),0); // For sijvA vaktavyaH
+    $text = two(array("sfap","spfaS","mfaS","kfaz","tfap","dfap"),array("+sa+","+s+ant"),array("sfp","spfS","mfS","kfz","tfp","dfp"),array("+sa+","+s+ant"),0); // For sijvA vaktavyaH
 	storedata('6.1.59','sa',0);
 }
 /* removing + from before Ni pratyayas */
@@ -4405,6 +4405,7 @@ if ( arr($text,'/['.pc('ac').'](['.pc('hl').'M]*)[+][st]/')  && $lakAra==="luN" 
 	$text = $aca; $aca=array();
 	$text = one(array("+sA+t",),array("+sa+t"),0);
 	$text = change('/Ar([zp][+]sa[+])/','f$1');
+	$text = change('/Ar([zp][+]s[+]ant)$/','f$1');
 	storedata('7.2.3','sa',0);
 }
 if ($debug===1) {dibug("3900");}
