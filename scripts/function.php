@@ -3013,7 +3013,7 @@ function san()
 	foreach ($text as $value)
 	{
 		$parts=explode('+',$value);
-		if (arr(array($value),'/^[^+]*[aiufx][+]['.pc('hl').']*['.pc('ac').']['.pc('hl').']/') && !arr(array($value),'/^[^+]*[aiufx][+]['.pc('hl').']*['.pc('ac').']['.pc('hl').']['.pc('hl').']/') && !in_array($parts[1],array("smar","dar","tvar","praT","mrad","star","spaS")) )
+		if (arr(array($value),'/^[^+]*[aiufx][+]['.pc('hl').']{1}['.pc('ac').']['.pc('hl').']/') && !arr(array($value),'/^[^+]*[aiufx][+]['.pc('hl').']*['.pc('ac').']['.pc('hl').']['.pc('hl').']/') && !in_array($parts[1],array("smar","dar","tvar","praT","mrad","star","spaS")) )
 		{
 			$parts[0]=preg_replace('/([a])$/','A',$parts[0]);
 			$parts[0]=preg_replace('/([i])$/','I',$parts[0]);
