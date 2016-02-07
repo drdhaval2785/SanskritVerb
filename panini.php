@@ -1642,7 +1642,7 @@ if ( $abhyasta===1 && $so==="Ji" )
 	storedata('3.4.109','sa',0);
 }
 /* kRpo ro laH (8.2.18) */
-if (arr($text,'/kfp/') )
+if (arr($text,'/kfp/') && $caG!==1)
 {
     $text=one(array("kfp"),array("kxp"),0);
 	storedata('8.2.18','sa',0);
@@ -3846,6 +3846,12 @@ if ($caG===1 && ($sanAdi==="Ric" || $verbset==="curAdi") && !in_array($fo,$curAd
 	storedata('7.4.93','pa',0);
 	san();
 }
+/* kRpo ro laH (8.2.18) */
+if (arr($text,'/kfp/') )
+{
+    $text=one(array("kfp"),array("kxp"),0);
+	storedata('8.2.18','sa',0);
+}
 /* aniditAM hala upadhAyAH kGiti (6.4.24) */ 
 if ( in_array($fo,$aniditverbs) && (in_array("N",$itpratyaya) || in_array("k",$itpratyaya)) && !in_array($sanAdi,array("Ric"))  && $so!=="mahiN" && arr($text,'/[NYRnmM]['.pc('hl').'][+]/')  && !in_array("i",$it) && $lakAra!=="viDiliN" && $verbset!=="ruDAdi" && $aniditAm!==1) # For application after NeraniTi
 {
@@ -5071,7 +5077,6 @@ if ($lakAra!=="" && $type==="tiGanta")
 		$text = change('/^[u][+][u]/','U');
 		storedata('6.1.101','sa',0);
 	}
-	print_r($text);
     if (($dhatu===1||$fo==="BrU") && arr($text,'/[iuIU][+]['.flat($ac).']/') && $pada==="pratyaya" && ( anekAca($fo)===false  || in_array($so,$tiG) || (arr($text,'/[B][U][+]/')||$fo==="suDI") ) && $dfmBU===0 && $didhI!==1 && $nabhusu!==1 && !sub(array("+"),array("I"),array("+"),0) && ($abhyasta!==1 || in_array($fo,array("hrI"))) && $sIyuT!==1)
     {
         $text = two(array("i+","I+","u+","U+"),$ac,array("iy+","iy+","uv+","uv+"),$ac,0);
@@ -5085,7 +5090,6 @@ if ($lakAra!=="" && $type==="tiGanta")
         $text = two(array("+nu+"),$ac,array("+nuv+"),$ac,0);
 		storedata('6.4.77','sa',0);
     }
-	print_r($text);
     /* ATazca (6.1.90) */
     if (arr($text,'/A['.pc('ac').']/') && in_array("Aw",$Agama) )
     {
