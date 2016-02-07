@@ -11615,7 +11615,6 @@ $ras = '/([rzfF])([aAiIuUfFxXeoEOhyvrkKgGNpPbBmM+]*)([n])/';
 $rasend = '/([rzfF])([aAiIuUfFxXeoEOhyvrkKgGNpPbBmM+]*)([n])$/';
 $rasgrep= '/([rzfF][aAiIuUfFxXeoEOhyvrkKgGNpPbBmM+]*[n])/';
 $ras1 = '$1$2R'; 
-print_r($text);
 /* AcAryAdaNatvaM ca (vA 2477) */
 if (arr($text,'/AcAryAnI/'))
 {
