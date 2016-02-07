@@ -3841,9 +3841,8 @@ if ($caG===1 && arr($text,'/^['.pc('ac').']/') )
 	//$text = one(array("+i+"),array("i+"),0);
 	caG_ajAdi();
 }
-print_r($text);
 // trial san function
-if ($caG===1 && ($sanAdi==="Ric" || $verbset==="curAdi") && !in_array($fo,$curAdi_adanta) && arr($text,'/^[^+]*[+]['.pc('hl').']{0,1}[aiuf]['.pc('hl').']{0,1}/'))
+if ($caG===1 && ($sanAdi==="Ric" || $verbset==="curAdi") && !in_array($fo,$curAdi_adanta) && arr($text,'/^[^+]*[+]['.pc('hl').']*[aiuf]['.pc('hl').']{0,1}/'))
 {
 	storedata('7.4.93','pa',0);
 	san();
