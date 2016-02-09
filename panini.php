@@ -3516,6 +3516,8 @@ if ( in_array($fo,array("iN")) && sub(array("gAN"),array("+"),blank(0),0) && in_
 	$itpratyaya=array_merge($itpratyaya,array("N"));
 	$it=array_merge($it,array("N"));
 	storedata('1.2.1','pa',0);
+	$kGiti=1;
+	storedata('1.1.5','pa',0);
 }
 /* gAGkuTAdibhyo'JNinGit (1.2.1) */ 
 if ( ((in_array($fo,$tudAdi_kuTAdi) && ($verbset==="tudAdi" || $verbset==="none" )) ) && in_array($lakAra,$ArdhadhAtuka_lakAra) && $Nit===0 && $Jit===0 && !in_array("R",$it) && !in_array("Y",$it))
@@ -3523,6 +3525,8 @@ if ( ((in_array($fo,$tudAdi_kuTAdi) && ($verbset==="tudAdi" || $verbset==="none"
 	$itpratyaya=array_merge($itpratyaya,array("N"));
 	$it=array_merge($it,array("N"));
 	storedata('1.2.1','pa',0);
+	$kGiti=1;
+	storedata('1.1.5','pa',0);
 }
 /* vyaceH kuTAditvamanasIti vaktavyam (vA) */
 if ( in_array($fo,array("vyaca!")) && !sub(array("vyaca!"),array("+"),array("as"),0) && in_array($lakAra,$ArdhadhAtuka_lakAra) && $Nit===0 && $Jit===0 && !in_array("R",$it) && !in_array("Y",$it))
