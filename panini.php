@@ -4008,7 +4008,6 @@ if (arr($text,'/biBI/') && sub(array("biBI"),array("+"),$halAdi_apit_sArvadhAtuk
     $text=three(array("biBI"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("biBi"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,1);
 	storedata('6.4.115','sa',0);
 }
-print_r($text);
 /* I halyaghoH (6.4.113) */
 if (arr($text,'/\+nA\+/') && sub(array("+"),array("nA+"),$halAdi_apit_sArvadhAtuka_pratyayas,0) && (in_array("N",$it)||in_array("N",$it)))
 {
@@ -4116,7 +4115,7 @@ if (arr($text,'/as\+Di/') && in_array($so,$tiG) && ends(array($fo),array("asa!",
 	storedata('6.4.119','sa',0);
 }
 /* erliGi (6.4.67) */
-if ( (in_array($fo,array("mA","zWA","gE","pA","o!hAk","zo")) || $ghu===1) && in_array($so,$tiG) && in_array($lakAra,array("ASIrliN")) && arr($text,'//A\+y') && $verbset!=="adAdi" ) // not applicable to pA of adAdi. Not applicable to sIyuT.
+if ( (in_array($fo,array("mA","zWA","gE","pA","o!hAk","zo","gA")) || $ghu===1) && in_array($so,$tiG) && in_array($lakAra,array("ASIrliN")) && arr($text,'/A\+y/') && $verbset!=="adAdi" ) // not applicable to pA of adAdi. Not applicable to sIyuT.
 {
 	$text = one(array("A+y"),array("e+y"),0);
 	storedata('6.4.67','sa',0);
