@@ -1834,7 +1834,7 @@ if (in_array($so,$tiG) && sub(array("+"),$shitpratyaya,blank(0),0) && $lakAra!==
 /* dAdhA ghvadAp (1.1.20) */
 if ( in_array($fo,$ghuset) )
 {
-	storedata('1.1.20','sa',0);
+	storedata('1.1.20','pa',0);
     $ghu=1;
 } else { $ghu=0; }
 /* pvAdInAM hrasvaH (7.3.80) */
@@ -4053,7 +4053,7 @@ if (arr($text,'/\+nA\+yA/') && sub(array("+"),array("nA+yA"),blank(0),0) ) # htt
     $text=one(array("+nA+yA"),array("+nI+yA"),0);
 	storedata('6.4.113','sa',0);
 }
-if (arr($text,'/A\+/') && sub(array("A"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,0) && (in_array("N",$it)||in_array("k",$it)) && $abhyasta===1)
+if (arr($text,'/A\+/') && sub(array("A"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,0) && (in_array("N",$it)||in_array("k",$it)) && $abhyasta===1 && $ghu!==1)
 {
     $text=three(array("A"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("I"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,0);
 	storedata('6.4.113','sa',0);
