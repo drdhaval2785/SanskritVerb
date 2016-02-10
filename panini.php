@@ -4058,12 +4058,8 @@ if (arr($text,'/A\+/') && sub(array("A"),array("+"),$halAdi_apit_sArvadhAtuka_pr
     $text=three(array("A"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("I"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,0);
 	storedata('6.4.113','sa',0);
 }
-/* znA'bhyastayorAtaH (6.4.112) */
-/*if ( arr($text,'/da[dD]A/') && sub(array("dadA","daDA"),array("+"),$apit_sArvadhAtuka_pratyayas,0) && (in_array("N",$it)||in_array("k",$it)))
-{
-    $text=three(array("dadA","daDA"),array("+"),$apit_sArvadhAtuka_pratyayas,array("dad","daD"),array("+"),$apit_sArvadhAtuka_pratyayas,0);
-	storedata('6.4.112','sa',0);
-}*/
+// Patch to remove + sign after sIyuT
+$text = two(array("+Iy+"),$ac,array("+Iy"),$ac,0);
 /* znA'bhyastayorAtaH (6.4.112) */
 if (arr($text,'/A[+]/') && $abhyasta===1 && pr2(array("A"),array("+"),$apit_sArvadhAtuka_pratyayas,array(""),array("+"),$apit_sArvadhAtuka_pratyayas,$text)!==$text && !arr($text,'/[+]yA[+][mv]a/'))
 {
@@ -4263,11 +4259,13 @@ if ( $tAs===1  && !in_array("iw",$Agama) && (in_array($fo,array("saha!","luBa!",
 	$Agama=array_merge($Agama,array("iw"));
 }
 if ($debug===1) {dibug("3800");}
-/* sthAdhvoricca (1.2.17) */
+print_r($text);
+/* sthAghvoricca (1.2.17) */
 if ( in_array($fo,array("do","deN","qudAY","dAR","Dew","quDAY","zWA")) && sub(array("A+"),array("s"),blank(0),0) && $lakAra!=="" && $sic!==0 )
 {
     $text=two(array("A+"),array("s"),array("i+"),array("s"),0);
 	storedata('1.2.17','sa',0);
+	$kGiti=1;
 }
 /* ghumAsthAgApAjahAtisAM hali (6.4.66) */
 if ( in_array($fo,array("do","deN","qudAY","dAR","Dew","quDAY","mA","zWA","iN","pA","hA","sA","gAN")) && ends($it,array("N","k"),2) && arr($text,'/a[+]['.pc('ac').']/') && sub(array("A+"),$ArdhadhAtuka_pratyayas,blank(0),0) && $lakAra!=="" )
