@@ -1961,6 +1961,12 @@ elseif ($lakAra==="liw" && $veda===0 && (anekAca($verb_without_anubandha) || $sa
 /* curAdi Ric handling */
 if (arr($text,'/\+Ric\+/'))
 {
+	/* aco JNiti (7.2.115) */
+	if (arr($text,'/['.pc('ac').']\+Ri[Nc]\+/' ) )
+	{
+		$text = two($ac,array("+Ric+","+RiN"),vriddhi($ac),array("+Ric+","+RiN"),0);
+		storedata('7.2.115','sa',0);
+	}
 	/* ata upadhAyAH (7.2.116) */
 	// more on enumeration kind. Not used regexes deliberately.
 	if ( $atolopa!==1 && $Naugami!==1 && $jAgro!==1 && arr($text,'/[a]['.pc('hl').'][+][R][i]c[+]/') && !(arr(array($verb_without_anubandha),'/^['.pc('hl').']/')&&$caG===1))
