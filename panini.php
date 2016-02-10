@@ -3412,7 +3412,8 @@ if (arr($text,'/[+][cjYwWqQR]/') && in_array($so,$tiG))
 {
     it('/([+][cjYwWqQR])/');
 	storedata('1.3.7','sa',0);
-    $text = one(array("+jas","+wA","+jus","+Ri","+Ra"),array("+as","+A","+us","+i","+a"),0);
+	$text = last(array("jas"),array("as"),0);
+    $text = one(array("+wA","+jus","+Ri","+Ra"),array("+A","+us","+i","+a"),0);
 	storedata('1.3.9','sa',0);
 }
 /* lopo vyorvali (6.1.66) */
