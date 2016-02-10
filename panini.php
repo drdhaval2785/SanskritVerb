@@ -4259,7 +4259,6 @@ if ( $tAs===1  && !in_array("iw",$Agama) && (in_array($fo,array("saha!","luBa!",
 	$Agama=array_merge($Agama,array("iw"));
 }
 if ($debug===1) {dibug("3800");}
-print_r($text);
 /* sthAghvoricca (1.2.17) */
 if ( in_array($fo,array("do","deN","qudAY","dAR","Dew","quDAY","zWA")) && sub(array("A+"),array("s"),blank(0),0) && $lakAra!=="" && $sic!==0 )
 {
