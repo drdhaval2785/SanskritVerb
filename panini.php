@@ -4607,7 +4607,7 @@ elseif ( arr($text,'/ra\+rAD\+/') && $lakAra==="liw" && !ends(array($so),array("
 	storedata('6.4.123','sa',0);
 }
 /* na zasadadavAdiguNAnAm (6.4.126) */
-elseif ( $lakAra==="liw" && !ends(array($so),array("tip","mip"),2) && sub(array("Sa+Sas","da+dad","ar"),array("+"),blank(0),0) )
+elseif ( $lakAra==="liw" && !ends(array($so),array("tip","mip"),2) && sub(array("Sa+Sas","da+dad"),array("+"),blank(0),0) )
 {
 	storedata('6.4.126','sa',0);
 }
@@ -4970,7 +4970,7 @@ if (arr($text,'/['.pc('Jl').']([+]*)s([+]*)['.pc('Jl').']/') && sub(prat("Jl"),a
 }
 
 /* SaDhoH kassi (8.2.41) */
-if (arr($text,'/[zQ]/') && sub(array("z","Q"),array("s"),blank(0),0) && !in_array("Sapluk",$vik))
+if (arr($text,'/[zQ]/') && sub(array("z","Q"),array("s"),blank(0),0))
 {
     $text = two(array("z","Q"),array("s"),array("k","k"),array("s"),0);
 	storedata('8.2.41','sa',0);
@@ -11094,7 +11094,7 @@ if (arr($text,'/[r][@]/'))
 	storedata('1.3.9','sa',0);
 }
 /* SaDhoH kassi (8.2.41) */
-if (arr($text,'/[zQ]/') && sub(array("z","Q"),array("s"),blank(0),0) && !in_array("Sapluk",$vik))
+if (arr($text,'/[zQ]/') && sub(array("z","Q"),array("s"),blank(0),0) )
 {
     $text = two(array("z","Q"),array("s"),array("k","k"),array("s"),0);
 	storedata('8.2.41','sa',0);
