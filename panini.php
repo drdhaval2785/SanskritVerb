@@ -1958,6 +1958,14 @@ elseif ($lakAra==="liw" && $veda===0 && (anekAca($verb_without_anubandha) || $sa
 		storedata('6.1.101','sa',0);
 	}
 }
+print_r($text);
+/* jAgro'viciNNalGitsu (7.3.85) */
+if ( arr($text,'/jAgf[+]Am[+]/') && $lakAra==="liw")
+{
+    $text = two(array('jAgf'),array("+"),array('jAgar'),array("+"),0);
+	storedata('7.3.85','sa',0);
+	$jAgro=1;
+}
 /* curAdi Ric handling */
 if (arr($text,'/\+Ric\+/'))
 {
@@ -2957,7 +2965,6 @@ if ( in_array($fo,array("jyA","graha!","vaya!","vyaDa!","vaSa!","vyaca!","o!vraS
     $text = samprasarana(array("jyA","grah","vay","vyaD","vaS","vyac","vraSc","pracC","Brasj"),0);
 	}
 if ($debug===1) {dibug("2600");}
-print_r($text);
 /* jAgro'viciNNalGitsu (7.3.85) */
 // Only coded for Ri and Git. Rest pending.
 //if ( sub(array('jAgf'),array("+"),array("Ri+"),0) && $bhasyADhe!==1)
