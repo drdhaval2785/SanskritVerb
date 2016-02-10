@@ -4509,9 +4509,9 @@ if ( $lakAra==="liw" && in_array("k",$itpratyaya) && sub(array("Sa+SF","da+dF","
 	storedata('7.4.12','sa',0);
 }
 /* dAderdhAtorghaH (8.2.32) */
-if (arr($text,'/['.pc('hl').'][+]['.pc("Jl").']/') && sub($dade,blank(0),blank(0),0) )
+if (arr($text,'/['.pc('hl').'][+]['.pc('Jl').']/') && sub(array("dah","dAh","dih","duh","dfh","drAh","druh","deh"),array("+"),prat('Jl'),0) )
 {
-    $text = three(array("dah","dAh","dih","duh","dfh","drAh","druh"),array("+"),prat('Jl'),array("daG","dAG","diG","duG","dfG","drAG","druG"),array("+"),prat('Jl'),0);
+    $text = three(array("dah","dAh","dih","duh","dfh","drAh","druh","deh"),array("+"),prat('Jl'),array("daG","dAG","diG","duG","dfG","drAG","druG","deG"),array("+"),prat('Jl'),0);
 	storedata('8.2.32','sa',0);
     $hodha1 = 1; // 0 - doesn't prevent ho DhaH. 1 - prevents ho DhaH.
 } else { $hodha1 = 0; } 
@@ -5033,7 +5033,7 @@ if ( in_array($fo,array("UrRuY")) && sub(array("UrRu","orRu","UrRo","orRo"),arra
 	storedata('1.2.3','sa',0);
 }    
 /* jhaSastathordho'dhaH (8.2.40) */
-if (arr($text,'/['.pc('Jz').']\+[tT]/') && !sub(array("daD","DaD"),array("+"),array("t","T"),0) && in_array($so,$tiG) && $fo==="quDAY")
+if (arr($text,'/['.pc('Jz').']\+[tT]/') && !sub(array("daD","DaD"),array("+"),array("t","T"),0) && in_array($so,$tiG) && $fo!=="quDAY")
 {
     $text = two(prat('Jz'),array("+t","+T"),prat('Jz'),array("+D","+D"),0);
 	storedata('8.2.40','sa',0);
