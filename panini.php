@@ -5124,7 +5124,7 @@ if ($lakAra!=="" && $type==="tiGanta")
 		$text = change('/^[u][+][u]/','U');
 		storedata('6.1.101','sa',0);
 	}
-    if (($dhatu===1||$fo==="BrU") && arr($text,'/[iuIU][+]['.flat($ac).']/') && $pada==="pratyaya" && ( anekAca($fo)===false  || in_array($so,$tiG) || (arr($text,'/[B][U][+]/')||$fo==="suDI") ) && $dfmBU===0 && $didhI!==1 && $nabhusu!==1 && !sub(array("+"),array("I"),array("+"),0) && ($abhyasta!==1 || in_array($fo,array("hrI"))) && $sIyuT!==1)
+    if (($dhatu===1||$fo==="BrU") && arr($text,'/[iuIU][+]['.flat($ac).']/') && $pada==="pratyaya" && ( anekAca($fo)===false  || in_array($so,$tiG) || (arr($text,'/[B][U][+]/')||$fo==="suDI") ) && $dfmBU===0 && $didhI!==1 && $nabhusu!==1 && !sub(array("+"),array("I"),array("+"),0) && ($abhyasta!==1 || in_array($fo,array("hrI"))) && $sIyuT!==1 && !in_array("u",$vik))
     {
         $text = two(array("i+","I+","u+","U+"),$ac,array("iy+","iy+","uv+","uv+"),$ac,0);
 		$text = one(array("uv+uv+"),array("u+uv+"),0);
@@ -9636,7 +9636,7 @@ if ( $dhatu===1 && (arr($text,'/[B][U][+]/')||$fo==="suDI") && arr($text,'/[iuIU
 /* kvau luptaM na sthAnivat (vA 431) */
 // Not displayed because it is difficult to teach sthnanivadbhav to machine now. Will come back to it if I can teach it some day.
 /* aci znudhAtubhruvAM yvoriyaGuvaGau (6.4.77) */
-if (($dhatu===1||$fo==="BrU") && arr($text,'/[iuIU][+]*['.flat($ac).']/') && $pada==="pratyaya" && ($eranekaca===0 || ($eranekaca===1 && anekAca($fo)===false ) || (arr($text,'/[B][U][+]/')||$fo==="suDI") ) && $dfmBU===0 && !sub(array("+"),array("I"),array("+"),0) && $sIyuT!==1)
+if (($dhatu===1||$fo==="BrU") && arr($text,'/[iuIU][+]*['.flat($ac).']/') && $pada==="pratyaya" && ($eranekaca===0 || ($eranekaca===1 && anekAca($fo)===false ) || (arr($text,'/[B][U][+]/')||$fo==="suDI") ) && $dfmBU===0 && !sub(array("+"),array("I"),array("+"),0) && $sIyuT!==1 && !in_array("u",$vik))
 {
     $text = change('/([iI])([+]*['.pc('ac').'])/','iy$2');
     $text = change('/([uU])([+]*['.pc('ac').'])/','uv$2');
