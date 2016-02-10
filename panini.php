@@ -1958,7 +1958,6 @@ elseif ($lakAra==="liw" && $veda===0 && (anekAca($verb_without_anubandha) || $sa
 		storedata('6.1.101','sa',0);
 	}
 }
-print_r($text);
 /* jAgro'viciNNalGitsu (7.3.85) */
 if ( arr($text,'/jAgf[+]Am[+]/') && $lakAra==="liw")
 {
@@ -3287,6 +3286,7 @@ if (in_array($fo,array("prIY","DUY")) && in_array($so,$tiG) && sub(array("prI","
 	storedata('7.3.37-1','sa',0);
 }
 if ($debug===1) {dibug("2900");}
+print_r($text);
 /* Ato lopa iTi ca (6.4.64) */
 if ( (in_array("N",$itpratyaya)||in_array("k",$itpratyaya) )  && $lakAra!=="" && $caG===1 && sub(array("A+"),array("a+"),blank(0),0) )
 {
@@ -3294,7 +3294,7 @@ if ( (in_array("N",$itpratyaya)||in_array("k",$itpratyaya) )  && $lakAra!=="" &&
 	storedata('6.4.64','sa',0);
 }
 /* Ato lopa iTi ca (6.4.64) */
-elseif (arr($text,'/[A][+]['.pc('ac').']/') && (in_array("N",$itpratyaya)||in_array("k",$itpratyaya) ) && pr2(array("A"),array("+"),$tiG1,array("A"),array("+"),$tiG1,$text)!==$text && $lakAra!=="" )
+elseif (arr($text,'/[A][+]['.pc('ac').']/') && (in_array("N",$itpratyaya)||in_array("k",$itpratyaya) ) && pr2(array("A"),array("+"),$tiG1,array("A"),array("+"),$tiG1,$text)!==$text && $lakAra!=="" && $ardhadhatuka===1)
 {
     $text=pr2(array("A"),array("+"),$tiG1,array("A"),array("+"),$tiG1,$text);
     $text=two($hl,array("+sic+"),$hl,array("A+sic+"),0);
