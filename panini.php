@@ -2957,10 +2957,11 @@ if ( in_array($fo,array("jyA","graha!","vaya!","vyaDa!","vaSa!","vyaca!","o!vraS
     $text = samprasarana(array("jyA","grah","vay","vyaD","vaS","vyac","vraSc","pracC","Brasj"),0);
 	}
 if ($debug===1) {dibug("2600");}
+print_r($text);
 /* jAgro'viciNNalGitsu (7.3.85) */
-// Not coded properly. Only for Ni coded. Rest Pending.
+// Only coded for Ri and Git. Rest pending.
 //if ( sub(array('jAgf'),array("+"),array("Ri+"),0) && $bhasyADhe!==1)
-if ( arr($text,'/[j][A][g][f][+]/') && $bhasyADhe!==1)
+if ( arr($text,'/[j][A][g][f][+]/') && $bhasyADhe!==1 && (!in_array("N",$it)) )
 {
     $text = two(array('jAgf'),array("+"),array('jAgar'),array("+"),0);
 	storedata('7.3.85','sa',0);
