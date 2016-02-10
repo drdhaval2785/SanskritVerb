@@ -3071,7 +3071,8 @@ function zlu()
 	}
 	elseif( (arr($text,'/^f[+]/')||arr($text,'/^pipF[+]/')) && sub(array("f","pipF",),array("+"),blank(0),0))
 	{
-		$text=two(array("f","pipF",),array("+"),array("if","pipF",),array("+"),0);
+		$text=change('/^f[+]/','if+');
+		$text=change('/^pipF[+]/','pipar+');
 		storedata('6.1.10','sa',0);
 		storedata('7.4.77','sa',0);
 	}
@@ -3084,11 +3085,11 @@ function zlu()
 	else
 	{
 		$text=two($juhotyAdi,array("+"),$juhotyAdireplace1,array("+"),0);
+		$text=change('/(['.pc('hl').']+)if[+]/','$1f+');
 		storedata('6.1.10','sa',0);
 		$text=two($juhotyAdireplace1,array("+"),$juhotyAdireplace2,array("+"),0);
 		storedata('7.4.59','sa',0);
-	}
-	
+	}	
 	if (sub(array("kiki","kikit","gagA","GiGf","hahA","huhu","hihf","hihrI","gigA"),array("+"),$tiG,0))
 	{
 		$text=three(array("kiki","kikit","gagA","GiGf","hahA","huhu","hihf","hihrI","gigA"),array("+"),$tiG,array("ciki","cikit","jagA","JiGf","JahA","Juhu","Jihf","JihrI","jigA"),array("+"),$tiG,0);
