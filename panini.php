@@ -1936,6 +1936,8 @@ elseif ($lakAra==="liw" && (arr(array($verb_without_anubandha),'/^[IUFXeEoO]/') 
 elseif ($lakAra==="liw" && ends(array($fo),array("daya!","aya!","Asa!"),4) )
 {
     $text=two(array("+"),$tiG,array("+Am+"),$tiG,0);
+    $text=change('/[+]eS$/','+Am+eS');
+    $text=change('/[+]irec$/','+Am+irec');
 	storedata('3.1.37','sa',0);
 }
 /* uSavidajAgRbhyo'nyatarasyAm (3.1.38) */
@@ -2800,7 +2802,7 @@ if ( in_array($fo,array("daridrA")) && $ardhadhatuka===1 && $lakAra==="luN" && s
 	storedata('6.4.114-1','sa',0);
 }
 /* dayaterdigi liTi (7.4.9) */ 
-if (in_array($fo,array("daya!")) && $lakAra==="liw")
+if (in_array($fo,array("deY")) && $lakAra==="liw")
 {
 	$text=three(array("day"),array("+"),$tiG1,array("digi"),array("+"),$tiG1,0);
 	storedata('7.4.9','sa',0);
