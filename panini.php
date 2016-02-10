@@ -5036,7 +5036,7 @@ if ( in_array($fo,array("UrRuY")) && sub(array("UrRu","orRu","UrRo","orRo"),arra
 	storedata('1.2.3','sa',0);
 }    
 /* jhaSastathordho'dhaH (8.2.40) */
-if (arr($text,'/['.pc('Jz').']\+[tT]/') && !sub(array("daD"),array("+"),array("t","T"),0) && in_array($so,$tiG))
+if (arr($text,'/['.pc('Jz').']\+[tT]/') && !sub(array("daD","DaD"),array("+"),array("t","T"),0) && in_array($so,$tiG) && $fo==="quDAY")
 {
     $text = two(prat('Jz'),array("+t","+T"),prat('Jz'),array("+D","+D"),0);
 	storedata('8.2.40','sa',0);
