@@ -2007,6 +2007,11 @@ if (arr($text,'/\+Ric\+/'))
 	$text = one(array("+Ric+"),array("+i+"),0);
 	$text = one(array("+caN+"),array("+a+"),0);
 	storedata('1.3.9','sa',0);
+	if (arr($text,'/[eoEO][+]i[+]/'))
+	{
+		$text = two(array("e","o","E","O"),array("+i+"),array("ay","av","Ay","Av"),array("i+"),0);
+		storedata('6.1.78','sa',0);
+	}
 	/* ato lopaH (6.4.48) */
 	if ( arr($text,'/ai[+]/') && in_array($fo,$curAdi_adanta) && ($verbset==="none"||$verbset==="curAdi"))
 	{
