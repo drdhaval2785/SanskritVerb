@@ -1972,7 +1972,7 @@ if ( arr($text,'/jAgf[+]Am[+]/') && $lakAra==="liw")
     $text = two(array('jAgf'),array("+"),array('jAgar'),array("+"),0);
 	storedata('7.3.85','sa',0);
 	$jAgro=1;
-}
+} else {$jAgro=0;}
 /* curAdi Ric handling */
 if (arr($text,'/\+Ric\+/'))
 {
@@ -2980,7 +2980,7 @@ if ( arr($text,'/[j][A][g][f][+]/') && $bhasyADhe!==1 && (!in_array("N",$it)) )
     $text = two(array('jAgf'),array("+"),array('jAgar'),array("+"),0);
 	storedata('7.3.85','sa',0);
 	$jAgro=1;
-} else {$jAgro=0;}
+}
 /* IzaH se (7.2.77) */
 if (in_array($fo,array("ISa!")) && sub(array("+"),array("s"),blank(0),0) && in_array($so,$tiG))
 {
@@ -3294,7 +3294,6 @@ if (in_array($fo,array("prIY","DUY")) && in_array($so,$tiG) && sub(array("prI","
 	storedata('7.3.37-1','sa',0);
 }
 if ($debug===1) {dibug("2900");}
-print_r($text);
 /* Ato lopa iTi ca (6.4.64) */
 if ( (in_array("N",$itpratyaya)||in_array("k",$itpratyaya) )  && $lakAra!=="" && $caG===1 && sub(array("A+"),array("a+"),blank(0),0) )
 {
@@ -4649,7 +4648,7 @@ if ( arr($text,'/[G][s][+]/') && ends(array($fo),array("Gasa!","ada!"),4) && in_
 $novrddhi=0;
 if ($debug===1) {dibug("4100");}
 /* ato lrAntasya (7.2.2) */
-if (arr($text,'/a[rl]\+/') && sub(array("ar","al"),array("+"),array("s","is"),0) && $sic===1 && in_array($so,$tis) )
+if (arr($text,'/a[rl]\+/') && sub(array("ar","al"),array("+"),array("s","is"),0) && $sic===1 && in_array($so,$tis) && $jAgro!==1)
 {
     $text=two(array("ar+","al+"),array("s","is"),array("Ar+","Al+"),array("s","is"),0);
 	storedata('7.2.2','sa',0);
