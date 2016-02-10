@@ -4641,6 +4641,17 @@ elseif ( $sic===1 && in_array($so,$tis) && ( arr($text,'/['.pc('ac').'][hmy]\+is
 	$hmyanta = 1;
 	$novrddhi=1;
 }
+/* neTi (7.2.4) */
+elseif ( arr($text,'/['.pc('ac').'](['.pc('hl').'M]*)[+][i][s]/') && $sic===1 && in_array($so,$tis) )
+{
+	storedata('7.2.4','pa',0);
+	$novrddhi=1;
+	if (arr($text,'/[iufx](['.pc('hl').'M]*)[+][i][s]/'))
+	{
+		$text=three(array("i","u","f","x"),$hl,array("+is"),array("e","o","ar","al"),$hl,array("+is"),0);
+		storedata('7.3.86','sa',0);
+	}
+}
 /* vadavrajahalantasya acaH (7.2.3) */ 
 elseif ( $lakAra==="luN" && $sic!==0 && in_array($so,$tis) && in_array($fo,array("vada!","vraja!")) && sub(array("vad","vraj"),array("+"),array("is"),0) )
 { 
@@ -4668,12 +4679,6 @@ elseif ( $sic===1 && in_array($so,$tis) && arr($text,'/UrRu\+is/') && sub(array(
     $text=one(array("UrRu+is"),array("UrRO+is"),1);
     $text=one(array("UrRu+is"),array("UrRo+is"),1);
 	storedata('7.2.6','sa',0);
-}
-/* neTi (7.2.4) */
-elseif ( arr($text,'/['.pc('ac').'](['.pc('hl').'M]*)[+][i][s]/') && $sic===1 && in_array($so,$tis) )
-{
-	storedata('7.2.4','pa',0);
-	$novrddhi=1;
 }
 /* ato lopaH (6.4.48) */
 // patch for han -> vaDa
