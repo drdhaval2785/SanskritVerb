@@ -5158,12 +5158,12 @@ if ($lakAra!=="" && $type==="tiGanta")
 //        echo "<p class = hn >गतिकारकेतरपूर्वपदस्य यण्‌ नेष्यते (वा ५०३४) से गति / कारक से भिन्न पूर्वपद होने पर यह सूत्र नहीं लागू होता । इयङ्‌ या उवङ्‌ की प्रवृत्ति होती है । :</p>\n";
     }
     /* oH supi (6.4.83) */ 
-    if ($dhatu===1 && in_array($fo,array("ullU")) && $pada==="pratyaya" && anekAca($fo) && $nabhusu===0 && $dfmBU===0)
+    if ($dhatu===1 && in_array($fo,array("ullU")) && $pada==="pratyaya" && anekAca($fo) && $nabhusu===0 && $dfmBU===0 && in_array($so,$sup))
     {
 		storedata('osupi','sa',0);
         $ullU=1; // 0 - word is not ullU. 1 - word is ullU.
     } else { $ullU=0; }
-    if ($dhatu===1 && ( arr($text,'/['.pc('hl').'][uU][+]['.flat($ac).']/') || $ullU===1 )&& !sub(array("+"),array("u+"),blank(0),0) && $pada==="pratyaya" && anekAca($fo) && $nabhusu===0 && $dfmBU===0 && !arr($text,'/['.pc('hl').']['.pc('hl').'][uU][+]['.flat($ac).']/'))
+    if ($dhatu===1 && ( arr($text,'/['.pc('hl').'][uU][+]['.flat($ac).']/') || $ullU===1 )&& !sub(array("+"),array("u+"),blank(0),0) && $pada==="pratyaya" && anekAca($fo) && $nabhusu===0 && $dfmBU===0 && !arr($text,'/['.pc('hl').']['.pc('hl').'][uU][+]['.flat($ac).']/') && in_array($so,$sup))
     {
         $text = three(array("u","U"),array("+"),$ac,array("v","v"),array("+"),$ac,0);
 		storedata('6.4.83','sa',3);
@@ -9658,7 +9658,7 @@ if ($dhatu===1 && (arr($text,'/['.flat($ac).']['.flat($hl).'][iI][+]['.flat($ac)
 	storedata('6.4.82','sa',3);
 }
 /* oH supi (6.4.83) */ 
-if ($dhatu===1 && in_array($fo,array("ullU")) && $pada==="pratyaya" && anekAca($fo) && $$eranekaca===1 && $nabhusu===0 && in_array($so,$sup) && $dfmBU===0)
+if ($dhatu===1 && in_array($fo,array("ullU")) && $pada==="pratyaya" && anekAca($fo) && $$eranekaca===1 && $nabhusu===0 && in_array($so,$sup) && $dfmBU===0 && in_array($so,$sup))
 {
 	// Pending to refactor.
 /*    echo "<p class = pa >As the vizeSaNa 'dhAtunA saMyogasya' mandates that the saMyoga has to belong to dhAtu only for prohibiting 'oH supi', the prohibition doesn't apply here.</p>\n";
@@ -9666,7 +9666,7 @@ if ($dhatu===1 && in_array($fo,array("ullU")) && $pada==="pratyaya" && anekAca($
     display(0); */
     $ullU=1; // 0 - word is not ullU. 1 - word is ullU.
 } else { $ullU=0; }
-if ($dhatu===1 && ( arr($text,'/[uU][+]['.flat($ac).']/') || $ullU===1 )&& $pada==="pratyaya" && anekAca($fo) && $eranekaca===1 && $nabhusu===0 && in_array($so,$sup) && $dfmBU===0)
+if ($dhatu===1 && ( arr($text,'/[uU][+]['.flat($ac).']/') || $ullU===1 )&& $pada==="pratyaya" && anekAca($fo) && $eranekaca===1 && $nabhusu===0 && in_array($so,$sup) && $dfmBU===0 && in_array($so,$sup))
 {
     $text = three(array("u","U"),array("+"),$ac,array("v","v"),array("+"),$ac,0);
 	storedata('6.4.83','sa',3);
@@ -11131,7 +11131,6 @@ if ($dhatu===1 && arr($text,'/[iIuUfFxX]r\+/') && ((sub(array("i","I","u","U","f
     $text = three(array("i","I","u","U","f","F","x","X",),array("r","v"),array("+"),array("I","I","U","U","F","F","F","F",),array("r","v"),array("+"),0);
 	storedata('8.2.76','sa',0);
 }
-print_r($text);
 /* hali ca (8.2.77) */
 $rvverb=array("ir","Ir","Ir","ur","kIv","kur","kfv","klIv","kziv","kzIv","kzIv","kzur","kzur","Kur","Kur","gir","gur","gUr","gUr","Gur","GUr","cir","cIv","cIv","cur","cUr","Cur","jIv","jur","jUr","tir","tIv","tIv","tIv","tur","tUr","div","div","div","dIv","dIv","DIv","Dur","Dur","Druv","niv","nIv","pIv","pur","pUr","Bur","mIv","mIv","mur","mur","mUr","mUr","rIv","SUr","Sriv","SrIv","zWiv","zWIv","siv","siv","sIv","sur","sUr","sTiv","sPur","sriv","srIv","hur",);
 if (arr($text,'/divn/'))
