@@ -11759,24 +11759,27 @@ if( $allopo===1 && ((sub($shtu,$stu,blank(0),0)|| sub($stu,$shtu,blank(0),0))) )
 }        
 if( $allopo===0 && ((arr($text,'/[zwWqQR]([+]*)[stTdDn]/')|| arr($text,'/[stTdDn]([+]*)[zwWqQR]/'))))
 {
-$text = two(array("z"),$stu,array("z"),$shtu,0);
-$text = two(array("s"),$shtu,array("z"),$shtu,0);
-$text = two(array("t"),$Tu,array("w"),$Tu,0);
-$text = two(array("T"),$Tu,array("W"),$Tu,0);
-$text = two(array("d"),$Tu,array("q"),$Tu,0);
-$text = two(array("D"),$Tu,array("Q"),$Tu,0);
-$text = two(array("n"),$Tu,array("R"),$Tu,0);
-    if ($pada === "pratyaya" && (sub($Tu,$tu,blank(0),0)))
-    {
-        $text = two(array("w"),$tu,array("w"),$Tu,0);
-        $text = two(array("W"),$tu,array("W"),$Tu,0);
-        $text = two(array("q"),$tu,array("q"),$Tu,0);
-        $text = two(array("Q"),$tu,array("Q"),$Tu,0);
-        $text = two(array("R"),$tu,array("R"),$Tu,0);
-    }       
-storedata('8.4.41','sa',0);
-storedata('8.4.42','sa',0);
-storedata('8.4.43','sa',0);
+	if (arr($text,'/[tTdD][+]*z/'))
+	{
+		storedata('8.4.43','sa',0);
+	}
+	$text = two(array("z"),$stu,array("z"),$shtu,0);
+	$text = two(array("s"),$shtu,array("z"),$shtu,0);
+	$text = two(array("t"),$Tu,array("w"),$Tu,0);
+	$text = two(array("T"),$Tu,array("W"),$Tu,0);
+	$text = two(array("d"),$Tu,array("q"),$Tu,0);
+	$text = two(array("D"),$Tu,array("Q"),$Tu,0);
+	$text = two(array("n"),$Tu,array("R"),$Tu,0);
+		if ($pada === "pratyaya" && (sub($Tu,$tu,blank(0),0)))
+		{
+			$text = two(array("w"),$tu,array("w"),$Tu,0);
+			$text = two(array("W"),$tu,array("W"),$Tu,0);
+			$text = two(array("q"),$tu,array("q"),$Tu,0);
+			$text = two(array("Q"),$tu,array("Q"),$Tu,0);
+			$text = two(array("R"),$tu,array("R"),$Tu,0);
+		}       
+	storedata('8.4.41','sa',0);
+	storedata('8.4.42','sa',0);
 }
 /* Dho Dhe lopaH (8.3.13) */
 if (arr($text,'/Q([+]*)Q/'))
