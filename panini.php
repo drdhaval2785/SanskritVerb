@@ -5436,9 +5436,9 @@ if (arr($text,'/daridrA\+/') && in_array($fo,array("daridrA")) && $ardhadhatuka=
 // Not coded perfectly. This is only for tiG pratyayas.
 if(arr($text,'/[iIuUfFxXeoEOhyvrlkKgGN]\+s/') && !arr($text,'/[iIuUfFxXeoEOhyvrl]\+s$/') && in_array($so,$tiG) )
 {
+storedata('8.3.55','pa',0);
+storedata('8.3.57','pa',0);
 $text = two($iN1,array("+s"),$iN1,array("+z"),0);
-storedata('8.3.55','sa',0);
-storedata('8.3.57','sa',0);
 storedata('8.3.59','sa',0);
 }
 /* For verbs - remove all + marks. */
