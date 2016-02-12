@@ -1310,11 +1310,13 @@ if ($lakAra==="luN")
 	/* NizridrusrubhyaH kartari caG (3.1.48) */
 	elseif ( ( $sanAdi==="Ric" || $sanAdi==="RiN" || ends(array($fo),array("SriY","sru","dru"),2) || $verbset==="curAdi" ) && in_array($so,$tiG) )
 	{
-		//$text = one(array("+cli+"),array("+caN+"),0);
+		$text=two(array("+cli+"),$tiG,array("+Ric+cli+"),$tiG,0);
+		storedata('3.1.25','sa',0);
+		$text=two(array("Ric+cli+"),$tiG,array("+Ric+caN+"),$tiG,0);
+		storedata('3.1.48','sa',0);
 		$Nizri=1;
-		//storedata('3.1.48','sa',0);
-		//$it = array_merge($it,array("N"));
-		//$itpratyaya = array_merge($itpratyaya,array("N"));
+		$it = array_merge($it,array("N"));
+		$itpratyaya = array_merge($itpratyaya,array("N"));
 		$luGset=5;
 		$caG=1;
 	}
@@ -1838,7 +1840,7 @@ if ( in_array($fo,$ghuset) )
     $ghu=1;
 } else { $ghu=0; }
 /* pvAdInAM hrasvaH (7.3.80) */
-if (in_array($fo,$pvAdi) && sub(array("+"),$shitpratyaya,blank(0),0) && $fo!=="jyA" && ( $verbset==="curAdi" || ($verbset==="none" && in_array($fo,$curAdi) ) ))
+if (in_array($fo,$pvAdi) && sub(array("+"),$shitpratyaya,blank(0),0) && $fo!=="jyA" )
 {
     $text=three(array("A","I","U","F",),array("+"),$shitpratyaya,array("a","i","u","f",),array("+"),$shitpratyaya,0);
 	storedata('7.3.80','sa',0);
