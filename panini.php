@@ -2227,7 +2227,7 @@ if (arr($text,'/[+][lSkKgGN]/') && $taddhita === 0  && in_array($so,$tiG) )
 }
 /* na vibhaktau tusmAH (1.3.4) */
 //if (arr($text,'/[tTdDnsm]$/') && $pada=== "pratyaya" && sub(array("+"),$navibhaktau,blank(0),0) && in_array($so,$tiG))
-if (arr(array($so),'/[tTdDnsm]$/') && $vibhakti===1 && $tusma!==1)
+if (arr(array($so),'/[tTdDnsm]$/') && $vibhakti===1 && $tusma!==1 && arr($text,'/[tTdDnsm]$/') )
 {
 	storedata('1.3.4','sa',0);
     $tusma=1;
@@ -9284,7 +9284,7 @@ if (((arr($text,'/[+][lSkKgGN]/'))||$sarva2===1||$purva===1) && $taddhita === 0 
 	storedata('1.3.9','sa',0);
 }
 /* na vibhaktau tusmAH (1.3.4) */
-if (arr(array($so),'/[tTdDnsm]$/') && $vibhakti===1 && $tusma!==1)
+if (arr(array($so),'/[tTdDnsm]$/') && $vibhakti===1 && $tusma!==1 && arr($text,'/[tTdDnsm]$/'))
 {
 	storedata('1.3.4','sa',0);
     $tusma=1;
