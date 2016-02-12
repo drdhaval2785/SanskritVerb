@@ -4972,6 +4972,20 @@ if (arr($text,'/[h]$/')  && $hodha1===0 && $hodha2 === 0 && $hodha3 === 0 )
     $text = last(array("h"),array("Q"),0);
 	storedata('8.2.31','sa',0);
 }
+/* halGyAbbhyo dIrghAtsutisyapRktaM hal (6.1.68) and apRkta ekAlpratyayaH (1.2.41) */
+// GyAp pending. only hal handled now.
+if (arr($text,'/['.pc('hl').'][+][sts]$/') && !arr($text,'/s[+]s$/') && in_array($so,array("su!","tip","sip",)))
+{
+	storedata('1.2.41','pa',0);
+}
+if (arr($text,'/['.pc('hl').'][+][stsD]$/')  && !arr($text,'/s[+]s$/') && in_array($so,array("su!","tip","sip")))
+{
+    $text = two($hl,array("+s","+t","+D"),$hl,array("+","+","+"),0);
+	storedata('6.1.68','sa',0);
+    $pada="pada"; // there is no pratyaya left now.
+    $halGyAbbhyo=1;
+}
+print_r($text);
 /* ekAco bazo bhaS jhaSantasya sdhvoH (8.2.37) */  
 if ( /*anekAca($verb_without_anubandha)==false &&*/ ( arr($text,'/[bgqd](['.pc('al').']*)[JBGQD][+][s]/') || arr($text,'/[bgqd](['.pc('al').']*)[JBGQD][+]Dv/') || arr($text,'/[JBGQD][+]$/') || $pada==="pada") )
 {
@@ -5349,19 +5363,6 @@ elseif( in_array($so,$tiG) && ((arr($text,'/zIDv/') && sub($iN2,array("zIDv"),bl
 {
 	$text = two($iN2,array("zIDv","Dv"),$iN2,array("zIQv","Qv"),0);
 	storedata('8.3.78','sa',0);
-}
-/* halGyAbbhyo dIrghAtsutisyapRktaM hal (6.1.68) and apRkta ekAlpratyayaH (1.2.41) */
-// GyAp pending. only hal handled now.
-if (arr($text,'/['.pc('hl').'][+][sts]$/') && !arr($text,'/s[+]s$/') && in_array($so,array("su!","tip","sip",)))
-{
-	storedata('1.2.41','pa',0);
-}
-if (arr($text,'/['.pc('hl').'][+][sts]$/')  && !arr($text,'/s[+]s$/') && in_array($so,array("su!","tip","sip")))
-{
-    $text = two($hl,array("+s","+t"),$hl,array("+","+"),0);
-	storedata('6.1.68','sa',0);
-    $pada="pada"; // there is no pratyaya left now.
-    $halGyAbbhyo=1;
 }
 /* rAtsasya (8.2.24) */
 if ((arr($text,('/[r][+][s]$/')) && $pada === "pratyaya") || (arr($text,('/[r][s][+]/')) && $pada === "pada") )
