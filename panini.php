@@ -2758,6 +2758,14 @@ if ( $ksa===1 && $luGset===7 && in_array($so,$taG)  && in_array($fo,array("duha!
     $text = three(array("duh","dih","lih","guh",),array("+sa+"),array("t","T","d","D","n","v",),array("duh","dih","lih","guh",),array("+"),array("t","T","d","D","n","v",),1);
 	storedata('7.3.73','sa',0);
 }
+/* riG zayagliGkSu (7.4.28) */
+if (in_array("Sa",$vik) && (sub(array("f"),array("+a+"),blank(0),0) || (sub(array("f"),array("+y"),blank(0),0) && $lakAra!=="" )))
+{
+    $text=two(array("f"),array("+a"),array("ri"),array("+a"),0);
+	storedata('7.4.28','sa',0);
+    $text=two(array("ri"),array("+a+"),array("riy"),array("+a+"),0);
+	storedata('6.4.77','sa',0);
+}
 /* AtmanepadeSvanataH (7.1.5) */
 if ( in_array($so,array("Ja")) && $set===2 && pr2(array("+"),array("Ja"),blank(0),array("+"),array("ata"),blank(0),$text)!==$text)
 {
@@ -2956,6 +2964,7 @@ if ($sarvadhatuka===1 && !in_array("Sap",$vik) && pr2(array("+"),$apit_sArvadhAt
     $itpratyaya=array_merge($itpratyaya,array("N"));
 	storedata('1.2.4','pa',0);
 	$kGiti=1;	
+	storedata('1.1.5','pa',0);
 	if (pr2(pc('ik'),array("+"),$apit_sArvadhAtuka_pratyayas,pc('ik'),array("+fadfad"),$apit_sArvadhAtuka_pratyayas,$text)!== $text)
 	{
 		storedata('1.1.5','sa',0);
@@ -3512,12 +3521,6 @@ if ($jherjus===1 && arr($text,'/[iIuUfFxX]\+us/') ) // liT has 'us' which is not
 {
     $text=three(array("i","I","u","U","f","F","x","X"),array("+"),array("us"),array("e","e","o","o","ar","ar","al","al"),array("+"),array("us"),0);
 	storedata('7.3.83','sa',0);
-}
-/* riGzayagliGkSu (7.4.28) */
-if (in_array("Sa",$vik) && (sub(array("f"),array("+a+"),blank(0),0) || (sub(array("f"),array("+y"),blank(0),0) && $lakAra!=="" )))
-{
-    $text=two(array("f"),array("+"),array("ri"),array("+"),0);
-	storedata('7.4.28','sa',0);
 }
 /* ghasibhasorhali ca (6.4.100) */
 if ( in_array($fo,array("Gasa!","Basa!")) && pr2(array("Gas","Bas"),array("+"),$apit_sArvadhAtuka_pratyayas,array("Gs","Bs"),array("+"),$apit_sArvadhAtuka_pratyayas,$text)!==$text && $lakAra!=="" )
@@ -4985,7 +4988,6 @@ if (arr($text,'/['.pc('hl').'][+][stsD]$/')  && !arr($text,'/s[+]s$/') && in_arr
     $pada="pada"; // there is no pratyaya left now.
     $halGyAbbhyo=1;
 }
-print_r($text);
 /* ekAco bazo bhaS jhaSantasya sdhvoH (8.2.37) */  
 if ( /*anekAca($verb_without_anubandha)==false &&*/ ( arr($text,'/[bgqd](['.pc('al').']*)[JBGQD][+][s]/') || arr($text,'/[bgqd](['.pc('al').']*)[JBGQD][+]Dv/') || arr($text,'/[JBGQD][+]$/') || $pada==="pada") )
 {
