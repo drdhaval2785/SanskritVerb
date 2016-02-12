@@ -1951,7 +1951,6 @@ elseif ($lakAra==="liw" && ends(array($fo),array("uza!","vida!","jAgf"),4) )
 /* bhIhrIbhRhuvAM zluvacca (3.1.39) */
 elseif ($lakAra==="liw" && ends(array($fo),array("YiBI","hrI","quBfY","hu"),4) && $zluvat!==1)
 {
-	print_r($text);
     $text=pr2(array("hu","BI","BfY","hrI"),array("+"),$tiG,array("hu","BI","BfY","hrI"),array("+Am+"),$tiG,$text);
 	storedata('3.1.39','sa',0);
 	$zluvat=1;
@@ -4938,7 +4937,7 @@ if ( (arr($text,'/[+]$/') || arr($text,'/[+]['.pc("Jl").']/')) && sub($druh,blan
 /* dAderdhAtorghaH (8.2.32) */
 if ( (arr($text,'/[+]$/') || arr($text,'/[+]['.pc("Jl").']/')) && sub($dade,blank(0),blank(0),0) )
 {
-    $text = two(array("dah","dAh","dih","duh","dfh","drAh","druh"),prat('Jl'),array("daG","dAG","diG","duG","dfG","drAG","druG"),prat('Jl'),0);
+    $text = two(array("dah","dAh","dih","duh","dfh","drAh","druh","doh"),prat('Jl'),array("daG","dAG","diG","duG","dfG","drAG","druG","doG"),prat('Jl'),0);
 	storedata('8.2.32','sa',0);
     $hodha1 = 1; // 0 - doesn't prevent ho DhaH. 1 - prevents ho DhaH.
 }
@@ -4974,7 +4973,7 @@ if (arr($text,'/[h]$/')  && $hodha1===0 && $hodha2 === 0 && $hodha3 === 0 )
 	storedata('8.2.31','sa',0);
 }
 /* ekAco bazo bhaS jhaSantasya sdhvoH (8.2.37) */  
-if ( /*anekAca($verb_without_anubandha)==false &&*/ ( arr($text,'/[bgqd](['.pc('al').']*)[JBGQD][+][sD]/') || arr($text,'/[JBGQD][+]$/') || $pada==="pada") )
+if ( /*anekAca($verb_without_anubandha)==false &&*/ ( arr($text,'/[bgqd](['.pc('al').']*)[JBGQD][+][s]/') || arr($text,'/[bgqd](['.pc('al').']*)[JBGQD][+]Dv/') || arr($text,'/[JBGQD][+]$/') || $pada==="pada") )
 {
 	ekAcobazo(); // created a new function 19/12/2014.
 }
