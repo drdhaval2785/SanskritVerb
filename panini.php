@@ -1949,12 +1949,17 @@ elseif ($lakAra==="liw" && ends(array($fo),array("uza!","vida!","jAgf"),4) )
 	storedata('3.1.38','sa',0);
 }
 /* bhIhrIbhRhuvAM zluvacca (3.1.39) */
-elseif ($lakAra==="liw" && ends(array($fo),array("YiBI","hrI","quBfY","hu"),4) )
+elseif ($lakAra==="liw" && ends(array($fo),array("YiBI","hrI","quBfY","hu"),4) && $zluvat!==1)
 {
-    $text=two(array("+"),$tiG,array("+Am+"),$tiG,1);
+	print_r($text);
+    $text=pr2(array("hu","BI","BfY","hrI"),array("+"),$tiG,array("hu","BI","BfY","hrI"),array("+Am+"),$tiG,$text);
 	storedata('3.1.39','sa',0);
 	$zluvat=1;
 	zlu();
+	$text=pr2(array("hu","BI","Bf","hrI"),array("+Am+"),$tiG,array("ho","Be","Bar","hre"),array("+Am+"),$tiG,$text);
+	storedata('7.3.84','sa',0);
+	$text=pr2(array("ho","Be","Bar","hre"),array("+Am+"),$tiG,array("hav","Bay","Bar","hray"),array("+Am+"),$tiG,$text);
+	storedata('6.1.75','sa',0);
 }
 /* kAspratyayAdAmamantre liTi (3.1.35) */
 elseif ($lakAra==="liw" && $veda===0 && (anekAca($verb_without_anubandha) || $sanAdi!=='' || $verbset==="curAdi" || $fo==="kAsf!") )
@@ -12146,7 +12151,7 @@ $itprakriti = array();
 $itpratyaya = array();
 $Agama=array();
 $sanAdi="";
-$TAp=0; $DAp=0; $cAp=0; $GIp=0; $GIn=0; $GIS=0; $kGiti=0; $abhyasta=0; $ajAdyataSTAp=0; $tusma=0; $upasarga_joined=0; $sicivRddhi=0; $atolopa=0; $caG=0; $aG=0;
+$TAp=0; $DAp=0; $cAp=0; $GIp=0; $GIn=0; $GIS=0; $kGiti=0; $abhyasta=0; $ajAdyataSTAp=0; $tusma=0; $upasarga_joined=0; $sicivRddhi=0; $atolopa=0; $caG=0; $aG=0; $zluvat=0;
 $temp = scrape1($first,0,2,1); 
 $verb_without_anubandha=$temp[0];
 $storedata=array();
@@ -12202,5 +12207,3 @@ if ($debug===1) {dibug('11760');}
 //timestamp();
 /* End of Code */
 ?>
-
-

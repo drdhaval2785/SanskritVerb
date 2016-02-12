@@ -3063,9 +3063,9 @@ function zlu()
 	// taking replacements directly from sahajabodha p 329. Only hu's process is shown. For everything else there is direct substitution.
 	$juhotyAdireplace1=array("kiki","kikit","gAgA","GiGf","jajan","tutur","dAdA","daDan","dADA","diDiz","nenij","pipf","pipF","baBas","biBI","biBfMS","mimA","vevij","veviz","sisf","hihA","hahA","huhu","hihf","jihrI","if");
 	$juhotyAdireplace2=array("kiki","kikit","gigA","GiGf","jajan","tutur","dadA","daDan","daDA","diDiz","nenij","pipf","pipF","baBas","biBI","biBfMS","mimA","vevij","veviz","sisf","hihA","hahA","huhu","hihf","jihrI","if",);
-	if(sub(array("quBfY","mAN","o!hAN"),array("+"),blank(0),0))
+	if(sub(array("BfY","mAN","o!hAN"),array("+"),blank(0),0))
 	{
-		$text=two(array("quBfY","mAN","o!hAN"),array("+"),array("biBf","mimA","jihA"),array("+"),0);
+		$text=two(array("BfY","mAN","o!hAN"),array("+"),array("biBf","mimA","jihA"),array("+"),0);
 		storedata('6.1.10','sa',0);
 		storedata('7.4.76','sa',0);
 	}
@@ -3090,70 +3090,20 @@ function zlu()
 		$text=two($juhotyAdireplace1,array("+"),$juhotyAdireplace2,array("+"),0);
 		storedata('7.4.59','sa',0);
 	}	
-	if (sub(array("kiki","kikit","gagA","GiGf","hahA","huhu","hihf","hihrI","gigA"),array("+"),$tiG,0))
+	if (sub(array("kiki","kikit","gagA","GiGf","hahA","huhu","hihf","hihrI","gigA"),array("+"),array_merge($tiG,array("Am")),0))
 	{
-		$text=three(array("kiki","kikit","gagA","GiGf","hahA","huhu","hihf","hihrI","gigA"),array("+"),$tiG,array("ciki","cikit","jagA","JiGf","JahA","Juhu","Jihf","JihrI","jigA"),array("+"),$tiG,0);
+		$text=three(array("kiki","kikit","gagA","GiGf","hahA","huhu","hihf","hihrI","gigA"),array("+"),array_merge($tiG,array("Am")),array("ciki","cikit","jagA","JiGf","JahA","Juhu","Jihf","JihrI","jigA"),array("+"),array_merge($tiG,array("Am")),0);
 		storedata('7.4.62','sa',0);
 	}
-	if (sub(array("JiGf","JahA","Juhu","Jihf","JihrI"),array("+"),$tiG,0))
+	if (sub(array("JiGf","JahA","Juhu","Jihf","JihrI"),array("+"),array_merge($tiG,array("Am")),0))
 	{
-		$text=three(array("JiGf","JahA","Juhu","Jihf","JihrI"),array("+"),$tiG,array("jiGf","jahA","juhu","jihf","jihrI"),array("+"),$tiG,0);
+		$text=three(array("JiGf","JahA","Juhu","Jihf","JihrI"),array("+"),array_merge($tiG,array("Am")),array("jiGf","jahA","juhu","jihf","jihrI"),array("+"),array_merge($tiG,array("Am")),0);
 		storedata('8.4.54','sa',0);
 	}
-	if (sub(array("JiGf","JahA","Juhu","Jihf","JihrI"),array("+"),$tiG,0))
+	if (sub(array("JiGf","JahA","Juhu","Jihf","JihrI"),array("+"),array_merge($tiG,array("Am")),0))
 	{
-		$text=three(array("JiGf","JahA","Juhu","Jihf","JihrI"),array("+"),$tiG,array("jiGf","jahA","juhu","jihf","jihrI"),array("+"),$tiG,0);
+		$text=three(array("JiGf","JahA","Juhu","Jihf","JihrI"),array("+"),array_merge($tiG,array("Am")),array("jiGf","jahA","juhu","jihf","jihrI"),array("+"),array_merge($tiG,array("Am")),0);
 		storedata('8.4.54','sa',0);
-	}
-}
-function Am()
-{
-	global $lakAra, $fo, $verb_without_anubandha, $storedata, $us; 
-	/* UrNotezca pratiSedho vaktavyaH (vA) */
-	if ($lakAra==="liw" && ends(array($fo),array("UrRuY"),4) )
-	{
-		storedata('UrRote','sa',0);
-	}
-	/* ijAdezca gurumato'nRcCaH (3.1.36) */
-	elseif ($lakAra==="liw" && (arr(array($verb_without_anubandha),'/^[IUFXeEoO]/') || arr(array($verb_without_anubandha),'/^[iufx]['.pc('hl').']['.pc('hl').']/')) && !ends(array($fo),array("fCa!"),4) )
-	{
-		$text=two(array("+"),$tiG,array("+Am+"),$tiG,0);
-		storedata('3.1.36','sa',0);
-	}
-	/* dayAyAysazca (3.1.37) */
-	elseif ($lakAra==="liw" && ends(array($fo),array("daya!","aya!","Asa!"),4) )
-	{
-		$text=two(array("+"),$tiG,array("+Am+"),$tiG,0);
-		storedata('3.1.37','sa',0);
-	}
-	/* uSavidajAgRbhyo'nyatarasyAm (3.1.38) */
-	elseif ($lakAra==="liw" && ends(array($fo),array("uza!","vida!","jAgf"),4) )
-	{
-		$text=two(array("+"),$tiG,array("+Am+"),$tiG,1);
-		storedata('3.1.38','sa',0);
-	}
-	/* bhIhrIbhRhuvAM zluvacca (3.1.39) */
-	elseif ($lakAra==="liw" && ends(array($fo),array("YiBI","hrI","quBfY","hu"),4) )
-	{
-		$text=two(array("+"),$tiG,array("+Am+"),$tiG,1);
-		storedata('3.1.39','sa',0);
-		$zluvat=1;
-		zlu();
-	}
-	/* kAspratyayAdAmamantre liTi (3.1.35) */
-	elseif ($lakAra==="liw" && $veda===0 && (anekAca($verb_without_anubandha) || $sanAdi!=='' || $verbset==="curAdi" || $fo==="kAsf!") )
-	{
-		$text=two(array("+"),$tiG,array("+Am+"),$tiG,0);
-		storedata('3.1.35','sa',0);
-	}
-	/* AmaH (2.4.81) and kRJcAnuprayujyate liTi (3.1.40) */
-	if ($lakAra==="liw" && sub(array("+Am+"),$tiG,blank(0),0) )
-	{
-		$text=three(array("+Am+"),array("","",""),$tiG,array("+Am+"),array("kf+"),$tiG,0);
-		$text=one(array("+Am+kf+"),array("+Am+BU+"),1);
-		$text=one(array("+Am+kf+"),array("+Am+as+"),1);
-		storedata('2.4.81','sa',0);
-		storedata('3.1.40','sa',0);
 	}
 }
 /* function storedata to store necessary information for display later on. */
