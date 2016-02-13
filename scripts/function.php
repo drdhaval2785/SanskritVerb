@@ -3084,6 +3084,7 @@ function zlu()
 	else
 	{
 		$text=two($juhotyAdi,array("+"),$juhotyAdireplace1,array("+"),0);
+		//$text=two(array("BI"),array("+"),array("biBI"),array("+"),0);
 		$text=change('/(['.pc('hl').']+)if[+]/','$1f+');
 		storedata('6.1.10','sa',0);
 		$text=two($juhotyAdireplace1,array("+"),$juhotyAdireplace2,array("+"),0);
