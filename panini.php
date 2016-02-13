@@ -1653,7 +1653,15 @@ if ( $sarvadhatuka===1 && $verbset==="adAdi" && in_array($fo,$adAdi) && sub(arra
 /* dhAtu it removal */
 if ($type==="tiGanta" )
 {
-	if (arr($text,'/[^+]*['.pc('hl').'][+]/') && sub(array(substr($fo,-1)),array("+"),blank(0),0) && !in_array($fo,array("Riji!r","viji!r","vizx!")) && !arr(array($fo),'/[Ff]$/'))
+	/* patch to stop elision of verbs ending with i!r */
+	if (arr(array($fo),'/[i][!][r]$/'))
+	{
+		$nomidelision=1;
+		storedata('1.3.7-4','pa',0);
+		$text = change('/i[!]r[+]/','+');
+		storedata('1.3.9','sa',0);
+	}
+	elseif (arr($text,'/[^+]*['.pc('hl').'][+]/') && sub(array(substr($fo,-1)),array("+"),blank(0),0) && !in_array($fo,array("Riji!r","viji!r","vizx!")) && !arr(array($fo),'/[Ff]$/'))
 	{
 		storedata('1.3.3','pa',0);
 		$text = change('/([^+]*)['.pc('hl').'][+]/','$1+');
@@ -1797,12 +1805,6 @@ if ( in_array($fo,array("iza!","gamx!","yama!")) && sub(array("iza!","gamx!","ya
     $text=three(array("iza!","gamx!","yama!"),array("+"),$shitpratyaya,array("iC","gaC","yaC"),array("+"),$shitpratyaya,0);
 	storedata('7.3.77','sa',0);
     $nomidelision=1; // We will remember this while doing halantyam and prevent halantyam application, because these are not upadeza
-}
-/* patch to stop elision of verbs ending with i!r */
-if (arr(array($fo),'/[i][!][r]$/'))
-{
-    $nomidelision=1;
-	storedata('1.3.7-4','sa',0);
 }
 /* vA bhrAzabhlAzabhramukramutrasitruTilaSaH (3.1.70) */
 if (in_array($fo,array("wuBrASf!","wuBlASf!","BrASf!","BlASf!","Bramu!","kramu!","klamu!","trasI!","truwI!","laza!")) && sub(array("wuBrASf!","wuBlASf!","BrASf!","BlASf!","Bramu!","kramu!","klamu!","trasI!","truwI!","laza!"),array("+"),array("Sap","Syan"),0) && $lakAra!=="" )
