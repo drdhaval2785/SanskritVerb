@@ -1059,6 +1059,7 @@ if ( in_array($fo,array("kamu!")) && $pada==="pratyaya" && $lakAra!=="")
     $verbpada="A";
 }*/
 
+echo $lakAra; echo $so; echo $pada;
 /* Displaying general information about lakAras */
 /* laT vartamAne (3.2.123) */
 if (in_array($so,$tiG) && $pada==="pratyaya" && $lakAra==="law")
@@ -1075,10 +1076,45 @@ if (in_array($so,$tiG) && $pada==="pratyaya" && $lakAra==="luw")
 {
 	storedata('3.3.15','pa',0);
 }
+/* lRT zeSe ca (3.3.13) */
+if (in_array($so,$tiG) && $pada==="pratyaya" && $lakAra==="lfw")
+{
+	storedata('3.3.13','pa',0);
+}
+/* liGarthe leT (3.4.7) */
+if (in_array($so,$tiG) && $pada==="pratyaya" && in_array($lakAra,array("sArvaDAtukalew","ArDaDAtukalew")))
+{
+	storedata('3.4.7','pa',0);
+}
+/* loT ca (3.3.162) */
+if (in_array($so,$tiG) && $pada==="pratyaya" && $lakAra==="low")
+{
+	storedata('3.3.162','pa',0);
+}
+/* anadyatane laG (3.2.111) */
+if (in_array($so,$tiG) && $pada==="pratyaya" && $lakAra==="laN")
+{
+	storedata('3.2.1','pa',0);
+}
+/* icCArtheSu liNloTau (3.3.157) */
+if (in_array($so,$tiG) && $pada==="pratyaya" && in_array($lakAra,array("viDiliN","low")))
+{
+	storedata('3.3.157','pa',0);
+}
 /* AziSi liGlowau (3.3.173) */
 if (in_array($so,$tiG) && $pada==="pratyaya" && $lakAra==="ASIrliN")
 {
 	storedata('3.1.173','pa',0);
+}
+/* luG (3.2.110) */
+if (in_array($so,$tiG) && $pada==="pratyaya" && $lakAra==="luN")
+{
+	storedata('3.2.110','pa',0);
+}
+/* liGnimitte lRG kriyAtipattau (3.3.139) */
+if (in_array($so,$tiG) && $pada==="pratyaya" && $lakAra==="lfN")
+{
+	storedata('3.3.139','pa',0);
 }
 if ($debug===1) {dibug("1000");}
 /* liGnimitte lRG kriyAtipattau (3.3.139) */
@@ -1091,9 +1127,10 @@ if (in_array($so,$tiG) && $pada==="pratyaya" && $lakAra!=="")
 {
 	storedata('3.4.77','pa',0);
 	storedata('1.3.3','pa',0);
+	$text = change('/[wN]$/','');
+	storedata('1.3.9','sa',0);
 	storedata('1.3.2','pa',0);
-	$text = pr2(array("+"),array($nonpurelakara),blank(0),array("+"),array("l"),blank(0),$text);
-	$text = pr2(array("+"),array("li!N","le!w"),blank(0),array("+"),array("l","l"),blank(0),$text);
+	$text = change('/l[aiufeo][!]$/','l');
 	storedata('1.3.9','sa',0);
 	$text = pr2(array("+"),array("l"),blank(0),array("+"),array($second),blank(0),$text);
 	storedata('3.4.78','sa',0);
