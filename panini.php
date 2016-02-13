@@ -2268,7 +2268,7 @@ if (in_array($so,$tiG) && arr(array($fo),'/[!]['.pc('hl').']$/') && $nomidelisio
 }
 /* halantyam (1.3.3) and tasya lopaH (1.3.9) */
 // Patch for removal of verb halantyam
-if (in_array($so,$tiG) && arr(array($fo),'/['.pc('hl').']$/') && !arr(array($fo),'/i[!]r$/') && !arr(array($fo),'/U[!]z$/') )
+if (in_array($so,$tiG) && arr(array($fo),'/['.pc('hl').']$/') && !arr(array($fo),'/i[!]r$/') && !arr(array($fo),'/[aU][!]z$/') )
 {
 	storedata('1.3.3','pa',0);
 	$text=three($hlplus,$vikaraNa,array("+"),blank1("+",count($hlplus)),$vikaraNa,array("+"),0);
