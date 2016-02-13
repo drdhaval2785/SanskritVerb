@@ -4625,9 +4625,9 @@ if ($lakAra==="liw" && in_array($fo,array("jF","Bramu!","trasa!")) && !ends(arra
 	storedata('6.4.124','sa',0);
 }
 /* phaNAM ca saptAnAm (6.4.125) */
-elseif ( $lakAra==="liw" && in_array($fo,array("PaRa!","rAjf!","wuBrAjf!","wuBrASf!","wuBlASf!","syamu!","svana!","Dvana!")) && !ends(array($so),array("tip","mip"),2) && sub(array("pa+PaR","ra+rAj","ba+BrAj","ba+BrAS","ba+BlAS","sa+syam","sa+svan","da+Dvan"),array("+"),blank(0),0) )
+elseif ( $lakAra==="liw" && in_array($fo,array("PaRa!","rAjf!","wuBrAjf!","wuBrASf!","wuBlASf!","syamu!","svana!")) && !ends(array($so),array("tip","mip"),2) && sub(array("pa+PaR","ra+rAj","ba+BrAj","ba+BrAS","ba+BlAS","sa+syam","sa+svan"),array("+"),blank(0),0) )
 {
-    $text=two(array("pa+PaR","ra+rAj","ba+BrAj","ba+BrAS","ba+BlAS","sa+syam","sa+svan","da+Dvan"),array("+"),array("PeR","rej","Brej","BreS","BleS","syem","sven","Dven"),array("+"),1);
+    $text=two(array("pa+PaR","ra+rAj","ba+BrAj","ba+BrAS","ba+BlAS","sa+syam","sa+svan"),array("+"),array("PeR","rej","Brej","BreS","BleS","syem","sven"),array("+"),1);
 	storedata('6.4.125','sa',0);
 }
 /* tRRphalabhajatrapazca (6.4.122) */
