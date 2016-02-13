@@ -10298,7 +10298,7 @@ if (arr($text,'/sas\+['.pc('ac').']/'))
 }
 /* aniditAM patch for sraMs and dhvaMs */
 // so that vasusraMsu.. may apply
-if (arr($text,'/aMs/') && sub(array("sraMs","DvaMs"),blank(0),blank(0),0) && !in_array("Sap",$vik))
+if (arr($text,'/aMs/') && sub(array("sraMs","DvaMs"),blank(0),blank(0),0) && !in_array("Sap",$vik) && !in_array("N",$it) && !in_array("k",$it))
 {
         $text = one(array("sraMs","DvaMs"),array("sras","Dvas"),0);
 		storedata('6.4.24','sa',0);
