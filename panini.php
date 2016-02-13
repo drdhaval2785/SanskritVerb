@@ -2330,6 +2330,16 @@ if (arr($text,'/['.flat($ac).'][!]/') && in_array($so,$tiG) )
     $text = two($ac,array("!"),blank(count($ac)),array(""),0);
 	storedata('1.3.9','sa',0);
 }
+/* aci znudhAtubhruvAM yvoriyaGuvaGau (6.4.77) */
+// Patch for 'za' vikaraNa
+if (arr($text,'/[iuIU][+]a[+]/') && in_array("Sa",$vik))
+{
+	storedata('1.2.4','pa',0);
+	storedata('1.1.5','pa',0);
+	$text = two(array("i+","I+","u+","U+"),array("a+"),array("iy+","iy+","uv+","uv+"),array("a+"),0);
+	$text = one(array("uv+uv+"),array("u+uv+"),0);
+	storedata('6.4.77','sa',3);
+}
 /* asyatesTuk (7.4.17) */
 if (in_array($fo,array("asu!")) && sub(array("as"),array("+a+"),blank(0),0) && $lakAra==="luN") 
 {
@@ -5175,7 +5185,8 @@ if ($lakAra!=="" && $type==="tiGanta")
 		$text = change('/^[u][+][u]/','U');
 		storedata('6.1.101','sa',0);
 	}
-    if (($dhatu===1||$fo==="BrU") && arr($text,'/[iuIU][+]['.flat($ac).']/') && $pada==="pratyaya" && ( anekAca($fo)===false  || in_array($so,$tiG) || (arr($text,'/[B][U][+]/')||$fo==="suDI") ) && $dfmBU===0 && $didhI!==1 && $nabhusu!==1 && !sub(array("+"),array("I"),array("+"),0) && ($abhyasta!==1 || in_array($fo,array("hrI"))) && $sIyuT!==1 && !in_array("u",$vik))
+	/* aci znudhAtubhruvAM yvoriyaGuvaGau (6.4.77) */
+    if (($dhatu===1||$fo==="BrU") && arr($text,'/[iuIU][+]['.flat($ac).']/') && $pada==="pratyaya" && ( anekAca($fo)===false  || in_array($so,$tiG) || arr($text,'/[B][U][+]/')||$fo==="suDI" || in_array("Sa",$vik) ) && $dfmBU===0 && $didhI!==1 && $nabhusu!==1 && !sub(array("+"),array("I"),array("+"),0) && ($abhyasta!==1 || in_array($fo,array("hrI"))) && $sIyuT!==1 && !in_array("u",$vik))
     {
         $text = two(array("i+","I+","u+","U+"),$ac,array("iy+","iy+","uv+","uv+"),$ac,0);
 		$text = one(array("uv+uv+"),array("u+uv+"),0);
