@@ -832,9 +832,7 @@ else
 //Here we will store the output after the process of sUtras. The first member is $input. 
 // The reason behind creating an array and not keeping it a string is - sometimes the sUtras give 2 / more optional outputs. In that case, it is impossible to manage the string. 
 // Right now what will happen is that 1 member -> 2 members by some sUtra. For next sUtra, we will take these two members one by one and store their results in $text itself.
-$text = array();
-$text[] = $input; // Defining first member of the array as $input (combined words first and second)
-
+$text = array($first); // Displaying only the verb in the initial phase
 /* bhUvAdayo dhAtavaH (1.3.1) */
 if (in_array($so,$tiG) && $pada==="pratyaya" && $lakAra!=="" && $sanAdi==="")
 {
@@ -845,15 +843,16 @@ elseif (in_array($so,$tiG) && $pada==="pratyaya" && $lakAra!=="" && $sanAdi!==""
 {
 	storedata('3.1.32','pa',0);
 }
-/* special error message for vaca! dhAtu pra.pu.ba.va. */
-if ($so==="Ji" && $verbset==="adAdi" && in_array($fo,array("vaca!"))  )
-{
-storedata('~1','red',0);
-}
 /* laH karmaNi ca bhAve cAkarmakebhyaH (3.4.69) */
 if (in_array($so,$tiG) && $pada==="pratyaya" && $lakAra!=="")
 {
 	storedata('3.4.69','pa',0);
+}
+$text = array($input); // Defining first member of the array as $input (combined words first and second)
+/* special error message for vaca! dhAtu pra.pu.ba.va. */
+if ($so==="Ji" && $verbset==="adAdi" && in_array($fo,array("vaca!"))  )
+{
+storedata('~1','red',0);
 }
 /* na vRdbhyazcaturbhyaH (7.2.59) */
 if ( in_array($fo,array("vftu!","vfDu!","SfDu!","syandU!",)) && in_array($lakAra,array("lfw","lfN")) && in_array($so,$taG))
