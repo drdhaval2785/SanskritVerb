@@ -2999,9 +2999,8 @@ if ($sarvadhatuka===1 && !in_array('1.2.4',sutrasfromstoredata()) && !in_array("
     $it=array_merge($it,array("N"));
     $itpratyaya=array_merge($itpratyaya,array("N"));
 	storedata('1.2.4','pa',0);
-	$kGiti=1;	
-	storedata('1.1.5','pa',0);
-	if (pr2(pc('ik'),array("+"),$apit_sArvadhAtuka_pratyayas,pc('ik'),array("+fadfad"),$apit_sArvadhAtuka_pratyayas,$text)!== $text)
+	$kGiti=1;
+	if (pr2(pc('ik'),array("+"),$apit_sArvadhAtuka_pratyayas,pc('ik'),array("+fadfad"),$apit_sArvadhAtuka_pratyayas,$text)!== $text||pr2(array("i","u","f","x"),$hlplus,$apit_sArvadhAtuka_pratyayas,array("i","u","f","x"),array("+asdf+"),$apit_sArvadhAtuka_pratyayas,$text)!== $text)
 	{
 		storedata('1.1.5','sa',0);
 	}
@@ -12219,7 +12218,7 @@ $itprakriti = array();
 $itpratyaya = array();
 $Agama=array();
 $sanAdi="";
-$TAp=0; $DAp=0; $cAp=0; $GIp=0; $GIn=0; $GIS=0; $kGiti=0; $abhyasta=0; $ajAdyataSTAp=0; $tusma=0; $upasarga_joined=0; $sicivRddhi=0; $atolopa=0; $caG=0; $aG=0; $zluvat=0;
+$TAp=0; $DAp=0; $cAp=0; $GIp=0; $GIn=0; $GIS=0; $kGiti=0; $abhyasta=0; $ajAdyataSTAp=0; $tusma=0; $upasarga_joined=0; $sicivRddhi=0; $atolopa=0; $caG=0; $aG=0; $zluvat=0; $aniditAm=0;
 $temp = scrape1($first,0,2,1); 
 $verb_without_anubandha=$temp[0];
 $storedata=array();
