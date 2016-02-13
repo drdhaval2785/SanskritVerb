@@ -2248,7 +2248,7 @@ if (arr($text,'/[+][lSkKgGN]/') && $taddhita === 0  && in_array($so,$tiG) )
 {
     it('/([+][lSkKgGN])/');
 	storedata('1.3.8','pa',0);
-    $text = two(array("+"),array("Sap","Syan","SnA","SAnac","Satf","Snu","Sa"),array("+"),array("ap","yan","nA","Anac","atf","nu","a"),0);
+    $text = two(array("+"),array("Sap","Syan","SnA","SAnac","Satf","Snu","Sa","Sya"),array("+"),array("ap","yan","nA","Anac","atf","nu","a","ya"),0);
 	storedata('1.3.9','sa',0);
 }
 /* na vibhaktau tusmAH (1.3.4) */
