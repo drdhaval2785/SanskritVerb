@@ -4647,6 +4647,7 @@ if ($lakAra==="liw" && arr($text,'/['.pc('hl').'][iI][+][aAiIuUfFxXeEoO]/') && !
 	$text=three($hl,array("i+","I+"),$ac,$hl,array("y+","y+"),$ac,0);
 	storedata('6.4.82','sa',0);
 }
+print_r($text); echo $liT_Adeza;
 /* vA jRRbhramutrasAm (6.4.124) */
 if ($lakAra==="liw" && in_array($fo,array("jF","Bramu!","trasa!")) && !ends(array($so),array("tip","mip"),2) && sub(array("ja+jar","ba+Bram","ta+tras"),array("+"),blank(0),0) )
 {
@@ -4686,7 +4687,7 @@ elseif (in_array($fo,array("gamx!","hana!","jana!","Gasa!","Kanu!","janI!","ada!
 {
 }
 /* ata ekahalmadhye'nAdezAderliTi (6.4.120) */
-elseif ( arr($text,'/^['.pc('hl').'][a][+]['.pc('hl').'][a]['.pc('hl').'][+]/') && $lakAra==="liw" && !ends(array($so),array("tip","mip"),2) && $liT_Adeza!==1 && arr(array($verb_without_anubandha),'/['.pc('hl').'][a]['.pc('hl').']/'))
+elseif ( arr($text,'/^['.pc('hl').'][a][+]['.pc('hl').'][a]['.pc('hl').'][+]/') && $lakAra==="liw" && !ends(array($so),array("tip","mip"),2) && arr(array($verb_without_anubandha),'/['.pc('hl').'][a]['.pc('hl').']$/'))
 {
     $text=change('/^(['.pc('hl').'][a][+])(['.pc('hl').'])([a])(['.pc('hl').'][+])/','$2e$4');
 	$text=change('/^(['.pc('hl').'])([e])(['.pc('hl').'][+][T][a]$)/','$1a+$1a$3'); // for thal.
