@@ -4963,9 +4963,16 @@ if ( (arr($text,'/[+]$/') || arr($text,'/[+]['.pc("Jl").']/')) && sub($dade,blan
     $hodha1 = 1; // 0 - doesn't prevent ho DhaH. 1 - prevents ho DhaH.
 }
 /* naho dhaH (8.2.34) */
-if (in_array($fo,array("Raha!")) && (arr($text,'/[+]$/') || arr($text,'/[+]['.pc("Jl").']/')) && sub(array("nah","nAh"),blank(0),blank(0),0) )
+if (in_array($fo,array("Raha!")) && (arr($text,'/[+]$/') ) && sub(array("nah","nAh"),blank(0),blank(0),0) )
 {
     $text = one(array("nah","nAh"),array("naD","nAD"),0);
+	storedata('8.2.34','sa',0);
+    $hodha2 = 1; // 0 - doesn't prevent ho DhaH. 1 - prevents ho DhaH.  
+}
+/* naho dhaH (8.2.34) */
+elseif (in_array($fo,array("Raha!")) && (arr($text,'/n[aA]h[+]['.pc("Jl").']/')) && sub(array("nah","nAh"),blank(0),blank(0),0) )
+{
+	$text = change('/(n[aA])h([+]['.pc("Jl").'])/','$1D$2');
 	storedata('8.2.34','sa',0);
     $hodha2 = 1; // 0 - doesn't prevent ho DhaH. 1 - prevents ho DhaH.  
 } else { $hodha2 = 0; } 
