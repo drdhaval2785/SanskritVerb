@@ -4316,7 +4316,6 @@ if ($lakAra==="liw" && $so==="sip" && arr($text,'/[iIuUfFxXeEoO]\+/') && sub(pra
 {
 	$id_dhAtu="vew";
 }
-echo $id_dhAtu, $id_pratyaya; print_r($text);
 /* patch for yAsuT Agama to combine it with the next pratyaya. because it would not be getting iDAgama. */
 $text = one(array("+yA+"),array("+yA"),0);
 /* Adding iDAgama actually */
