@@ -817,7 +817,7 @@ elseif ($first === "") // if there is no prakRti. This doesn't happen in subanta
 }
 elseif ($type==="tiGanta") // this option is used for subanta / tiGanta generation. $input is 'prakRti'+'pratyaya'.
 {
-	$nonpurelakara = str_replace(array("viDiliN","ASIrliN","sArvaDAtukalew","ArDaDAtukalew"),array("liN","liN","lew","lew"),$lakAra);
+	$nonpurelakara = str_replace(array("viDiliN","ASIrliN","sArvaDAtukalew","ArDaDAtukalew","law","liw","luw","lfw","low","laN","luN","lfN"),array("li!N","li!N","le!w","le!w","la!w","li!w","lu!w","lf!w","lo!w","la!N","lu!N","lf!N"),$lakAra);
 	$input = ltrim(chop($first."+".$sanAdi."+".$nonpurelakara));
 	$input = str_replace("++","+",$input); // If $sanAdi is "", there would be two +s consecutively. To overcome this hurdle, this patch is created.
 }
@@ -1092,8 +1092,8 @@ if (in_array($so,$tiG) && $pada==="pratyaya" && $lakAra!=="")
 	storedata('3.4.77','pa',0);
 	storedata('1.3.3','pa',0);
 	storedata('1.3.2','pa',0);
-	$text = pr2(array("+"),array($lakAra),blank(0),array("+"),array("l"),blank(0),$text);
-	$text = pr2(array("+"),array("liN","lew"),blank(0),array("+"),array("l"),blank(0),$text);
+	$text = pr2(array("+"),array($nonpurelakara),blank(0),array("+"),array("l"),blank(0),$text);
+	$text = pr2(array("+"),array("li!N","le!w"),blank(0),array("+"),array("l","l"),blank(0),$text);
 	storedata('1.3.9','sa',0);
 	$text = pr2(array("+"),array("l"),blank(0),array("+"),array($second),blank(0),$text);
 	storedata('3.4.78','sa',0);
