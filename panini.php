@@ -2998,7 +2998,7 @@ if ($lakAra==="liw" && arr($text,'/^['.pc('hl').']/'))
 	$abhyasta=1;
 }
 /* aniditAM hala upadhAyAH kGiti (6.4.24) */ 
-if ( in_array($fo,$aniditverbs) && (in_array("N",$itpratyaya) || in_array("k",$itpratyaya)) && !in_array($sanAdi,array("Ric"))  && $so!=="mahiN" && arr($text,'/[NYRnmM]['.pc('hl').'][+]/')  && !in_array("i",$it) && $lakAra!=="viDiliN" && $verbset!=="ruDAdi" && $aniditAm!==1)
+if ( in_array($fo,$aniditverbs) && (in_array("N",$itpratyaya) || in_array("k",$itpratyaya)) && !in_array($sanAdi,array("Ric"))  && $so!=="mahiN" && arr($text,'/[NYRnmM]['.pc('hl').'][+]/')  && !in_array("i",$it) && $lakAra!=="viDiliN" && $verbset!=="ruDAdi" && $aniditAm!==1 && !in_array("Sap",$vik))
 {
 	if ($ancu===2)
 	{
@@ -3912,7 +3912,7 @@ if (arr($text,'/kfp/') )
 	storedata('8.2.18','sa',0);
 }
 /* aniditAM hala upadhAyAH kGiti (6.4.24) */ 
-if ( in_array($fo,$aniditverbs) && (in_array("N",$itpratyaya) || in_array("k",$itpratyaya)) && !in_array($sanAdi,array("Ric"))  && $so!=="mahiN" && arr($text,'/[NYRnmM]['.pc('hl').'][+]/')  && !in_array("i",$it) && $lakAra!=="viDiliN" && $verbset!=="ruDAdi" && $aniditAm!==1) # For application after NeraniTi
+if ( in_array($fo,$aniditverbs) && (in_array("N",$itpratyaya) || in_array("k",$itpratyaya)) && !in_array($sanAdi,array("Ric"))  && $so!=="mahiN" && arr($text,'/[NYRnmM]['.pc('hl').'][+]/')  && !in_array("i",$it) && $lakAra!=="viDiliN" && $verbset!=="ruDAdi" && $aniditAm!==1 && !in_array("Sap",$vik)) # For application after NeraniTi
 {
 	if ($ancu===2)
 	{
@@ -7301,7 +7301,7 @@ if ($GIn===1 )
 	storedata('6.1.101','sa',0);
     }    
     /* aniditAM hala upadhAyAH kGiti (6.4.24) */ 
-    if ( !itcheck(array("i"),1) && arr($text,'/[nY]['.pc('hl').'][+][I][+]/')  && !in_array("i",$it)  && $lakAra!=="viDiliN" && $verbset!=="ruDAdi" && $aniditAm!==1)
+    if ( !itcheck(array("i"),1) && arr($text,'/[nY]['.pc('hl').'][+][I][+]/')  && !in_array("i",$it)  && $lakAra!=="viDiliN" && $verbset!=="ruDAdi" && $aniditAm!==1 && !in_array("Sap",$vik))
     {
         $text = three(array("n","Y"),$hl,array("+"),array("",""),$hl,array("+"),0);        
 		storedata('6.4.24','sa',0);
@@ -7380,7 +7380,7 @@ if ($GIp===1 )
 	storedata('6.1.101','sa',0);
     }    
     /* aniditAM hala upadhAyAH kGiti (6.4.24) */ 
-    if ( !itcheck(array("i"),1) && arr($text,'/[nY]['.pc('hl').'][+][I][+]/')  && $verbset!=="ruDAdi"  && $aniditAm!==1)
+    if ( !itcheck(array("i"),1) && arr($text,'/[nY]['.pc('hl').'][+][I][+]/')  && $verbset!=="ruDAdi"  && $aniditAm!==1 && !in_array("Sap",$vik))
     {
         $text = three(array("n","Y"),$hl,array("+"),array("",""),$hl,array("+"),0);        
 		storedata('6.4.24','sa',0);
@@ -7468,7 +7468,7 @@ if ($GIS===1 )
     }    
     
     /* aniditAM hala upadhAyAH kGiti (6.4.24) */ 
-    if ( !itcheck(array("i"),1) && arr($text,'/[nY]['.pc('hl').'][+][I][+]/')  && !(arr($text,'/[NYRnmM]['.pc('hl').'][+]a[+]/') && in_array("Sap",$vik))  && $lakAra!=="viDiliN" && $verbset!=="ruDAdi" && $aniditAm!==1)
+    if ( !itcheck(array("i"),1) && arr($text,'/[nY]['.pc('hl').'][+][I][+]/')  && !(arr($text,'/[NYRnmM]['.pc('hl').'][+]a[+]/') && in_array("Sap",$vik))  && $lakAra!=="viDiliN" && $verbset!=="ruDAdi" && $aniditAm!==1 && !in_array("Sap",$vik))
     {
         $text = three(array("n","Y"),$hl,array("+"),array("",""),$hl,array("+"),0);        
 		storedata('6.4.24','sa',0);
@@ -9369,7 +9369,7 @@ if (arr($text,'/hiMs\+/'))
     $itprakriti=array_merge($it,array("i"));
 }
 /* aniditAM hala upadhAyAH kGiti (6.4.24) */ 
-if ( !itcheck(array("i"),1) && arr($text,'/[nM]['.pc('hl').'][+]/') && ( itcheck(array("k","N"),1)|| $ancu===1 ) && !($kruJca===1 && sub(array("krunc","kruYc"),blank(0),blank(0),0) ) && $nance===0 && $so!=="mahiN" && !(arr($text,'/[NYRnmM]['.pc('hl').'][+]a[+]/') && in_array("Sap",$vik)) && $lakAra!=="viDiliN" && $verbset!=="ruDAdi" && $aniditAm!==1)
+if ( !itcheck(array("i"),1) && arr($text,'/[nM]['.pc('hl').'][+]/') && ( itcheck(array("k","N"),1)|| $ancu===1 ) && !($kruJca===1 && sub(array("krunc","kruYc"),blank(0),blank(0),0) ) && $nance===0 && $so!=="mahiN" && !(arr($text,'/[NYRnmM]['.pc('hl').'][+]a[+]/') && in_array("Sap",$vik)) && $lakAra!=="viDiliN" && $verbset!=="ruDAdi" && $aniditAm!==1 && !in_array("Sap",$vik))
 {
     $text = three(array("n","M"),$hl,array("+"),array("",""),$hl,array("+"),0);        
 	storedata('6.4.24','sa',0);
@@ -10298,7 +10298,7 @@ if (arr($text,'/sas\+['.pc('ac').']/'))
 }
 /* aniditAM patch for sraMs and dhvaMs */
 // so that vasusraMsu.. may apply
-if (arr($text,'/aMs/') && sub(array("sraMs","DvaMs"),blank(0),blank(0),0))
+if (arr($text,'/aMs/') && sub(array("sraMs","DvaMs"),blank(0),blank(0),0) && !in_array("Sap",$vik))
 {
         $text = one(array("sraMs","DvaMs"),array("sras","Dvas"),0);
 		storedata('6.4.24','sa',0);
