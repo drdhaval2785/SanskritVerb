@@ -1634,6 +1634,13 @@ if ( ($sarvadhatuka===1 && $verbset==="juhotyAdi" && sub(array("+Sap+"),$tiG,bla
     $abhyasta=1;
 	$abhyAsa=1;
 	zlu();
+	print_r($text);
+	/* udoSThyapUrvasya (7.1.102) */
+	if ( in_array($fo,array("pF","PF","bF","BF","mF")) && sub(array("pipar","biBar","mimar"),array("+"),$apit_sArvadhAtuka_pratyayas,0))
+	{
+		$text=three(array("pipar","biBar","mimar"),array("+"),$apit_sArvadhAtuka_pratyayas,array("pipur","biBur","mimur"),array("+"),$apit_sArvadhAtuka_pratyayas,0);
+		storedata('7.1.102','sa',0);
+	}
 }
 /* adiprabhRtibhyaH zapaH (2.4.72) */
 if ( $sarvadhatuka===1 && $verbset==="adAdi" && in_array($fo,$adAdi) && sub(array("+Sap+"),$tiG,blank(0),0) )
@@ -1647,7 +1654,7 @@ if ( $sarvadhatuka===1 && $verbset==="adAdi" && in_array($fo,$adAdi) && sub(arra
 /* dhAtu it removal */
 if ($type==="tiGanta" )
 {
-	if (arr($text,'/[^+]*['.pc('hl').'][+]/') && !in_array($fo,array("Riji!r","viji!r","vizx!")))
+	if (arr($text,'/[^+]*['.pc('hl').'][+]/') && !in_array($fo,array("Riji!r","viji!r","vizx!")) && !arr(array($fo),'/[Ff]$/'))
 	{
 		storedata('1.3.3','pa',0);
 		$text = change('/([^+]*)['.pc('hl').'][+]/','$1+');
@@ -3799,14 +3806,11 @@ if ($lakAra==="liw" && (in_array($fo,array("f","fCa!")) || ends(array($fo),array
 	storedata('7.4.11','sa',0);
 }
 /* udoSThyapUrvasya (7.1.102) */
-if ( in_array($fo,array("pF","PF","bF","BF","mF")) && sub(array("F"),array("+"),$apit_sArvadhAtuka_pratyayas,0) && in_array($so,$tiG) )
+if ( in_array($fo,array("pF","PF","bF","BF","mF")) && sub(array("pipar","biBar","mimar","pF","BF","mF"),array("+"),$apit_sArvadhAtuka_pratyayas,0))
 {
-    $text=three(array("F"),array("+"),$apit_sArvadhAtuka_pratyayas,array("ur"),array("+"),$apit_sArvadhAtuka_pratyayas,0);
+	$text=three(array("pipar","biBar","mimar","pF","BF","mF"),array("+"),$apit_sArvadhAtuka_pratyayas,array("pipur","biBur","mimur","pipur","biBur","mimur"),array("+"),$apit_sArvadhAtuka_pratyayas,0);
 	storedata('7.1.102','sa',0);
 }
-/*elseif ($vras===1) // escaping this - because vrazca... is tripAdI function.
-{
-}*/
 elseif(arr($text,'/gup\+Ay/'))
 {
 	$text = one(array("gup+Ay",),array("gopAy",),0); // for accomodating Aya pratyaya
@@ -4682,7 +4686,7 @@ elseif (in_array($fo,array("gamx!","hana!","jana!","Gasa!","Kanu!","janI!","ada!
 {
 }
 /* ata ekahalmadhye'nAdezAderliTi (6.4.120) */
-elseif ( arr($text,'/^['.pc('hl').'][a][+]['.pc('hl').'][a]['.pc('hl').'][+]/') && $lakAra==="liw" && !ends(array($so),array("tip","mip"),2) && $liT_Adeza!==1)
+elseif ( arr($text,'/^['.pc('hl').'][a][+]['.pc('hl').'][a]['.pc('hl').'][+]/') && $lakAra==="liw" && !ends(array($so),array("tip","mip"),2) && $liT_Adeza!==1 && arr(array($verb_without_anubandha),'/['.pc('hl').'][a]['.pc('hl').']/'))
 {
     $text=change('/^(['.pc('hl').'][a][+])(['.pc('hl').'])([a])(['.pc('hl').'][+])/','$2e$4');
 	$text=change('/^(['.pc('hl').'])([e])(['.pc('hl').'][+][T][a]$)/','$1a+$1a$3'); // for thal.

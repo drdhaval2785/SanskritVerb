@@ -256,7 +256,7 @@ $halAdi_apit_sArvadhAtuka_pratyayas=array("tas","Tas","Ta","vas","mas","te","se"
 // pit pratyayas
 $pit_sArvadhAtuka_pratyayas=array("Ani","Ava","Ama","E","AvahE","AmahE","am","Sap","ti","si","mi","tu","t","s","AE");
 // apit pratyayas
-$apit_sArvadhAtuka_pratyayas=array("Satf!","SAnac","SAnan","cAnaS","KaS","Sa","eS","SaDyE","SaDyEn","anti","Ate","ate","ATe","e","ati","antu","AtAm","atAm","ATAm","atu","an","AtAm","ata","ATAm","i","us","Ita","IyAtAm","Iran","ITAs","IyATAm","IDvam","Iya","Ivahi","Imahi","Sa","SAyac","SAnac","tas","Tas","Ta","vas","mas","te","se","Dve","vahe","mahe","tAt","tAm","hi","tAt","tam","ta","tAm","sva","Dvam","tAm","tam","ta","va","ma","ta","TAs","Dvam","vahi","mahi","yAt","yAtAm","yus","yAs","yAtam","yAta","yAm","yAva","yAma","Syan","Snu","Snam","SnA","SAyac","SAnac","ya","ant");
+$apit_sArvadhAtuka_pratyayas=array("Satf!","SAnac","SAnan","cAnaS","KaS","Sa","eS","SaDyE","SaDyEn","anti","Ate","ate","ATe","e","ati","antu","AtAm","atAm","ATAm","atu","an","AtAm","ata","ATAm","i","us","Ita","IyAtAm","Iran","ITAs","IyATAm","IDvam","Iya","Ivahi","Imahi","Sa","SAyac","SAnac","tas","Tas","Ta","vas","mas","te","se","Dve","vahe","mahe","tAt","tAm","hi","tAt","tam","ta","tAm","sva","Dvam","tAm","tam","ta","va","ma","ta","TAs","Dvam","vahi","mahi","yAt","yAtAm","yus","yAs","yAtam","yAta","yAm","yAva","yAma","Syan","Snu","Snam","SnA","SAyac","SAnac","ya","ant","Ji");
 // halAdi pratyayas and ajAdi pratyayas
 $ajAdi_sArvadhAtuka_pratyayas=array("Ani","Ava","Ama","E","AvahE","AmahE","am","Sap","Satf!","SAnac","SAnan","cAnaS","KaS","Sa","eS","SaDyE","SaDyEn","anti","Ate","ate","ATe","e","ati","antu","AtAm","atAm","ATAm","atu","an","AtAm","ata","ATAm","i","us","Ita","IyAtAm","Iran","ITAs","IyATAm","IDvam","Iya","Ivahi","Imahi","Sa","SAyac","SAnac");
 $halAdi_sArvadhAtuka_pratyayas=array("ti","si","mi","tu","t","s","tas","Tas","Ta","vas","mas","te","se","Dve","vahe","mahe","tAt","tAm","hi","tAt","tam","ta","tAm","sva","Dvam","tAm","tam","ta","va","ma","ta","TAs","Dvam","vahi","mahi","yAt","yAtAm","yus","yAs","yAtam","yAta","yAm","yAva","yAma","Syan","Snu","Snam","SnA","SAyac","SAnac","ya");
@@ -3068,10 +3068,10 @@ function zlu()
 		storedata('6.1.10','sa',0);
 		storedata('7.4.76','sa',0);
 	}
-	elseif( (arr($text,'/^f[+]/')||arr($text,'/^pipF[+]/')) && sub(array("f","pipF",),array("+"),blank(0),0))
+	elseif( (arr($text,'/^f[+]/')||arr($text,'/^pF[+]/')) && sub(array("f","pF",),array("+"),blank(0),0))
 	{
 		$text=change('/^f[+]/','if+');
-		$text=change('/^pipF[+]/','pipar+');
+		$text=change('/^pF[+]/','pipar+');
 		storedata('6.1.10','sa',0);
 		storedata('7.4.77','sa',0);
 	}
