@@ -2932,6 +2932,8 @@ if ($rudhAdibhyaH===1)
 {
     $text = change('/^(['.pc('al').']*['.pc('ac').'])(['.pc('hl').']+)[+]/','$1na$2+');
 	storedata('3.1.78','sa',0);
+	storedata('1.2.4','pa',0);
+	$it = array_merge($it,array("N"));
     $vik=array_merge($vik,array("Snam"));
     $set=2;
     if (arr($text,'/[n][a][nNYRm]/'))
@@ -2969,7 +2971,7 @@ if ($rudhAdibhyaH===1)
     }
 }
 /* sArvadhAtukamapit (1.2.4) */
-if ($sarvadhatuka===1 && !in_array("Sap",$vik) && pr2(array("+"),$apit_sArvadhAtuka_pratyayas,blank(0),array("+fadfad"),$apit_sArvadhAtuka_pratyayas,blank(0),$text)!== $text)//  && $znasorallopaH!==1 ) // See https://github.com/drdhaval2785/SanskritVerb/issues/267
+if ($sarvadhatuka===1 && !in_array('1.2.4',sutrasfromstoredata()) && !in_array("Sap",$vik) && pr2(array("+"),$apit_sArvadhAtuka_pratyayas,blank(0),array("+fadfad"),$apit_sArvadhAtuka_pratyayas,blank(0),$text)!== $text)//  && $znasorallopaH!==1 ) // See https://github.com/drdhaval2785/SanskritVerb/issues/267
 {
     $it=array_merge($it,array("N"));
     $itpratyaya=array_merge($itpratyaya,array("N"));
