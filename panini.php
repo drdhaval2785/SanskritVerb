@@ -1082,10 +1082,10 @@ if (in_array($so,$tiG) && $pada==="pratyaya" && $lakAra==="ASIrliN")
 	storedata('3.1.173','pa',0);
 }
 if ($debug===1) {dibug("1000");}
-/* liGnimitte lRG kriyAtipattau (3.2.139) */
+/* liGnimitte lRG kriyAtipattau (3.3.139) */
 if (in_array($so,$tiG) && $pada==="pratyaya" && $lakAra==="lfN")
 {
-	storedata('3.1.139','pa',0);
+	storedata('3.3.139','pa',0);
 }
 /* lasya (3.4.77) and tiptasjhisipthasthamibvasmastAtAMjhathAsAthAMdhvamiDvahimahiG (3.4.78) */
 if (in_array($so,$tiG) && $pada==="pratyaya" && $lakAra!=="")
