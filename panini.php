@@ -1634,7 +1634,6 @@ if ( ($sarvadhatuka===1 && $verbset==="juhotyAdi" && sub(array("+Sap+"),$tiG,bla
     $abhyasta=1;
 	$abhyAsa=1;
 	zlu();
-	print_r($text);
 	/* udoSThyapUrvasya (7.1.102) */
 	if ( in_array($fo,array("pF","PF","bF","BF","mF")) && sub(array("pipar","biBar","mimar"),array("+"),$apit_sArvadhAtuka_pratyayas,0))
 	{
@@ -4647,7 +4646,6 @@ if ($lakAra==="liw" && arr($text,'/['.pc('hl').'][iI][+][aAiIuUfFxXeEoO]/') && !
 	$text=three($hl,array("i+","I+"),$ac,$hl,array("y+","y+"),$ac,0);
 	storedata('6.4.82','sa',0);
 }
-print_r($text); echo $liT_Adeza;
 /* vA jRRbhramutrasAm (6.4.124) */
 if ($lakAra==="liw" && in_array($fo,array("jF","Bramu!","trasa!")) && !ends(array($so),array("tip","mip"),2) && sub(array("ja+jar","ba+Bram","ta+tras"),array("+"),blank(0),0) )
 {
