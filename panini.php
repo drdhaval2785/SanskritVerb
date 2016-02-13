@@ -4341,7 +4341,7 @@ if ($id_dhAtu==="sew" && $id_pratyaya==="sew" && !($yAsuT===1 && $lakAra==="ASIr
 }
 if ($id_dhAtu==="vew" && $id_pratyaya==="sew" && !($yAsuT===1 && $lakAra==="ASIrliN")  && !in_array("iw",$Agama) && !in_array($sanAdi,array("Ric","RiN")) && $caG!==1 && $ksa!==1) // for veT dhAtus optional one.
 {
-	$text1 = change('/(['.pc('al').'][+])(['.pc('vl').'])/','$1i$2');
+	$text1 = change('/(['.pc('al').'][+])(['.pc('vl').'])([^+]*)$/','$1i$2$3');
 	$text = array_merge($text,$text1);
 	$text = one(array("tfap+isya","dfap+isya","gopAya+sya","u+vay+Ta"),array("tfap+sya","dfap+sya","gopAya+isya","u+vay+iTa"),0); // for veT dhAtus tRp and dRp - iDAgama doesn't apply after amAgama.
 	// Removing unwanted iDAgama which happenned accidentally
