@@ -1099,6 +1099,16 @@ if (in_array($so,$tiG) && $pada==="pratyaya" && $lakAra!=="")
 	$text = pr2(array("+"),array("l"),blank(0),array("+"),array($second),blank(0),$text);
 	storedata('3.4.78','sa',0);
 }
+/* dhAtu it removal */
+if ($type==="tiGanta")
+{
+	if (arr($text,'/[^+]*['.pc('hl').'][+]/'))
+	{
+		storedata('1.3.3','pa',0);
+		$text = change('/([^+]*)['.pc('hl').'][+]/','$1+');
+		storedata('1.3.9','sa',0);
+	}
+}
 /* laH parasmaipadam (1.4.99) */
 if ( ($verbpada==="p" || ($verbpada==="u" && in_array($so,$tis))) && $lakAra!=="")
 {
@@ -1840,7 +1850,7 @@ if ( in_array($fo,$ghuset) )
     $ghu=1;
 } else { $ghu=0; }
 /* pvAdInAM hrasvaH (7.3.80) */
-if (in_array($fo,$pvAdi) && sub(array("+"),$shitpratyaya,blank(0),0) && $fo!=="jyA" )
+if (in_array($fo,$pvAdi) && sub(array("+"),$shitpratyaya,blank(0),0) && $fo!=="jyA" && $verbset==="kryAdi")
 {
     $text=three(array("A","I","U","F",),array("+"),$shitpratyaya,array("a","i","u","f",),array("+"),$shitpratyaya,0);
 	storedata('7.3.80','sa',0);
@@ -4306,6 +4316,7 @@ if ($lakAra==="liw" && $so==="sip" && arr($text,'/[iIuUfFxXeEoO]\+/') && sub(pra
 {
 	$id_dhAtu="vew";
 }
+echo $id_dhAtu, $id_pratyaya; print_r($text);
 /* patch for yAsuT Agama to combine it with the next pratyaya. because it would not be getting iDAgama. */
 $text = one(array("+yA+"),array("+yA"),0);
 /* Adding iDAgama actually */
@@ -4330,7 +4341,8 @@ if ($id_dhAtu==="sew" && $id_pratyaya==="sew" && !($yAsuT===1 && $lakAra==="ASIr
 }
 if ($id_dhAtu==="vew" && $id_pratyaya==="sew" && !($yAsuT===1 && $lakAra==="ASIrliN")  && !in_array("iw",$Agama) && !in_array($sanAdi,array("Ric","RiN")) && $caG!==1 && $ksa!==1) // for veT dhAtus optional one.
 {
-	$text = change('/(['.pc('hl').'][+])(['.pc('vl').'])/','$1i$2');
+	$text1 = change('/(['.pc('al').'][+])(['.pc('vl').'])/','$1i$2');
+	$text = array_merge($text,$text1);
 	$text = one(array("tfap+isya","dfap+isya","gopAya+sya","u+vay+Ta"),array("tfap+sya","dfap+sya","gopAya+isya","u+vay+iTa"),0); // for veT dhAtus tRp and dRp - iDAgama doesn't apply after amAgama.
 	// Removing unwanted iDAgama which happenned accidentally
 	$text = one(array("+iyAs+","Ay+t","vaD+s","gopAya+s","gopAya+s","gup+is"),array("+yAs+","Ay+it","vaD+is","gopAya+is","gopAya+is","gup+s"),0);
