@@ -1098,16 +1098,6 @@ if (in_array($so,$tiG) && $pada==="pratyaya" && $lakAra!=="")
 	$text = pr2(array("+"),array("l"),blank(0),array("+"),array($second),blank(0),$text);
 	storedata('3.4.78','sa',0);
 }
-/* dhAtu it removal */
-if ($type==="tiGanta")
-{
-	if (arr($text,'/[^+]*['.pc('hl').'][+]/'))
-	{
-		storedata('1.3.3','pa',0);
-		$text = change('/([^+]*)['.pc('hl').'][+]/','$1+');
-		storedata('1.3.9','sa',0);
-	}
-}
 /* laH parasmaipadam (1.4.99) */
 if ( ($verbpada==="p" || ($verbpada==="u" && in_array($so,$tis))) && $lakAra!=="")
 {
@@ -1520,7 +1510,6 @@ elseif ($sarvadhatuka===1 && in_array($verbset,array("BvAdi","adAdi","juhotyAdi"
     $vik=array_merge($vik,array("Sap"));
     $set=1;
 }
-
 /* for regular input without user selection */
 /* satyApapAzarUpavINAtUlazlokasenAlomatvacavarmacUrNacurAdibhyo Nic (3.1.25) */
 elseif ( $sarvadhatuka===1 && $verbset==="none" && sub(array("+"),$tiG,blank(0),0) && in_array($fo,$curAdi))
@@ -1654,6 +1643,22 @@ if ( $sarvadhatuka===1 && $verbset==="adAdi" && in_array($fo,$adAdi) && sub(arra
     $ad=1;
     $vik=array("Sapluk");
     $set=2;
+}
+/* dhAtu it removal */
+if ($type==="tiGanta" )
+{
+	if (arr($text,'/[^+]*['.pc('hl').'][+]/') && !in_array($fo,array("Riji!r","viji!r","vizx!")))
+	{
+		storedata('1.3.3','pa',0);
+		$text = change('/([^+]*)['.pc('hl').'][+]/','$1+');
+		storedata('1.3.9','sa',0);
+	}
+	if (arr($text,'/[^+]*['.pc('ac').'][!][+]/'))
+	{
+		storedata('1.3.2','pa',0);
+		$text = change('/([^+]*)['.pc('ac').'][!][+]/','$1+');
+		storedata('1.3.9','sa',0);
+	}
 }
 /* sijabhyastavidibhyazca (3.4.109) */
 if ( $abhyasta===1 && $so==="Ji"  && in_array($lakAra,array("laN","ASIrliN","viDiliN","luN","lfN")))
