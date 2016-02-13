@@ -11805,7 +11805,10 @@ if( $allopo===0 && ((arr($text,'/[zwWqQR]([+]*)[stTdDn]/')|| arr($text,'/[stTdDn
 			$text = two(array("R"),$tu,array("R"),$Tu,0);
 		}       
 	storedata('8.4.41','sa',0);
-	storedata('8.4.42','sa',0);
+	if (arr($text,'/[wWqQR][+][stTdDn]/') && !arr($text,'/[wWqQR][+]nAm/'))
+	{
+		storedata('8.4.42','sa',0);
+	}
 }
 /* Dho Dhe lopaH (8.3.13) */
 if (arr($text,'/Q([+]*)Q/'))
