@@ -3282,7 +3282,6 @@ if ( in_array($fo,array("duza!")) && $_GET['cond52']==='1' && sub(array("duz"),a
     $text=three(array("duz"),array("+"),array("Ri"),array("dUz"),array("+"),array("Ri"),1);    
 	storedata('6.4.91','sa',0);
 }
-print_r($text);
 /* Duplication because of caG */
 if ($caG===1 && arr($text,'/^['.pc('hl').']/'))
 {
@@ -3542,6 +3541,12 @@ if (  !in_array("Sap",$vik) && !in_array("N",$itpratyaya) && $sarvadhatuka===1 &
 		storedata('1.1.5','sa',0);
 		$kGiti=1;	
 	}
+}
+/* pugantalaghUpadhasya ca patch for 'tu' of loT lakAra (Because its companion tAt is apit) */
+if (arr($text,'/[iufx]['.pc('hl').'][+]tu$/'))
+{
+	$text = three($ik,$hl,array("+tu"),guna($ik),$hl,array("+tu"),0);
+	storedata('7.3.86','sa',0);
 }
 /* jJAjanorjA (7.3.79) */
 if ( in_array($fo,array("janI!","jYA")) && in_array($so,$tiG) && sub(array("jan","jYA"),array("+"),$shitpratyayareplace,0) )
