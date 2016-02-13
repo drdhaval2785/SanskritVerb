@@ -1996,7 +1996,7 @@ if ( arr($text,'/jAgf[+]Am[+]/') && $lakAra==="liw")
 	$jAgro=1;
 } else {$jAgro=0;}
 /* curAdi Ric handling */
-if (arr($text,'/\+Ric\+/'))
+if (arr($text,'/\+Ri[c]{0,1}\+/'))
 {
 	/* lIlornuglukAvanyatarsyAM snehanipAtane (7.3.39) */
 	if (in_array($fo,array("lA","lI","lIN")) && in_array($so,$tiG) && sub(array("lA","lI"),array("+"),array("Ri"),0) )
@@ -2049,28 +2049,28 @@ if (arr($text,'/\+Ric\+/'))
 		storedata('7.3.37-1','sa',0);
 	}
 	/* aco JNiti (7.2.115) */
-	if (arr($text,'/['.pc('ac').']\+Ri[Nc]\+/' ) )
+	if (arr($text,'/['.pc('ac').']\+Ri[Nc]{0,1}\+/' ) )
 	{
-		$text = two($ac,array("+Ric+","+RiN"),vriddhi($ac),array("+Ric+","+RiN"),0);
+		$text = two($ac,array("+Ric+","+RiN","+Ri+"),vriddhi($ac),array("+Ric+","+RiN","+Ri+"),0);
 		storedata('7.2.115','sa',0);
 	}
 	/* ata upadhAyAH (7.2.116) */
 	// more on enumeration kind. Not used regexes deliberately.
-	if ( $atolopa!==1 && $Naugami!==1 && $jAgro!==1 && arr($text,'/[a]['.pc('hl').'][+][R][i]c[+]/') && !(arr(array($verb_without_anubandha),'/^['.pc('hl').']/')&&$caG===1))
+	if ( $atolopa!==1 && $Naugami!==1 && $jAgro!==1 && arr($text,'/[a]['.pc('hl').'][+]Ric{0,1}[+]/') && !(arr(array($verb_without_anubandha),'/^['.pc('hl').']/')&&$caG===1))
 	{
-		$text = three(array("a"),$hl,array("+Ric+"),array("A"),$hl,array("+Ric+"),0);
+		$text = three(array("a"),$hl,array("+Ric+","+Ri+"),array("A"),$hl,array("+Ric+","+Ri+"),0);
 		storedata('7.2.116','sa',0);
 	}
 	/* mitAM hrasvaH (6.4.92) */ 
-	if ( in_array($fo,$mitcurAdiverbs) && ($verbset === "curAdi" || $verbset === "none" ) && sub(array("A"),$hl,array("+Ric+"),0))
+	if ( in_array($fo,$mitcurAdiverbs) && ($verbset === "curAdi" || $verbset === "none" ) && sub(array("A"),$hl,array("+Ric+","+Ri+"),0))
 	{
-		$text = three(array("A"),$hl,array("+Ric+"),array("a"),$hl,array("+Ric+"),0);
-		$text = one(array("cap+Ric"),array("cAp+Ric"),0);
+		$text = three(array("A"),$hl,array("+Ric+","+Ri+"),array("a"),$hl,array("+Ric+","+Ri+"),0);
+		$text = one(array("cap+Ric","cap+Ri"),array("cAp+Ric","cAp+Ri"),0);
 		storedata('6.4.92','sa',0);
 	}
-	if ( in_array($fo,$ghaTAdi_mit) && ($verbset === "BvAdi" || $verbset === "none" ) && sub(array("A"),$hl,array("+Ric+"),0) )
+	if ( in_array($fo,$ghaTAdi_mit) && ($verbset === "BvAdi" || $verbset === "none" ) && sub(array("A"),$hl,array("+Ric+","+Ri+"),0) )
 	{
-		$text = three(array("A"),$hl,array("+Ric+"),array("a"),$hl,array("+Ric+"),0);
+		$text = three(array("A"),$hl,array("+Ric+","+Ri+"),array("a"),$hl,array("+Ric+","+Ri+"),0);
 		storedata('6.4.92','sa',0);
 	} 
 	if(arr($text,'/['.pc('ac').'][!]/'))
@@ -2079,19 +2079,19 @@ if (arr($text,'/\+Ric\+/'))
 		$text = two($ac,array('!'),blank(count($ac)),array(''),0);
 		storedata('1.3.9','sa',0);			
 	}
-	if(arr($text,'/\+Ric\+S/'))
+	if(arr($text,'/\+Ri[c]{0,1}\+S/'))
 	{
 		storedata('1.3.8','pa',0);
 	}
 	if (arr($text,'/^['.pc('hl').']/') && $caG===1)
 	{
-		$text = one(array("+Ric+"),array("+"),0);
+		$text = one(array("+Ric+","+Ri+"),array("+","+"),0);
 		storedata('6.4.51','sa',0);
 	}
 	storedata('1.3.3','pa',0);
 	storedata('1.3.7','pa',0);
-	$text=one(array('+Ric+caN+'),array('i+a+'),0);
-	$text = one(array("+Ric+"),array("+i+"),0);
+	$text=one(array('+Ric+caN+','+Ri+caN+'),array('i+a+','i+a+'),0);
+	$text = one(array("+Ric+","+Ri+"),array("+i+","+i+"),0);
 	$text = one(array("+caN+"),array("+a+"),0);
 	storedata('1.3.9','sa',0);
 	if (arr($text,'/[eoEO][+]i[+]/'))
