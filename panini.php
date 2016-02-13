@@ -737,7 +737,7 @@ elseif ($type==='tiGanta')
 			gui2('7.2.60');
 		}
 		/* radhAdibhyazca (7.2.45) */
-		elseif (in_array($fo,array("raDa!","RaSa!","tfpa!","dfpa!","druha!","muha!","zRuha!","zRiha!")) )
+		elseif (in_array($fo,array("raDa!","RaSa!","tfpa!","dfpa!","druha!","muha!","zRuha!","zRiha!")) && $verbset==="divAdi")
 		{
 			$id_dhAtu="vew";
 			gui2('7.2.45');
@@ -3472,6 +3472,14 @@ if (arr($text,'/[+][cjYwWqQR]/') && in_array($so,$tiG))
 	storedata('1.3.7','sa',0);
 	$text = last(array("jas"),array("as"),0);
     $text = one(array("+wA","+jus","+Ri","+Ra"),array("+A","+us","+i","+a"),0);
+	storedata('1.3.9','sa',0);
+}
+/* upadeze'janunAsika it (1.3.2)*/ 
+// Patch for sic
+if (arr($text,'/[+][si[+]/') && $sic===1 )
+{
+	storedata('1.3.2','pa',0);
+    $text = one(array("+si+"),array("+s"),0);
 	storedata('1.3.9','sa',0);
 }
 /* lopo vyorvali (6.1.66) */
