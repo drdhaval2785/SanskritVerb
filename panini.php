@@ -1654,7 +1654,7 @@ if ( $sarvadhatuka===1 && $verbset==="adAdi" && in_array($fo,$adAdi) && sub(arra
 /* dhAtu it removal */
 if ($type==="tiGanta" )
 {
-	if (arr($text,'/[^+]*['.pc('hl').'][+]/') && !in_array($fo,array("Riji!r","viji!r","vizx!")) && !arr(array($fo),'/[Ff]$/'))
+	if (arr($text,'/[^+]*['.pc('hl').'][+]/') && sub($fo,array("+"),blank(0),0) && !in_array($fo,array("Riji!r","viji!r","vizx!")) && !arr(array($fo),'/[Ff]$/'))
 	{
 		storedata('1.3.3','pa',0);
 		$text = change('/([^+]*)['.pc('hl').'][+]/','$1+');
@@ -2275,7 +2275,7 @@ if (in_array($so,$tiG) && arr(array($fo),'/[!]['.pc('hl').']$/') && $nomidelisio
 }
 /* halantyam (1.3.3) and tasya lopaH (1.3.9) */
 // Patch for removal of verb halantyam
-if (in_array($so,$tiG) && arr(array($fo),'/['.pc('hl').']$/') && !arr(array($fo),'/i[!]r$/') && !arr(array($fo),'/[aU][!]z$/') )
+if (in_array($so,$tiG) && arr(array($fo),'/['.pc('hl').']$/') && !arr(array($fo),'/i[!]r$/') && !arr(array($fo),'/[aU][!]z$/') && sub($fo,array("+"),blank(0),0))
 {
 	storedata('1.3.3','pa',0);
 	$text=three($hlplus,$vikaraNa,array("+"),blank1("+",count($hlplus)),$vikaraNa,array("+"),0);
@@ -3037,7 +3037,7 @@ if ( in_array($fo,$aniditverbs) && (in_array("N",$itpratyaya) || in_array("k",$i
 	}
 }
 /* liTi dhAtoranabhyAsasya (6.1.8) */
-elseif ($lakAra==="liw" && arr($text,'/^['.pc('ac').']/'))
+elseif ($lakAra==="liw" && arr($text,'/^['.pc('ac').']/') && $abhyAsa!==1)
 {
 	liT_ajAdi();
 	$abhyAsa=1;
