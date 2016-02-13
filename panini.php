@@ -1308,11 +1308,9 @@ if ($lakAra==="luN")
 		$text = one(array("Una+Ric+","Dvana+Ric+","ila!+Ric+","arda!+Ric+"),array("Uni+","Dvani+","li+","ardi+"),0);
 	}
 	/* NizridrusrubhyaH kartari caG (3.1.48) */
-	elseif ( ( $sanAdi==="Ric" || $sanAdi==="RiN" || ends(array($fo),array("SriY","sru","dru"),2) || $verbset==="curAdi" ) && in_array($so,$tiG) )
+	if ( ( $sanAdi==="Ric" || $sanAdi==="RiN" || ends(array($fo),array("SriY","sru","dru"),2) || $verbset==="curAdi" ) && in_array($so,$tiG) )
 	{
-		$text=two(array("+cli+"),$tiG,array("+Ric+cli+"),$tiG,0);
-		storedata('3.1.25','sa',0);
-		$text=two(array("Ric+cli+"),$tiG,array("+Ric+caN+"),$tiG,0);
+		$text=two(array("+cli+"),$tiG,array("+caN+"),$tiG,0);
 		storedata('3.1.48','sa',0);
 		$Nizri=1;
 		$it = array_merge($it,array("N"));
@@ -1378,6 +1376,20 @@ if ($lakAra==="luN")
 		}
 }
 if ($debug===1) {dibug("1250");}
+/* Removing the its from caN and aN */
+if ($caG===1)
+{
+	storedata('1.3.7','pa',0);
+	storedata('1.3.3','pa',0);
+	$text=one(array("+caN+"),array("+a+"),0);
+	storedata('1.3.9','sa',0);
+}
+if ($aG===1)
+{
+	storedata('1.3.3','pa',0);
+	$text=one(array("+aN+"),array("+a+"),0);
+	storedata('1.3.9','sa',0);
+}
 
 /* Deciding seTtva / veTtva / aniTtva of luG lakAra suffixes */
 if ( !in_array($luGset,array(9)) && $lakAra==='luN')
@@ -1417,22 +1429,10 @@ elseif (in_array($so,$tiG) && in_array($fo,array("Divi!","kfvi!")) && $sarvadhat
 }
 // first treatment of curAdi, because, it will take Nic before vikaraNa pratyaya.
 /* satyApapAzarUpavINAtUlazlokasenAlomatvacavarmacUrNacurAdibhyo Nic (3.1.25) */
-elseif (in_array($so,$tiG) &&  $verbset==="curAdi" && in_array($fo,$curAdi) )// && sub($curAdi,array("+"),blank(0),0) && sub(array("+"),$tiG,blank(0),0) ) # Trying to remove time consuming sub function.
+elseif (in_array($so,$tiG) && $Nizri!==1 && $verbset==="curAdi" && in_array($fo,$curAdi) )// && sub($curAdi,array("+"),blank(0),0) && sub(array("+"),$tiG,blank(0),0) ) # Trying to remove time consuming sub function.
 {
-	if($Nizri===1)
-	{
-		$text=two(array("+cli+"),$tiG,array("+Ric+cli+"),$tiG,0);
-		$text=one(array("Ric+Ric+"),array("Ric+"),0);
-		storedata('3.1.25','sa',0);
-		$text=two(array("Ric+cli+"),$tiG,array("+Ric+caN+"),$tiG,0);
-		$text=two(array("Ric+Ric+"),$tiG,array("Ric+"),$tiG,0);
-		storedata('3.1.48','sa',0);
-	}
-	else 
-	{
-		$text=two(array("+"),$tiG,array("+Ric+"),$tiG,0); 
-		storedata('3.1.25','sa',0);
-	}
+	$text=two(array("+"),$tiG,array("+Ric+"),$tiG,0); 
+	storedata('3.1.25','sa',0);
     $text=one(array("+Ric+Ric","+caN+Ric+"),array("+Ric+","+Ric+caN+"),0);
     if (sub(array("+"),$tiG,blank(0),0) && $sarvadhatuka===1)
     {
@@ -3282,6 +3282,7 @@ if ( in_array($fo,array("duza!")) && $_GET['cond52']==='1' && sub(array("duz"),a
     $text=three(array("duz"),array("+"),array("Ri"),array("dUz"),array("+"),array("Ri"),1);    
 	storedata('6.4.91','sa',0);
 }
+print_r($text);
 /* Duplication because of caG */
 if ($caG===1 && arr($text,'/^['.pc('hl').']/'))
 {
