@@ -3527,6 +3527,13 @@ if (arr($text,'/['.pc('hl').'][+][sts]$/') && !arr($text,'/s[+]s$/') && in_array
     $pada="pada"; // there is no pratyaya left now.
     $halGyAbbhyo=1;
 }
+/* skoH saMyogAdyorante ca (8.2.29) */
+if (arr($text,'/s[+]s$/') && in_array($so,array("su!","sip")) )
+{
+    $text = one(array("s+s"),array("s"),0);
+	storedata('8.2.29','sa',0);
+    $pada="pada"; // there is no pratyaya left now.
+}
 /* eco'yavAyAvaH (6.1.78) */
 // For Ni.
 $ayavayavah = array("ay","av","Ay","Av");
@@ -3565,7 +3572,7 @@ if ($jherjus===1 && arr($text,'/[iIuUfFxX]\+us/') ) // liT has 'us' which is not
 	storedata('7.3.83','sa',0);
 }
 /* ghasibhasorhali ca (6.4.100) */
-if ( in_array($fo,array("Gasa!","Basa!")) && pr2(array("Gas","Bas"),array("+"),$apit_sArvadhAtuka_pratyayas,array("Gs","Bs"),array("+"),$apit_sArvadhAtuka_pratyayas,$text)!==$text && $lakAra!=="" )
+if ( in_array($fo,array("Gasa!","Basa!")) && pr2(array("Gas","Bas"),array("+"),$apit_sArvadhAtuka_pratyayas,array("Gs","Bs"),array("+"),$apit_sArvadhAtuka_pratyayas,$text)!==$text && $lakAra!=="" && $veda===1 )
 {
     $text=pr2(array("Gas","Bas"),array("+"),$apit_sArvadhAtuka_pratyayas,array("Gs","Bs"),array("+"),$apit_sArvadhAtuka_pratyayas,$text);
 	storedata('6.4.100','sa',0);
