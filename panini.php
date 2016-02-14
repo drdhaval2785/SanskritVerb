@@ -3405,7 +3405,7 @@ elseif (arr($text,'/[A][+]['.pc('ac').']/') && (in_array("N",$itpratyaya)||in_ar
 if ( ($verbset==="tudAdi" || ($verbset==="none" && in_array($fo,$tudAdi)) ) && $lakAra!=="" && (sub($tudAdi_mucAdi,array("+"),array("a+"),0) || (sub($tudAdi_mucAdi,array("+"),array("e"),0) && $lakAra==="viDiliN")) )
 {
     $mucAdireplace=array("munc","lunp","vind","linp","zinc","Kind","kfnt","pinS");
-    $text = two($tudAdi_mucAdi,array("+"),$mucAdireplace,array("+"),0);
+    $text = two($tudAdi_mucAdi,array("+a","+e"),$mucAdireplace,array("+a","+e"),0);
 	storedata('7.1.59','sa',0);
 }
 /* dhivikRNvyora ca (3.1.80) */
