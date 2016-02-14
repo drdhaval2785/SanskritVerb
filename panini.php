@@ -2100,7 +2100,7 @@ if (arr($text,'/\+Ri[c]{0,1}\+/'))
 		storedata('7.3.37-1','sa',0);
 	}
 	/* aco JNiti (7.2.115) */
-	if (arr($text,'/['.pc('ac').']\+Ri[Nc]{0,1}\+/' ) )
+	if (arr($text,'/['.pc('ac').']\+Ri[Nc]{0,1}\+/' ) )//&& !in_array($fo,$curAdi_adanta))
 	{
 		$text = two($ac,array("+Ric+","+RiN","+Ri+"),vriddhi($ac),array("+Ric+","+RiN","+Ri+"),0);
 		storedata('7.2.115','sa',0);
