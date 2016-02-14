@@ -3387,7 +3387,6 @@ if ( arr($text,'/a[+]iy[+]['.pc('vl').']/') && in_array($so,$tiG) )
     $text=two(array("a+i+"),prat('vl'),array("e"),prat('vl'),0);
 	storedata('6.1.87','sa',0);
 }
-
 if ($debug===1) {dibug("2900");}
 /* Ato lopa iTi ca (6.4.64) */
 if ( (in_array("N",$itpratyaya)||in_array("k",$itpratyaya) )  && $lakAra!=="" && $caG===1 && sub(array("A+"),array("a+"),blank(0),0) )
@@ -3396,9 +3395,9 @@ if ( (in_array("N",$itpratyaya)||in_array("k",$itpratyaya) )  && $lakAra!=="" &&
 	storedata('6.4.64','sa',0);
 }
 /* Ato lopa iTi ca (6.4.64) */
-elseif (arr($text,'/[A][+]['.pc('ac').']/') && (in_array("N",$itpratyaya)||in_array("k",$itpratyaya) ) && pr2(array("A"),array("+"),$tiG1,array("A"),array("+"),$tiG1,$text)!==$text && $lakAra!=="" && $ardhadhatuka===1)
+elseif (arr($text,'/[A][+]['.pc('ac').']/') && (in_array("N",$itpratyaya)||in_array("k",$itpratyaya) ) && pr2(array("A"),array("+"),$tiG1,array("A"),array("+"),$tiG1,$text)!==$text && $lakAra!=="")
 {
-    $text=pr2(array("A"),array("+"),$tiG1,array("A"),array("+"),$tiG1,$text);
+    $text=pr2(array("A"),array("+"),$tiG1,array(""),array("+"),$tiG1,$text);
     $text=two($hl,array("+sic+"),$hl,array("A+sic+"),0);
 	storedata('6.4.64','sa',0);
 }
@@ -4146,7 +4145,7 @@ if (arr($text,'/biBI/') && sub(array("biBI"),array("+"),$halAdi_apit_sArvadhAtuk
     $text=three(array("biBI"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("biBi"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,1);
 	storedata('6.4.115','sa',0);
 }
-$text = one(array("+yA+"),array("+yA"),0);
+//$text = one(array("+yA+"),array("+yA"),0);
 /* I halyaghoH (6.4.113) */
 if (arr($text,'/\+nA\+/') && sub(array("+"),array("nA+"),$halAdi_apit_sArvadhAtuka_pratyayas,0) && (in_array("N",$it)||in_array("N",$it)))
 {
@@ -4158,7 +4157,7 @@ if (arr($text,'/\+nA\+yA/') && sub(array("+"),array("nA+yA"),blank(0),0) ) # htt
     $text=one(array("+nA+yA"),array("+nI+yA"),0);
 	storedata('6.4.113','sa',0);
 }
-if (arr($text,'/A\+/') && sub(array("A"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,0) && (in_array("N",$it)||in_array("k",$it)) && $abhyasta===1 && $ghu!==1)
+if (arr($text,'/A\+/') && sub(array("A"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,0) && (in_array("N",$it)||in_array("k",$it)) && $abhyasta===1 && $ghu!==1 && $sarvadhatuka===1)
 {
     $text=three(array("A"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("I"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,0);
 	storedata('6.4.113','sa',0);
@@ -4397,7 +4396,7 @@ if ($lakAra==="liw" && $so==="sip" && arr($text,'/[iIuUfFxXeEoO]\+/') && sub(pra
 	$id_dhAtu="vew";
 }
 /* patch for yAsuT Agama to combine it with the next pratyaya. because it would not be getting iDAgama. */
-$text = one(array("+yA+"),array("+yA"),0);
+//$text = one(array("+yA+"),array("+yA"),0);
 /* Adding iDAgama actually */
 if ($id_dhAtu==="sew" && $id_pratyaya==="sew" && !($yAsuT===1 && $lakAra==="ASIrliN")  && !in_array("iw",$Agama) && $caG!==1 && $ksa!==1) // for seT dhAtus
 {
@@ -4648,7 +4647,7 @@ if ( in_array($so,$tiG) && (in_array("N",$it)||in_array("k",$it)) && !arr($text,
 /* Ato lopa iTi ca (6.4.64) */
 if (arr($text,'/A\+i/') && sub(array("A+"),array("i"),$tiG1,0) && $lakAra!=="" && in_array("iw",$Agama) )
 {
-    $text=one(array("A+iTa"),array("+iTa"),0);
+    $text=one(array("A+iTa","A+iva","A+ima"),array("+iTa","+iva","+ima"),0);
 	storedata('6.4.64','sa',0);
 }
 /* iDattyartivyayatInAm (7.2.66) */
@@ -11900,14 +11899,14 @@ if( $allopo===0 && ((arr($text,'/[zwWqQR]([+]*)[stTdDn]/')|| arr($text,'/[stTdDn
 	$text = two(array("d"),$Tu,array("q"),$Tu,0);
 	$text = two(array("D"),$Tu,array("Q"),$Tu,0);
 	$text = two(array("n"),$Tu,array("R"),$Tu,0);
-		if ($pada === "pratyaya" && (sub($Tu,$tu,blank(0),0)))
-		{
-			$text = two(array("w"),$tu,array("w"),$Tu,0);
-			$text = two(array("W"),$tu,array("W"),$Tu,0);
-			$text = two(array("q"),$tu,array("q"),$Tu,0);
-			$text = two(array("Q"),$tu,array("Q"),$Tu,0);
-			$text = two(array("R"),$tu,array("R"),$Tu,0);
-		}       
+	if ($pada === "pratyaya" && (sub($Tu,$tu,blank(0),0)))
+	{
+		$text = two(array("w"),$tu,array("w"),$Tu,0);
+		$text = two(array("W"),$tu,array("W"),$Tu,0);
+		$text = two(array("q"),$tu,array("q"),$Tu,0);
+		$text = two(array("Q"),$tu,array("Q"),$Tu,0);
+		$text = two(array("R"),$tu,array("R"),$Tu,0);
+	}       
 	storedata('8.4.41','sa',0);
 	if (arr($text,'/[wWqQR][+][stTdDn]/') && !arr($text,'/[wWqQR][+]nAm/'))
 	{
