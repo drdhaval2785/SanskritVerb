@@ -2100,7 +2100,7 @@ if (arr($text,'/\+Ri[c]{0,1}\+/'))
 		storedata('7.3.37-1','sa',0);
 	}
 	/* aco JNiti (7.2.115) */
-	if (arr($text,'/['.pc('ac').']\+Ri[Nc]{0,1}\+/' ) && !in_array($fo,$curAdi_adanta))
+	if (arr($text,'/['.pc('ac').']\+Ri[Nc]{0,1}\+/') && !in_array($fo,$curAdi_adanta))
 	{
 		$text = two($ac,array("+Ric+","+RiN","+Ri+"),vriddhi($ac),array("+Ric+","+RiN","+Ri+"),0);
 		storedata('7.2.115','sa',0);
@@ -3185,7 +3185,19 @@ elseif ( in_array($fo,array("vida!")) && in_array($so,$tiG) && $verbset==="adAdi
 	storedata('3.4.109','sa',0);
 }
 /* mRjervRddhiH (7.2.114) */
-if (  in_array($so,$tiG)&& $fo==="mfjU!" && sub(array("mfj"),array("+"),blank(0),0) )
+if ( arr($text,'/j\+/') && ends($itpratyaya,array("k","N"),2) && sub(array("mfj","marj"),array("+","+i"),$ac,0) && in_array($so,$tiG)  && $kGiti===1 && arr($text,'/mfj[+]['.pc('ac').']/') )
+{
+    $text=three(array("mfj","marj"),array("+"),$ac,array("mArj","mArj"),array("+"),$ac,1);
+	storedata('7.2.114','sa',0);
+}
+/* mRjervRddhiH (7.2.114) */
+elseif ( arr($text,'/j\+/') && pr2(array("mfj","marj"),array("+","+i"),$ArdhadhAtuka_tiG_pratyayas,array("mArj"),array("+","+i"),$ArdhadhAtuka_tiG_pratyayas,$text)!==$text && in_array($so,$tiG) && (($kGiti===1 && arr($text,'/mfj[+]['.pc('ac').']/'))||$kGiti!==1))
+{
+    $text=pr2(array("mfj","marj"),array("+","+i"),$ArdhadhAtuka_tiG_pratyayas,array("mArj","mArj"),array("+","+i"),$ArdhadhAtuka_tiG_pratyayas,$text);
+	storedata('7.2.114','sa',0);
+}
+/* mRjervRddhiH (7.2.114) */
+elseif (  in_array($so,$tiG)&& $fo==="mfjU!" && (($kGiti===1 && arr($text,'/mfj[+]['.pc('ac').']/'))||$kGiti!==1) )
 {
     $text=two(array("mfj"),array("+"),array("mArj"),array("+"),0);
 	storedata('7.2.114','sa',0);
@@ -4843,15 +4855,13 @@ if ( $hmyanta===1 )
 	$novrddhi=1;
 }
 /* mRjervRddhiH (7.2.114) */
-if ( $ardhadhatuka===1 && arr($text,'/j\+/') && ends($itpratyaya,array("k","N"),2) && sub(array("mfj","marj"),array("+","+i"),$ac,0) && in_array($so,$tiG) )
+if ( arr($text,'/j\+/') && ends($itpratyaya,array("k","N"),2) && sub(array("mfj","marj"),array("+","+i"),$ac,0) && in_array($so,$tiG)  && $kGiti===1 && arr($text,'/mfj[+]['.pc('ac').']/') )
 {
     $text=three(array("mfj","marj"),array("+"),$ac,array("mArj","mArj"),array("+"),$ac,1);
-//    echo "<p class = sa >By mRjervRddhiH (".link_sutra("7.2.114").") and kGityajAdau veSyate :</p>\n"; 
-//    echo "<p class = sa >मृजेर्वृद्धिः (७.२.११४) तथा क्ङित्यजादौ वेष्यते । :</p>\n";
 	storedata('7.2.114','sa',0);
 }
 /* mRjervRddhiH (7.2.114) */
-elseif ( arr($text,'/j\+/') && pr2(array("mfj","marj"),array("+","+i"),$ArdhadhAtuka_tiG_pratyayas,array("mArj"),array("+","+i"),$ArdhadhAtuka_tiG_pratyayas,$text)!==$text && in_array($so,$tiG))
+elseif ( arr($text,'/j\+/') && pr2(array("mfj","marj"),array("+","+i"),$ArdhadhAtuka_tiG_pratyayas,array("mArj"),array("+","+i"),$ArdhadhAtuka_tiG_pratyayas,$text)!==$text && in_array($so,$tiG) && (($kGiti===1 && arr($text,'/mfj[+]['.pc('ac').']/'))||$kGiti!==1))
 {
     $text=pr2(array("mfj","marj"),array("+","+i"),$ArdhadhAtuka_tiG_pratyayas,array("mArj","mArj"),array("+","+i"),$ArdhadhAtuka_tiG_pratyayas,$text);
 	storedata('7.2.114','sa',0);
@@ -12261,7 +12271,7 @@ $itprakriti = array();
 $itpratyaya = array();
 $Agama=array();
 $sanAdi="";
-$TAp=0; $DAp=0; $cAp=0; $GIp=0; $GIn=0; $GIS=0; $kGiti=0; $abhyasta=0; $ajAdyataSTAp=0; $tusma=0; $upasarga_joined=0; $sicivRddhi=0; $atolopa=0; $caG=0; $aG=0; $zluvat=0; $aniditAm=0;
+$TAp=0; $DAp=0; $cAp=0; $GIp=0; $GIn=0; $GIS=0; $kGiti=0; $abhyasta=0; $ajAdyataSTAp=0; $tusma=0; $upasarga_joined=0; $sicivRddhi=0; $atolopa=0; $caG=0; $aG=0; $zluvat=0; $aniditAm=0; $kGiti=0;
 $temp = scrape1($first,0,2,1); 
 $verb_without_anubandha=$temp[0];
 $storedata=array();
