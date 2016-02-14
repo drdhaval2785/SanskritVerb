@@ -1059,7 +1059,6 @@ if ( in_array($fo,array("kamu!")) && $pada==="pratyaya" && $lakAra!=="")
     $verbpada="A";
 }*/
 
-echo $lakAra; echo $so; echo $pada;
 /* Displaying general information about lakAras */
 /* laT vartamAne (3.2.123) */
 if (in_array($so,$tiG) && $pada==="pratyaya" && $lakAra==="law")
@@ -1199,6 +1198,13 @@ if ( in_array($lakAra,array("liw")) )
 {
     $ardhadhatuka=1;
 	storedata('3.4.115','pa',0);
+}
+/* mInAtiminotidIGAM lyapi ca (6.1.50) */
+if ( in_array($fo,array("qumiY","mIY","dIN")) && $ardhadhatuka===1 && (($lakAra==="liw" && in_array($so,array("tip","sip","mip")))||in_array($lakAra,array("luw","lfw","luN"))||($lakAra==="ASIrliN" && in_array($so,$taG)) ))
+{
+    $text=two(array("qumiY","mIY","dIN"),$tiG,array("mA","mA","dA"),$tiG,0);
+	storedata('6.1.50','sa',0);
+	$mInAti=1;
 }
 /* Adding vikaraNas */
 $vik=array();
@@ -2962,7 +2968,7 @@ elseif (arr(array($verb_without_anubandha),'/[a]/') && $id_dhAtu==="aniw" && $la
 	storedata('7.2.63','sa',0);
 }
 /* yamaramanamAtAM sakca (7.2.73) */ 
-if (in_array($so,$tis) && arr($text,'/[+][s][i][c][+]/') && sub(array("A","yam","ram","nam"),array("+sic+"),blank(0),0) && (in_array($fo,array("yama!","ramu!","Rama!")) || arr(array($fo),'/A$/') ))
+if (in_array($so,$tis) && arr($text,'/[+][s][i][c][+]/') && sub(array("A","yam","ram","nam"),array("+sic+"),blank(0),0) && (in_array($fo,array("yama!","ramu!","Rama!")) || arr(array($fo),'/A$/') || $mInAti===1 ))
 {
     $text=two(array("A","yam","ram","nam"),array("+sic+"),array("A","yam","ram","nam"),array("+sis+"),0);
 	storedata('7.2.73','sa',0);
@@ -4158,7 +4164,7 @@ if (arr($text,'/A\+/') && sub(array("A"),array("+"),$halAdi_apit_sArvadhAtuka_pr
 // Patch to remove + sign after sIyuT
 $text = two(array("+Iy+"),$ac,array("+Iy"),$ac,0);
 /* znA'bhyastayorAtaH (6.4.112) */
-if (arr($text,'/A[+]/') && $abhyasta===1 && pr2(array("A"),array("+"),$apit_sArvadhAtuka_pratyayas,array(""),array("+"),$apit_sArvadhAtuka_pratyayas,$text)!==$text && !arr($text,'/[+]yA[+][mv]a/'))
+if (arr($text,'/A[+]/') && $abhyasta===1 && pr2(array("A"),array("+"),$apit_sArvadhAtuka_pratyayas,array(""),array("+"),$apit_sArvadhAtuka_pratyayas,$text)!==$text && !arr($text,'/[+]yA[+][mv]a/') && $sarvadhatuka===1)
 {
 	if ($so==="sip" && $lakAra==="liw")
 	{
