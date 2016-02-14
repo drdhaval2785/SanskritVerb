@@ -3402,7 +3402,7 @@ elseif (arr($text,'/[A][+]['.pc('ac').']/') && (in_array("N",$itpratyaya)||in_ar
 	storedata('6.4.64','sa',0);
 }
 /* ze mucAdInAm (7.1.59) */
-if ( ($verbset==="tudAdi" || ($verbset==="none" && in_array($fo,$tudAdi)) ) && $lakAra!=="" && sub($tudAdi_mucAdi,array("+"),array("a+","e"),0) )
+if ( ($verbset==="tudAdi" || ($verbset==="none" && in_array($fo,$tudAdi)) ) && $lakAra!=="" && (sub($tudAdi_mucAdi,array("+"),array("a+"),0) || (sub($tudAdi_mucAdi,array("+"),array("e"),0) && $lakAra==="viDiliN")) )
 {
     $mucAdireplace=array("munc","lunp","vind","linp","zinc","Kind","kfnt","pinS");
     $text = two($tudAdi_mucAdi,array("+"),$mucAdireplace,array("+"),0);
