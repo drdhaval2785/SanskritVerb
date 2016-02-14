@@ -1729,6 +1729,14 @@ if (arr($text,'/kfp/') && $caG!==1)
     $text=one(array("kfp"),array("kxp"),0);
 	storedata('8.2.18','sa',0);
 }
+/* Che ca (6.1.73) */
+if (arr($text,'/[aiufx][+]*C/') )
+{
+	$text = two(array("a","i","u","f","x"),array("C"),array("at","it","ut","ft","xt"),array("C"),0);
+	storedata('6.1.73','sa',0);
+	$text = change('/([aiufx][+]*)tC/','$1cC');
+	storedata('8.4.40','sa',0);
+}
 /* Nau prAtipadikasya iSThavatkAryaM bhavatIti vaktavyam (vA) */
 if ( !in_array($fo,$allverbs) && sub(array("+Ric+Sap+","+RiN+Sap+"),$tiG,blank(0),0) )
 {
