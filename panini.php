@@ -1451,7 +1451,6 @@ if ( $sic!==0 && $so==="Ji" && sub(array("A"),array("+"),array("Ji"),0) )
 	storedata('3.4.110','sa',0);
 }
 if ($debug===1) {dibug("1300");}
-print_r($text); echo $aG;
 /* zruvaH zR ca (3.1.74) */
 if (in_array($fo,array("Sru")) && $sarvadhatuka===1 && sub(array("Sru"),array("+"),$tiG,0) && in_array($so,$tiG))
 {
@@ -1638,7 +1637,6 @@ elseif ( $sarvadhatuka===1 && sub(array("+"),$tiG,blank(0),0))
     $vik=array_merge($vik,array("Sap"));
     $set=1;
 }
-print_r($text);
 /* yaso'nupasargAt (3.1.71) */
 if ( ends(array($fo),array("yasu!"),2) && sub(array("yasu!"),array("+Syan"),array("+"),0) )
 {
@@ -11711,7 +11709,7 @@ if(arr($text,'/[iyuv][+]([aAiIuUfFeEoOhyvr]*)s/') && in_array($fo,array("zuY","z
 	storedata('8.3.65','sa',0);
 } 
 /* hanteratpUrvasya (8.4.22) */
-if((arr($text,'/han/')||arr($text,'/Gn/')) && sub($upasarga,array("han","Gn"),blank(0),0))
+if((arr($text,'/han/')||arr($text,'/Gn/')) && sub($upasarga,array("han","Gn"),blank(0),0) && in_array($fo,array("hana!")))
 {
 $text = two($upasarga,array("han","Gn"),$upasarga,array("haR","Gn"),0);
 storedata('8.4.22','sa',0);
