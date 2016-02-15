@@ -1234,10 +1234,19 @@ if ($lakAra==="luN")
 		$it = array_merge($it,array("k"));
 		$itpratyaya = array_merge($itpratyaya,array("k"));
 	}
-	/* zala igupadhAdaniTaH ksaH (3.1.45) */
-	elseif (in_array($fo,array("gfhU!","bfhU!","tfhU!","stfhU!","guhU!")) )
+	/* puSAdidyutAdilRditaH parasmaipadeSu (3.1.55) */
+	elseif ( ( (in_array($fo,$divAdi_puSAdi)&&$verbset==="divAdi")||(in_array($fo,$bhvAdi_dyutAdi)&&$verbset==="BvAdi")||in_array($fo,$lRdit)) && $fo!=="Apx!" && in_array($so,$tis) )
 	{
-		$text = one(array("+cli+"),array("+sa+"),1);
+		$text = one(array("+cli+"),array("+aN+"),0);
+		storedata('3.1.55','sa',0);
+		$it = array_merge($it,array("N"));
+		$itpratyaya = array_merge($itpratyaya,array("N"));
+		$aG=1;
+	}
+	/* zala igupadhAdaniTaH ksaH (3.1.45) */
+	elseif (arr($text,'/[^+]*[iIuUfFx]['.pc('hl').'](['.pc('ac').'][!])*[+]/') && $id_dhAtu==="aniw")//in_array($fo,array("gfhU!","bfhU!","tfhU!","stfhU!","guhU!")) )
+	{
+		$text = one(array("+cli+"),array("+sa+"),0);
 		storedata('3.1.45','sa',0);
 		$ksa=1;
 		$luGset=7;
@@ -1330,15 +1339,6 @@ if ($lakAra==="luN")
 		storedata('3.1.57','sa',0);
 		$it = array_merge($it,array("N"));
 		$itpratyaya = array_merge($itpratyaya,array("N"));
-	}
-	/* puSAdidyutAdilRditaH parasmaipadeSu (3.1.55) */
-	elseif ( ( (in_array($fo,$divAdi_puSAdi)&&$verbset==="divAdi")||(in_array($fo,$bhvAdi_dyutAdi)&&$verbset==="BvAdi")||in_array($fo,$lRdit)) && $fo!=="Apx!" && in_array($so,$tis) )
-	{
-		$text = one(array("+cli+"),array("+aN+"),0);
-		storedata('3.1.55','sa',0);
-		$it = array_merge($it,array("N"));
-		$itpratyaya = array_merge($itpratyaya,array("N"));
-		$aG=1;
 	}
 	/* nonayatidhvanayatyelayatyardayatibhyaH (3.1.51) */
 	elseif ( ends(array($fo),array("Una","Dvana","ila!","arda!"),2) && in_array($so,$tiG) && $_GET['cond55']==="1")
@@ -4382,6 +4382,7 @@ if ( ((in_array($fo,array("lI")) && $verbset==="kryAdi") || (in_array($fo,array(
 		storedata('3.1.32','pa',0);
 	}
 }
+echo $id_dhAtu, $id_pratyaya;
 /* patch for vI thali */
 // See page 83 of SK part 2
 if ($lakAra==="liw" && $so==="sip" && arr($text,'/[iIuUfFxXeEoO]\+/') && sub(prat('ic'),array("+"),$tiG1,0) && $fo==="aja!")
@@ -4421,13 +4422,14 @@ if ($id_dhAtu==="vew" && $id_pratyaya==="sew" && !($yAsuT===1 && $lakAra==="ASIr
 	storedata('7.2.35','sa',0);
 	$Agama=array_merge($Agama,array("iw"));
 }
+/*
 if(in_array("3.1.45",sutrasfromstoredata()) && $ksa===1 && arr(array($verb_without_anubandha),'/[Szsh]$/'))
 {
 	$text = change('/(['.pc('hl').'][+])(['.pc('vl').'])/','$1i$2');
 	$text = one(array("+isa+"),array("+sa+"),0);
 	storedata('7.2.35','sa',0);
 	$Agama=array_merge($Agama,array("iw"));
-}
+}*/
 /* valAdAvArdhadhAtuke vikalpa iSyate (vA) */
 // See page 83 of SK part 2
 if ($fo==="aja!" && $ardhadhatuka===1 && sub(array("vi+vI","vI","ve","vE"),array("+","+i"),prat('vl'),0))
