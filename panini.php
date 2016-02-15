@@ -2191,7 +2191,7 @@ if (arr($text,'/\+Ri[c]{0,1}\+/'))
 		$text=three(array("i","u","f","x"),$hl,$hlam,array("e","o","ar","al"),$hl,$hlam,0);
 		storedata('7.3.86','sa',0);
 	}
-	if(arr($text,'/['.pc('hl').']([+]*)i\+/') && !in_array($lakAra,array("ASIrliN")) && $caG!==1 && $aG!==1)
+	if(arr($text,'/['.pc('hl').']([+]*)i\+/') && !in_array($lakAra,array("ASIrliN")) && $caG!==1 && $aG!==1 && $id_dhAtu!=="aniw")
 	{
 		$text=two($hl,array("+i+"),$hl,array("e+"),0);
 		$text=two($hl,array("i+"),$hl,array("e+"),0);
@@ -4382,7 +4382,6 @@ if ( ((in_array($fo,array("lI")) && $verbset==="kryAdi") || (in_array($fo,array(
 		storedata('3.1.32','pa',0);
 	}
 }
-echo $id_dhAtu, $id_pratyaya;
 /* patch for vI thali */
 // See page 83 of SK part 2
 if ($lakAra==="liw" && $so==="sip" && arr($text,'/[iIuUfFxXeEoO]\+/') && sub(prat('ic'),array("+"),$tiG1,0) && $fo==="aja!")
