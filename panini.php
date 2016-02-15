@@ -3766,10 +3766,10 @@ if (in_array($fo,array("Brasja!")) && $ardhadhatuka===1 && sub(array("Brasj"),ar
     $text = three(array("Brasj"),array("+"),blank(0),array("Barj"),array("+"),blank(0),1);
 	storedata('6.4.47','sa',0);
 }
-/* liGsicAvAtmanepadeSu (1.2.12) */
+/* liGsicAvAtmanepadeSu (1.2.11) */
 if (in_array($so,$taG) && ($sic===1||$sIyuT===1) && ($id_dhAtu==="aniw" || $id_pratyaya==="aniw") && arr($text,'/\+s/') && sub($ik,$hlplus,array("s"),0) )
 {
-	storedata('1.2.12','pa',0);
+	storedata('1.2.11','pa',0);
 	$itpratyaya = array_merge($itpratyaya,array("k"));
 	$it = array_merge($it,array("k"));
 	$kGiti=1;
@@ -3856,7 +3856,6 @@ if ($lakAra==="liw" && (in_array($fo,array("f","fCa!")) || ends(array($fo),array
 	$text = two(array("A+f","A+fcC","A+nf","A+nfcC","F"),array("+"),array("A+ar","A+arcC","A+nar","A+narcC","ar"),array("+"),0);
 	storedata('7.4.11','sa',0);
 }
-echo $vijait;
 /* udoSThyapUrvasya (7.1.102) */
 if ( in_array($fo,array("pF","PF","bF","BF","mF")) && sub(array("pipar","biBar","mimar","pF","BF","mF"),array("+"),$apit_sArvadhAtuka_pratyayas,0))
 {
@@ -3921,13 +3920,6 @@ elseif ( $atolopa!==1 && $ardhadhatuka===1 && arr($text,'/[iufxIUFX]['.pc('hl').
 elseif ( $atolopa!==1 && ($sarvadhatuka===1 || $ardhadhatuka===1) && arr($text,'/[iufx]['.pc('hl').'][+]$/') && pr2(array("i","u","f","x"),$hlplus,blank(0),array("e","o","ar","al"),$hlplus,blank(0),$text)!==$text  && $didhI!==1 && $ksa!==1 && $vijait!==1 && !($verbset==="tudAdi" && $sarvadhatuka===1) && $caG!==1 && $aG!==1 && $kGiti!==1 && $vijait!==1)
 {
     $text=pr2(array("i","u","f","x"),$hlplus,blank(0),array("e","o","ar","al"),$hlplus,blank(0),$text);
-	storedata('7.3.86','sa',0);
-}
-/* pugantalaghUpadhasya ca (7.3.86) */
-elseif (in_array($fo,array("vida!"))  && $didhI!==1 && $ksa!==1 && $vijait!==1 && (pr2(array("vid"),array("+"),$pit_sArvadhAtuka_pratyayas,array("ved"),array("+"),$pit_sArvadhAtuka_pratyayas,$text)!== $text || pr2(array("vid"),array("+"),blank(0),array("ved"),array("+"),blank(0),$text)!== $text)  && $caG!==1 && $aG!==1)
-{
-    $text=pr2(array("vid"),array("+"),$pit_sArvadhAtuka_pratyayas,array("ved"),array("+"),$pit_sArvadhAtuka_pratyayas,$text);
-    $text=pr2(array("vid"),array("+"),blank(0),array("ved"),array("+"),blank(0),$text);
 	storedata('7.3.86','sa',0);
 }
 /* sArvadhAtukArdhadhAtukayoH (7.3.84) */
