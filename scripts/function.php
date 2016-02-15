@@ -2623,7 +2623,7 @@ function liT_ajAdi()
 		$splitvowel=preg_split('/([aAiIuUfFxXeEoO])/',$parts[0],null,PREG_SPLIT_DELIM_CAPTURE);
 		$split2=preg_split('/(['.pc('hl').'])/',$splitvowel[0],null,PREG_SPLIT_DELIM_CAPTURE);
 		/* liTyabhyAsasyobhayeSAm (6.1.17) */
-		if (in_array($parts[0],array("vac","svap","yaj","vap","vah","vas","vad","ve","hve","Svi","vye","grah","jyA","vay","vyaD","vaS","vyac","vraSc","pracC","Brasj",)) )
+		if (in_array($parts[0],array("vac","svap","yaj","vap","vah","vas","vad","ve","hve","Svi","vye","grah","jyA","vay","vyaD","vaS","vyac","vraSc","pracC","Brasj",)) && $verbset!=="curAdi")
 		{
 			$parts[0]=str_replace(array("vac","svap","yaj","vap","vah","vas","vad","ve","hve","Svi","vye","grah","jyA","vay","vyaD","vaS","vyac","vraSc","pracC","Brasj",),array("uc","sup","ij","up","uh","us","ud","u","hu","Su","vi","gfh","ji","uy","viD","uS","vic","vfSc","pfcC","Bfsj",),$parts[0]);
 			$litya=1;
@@ -2760,14 +2760,14 @@ return $text;
 
 function abhyAsa_halAdi()
 {
-	global $text;	global $caG; global $lakAra; global $fo; global $storedata, $us;
+	global $text;	global $caG; global $lakAra; global $fo; global $storedata, $us, $verbset;
 	foreach ($text as $value)
 	{
 		$parts=explode('+',$value);
 		$splitvowel=preg_split('/([aAiIuUfFxXeEoO])/',$parts[0],null,PREG_SPLIT_DELIM_CAPTURE);
 		$split2=preg_split('/(['.pc('hl').'])/',$splitvowel[0],null,PREG_SPLIT_DELIM_CAPTURE);
 		/* liTyabhyAsasyobhayeSAm (6.1.17) */
-		if (in_array($parts[0],array("vac","svap","yaj","vap","vah","vas","vad","ve","hve","Svi","vye","grah","jyA","vay","vyaD","vaS","vyac","vraSc","pracC","Brasj",)) )
+		if (in_array($parts[0],array("vac","svap","yaj","vap","vah","vas","vad","ve","hve","Svi","vye","grah","jyA","vay","vyaD","vaS","vyac","vraSc","pracC","Brasj",)) && $verbset!=="curAdi")
 		{
 			$parts[0]=str_replace(array("vac","svap","yaj","vap","vah","vas","vad","ve","hve","vye","grah","jyA","vay","vyaD","vaS","vyac","vraSc","pracC","Brasj",),array("uc","sup","ij","up","uh","us","ud","u","hu","vi","gfh","ji","uy","viD","uS","vic","vfSc","pfcC","Bfsj",),$parts[0]);
 			$litya=1;
