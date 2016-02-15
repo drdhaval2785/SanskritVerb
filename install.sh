@@ -6,3 +6,5 @@ cd SanskritVerb/Data
 #curl -o allsutrani.tar http://www.sanskritdocuments.org/learning_tools/sarvanisutrani/allsutrani.tar
 mkdir allsutrani
 tar -xvf allsutrani.tar -C allsutrani
+mkdir dhaatupatha
+tar zxvf dhaatupatha.tgz -C dhaatupatha

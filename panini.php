@@ -12230,7 +12230,8 @@ if ( arr($text,'/[vy][+]*['.pc('vl').']/') && in_array($so,$tiG) && in_array("6.
 	storedata('1.1.58-1','pa',0);
 }
 /* lopo vyorvali (6.1.66) */
-elseif ( arr($text,'/[vy][+]*['.pc('vl').']/') && in_array($so,$tiG) && !in_array("6.1.77",sutrasfromstoredata()))
+// Not a very good solution. The second member is there to prevent application of this rule in 'vraj'
+elseif ( arr($text,'/[vy][+]*['.pc('vl').']/') && !arr(array($fo),'/vr/') && in_array($so,$tiG) && !in_array("6.1.77",sutrasfromstoredata()))
 {
     $text=change('/([vy])([+]*['.pc('vl').'])/','$2');
 	storedata('6.1.66','sa',0);
