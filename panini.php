@@ -4150,7 +4150,7 @@ if (arr($text,'/\+nA\+yA/') && sub(array("+"),array("nA+yA"),blank(0),0) ) # htt
     $text=one(array("+nA+yA"),array("+nI+yA"),0);
 	storedata('6.4.113','sa',0);
 }
-if (arr($text,'/A\+/') && sub(array("A"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,0) && (in_array("N",$it)||in_array("k",$it)) && $abhyasta===1 && $ghu!==1 && $sarvadhatuka===1)
+if (arr($text,'/A\+/') && !arr($text,'/[+]yA[+]/') && sub(array("A"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,0) && (in_array("N",$it)||in_array("k",$it)) && $abhyasta===1 && $ghu!==1 && $sarvadhatuka===1)
 {
     $text=three(array("A"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("I"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,0);
 	storedata('6.4.113','sa',0);
@@ -4158,7 +4158,7 @@ if (arr($text,'/A\+/') && sub(array("A"),array("+"),$halAdi_apit_sArvadhAtuka_pr
 // Patch to remove + sign after sIyuT
 $text = two(array("+Iy+"),$ac,array("+Iy"),$ac,0);
 /* znA'bhyastayorAtaH (6.4.112) */
-if (arr($text,'/A[+]/') && $abhyasta===1 && pr2(array("A"),array("+"),$apit_sArvadhAtuka_pratyayas,array(""),array("+"),$apit_sArvadhAtuka_pratyayas,$text)!==$text && !arr($text,'/[+]yA[+][mv]a/') && $sarvadhatuka===1)
+if (arr($text,'/A[+]/') && !arr($text,'/[+]yA[+]/') && $abhyasta===1 && pr2(array("A"),array("+"),$apit_sArvadhAtuka_pratyayas,array(""),array("+"),$apit_sArvadhAtuka_pratyayas,$text)!==$text && !arr($text,'/[+]yA[+][mv]a/') && $sarvadhatuka===1)
 {
 	if ($so==="sip" && $lakAra==="liw")
 	{
