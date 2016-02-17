@@ -1095,8 +1095,13 @@ if (in_array($so,$tiG) && $pada==="pratyaya" && $lakAra==="laN")
 {
 	storedata('3.2.1','pa',0);
 }
+/* vidhinimantraNAmantraNAdhISTasaMpraznaprArthaneSu liG (3.3.161) */
+if (in_array($so,$tiG) && $pada==="pratyaya" && in_array($lakAra,array("viDiliN")))
+{
+	storedata('3.3.161','pa',0);
+}
 /* icCArtheSu liNloTau (3.3.157) */
-if (in_array($so,$tiG) && $pada==="pratyaya" && in_array($lakAra,array("viDiliN","low")))
+if (in_array($so,$tiG) && $pada==="pratyaya" && in_array($lakAra,array("low")))
 {
 	storedata('3.3.157','pa',0);
 }
