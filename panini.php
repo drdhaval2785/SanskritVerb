@@ -4150,9 +4150,9 @@ if (arr($text,'/\+nA\+/') && sub(array("+"),array("nA+"),$halAdi_apit_sArvadhAtu
     $text=two(array("+nA+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("+nI+"),$halAdi_apit_sArvadhAtuka_pratyayas,0);
 	storedata('6.4.113','sa',0);
 }
-if (arr($text,'/\+nA\+yA/') && sub(array("+"),array("nA+yA"),blank(0),0) ) # https://github.com/drdhaval2785/SanskritVerb/issues/335
+if (arr($text,'/\+nA\+y[A+]/') && sub(array("+"),array("nA+yA","nA+y+am"),blank(0),0) ) # https://github.com/drdhaval2785/SanskritVerb/issues/335
 {
-    $text=one(array("+nA+yA"),array("+nI+yA"),0);
+    $text=one(array("+nA+yA","nA+y+am"),array("+nI+yA","nI+yam"),0);
 	storedata('6.4.113','sa',0);
 }
 if (arr($text,'/A\+/') && !arr($text,'/[+]yA[+]/') && sub(array("A"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,0) && (in_array("N",$it)||in_array("k",$it)) && $abhyasta===1 && $ghu!==1 && $sarvadhatuka===1)
