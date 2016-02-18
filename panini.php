@@ -3392,6 +3392,7 @@ if ( arr($text,'/a[+]iy[+]['.pc('vl').']/') && in_array($so,$tiG) )
     $text=two(array("a+i+"),prat('vl'),array("e"),prat('vl'),0);
 	storedata('6.1.87','sa',0);
 }
+print_r($itpratyaya);
 if ($debug===1) {dibug("2900");}
 /* Ato lopa iTi ca (6.4.64) */
 if ( (in_array("N",$itpratyaya)||in_array("k",$itpratyaya) )  && $lakAra!=="" && $caG===1 && sub(array("A+"),array("a+"),blank(0),0) )
@@ -3400,7 +3401,7 @@ if ( (in_array("N",$itpratyaya)||in_array("k",$itpratyaya) )  && $lakAra!=="" &&
 	storedata('6.4.64','sa',0);
 }
 /* Ato lopa iTi ca (6.4.64) */
-elseif (arr($text,'/[A][+]['.pc('ac').']/') && (in_array("N",$itpratyaya)||in_array("k",$itpratyaya) ) && pr2(array("A"),array("+"),$tiG1,array("A"),array("+"),$tiG1,$text)!==$text && $lakAra!=="")
+elseif (arr($text,'/[A][+]['.pc('ac').']/') && !arr($text,'/nA[+]yA[+]am$/') && (in_array("N",$itpratyaya)||in_array("k",$itpratyaya) ) && pr2(array("A"),array("+"),$tiG1,array("A"),array("+"),$tiG1,$text)!==$text && $lakAra!=="")
 {
     $text=pr2(array("A"),array("+"),$tiG1,array(""),array("+"),$tiG1,$text);
     $text=two($hl,array("+sic+"),$hl,array("A+sic+"),0);
