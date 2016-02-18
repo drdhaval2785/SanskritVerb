@@ -11772,7 +11772,8 @@ $text = one(array("+"),array(""),0);
 $ras = '/([rzfF])([aAiIuUfFxXeoEOhyvrkKgGNpPbBmM+]*)([n])/';
 $rasend = '/([rzfF])([aAiIuUfFxXeoEOhyvrkKgGNpPbBmM+]*)([n])$/';
 $rasgrep= '/([rzfF][aAiIuUfFxXeoEOhyvrkKgGNpPbBmM+]*[n])/';
-$ras1 = '$1$2R'; 
+$ras1 = '$1$2R';
+echo $hohante, $AcArya;
 /* AcAryAdaNatvaM ca (vA 2477) */
 if (arr($text,'/AcAryAnI/'))
 {
@@ -11785,13 +11786,7 @@ elseif (arr($text,'/kzuBn/') && $fo==="kzuBa!" && $verbset==="kryAdi")
 }
 /* aTkupvAGnumvyavAye'pi (8.4.2) and na padAntasya (8.4.37) */
 /* RvarNAnnasya NatvaM vAcyam (vA 4969) */
-/* na padAntasya 8.4.37) */
-// The issue is identifying samAnapada. Can't be coded properly as of now.
-elseif (arr($text,$rasend) && $hohante===0 && $AcArya===0 )
-{
-	storedata('8.4.37','pa',0);
-}
-elseif (arr($text,$ras) && $hohante===0 && $_GET['cond2_16_2_1']!=="2" && !sub(array("UruBinn"),blank(0),blank(0),0) )
+elseif (arr($text,$ras) && $hohante!==1 && $_GET['cond2_16_2_1']!=="2" && !sub(array("UruBinn"),blank(0),blank(0),0) )
 { 
 	$inloop=$text;
     foreach ($text as $value)
@@ -11826,6 +11821,12 @@ elseif (arr($text,$ras) && $hohante===0 && $_GET['cond2_16_2_1']!=="2" && !sub(a
 			storedata('8.4.2','sa',0);
 		}
 	}
+}
+/* na padAntasya 8.4.37) */
+// The issue is identifying samAnapada. Can't be coded properly as of now.
+if (arr($text,$rasend) && $hohante!==1 && $AcArya!==1 )
+{
+	storedata('8.4.37','pa',0);
 }
 if ($debug===1) {dibug("11300");}
 /* stoH zcunA zcuH (8.4.40) */
