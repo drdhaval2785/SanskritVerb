@@ -1943,7 +1943,7 @@ if ( in_array($so,array("Ji")) && $lakAra==="laN" && arr($text,'/A\+Ji/') && !ar
 	storedata('3.4.111','sa',0);
 }
 /* jhasya ran (3.4.105) */
-if (in_array($so,array("Ja")) && in_array($lakAra,array("viDiliN","ASIrliN")) && pr2(array("+"),array("Ja"),blank(0),array("+"),array("ran"),blank(0),$text)!==$text)
+if (in_array($so,array("Ja")) && in_array($lakAra,array("viDiliN","ASIrliN")) && pr2(array("+"),array("Ja"),blank(0),array("+"),array("ran"),blank(0),$text)!==$text && $jhasyaran!==1)
 {
     $text=pr2(array("+"),array("Ja"),blank(0),array("+"),array("ran"),blank(0),$text);
 	storedata('3.4.105','sa',0);
@@ -1978,7 +1978,7 @@ elseif ( in_array($so,array("Ja")) && preg_match('/[A]$/',$verb_without_anubandh
 	echo "no jhontaH";
 }
 /* jho'ntaH (7.1.3) */
-elseif (in_array($so,array("Ja")) && $lakAra!=="liw") // because liTastajhayorezirec.
+elseif (in_array($so,array("Ja")) && $lakAra!=="liw" && $jhasyaran!==1) // because liTastajhayorezirec.
 {
     $text=two(array("+"),array("Ja"),array("+"),array("anta"),0);
 	storedata('7.1.3','sa',0);
