@@ -5570,7 +5570,8 @@ if (arr($text,'/daridrA\+/') && in_array($fo,array("daridrA")) && $ardhadhatuka=
 }
 /* apadAntasya mUrdhanyaH (8.3.55), iNkoH (8.3.57) and AdezapratyayayoH (8.3.59) */
 // Not coded perfectly. This is only for tiG pratyayas.
-if(arr($text,'/[iIuUfFxXeoEOhyvrlkKgGN]\+s/') && !arr($text,'/[iIuUfFxXeoEOhyvrl]\+s$/') && in_array($so,$tiG) )
+print_r($text);
+if(arr($text,'/[iIuUfFxXeoEOhyvrlkKgGN]\+s/') && !arr($text,'/[iIuUfFxXeoEOhyvrl]\+s$/') && in_array($so,$tiG) && !(arr(array($fo),'/^s/') && $abhyAsa===1) )
 {
 	storedata('8.3.55','pa',0);
 	storedata('8.3.57','pa',0);
@@ -5578,6 +5579,7 @@ if(arr($text,'/[iIuUfFxXeoEOhyvrlkKgGN]\+s/') && !arr($text,'/[iIuUfFxXeoEOhyvrl
 	$text = change('/[+]zIs/','+zIz');
 	storedata('8.3.59','sa',0);
 }
+print_r($text);
 /* For verbs - remove all + marks. */
 if(in_array($so,$tiG))
 {
