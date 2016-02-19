@@ -5578,6 +5578,7 @@ if(arr($text,'/[iIuUfFxXeoEOhyvrlkKgGN][+]*s/') && !arr($text,'/[iIuUfFxXeoEOhyv
 	$text = two($iN1,array("+s","is"),$iN1,array("+z","+iz"),0);
 	$text = change('/[+]zIs/','+zIz');
 	$text = change('/[+]izIs/','+izIz');
+	$text = change('/[+]ise/','+ize');
 	storedata('8.3.59','sa',0);
 }
 /* For verbs - remove all + marks. */
