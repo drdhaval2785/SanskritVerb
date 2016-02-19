@@ -3744,9 +3744,9 @@ elseif ( $sarvadhatuka===1 && $jherjus!==1 && ((arr($text,'/['.pc('ac').'][+][n]
 	storedata('6.4.87','sa',0);
 }
 /* zIGaH sArvadhAtuke guNaH (7.4.21) */
-if ( in_array($so,$tiG) && $sarvadhatuka===1 && arr($text,'/SI/') && sub(array("SI"),array("+"),$sArvadhAtuka_pratyayas,0) )
+if ( in_array($so,$tiG) && $sarvadhatuka===1 && arr($text,'/SI/') && sub(array("SI"),array("+"),blank(0),0) )
 {
-    $text=three(array("SI"),array("+"),$sArvadhAtuka_pratyayas,array("Se"),array("+"),$sArvadhAtuka_pratyayas,0);
+    $text=two(array("SI"),array("+"),array("Se"),array("+"),0);
 	storedata('7.4.21','sa',0);
 }
 /* bahulaM Candasi */
