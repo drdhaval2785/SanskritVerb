@@ -2275,6 +2275,9 @@ function toiast($text)
 function Adezapratyaya($text)
 {
 	global $ksa, $SaHsaH, $sic, $syatAsI, $us, $fo;
+	$text = change('/([iIuUfFxXeEoOhyvrlkKgGN][+]*)s(['.pc('al').'])/','$1z$2');
+	$text = change('/[+]zIs/','+zIz');
+	/*
 	foreach ($text as $value)
 	{
 		if (preg_match('/[iIuUfFxXeEoOhyvrlkKgGN][+][s]/',$value) && ($ksa===1 || $SaHsaH===1 || $sic===1 || $syatAsI===1 || $us!=="" || $fo==="Sru")) // patch for ksa
@@ -2309,6 +2312,8 @@ function Adezapratyaya($text)
 	}
 	$text = $output;
     return $output;
+	*/
+	return $text;
 }
 
 
