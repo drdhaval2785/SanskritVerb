@@ -3392,7 +3392,6 @@ if ( arr($text,'/a[+]iy[+]['.pc('vl').']/') && in_array($so,$tiG) )
     $text=two(array("a+i+"),prat('vl'),array("e"),prat('vl'),0);
 	storedata('6.1.87','sa',0);
 }
-print_r($itpratyaya);
 if ($debug===1) {dibug("2900");}
 /* Ato lopa iTi ca (6.4.64) */
 if ( (in_array("N",$itpratyaya)||in_array("k",$itpratyaya) )  && $lakAra!=="" && $caG===1 && sub(array("A+"),array("a+"),blank(0),0) )
@@ -4760,6 +4759,13 @@ elseif ( arr($text,'/^['.pc('hl').'][a][+]['.pc('hl').'][a]['.pc('hl').'][+]/') 
     $text=change('/^(['.pc('hl').'][a][+])(['.pc('hl').'])([a])(['.pc('hl').'][+])/','$2e$4');
 	$text=change('/^(['.pc('hl').'])([e])(['.pc('hl').'][+][T][a]$)/','$1a+$1a$3'); // for thal.
 	storedata('6.4.120','sa',0);
+}
+/* zAsa idaGhaloH (6.4.34) */
+if (in_array($fo,array("SAsu!")) && arr($text,'/SAs[+]['.pc('hl').']/') && ends($itpratyaya,array("k","N"),2) )
+{
+    $text = three(array("SAs"),array("+"),$hl,array("Sis"),array("+"),$hl,0);
+    $text = three(array("Sis"),array("+"),array("tu"),array("SAs"),array("+"),array("tu"),0);
+	storedata('6.4.34','sa',0);
 }
 /* zAsivasighasInAM ca (8.3.60) */
 if ( arr($text,'/[G][s][+]/') && ends(array($fo),array("Gasa!","ada!"),4) && in_array($so,$tiG) )
@@ -11773,7 +11779,6 @@ $ras = '/([rzfF])([aAiIuUfFxXeoEOhyvrkKgGNpPbBmM+]*)([n])/';
 $rasend = '/([rzfF])([aAiIuUfFxXeoEOhyvrkKgGNpPbBmM+]*)([n])$/';
 $rasgrep= '/([rzfF][aAiIuUfFxXeoEOhyvrkKgGNpPbBmM+]*[n])/';
 $ras1 = '$1$2R';
-echo $hohante, $AcArya;
 /* AcAryAdaNatvaM ca (vA 2477) */
 if (arr($text,'/AcAryAnI/'))
 {
