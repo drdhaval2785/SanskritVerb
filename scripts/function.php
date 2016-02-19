@@ -2279,7 +2279,7 @@ function Adezapratyaya($text)
 	{
 		if (preg_match('/[iIuUfFxXeEoOhyvrlkKgGN][+][s]/',$value) && ($ksa===1 || $SaHsaH===1 || $sic===1 || $syatAsI===1 || $us!=="" || $fo==="Sru")) // patch for ksa
 		{
-			$val[]=preg_replace('/([iIuUfFxXeEoOhyvrlkKgGN])([+][s])/',"$1+z",$value);			
+			$val[]=preg_replace('/([iIuUfFxXeEoOhyvrlkKgGN])([+][s])/',"$1+z",$value);
 		}
 		elseif (preg_match('/^[s]/',$value) && ends(array($us),prat('ik'),1))
 		{
@@ -2307,6 +2307,7 @@ function Adezapratyaya($text)
 	{
 		$output = $text;
 	}
+	$text = $output;
     return $output;
 }
 
