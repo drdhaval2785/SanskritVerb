@@ -2830,28 +2830,18 @@ function abhyAsa_halAdi()
 			$parts[0]=$split2[1].$splitvowel[1];
 			$halAdi=1;
 		}
-		/* halAdiH zeSaH (7.4.60) */
-		if ($halAdi===1)
-		{
-			storedata('7.4.60','sa',0);
-		}
-		/* zarpUrvAH khayaH (7.4.61) */
-		if ($zar===1)
-		{
-			storedata('7.4.61','sa',0);
-		}
-		/* urat (7.4.66) */
-		if (in_array($splitvowel[1],array("f","F")) )// && !preg_match('/[Szs]['.pc('Ky').'][fF]/',$parts[0]))
-		{
-			$parts[0]=str_replace(array("f","F"),array("ar","ar"),$parts[0]);
-			$urat=1;
-			$splitvowel=preg_split('/([a])/',$parts[0],null,PREG_SPLIT_DELIM_CAPTURE);
-			$split2=preg_split('/(['.pc('hl').'])/',$splitvowel[0],null,PREG_SPLIT_DELIM_CAPTURE);
-			$parts[0]=$split2[1].$splitvowel[1];
-			$halAdi=1;
-			$value = implode('+',$parts);
-		}
-		$val[]=implode('+',$parts);
+		$val[] = implode('+',$parts);
+ 	}
+	$text = $val;
+	/* halAdiH zeSaH (7.4.60) */
+	if ($halAdi===1)
+	{
+		storedata('7.4.60','sa',0);
+	}
+	/* zarpUrvAH khayaH (7.4.61) */
+	if ($zar===1)
+	{
+		storedata('7.4.61','sa',0);
 	}
 	$text = $val;
 	/* urat (7.4.66) */
