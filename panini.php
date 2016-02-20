@@ -3801,6 +3801,13 @@ if ( in_array($so,$taG) && ($sic===1||$sIyuT===1) && (in_array($fo,array("vfN","
     $text=one(array("+"),array("+i"),1);
 	storedata('7.2.42','sa',0);
 	$Agama=array_merge($Agama,array("iw"));
+	/* sArvadhAtukArdhadhAtukayoH (7.3.84) */
+	// patch because it applies only before aniT in this case. for iDAgama it is not applicable.
+	if (arr($text,'/[fF]\+is/') )
+	{
+		$text=two(array("f","F"),array("+is"),array("ar","ar"),array("+is"),0);
+		storedata('7.3.84','sa',0);
+	}
 }
 /* Rtazca saMyogAdeH (7.2.43) */
 if (arr($text,'/['.pc('hl').']['.pc('hl').'][f][+]/') && in_array($so,$taG) && ($sic===1||$sIyuT===1) && $ardhadhatuka===1)
@@ -4337,13 +4344,6 @@ if ( in_array($so,$taG) && ($sic===1||$sIyuT===1) && ends(array($verb_without_an
 {
 	storedata('1.2.12','pa',0);
 	$kGiti=1;
-	/* sArvadhAtukArdhadhAtukayoH (7.3.84) */
-	// patch because it applies only before aniT in this case. for iDAgama it is not applicable.
-	if (arr($text,'/[fF]\+isI/') && ($sarvadhatuka===1 || $ardhadhatuka===1) && !($ad===1 && sub(array("i","I","u","U","f","F","x","X"),array("+"),$ajAdi_apit_sArvadhAtuka_pratyayas,0) )  && $didhI!==1 && $bhUsuvo!==1)
-	{
-		$text=two(array("f","F"),array("+isI"),array("ar","ar"),array("+isI"),0);
-		storedata('7.3.84','sa',0);
-	}
 }
 /* tAsi ca klRpaH (7.2.60) */
 // tAsi done here. sakArAdi elsewhere.
@@ -5165,9 +5165,9 @@ elseif ( (in_array($fo,array("vfN","vfY")) || ends(array($verb_without_anubandha
 	storedata('7.2.38','sa',0);
 }
 /* RRta iddhAtoH (7.1.100) */
-if (arr($text,'/F\+sI/') && ($sarvadhatuka===1 || $ardhadhatuka===1) )
+if (arr($text,'/F\+s/') && ($sarvadhatuka===1 || $ardhadhatuka===1) )
 {
-    $text=three(array("F"),array("+"),array("sI"),array("ir"),array("+"),array("sI"),0);
+    $text=three(array("F"),array("+"),array("s"),array("ir"),array("+"),array("s"),0);
 	storedata('7.2.100','sa',0);
 	/* hali ca (8.2.77) */
 	if (arr($text,'/ir\+sI/') && in_array($so,$tiG) )
