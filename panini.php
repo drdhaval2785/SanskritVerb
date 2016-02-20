@@ -3760,10 +3760,17 @@ if (arr($text,'/Se/') && sub(array("Se"),array("+"),array("ate","ata","atAm"),0)
 /* sRjidRzorjhalyamakiti (6.1.58) */ 
 if (in_array($fo,array("sfja!","dfSi!r")) && !in_array("k",$itpratyaya) && sub(array("sfj","dfS"),array("+"),prat('Jl'),0))
 { 
+	// Patch for optional iDAgama in thal pratyaya.
+	if (sub(array("sfj+Ta","dfS+Ta"),blank(0),blank(0),0))
+	{
+		$text = three(array("sfj","dfS"),array("+"),array("Ta"),array("sfj","dfS"),array("+"),array("iTa"),1);
+		storedata('7.2.35','sa',0);
+	}
     $text = three(array("sfj","dfS"),array("+"),prat('Jl'),array("sfaj","dfaS"),array("+"),prat('Jl'),0);
 	storedata('6.1.58','sa',0);
     $text = three(array("sfaj","dfaS"),array("+"),prat('Jl'),array("sraj","draS"),array("+"),prat('Jl'),0);
 	storedata('6.1.77','sa',0);
+	$sRjidRzo=1; $id_dhAtu="aniw";
 }
 /* bhrasjo ropadhayoH ramanyatarasyAm (6.4.47) */ 
 if (in_array($fo,array("Brasja!")) && $ardhadhatuka===1 && sub(array("Brasj"),array("+"),blank(0),0) )
@@ -3888,7 +3895,7 @@ elseif ($atolopa!==1 && !($verbset==="tudAdi" && $sarvadhatuka===1) && ($sarvadh
 elseif ($atolopa!==1 && $ardhadhatuka===1 && $kGiti!==1  && $didhI!==1 && $vijait!==1 && $sIyuT!==1 && $ksa!==1 && $vijait!==1&& !in_array("k",$itpratyaya) && !in_array("N",$itpratyaya) && arr($text,'/[iufx]([+]*)['.pc('hl').']\+/') && pr2(array("i","u","f","x"),$hlplus,$ArdhadhAtuka_tiG_pratyayas,array("e","o","ar","al"),$hlplus,$ArdhadhAtuka_tiG_pratyayas,$text)!==$text  && $caG!==1 && $aG!==1 && $kGiti!==1 && $vijait!==1)
 {
     $text=pr2(array("i","u","f","x"),$hlplus,$ArdhadhAtuka_tiG_pratyayas,array("e","o","ar","al"),$hlplus,$ArdhadhAtuka_tiG_pratyayas,$text);
-	$text = three(array("GarR","tarR","arR","kzeR",),array("+"),array("sta","sTAs"),array("GfR","tfR","fR","kziR"),array("+"),array("sta","sTAs"),1); // see sahajabodha part 2 page 250.
+	$text = three(array("GarR","tarR","arR","kzeR"),array("+"),array("sta","sTAs"),array("GfR","tfR","fR","kziR"),array("+"),array("sta","sTAs"),1); // see sahajabodha part 2 page 250.
 	storedata('7.3.86','sa',0);
 }
 /* nAbhyastasyAci piti sArvadhAtuke (7.3.87) */
@@ -5568,7 +5575,6 @@ if (arr($text,'/daridrA\+/') && in_array($fo,array("daridrA")) && $ardhadhatuka=
     $text=one(array("daridr+s"),array("daridrA+s"),0);
 	storedata('6.4.114-1','sa',0);	
 }
-print_r($text);
 /* apadAntasya mUrdhanyaH (8.3.55), iNkoH (8.3.57) and AdezapratyayayoH (8.3.59) */
 // Not coded perfectly. This is only for tiG pratyayas.
 if(arr($text,'/[iIuUfFxXeoEOhyvrlkKgGN][+]*s/') && !arr($text,'/[iIuUfFxXeoEOhyvrl]\+s$/') && in_array($so,$tiG) && !(arr(array($fo),'/^s/') && $abhyAsa===1) )
