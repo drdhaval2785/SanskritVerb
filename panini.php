@@ -1249,7 +1249,7 @@ if ($lakAra==="luN")
 		$aG=1;
 	}
 	/* zala igupadhAdaniTaH ksaH (3.1.45) */
-	elseif (arr($text,'/[^+]*[iIuUfFx]['.pc('hl').'](['.pc('ac').'][!])*[+]/') && $id_dhAtu==="aniw")//in_array($fo,array("gfhU!","bfhU!","tfhU!","stfhU!","guhU!")) )
+	elseif (arr($text,'/[^+]*[iIuUfFx]['.pc('Sl').'](['.pc('ac').'][!])*[+]/') && $id_dhAtu==="aniw")//in_array($fo,array("gfhU!","bfhU!","tfhU!","stfhU!","guhU!")) )
 	{
 		$text = one(array("+cli+"),array("+sa+"),0);
 		storedata('3.1.45','sa',0);
@@ -3935,7 +3935,7 @@ elseif ( $atolopa!==1 && ($sarvadhatuka===1 || $ardhadhatuka===1) && arr($text,'
 	storedata('7.3.86','sa',0);
 }
 /* sArvadhAtukArdhadhAtukayoH (7.3.84) */
-elseif ($didhI!==1 && $bhUsuvo!==1  && $kGiti!==1 && arr($text,'/nu/') && pr2(array("nu+"),$pit_sArvadhAtuka_pratyayas,blank(0),array("no+"),$pit_sArvadhAtuka_pratyayas,blank(0),$text) !== $text )
+elseif ($didhI!==1 && $bhUsuvo!==1  && arr($text,'/nu/') && pr2(array("nu+"),$pit_sArvadhAtuka_pratyayas,blank(0),array("no+"),$pit_sArvadhAtuka_pratyayas,blank(0),$text) !== $text )
 {
     $text=pr2(array("nu+"),$pit_sArvadhAtuka_pratyayas,blank(0),array("no+"),$pit_sArvadhAtuka_pratyayas,blank(0),$text);    
 	storedata('7.3.84','sa',0);
