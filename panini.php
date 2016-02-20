@@ -5575,9 +5575,10 @@ if (arr($text,'/daridrA\+/') && in_array($fo,array("daridrA")) && $ardhadhatuka=
     $text=one(array("daridr+s"),array("daridrA+s"),0);
 	storedata('6.4.114-1','sa',0);	
 }
+print_r($text);
 /* apadAntasya mUrdhanyaH (8.3.55), iNkoH (8.3.57) and AdezapratyayayoH (8.3.59) */
 // Not coded perfectly. This is only for tiG pratyayas.
-if(arr($text,'/[iIuUfFxXeoEOhyvrlkKgGN][+]*s/') && !arr($text,'/[iIuUfFxXeoEOhyvrl]\+s$/') && in_array($so,$tiG) && $abhyAsa===1  && !(arr(array($fo),'/^s/') && arr($text,'/[^+]*[+]s/')))
+if(arr($text,'/[iIuUfFxXeoEOhyvrlkKgGN][+]*s/') && !arr($text,'/[iIuUfFxXeoEOhyvrl]\+s$/') && in_array($so,$tiG) && !(arr(array($fo),'/^s/') && arr($text,'/[^+]*[+]s/')))
 {
 	storedata('8.3.55','pa',0);
 	storedata('8.3.57','pa',0);
@@ -5585,6 +5586,13 @@ if(arr($text,'/[iIuUfFxXeoEOhyvrlkKgGN][+]*s/') && !arr($text,'/[iIuUfFxXeoEOhyv
 	$text = change('/[+]zIs/','+zIz');
 	$text = change('/[+]izIs/','+izIz');
 	$text = change('/[+]ise/','+ize');
+	storedata('8.3.59','sa',0);
+}
+if(arr($text,'/[iIuUfFxXeoEOhyvrlkKgGN][+]s/') && ($ksa===1||$sic===1) )
+{
+	storedata('8.3.55','pa',0);
+	storedata('8.3.57','pa',0);
+	$text = two($iN1,array("+s"),$iN1,array("+z"),0);
 	storedata('8.3.59','sa',0);
 }
 /* For verbs - remove all + marks. */
@@ -11670,7 +11678,7 @@ storedata('8.3.36-1','sa',0);
 }
 /* apadAntasya mUrdhanyaH (8.3.55), iNkoH (8.3.57) and AdezapratyayayoH (8.3.59) */
 // Not coded perfectly. This is only according to the need of vibhaktis. 
-if(arr($text,'\+s') && ((sub($iN1,array("+s"),blank(0),0)) &&  (in_array($so,array("Am","sup"))|| in_array(1,$samp)) || ($fo==="adas" && in_array($so,array("Ne","Nasi!","Nas","Am","Ni")))))
+if(arr($text,'\+s') && ((sub($iN1,array("+s"),blank(0),0)) &&  (in_array($so,array("Am","sup"))|| in_array(1,$samp)) || ($fo==="adas" && (in_array($so,array("Ne","Nasi!","Nas","Am","Ni")) || $ksa===1) )))
 {
 $text = two($iN1,array("+s"),$iN1,array("+z"),0);
 storedata('8.3.55','sa',0);
