@@ -2274,9 +2274,11 @@ function toiast($text)
 
 function Adezapratyaya($text)
 {
-	global $ksa, $SaHsaH, $sic, $syatAsI, $us, $fo;
-	$text = change('/([iIuUfFxXeEoOhyvrlkKgGN][+]*)s(['.pc('al').'])/','$1z$2');
-	$text = change('/[+]zIs/','+zIz');
+	global $text, $ksa, $SaHsaH, $sic, $syatAsI, $us, $fo;
+	$text = change('/([iIuUfFxXeEoOhyvrlkKgGN])([+]*)s(['.pc('al').'])/','$1$2z$3');
+	$text = change('/([iIuUfFxXeEoOhyvrlkKgGN][+]*[iI]*)sI/','$1zI');
+	$text = one(array("zIs"),array("zIz"),0);
+	print_r($text);
 	/*
 	foreach ($text as $value)
 	{
