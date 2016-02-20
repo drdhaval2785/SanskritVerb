@@ -1788,7 +1788,6 @@ if (in_array($so,$tiG) && $lakAra!=="" && in_array($fo,array("pA","GrA","DmA","z
     $nomidelision=1; // We will remember this while doing halantyam and prevent halantyam application, because these are not upadeza
 	$vijait=1; // to prevent application of pugantalaghUpadhasya ca.
 }
-print_r($text);
 /* AdirJiTuDavaH (1.3.5) */
 if ((substr($first,0,2) === "Yi" || substr($first,0,2) === "wu" || substr($first,0,2) === "qu") && $pada=== "pratyaya" && in_array($so,$tiG))
 {
@@ -1799,7 +1798,6 @@ if ((substr($first,0,2) === "Yi" || substr($first,0,2) === "wu" || substr($first
     $text = first(array("Yi","wu","qu"),array("","",""),0); // function first removes and replaces specific strings from the words. For details see function.php.
 	storedata('1.3.9','sa',0);
 }
-print_r($text);
 if ($debug===1) {dibug("1600");}
 /* satva vidhi, natva vidhi, numAgama vidhi, anusvArasandhi, parasavarNasandhi, upadhAdIrghavidhi on dhAtus (Acc to sahajabodha) */
 // We are presuming that the verb entered is the verb with anusvAra and it markers, but without accent marks. I will have to revert back to handle without it markers and with accent marks specifically later.
@@ -4184,12 +4182,6 @@ if (arr($text,'/A[+]/') && $abhyasta===1 && pr2(array("A"),array("+"),array("atu
     $text=pr2(array("A"),array("+"),array("atus","aTus","a","ire"),array(""),array("+"),array("atus","aTus","a","ire"),$text);
 	storedata('6.4.112','sa',0);
 }
-/* gamahanajanakhanaghasAM lopaH kGiti (6.4.98) */
-if (in_array($fo,array("gamx!","hana!","jana!","Gasa!","Kanu!","janI!","ada!")) && ends($itpratyaya,array("k","N"),2) && sub(array("gam","Gan","jan","Gas","Kan"),array("+"),$ac,0) && in_array($so,$tiG) && $aG!==1 && !in_array("N",$it))
-{
-    $text=three(array("gam","Gan","jan","Gas","Kan"),array("+"),$ac,array("gm","Gn","jn","Gs","Kn"),array("+"),$ac,0);
-	storedata('6.4.98','sa',0);
-}
 /* aDgArgyagAlavayoH (7.3.99) */
 if (in_array($fo,array("rudi!r","Yizvapa!","zvapa!","Svasa!","prARa!","ana!","jakza!")) && pr2(array("rod","svap","Svas","prAR","an","jakz","rud"),array("+"),array("t","s"),array("rod","svap","Svas","prAR","an","jakz","rud"),array("+"),array("at","as"),$text)!==$text && in_array($so,$tiG) )
 {
@@ -4470,6 +4462,12 @@ elseif (  in_array($so,$tiG)&& $fo==="mfjU!" && (($kGiti===1 && arr($text,'/mfj[
 {
     $text=two(array("mfj"),array("+"),array("mArj"),array("+"),0);
 	storedata('7.2.114','sa',0);
+}
+/* gamahanajanakhanaghasAM lopaH kGiti (6.4.98) */
+if (in_array($fo,array("gamx!","hana!","jana!","Gasa!","Kanu!","janI!","ada!")) && ends($itpratyaya,array("k","N"),2) && sub(array("gam","Gan","jan","Gas","Kan"),array("+"),$ac,0) && in_array($so,$tiG) && $aG!==1)
+{
+    $text=three(array("gam","Gan","jan","Gas","Kan"),array("+"),$ac,array("gm","Gn","jn","Gs","Kn"),array("+"),$ac,0);
+	storedata('6.4.98','sa',0);
 }
 /* gamahanajanakhanaghasAM kGityanaGi (6.4.98) */
 if (in_array($fo,array("hana!","gamx!","jana!","Kanu!","Gasa!","ada!")) && (pr2(array("han","gam","jan","Kan","Gas"),array("+"),$ajAdi_apit_sArvadhAtuka_pratyayas,array("hn","gm","jn","Kn","Gs"),array("+"),$ajAdi_apit_sArvadhAtuka_pratyayas,$text)!==$text || arr($text,'/[+]i[vm]a$/')) && in_array($so,$tiG)  && $aG!==1)

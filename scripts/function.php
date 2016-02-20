@@ -2562,7 +2562,7 @@ function caG_ajAdi()
 			storedata('8.4.54','sa',0);
 			$liT_Adeza=1;
 		}
-		/* abhyAsAcca (7.3.85) */
+		/* abhyAsAcca (7.3.55) */
 		if (in_array($fo,array("hana!")))
 		{
 			foreach ($text as $value)
@@ -2579,7 +2579,7 @@ function caG_ajAdi()
 				}
 			}
 			$text = $val4;
-			storedata('7.3.85','sa',0);
+			storedata('7.3.55','sa',0);
 	}
 return $text;
 }
@@ -2914,7 +2914,7 @@ function abhyAsa_halAdi()
 			storedata('8.4.54','sa',0);
 			$liT_Adeza=1;
 		}
-		/* abhyAsAcca (7.3.85) */
+		/* abhyAsAcca (7.3.55) */
 		if (in_array($fo,array("hana!")))
 		{
 			foreach ($text as $value)
@@ -2931,7 +2931,7 @@ function abhyAsa_halAdi()
 				}
 			}
 			$text=$val4;
-			storedata('7.3.85','sa',0);
+			storedata('7.3.55','sa',0);
 	}
 return $text;
 }
