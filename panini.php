@@ -2048,7 +2048,7 @@ if ((substr($first,0,2) === "Yi" || substr($first,0,2) === "wu" || substr($first
     if(substr($first,0,2) === "Yi") { $itprakriti = array_merge($itprakriti,array("Yi")); }
     if(substr($first,0,2) === "wu") { $itprakriti = array_merge($itprakriti,array("wu")); }
     if(substr($first,0,2) === "qu") { $itprakriti = array_merge($itprakriti,array("qu")); }
-	storedata('1.3.5','sa',0);
+	storedata('1.3.5','pa',0);
     $text = first(array("Yi","wu","qu"),array("","",""),0); // function first removes and replaces specific strings from the words. For details see function.php.
 	storedata('1.3.9','sa',0);
 }
@@ -3532,7 +3532,7 @@ if (arr($text,'/[+][cjYwWqQR]/') && in_array($so,$tiG))
 }
 /* upadeze'janunAsika it (1.3.2)*/ 
 // Patch for sic
-if (arr($text,'/[+][si[+]/') && $sic===1 )
+if (arr($text,'/[+]si[+]/') && $sic===1 )
 {
 	storedata('1.3.2','pa',0);
     $text = one(array("+si+"),array("+s"),0);
