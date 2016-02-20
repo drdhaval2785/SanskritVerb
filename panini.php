@@ -2273,7 +2273,7 @@ if ($lakAra==="liw")
 $svAdiajanta=array("zuY","ziY","SiY","qumiY","ciY","stfY","kfY","vfY","DuY","dUY","wudu","hi","pf","spf","df","ri","kzi","ciri","jiri");
 $svAdihalanta=array_diff($svAdi,$svAdiajanta);
 /* aniditAM hala upadhAyAH kGiti (6.4.24) */ 
-if ( in_array($fo,$aniditverbs) && sub(array("+"),array("Syan","Sna","SnA","Snu","Sa"),array("+"),0)  && $so!=="mahiN" && !in_array("i",$it) && $verbset!=="ruDAdi" && $aniditAm!==1)
+if ( in_array($fo,$aniditverbs) && sub(array("+"),array("Syan","Sna","SnA","Snu","Sa"),array("+"),0) && $so!=="mahiN" && !in_array("i",$it) && $verbset!=="ruDAdi" && $aniditAm!==1)
 {
 	storedata('1.2.4','pa',0);
 	$it = array_merge($it,array("N")); $itpratyaya = array_merge($itpratyaya,array("N")); $Git=1;
@@ -3863,7 +3863,7 @@ if ( $sic===1 && in_array($so,$tis) && sub($ik,array("+"),array("sI","isI","stAm
 	$sicivRddhi=1;
 }
 /* RcCatyRRtAm (7.4.11) */
-if ($lakAra==="liw" && (in_array($fo,array("f","fCa!")) || ends(array($fo),array("F"),1) ) && sub(array("A+f","A+fcC","A+nf","A+nfcC","F"),array("+"),blank(0),0) )
+if ($lakAra==="liw" && (in_array($fo,array("f","fCa!")) || ends(array($verb_without_anubandha),array("F"),1) ) && sub(array("A+f","A+fcC","A+nf","A+nfcC","F"),array("+"),blank(0),0) )
 {
 	$text = two(array("A+f","A+fcC","A+nf","A+nfcC","F"),array("+"),array("A+ar","A+arcC","A+nar","A+narcC","ar"),array("+"),0);
 	storedata('7.4.11','sa',0);
@@ -5577,11 +5577,11 @@ if (arr($text,'/daridrA\+/') && in_array($fo,array("daridrA")) && $ardhadhatuka=
 }
 /* apadAntasya mUrdhanyaH (8.3.55), iNkoH (8.3.57) and AdezapratyayayoH (8.3.59) */
 // Not coded perfectly. This is only for tiG pratyayas.
-if(arr($text,'/[iIuUfFxXeoEOhyvrlkKgGN][+]*s/') && !arr($text,'/[iIuUfFxXeoEOhyvrl]\+s$/') && in_array($so,$tiG) && !(arr(array($fo),'/^s/') && $abhyAsa===1) )
+if(arr($text,'/[iIuUfFxXeoEOhyvrlkKgGN][+]*s/') && !arr($text,'/[iIuUfFxXeoEOhyvrl]\+s$/') && in_array($so,$tiG) && $abhyAsa===1 )
 {
 	storedata('8.3.55','pa',0);
 	storedata('8.3.57','pa',0);
-	$text = two($iN1,array("+s","is"),$iN1,array("+z","+iz"),0);
+	$text = two($iN1,array("+s","+is","+Is"),$iN1,array("+z","+iz","+Iz"),0);
 	$text = change('/[+]zIs/','+zIz');
 	$text = change('/[+]izIs/','+izIz');
 	$text = change('/[+]ise/','+ize');
