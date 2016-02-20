@@ -5482,7 +5482,7 @@ if ( $sic===1 && arr($text,'/[aiufx]\+s/') && sub(array("a","i","u","f","x"),arr
 	storedata('8.2.27','sa',0);
 }
 /* AdezapratyayayoH (8.3.59) */
-if( in_array($so,$tiG) && arr($text,'/([iIuUfFxXeEoOhyvrlkKgGN])([+]*[iI]*)s(['.pc('al').'])/') && !arr($text,'/[+][s]$/') && arr($text,'/s/') && ( $SaHsaH===1 || $sic===1 || $syatAsI===1 || ends(array($us),prat('ik'),1) || $sIyuT===1) && !arr($text,'/\+yAs\+/') )
+if( in_array($so,$tiG) && arr($text,'/([iIuUfFxXeEoOhyvrlkKgGN])([+]*[iI]*)s(['.pc('al').'])/') && !arr($text,'/[+][s]$/') && arr($text,'/s/') && ( $SaHsaH===1 || $sic===1 || $syatAsI===1 || ends(array($us),prat('ik'),1) || $sIyuT===1) && !arr($text,'/\+yAs\+/') && !(arr(array($verb_without_anubandha),'/^s/') && arr($text,'/[^+]*[+]s/')) )
 {
 	$text = change('/([iIuUfFxXeEoOhyvrlkKgGN])([+]*)s(['.pc('al').'])/','$1$2z$3');
 	$text = change('/([iIuUfFxXeEoOhyvrlkKgGN][+]*[iI]*)sI/','$1zI');
@@ -5577,7 +5577,7 @@ if (arr($text,'/daridrA\+/') && in_array($fo,array("daridrA")) && $ardhadhatuka=
 }
 /* apadAntasya mUrdhanyaH (8.3.55), iNkoH (8.3.57) and AdezapratyayayoH (8.3.59) */
 // Not coded perfectly. This is only for tiG pratyayas.
-if(arr($text,'/[iIuUfFxXeoEOhyvrlkKgGN][+]*s/') && !arr($text,'/[iIuUfFxXeoEOhyvrl]\+s$/') && in_array($so,$tiG) && $abhyAsa===1 )
+if(arr($text,'/[iIuUfFxXeoEOhyvrlkKgGN][+]*s/') && !arr($text,'/[iIuUfFxXeoEOhyvrl]\+s$/') && in_array($so,$tiG) && $abhyAsa===1  && !(arr(array($verb_without_anubandha),'/^s/') && arr($text,'/[^+]*[+]s/')))
 {
 	storedata('8.3.55','pa',0);
 	storedata('8.3.57','pa',0);
