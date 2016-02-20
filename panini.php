@@ -3698,8 +3698,8 @@ elseif (  $sarvadhatuka===1 && pr2(array("i","I","u","U","f","F","x","X"),array(
 /* uzca (1.2.12) */
 elseif ( in_array($so,$taG) && ($sic===1||$sIyuT===1) && ends(array($verb_without_anubandha),array("f","F"),1) )
 {
-	storedata('1.2.12','sa',0);
-	$kGiti=1;
+	storedata('1.2.12','pa',0);
+	$kGiti=1; $uzca=1;
 }
 /* yamo gandhane (1.2.15) */
 elseif ( in_array($so,$taG) && $sic===1 && $_GET['cond56']==='1' && ends(array($verb_without_anubandha),array("yam"),1) )
@@ -3796,14 +3796,14 @@ if (arr($text,'/sic/') && sub(array("+sic+",),blank(0),blank(0),0) && in_array($
 	storedata('1.3.9','sa',0);
 }
 /* liGsicorAtmanepadeSu (7.2.42) */
-if ( in_array($so,$taG) && ($sic===1||$sIyuT===1) && (in_array($fo,array("vfN","vfY")) || ends(array($verb_without_anubandha),array("F"),1)) )
+if ( in_array($so,$taG) && ($sic===1||$sIyuT===1) && (in_array($fo,array("vfN","vfY")) || ends(array($verb_without_anubandha),array("F"),1)) && $ardhadhatuka===1)
 {
     $text=one(array("+"),array("+i"),1);
 	storedata('7.2.42','sa',0);
 	$Agama=array_merge($Agama,array("iw"));
 }
 /* Rtazca saMyogAdeH (7.2.43) */
-if (arr($text,'/['.pc('hl').']['.pc('hl').'][f][+]/') && in_array($so,$taG) && ($sic===1||$sIyuT===1) )
+if (arr($text,'/['.pc('hl').']['.pc('hl').'][f][+]/') && in_array($so,$taG) && ($sic===1||$sIyuT===1) && $ardhadhatuka===1)
 {
     $text=one(array("+"),array("+i"),1);
 	storedata('7.2.43','sa',0);
@@ -4333,9 +4333,9 @@ if ( in_array($fo,array("ik")))
 	storedata('2.4.45-1','sa',0);
 }
 /* uzca (1.2.12) */
-if ( in_array($so,$taG) && ($sic===1||$sIyuT===1) && ends(array($verb_without_anubandha),array("f","F"),1) )
+if ( in_array($so,$taG) && ($sic===1||$sIyuT===1) && ends(array($verb_without_anubandha),array("f","F"),1) && $uzca!==1)
 {
-	storedata('1.2.12','sa',0);
+	storedata('1.2.12','pa',0);
 	$kGiti=1;
 	/* sArvadhAtukArdhadhAtukayoH (7.3.84) */
 	// patch because it applies only before aniT in this case. for iDAgama it is not applicable.
@@ -12296,7 +12296,7 @@ $itprakriti = array();
 $itpratyaya = array();
 $Agama=array();
 $sanAdi="";
-$TAp=0; $DAp=0; $cAp=0; $GIp=0; $GIn=0; $GIS=0; $kGiti=0; $abhyasta=0; $ajAdyataSTAp=0; $tusma=0; $upasarga_joined=0; $sicivRddhi=0; $atolopa=0; $caG=0; $aG=0; $zluvat=0; $aniditAm=0; $kGiti=0;
+$TAp=0; $DAp=0; $cAp=0; $GIp=0; $GIn=0; $GIS=0; $kGiti=0; $abhyasta=0; $ajAdyataSTAp=0; $tusma=0; $upasarga_joined=0; $sicivRddhi=0; $atolopa=0; $caG=0; $aG=0; $zluvat=0; $aniditAm=0; $kGiti=0; $uzca=0;
 $temp = scrape1($first,0,2,1); 
 $verb_without_anubandha=$temp[0];
 $storedata=array();
