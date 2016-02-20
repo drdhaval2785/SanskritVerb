@@ -1788,6 +1788,19 @@ if (in_array($so,$tiG) && $lakAra!=="" && in_array($fo,array("pA","GrA","DmA","z
     $nomidelision=1; // We will remember this while doing halantyam and prevent halantyam application, because these are not upadeza
 	$vijait=1; // to prevent application of pugantalaghUpadhasya ca.
 }
+print_r($text);
+/* AdirJiTuDavaH (1.3.5) */
+if ((substr($first,0,2) === "Yi" || substr($first,0,2) === "wu" || substr($first,0,2) === "qu") && $pada=== "pratyaya" && in_array($so,$tiG))
+{
+    if(substr($first,0,2) === "Yi") { $itprakriti = array_merge($itprakriti,array("Yi")); }
+    if(substr($first,0,2) === "wu") { $itprakriti = array_merge($itprakriti,array("wu")); }
+    if(substr($first,0,2) === "qu") { $itprakriti = array_merge($itprakriti,array("qu")); }
+	storedata('1.3.5','pa',0);
+    $text = first(array("Yi","wu","qu"),array("","",""),0); // function first removes and replaces specific strings from the words. For details see function.php.
+	storedata('1.3.9','sa',0);
+}
+print_r($text);
+if ($debug===1) {dibug("1600");}
 /* satva vidhi, natva vidhi, numAgama vidhi, anusvArasandhi, parasavarNasandhi, upadhAdIrghavidhi on dhAtus (Acc to sahajabodha) */
 // We are presuming that the verb entered is the verb with anusvAra and it markers, but without accent marks. I will have to revert back to handle without it markers and with accent marks specifically later.
 /* subdhAtuSThivuSvakAdInAM satvapratiSedho vaktavyaH (vA 3499) */
@@ -1795,7 +1808,6 @@ if (in_array($fo,array("zWivu!","zvazk")) )
 {
 	storedata('6.1.64-1','sa',0);
 }
-if ($debug===1) {dibug("1600");}
 /* dhAtvAdeH SaH saH (6.1.64), No naH (6.1.65) and upadhAyAm ca (8.2.78) */
 elseif (arr($text,'/^[z]/') || arr($text,'/^[R]/') || arr($text,'/[iu][r][d]/')) 
 {
@@ -2041,16 +2053,6 @@ elseif ($lakAra==="liw" && $veda===0 && (anekAca($verb_without_anubandha) || $sa
 		$text = one(array("a+Am"),array("+Am"),0);
 		storedata('6.1.101','sa',0);
 	}
-}
-/* AdirJiTuDavaH (1.3.5) */
-if ((substr($first,0,2) === "Yi" || substr($first,0,2) === "wu" || substr($first,0,2) === "qu") && $pada=== "pratyaya" && in_array($so,$tiG))
-{
-    if(substr($first,0,2) === "Yi") { $itprakriti = array_merge($itprakriti,array("Yi")); }
-    if(substr($first,0,2) === "wu") { $itprakriti = array_merge($itprakriti,array("wu")); }
-    if(substr($first,0,2) === "qu") { $itprakriti = array_merge($itprakriti,array("qu")); }
-	storedata('1.3.5','pa',0);
-    $text = first(array("Yi","wu","qu"),array("","",""),0); // function first removes and replaces specific strings from the words. For details see function.php.
-	storedata('1.3.9','sa',0);
 }
 /* jAgro'viciNNalGitsu (7.3.85) */
 if ( arr($text,'/jAgf[+]Am[+]/') && $lakAra==="liw")
