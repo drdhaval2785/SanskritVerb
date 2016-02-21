@@ -2145,11 +2145,13 @@ function verb_itfinder($text)
 /* function change to change all members of $text based on a regular expression */
 function change($a,$b)
 {
-    global $text;
+    global $text; global $debug;
+	if ($debug===1) {echo "change started at "; timestamp(); };
     foreach ($text as $value)
     {
         $val[]=preg_replace($a,$b,$value);
     }
+	if ($debug===1) {echo "change ended at "; timestamp(); };
     return $val;
 } 
 /* function Adyanta */
