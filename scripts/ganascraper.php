@@ -66,7 +66,7 @@ function listdata($filename)
 }
 list($verbwithanubandha,$meaning,$verbwithoutanubandha,$verbset,$verbnumber,$verbpada,$verbiDAgama,$pureverb,$output) = splitverbdata($verbdata);
 list($anukrama,$gana,$dhatuwithanubandha,$dhatuwithoutanubandha,$artha,$iT,$pada,$madhav,$kzir,$dhatupradipa,$uttara) = listdata('../Data/dhaatugana.txt');
-$fin = fopen('../Data/ganascrapertrial.txt','w+');
+$fin = fopen('../Data/dhaatuganascrapertrial.txt','w+');
 for($i=0;$i<count($pureverb);$i++)
 {
 	$pureverb_removed_accent = str_replace(array("॑","॒"),array("",""),$pureverb[$i]);
