@@ -38,5 +38,5 @@ do
 	echo 
 done
 echo '</forms>' >> generatedforms.xml
-#php scripts/slp-dev.php suspectverbforms.txt suspecverbforms_deva.txt
-python comparewithdb.py
+php scripts/slp-dev.php suspectverbforms.txt suspecverbforms_deva.txt
+#python comparewithdb.py

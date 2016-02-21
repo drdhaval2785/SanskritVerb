@@ -303,5 +303,11 @@ return $text;
 }
 
 
+function dev_to_slp_file_converter($inputfile,$outputfile)
+{
+	$inputdata = file_get_contents($inputfile);
+	$outputdata = convert1($inputdata);
+	file_put_contents($outputfile,$outputdata);
+}
 
 ?>
