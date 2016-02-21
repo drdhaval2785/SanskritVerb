@@ -61,6 +61,10 @@ v1.3.0 - 22 January 2016 - Commentaries available for local viewing.
 
 v1.4.0 - 3 February 2016 - Option to deactivate some sUtras of Paninian grammar, to understand its importance in the structure of Astadhyayi.
 
+v1.5.0 - 21 February 2016 - The code is tested for representative verbs and suspect verb forms are corrected.
+
+v1.6.0 - 21 February 2016 - The code now has three commentaries mAdhavIyadhAtuvRtti, kSIrataraGgiNI and dhAtupradIpa for offline viewing.
+
 # For understanding the code
 
 Read [this](https://github.com/drdhaval2785/SanskritVerb/Documentations/blob/master/understandcode.md)

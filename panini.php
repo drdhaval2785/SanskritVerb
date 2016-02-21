@@ -2,7 +2,7 @@
  /* This code is developed by Dr. Dhaval Patel (drdhaval2785@gmail.com) of www.sanskritworld.in and Ms. Sivakumari Katuri.
   * Layout assistance by Mr Marcis Gasuns.
   * Available under GNU licence.
-  * Version 1.4.0 date 3 January 2016
+  * Version 1.6.0 date 21 February 2016
   * The latest source code is available at https://github.com/drdhaval2785/SanskritVerb .
   * Acknowledgements: The base book for coding has been Astadhyayi sahajabodha of Dr. Pushpa Dikshit, published by Pratibha Prakashan, Delhi.
   * I extend my heartfelt thanks to Ananda Loponen for the code to convert devanagari and various sanskrit transliterations. That can be accessed at http://www.ingmardeboer.nl/php/diCrunch.php?act=help.
@@ -12324,20 +12324,16 @@ elseif ($type==="tiGanta")
 	/* Closing the HTML */
 	echo "</body>
 	</html>";
-	fputs($outfile,"</body>
-	</html>");
-	fclose($outfile);
+	//fputs($outfile,"</body></html>");
+	//fclose($outfile);
 }
 elseif ($type==="subanta")
 {
-	$ou = array_map('convert',$ou);
 	tablemaker1($ou);
 	/* Closing the HTML */
-	echo "</body>
-	</html>";
-	fputs($outfile,"</body>
-	</html>");
-	fclose($outfile);
+	echo "</body></html>";
+	//fputs($outfile,"</body></html>");
+	//fclose($outfile);
 }
 
 /* Logging the end of execution in logfile */

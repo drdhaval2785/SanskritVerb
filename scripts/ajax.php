@@ -1024,8 +1024,8 @@ if(($_POST['step']==='11' || $_POST['step']==='12' || $_POST['step']==='13') && 
 }
 elseif (($_POST['step']==='11' || $_POST['step']==='12' || $_POST['step']==='13') && ends($arrWord,$allverbs,2) )
 {
-	$verbset = scrape1($word,0,9,1);
-	$number = scrape($word,0,8,1,"",$verbset[0],9);
+	$verbset = scrape1($word,0,12,1);
+	$number = scrape($word,0,11,1,"",$verbset[0],12);
 	$html .= '<input required type="hidden" name="number" value="'.$number[0].'" >'; 
 }
 if($_POST['step']==='11' && ends($arrWord,array("gupa!","tija!","kita!"),4) )
