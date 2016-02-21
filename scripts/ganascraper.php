@@ -67,6 +67,7 @@ function listdata($filename)
 list($verbwithanubandha,$meaning,$verbwithoutanubandha,$verbset,$verbnumber,$verbpada,$verbiDAgama,$pureverb,$output) = splitverbdata($verbdata);
 list($anukrama,$gana,$dhatuwithanubandha,$dhatuwithoutanubandha,$artha,$iT,$pada,$madhav,$kzir,$dhatupradipa,$uttara) = listdata('../Data/dhaatugana.txt');
 $fin = fopen('../Data/dhaatuganascrapertrial.txt','w+');
+fputs($fin,'"');
 for($i=0;$i<count($pureverb);$i++)
 {
 	// Removed accent for uniform comparision
@@ -86,8 +87,10 @@ for($i=0;$i<count($pureverb);$i++)
 	$mdv = array_diff($mdv,array("X")); $mdv = array_unique($mdv); $mdv = array_values($mdv);
 	$kzr = array_diff($kzr,array("X")); $kzr = array_unique($kzr); $kzr = array_values($kzr);
 	$dp = array_diff($dp,array("X")); $dp = array_unique($dp); $dp = array_values($dp);
-	fputs($fin,$verbwithanubandha[$i].":".$verbset[$i].":".implode(',',$mdv).":".implode(',',$kzr).":".implode(',',$dp)."\n");
+	//"ahi!:BAzArTaH ca:aMh:10:0328:u:sew:अ॑हिँ॑ः1:1:1"
+	fputs($fin,$verbwithanubandha[$i].":".$meaning[$i].":".$verbwithoutanubandha[$i].":".$verbset[$i].":".$verbnumber[$i].":".$verbpada[$i].":".$verbiDAgama[$i].":".$pureverb[$i].":".implode(',',$mdv).":".implode(',',$kzr).":".implode(',',$dp).'","');
 	$mdv = array(); $kzr=array(); $dp=array();
 }
+fputs($fin,'"');
 fclose($fin);
 ?>
