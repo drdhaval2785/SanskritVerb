@@ -69,18 +69,24 @@ list($anukrama,$gana,$dhatuwithanubandha,$dhatuwithoutanubandha,$artha,$iT,$pada
 $fin = fopen('../Data/dhaatuganascrapertrial.txt','w+');
 for($i=0;$i<count($pureverb);$i++)
 {
+	// Removed accent for uniform comparision
 	$pureverb_removed_accent = str_replace(array("॑","॒"),array("",""),$pureverb[$i]);
+	// The keys which match
 	$key1 = array_keys($dhatuwithanubandha,$pureverb_removed_accent);
 	foreach($key1 as $k)
 	{
-		$mdv[] = $madhav[$k];
-		$kzr[] = $kzir[$k];
-		$dp[] = $dhatupradipa[$k];
+		// If verb sets are equal
+		if($verbset[$i]===$gana[$k])
+		{
+			$mdv[] = $madhav[$k];
+			$kzr[] = $kzir[$k];
+			$dp[] = $dhatupradipa[$k];
+		}
 	}
 	$mdv = array_diff($mdv,array("X")); $mdv = array_unique($mdv); $mdv = array_values($mdv);
 	$kzr = array_diff($kzr,array("X")); $kzr = array_unique($kzr); $kzr = array_values($kzr);
 	$dp = array_diff($dp,array("X")); $dp = array_unique($dp); $dp = array_values($dp);
-	fputs($fin,$verbwithanubandha[$i].":".$pureverb_removed_accent.":".implode(',',$mdv).":".implode(',',$kzr).":".implode(',',$dp)."\n");
+	fputs($fin,$verbwithanubandha[$i].":".$verbset[$i].":".implode(',',$mdv).":".implode(',',$kzr).":".implode(',',$dp)."\n");
 	$mdv = array(); $kzr=array(); $dp=array();
 }
 fclose($fin);
