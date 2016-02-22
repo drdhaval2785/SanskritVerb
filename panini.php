@@ -1355,7 +1355,19 @@ if ($lakAra==="luN")
 		$text = one(array("Una+Ric+","Dvana+Ric+","ila!+Ric+","arda!+Ric+"),array("Uni+","Dvani+","li+","ardi+"),0);
 	}
 	/* NizridrusrubhyaH kartari caG (3.1.48) */
-	elseif ( ( $sanAdi==="Ric" || $sanAdi==="RiN" || ends(array($fo),array("SriY","sru","dru"),2) || $verbset==="curAdi" ) && in_array($so,$tiG) )
+	elseif ( ( $sanAdi==="Ric" || $sanAdi==="RiN" || $verbset==="curAdi" ) && in_array($so,$tiG) )
+	{
+		$text = two(array("+cli+"),$tiG,array("+Ric+cli+"),$tiG,0);
+		storedata('3.1.25','sa',0);
+		$text=two(array("Ric+cli+"),$tiG,array("+Ric+caN+"),$tiG,0);
+		storedata('3.1.48','sa',0);
+		$Nizri=1;
+		$it = array_merge($it,array("N"));
+		$itpratyaya = array_merge($itpratyaya,array("N"));
+		$luGset=5;
+		$caG=1;
+	}
+	elseif ( ends(array($fo),array("SriY","sru","dru"),2) && in_array($so,$tiG) )
 	{
 		$text=two(array("+cli+"),$tiG,array("+caN+"),$tiG,0);
 		storedata('3.1.48','sa',0);
@@ -2060,6 +2072,7 @@ if ( arr($text,'/jAgf[+]Am[+]/') && $lakAra==="liw")
 	$jAgro=1;
 } else {$jAgro=0;}
 /* curAdi Ric handling */
+print_r($text);
 if (arr($text,'/\+Ri[c]{0,1}\+/'))
 {
 	/* lIlornuglukAvanyatarsyAM snehanipAtane (7.3.39) */
@@ -2206,6 +2219,10 @@ if (arr($text,'/\+Ri[c]{0,1}\+/'))
 			$text=two(array("e+"),$ac,array("ay+"),$ac,0);
 			storedata('6.1.78','sa',0);			
 		}
+	}
+	if ($caG===1)
+	{
+		$text = change('/(['.pc('hl').'])[+]i[+]/','$1i+');
 	}
 }
 /* AmaH (2.4.81) and kRJcAnuprayujyate liTi (3.1.40) */
@@ -2714,6 +2731,7 @@ if ( in_array($so,$tis) && !sub(array("+"),array("hi","ni"),blank(0),0) && pr2(a
 	storedata('3.4.100','sa',0);
     $itazca=1;
 } else {$itazca=0; }
+print_r($text);
 /* astisico'pRkte (7.3.96) */
 // sic
 if ( ($sic!==0 && arr($text,'/[+][s][i][c]([+]*)['.pc('hl').']$/')))
@@ -3439,7 +3457,7 @@ if (arr($text,'/['.pc('hl').']([+]*)ya\+/')  && $ardhadhatuka===1 && sub(array("
 	$atolopa=1;
 }
 /* patch for aG vikaraNa in luG lakAra */
-if ($lakAra==='luN')
+if ($lakAra==='luN' && $aG===1)
 {
 	/* ato guNe (6.1.97) */ // patch for aG+Ji.
 	if ($caG!==1 && sub(array("a"),array("+a"),blank(0),0)   && $aG!==1)
@@ -3971,6 +3989,7 @@ if ( in_array($so,$tiG)  && $luGset===5 && !arr($text,'/^['.pc('ac').']/') && su
     $text=three(array("ar"),$hlplus,array("i+a"),array("f"),$hlplus,array("i+a"),1);
 	storedata('7.4.7','sa',0);
 }
+print_r($text);
 if ($caG===1 && arr($text,'/^['.pc('ac').']/') )
 {
 	//$text = one(array("+i+"),array("i+"),0);
@@ -4074,7 +4093,7 @@ if ( ($sarvadhatuka===1 || $verbset==="adAdi" || $gAtisthA===1) && in_array($fo,
 	$bhUsuvo=1;
 }
 /* sArvadhAtukArdhadhAtukayoH (7.3.84) */
-if ( $didhI!==1 && $kGiti!==1 && !($lakAra==="liw" && in_array($fo,array("uN"))) && arr($text,'/[iIuUfFxX]\+[uiae]\+/') && ($sarvadhatuka===1 || $ardhadhatuka===1) && !($ad===1 && sub(array("i","I","u","U","f","F","x","X"),array("+"),$ajAdi_apit_sArvadhAtuka_pratyayas,0) ) )
+if ( $didhI!==1 && $kGiti!==1 && $caG!==1 && !($lakAra==="liw" && in_array($fo,array("uN"))) && arr($text,'/[iIuUfFxX]\+[uiae]\+/') && ($sarvadhatuka===1 || $ardhadhatuka===1) && !($ad===1 && sub(array("i","I","u","U","f","F","x","X"),array("+"),$ajAdi_apit_sArvadhAtuka_pratyayas,0) ) )
 {
     $text=two(array("i","I","u","U","f","F","x","X",),array("+u+","+I+","+a+","+e"),array("e","e","o","o","ar","ar","al","al",),array("+u+","+I+","+a+","+e"),0);
 	storedata('7.3.84','sa',0);

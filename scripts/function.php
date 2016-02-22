@@ -2434,47 +2434,24 @@ function caG_halAdi()
 function caG_ajAdi()
 {
 	global $text; global $caG; global $fo; global $storedata, $us;
-	foreach ($text as $value)
+	if (arr($text,'/^(['.pc('ac').']['.pc('al').'MH]*[ndrNYRm])(['.pc('hl').']['.pc('ac').'][^+]*)[+][ae]/'))
 	{
-		$parts=explode('+',$value);
-		$splitvowel=preg_split('/([aAiIuUfFxXeEoO])/',$parts[0],null,PREG_SPLIT_DELIM_CAPTURE);
-		if (preg_match('/^['.pc('ac').']/',$parts[0]) && preg_match('/[\+][ae]/',$value) && arr($splitvowel,'/[ndrNYRm]['.pc('hl').']/') )
-		{
-			$splitvowel=preg_split('/([aAiIuUfFxXeEoO])/',$parts[0],null,PREG_SPLIT_DELIM_CAPTURE);
-			$rep=substr($splitvowel[2],1,1);
-			$parts[0]=implode('',$splitvowel)."+".$rep.$splitvowel[count($splitvowel)-2];
-			$nandra=1;
-		}		
-		elseif (preg_match('/^['.pc('ac').']/',$parts[0]) && preg_match('/[\+][a]/',$value) && preg_match('/[b]['.pc('hl').']/',$splitvowel[count($splitvowel)-3]) ) 
-		{
-			$splitvowel=preg_split('/([aAiIuUfFxXeEoO])/',$parts[0],null,PREG_SPLIT_DELIM_CAPTURE);
-			$rep=substr($splitvowel[count($splitvowel)-3],1,1);
-			$parts[0]=implode('',$splitvowel)."+".$rep.$splitvowel[count($splitvowel)-2];
-			$bakara=1;
-		}		
-		elseif (preg_match('/^['.pc('ac').']/',$parts[0]) && preg_match('/[\+][ae]/',$value) )
-		{
-			$splitvowel=preg_split('/([aAiIuUfFxXeEoO])/',$parts[0],null,PREG_SPLIT_DELIM_CAPTURE);
-			$parts[0]=implode('',$splitvowel)."+".$splitvowel[count($splitvowel)-3].$splitvowel[count($splitvowel)-2];
-		}
-		$val[]=implode('+',$parts);
-	}
-	$text = $val;
-	if ($nandra===1)
-	{
+		$text = change('/^(['.pc('ac').']['.pc('al').'MH]*[ndrNYRm])(['.pc('hl').']['.pc('ac').'][^+]*)([+][ae])/','$1$2+$2+$3');
 		/* na ndrAH saMyogAdayaH (6.1.3) */
 		storedata('6.1.3','sa',0);
 	}
-	elseif ($bakara===1)
+	elseif (arr($text,'/^(['.pc('ac').']['.pc('al').'MH]*[b])(['.pc('hl').']['.pc('ac').'][^+]*)([+][ae])/'))
 	{
+		$text = change('/^(['.pc('ac').']['.pc('al').'MH]*[b])(['.pc('hl').']['.pc('ac').'][^+]*)([+][ae])/','$1$2+$2+$3');
 		/* bakArasyApyayaM pratiSedhaH (vA) */
 		storedata('bakAra','sa',0);
 	}
-	else
+	elseif (arr($text,'/^(['.pc('ac').']['.pc('hl').'MH]*)(['.pc('hl').']*['.pc('ac').'])([^+]*)([+][ae])/'))
 	{
-		/* caGi (6.1.11) */
+		storedata('6.1.2','pa',0);
+		$text = change('/^(['.pc('ac').']['.pc('hl').'MH]*)(['.pc('hl').']['.pc('ac').'])([^+]*)([+][ae])/','$1$2+$2+$3+$4');
+		// caGi (6.1.11)
 		storedata('6.1.11','sa',0);
-		storedata('6.1.2','sa',0);
 	}
 	foreach ($text as $value)
 	{
