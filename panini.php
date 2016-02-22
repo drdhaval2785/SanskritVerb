@@ -12304,14 +12304,14 @@ if ($debug===1) {dibug('11740');}
 
 if ((isset($argv[0])|| $test ===1) )
 { 
-	$suspectentryfile = fopen('suspectverbforms.txt','a+');
+	//$suspectentryfile = fopen('suspectverbforms.txt','a+');
 	$generatedformfile = fopen('generatedforms.xml','a+');
-	$verblist = verbformlist();
+	//$verblist = verbformlist();
 	//$verbsingerard = verblist();
-	wrongformlist($ou,$verblist,"fast"); // Uncomment this if you want only the list of suspect verbs for which Gerard has database.
+	//wrongformlist($ou,$verblist,"fast"); // Uncomment this if you want only the list of suspect verbs for which Gerard has database.
 	//wrongformlist($ou,$verblist); // Uncomment this if you want to get the list of all suspect verbs for irrespecitve of Gerard's database.
 	generatedforms($ou,$generatedformfile);
-	fclose($suspecentryfile);
+	//fclose($suspecentryfile);
 	fclose($generatedformfile);
 	/*$susinput = file_get_contents('suspectverbforms.txt');
 	$susoutput = convert($susinput);

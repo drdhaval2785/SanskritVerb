@@ -2418,26 +2418,18 @@ function link_vartika($s) {
 function caG_halAdi()
 {
 	global $text; global $storedata, $us;
-	foreach ($text as $value)
+	if (arr($text,'/^(['.pc('hl').']*['.pc('ac').']{1}['.pc('hl').'MH]*)[+]a[+]/'))
 	{
-		$parts=explode('+',$value);
-		if (preg_match('/^['.pc('hl').']/',$parts[0]) && preg_match('/[+][a][+]/',$value) && !anekAca($parts[0]) ) // halAdi ekAc
-		{
-			$parts[0]=$parts[0]."+".$parts[0];
-		}
-		elseif (preg_match('/^['.pc('hl').']/',$parts[0]) && preg_match('/[+][a][+]/',$value) && anekAca($parts[0]) ) // halAdi anekAc
-		{
-			$splitvowel=preg_split('/([aAiIuUfFxXeEoO])/',$parts[0],null,PREG_SPLIT_DELIM_CAPTURE);
-			$parts[0]=$splitvowel[0].$splitvowel[1]."+".implode('',$splitvowel);
-		}
-		$val[]=implode('+',$parts);
-	}
-	$text = $val;
-	$text = one(array("Sva+Sva+"),array("Sva+"),0);
+		$text = change('/^(['.pc('hl').']*['.pc('ac').']{1}['.pc('hl').'MH]*)[+]a[+]/','$1+$1+a+');
+	}	
+	elseif (arr($text,'/^(['.pc('hl').']*['.pc('ac').']{1})['.pc('hl').'MH]*['.pc('ac').']['.pc('al').'MH]*[+]a[+]/'))
+	{
+		$text = change('/^(['.pc('hl').']*['.pc('ac').']{1})(['.pc('hl').'MH]*['.pc('ac').']['.pc('al').'MH]*[+]a[+])/','$1+$1$2');
+	}	
 	/* caGi (6.1.11) */
 	storedata('6.1.11','sa',0);
 	storedata('6.1.1','sa',0);
-return $text;
+	return $text;
 }
 function caG_ajAdi()
 {
@@ -2614,7 +2606,7 @@ function caG_ajAdi()
 			$text = $val4;
 			storedata('7.3.55','sa',0);
 	}
-return $text;
+	return $text;
 }
 function liT_ajAdi()
 {
@@ -2694,16 +2686,16 @@ function liT_ajAdi()
 	{
 		storedata('7.4.61','sa',0);
 	}
-		/* urat (7.4.66) */
-		if (in_array($splitvowel[1],array("f","F"))  && !preg_match('/[Szs]['.pc('Ky').'][fF]/',$parts[0]))
-		{
-			$parts[0]="ar";
-			$text = array(implode('+',$parts)); 
-			$value = implode('+',$parts);
-			storedata('7.4.66','sa',0);
-			storedata('1.1.51','pa',0);
-		}
-		$parts=explode('+',$value);
+	/* urat (7.4.66) */
+	if (in_array($splitvowel[1],array("f","F"))  && !preg_match('/[Szs]['.pc('Ky').'][fF]/',$parts[0]))
+	{
+		$parts[0]="ar";
+		$text = array(implode('+',$parts)); 
+		$value = implode('+',$parts);
+		storedata('7.4.66','sa',0);
+		storedata('1.1.51','pa',0);
+	}
+	$parts=explode('+',$value);
 	$splitvowel=preg_split('/([aAiIuUfFxXeEoO])/',$parts[0],null,PREG_SPLIT_DELIM_CAPTURE);
 	$split2=preg_split('/(['.pc('hl').'])/',$splitvowel[0],null,PREG_SPLIT_DELIM_CAPTURE);
 		/* ata AdeH (7.4.70) */
@@ -2878,8 +2870,9 @@ function abhyAsa_halAdi()
 	}
 	$text = $val;
 	/* urat (7.4.66) */
-	if ($urat===1)
+	if (arr($text,'/[^+]*[fF][+]/'))
 	{
+		$text = change('/([^+]*)[fF][+]/','$1ar+');
 		storedata('7.4.66','sa',0);
 		storedata('1.1.51','sa',0);
 	}
