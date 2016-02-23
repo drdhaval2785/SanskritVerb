@@ -3988,7 +3988,6 @@ if ( in_array($so,$tiG)  && $luGset===5 && !arr($text,'/^['.pc('ac').']/') && su
     $text=three(array("ar"),$hlplus,array("i+a"),array("f"),$hlplus,array("i+a"),1);
 	storedata('7.4.7','sa',0);
 }
-print_r($text);
 if ($caG===1 && arr($text,'/^['.pc('ac').']/') )
 {
 	if(anekAca($verb_without_anubandha))
