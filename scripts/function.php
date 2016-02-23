@@ -2595,9 +2595,11 @@ function abhyAsa_halAdi()
 		storedata('7.4.66','sa',0);
 	}
 	/* zarpUrvAH khayaH (7.4.61) */
-	if (arr($text,'/^([^+]*)[Szs](['.pc('Ky').'][^+]*[+])/'))
+	if (arr($text,'/^[Szs]['.pc('Ky').']['.pc('ac').'][^+]*[+]/'))
 	{
-		$text = change('/^([^+]*)[Szs](['.pc('Ky').'][^+]*[+])/','$1$2');
+		print_r($text);
+		$text = change('/^[Szs](['.pc('Ky').'])(['.pc('ac').'])[^+]*[+]/','$1$2+');
+		print_r($text);
 		storedata('7.4.61','sa',0);
 	}
 	/* halAdiH zeSaH (7.4.60) */
