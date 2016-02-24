@@ -5500,9 +5500,10 @@ if( in_array($so,$tiG) && arr($text,'/([iIuUfFxXeEoOhyvrlkKgGN])([+]*[iI]*)s(['.
 {
 	$text = change('/([iIuUfFxXeEoOhyvrlkKgGN])([+]*)s(['.pc('al').'])/','$1$2z$3');
 	$text = change('/([iIuUfFxXeEoOhyvrlkKgGN][+]*[iI]*)sI/','$1zI');
-	$text = one(array("zIs"),array("zIz"),0);
+	$text = change('/zIs([+a-zA-Z]+)$/','zIz$1');
 	$text = change('/[+]is(['.pc('al').'])/','+iz$1');
 	storedata('8.3.59','sa',0);
+	$Adezapratyaya=1;
 }
 /* vibhASeTaH (8.3.79) */
 if( in_array($so,$tiG) && (arr($text,'/[iIuUfFxXeEoOhyvrl]\+izIDv/') || (arr($text,'/[iIuUfFxXeEoOhyvrl]\+iDv/') && in_array($lakAra,array("luN","liw")) )) && arr(array($verb_without_anubandha),'/[iIuUfFxXeEoOhyvrl]$/')  )
@@ -5591,12 +5592,12 @@ if (arr($text,'/daridrA\+/') && in_array($fo,array("daridrA")) && $ardhadhatuka=
 }
 /* apadAntasya mUrdhanyaH (8.3.55), iNkoH (8.3.57) and AdezapratyayayoH (8.3.59) */
 // Not coded perfectly. This is only for tiG pratyayas.
-if(arr($text,'/[iIuUfFxXeoEOhyvrlkKgGN][+]*s/') && !arr($text,'/[iIuUfFxXeoEOhyvrl]\+s$/') && in_array($so,$tiG) && !(arr(array($fo),'/^s/') && arr($text,'/[^+]*[+]s/')))
+if(arr($text,'/[iIuUfFxXeoEOhyvrlkKgGN][+]*s/') && !arr($text,'/[iIuUfFxXeoEOhyvrl]\+s$/') && in_array($so,$tiG) && !(arr(array($fo),'/^s/') && arr($text,'/[^+]*[+]s/')) && $Adezapratyaya!==1)
 {
 	storedata('8.3.55','pa',0);
 	storedata('8.3.57','pa',0);
 	$text = two($iN1,array("+s","+is","+Is"),$iN1,array("+z","+iz","+Iz"),0);
-	$text = change('/[+]zIs/','+zIz');
+	$text = change('/zIs([+a-zA-Z]+)$/','zIz$1');
 	$text = change('/[+]izIs/','+izIz');
 	$text = change('/[+]ise/','+ize');
 	storedata('8.3.59','sa',0);
@@ -12317,7 +12318,7 @@ $itprakriti = array();
 $itpratyaya = array();
 $Agama=array();
 $sanAdi="";
-$TAp=0; $DAp=0; $cAp=0; $GIp=0; $GIn=0; $GIS=0; $kGiti=0; $abhyasta=0; $ajAdyataSTAp=0; $tusma=0; $upasarga_joined=0; $sicivRddhi=0; $atolopa=0; $caG=0; $aG=0; $zluvat=0; $aniditAm=0; $kGiti=0; $uzca=0; $abhyAsa=0;
+$TAp=0; $DAp=0; $cAp=0; $GIp=0; $GIn=0; $GIS=0; $kGiti=0; $abhyasta=0; $ajAdyataSTAp=0; $tusma=0; $upasarga_joined=0; $sicivRddhi=0; $atolopa=0; $caG=0; $aG=0; $zluvat=0; $aniditAm=0; $kGiti=0; $uzca=0; $abhyAsa=0; $Adezapratyaya=0;
 $temp = scrape1($first,0,2,1); 
 $verb_without_anubandha=$temp[0];
 $storedata=array();
