@@ -2527,6 +2527,12 @@ function liT_ajAdi()
 		$text=change('/^[fF][+]/','a+');
 		storedata('7.4.66','sa',0);
 	}
+	/* halAdiH zeSaH (7.4.60) */
+	if(arr($text,'/^(['.pc('ac').'])[^+]*[+]/'))
+	{
+		$text = change('/^(['.pc('ac').'])([^+]*)[+]/','$1+');
+		storedata('7.4.60','sa',0);
+	}
 	/* ata AdeH (7.4.70) */
 	if (arr($text,'/^[a]/') )
 	{

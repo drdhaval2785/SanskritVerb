@@ -3403,6 +3403,7 @@ if ( arr($text,'/a[+]iy[+]['.pc('vl').']/') && in_array($so,$tiG) )
 	storedata('6.1.87','sa',0);
 }
 if ($debug===1) {dibug("2900");}
+print_r($text);
 /* Ato lopa iTi ca (6.4.64) */
 if ( (in_array("N",$itpratyaya)||in_array("k",$itpratyaya) )  && $lakAra!=="" && $caG===1 && sub(array("A+"),array("a+"),blank(0),0) )
 {
@@ -3410,7 +3411,7 @@ if ( (in_array("N",$itpratyaya)||in_array("k",$itpratyaya) )  && $lakAra!=="" &&
 	storedata('6.4.64','sa',0);
 }
 /* Ato lopa iTi ca (6.4.64) */
-elseif (arr($text,'/[A][+]['.pc('ac').']/') && !arr($text,'/nA[+]yA[+]am$/') && (in_array("N",$itpratyaya)||in_array("k",$itpratyaya) ) && pr2(array("A"),array("+"),$tiG1,array("A"),array("+"),$tiG1,$text)!==$text && $lakAra!=="")
+elseif (arr($text,'/[A][+]['.pc('ac').']/') && !arr($text,'/n[uA][+]yA[+]am$/') && (in_array("N",$itpratyaya)||in_array("k",$itpratyaya) ) && pr2(array("A"),array("+"),$tiG1,array("A"),array("+"),$tiG1,$text)!==$text && $lakAra!=="")
 {
     $text=pr2(array("A"),array("+"),$tiG1,array(""),array("+"),$tiG1,$text);
     $text=two($hl,array("+sic+"),$hl,array("A+sic+"),0);
@@ -12326,14 +12327,14 @@ if ($debug===1) {dibug('11740');}
 
 if ((isset($argv[0])|| $test ===1) )
 { 
-	//$suspectentryfile = fopen('suspectverbforms.txt','a+');
+	$suspectentryfile = fopen('suspectverbforms.txt','a+');
 	$generatedformfile = fopen('generatedforms.xml','a+');
-	//$verblist = verbformlist();
-	//$verbsingerard = verblist();
-	//wrongformlist($ou,$verblist,"fast"); // Uncomment this if you want only the list of suspect verbs for which Gerard has database.
+	$verblist = verbformlist();
+	$verbsingerard = verblist();
+	wrongformlist($ou,$verblist,"fast"); // Uncomment this if you want only the list of suspect verbs for which Gerard has database.
 	//wrongformlist($ou,$verblist); // Uncomment this if you want to get the list of all suspect verbs for irrespecitve of Gerard's database.
 	generatedforms($ou,$generatedformfile);
-	//fclose($suspecentryfile);
+	fclose($suspecentryfile);
 	fclose($generatedformfile);
 	/*$susinput = file_get_contents('suspectverbforms.txt');
 	$susoutput = convert($susinput);
