@@ -5505,13 +5505,13 @@ if( in_array($so,$tiG) && arr($text,'/([iIuUfFxXeEoOhyvrlkKgGN])([+]*[iI]*)s(['.
 	$Adezapratyaya=1;
 }
 /* vibhASeTaH (8.3.79) */
-if( in_array($so,$tiG) && (arr($text,'/[iIuUfFxXeEoOhyvrl]\+izIDv/') || (arr($text,'/[iIuUfFxXeEoOhyvrl]\+iDv/') && in_array($lakAra,array("luN","liw")) )) && arr(array($verb_without_anubandha),'/[iIuUfFxXeEoOhyvrl]$/')  )
+if( in_array($so,$tiG) && (arr($text,'/[iIuUfFxXeEoOhyvrl]\+izIDv/') || (arr($text,'/[iIuUfFxXeEoOhyvrl]\+iDv['.pc('al').']+$/') && in_array($lakAra,array("luN","liw")) ))  )
 {
 	$text = two($iN2,array("+izIDv","+iDv"),$iN2,array("+izIQv","+iQv"),1);
 	storedata('8.3.79','sa',0);
 }
 /* iNaH SIdhvaMluGliTAM dho'GgAt (8.3.78) */
-elseif( in_array($so,$tiG) && ((arr($text,'/zIDv/') && sub($iN2,array("zIDv"),blank(0),0)) || ( (arr($text,'/Dv/') &&sub($iN2,array("Dv"),blank(0),0)) && in_array($lakAra,array("luN","liw")) )) && arr(array($verb_without_anubandha),'/[iIuUfFxXeEoOhyvrl]$/') )
+elseif( in_array($so,$tiG) && ((arr($text,'/zIDv/') && sub($iN2,array("zIDv"),blank(0),0)) || ( (arr($text,'/Dv/') &&sub($iN2,array("Dv"),blank(0),0)) && in_array($lakAra,array("luN","liw")) )) )
 {
 	$text = two($iN2,array("zIDv","Dv"),$iN2,array("zIQv","Qv"),0);
 	storedata('8.3.78','sa',0);
