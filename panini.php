@@ -1006,7 +1006,7 @@ if ( $_GET['cond48']==="1" )
     $sanAdi="san";
 }
 /* gupUdhUpavicCipaNipanibhya AyaH (3.1.28) */
-if ( sub(array("gupU!","viCa!","pana!"),array("+"),blank(0),0) || ($fo==="DUpa!" && sub(array("DUpa!"),array("+"),$sArvadhAtuka_pratyayas,0) && $verbset==="BvAdi") || $_GET['cond49']==="1"  )
+if ( sub(array("gupU!","DUpa!","viCa!","pana!","paRa!"),array("+"),blank(0),0) || ($fo==="DUpa!" && sub(array("DUpa!"),array("+"),$sArvadhAtuka_pratyayas,0) && $verbset==="BvAdi") || $_GET['cond49']==="1"  )
 {
     $text=three(array("gupU!","DUpa!","viCa!","pana!","paRa!"),array("+"),$lakAra,array("gupU!","DUpa!","viCa!","pana!","paRa!"),array("+Aya+"),$lakAra,0);
 	storedata('3.1.28','sa',0);
@@ -4420,7 +4420,7 @@ if ($id_dhAtu==="sew" && $id_pratyaya==="sew" && !($yAsuT===1 && $lakAra==="ASIr
 	}
 	$text = $text1;
 	// Removing unwanted iDAgama which happenned accidentally
-	$text = one(array("+iyAs+","Ay+t","daridrA+is"),array("+yAs+","Ay+it","daridrA+s"),0);
+	$text = one(array("+iyAs+","Ay+t","daridrA+is","+a+i"),array("+yAs+","Ay+it","daridrA+s","+a+"),0);
 	$text = two(array("sfap","spfaS","mfaS","kfaz","tfap","dfap"),array("+i"),array("sarp","sparS","marS","karz","tarp","darp"),array("+i"),0); // not before iDAgama.
 	storedata('7.2.35','sa',0);
 	$Agama=array_merge($Agama,array("iw"));

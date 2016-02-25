@@ -309,7 +309,7 @@ $verb_sutra_pada=array("1.3.13:A","1.3.15:p","1.3.16:p","1.3.14:A","1.3.20:A","1
 $toatmane=array("niviSa!","parikrIY","vikrIY","avakrIY","viji","parAji","AkrIqf!","anukrIqf!","samkrIqf!","parikrIqf!","samsTA","avasTA","prasTA","visTA","udtapa!","vitapa!","Ayama!","Ahana!","samgamx!","samfcCa!","sampracCa!","samsvf","samf","samzru","nihveY","samhveY","upahveY","vihveY","avagf","jijYA","SuSru","susmf","didfSir",);
 $sutraenglish=array("nerviSaH (1.3.17)","parivyavebhyaH kriyaH (1.3.18)","parivyavebhyaH kriyaH (1.3.18)","parivyavebhyaH kriyaH (1.3.18)","viparAbhyAM jeH (1.3.19)","viparAbhyAM jeH (1.3.19)","krIDo'nusaMparibhyazca (1.3.21)","krIDo'nusaMparibhyazca (1.3.21)","krIDo'nusaMparibhyazca (1.3.21)","krIDo'nusaMparibhyazca (1.3.21)","samavaparivibhyaH sthaH (1.3.22)","samavaparivibhyaH sthaH (1.3.22)","samavaparivibhyaH sthaH (1.3.22)","samavaparivibhyaH sthaH (1.3.22)","udvibhyAM tapaH (1.3.27)","udvibhyAM tapaH (1.3.27)","AGo yamahanaH (1.3.28)","AGo yamahanaH (1.3.28)","samo gamyRcCipracCisvarAyartishruvidibhyaH (1.3.29)","samo gamyRcCipracCisvarAyartishruvidibhyaH (1.3.29)","samo gamyRcCipracCisvarAyartishruvidibhyaH (1.3.29)","samo gamyRcCipracCisvarAyartishruvidibhyaH (1.3.29)","samo gamyRcCipracCisvarAyartishruvidibhyaH (1.3.29)","samo gamyRcCipracCisvarAyartishruvidibhyaH (1.3.29)","samo gamyRcCipracCisvarAyartishruvidibhyaH (1.3.29)","nisamupavibhyo hvaH (1.3.30)","nisamupavibhyo hvaH (1.3.30)","nisamupavibhyo hvaH (1.3.30)","nisamupavibhyo hvaH (1.3.30)","avAdgraH (1.3.51)","jJAzrusmRdRzAM sanaH (1.3.57)","jJAzrusmRdRzAM sanaH (1.3.57)","jJAzrusmRdRzAM sanaH (1.3.57)","jJAzrusmRdRzAM sanaH (1.3.57)",);
 $sutradeva=array("नेर्विशः (१.३.१७)","परिव्यवेभ्यः क्रियः (१.३.१८)","परिव्यवेभ्यः क्रियः (१.३.१८)","परिव्यवेभ्यः क्रियः (१.३.१८)","विपराभ्यां जेः (१.३.१९)","विपराभ्यां जेः (१.३.१९)","क्रीडोऽनुसंपरिभ्यश्च (१.३.२०)","क्रीडोऽनुसंपरिभ्यश्च (१.३.२०)","क्रीडोऽनुसंपरिभ्यश्च (१.३.२०)","क्रीडोऽनुसंपरिभ्यश्च (१.३.२०)","समवप्रविभ्यः स्थः (१.३.२२)","समवप्रविभ्यः स्थः (१.३.२२)","समवप्रविभ्यः स्थः (१.३.२२)","समवप्रविभ्यः स्थः (१.३.२२)","उद्विभ्यां तपः (१.३.२७)","उद्विभ्यां तपः (१.३.२७)","आङो यमहनः (१.३.२८)","आङो यमहनः (१.३.२८)","समो गम्यृच्छिप्रच्छिस्वरत्यर्तिश्रुविदिभ्यः (१.३.२९)","समो गम्यृच्छिप्रच्छिस्वरत्यर्तिश्रुविदिभ्यः (१.३.२९)","समो गम्यृच्छिप्रच्छिस्वरत्यर्तिश्रुविदिभ्यः (१.३.२९)","समो गम्यृच्छिप्रच्छिस्वरत्यर्तिश्रुविदिभ्यः (१.३.२९)","समो गम्यृच्छिप्रच्छिस्वरत्यर्तिश्रुविदिभ्यः (१.३.२९)","समो गम्यृच्छिप्रच्छिस्वरत्यर्तिश्रुविदिभ्यः (१.३.२९)","समो गम्यृच्छिप्रच्छिस्वरत्यर्तिश्रुविदिभ्यः (१.३.२९)","निसमुपविभ्यो ह्वः (१.३.३०)","निसमुपविभ्यो ह्वः (१.३.३०)","निसमुपविभ्यो ह्वः (१.३.३०)","निसमुपविभ्यो ह्वः (१.३.३०)","अवाद्ग्रः (१.३.५१)","ज्ञाश्रुस्मृदृशां सनः (१.३.५७)","ज्ञाश्रुस्मृदृशां सनः (१.३.५७)","ज्ञाश्रुस्मृदृशां सनः (१.३.५७)","ज्ञाश्रुस्मृदृशां सनः (१.३.५७)",);
-$lakAralist=array("law","liw","luw","lfw","lew","low","laN","liN","luN","lfN");
+$lakAralist=array("la!w","li!w","lu!w","lf!w","le!w","lo!w","la!N","li!N","lu!N","lf!N");
 /* Function to find Asya and prayatna of a given letter */
 // asyaprayatna.php removed and subsumed in this function.
 function asyaprayatna($text)
@@ -2519,17 +2519,17 @@ function liT_ajAdi()
 		/* liTi dhAtoranabhyAsasya (6.1.8) */
 		storedata('6.1.8','sa',0);
 	}
-	/* urat (7.4.66) */
-	if (arr($text,'/^[fF][+]/'))
-	{
-		$text=change('/^[fF][+]/','a+');
-		storedata('7.4.66','sa',0);
-	}
 	/* halAdiH zeSaH (7.4.60) */
 	if(arr($text,'/^(['.pc('ac').'])[^+]*[+]/'))
 	{
 		$text = change('/^(['.pc('ac').'])([^+]*)[+]/','$1+');
 		storedata('7.4.60','sa',0);
+	}
+	/* urat (7.4.66) */
+	if (arr($text,'/^[fF][+]/'))
+	{
+		$text=change('/^[fF][+]/','a+');
+		storedata('7.4.66','sa',0);
 	}
 	/* ata AdeH (7.4.70) */
 	if (arr($text,'/^[a]/') )
@@ -2541,10 +2541,11 @@ function liT_ajAdi()
 		{
 			$text=change('/^[A][+]a(['.pc('hl').'MH]['.pc('hl').'MH])/','A+na$1');
 			storedata('7.4.71','sa',0);
-			if(arr($text,'/[+]nf/'))
-			{
-				storedata('nuqviDO fkAra','sa',0);
-			}
+		}
+		if(arr($text,'/^([^+]*[+])f/'))
+		{
+			$text=change('/^([^+]*[+])f/','$1nf');
+			storedata('nuqviDO fkAra','sa',0);
 		}
 		/* aznotezca (7.4.72) */
 		if(arr($text,'/^A[+]aS[+]/') && $verbset==="svAdi")
