@@ -4789,6 +4789,7 @@ if ( arr($text,'/[G][s][+]/') && ends(array($fo),array("Gasa!","ada!"),4) && in_
 	storedata('8.3.60','sa',0);
 }
 $novrddhi=0;
+print_r($text);
 if ($debug===1) {dibug("4100");}
 /* ato rlAntasya (7.2.2) */
 if (arr($text,'/a[rl]\+/') && sub(array("ar","al"),array("+"),array("s","is"),0) && $sic===1 && in_array($so,$tis) && $jAgro!==1)
@@ -4820,16 +4821,16 @@ elseif ( $lakAra==="luN" && $sic!==0 && in_array($so,$tis) && in_array($fo,array
 	storedata('7.2.3','sa',0);
 }
 /* vadavrajahalantasya acaH (7.2.3) */ 
-elseif ( $lakAra==="luN"  && $sic!==0 && in_array($so,$tis) && $yamarama!==1 && $sicivRddhi!==1 && arr($text,'/['.pc('ac').'](['.pc('hl').'M]*)[+][i]*s/') && sub($ac,$hlplus,array("sI","isI","stAm","istAm","sus","isus","stam","istam","sta","ista","sam","isam","sva","isva","sma","isma"),0) ) 
+if ( $lakAra==="luN"  && $sic!==0 && in_array($so,$tis) && $yamarama!==1 && $sicivRddhi!==1 && arr($text,'/['.pc('ac').'](['.pc('hl').'M]*)[+][i]*s/') && sub($ac,$hlplus,array("sI","stAm","sus","stam","sta","sam","sva","sma"),0) ) 
 {
-	$text = three($ac,$hlplus,array("sI","isI","stAm","istAm","sus","isus","stam","istam","sta","ista","sam","isam","sva","isva","sma","isma"),array("A","A","E","E","O","O","Ar","Ar","Al","Al","E","O","E","O",),$hlplus,array("sI","isI","stAm","istAm","sus","isus","stam","istam","sta","ista","sam","isam","sva","isva","sma","isma"),0);
+	$text = three($ac,$hlplus,array("sI","stAm","sus","stam","sta","sam","sva","sma",),array("A","A","E","E","O","O","Ar","Ar","Al","Al","E","O","E","O",),$hlplus,array("sI","stAm","sus","stam","sta","sam","sva","sma"),0);
 	$text = one(array("+sA+t",),array("+sa+t"),0);
 	$text = change('/Ar([zp][+]sa[+])/','f$1');
 	$text = change('/Ar([zp][+]s[+]ant)$/','f$1');
 	storedata('7.2.3','sa',0);
 }
 /* ato halAderlaghoH (7.2.7) */
-elseif ( $sic===1 && in_array($so,$tis) && sub(array("a"),$hl,array("+is"),0) )
+if ( $sic===1 && in_array($so,$tis) && sub(array("a"),$hl,array("+is"),0) )
 {
 	$text = three(array("a"),$hl,array("+is"),array("A"),$hl,array("+is"),1);
 	storedata('7.2.7','sa',0);
