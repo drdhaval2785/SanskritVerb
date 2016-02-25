@@ -3082,6 +3082,7 @@ if ( arr($text,'/[B][U][+][R'.pc('ac').']/') && in_array($lakAra,array("luN","li
 if ($lakAra==="liw" && arr($text,'/^['.pc('hl').']/'))
 {
 	liT_halAdi();
+	//list($text,$liT_Adeza)=abhyAsa_halAdi();
 	abhyAsa_halAdi();
 	$abhyAsa=1;
 	$abhyasta=1;
@@ -4769,7 +4770,7 @@ elseif (in_array($fo,array("gamx!","hana!","jana!","Gasa!","Kanu!","janI!","ada!
 {
 }
 /* ata ekahalmadhye'nAdezAderliTi (6.4.120) */
-elseif ( arr($text,'/^['.pc('hl').'][a][+]['.pc('hl').'][a]['.pc('hl').'][+]/') && $lakAra==="liw" && !ends(array($so),array("tip","mip"),2) && arr(array($verb_without_anubandha),'/['.pc('hl').'][a]['.pc('hl').']$/'))
+elseif ( arr($text,'/^['.pc('hl').'][a][+]['.pc('hl').'][a]['.pc('hl').'][+]/') && $lakAra==="liw" && !ends(array($so),array("tip","mip"),2) && arr(array($verb_without_anubandha),'/['.pc('hl').'][a]['.pc('hl').']$/') && $liT_Adeza!==1)
 {
     $text=change('/^(['.pc('hl').'][a][+])(['.pc('hl').'])([a])(['.pc('hl').'][+])/','$2e$4');
 	$text=change('/^(['.pc('hl').'])([e])(['.pc('hl').'][+][T][a]$)/','$1a+$1a$3'); // for thal.
@@ -4789,7 +4790,6 @@ if ( arr($text,'/[G][s][+]/') && ends(array($fo),array("Gasa!","ada!"),4) && in_
 	storedata('8.3.60','sa',0);
 }
 $novrddhi=0;
-print_r($text);
 if ($debug===1) {dibug("4100");}
 /* ato rlAntasya (7.2.2) */
 if (arr($text,'/a[rl]\+/') && sub(array("ar","al"),array("+"),array("s","is"),0) && $sic===1 && in_array($so,$tis) && $jAgro!==1)

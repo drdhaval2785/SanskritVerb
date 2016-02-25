@@ -2483,7 +2483,6 @@ function caG_ajAdi()
 		$text=change('/^([^+]*)N([^+]*[+])/','$1Y$2');
 		$text=change('/^([^+]*)h([^+]*[+])/','$1j$2');
 		storedata('7.4.62','sa',0);
-		$liT_Adeza=1;
 	}
 	/* abhyAse carca (8.4.54) */
 	if (arr($text,'/^[^+]*[JBGQDKPCWT][^+]*[+]/'))
@@ -2499,7 +2498,6 @@ function caG_ajAdi()
 		$text=change('/^([^+]*)W([^+]*[+])/','$1w$2');
 		$text=change('/^([^+]*)T([^+]*[+])/','$1t$2');
 		storedata('8.4.54','sa',0);
-		$liT_Adeza=1;
 	}
 	return $text;
 }
@@ -2572,7 +2570,7 @@ function liT_halAdi()
 
 function abhyAsa_halAdi()
 {
-	global $text;	global $caG; global $lakAra; global $fo; global $storedata, $us, $verbset;
+	global $text;	global $caG; global $lakAra; global $fo; global $storedata, $us, $verbset; global $liT_Adeza;
 	/* liTyabhyAsasyobhayeSAm (6.1.17) */
 	if(sub(array("vac+vac+","svap+svap+","yaj+yaj+","vap+vap+","vah+vah+","vas+vas+","vad+vad+","ve+ve+","hve+hve+","Svi+Svi+","vye+vye+","grah+grah+","jyA+jyA+","vay+vay+","vyaD+vyaD+","vaS+vaS+","vyac+vyac+","vraSc+vraSc+","pracC+pracC+","Brasj+Brasj+"),blank(0),blank(0),0))
 	{
@@ -2598,6 +2596,7 @@ function abhyAsa_halAdi()
 	{
 		$text = change('/^([^+]*)[fF][+]/','$1a+');
 		storedata('7.4.66','sa',0);
+		$liT_Adeza=1;
 	}
 	/* zarpUrvAH khayaH (7.4.61) */
 	if (arr($text,'/^[Szs]['.pc('Ky').']['.pc('ac').'][^+]*[+]/'))
@@ -2658,7 +2657,7 @@ function abhyAsa_halAdi()
 		$text=one(array("ja+han+"),array("ja+Gan+"),0);
 		storedata('7.3.55','sa',0);
 	}
-return $text;
+	return $text;
 }
 
 function san()
