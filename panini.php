@@ -3403,7 +3403,6 @@ if ( arr($text,'/a[+]iy[+]['.pc('vl').']/') && in_array($so,$tiG) )
 	storedata('6.1.87','sa',0);
 }
 if ($debug===1) {dibug("2900");}
-print_r($text);
 /* Ato lopa iTi ca (6.4.64) */
 if ( (in_array("N",$itpratyaya)||in_array("k",$itpratyaya) )  && $lakAra!=="" && $caG===1 && sub(array("A+"),array("a+"),blank(0),0) )
 {
