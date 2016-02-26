@@ -3846,7 +3846,7 @@ if (arr($text,'/ji\+hi\+/') && $caG!==1)
 	storedata('7.3.56','sa',0);
 }
 /* sanliTorjeH (7.3.57) */
-if ( ($sanDai=="san" || $lakAra==="liw") && arr($text,'/ji\+hi\+/') )
+if ( ($sanDai=="san" || $lakAra==="liw") && arr($text,'/ji\+ji\+/') )
 {
 	$text = one(array("ji+ji+"),array("ji+gi+"),0);
 	storedata('7.3.57','sa',0);
