@@ -2581,7 +2581,7 @@ function abhyAsa_halAdi()
 	}
 	if (sub(array("vyaT+vyaT+"),blank(0),blank(0),0))
 	{
-		$text=one(array("vyaT+vyaT+"),array("vyaT+vyaT+"),0);
+		$text=one(array("vyaT+vyaT+"),array("viT+vyaT+"),0);
 		storedata('7.4.68','sa',0);
 		storedata('6.1.104','sa',0);
 	}
