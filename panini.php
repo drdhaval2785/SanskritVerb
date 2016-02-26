@@ -1355,7 +1355,7 @@ if ($lakAra==="luN")
 		$text = one(array("Una+Ric+","Dvana+Ric+","ila!+Ric+","arda!+Ric+"),array("Uni+","Dvani+","li+","ardi+"),0);
 	}
 	/* NizridrusrubhyaH kartari caG (3.1.48) */
-	elseif ( ( $sanAdi==="Ric" || $sanAdi==="RiN" || $verbset==="curAdi" ) && in_array($so,$tiG) )
+	elseif ( ( $sanAdi==="Ric" || $verbset==="curAdi" ) && in_array($so,$tiG) )
 	{
 		$text = two(array("+cli+"),$tiG,array("+Ric+cli+"),$tiG,0);
 		storedata('3.1.25','sa',0);
@@ -3965,6 +3965,7 @@ if ( in_array($fo,array("ciY","sPura!")) && in_array($so,$tiG) && sub(array("ce"
     $text=three(array("ce","sPor"),array("+"),array("i+"),array("cA","sPAr"),array("+"),array("i+"),1);
 	storedata('6.1.54','sa',0);
 }
+print_r($text);
 // caG for ajAdi
 /* bhrAjabhAsabhASadIpajIvamIlapIDamnyatarasyAm (7.4.3) */
 if ( in_array($so,$tiG) && $luGset===5 && sub(array("BrAj","BAs","BAS","dIp","jIv","mIl","pIq"),array("+"),array("i+a"),0))
@@ -3978,9 +3979,9 @@ elseif ( in_array($so,$tiG) && (in_array($fo,$curAdi_adanta) || in_array($fo,arr
 	storedata('7.4.2','sa',0);
 }
 /* Nau caGi upadhAyA hrasvaH (7.4.1) */
-elseif ( in_array($so,$tiG)  && $luGset===5 && !arr($text,'/^['.pc('ac').']/') && sub(array("A","I","U","F","X","e","E","o","O"),$hl,array("i+a"),0) )
+elseif ( in_array($so,$tiG)  && $luGset===5 && !arr($text,'/^['.pc('ac').']/') && sub(array("A","I","U","F","X","e","E","o","O"),$hl,array("i+a","i+e"),0) )
 {
-	$text = three(array("A","I","U","F","X","e","E","o","O"),$hl,array("i+a"),array("a","i","u","f","x","i","i","u","u"),$hl,array("i+a"),0);
+	$text = three(array("A","I","U","F","X","e","E","o","O"),$hl,array("i+a","i+e"),array("a","i","u","f","x","i","i","u","u"),$hl,array("i+a","i+e"),0);
 	storedata('7.4.1','sa',0);
 }
 /* urRt (7.4.7) */
