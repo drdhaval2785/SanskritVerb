@@ -2036,9 +2036,8 @@ elseif ($lakAra==="liw" && ends(array($fo),array("daya!","aya!","Asa!"),4) )
 /* uSavidajAgRbhyo'nyatarasyAm (3.1.38) */
 elseif ($lakAra==="liw" && ends(array($fo),array("uza!","vida!","jAgf"),4) )
 {
-    //$text=two(array("+"),$tiG,array("+Am+"),$tiG,1);
 	// Pending to make this optional. See https://github.com/drdhaval2785/SanskritVerb/issues/384
-	$text=two(array("+"),$tiG,array("+Am+"),$tiG,0);
+	$text=three(array("uz","vid","jAgf"),array("+"),$tiG,array("uz","vid","jAgf"),array("+Am+"),$tiG,0);
 	storedata('3.1.38','sa',0);
 }
 /* bhIhrIbhRhuvAM zluvacca (3.1.39) */
@@ -4820,7 +4819,6 @@ elseif ( $lakAra==="luN" && $sic!==0 && in_array($so,$tis) && in_array($fo,array
     $text = two(array("vad+","vraj+"),array("is"),array("vAd+","vrAj+"),array("is"),0);
 	storedata('7.2.3','sa',0);
 }
-print_r($text);
 /* vadavrajahalantasya acaH (7.2.3) */ 
 if ( $lakAra==="luN"  && $sic!==0 && in_array($so,$tis) && $yamarama!==1 && $sicivRddhi!==1 && arr($text,'/['.pc('ac').'](['.pc('hl').'M]*)[+]s/') )//&& sub($ac,$hlplus,array("sI","stAm","sus","stam","sta","sam","sva","sma"),0) ) 
 {
