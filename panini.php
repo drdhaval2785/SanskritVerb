@@ -2594,7 +2594,7 @@ if ( in_array($lakAra,array("viDiliN","ASIrliN")) && in_array($so,$tis) )
 		$kGiti = 1;
 		storedata('1.1.5','sa',0);
 	}
-	elseif ($lakAra==="viDiliN" && in_array("Sap",$vik)) // For Sap pratyaya pugantalaghUpadhasya ca for vidhiliG
+	elseif ($lakAra==="viDiliN" && in_array("Sap",$vik) && arr($text,'/([iufx])(['.pc('hl').'][+]a[+])/')) // For Sap pratyaya pugantalaghUpadhasya ca for vidhiliG
 	{
 		/* pugantalaghUpadhasya ca */
 		$text=change('/([iufx])(['.pc('hl').'][+]a[+])/','$1%$2');
@@ -4493,7 +4493,7 @@ elseif (  in_array($so,$tiG)&& $fo==="mfjU!" && (($kGiti===1 && arr($text,'/mfj[
 	storedata('7.2.114','sa',0);
 }
 /* gamahanajanakhanaghasAM lopaH kGiti (6.4.98) */
-if (in_array($fo,array("gamx!","hana!","jana!","Gasa!","Kanu!","janI!","ada!")) && ends($itpratyaya,array("k","N"),2) && sub(array("gam","Gan","jan","Gas","Kan"),array("+"),$ac,0) && in_array($so,$tiG) && $aG!==1)
+if (in_array($fo,array("gamx!","hana!","jana!","Gasa!","Kanu!","janI!","ada!")) && ends($itpratyaya,array("k","N"),2) && sub(array("gam","Gan","jan","Gas","Kan"),array("+"),$ac,0) && in_array($so,$tiG) && $aG!==1 && !in_array($lakAra,array("viDiliN")))
 {
     $text=three(array("gam","Gan","jan","Gas","Kan"),array("+"),$ac,array("gm","Gn","jn","Gs","Kn"),array("+"),$ac,0);
 	storedata('6.4.98','sa',0);
