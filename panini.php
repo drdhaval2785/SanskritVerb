@@ -993,7 +993,7 @@ if (in_array($lakAra,$ArdhadhAtuka_lakAra))
 /* guptijkidbhyaH san (3.1.5) */
 if ( $_GET['cond47']==="1" )
 {
-    $text=three(array("gupa!","tija!","kita!"),array("+"),$lakAra,array("gupa!","tija!","kita!"),array("+san+"),$lakAra,0);
+    $text=three(array("gupa!","tija!","kita!"),array("+"),$lakAralist,array("gupa!","tija!","kita!"),array("+san+"),$lakAralist,0);
 	storedata('3.1.5','sa',0);
     $sanAdi="san";
 }
@@ -1001,14 +1001,14 @@ if ( $_GET['cond47']==="1" )
 // right now only coded for san pratyaya and not for dIrghatva of abhyAsa, because abhyAsa is not taught yet.
 if ( $_GET['cond48']==="1" )
 {
-    $text=three(array("mAna!","baDa!","dAna!","SAna!"),array("+"),$lakAra,array("mAna!","baDa!","dAna!","SAna!"),array("+san+"),$lakAra,0);
+    $text=three(array("mAna!","baDa!","dAna!","SAna!"),array("+"),$lakAralist,array("mAna!","baDa!","dAna!","SAna!"),array("+san+"),$lakAralist,0);
 	storedata('3.1.6','sa',0);
     $sanAdi="san";
 }
 /* gupUdhUpavicCipaNipanibhya AyaH (3.1.28) */
 if ( sub(array("gupU!","DUpa!","viCa!","pana!","paRa!"),array("+"),blank(0),0) || ($fo==="DUpa!" && sub(array("DUpa!"),array("+"),$sArvadhAtuka_pratyayas,0) && $verbset==="BvAdi") || $_GET['cond49']==="1"  )
 {
-    $text=three(array("gupU!","DUpa!","viCa!","pana!","paRa!"),array("+"),$lakAra,array("gupU!","DUpa!","viCa!","pana!","paRa!"),array("+Aya+"),$lakAra,0);
+    $text=three(array("gupU!","DUpa!","viCa!","pana!","paRa!"),array("+"),$lakAralist,array("gupU!","DUpa!","viCa!","pana!","paRa!"),array("+Aya+"),$lakAralist,0);
 	storedata('3.1.28','sa',0);
     $sanAdi="Aya";
 	storedata('1.3.2','pa',0);
@@ -1025,7 +1025,7 @@ if ( sub(array("gupU!","DUpa!","viCa!","pana!","paRa!"),array("+"),blank(0),0) |
 /* RterIyaG (3.1.29) */
 if ( in_array($fo,array("fta!")) && $pada==="pratyaya" && $lakAra!=="")
 {
-    $text=three(array("fta!"),array("+"),$lakAra,array("fta!"),array("+IyaN+"),$lakAra,0);
+    $text=three(array("fta!"),array("+"),$lakAralist,array("fta!"),array("+IyaN+"),$lakAralist,0);
 	storedata('3.1.29','sa',0);
     $sanAdi="IyaN";
     $verbpada="A";
@@ -1036,7 +1036,7 @@ if ( in_array($fo,array("fta!")) && $pada==="pratyaya" && $lakAra!=="")
 /* kamerNiG (3.1.30) */
 if ( in_array($fo,array("kamu!")) && $pada==="pratyaya" && $lakAra!=="")
 {
-    $text=three(array("kamu!"),array("+"),$lakAra,array("kamu!"),array("+RiN+"),$lakAra,0);
+    $text=three(array("kamu!"),array("+"),$lakAralist,array("kamu!"),array("+RiN+"),$lakAralist,0);
 	storedata('3.1.30','sa',0);
     $sanAdi="RiN";
     $verbpada="A";
