@@ -4820,10 +4820,13 @@ elseif ( $lakAra==="luN" && $sic!==0 && in_array($so,$tis) && in_array($fo,array
     $text = two(array("vad+","vraj+"),array("is"),array("vAd+","vrAj+"),array("is"),0);
 	storedata('7.2.3','sa',0);
 }
+print_r($text);
 /* vadavrajahalantasya acaH (7.2.3) */ 
-if ( $lakAra==="luN"  && $sic!==0 && in_array($so,$tis) && $yamarama!==1 && $sicivRddhi!==1 && arr($text,'/['.pc('ac').'](['.pc('hl').'M]*)[+][i]*s/') && sub($ac,$hlplus,array("sI","stAm","sus","stam","sta","sam","sva","sma"),0) ) 
+if ( $lakAra==="luN"  && $sic!==0 && in_array($so,$tis) && $yamarama!==1 && $sicivRddhi!==1 && arr($text,'/['.pc('ac').'](['.pc('hl').'M]*)[+]s/') )//&& sub($ac,$hlplus,array("sI","stAm","sus","stam","sta","sam","sva","sma"),0) ) 
 {
-	$text = three($ac,$hlplus,array("sI","stAm","sus","stam","sta","sam","sva","sma",),array("A","A","E","E","O","O","Ar","Ar","Al","Al","E","O","E","O",),$hlplus,array("sI","stAm","sus","stam","sta","sam","sva","sma"),0);
+	$text = change('/(['.pc('ac').'])(['.pc('hl').'M]*[+]s)/','$1%$2');
+	$text = two($ac,array("%"),vriddhi($ac),array("%"),0);
+	//$text = three($ac,$hlplus,array("sI","stAm","sus","stam","sta","sam","sva","sma",),array("A","A","E","E","O","O","Ar","Ar","Al","Al","E","O","E","O",),$hlplus,array("sI","stAm","sus","stam","sta","sam","sva","sma"),0);
 	$text = one(array("+sA+t",),array("+sa+t"),0);
 	$text = change('/Ar([zp][+]sa[+])/','f$1');
 	$text = change('/Ar([zp][+]s[+]ant)$/','f$1');
@@ -5107,7 +5110,6 @@ if (arr($text,'/['.pc('Jl').']([+]*)s([+]*)['.pc('Jl').']/') && sub(prat("Jl"),a
 	$text = three(prat("Jl"),array("s"),prat("Jl"),prat("Jl"),array(""),prat("Jl"),0); 
 	storedata('8.2.26','sa',0);
 }
-print_r($text);
 /* ho DhaH (8.2.31) */ 
 if (arr($text,'/[h][+]/') && sub(array("h"),prat("Jl"),blank(0),0) && $hodha1===0 && $hodha2 === 0 && $hodha3 === 0 )
 {
