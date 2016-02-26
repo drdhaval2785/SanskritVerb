@@ -1718,7 +1718,7 @@ if ( $abhyasta===1 && $so==="Ji"  && in_array($lakAra,array("laN","ASIrliN","viD
 	storedata('3.4.109','sa',0);
 }
 /* kRpo ro laH (8.2.18) */
-if (arr($text,'/kfp/') && $caG!==1)
+if (arr($text,'/kfp/') && $caG!==1 && $lakAra!=="liw")
 {
     $text=one(array("kfp"),array("kxp"),0);
 	storedata('8.2.18','sa',0);
@@ -2571,7 +2571,6 @@ if ( in_array($lakAra,array("viDiliN","ASIrliN")) && in_array($so,$taGplus) )
 	$sIyuT=1;
 } else { $siyuT=0; }
 $tisremoved=array("ti","tas","anti","jus","si","Tas","Ta","mi","vas","mas","tAm","tam","ta","am","va","ma");
-print_r($text);
 /* yAsuT parasmaipadeSUdAtto Gicca (3.4.103) */
 if ( in_array($lakAra,array("viDiliN","ASIrliN")) && in_array($so,$tis) )
 {

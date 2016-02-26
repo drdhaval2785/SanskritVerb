@@ -2592,13 +2592,6 @@ function abhyAsa_halAdi()
 		storedata('6.1.104','sa',0);
 	}
 	/* changes to abhyAsa */
-	/* urat (7.4.66) */
-	if (arr($text,'/^([^+]*)[fF][+]/'))
-	{
-		$text = change('/^([^+]*)[fF][+]/','$1a+');
-		storedata('7.4.66','sa',0);
-		$liT_Adeza=1;
-	}
 	/* zarpUrvAH khayaH (7.4.61) */
 	if (arr($text,'/^[Szs]['.pc('Ky').']['.pc('ac').'][^+]*[+]/'))
 	{
@@ -2611,6 +2604,13 @@ function abhyAsa_halAdi()
 		$text = change('/^(['.pc('hl').'])['.pc('hl').'MH]*(['.pc('ac').'])([^+]*)[+]/','$1$2+'); // jaglO
 		$text = change('/^(['.pc('ac').'])([^+]*)[+]/','$1+');
 		storedata('7.4.60','sa',0);
+	}
+	/* urat (7.4.66) */
+	if (arr($text,'/^([^+]*)[fF][+]/'))
+	{
+		$text = change('/^([^+]*)[fF][+]/','$1a+');
+		storedata('7.4.66','sa',0);
+		$liT_Adeza=1;
 	}
 	/* hrasvaH (7.4.59) */
 	if (arr($text,'/^([^+]*)[AIUeoEO][+]/'))
