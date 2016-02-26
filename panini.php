@@ -1937,10 +1937,10 @@ if ($type==="tiGanta" )
 		$text = change('/i[!]r[+]/','+');
 		storedata('1.3.9','sa',0);
 	}
-	elseif (arr($text,'/[^+]*['.pc('hl').'][+]/') && sub(array(substr($fo,-1)),array("+"),blank(0),0) && !in_array($fo,array("Riji!r","viji!r","vizx!")) && !arr(array($fo),'/[Ff]$/'))
+	elseif (arr($text,'/^[^+]*['.pc('hl').'][+]/') && sub(array(substr($fo,-1)),array("+"),blank(0),0) && !in_array($fo,array("Riji!r","viji!r","vizx!")) && !arr(array($fo),'/[Ff]$/'))
 	{
 		storedata('1.3.3','pa',0);
-		$text = change('/([^+]*)['.pc('hl').'][+]/','$1+');
+		$text = change('/^([^+]*)['.pc('hl').'][+]/','$1+');
 		storedata('1.3.9','sa',0);
 	}
 	if (arr($text,'/[^+]*['.pc('ac').'][!][+]/'))
@@ -2571,6 +2571,7 @@ if ( in_array($lakAra,array("viDiliN","ASIrliN")) && in_array($so,$taGplus) )
 	$sIyuT=1;
 } else { $siyuT=0; }
 $tisremoved=array("ti","tas","anti","jus","si","Tas","Ta","mi","vas","mas","tAm","tam","ta","am","va","ma");
+print_r($text);
 /* yAsuT parasmaipadeSUdAtto Gicca (3.4.103) */
 if ( in_array($lakAra,array("viDiliN","ASIrliN")) && in_array($so,$tis) )
 {
@@ -2584,7 +2585,7 @@ if ( in_array($lakAra,array("viDiliN","ASIrliN")) && in_array($so,$tis) )
 	storedata('1.3.9','sa',0);
 	$Git=1;
 	$yAsuT = 1;
-	$itpratyaya=array_merge($itpratyaya,array("N")); $it=array_merge($it,array("N")); 
+	$itpratyaya=array_merge($itpratyaya,array("N")); $it=array_merge($it,array("N"));
 	/* kidAziSi (3.4.104) */
 	if ( in_array($lakAra,array("ASIrliN")) && in_array($so,$tis) )
 	{
@@ -2593,6 +2594,13 @@ if ( in_array($lakAra,array("viDiliN","ASIrliN")) && in_array($so,$tis) )
 		$kit = 1; $itpratyaya=array_merge($itpratyaya,array("k")); $it=array_merge($it,array("k")); 
 		$kGiti = 1;
 		storedata('1.1.5','sa',0);
+	}
+	elseif ($lakAra==="viDiliN" && in_array("Sap",$vik)) // For Sap pratyaya pugantalaghUpadhasya ca for vidhiliG
+	{
+		/* pugantalaghUpadhasya ca */
+		$text=change('/([iufx])(['.pc('hl').'][+]a[+])/','$1%$2');
+		$text=two(array("i","u","f","x",),array("%"),array("e","o","ar","al",),array(""),0);
+		storedata('7.3.86','sa',0);
 	}
 } else {$yAsuT=0;}
 /* suT tithoH (3.4.107) */
