@@ -1937,7 +1937,7 @@ if ($type==="tiGanta" )
 		$text = change('/i[!]r[+]/','+');
 		storedata('1.3.9','sa',0);
 	}
-	elseif (arr($text,'/^[^+]*['.pc('hl').'][+]/') && sub(array(substr($fo,-1)),array("+"),blank(0),0) && !in_array($fo,array("Riji!r","viji!r","vizx!")) && !arr(array($fo),'/[Ff]$/'))
+	elseif (arr($text,'/^[^+]*['.pc('hl').'][+]/') && sub(array(substr($fo,-1)),array("+"),blank(0),0) && !in_array($fo,array("Riji!r","viji!r","vizx!")) && !arr(array($fo),'/[Ff]$/') && $nomidelision!==1)
 	{
 		storedata('1.3.3','pa',0);
 		$text = change('/^([^+]*)['.pc('hl').'][+]/','$1+');
