@@ -5101,6 +5101,13 @@ if (in_array($first,array("Ah")) && (arr($text,'/[+]['.pc("Jl").']/')) )
     $hodha3=1; // 0 - doesn't prevent ho DhaH. 1 - prevents ho DhaH.
 } else { $hodha3 = 0; } 
 if ($debug===1) {dibug("4400");}
+/* jhalo jhali (8.2.26) */
+if (arr($text,'/['.pc('Jl').']([+]*)s([+]*)['.pc('Jl').']/') && sub(prat("Jl"),array("s"),prat("Jl"),0) && in_array($so,$tiG))
+{
+	$text = three(prat("Jl"),array("s"),prat("Jl"),prat("Jl"),array(""),prat("Jl"),0); 
+	storedata('8.2.26','sa',0);
+}
+print_r($text);
 /* ho DhaH (8.2.31) */ 
 if (arr($text,'/[h][+]/') && sub(array("h"),prat("Jl"),blank(0),0) && $hodha1===0 && $hodha2 === 0 && $hodha3 === 0 )
 {
@@ -5117,6 +5124,11 @@ if (arr($text,'/[h]$/')  && $hodha1===0 && $hodha2 === 0 && $hodha3 === 0 )
     $text = last(array("h"),array("Q"),0);
 	storedata('8.2.31','sa',0);
 }
+/* ekAco bazo bhaS jhaSantasya sdhvoH (8.2.37) */  
+if ( /*anekAca($verb_without_anubandha)==false &&*/ ( arr($text,'/[bgqd](['.pc('al').']*)[JBGQD][+][s]/') || arr($text,'/[bgqd](['.pc('al').']*)[JBGQD][+]Dv/') || arr($text,'/[JBGQD][+]$/') || $pada==="pada") )
+{
+	ekAcobazo(); // created a new function 19/12/2014.
+}
 /* halGyAbbhyo dIrghAtsutisyapRktaM hal (6.1.68) and apRkta ekAlpratyayaH (1.2.41) */
 // GyAp pending. only hal handled now.
 if (arr($text,'/['.pc('hl').'][+][sts]$/') && !arr($text,'/s[+]s$/') && in_array($so,array("su!","tip","sip",)))
@@ -5129,17 +5141,6 @@ if (arr($text,'/['.pc('hl').'][+][stsD]$/')  && !arr($text,'/s[+]s$/') && in_arr
 	storedata('6.1.68','sa',0);
     $pada="pada"; // there is no pratyaya left now.
     $halGyAbbhyo=1;
-}
-/* ekAco bazo bhaS jhaSantasya sdhvoH (8.2.37) */  
-if ( /*anekAca($verb_without_anubandha)==false &&*/ ( arr($text,'/[bgqd](['.pc('al').']*)[JBGQD][+][s]/') || arr($text,'/[bgqd](['.pc('al').']*)[JBGQD][+]Dv/') || arr($text,'/[JBGQD][+]$/') || $pada==="pada") )
-{
-	ekAcobazo(); // created a new function 19/12/2014.
-}
-/* jhalo jhali (8.2.26) */
-if (arr($text,'/['.pc('Jl').']([+]*)s([+]*)['.pc('Jl').']/') && sub(prat("Jl"),array("s"),prat("Jl"),0) && in_array($so,$tiG))
-{
-	$text = three(prat("Jl"),array("s"),prat("Jl"),prat("Jl"),array(""),prat("Jl"),0); 
-	storedata('8.2.26','sa',0);
 }
 
 /* SaDhoH kassi (8.2.41) */
