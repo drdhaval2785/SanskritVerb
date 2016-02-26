@@ -3965,7 +3965,6 @@ if ( in_array($fo,array("ciY","sPura!")) && in_array($so,$tiG) && sub(array("ce"
     $text=three(array("ce","sPor"),array("+"),array("i+"),array("cA","sPAr"),array("+"),array("i+"),1);
 	storedata('6.1.54','sa',0);
 }
-print_r($text);
 // caG for ajAdi
 /* bhrAjabhAsabhASadIpajIvamIlapIDamnyatarasyAm (7.4.3) */
 if ( in_array($so,$tiG) && $luGset===5 && sub(array("BrAj","BAs","BAS","dIp","jIv","mIl","pIq"),array("+"),array("i+a"),0))
@@ -9422,7 +9421,7 @@ if (arr($text,'/[+][cjYwWqQR]/') && $wa1 === 0 && ($sarva2 ===0 || $purva=1))
 	storedata('1.3.9','sa',0);
 }
 /* SaH pratyayasya (1.3.6) */
-if (arr($text,'/[+][z]/') && $pada=== "pratyaya")
+if (arr($text,'/[+][z]/') && $pada=== "pratyaya" && $type!=="tiGanta")
 {
     it('/([+][z])/');
 	storedata('1.3.6','pa',0);
