@@ -5610,10 +5610,10 @@ if(arr($text,'/[iIuUfFxXeoEOhyvrlkKgGN][+]s/') && ($ksa===1||$sic===1) )
 	storedata('8.3.59','sa',0);
 }
 /* For verbs - remove all + marks. */
-if(in_array($so,$tiG))
+/*if(in_array($so,$tiG))
 {
     $text=one(array("+"),array(""),0);
-}
+}*/
 /* tipyanasteH (8.2.73) */
 if ( arr($text,'/[s]$/') && $so==='tip' && $lakAra==="laN")
 {
@@ -11286,9 +11286,10 @@ if (arr($text,'/[m][+]/') && $dhatu===1 && $pada==="pada" && $kaspratyaya!==1)
 	storedata('8.2.64','sa',0);
 }
 /* mvozca (8.2.65) */
-if (arr($text,'/[m][+]/') && $dhatu===1 && in_array($so,$tiG)  && $kaspratyaya!==1)
+if (arr($text,'/[m][+][mv]/') && $dhatu===1 && in_array($so,$tiG)  && $kaspratyaya!==1)
 {
-    $text = one(array("m+",),array("n+",),0);
+	$text = change('/[m][+]([mv])/','n+$1');
+    //$text = one(array("m+",),array("n+",),0);
     $text = one(array("san+",),array("sam+",),0); // upasarga sam wrongly converted to san. So bringing it back. Pending to make it specific to start.
 	storedata('8.2.65','sa',0);
 }
