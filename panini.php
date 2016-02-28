@@ -2993,7 +2993,7 @@ elseif (arr(array($verb_without_anubandha),'/[aAiIuUFeEoO]$/') && $id_dhAtu==="a
 	storedata('7.2.63','sa',0);
 }
 /* kRsRbhRvRstudrusruzruvo liTi (7.2.13) */
-elseif (!in_array($fo,array("qukfY","sf","quBfY","vfN","vfY","zwuY","dru","sru","Sru")) && $lakAra==="liw" && in_array($so,array("sip","vas","mas","TAs","Dvam","vahi","mahiN")) && $id_dhAtu!=="vew")
+elseif (!in_array($fo,array("qukfY","sf","quBfY","BfY","vfN","vfY","zwuY","dru","sru","Sru")) && $lakAra==="liw" && in_array($so,array("sip","vas","mas","TAs","Dvam","vahi","mahiN")) && $id_dhAtu!=="vew")
 {
 	$id_dhAtu="sew";
 	storedata('7.2.13-krAdiniyamaH','sa',0);
