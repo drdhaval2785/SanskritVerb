@@ -1249,9 +1249,19 @@ if ($lakAra==="luN")
 		$aG=1;
 	}
 	/* zala igupadhAdaniTaH ksaH (3.1.45) */
-	elseif (arr($text,'/[^+]*[iIuUfFx]['.pc('Sl').'](['.pc('ac').'][!])*[+]/') && $id_dhAtu==="aniw")//in_array($fo,array("gfhU!","bfhU!","tfhU!","stfhU!","guhU!")) )
+	elseif (arr($text,'/[^+]*[iIuUfFx]['.pc('Sl').'](['.pc('ac').'][!])*[+]/') && $id_dhAtu==="aniw")
 	{
 		$text = one(array("+cli+"),array("+sa+"),0);
+		storedata('3.1.45','sa',0);
+		$ksa=1;
+		$luGset=7;
+		$it = array_merge($it,array("k"));
+		$itpratyaya = array_merge($itpratyaya,array("k"));
+	}
+	/* zala igupadhAdaniTaH ksaH (3.1.45) */
+	elseif (arr($text,'/[^+]*[iIuUfFx]['.pc('Sl').'](['.pc('ac').'][!])*[+]/') && $id_dhAtu==="vew")
+	{
+		$text = one(array("+cli+"),array("+sa+"),1);
 		storedata('3.1.45','sa',0);
 		$ksa=1;
 		$luGset=7;
@@ -4827,10 +4837,17 @@ elseif ( $lakAra==="luN" && $sic!==0 && in_array($so,$tis) && in_array($fo,array
 	storedata('7.2.3','sa',0);
 }
 /* vadavrajahalantasya acaH (7.2.3) */ 
-if ( $lakAra==="luN"  && $sic!==0 && in_array($so,$tis) && $yamarama!==1 && $sicivRddhi!==1 && arr($text,'/['.pc('ac').'](['.pc('hl').'M]*)[+]s/') )//&& sub($ac,$hlplus,array("sI","stAm","sus","stam","sta","sam","sva","sma"),0) ) 
+if ( $lakAra==="luN"  && $sic!==0 && in_array($so,$tis) && $yamarama!==1 && $sicivRddhi!==1 && arr($text,'/['.pc('ac').'](['.pc('hl').'M]*)[+]s[^a]/') ) 
 {
-	$text = change('/(['.pc('ac').'])(['.pc('hl').'M]*[+]s)/','$1%$2');
-	$text = two($ac,array("%"),vriddhi($ac),array("%"),0);
+	if($id_dhAtu==="vew")
+	{
+		$text = change('/(['.pc('ac').']['.pc('hl').'M]*[+])(s[^a])/','$1i$2');
+	}
+	else
+	{
+		$text = change('/(['.pc('ac').'])(['.pc('hl').'M]*[+]s[^a])/','$1%$2');
+	}
+	$text = two($ac,array("%"),vriddhi($ac),array(""),0);
 	//$text = three($ac,$hlplus,array("sI","stAm","sus","stam","sta","sam","sva","sma",),array("A","A","E","E","O","O","Ar","Ar","Al","Al","E","O","E","O",),$hlplus,array("sI","stAm","sus","stam","sta","sam","sva","sma"),0);
 	$text = one(array("+sA+t",),array("+sa+t"),0);
 	$text = change('/Ar([zp][+]sa[+])/','f$1');
@@ -4994,9 +5011,9 @@ if ( in_array($fo,array("graha!")) && $lakAra!=="liw" && sub(array("grah"),array
 	storedata('7.2.37','sa',0);
 }
 /* UdupadhAyA gohaH (6.4.89) */ 
-if (in_array($fo,array("guhU!")) && sub(array("goh","guh"),array("+"),$ac,0) )
+if (in_array($fo,array("guhU!")) && sub(array("goh"),array("+"),$ac,0) )
 {
-    $text = two(array("goh+","guh+"),$ac,array("gUh+","gUh+"),$ac,0);
+    $text = two(array("goh+"),$ac,array("gUh+"),$ac,0);
 	storedata('6.4.89','sa',0);
 }
 /* vrazcabhrasjamRjayajarAjabhrAjacChazAM ca (8.2.36) */
