@@ -4841,7 +4841,7 @@ if ( $lakAra==="luN"  && $sic!==0 && in_array($so,$tis) && $yamarama!==1 && $sic
 {
 	if($id_dhAtu==="vew")
 	{
-		$text = change('/(['.pc('ac').']['.pc('hl').'M]*[+])(s[^a])/','$1i$2');
+		$text = change('/(['.pc('ac').']['.pc('hl').'M]*[+])(s[^a+])/','$1i$2');
 	}
 	else
 	{
