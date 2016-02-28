@@ -3141,12 +3141,6 @@ elseif ( in_array("k",$itpratyaya) && in_array($fo,array("brUY","Yizvapa!","yaja
 	storedata('6.1.15','sa',0);
     $text = samprasarana(array("uac","suap","iaj","uap","ue","vie","hie","uad","Su"),0);
 }
-/* RRta iddhAtoH (7.1.100) */
-if (arr($text,'/F\+/') && in_array($so,$tiG) && ($sarvadhatuka===1 || in_array("Sa",$vik) || arr($text,'/[+]yAs[+]/')))
-{
-    $text=two(array("F"),array("+"),array("ir"),array("+"),0);
-	storedata('7.1.100','sa',0);
-}
 /* grahijyAvayivyadhivaSTivicativRzcatipRcCatibhRjjatInAM Giti ca (6.1.16) */
 if ( in_array($fo,array("jyA","graha!","vaya!","vyaDa!","vaSa!","vyaca!","o!vraScU!","praCa!","Brasja!")) && ((sub(array("jyA","grah","vay","vyaD","vaS","vyac","vraSc","pracC","Brasj"),array("+"),$apit_sArvadhAtuka_pratyayas,0) && $sarvadhatuka===1) || in_array("N",$itpratyaya) || in_array("k",$itpratyaya) || in_array("SnA",$vik)) )
 {
@@ -3974,6 +3968,12 @@ if ( $_GET['cond53']==='2' && sub(array("seD"),array("+"),array("i+"),0) )
 {
     $text=three(array("seD"),array("+"),array("i+"),array("sAD"),array("+"),array("i+"),0);    
 	storedata('6.1.49','sa',0);
+}
+/* RRta iddhAtoH (7.1.100) */
+if (arr($text,'/F\+/') && in_array($so,$tiG) && ($sarvadhatuka===1 || in_array("Sa",$vik) || arr($text,'/[+]yAs[+]/')))
+{
+    $text=two(array("F"),array("+"),array("ir"),array("+"),0);
+	storedata('7.1.100','sa',0);
 }
 /* cisphurorNau (6.1.54) */
 if ( in_array($fo,array("ciY","sPura!")) && in_array($so,$tiG) && sub(array("ce","sPor"),array("+"),array("i+"),0) && !sub(array("cA","sPAr"),array("+"),array("i+"),0) )
@@ -5615,9 +5615,10 @@ if (arr($text,'/daridrA\+/') && in_array($fo,array("daridrA")) && $ardhadhatuka=
     $text=one(array("daridr+s"),array("daridrA+s"),0);
 	storedata('6.4.114-1','sa',0);	
 }
+print_r($text);
 /* apadAntasya mUrdhanyaH (8.3.55), iNkoH (8.3.57) and AdezapratyayayoH (8.3.59) */
 // Not coded perfectly. This is only for tiG pratyayas.
-if(arr($text,'/[iIuUfFxXeoEOhyvrlkKgGN][+]*s/') && !arr($text,'/[iIuUfFxXeoEOhyvrl]\+s$/') && in_array($so,$tiG) && !(arr(array($fo),'/^s/') && arr($text,'/[^+]*[+]s/')) && $Adezapratyaya!==1)
+if(arr($text,'/[iIuUfFxXeoEOhyvrlkKgGN][+]*s['.pc('al').'MH+]+$/') && !arr($text,'/[iIuUfFxXeoEOhyvrl]\+s$/') && in_array($so,$tiG) && !(arr(array($fo),'/^s/') && arr($text,'/[^+]*[+]s/')) && $Adezapratyaya!==1)
 {
 	storedata('8.3.55','pa',0);
 	storedata('8.3.57','pa',0);
@@ -5627,13 +5628,14 @@ if(arr($text,'/[iIuUfFxXeoEOhyvrlkKgGN][+]*s/') && !arr($text,'/[iIuUfFxXeoEOhyv
 	$text = change('/[+]ise/','+ize');
 	storedata('8.3.59','sa',0);
 }
-if(arr($text,'/[iIuUfFxXeoEOhyvrlkKgGN][+]s/') && ($ksa===1||$sic===1) )
+if(arr($text,'/[iIuUfFxXeoEOhyvrlkKgGN][+]s['.pc('al').'MH+]+$/') && ($ksa===1||$sic===1) )
 {
 	storedata('8.3.55','pa',0);
 	storedata('8.3.57','pa',0);
 	$text = two($iN1,array("+s"),$iN1,array("+z"),0);
 	storedata('8.3.59','sa',0);
 }
+print_r($text);
 /* For verbs - remove all + marks. */
 /*if(in_array($so,$tiG))
 {
