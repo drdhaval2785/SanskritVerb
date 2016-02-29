@@ -4511,7 +4511,6 @@ elseif (  in_array($so,$tiG)&& $fo==="mfjU!" && (($kGiti===1 && arr($text,'/mfj[
     $text=two(array("mfj"),array("+"),array("mArj"),array("+"),0);
 	storedata('7.2.114','sa',0);
 }
-print_r($text);
 /* gamahanajanakhanaghasAM lopaH kGiti (6.4.98) */
 if (in_array($fo,array("gamx!","hana!","jana!","Gasa!","Kanu!","janI!","ada!")) && ends($itpratyaya,array("k","N"),2) && sub(array("gam","Gan","jan","Gas","Kan","han"),array("+"),$ac,0) && in_array($so,$tiG) && $aG!==1 && !in_array($lakAra,array("viDiliN")))
 {
@@ -8939,7 +8938,6 @@ if ( ($bham === 1 || ($gender==="f" && arr($text,'/an\+I/'))) && $vamanta===0 &&
     } 
     $allopo=1; // 0 - allopa has not happened. 1 - allopa has happened.
 } else {$allopo=0; }
-print_r($text);
 /* ho hanterJNinneSu (7.3.54) */
 if (arr(array($fo),'/[h][a][n]/') && sub(array("h"),array("n"),blank(0),0) && !in_array($fo,array("ahan","dIrGAhan")))
 {
@@ -10574,7 +10572,7 @@ if (arr($text,'/[H]$/') && $start===1  && $pada ==="pada" )
 }
 /* ahan(8.2.68) and ro'supi (8.2.69) and rUparAtrirathantareSu vAcyam (vA 4847) */ 
 $noahan = array("vftrahan","bahuvftrahan");
-if (arr($text,'/h[aA]n\+/') && sub(array("ahan","Ahan","AhAn"),array("+"),blank(0),0) && !sub($noahan,blank(0),blank(0),0) && !(in_array($so,$sup)) && $pada==="pada")
+if (arr($text,'/h[aA]n\+/') && sub(array("ahan","Ahan","AhAn"),array("+"),blank(0),0) && !sub($noahan,blank(0),blank(0),0) && !(in_array($so,$sup)) && $pada==="pada" && $type!=="tiGanta")
 { 
     if ((strpos($so,"rUp")===0)||(strpos($so,"rAtr")===0)||(strpos($so,"raTantar")===0))
     {
