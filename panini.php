@@ -3130,7 +3130,6 @@ elseif ($lakAra==="liw" && arr($text,'/^['.pc('ac').']/') && $abhyAsa!==1)
 	$abhyAsa=1;
 	$abhyasta=1;
 }
-print_r($text);
 /* liTi vayo yaH (6.1.38) and vazcAsyAnyatarasyAM kiti (6.1.39) */
 if (in_array($fo,array("veY")) && $lakAra==="liw" && in_array("k",$itpratyaya) && sub(array("vay"),array("+"),blank(0),0))
 {
@@ -4512,17 +4511,18 @@ elseif (  in_array($so,$tiG)&& $fo==="mfjU!" && (($kGiti===1 && arr($text,'/mfj[
     $text=two(array("mfj"),array("+"),array("mArj"),array("+"),0);
 	storedata('7.2.114','sa',0);
 }
+print_r($text);
 /* gamahanajanakhanaghasAM lopaH kGiti (6.4.98) */
-if (in_array($fo,array("gamx!","hana!","jana!","Gasa!","Kanu!","janI!","ada!")) && ends($itpratyaya,array("k","N"),2) && sub(array("gam","Gan","jan","Gas","Kan"),array("+"),$ac,0) && in_array($so,$tiG) && $aG!==1 && !in_array($lakAra,array("viDiliN")))
+if (in_array($fo,array("gamx!","hana!","jana!","Gasa!","Kanu!","janI!","ada!")) && ends($itpratyaya,array("k","N"),2) && sub(array("gam","Gan","jan","Gas","Kan","han"),array("+"),$ac,0) && in_array($so,$tiG) && $aG!==1 && !in_array($lakAra,array("viDiliN")))
 {
-    $text=three(array("gam","Gan","jan","Gas","Kan"),array("+"),$ac,array("gm","Gn","jn","Gs","Kn"),array("+"),$ac,0);
+    $text=three(array("gam","Gan","jan","Gas","Kan","han"),array("+"),$ac,array("gm","Gn","jn","Gs","Kn","hn"),array("+"),$ac,0);
 	storedata('6.4.98','sa',0);
 }
 /* gamahanajanakhanaghasAM kGityanaGi (6.4.98) */
-if (in_array($fo,array("hana!","gamx!","jana!","Kanu!","Gasa!","ada!")) && (pr2(array("han","gam","jan","Kan","Gas"),array("+"),$ajAdi_apit_sArvadhAtuka_pratyayas,array("hn","gm","jn","Kn","Gs"),array("+"),$ajAdi_apit_sArvadhAtuka_pratyayas,$text)!==$text || arr($text,'/[+]i[vm]a$/')) && in_array($so,$tiG)  && $aG!==1)
+if (in_array($fo,array("hana!","gamx!","jana!","Kanu!","Gasa!","ada!")) && (pr2(array("han","gam","jan","Kan","Gas"),array("+"),$ajAdi_apit_sArvadhAtuka_pratyayas,array("hn","gm","jn","Kn","Gs"),array("+"),$ajAdi_apit_sArvadhAtuka_pratyayas,$text)!==$text || arr($text,'/[+]i[vmT]a$/')) && in_array($so,$tiG)  && $aG!==1)
 {
     $text = pr2(array("han","gam","jan","Kan","Gas"),array("+"),$ajAdi_apit_sArvadhAtuka_pratyayas,array("hn","gm","jn","Kn","Gs"),array("+"),$ajAdi_apit_sArvadhAtuka_pratyayas,$text);
-    $text = pr2(array("han","gam","jan","Kan","Gas"),array("+"),array("iva","ima"),array("hn","gm","jn","Kn","Gs"),array("+"),array("iva","ima"),$text);
+    $text = pr2(array("han","gam","jan","Kan","Gas"),array("+"),array("iva","ima","iTa"),array("hn","gm","jn","Kn","Gs"),array("+"),array("iva","ima","iTa"),$text);
 	storedata('6.4.98','sa',0);
 }
 /* anudAttasya cardupadhasyAnyatarasyAm (6.1.59) */ 
@@ -8939,6 +8939,7 @@ if ( ($bham === 1 || ($gender==="f" && arr($text,'/an\+I/'))) && $vamanta===0 &&
     } 
     $allopo=1; // 0 - allopa has not happened. 1 - allopa has happened.
 } else {$allopo=0; }
+print_r($text);
 /* ho hanterJNinneSu (7.3.54) */
 if (arr(array($fo),'/[h][a][n]/') && sub(array("h"),array("n"),blank(0),0) && !in_array($fo,array("ahan","dIrGAhan")))
 {
