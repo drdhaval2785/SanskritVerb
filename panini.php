@@ -3102,11 +3102,15 @@ if ($lakAra==="liw" && arr($text,'/^['.pc('hl').']/'))
 	$abhyAsa=1;
 	$abhyasta=1;
 }
-echo $aniditAm;
 /* aniditAM hala upadhAyAH kGiti (6.4.24) */ 
 if ( in_array($fo,$aniditverbs) && (in_array("N",$itpratyaya) || in_array("k",$itpratyaya)) && !in_array($sanAdi,array("Ric"))  && $so!=="mahiN" && !in_array("i",$it) && $lakAra!=="viDiliN" && $verbset!=="ruDAdi" && $aniditAm!==1 && !in_array("Sap",$vik))
 {
-	if ($ancu===2)
+	if (in_array($fo,$irendiditverbs) && $lakAra==="luN")
+	{
+		$text = three(array("N","Y","R","n","m","M"),$hl,array("+a+"),array("","","","","","",),$hl,array("+a+"),0);
+		storedata('6.4.24','sa',0);
+	}
+	elseif ($ancu===2)
 	{
 		$text = three(array("N","Y","R","n","m","M"),$hl,array("+"),array("","","","","","",),$hl,array("+"),1);        
 		storedata('6.4.24','sa',0);
@@ -3114,7 +3118,7 @@ if ( in_array($fo,$aniditverbs) && (in_array("N",$itpratyaya) || in_array("k",$i
 	}
 	else
 	{
-		$text = three(array("N","Y","R","n","m","M"),$hl,array("+"),array("","","","","","",),$hl,array("+"),0);        
+		$text = three(array("N","Y","R","n","m","M"),$hl,array("+"),array("","","","","","",),$hl,array("+"),0);
 		storedata('6.4.24','sa',0);
 		$aniditAm = 1; // 0 - this sUtra has not applied. 1 - this sUtra has applied.		
 	}
@@ -4031,7 +4035,12 @@ if (arr($text,'/kfp/') )
 /* aniditAM hala upadhAyAH kGiti (6.4.24) */ 
 if ( in_array($fo,$aniditverbs) && (in_array("N",$itpratyaya) || in_array("k",$itpratyaya)) && !in_array($sanAdi,array("Ric"))  && $so!=="mahiN" && arr($text,'/[NYRnmM]['.pc('hl').'][+]/')  && !in_array("i",$it) && $lakAra!=="viDiliN" && $verbset!=="ruDAdi" && $aniditAm!==1 && !in_array("Sap",$vik)) # For application after NeraniTi
 {
-	if ($ancu===2)
+	if (in_array($fo,$irendiditverbs) && $lakAra==="luN")
+	{
+		$text = three(array("N","Y","R","n","m","M"),$hl,array("+a+"),array("","","","","","",),$hl,array("+a+"),0);
+		storedata('6.4.24','sa',0);
+	}
+	elseif ($ancu===2)
 	{
 		$text = three(array("N","Y","R","n","m","M"),$hl,array("+"),array("","","","","","",),$hl,array("+"),1);        
 		storedata('6.4.24','sa',0);
