@@ -1960,7 +1960,6 @@ if ($type==="tiGanta" )
 		storedata('1.3.9','sa',0);
 	}
 }
-
 /* pratyaya changes */
 /* jherjus (3.4.108) */
 if (in_array($so,array("Ji")) && ($lakAra==="ASIrliN"||$lakAra==="viDiliN") )
@@ -3103,8 +3102,9 @@ if ($lakAra==="liw" && arr($text,'/^['.pc('hl').']/'))
 	$abhyAsa=1;
 	$abhyasta=1;
 }
+echo $aniditAm;
 /* aniditAM hala upadhAyAH kGiti (6.4.24) */ 
-if ( in_array($fo,$aniditverbs) && (in_array("N",$itpratyaya) || in_array("k",$itpratyaya)) && !in_array($sanAdi,array("Ric"))  && $so!=="mahiN" && arr($text,'/[NYRnmM]['.pc('hl').'][+]/')  && !in_array("i",$it) && $lakAra!=="viDiliN" && $verbset!=="ruDAdi" && $aniditAm!==1 && !in_array("Sap",$vik))
+if ( in_array($fo,$aniditverbs) && (in_array("N",$itpratyaya) || in_array("k",$itpratyaya)) && !in_array($sanAdi,array("Ric"))  && $so!=="mahiN" && !in_array("i",$it) && $lakAra!=="viDiliN" && $verbset!=="ruDAdi" && $aniditAm!==1 && !in_array("Sap",$vik))
 {
 	if ($ancu===2)
 	{
@@ -3126,6 +3126,7 @@ elseif ($lakAra==="liw" && arr($text,'/^['.pc('ac').']/') && $abhyAsa!==1)
 	$abhyAsa=1;
 	$abhyasta=1;
 }
+print_r($text);
 /* liTi vayo yaH (6.1.38) and vazcAsyAnyatarasyAM kiti (6.1.39) */
 if (in_array($fo,array("veY")) && $lakAra==="liw" && in_array("k",$itpratyaya) && sub(array("vay"),array("+"),blank(0),0))
 {
@@ -5615,7 +5616,6 @@ if (arr($text,'/daridrA\+/') && in_array($fo,array("daridrA")) && $ardhadhatuka=
     $text=one(array("daridr+s"),array("daridrA+s"),0);
 	storedata('6.4.114-1','sa',0);	
 }
-print_r($text);
 /* apadAntasya mUrdhanyaH (8.3.55), iNkoH (8.3.57) and AdezapratyayayoH (8.3.59) */
 // Not coded perfectly. This is only for tiG pratyayas.
 if(arr($text,'/[iIuUfFxXeoEOhyvrlkKgGN][+]*s['.pc('al').'MH+]+$/') && !arr($text,'/[iIuUfFxXeoEOhyvrl]\+s$/') && in_array($so,$tiG) && !(arr(array($fo),'/^s/') && arr($text,'/[^+]*[+]s/')) && $Adezapratyaya!==1)
@@ -5635,7 +5635,6 @@ if(arr($text,'/[iIuUfFxXeoEOhyvrlkKgGN][+]s['.pc('al').'MH+]+$/') && ($ksa===1||
 	$text = two($iN1,array("+s"),$iN1,array("+z"),0);
 	storedata('8.3.59','sa',0);
 }
-print_r($text);
 /* For verbs - remove all + marks. */
 /*if(in_array($so,$tiG))
 {
