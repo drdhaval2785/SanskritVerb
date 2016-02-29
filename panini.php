@@ -4149,9 +4149,9 @@ if ( ($sarvadhatuka===1 || $ardhadhatuka===1)   && $didhI!==1 && $bhUsuvo!==1 &&
 $text = one(array("sI+t","sI+s"),array("sIt","sIs"),0); // See https://github.com/drdhaval2785/SanskritVerb/issues/281
 /* sArvadhAtukArdhadhAtukayoH (7.3.84) */
 // Patch for znu. See https://github.com/drdhaval2785/SanskritVerb/issues/451
-if (arr($text,'/[+]nu[+]tu$/') || arr($text,'/[+]u[+]tu$/') || arr($text,'/f[+]tu$/') )
+if (arr($text,'/[+]nu[+]tu$/') || arr($text,'/[+]u[+]tu$/') || arr($text,'/[iIuUfFx][+]tu$/') )
 {
-	$text = one(array("+nu+tu","+u+tu","f+tu"),array("+no+tu","+o+tu","ar+tu"),0);
+	$text = two(array("i","I","u","U","f","F","x",),array("+tu"),array("e","E","o","o","ar","ar","al",),array("+tu"),0);
 	storedata('7.3.84','sa',0);
 }
 /* sArvadhAtukArdhadhAtukayoH (7.3.84) */
