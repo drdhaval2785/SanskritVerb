@@ -3419,13 +3419,13 @@ if ( arr($text,'/a[+]iy[+]['.pc('vl').']/') && in_array($so,$tiG) )
 }
 if ($debug===1) {dibug("2900");}
 /* Ato lopa iTi ca (6.4.64) */
-if ( (in_array("N",$itpratyaya)||in_array("k",$itpratyaya) )  && $lakAra!=="" && $caG===1 && sub(array("A+"),array("a+"),blank(0),0) )
+if ( (in_array("N",$itpratyaya)||in_array("k",$itpratyaya) )  && $lakAra!=="" && $caG===1 && arr($text,'/^[^+]+A[+]a[+]/') )
 {
-    $text=two(array("A"),array("+a+"),array(""),array("+a+"),0);
+    $text=change('/^([^+]+)A([+]a[+])/','$1$2');
 	storedata('6.4.64','sa',0);
 }
 /* Ato lopa iTi ca (6.4.64) */
-elseif (arr($text,'/[A][+]['.pc('ac').']/') && !arr($text,'/n[uA][+]yA[+]am$/') && (in_array("N",$itpratyaya)||in_array("k",$itpratyaya) ) && pr2(array("A"),array("+"),$tiG1,array("A"),array("+"),$tiG1,$text)!==$text && $lakAra!=="")
+elseif (arr($text,'/^[^+]+[A][+]['.pc('ac').']/') && !arr($text,'/n[uA][+]yA[+]am$/') && (in_array("N",$itpratyaya)||in_array("k",$itpratyaya) ) && pr2(array("A"),array("+"),$tiG1,array("A"),array("+"),$tiG1,$text)!==$text && $lakAra!=="")
 {
     $text=pr2(array("A"),array("+"),$tiG1,array(""),array("+"),$tiG1,$text);
     $text=two($hl,array("+sic+"),$hl,array("A+sic+"),0);
