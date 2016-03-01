@@ -1431,7 +1431,7 @@ if ($lakAra==="luN")
 	{
 		$text = one(array("+sic+"),array("+"),0);
 		storedata('2.4.77','sa',0);
-		$sic=0;
+		//$sic=0;
 		$luGset=1;
 		$gAtisthA=1;
 		//$sarvadhatuka=1;
@@ -1986,6 +1986,12 @@ if (in_array($so,array("ta","Ja")) && $lakAra==="liw")
 {
     $text=two(array("+"),array("ta","Ja"),array("+"),array("eS","irec"),0);
 	storedata('3.4.81','sa',0);
+}
+/* AtaH (3.4.110) */
+if ( $lakAra==="luN" && $so==="Ji" && sub(array("A"),array("+"),array("Ji"),0) )
+{
+	$text = three(array("A"),array("+"),array("Ji"),array("A"),array("+"),array("jus"),0);
+	storedata('3.4.110','sa',0);
 }
 /* upadeze'janunAsika it (1.3.2)*/ 
 // as idit is necessary for numAgama, it is placed here. otherwise with Sap, there is problem in mit function.
@@ -3025,12 +3031,6 @@ if (arr($text,'/[+][s][i][s][+][I]/') && in_array($so,$tiG) )
 	storedata('6.1.101','sa',0);
     }
 }
-/* AtaH (3.4.110) */
-if ( $sic!==0 && $so==="Ji" && sub(array("A"),array("+"),array("Ji"),0) )
-{
-	$text = three(array("A"),array("+"),array("Ji"),array("A"),array("+"),array("jus"),0);
-	storedata('3.4.110','sa',0);
-}
 /* rudhAdi gaNa is special in the sense that its vikaraNa is a mit pratyaya. So making a special provision for the same. */
 if ($rudhAdibhyaH===1)
 {
@@ -3425,7 +3425,7 @@ if ( (in_array("N",$itpratyaya)||in_array("k",$itpratyaya) )  && $lakAra!=="" &&
 	storedata('6.4.64','sa',0);
 }
 /* Ato lopa iTi ca (6.4.64) */
-elseif (arr($text,'/^[^+]+[A][+]['.pc('ac').']/') && !arr($text,'/n[uA][+]yA[+]am$/') && (in_array("N",$itpratyaya)||in_array("k",$itpratyaya) ) && pr2(array("A"),array("+"),$tiG1,array("A"),array("+"),$tiG1,$text)!==$text && $lakAra!=="")
+elseif (arr($text,'/^[^+]+[+][^+]+[A][+]['.pc('ac').']/') && !arr($text,'/n[uA][+]yA[+]am$/') && (in_array("N",$itpratyaya)||in_array("k",$itpratyaya) ) && pr2(array("A"),array("+"),$tiG1,array("A"),array("+"),$tiG1,$text)!==$text && $lakAra!=="")
 {
     $text=pr2(array("A"),array("+"),$tiG1,array(""),array("+"),$tiG1,$text);
     $text=two($hl,array("+sic+"),$hl,array("A+sic+"),0);
@@ -3676,8 +3676,8 @@ if ( in_array($fo,array("janI!","jYA")) && in_array($so,$tiG) && sub(array("jan"
     $text=three(array("jan","jYA"),array("+"),$shitpratyayareplace,array("jA","jA"),array("+"),$shitpratyayareplace,0);
 	storedata('7.3.79','sa',0);
 }
-/* gAGkuTAdibhyo'JNinGit (1.2.1) */ 
-if ( in_array($fo,array("iN")) && sub(array("gAN"),array("+"),blank(0),0) && in_array($lakAra,$ArdhadhAtuka_lakAra) && $Nit===0 && $Jit===0 && !in_array("R",$it) && !in_array("Y",$it))
+/* gAGkuTAdibhyo'JNinGit (1.2.1) */
+if ( in_array($fo,array("iN")) && sub(array("gA"),array("+"),blank(0),0) && in_array($lakAra,$ArdhadhAtuka_lakAra) && $Nit===0 && $Jit===0 && !in_array("R",$it) && !in_array("Y",$it))
 {
 	$itpratyaya=array_merge($itpratyaya,array("N"));
 	$it=array_merge($it,array("N"));
@@ -4342,20 +4342,23 @@ if ( in_array($lakAra,array("luN","laN","lfN",)) && $_GET['cond50']==='1')
 {
 	storedata('6.4.74','sa',0);
 }
-/* ADajAdInAm (6.4.72) */
-// udAttatva pending.
-elseif ( in_array($lakAra,array("luN","laN","lfN",)) && arr($text,'/^['.pc('ac').']/') )
+else
 {
-    $text=Adyanta($text,"A",1);
-	storedata('6.4.72','sa',0);
-    $Agama=array("Aw");
-}
-/* luGlaGlRGkSvaDudAttaH (6.4.71) */
-// udAttatva pending.
-elseif ( in_array($lakAra,array("luN","laN","lfN",)) )
-{
-    $text=Adyanta($text,"a",1);
-	storedata('6.4.71','sa',0);
+	/* ADajAdInAm (6.4.72) */
+	// udAttatva pending.
+	if ( in_array($lakAra,array("luN","laN","lfN",)) && arr($text,'/^['.pc('ac').']/') )
+	{
+		$text=change('/^(['.pc('ac').'])/','A$1');
+		storedata('6.4.72','sa',0);
+		$Agama=array("Aw");
+	}
+	/* luGlaGlRGkSvaDudAttaH (6.4.71) */
+	// udAttatva pending.
+	if ( in_array($lakAra,array("luN","laN","lfN",)) && arr($text,'/^['.pc('hl').']/') )
+	{
+		$text=change('/^(['.pc('hl').'])/','a$1');
+		storedata('6.4.71','sa',0);
+	}
 }
 /* znasorallopaH (6.4.111) */
 // znam pending.
@@ -4404,7 +4407,7 @@ if ( in_array($fo,array("do","deN","qudAY","dAR","Dew","quDAY","zWA")) && sub(ar
 	$kGiti=1;
 }
 /* ghumAsthAgApAjahAtisAM hali (6.4.66) */
-if ( in_array($fo,array("do","deN","qudAY","dAR","Dew","quDAY","mA","zWA","iN","pA","hA","sA","gAN")) && ends($it,array("N","k"),2) && arr($text,'/a[+]['.pc('ac').']/') && sub(array("A+"),$ArdhadhAtuka_pratyayas,blank(0),0) && $lakAra!=="" )
+if ( in_array($fo,array("do","deN","qudAY","dAR","Dew","quDAY","mA","zWA","iN","pA","hA","sA","gAN")) && ends($it,array("N","k"),2) && sub(array("A+"),$ArdhadhAtuka_pratyayas,blank(0),0) && $lakAra!=="" )
 {
     $text=two(array("A+"),$ArdhadhAtuka_pratyayas,array("I+"),$ArdhadhAtuka_pratyayas,0);
 	storedata('6.4.66','sa',0);
