@@ -3664,6 +3664,18 @@ if (  !in_array("Sap",$vik) && !in_array("N",$itpratyaya) && $sarvadhatuka===1 &
 		$kGiti=1;	
 	}
 }
+/* mRjervRddhiH (7.2.114) */
+if (  in_array($so,$tiG)&& $fo==="mfjU!" && $kGiti===1 && arr($text,'/mfj[+]['.pc('ac').']/') )
+{
+    $text=two(array("mfj"),array("+"),array("mArj"),array("+"),1);
+	storedata('7.2.114','sa',0);
+}
+/* mRjervRddhiH (7.2.114) */
+elseif (  in_array($so,$tiG)&& $fo==="mfjU!" && $kGiti!==1 )
+{
+    $text=two(array("mfj"),array("+"),array("mArj"),array("+"),0);
+	storedata('7.2.114','sa',0);
+}
 /* pugantalaghUpadhasya ca patch for 'tu' of loT lakAra (Because its companion tAt is apit) */
 if (arr($text,'/[iufx]['.pc('hl').'][+]tu$/'))
 {
@@ -4506,12 +4518,6 @@ if ( arr($text,'/j\+/') && (ends($itpratyaya,array("k","N"),2) || $kGiti===1) &&
 elseif ( arr($text,'/j\+/') && pr2(array("mfj","marj"),array("+","+i"),$ArdhadhAtuka_tiG_pratyayas,array("mArj"),array("+","+i"),$ArdhadhAtuka_tiG_pratyayas,$text)!==$text && in_array($so,$tiG) && (($kGiti===1 && arr($text,'/mfj[+]['.pc('ac').']/'))||$kGiti!==1))
 {
     $text=pr2(array("mfj","marj"),array("+","+i"),$ArdhadhAtuka_tiG_pratyayas,array("mArj","mArj"),array("+","+i"),$ArdhadhAtuka_tiG_pratyayas,$text);
-	storedata('7.2.114','sa',0);
-}
-/* mRjervRddhiH (7.2.114) */
-elseif (  in_array($so,$tiG)&& $fo==="mfjU!" && (($kGiti===1 && arr($text,'/mfj[+]['.pc('ac').']/'))||$kGiti!==1) )
-{
-    $text=two(array("mfj"),array("+"),array("mArj"),array("+"),0);
 	storedata('7.2.114','sa',0);
 }
 /* gamahanajanakhanaghasAM lopaH kGiti (6.4.98) */
