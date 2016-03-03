@@ -2283,7 +2283,7 @@ if ($verb_without_anubandha==="cakz" && $lakAra==="liw" && !in_array($so,array("
 	storedata('1.2.5','pa',0);
 	$it = array_merge($it,array("k"));
 	$itpratyaya = array_merge($itpratyaya,array("k"));
-}	
+}
 if ($debug===1) {dibug("1800");}
 /* jho'ntaH (7.1.3) */
 if (in_array($so,array("Ji")) && arr($text,'/Ji$/') && $lakAra!=="liw") // because liTastajhayorezirec.
@@ -3665,15 +3665,21 @@ if (  !in_array("Sap",$vik) && !in_array("N",$itpratyaya) && $sarvadhatuka===1 &
 	}
 }
 /* mRjervRddhiH (7.2.114) */
-if (  in_array($so,$tiG)&& $fo==="mfjU!" && $kGiti===1 && arr($text,'/mfj[+]['.pc('ac').']/') )
+if (  in_array($so,$tiG)&& $fo==="mfjU!" && (in_array("N",$itpratyaya)||in_array("k",$itpratyaya)) && arr($text,'/mfj[+]['.pc('ac').']/') )
 {
     $text=two(array("mfj"),array("+"),array("mArj"),array("+"),1);
 	storedata('7.2.114','sa',0);
 }
 /* mRjervRddhiH (7.2.114) */
-elseif (  in_array($so,$tiG)&& $fo==="mfjU!" && $kGiti!==1 )
+elseif (  in_array($so,$tiG)&& $fo==="mfjU!" && !(in_array("N",$itpratyaya)||in_array("k",$itpratyaya)) )
 {
     $text=two(array("mfj"),array("+"),array("mArj"),array("+"),0);
+	storedata('7.2.114','sa',0);
+}
+/* mRjervRddhiH patch for 'tu' of loT lakAra */
+if (arr($text,'/mfj[+]tu$/'))
+{
+	$text = one(array("mfj+tu"),array("mArj+tu"),0);
 	storedata('7.2.114','sa',0);
 }
 /* pugantalaghUpadhasya ca patch for 'tu' of loT lakAra (Because its companion tAt is apit) */
@@ -3757,7 +3763,7 @@ elseif ($ardhadhatuka===1 && (in_array("N",$itpratyaya)||in_array("k",$itpratyay
     $kGiti=1;
 }
 /* kGiti ca (1.1.5) */
-elseif ($ardhadhatuka===1 && (in_array("N",$itpratyaya)||in_array("k",$itpratyaya)) && pr2(array("i","I","u","U","f","F","x","X"),$hlplus,$ArdhadhAtuka_tiG_pratyayas,array("i","I","u","U","f","F","x","X"),$hlplus,$ArdhadhAtuka_tiG_pratyayas,$text)!==$text && $kGiti!==1)
+elseif ($ardhadhatuka===1 && (in_array("N",$itpratyaya)||in_array("k",$itpratyaya)) && pr2(array("i","I","u","U","f","F","x","X"),$hlplus,$ArdhadhAtuka_tiG_pratyayas,array("e","e","o","o","ar","ar","al","al"),$hlplus,$ArdhadhAtuka_tiG_pratyayas,$text)!==$text && $kGiti!==1)
 {
 	storedata('1.1.5','pa',0);
     $kGiti=1;
