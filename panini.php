@@ -2879,14 +2879,6 @@ if ( $ksa===1 && $luGset===7 && in_array($so,$taG)  && in_array($fo,array("duha!
     $text = three(array("duh","dih","lih","guh",),array("+sa+"),array("t","T","d","D","n","v",),array("duh","dih","lih","guh",),array("+"),array("t","T","d","D","n","v",),1);
 	storedata('7.3.73','sa',0);
 }
-/* riG zayagliGkSu (7.4.28) */
-if (in_array("Sa",$vik) && (sub(array("f"),array("+a+"),blank(0),0) || (sub(array("f"),array("+y"),blank(0),0) && $lakAra!=="" )))
-{
-    $text=two(array("f"),array("+a"),array("ri"),array("+a"),0);
-	storedata('7.4.28','sa',0);
-    $text=two(array("ri"),array("+a+"),array("riy"),array("+a+"),0);
-	storedata('6.4.77','sa',0);
-}
 /* AtmanepadeSvanataH (7.1.5) */
 if ( in_array($so,array("Ja")) && $set===2 && pr2(array("+"),array("Ja"),blank(0),array("+"),array("ata"),blank(0),$text)!==$text)
 {
@@ -3153,14 +3145,22 @@ if ( in_array($fo,array("jyA","graha!","vaya!","vyaDa!","vaSa!","vyaca!","o!vraS
     $text = samprasarana(array("jyA","grah","vay","vyaD","vaS","vyac","vraSc","pracC","Brasj"),0);
 	}
 if ($debug===1) {dibug("2600");}
+print_r($text); print_r($it);
 /* jAgro'viciNNalGitsu (7.3.85) */
 // Only coded for Ri and Git. Rest pending.
-//if ( sub(array('jAgf'),array("+"),array("Ri+"),0) && $bhasyADhe!==1)
-if ( arr($text,'/[j][A][g][f][+]/') && $bhasyADhe!==1 && (!in_array("N",$it)) )
+if ( arr($text,'/[j][A][g][f][+]/') && $bhasyADhe!==1 && (!in_array("N",$it)||$lakAra==="ASIrliN") )
 {
     $text = two(array('jAgf'),array("+"),array('jAgar'),array("+"),0);
 	storedata('7.3.85','sa',0);
 	$jAgro=1;
+}
+/* riG zayagliGkSu (7.4.28) */
+if (in_array("Sa",$vik) && (sub(array("f"),array("+a+"),blank(0),0) || (sub(array("f"),array("+y"),blank(0),0) && $lakAra!=="" )))
+{
+    $text=two(array("f"),array("+a"),array("ri"),array("+a"),0);
+	storedata('7.4.28','sa',0);
+    $text=two(array("ri"),array("+a+"),array("riy"),array("+a+"),0);
+	storedata('6.4.77','sa',0);
 }
 /* IzaH se (7.2.77) */
 if (in_array($fo,array("ISa!")) && sub(array("+"),array("s"),blank(0),0) && in_array($so,$tiG))
@@ -5544,7 +5544,6 @@ if ( $sic===1 && arr($text,'/[aiufx]\+s/') && sub(array("a","i","u","f","x"),arr
 	$text = three(array("a","i","u","f","x"),array("+s"),prat("Jl"),array("a","i","u","f","x"),array("+"),prat("Jl"),0); 
 	storedata('8.2.27','sa',0);
 }
-print_r($text);
 /* AdezapratyayayoH (8.3.59) */
 if( in_array($so,$tiG) && arr($text,'/([iIuUfFxXeEoOhyvrlkKgGN])([+]*[iI]*)s(['.pc('al').'])/') && !arr($text,'/[+][s]$/') && arr($text,'/s/') && ( $rudAdibhyaH===1 || $SaHsaH===1 || $sic===1 || $syatAsI===1 || ends(array($us),prat('ik'),1) || $sIyuT===1 || ($lakAra==="liw" && arr($text,'/[+]ise$/')) ) && !arr($text,'/\+yAs\+/') && !(arr(array($fo),'/^s/') && arr($text,'/^[^+]*[iIuUfFxeEoOhyvrlkKgGN][+]s/')) )
 {
