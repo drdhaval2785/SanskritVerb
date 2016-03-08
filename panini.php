@@ -5544,8 +5544,9 @@ if ( $sic===1 && arr($text,'/[aiufx]\+s/') && sub(array("a","i","u","f","x"),arr
 	$text = three(array("a","i","u","f","x"),array("+s"),prat("Jl"),array("a","i","u","f","x"),array("+"),prat("Jl"),0); 
 	storedata('8.2.27','sa',0);
 }
+print_r($text);
 /* AdezapratyayayoH (8.3.59) */
-if( in_array($so,$tiG) && arr($text,'/([iIuUfFxXeEoOhyvrlkKgGN])([+]*[iI]*)s(['.pc('al').'])/') && !arr($text,'/[+][s]$/') && arr($text,'/s/') && ( $SaHsaH===1 || $sic===1 || $syatAsI===1 || ends(array($us),prat('ik'),1) || $sIyuT===1 || ($lakAra==="liw" && arr($text,'/[+]ise$/')) ) && !arr($text,'/\+yAs\+/') && !(arr(array($fo),'/^s/') && arr($text,'/^[^+]*[iIuUfFxeEoOhyvrlkKgGN][+]s/')) )
+if( in_array($so,$tiG) && arr($text,'/([iIuUfFxXeEoOhyvrlkKgGN])([+]*[iI]*)s(['.pc('al').'])/') && !arr($text,'/[+][s]$/') && arr($text,'/s/') && ( $rudAdibhyaH===1 || $SaHsaH===1 || $sic===1 || $syatAsI===1 || ends(array($us),prat('ik'),1) || $sIyuT===1 || ($lakAra==="liw" && arr($text,'/[+]ise$/')) ) && !arr($text,'/\+yAs\+/') && !(arr(array($fo),'/^s/') && arr($text,'/^[^+]*[iIuUfFxeEoOhyvrlkKgGN][+]s/')) )
 {
 	$text = change('/([iIuUfFxXeEoOhyvrlkKgGN])([+]*)s(['.pc('al').'])/','$1$2z$3');
 	$text = change('/([iIuUfFxXeEoOhyvrlkKgGN][+]*[iI]*)sI/','$1zI');
@@ -5645,7 +5646,8 @@ if(arr($text,'/[iIuUfFxXeoEOhyvrlkKgGN][+]*s['.pc('al').'MH+]+$/') && !arr($text
 {
 	storedata('8.3.55','pa',0);
 	storedata('8.3.57','pa',0);
-	$text = two($iN1,array("+s","+is","+Is"),$iN1,array("+z","+iz","+Iz"),0);
+	$text = two($iN1,array("+s",),$iN1,array("+z",),0);
+	$text = change('/[+]([iI])s/','+$1z');
 	$text = change('/zIs([+a-zA-Z]+)$/','zIz$1');
 	$text = change('/[+]izIs/','+izIz');
 	$text = change('/[+]ise/','+ize');
