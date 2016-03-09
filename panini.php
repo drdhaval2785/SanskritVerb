@@ -3640,7 +3640,6 @@ if (arr($text,'/[+][z]/') && $pada=== "pratyaya" && in_array($so,$tiG))
     $text = two(array("+"),array("z"),array("+"),array(""),0);
 	storedata('1.3.9','sa',0);
 }
-print_r($text); echo $sijabhyastavidibhyazca;
 /* jusi ca (7.3.83) */
 if ( ($jherjus===1 || $sijabhyastavidibhyazca===1) && arr($text,'/[iIuUfFxX]\+us/') ) // liT has 'us' which is not 'jus'
 {
@@ -3913,9 +3912,9 @@ if ($lakAra==="liw" && (in_array($fo,array("f","fCa!")) || ends(array($verb_with
 	storedata('7.4.11','sa',0);
 }
 /* udoSThyapUrvasya (7.1.102) */
-if ( in_array($fo,array("pF","PF","bF","BF","mF")) && sub(array("pipar","biBar","mimar","pF","BF","mF"),array("+"),$apit_sArvadhAtuka_pratyayas,0) && $jherjus!==1 && $sijabhyastavidibhyazca!==1)
+if ( in_array($fo,array("pF","PF","bF","BF","mF")) && sub(array("pipar","biBar","mimar","pF","BF","mF"),array("+"),$apit_sArvadhAtuka_pratyayas,0) )
 {
-	$text=three(array("pipar","biBar","mimar","pF","BF","mF"),array("+"),$apit_sArvadhAtuka_pratyayas,array("pipur","biBur","mimur","pipur","biBur","mimur"),array("+"),$apit_sArvadhAtuka_pratyayas,0);
+	$text=three(array("pipar","biBar","mimar","pF","BF","mF"),array("+"),$apit_sArvadhAtuka_pratyayas,array("pipur","biBur","mimur","pur","Bur","mur"),array("+"),$apit_sArvadhAtuka_pratyayas,0);
 	storedata('7.1.102','sa',0);
 }
 elseif(arr($text,'/gup\+Ay/'))
@@ -4563,6 +4562,7 @@ elseif (arr($text,'/([+]*)i\+/') && in_array($so,$tiG) && $ardhadhatuka===1&& (!
 	$text = change('/i[+](['.pc('al').'MH]+)$/','+$1');
 	storedata('6.4.51','sa',0);
 }
+print_r($text);
 /* na bhakurChurAm (8.2.79) */
 // bham pending
 if ( in_array($so,$tiG) && arr($text,'/[kC]u[rv]\+/'))
@@ -4570,9 +4570,12 @@ if ( in_array($so,$tiG) && arr($text,'/[kC]u[rv]\+/'))
 	storedata('8.2.79','pa',0);
 }
 /* hali ca (8.2.77) */
-elseif ( in_array($so,$tiG) && arr($text,'/[iuf][rv][+]/') && sub(array("i","u","f"),array("r+","v+"),$halAdi_apit_sArvadhAtuka_pratyayas,0) )
+elseif ( in_array($so,$tiG) && arr($text,'/^[^+]*[iuf][rv][+]['.pc('hl').']/') )//&& sub(array("i","u","f"),array("r+","v+"),$halAdi_apit_sArvadhAtuka_pratyayas,0) )
 {
-    $text=three(array("i","u","f"),array("r+","v+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("I","U","F"),array("r+","v+"),$halAdi_apit_sArvadhAtuka_pratyayas,0);
+    //$text=three(array("i","u","f"),array("r+","v+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("I","U","F"),array("r+","v+"),$halAdi_apit_sArvadhAtuka_pratyayas,0);
+	$text = change('/^([^+]*)i([rv][+]['.pc('hl').'])/','$1I$2');
+	$text = change('/^([^+]*)u([rv][+]['.pc('hl').'])/','$1U$2');
+	$text = change('/^([^+]*)f([rv][+]['.pc('hl').'])/','$1F$2');
 	storedata('8.2.77','sa',0);
 }
 /* ata upadhAyAH (7.2.116) */
@@ -12376,7 +12379,7 @@ $itprakriti = array();
 $itpratyaya = array();
 $Agama=array();
 $sanAdi="";
-$TAp=0; $DAp=0; $cAp=0; $GIp=0; $GIn=0; $GIS=0; $kGiti=0; $abhyasta=0; $ajAdyataSTAp=0; $tusma=0; $upasarga_joined=0; $sicivRddhi=0; $atolopa=0; $caG=0; $aG=0; $zluvat=0; $aniditAm=0; $kGiti=0; $uzca=0; $abhyAsa=0; $Adezapratyaya=0;
+$TAp=0; $DAp=0; $cAp=0; $GIp=0; $GIn=0; $GIS=0; $kGiti=0; $abhyasta=0; $ajAdyataSTAp=0; $tusma=0; $upasarga_joined=0; $sicivRddhi=0; $atolopa=0; $caG=0; $aG=0; $zluvat=0; $aniditAm=0; $kGiti=0; $uzca=0; $abhyAsa=0; $Adezapratyaya=0; $jherjus=0; $sijabhyastavidibhyazca=0;
 $temp = scrape1($first,0,2,1); 
 $verb_without_anubandha=$temp[0];
 $storedata=array();
