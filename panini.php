@@ -4223,7 +4223,6 @@ if (arr($text,'/biBI/') && sub(array("biBI"),array("+"),$halAdi_apit_sArvadhAtuk
     $text=three(array("biBI"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("biBi"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,1);
 	storedata('6.4.115','sa',0);
 }
-print_r($text);
 /* lopo yi (6.4.118) */
 if (arr($text,'/jahA\+y/') && (in_array("N",$it)||in_array("k",$it)) && $sarvadhatuka===1 )
 {
@@ -4247,7 +4246,6 @@ if (arr($text,'/[^+]*A\+/') && !in_array($lakAra,array("viDiliN","ASIrliN")) && 
     $text=three(array("A"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("I"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,0);
 	storedata('6.4.113','sa',0);
 }
-print_r($text); echo $abhyasta;
 // Patch to remove + sign after sIyuT
 $text = two(array("+Iy+"),$ac,array("+Iy"),$ac,0);
 /* znA'bhyastayorAtaH (6.4.112) */
@@ -4445,12 +4443,6 @@ if ( in_array($fo,array("do","deN","qudAY","dAR","Dew","quDAY","zWA")) && sub(ar
     $text=two(array("A+"),array("s"),array("i+"),array("s"),0);
 	storedata('1.2.17','sa',0);
 	$kGiti=1;
-}
-/* ghumAsthAgApAjahAtisAM hali (6.4.66) */
-if ( in_array($fo,array("do","deN","qudAY","dAR","Dew","quDAY","mA","zWA","iN","pA","hA","sA","gAN")) && ends($it,array("N","k"),2) && sub(array("A+"),$ArdhadhAtuka_pratyayas,blank(0),0) && $lakAra!=="" )
-{
-    $text=two(array("A+"),$ArdhadhAtuka_pratyayas,array("I+"),$ArdhadhAtuka_pratyayas,0);
-	storedata('6.4.66','sa',0);
 }
 /* vibhASA lIyateH (6.1.50) */
 if ( ((in_array($fo,array("lI")) && $verbset==="kryAdi") || (in_array($fo,array("lIN")) && $verbset==="divAdi") ) && sub(array("le","lE"),array("+"),blank(0),0) )
@@ -4723,6 +4715,12 @@ if (arr($text,'/A\+i/') && sub(array("A+"),array("i"),$tiG1,0) && $lakAra!=="" &
 {
     $text=one(array("A+iTa","A+iva","A+ima","A+ise","A+iD"),array("+iTa","+iva","+ima","+ise","+iD"),0);
 	storedata('6.4.64','sa',0);
+}
+/* ghumAsthAgApAjahAtisAM hali (6.4.66) */
+if ( in_array($fo,array("do","deN","qudAY","dAR","Dew","quDAY","mA","zWA","iN","pA","hA","sA","gAN")) && ends($it,array("N","k"),2) && sub(array("A+"),$ArdhadhAtuka_pratyayas,blank(0),0) && $lakAra!=="" )
+{
+    $text=two(array("A+"),$ArdhadhAtuka_pratyayas,array("I+"),$ArdhadhAtuka_pratyayas,0);
+	storedata('6.4.66','sa',0);
 }
 /* iDattyartivyayatInAm (7.2.66) */
 if (in_array($fo,array("adx!","ada!","f","vyeY")) && $lakAra==="liw" && $so==="sip" && !in_array("iw",$Agama) && sub(array("ad","f","vyay"),array("+"),$tiG1,0) )
