@@ -4169,7 +4169,7 @@ $text = one(array("sI+t","sI+s"),array("sIt","sIs"),0); // See https://github.co
 // Patch for znu. See https://github.com/drdhaval2785/SanskritVerb/issues/451
 if (arr($text,'/[+]nu[+]tu$/') || arr($text,'/[+]u[+]tu$/') || arr($text,'/[iIuUfFx][+]tu$/') )
 {
-	$text = two(array("i","I","u","U","f","F","x",),array("+tu"),array("e","E","o","o","ar","ar","al",),array("+tu"),0);
+	$text = two(array("i","I","u","U","f","F","x",),array("+tu"),array("e","e","o","o","ar","ar","al",),array("+tu"),0);
 	storedata('7.3.84','sa',0);
 }
 /* sArvadhAtukArdhadhAtukayoH (7.3.84) */
