@@ -4710,10 +4710,11 @@ if ( in_array($so,$tiG) && (in_array("N",$it)||in_array("k",$it)) && !arr($text,
     $text = pr2(array("man","han","gam","ram","nam","yam","van","tan","san","kzaR","kziR","fR","tfR","GfR","man",),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("ma","ha","ga","ra","na","ya","va","ta","sa","kza","kzi","f","tf","Gf","ma",),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,$text);
 	storedata('6.4.37','sa',0);
 }
+print_r($text);
 /* Ato lopa iTi ca (6.4.64) */
 if (arr($text,'/A\+i/') && sub(array("A+"),array("i"),$tiG1,0) && $lakAra!=="" && in_array("iw",$Agama) )
 {
-    $text=one(array("A+iTa","A+iva","A+ima","A+ise"),array("+iTa","+iva","+ima","+ise"),0);
+    $text=one(array("A+iTa","A+iva","A+ima","A+ise","A+iD"),array("+iTa","+iva","+ima","+ise","+iD"),0);
 	storedata('6.4.64','sa',0);
 }
 /* iDattyartivyayatInAm (7.2.66) */
