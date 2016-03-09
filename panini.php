@@ -3096,7 +3096,6 @@ if ($lakAra==="liw" && arr($text,'/^['.pc('hl').']/'))
 	$abhyAsa=1;
 	$abhyasta=1;
 }
-print_r($text);	
 /* zRRdRRprAM hrasvo vA (7.4.12) */
 if ( $lakAra==="liw" && in_array("k",$itpratyaya) && sub(array("Sa+SF","da+dF","pa+pF"),array("+"),blank(0),0) )
 {
@@ -3647,12 +3646,6 @@ if (arr($text,'/[+][z]/') && $pada=== "pratyaya" && in_array($so,$tiG))
     $text = two(array("+"),array("z"),array("+"),array(""),0);
 	storedata('1.3.9','sa',0);
 }
-/* jusi ca (7.3.83) */
-if ( ($jherjus===1 || $sijabhyastavidibhyazca===1) && arr($text,'/[iIuUfFxX]\+us/') ) // liT has 'us' which is not 'jus'
-{
-    $text=three(array("i","I","u","U","f","F","x","X"),array("+"),array("us"),array("e","e","o","o","ar","ar","al","al"),array("+"),array("us"),0);
-	storedata('7.3.83','sa',0);
-}
 /* ghasibhasorhali ca (6.4.100) */
 if ( in_array($fo,array("Gasa!","Basa!")) && pr2(array("Gas","Bas"),array("+"),$apit_sArvadhAtuka_pratyayas,array("Gs","Bs"),array("+"),$apit_sArvadhAtuka_pratyayas,$text)!==$text && $lakAra!=="" && $veda===1 )
 {
@@ -3920,11 +3913,22 @@ if ($lakAra==="liw" && (in_array($fo,array("f","fCa!")) || ends(array($verb_with
 }
 /* patch to join yAs */
 $text = change('/yA[+]([^+]*)$/','yA$1');		
+/* jusi ca (7.3.83) */
+if ( ($jherjus===1 || $sijabhyastavidibhyazca===1) && arr($text,'/[iIuUfFxX]\+us/') && $lakAra!=="liw" ) // liT has 'us' which is not 'jus'
+{
+    $text=three(array("i","I","u","U","f","F","x","X"),array("+"),array("us"),array("e","e","o","o","ar","ar","al","al"),array("+"),array("us"),0);
+	storedata('7.3.83','sa',0);
+}
+// Patch for viDiliN to overcome application of udoSThyapUrvasya.
+elseif(arr($text,'/pipar[+]us/'))
+{
+}
 /* udoSThyapUrvasya (7.1.102) */
-if ( in_array($fo,array("pF","PF","bF","BF","mF")) && sub(array("pipar","biBar","mimar","pF","BF","mF"),array("+"),blank(0),0) && (in_array("N",$itpratyaya) || in_array("k",$itpratyaya) || $kGiti===1) )
+elseif ( in_array($fo,array("pF","PF","bF","BF","mF")) && sub(array("pipar","biBar","mimar","pF","BF","mF"),array("+"),blank(0),0) && (in_array("N",$itpratyaya) || in_array("k",$itpratyaya) || $kGiti===1) )
 {
 	//$text=three(array("pipar","biBar","mimar","pF","BF","mF"),array("+"),$apit_sArvadhAtuka_pratyayas,array("pipur","biBur","mimur","pur","Bur","mur"),array("+"),$apit_sArvadhAtuka_pratyayas,0);
 	$text=two(array("pipar","biBar","mimar","pF","BF","mF"),array("+"),array("pipur","biBur","mimur","pur","Bur","mur"),array("+"),0);
+	$text=change('/ur[+]tu$/','ar+tu');
 	storedata('7.1.102','sa',0);
 }
 elseif(arr($text,'/gup\+Ay/'))
