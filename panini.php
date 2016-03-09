@@ -4713,7 +4713,7 @@ if ( in_array($so,$tiG) && (in_array("N",$it)||in_array("k",$it)) && !arr($text,
 /* Ato lopa iTi ca (6.4.64) */
 if (arr($text,'/A\+i/') && sub(array("A+"),array("i"),$tiG1,0) && $lakAra!=="" && in_array("iw",$Agama) )
 {
-    $text=one(array("A+iTa","A+iva","A+ima"),array("+iTa","+iva","+ima"),0);
+    $text=one(array("A+iTa","A+iva","A+ima","A+ise"),array("+iTa","+iva","+ima","+ise"),0);
 	storedata('6.4.64','sa',0);
 }
 /* iDattyartivyayatInAm (7.2.66) */
