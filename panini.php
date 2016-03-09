@@ -4246,6 +4246,13 @@ if (arr($text,'/[^+]*A\+/') && !in_array($lakAra,array("viDiliN","ASIrliN")) && 
     $text=three(array("A"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("I"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,0);
 	storedata('6.4.113','sa',0);
 }
+print_r($text);
+/* ghvasoreddhAvabhyAsalopazca (6.4.119) */
+if (in_array($fo,array("qudAY","quDAY","dAY","DAY")) && sub(array("dadA","daDA"),array("+"),array("hi"),0) && in_array($so,$tiG) ) 
+{
+    $text=two(array("dadA","daDA"),array("+hi"),array("de","De",),array("+hi"),0);
+	storedata('6.4.119','sa',0);
+}
 // Patch to remove + sign after sIyuT
 $text = two(array("+Iy+"),$ac,array("+Iy"),$ac,0);
 /* znA'bhyastayorAtaH (6.4.112) */
@@ -4312,12 +4319,6 @@ if ($fo==="yama!" && in_array($so,$taG) && ($sic===1||$sIyuT===1) && $_GET['cond
 {
 	storedata('1.2.16','pa',0);
 	$vAgamaH=1;
-}
-/* ghvasoreddhAvabhyAsalopazca (6.4.119) */
-if (in_array($fo,array("qudAY","quDAY","dAY","DAY")) && sub(array("dadA","daDA"),array("+"),array("hi"),0) && in_array($so,$tiG) ) 
-{
-    $text=two(array("dadA","daDA"),array("+hi"),array("de","De",),array("+hi"),0);
-	storedata('6.4.119','sa',0);
 }
 if ($debug===1) {dibug("3700");}
 /* ghvasoreddhAvabhyAsalopazca (6.4.119) */
