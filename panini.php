@@ -1707,11 +1707,11 @@ if ( ($sarvadhatuka===1 && $verbset==="juhotyAdi" && sub(array("+Sap+"),$tiG,bla
 	$abhyAsa=1;
 	zlu();
 	/* udoSThyapUrvasya (7.1.102) */
-	if ( in_array($fo,array("pF","PF","bF","BF","mF")) && sub(array("pipar","biBar","mimar"),array("+"),$apit_sArvadhAtuka_pratyayas,0))
+	/*if ( in_array($fo,array("pF","PF","bF","BF","mF")) && sub(array("pipar","biBar","mimar"),array("+"),$apit_sArvadhAtuka_pratyayas,0))
 	{
 		$text=three(array("pipar","biBar","mimar"),array("+"),$apit_sArvadhAtuka_pratyayas,array("pipur","biBur","mimur"),array("+"),$apit_sArvadhAtuka_pratyayas,0);
 		storedata('7.1.102','sa',0);
-	}
+	}*/	
 }
 /* adiprabhRtibhyaH zapaH (2.4.72) */
 if ( $sarvadhatuka===1 && $verbset==="adAdi" && in_array($fo,$adAdi) && sub(array("+Sap+"),$tiG,blank(0),0) )
