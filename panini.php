@@ -3640,6 +3640,7 @@ if (arr($text,'/[+][z]/') && $pada=== "pratyaya" && in_array($so,$tiG))
     $text = two(array("+"),array("z"),array("+"),array(""),0);
 	storedata('1.3.9','sa',0);
 }
+print_r($text); echo $sijabhyastavidibhyazca;
 /* jusi ca (7.3.83) */
 if ( ($jherjus===1 || $sijabhyastavidibhyazca===1) && arr($text,'/[iIuUfFxX]\+us/') ) // liT has 'us' which is not 'jus'
 {
@@ -3912,7 +3913,7 @@ if ($lakAra==="liw" && (in_array($fo,array("f","fCa!")) || ends(array($verb_with
 	storedata('7.4.11','sa',0);
 }
 /* udoSThyapUrvasya (7.1.102) */
-if ( in_array($fo,array("pF","PF","bF","BF","mF")) && sub(array("pipar","biBar","mimar","pF","BF","mF"),array("+"),$apit_sArvadhAtuka_pratyayas,0))
+if ( in_array($fo,array("pF","PF","bF","BF","mF")) && sub(array("pipar","biBar","mimar","pF","BF","mF"),array("+"),$apit_sArvadhAtuka_pratyayas,0) && $jherjus!==1 && $sijabhyastavidibhyazca!==1)
 {
 	$text=three(array("pipar","biBar","mimar","pF","BF","mF"),array("+"),$apit_sArvadhAtuka_pratyayas,array("pipur","biBur","mimur","pipur","biBur","mimur"),array("+"),$apit_sArvadhAtuka_pratyayas,0);
 	storedata('7.1.102','sa',0);
