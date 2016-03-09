@@ -2435,6 +2435,7 @@ if (in_array($fo,array("asu!")) && sub(array("as"),array("+a+"),blank(0),0) && $
 {
 	$text = one(array("as+a+"),array("asT+a+"),0);
 	storedata('7.4.17','sa',0);
+	$asyati=1;
 }
 /* vaca um (7.4.20) */
 if (in_array($fo,array("vaca!",)) && $lakAra==="luN" && sub(array("vac"),array("+"),array("a+"),0) && $verbset==="adAdi")
@@ -4246,7 +4247,6 @@ if (arr($text,'/[^+]*A\+/') && !in_array($lakAra,array("viDiliN","ASIrliN")) && 
     $text=three(array("A"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("I"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,0);
 	storedata('6.4.113','sa',0);
 }
-print_r($text);
 /* ghvasoreddhAvabhyAsalopazca (6.4.119) */
 if (in_array($fo,array("qudAY","quDAY","dAY","DAY")) && sub(array("dadA","daDA"),array("+"),array("hi"),0) && in_array($so,$tiG) ) 
 {
