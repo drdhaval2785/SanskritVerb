@@ -3172,7 +3172,7 @@ if (in_array("Sa",$vik) && (sub(array("f"),array("+a+"),blank(0),0) || (sub(arra
 /* IzaH se (7.2.77) */
 if (in_array($fo,array("ISa!")) && sub(array("+"),array("s"),blank(0),0) && in_array($so,$tiG))
 {
-    $text=three(array("IS"),array("+"),array("s"),array("IS"),array("+"),array("s"),0);
+    $text=three(array("IS"),array("+"),array("s"),array("IS"),array("+"),array("is"),0);
 	storedata('7.2.77','sa',0);
 }
 /* dviSazca (3.4.112) */
