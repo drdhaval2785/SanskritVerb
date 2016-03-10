@@ -4577,7 +4577,8 @@ if (arr($text,'/i\+a/') && in_array($so,$tiG) && $lakAra==="luN" && $caG===1 && 
 /* NeraniTi (6.4.51) */
 elseif (arr($text,'/([+]*)i\+/') && in_array($so,$tiG) && $ardhadhatuka===1&& (!in_array("iw",$Agama)||ends(array($sanAdi),array("Ric","RiN"),2)||in_array($fo,$curAdi_adanta))  && !in_array("iw",$Agama) && ($verbset==="curAdi" || in_array($sanAdi,array("Ric","RiN"))) )
 {
-	$text = three(array("i+yAs","+yAs"),array("+"),array(""),array("+yAs","+yAs"),array("+"),array(""),0);
+	$text = three(array("i+yAs","+yAs",),array("+"),array(""),array("+yAs","+yAs"),array("+"),array(""),0);
+	$text = one(array("i+yA+t"),array("+yA+t"),0);
 	$text = change('/^([a-zA-Z]+)([+]*)i\+([^+]*)$/','$1$2+$3');
 	$text = change('/i[+](['.pc('al').'MH]+)$/','+$1');
 	storedata('6.4.51','sa',0);
