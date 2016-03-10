@@ -3412,7 +3412,6 @@ if ( $didhI!==1 && $kGiti!==1 && $caG!==1 && !($lakAra==="liw" && in_array($fo,a
 		storedata('6.1.78','sa',0);
 	}
 }
-
 /* lopo vyorvali (6.1.66) */
 if ( arr($text,'/a[+]iy[+]['.pc('vl').']/') && in_array($so,$tiG) ) 
 {
@@ -3435,8 +3434,9 @@ elseif (arr($text,'/^[^+]+[+][^+]+[A][+]['.pc('ac').']/') && !arr($text,'/[+]yA[
     $text=two($hl,array("+sic+"),$hl,array("A+sic+"),0);
 	storedata('6.4.64','sa',0);
 }
+print_r($text);
 /* ze mucAdInAm (7.1.59) */
-if ( ($verbset==="tudAdi" || ($verbset==="none" && in_array($fo,$tudAdi)) ) && $lakAra!=="" && (sub($tudAdi_mucAdi,array("+"),array("a+"),0) || (sub($tudAdi_mucAdi,array("+"),array("e"),0) && $lakAra==="viDiliN")) )
+if ( ($verbset==="tudAdi" || ($verbset==="none" && in_array($fo,$tudAdi)) ) && $lakAra!=="" && (sub($tudAdi_mucAdi,array("+"),array("a+"),0) || sub($tudAdi_mucAdi,array("+"),array("e"),0))  )
 {
     $mucAdireplace=array("munc","lunp","vind","linp","zinc","Kind","kfnt","pinS");
     $text = two($tudAdi_mucAdi,array("+a","+e"),$mucAdireplace,array("+a","+e"),0);
@@ -5372,7 +5372,7 @@ if ($lakAra!=="" && $type==="tiGanta")
 //        echo "<p class = hn >gatikAraketarapUrvapadasya yaN neSyate (vA 5034) mandates that eranekAco.../oH supi rule doesn't apply in cases where the pUrvapada is neither gati nor kAraka. iyaG or uvaG is applied in that case. :</p>\n";
 //        echo "<p class = hn >गतिकारकेतरपूर्वपदस्य यण्‌ नेष्यते (वा ५०३४) से गति / कारक से भिन्न पूर्वपद होने पर एरनेकाचो.../ओः सुपि सूत्र नहीं लागू होता । इयङ्‌ या उवङ्‌ की प्रवृत्ति होती है । :</p>\n";
 	}
-    if (arr($text,'/\+nu\+['.pc('ac').']/') && $sIyuT!==1)
+    if (arr($text,'/\+nu\+['.pc('ac').']/') )//&& $sIyuT!==1)
     {
         $text = two(array("+nu+"),$ac,array("+nuv+"),$ac,0);
 		storedata('6.4.77','sa',0);
@@ -12345,7 +12345,7 @@ if ( arr($text,'/[vy][+]*['.pc('vl').']/') && in_array($so,$tiG) && in_array("6.
 }
 /* lopo vyorvali (6.1.66) */
 // Not a very good solution. The second member is there to prevent application of this rule in 'vraj'
-elseif ( arr($text,'/[vy][+]*['.pc('vl').']/') && !arr(array($fo),'/vr/') && in_array($so,$tiG) && !in_array("6.1.77",sutrasfromstoredata()))
+elseif ( arr($text,'/[vy][+]*['.pc('vl').']/') && !arr($text,'/vr/') && in_array($so,$tiG) && !in_array("6.1.77",sutrasfromstoredata()))
 {
     $text=change('/([vy])([+]*['.pc('vl').'])/','$2');
 	storedata('6.1.66','sa',0);
