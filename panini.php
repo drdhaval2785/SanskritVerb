@@ -3434,7 +3434,6 @@ elseif (arr($text,'/^[^+]+[+][^+]+[A][+]['.pc('ac').']/') && !arr($text,'/[+]yA[
     $text=two($hl,array("+sic+"),$hl,array("A+sic+"),0);
 	storedata('6.4.64','sa',0);
 }
-print_r($text);
 /* ze mucAdInAm (7.1.59) */
 if ( ($verbset==="tudAdi" || ($verbset==="none" && in_array($fo,$tudAdi)) ) && $lakAra!=="" && (sub($tudAdi_mucAdi,array("+"),array("a+"),0) || sub($tudAdi_mucAdi,array("+"),array("e"),0))  )
 {
@@ -4229,6 +4228,12 @@ if (arr($text,'/jahA\+y/') && (in_array("N",$it)||in_array("k",$it)) && $sarvadh
 {
     $text=one(array("jahA+y"),array("jah+y"),0);
 	storedata('6.4.118','sa',0);
+}
+/* halaH znaH zAnajJau (3.1.83) */
+if (arr($text,'/['.pc('hl').']\+nA\+hi/') && in_array($so,$tiG) )
+{
+    $text=two($hl,array("+nA+hi"),$hl,array("+Ana+hi"),0);
+	storedata('3.1.83','sa',0);
 }
 //$text = one(array("+yA+"),array("+yA"),0);
 /* I halyaghoH (6.4.113) */
@@ -5450,13 +5455,6 @@ if (arr($text,'/['.pc('hl').']\+u\+/') && sub($hl,array("+u+"),array("vas","mas"
 if (arr($text,'/['.pc('hl').']\+a\+['.pc('hl').']/'))
 {
 	$text=change('/(['.pc('hl').'])[+]a[+]/','$1a+');
-}
-
-/* halaH znaH zAnajJau (3.1.83) */
-if (arr($text,'/['.pc('hl').']\+nA\+hi/') && in_array($so,$tiG) )
-{
-    $text=two($hl,array("+nA+hi"),$hl,array("+Ana+hi"),0);
-	storedata('3.1.83','sa',0);
 }
 /* Chandasi zAnajapi (3.1.81) */
 if ( $veda===1 && arr($text,'/['.pc('hl').']\+Ana\+hi/')&& in_array($so,$tiG) )
