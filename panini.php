@@ -1500,9 +1500,10 @@ elseif (in_array($so,$tiG) && in_array($fo,array("Divi!","kfvi!")) && $sarvadhat
 }
 // first treatment of curAdi, because, it will take Nic before vikaraNa pratyaya.
 /* satyApapAzarUpavINAtUlazlokasenAlomatvacavarmacUrNacurAdibhyo Nic (3.1.25) */
-elseif (in_array($so,$tiG) && $Nizri!==1 && $verbset==="curAdi" && in_array($fo,$curAdi) && $aG!==1)
+elseif (in_array($so,$tiG) && $Nizri!==1 && $verbset==="curAdi" && in_array($fo,$curAdi) && $aG!==1 && !arr($text,'/[+]sic[+]/'))
 {
 	$text=two(array("+"),$tiG,array("+Ric+"),$tiG,0); 
+	$text=two(array("+sa+Ric+"),$tiG,array("+sa+"),$tiG,0); 
 	storedata('3.1.25','sa',0);
     $text=one(array("+Ric+Ric","+caN+Ric+"),array("+Ric+","+Ric+caN+"),0);
     if (sub(array("+"),$tiG,blank(0),0) && $sarvadhatuka===1)
