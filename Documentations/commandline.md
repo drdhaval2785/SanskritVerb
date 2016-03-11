@@ -13,7 +13,7 @@ Explanation:
 
 This would give the details of Asya and prayatna of letter 'd' i.e. 'द्‌'.
 
-॔# pratyahara
+# pratyahara
 
 Syntax:
 
