@@ -65,6 +65,8 @@ v1.5.0 - 21 February 2016 - The code is tested for representative verbs and susp
 
 v1.6.0 - 21 February 2016 - The code now has three commentaries mAdhavIyadhAtuvRtti, kSIrataraGgiNI and dhAtupradIpa for offline viewing.
 
+v1.6.1 - 12 March 2016 - The code is tested for representative verbs from Siddhantakumudi (round 2) and suspect verb forms are corrected.
+
 # For understanding the code
 
 Read [this](https://github.com/drdhaval2785/SanskritVerb/Documentations/blob/master/understandcode.md)
