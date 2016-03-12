@@ -83,13 +83,13 @@ Explanation:
 
 Syntax:
 
-php panini.php -t verb [lakAra] [tiN_pratyaya] [sutra_to_be_ignored]
+php panini.php -t verb_or_verbnumber [lakAra] [tiN_pratyaya] [sutra_to_be_ignored]
 
 lakAra = law, liw, luw, lfw, sArvaDAtukalew, ArDaDAtukalew, low, laN, viDiliN, ASIrliN, luN, lfN
 
 Usage:
 
-1. php panini.php -t BU law sip 
+1. php panini.php -t BU law sip == php panini -t 01.0001 law sip
 
 2. php panini.php -t BU law sip 1.3.9
 
@@ -104,3 +104,8 @@ Explanation:
 
 Right now we keep separate shell scripts to do batch testing against given database in case of tiGanta generation. Same can be rolled out to subanta also. Pending as of now.
 
+Suggested syntax:
+
+php panini.php -st gender word [pratyaya] [sutra_to_be_ignored]
+
+php panini.php -tt verb_or_verbnumber [lakAra] [tiN_pratyaya] [sutra_to_be_ignored]
