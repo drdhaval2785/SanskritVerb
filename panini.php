@@ -63,27 +63,16 @@ $sanAdi = $_GET['sanAdi']; // Default is ''. There are 12 sanAdi groups (mention
 $number = $_GET['number']; // Verb number e.g. BU sattAyAm BvAdi has 01.0001 as number. Fetched via ajax.php
 $verbset = verbset_from_number($number); // bhvAdi, adAdi etc. Fetched via ajax.php
 $frontend = $_GET['frontend']; // Whether to display sUtras in frontend or not. Fetched via tiGanta.html
-//$frontend = '0';
 $type = $_GET['type'];
+$drop = $_GET['drop'];
 $letter = $_GET['letter'];
 $pr = $_GET['pratya'];
 $inprat = $_GET['pratyahara'];
-//$type = 'subanta';
 $removed_sutras = explode(',',$_GET['removed_sutras']);
 $removed_sutras = array_map('trim',$removed_sutras);
 droppedsutra($removed_sutras);
 global $storedata;
 if (!$verbset && $type==="tiGanta") { $verbset = scrape1($number,8,9,1)[0]; } // for overcoming issue in https://github.com/drdhaval2785/SanskritVerb/issues/97
-/* Now trying to make program equally compatible with commandline.
-The proposed structure is php tiGanta.php verb verbset lakAra tran upasarga vAcya
-defaults:
-verb - no default (mandatory to feed)
-verbset - 'none'
-lakAra - 'law'
-tran - 'SLP1'
-upasarga - ''
-vAcya - 'kartR'
-*/
 /* input from asyaprayatna.html */
 if ($type==="asyaprayatna")
 {
@@ -109,23 +98,26 @@ elseif ($type==="stri")
 	$gender = "f";
 	$type = "subanta";
 }
-// Input from commandline has to be in `php tiGanta.php 01.0001 law` format. Other details are fetched from verb number.
+// Input from commandline has to be in `php panini.php 01.0001 law` format. Other details are fetched from verb number.
 elseif (in_array($argv[2],array("law","liw","luw","lfw","sArvaDAtukalew","ArDaDAtukalew","low","laN","ASIrliN","viDiliN","luN","lfN")) || $test===1)
 {
 	$number = $argv[1];
 	$first = dhatu_from_number($number);
 	$verbset = verbset_from_number($number);
 	$lakAra = $argv[2];
-	$tran = $argv[3];
-	$us = $argv[4];
-	$vAcya = $argv[5];
-	$sanAdi = $argv[6];
+	$removed_sutras = explode(',',$argv[3]);
+	$removed_sutras = array_map('trim',$removed_sutras);
+	$tran = $argv[4];
+	$us = $argv[5];
+	$vAcya = $argv[6];
+	$sanAdi = $argv[7];
 	if (!isset($argv[1])) { echo "Verb number is not entered"; exit; }
 	if (!isset($argv[2])) { $lakAra = 'law'; }
-	if (!isset($argv[3])) { $tran = 'SLP1'; }
-	if (!isset($argv[4])) { $us = ''; }
-	if (!isset($argv[5])) { $vAcya = 'kartR'; }	
-	if (!isset($argv[6])) { $sanAdi = ''; }	
+	if (!isset($argv[3])) { $removed_sutras = array(); }
+	if (!isset($argv[4])) { $tran = 'SLP1'; }
+	if (!isset($argv[5])) { $us = ''; }
+	if (!isset($argv[6])) { $vAcya = 'kartR'; }	
+	if (!isset($argv[7])) { $sanAdi = ''; }	
 	$frontend="0";
 	$type="tiGanta";
 }
@@ -135,6 +127,26 @@ if ($type==='tiGanta') {
 	$logfile = fopen('verboutput//log.txt','a+'); 
 	fputs($logfile,date('D, d M Y H:i:s')."\n");
 	fputs($logfile,"verb = $first, gaNa = $verbset, lakAra = $lakAra, transliteration = $tran, vAcya = $vAcya, upasarga = $us\n");
+	if ( (count($removed_sutras)===0 || $removed_sutras[0]==='') && isset($argv[0]))
+	{
+		$dropping = 1;
+		$sutrarelationfile =	fopen('sutrarelations/temp1.txt','w');
+	}
+	elseif ( (count($removed_sutras)===0||$removed_sutras[0]!=='') && isset($argv[0]))
+	{
+		$dropping = 2;
+		$sutrarelationfile = fopen('sutrarelations/temp2.txt','w');
+	}
+	elseif (count($removed_sutras)===1 && $removed_sutras[0]==='' && !isset($argv[0]))
+	{
+		$dropping = 3;
+		$sutrarelationfile =	fopen('sutrarelations/temp3.txt','w');
+	}
+	elseif ( $removed_sutras[0]!=='' && !isset($argv[0]))
+	{
+		$dropping = 4;
+		$sutrarelationfile = fopen('sutrarelations/temp4.txt','w');
+	}
 }
 elseif ($type==='subanta') {
 	mkdir ('nounoutput');
@@ -12373,7 +12385,7 @@ if ($frontend!=="0")
 if ($debug===1) {dibug('11710');}
 /* Final Display */
 if ($frontend!=="0")
-{	
+{
 	echo "<p class = sa >Final forms are :</p>\n";
 	echo "<p class = sa >आखिरी रूप हैं :</p>\n";
 	display(0);
@@ -12384,7 +12396,8 @@ else
 {
 	$ou[] = implode(',',$text);
 }
-
+$vidhisutras[] = vidhisutraseparator($storedata);
+$allsutras[] = allsutras($storedata);
 
 /* setting the $pada back to pratyaya for next use */
 $pada="pratyaya";
@@ -12417,9 +12430,49 @@ if ((isset($argv[0])|| $test ===1) )
 	/*$susinput = file_get_contents('suspectverbforms.txt');
 	$susoutput = convert($susinput);
 	file_put_contents('suspectverbforms_deva.txt',$susoutput);*/
+	if ($dropping===1||$dropping===3)
+	{
+		$uniquevidhisutras = array();
+		foreach ($vidhisutras as $value)
+		{
+			foreach ($value as $sutra)
+			{
+				if (!in_array($sutra,$uniquevidhisutras))
+				{
+					$uniquevidhisutras[] = $sutra;
+				}
+			}
+		}
+		$vidhisutrafile = fopen('sutrarelations/vidhi.txt','w');
+		fputs($vidhisutrafile,implode("\n",$uniquevidhisutras));
+		fclose($vidhisutrafile);
+	}
+	$uniqueallsutras = array();
+	foreach ($allsutras as $value)
+	{
+		foreach ($value as $sutra)
+		{
+			if (!in_array($sutra,$uniqueallsutras))
+			{
+				$uniqueallsutras[] = $sutra;
+			}
+		}
+	}
+	fputs($sutrarelationfile,implode("\n",$uniqueallsutras));
+	fclose($sutrarelationfile);
+	if ($dropping===2)
+	{
+		$exempted = difflister('sutrarelations/temp1.txt','sutrarelations/temp2.txt');
+		$added = difflister('sutrarelations/temp2.txt','sutrarelations/temp1.txt');
+		$difflog = fopen('sutrarelations/difflog1.txt','a');
+		$printstatement = implode(',',$removed_sutras).':'.$first.':'.$lakAra.':'.implode(',',$exempted).':'.implode(',',$added)."\n";
+		fputs($difflog,$printstatement);
+		fclose($difflog);
+	}
 }
 elseif ($type==="tiGanta")
 {
+	echo "yes";
 	$ou = array_map('convert',$ou);
 	tablemaker($ou);
 	/* Closing the HTML */
@@ -12427,6 +12480,42 @@ elseif ($type==="tiGanta")
 	</html>";
 	//fputs($outfile,"</body></html>");
 	//fclose($outfile);
+	$uniquevidhisutras = array();
+	foreach ($vidhisutras as $value)
+	{
+		foreach ($value as $sutra)
+		{
+			if (!in_array($sutra,$uniquevidhisutras))
+			{
+				$uniquevidhisutras[] = $sutra;
+			}
+		}
+	}
+	$vidhisutrafile = fopen('sutrarelations/vidhi.txt','w');
+	fputs($vidhisutrafile,implode("\n",$uniquevidhisutras));
+	fclose($vidhisutrafile);
+	$uniqueallsutras = array();
+	foreach ($allsutras as $value)
+	{
+		foreach ($value as $sutra)
+		{
+			if (!in_array($sutra,$uniqueallsutras))
+			{
+				$uniqueallsutras[] = $sutra;
+			}
+		}
+	}
+	fputs($sutrarelationfile,implode("\n",$uniqueallsutras));
+	fclose($sutrarelationfile);
+	if ($dropping===4)
+	{
+		$exempted = difflister('sutrarelations/temp3.txt','sutrarelations/temp4.txt');
+		$added = difflister('sutrarelations/temp4.txt','sutrarelations/temp3.txt');
+		$difflog = fopen('sutrarelations/difflog2.txt','a');
+		$printstatement = implode(',',$removed_sutras).':'.$first.':'.$lakAra.':'.implode(',',$exempted).':'.implode(',',$added)."\n";
+		fputs($difflog,$printstatement);
+		fclose($difflog);
+	}
 }
 elseif ($type==="subanta")
 {

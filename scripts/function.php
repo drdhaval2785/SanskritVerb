@@ -2374,7 +2374,7 @@ function ekAcobazo()
 }
 
 /* link_sutra function is courtesy of Funderburk Jim of sanskrit-lexicon. */
-function link_sutra($s) {
+function link_sutra($s,$relativepath="") {
  /* $s is a string of form X.Y.Z where X,Y,Z are digits
    Returns a string   
    <a href="Data/allsutrani/X.Y.Z.htm">X.Y.Z</a>
@@ -2389,7 +2389,14 @@ function link_sutra($s) {
  $X=$parts[0];
  $Y=$parts[1];
  $Z=$parts[2];
- $ans = "<a href=\"Data/allsutrani/$X.$Y.$Z.htm\" target='_blank'>$X.$Y.$Z</a>";
+ if ($relativepath!=="")
+ {
+	$ans = "<a href=\"$relativepath/Data/allsutrani/$X.$Y.$Z.htm\" target='_blank'>$X.$Y.$Z</a>";
+ }
+ else
+ {
+	$ans = "<a href=\"Data/allsutrani/$X.$Y.$Z.htm\" target='_blank'>$X.$Y.$Z</a>";
+ }
  return $ans;
 }
 
@@ -2832,11 +2839,11 @@ function zlu()
 /* function storedata to store necessary information for display later on. */
 function storedata($sutra_number,$style,$note)
 {
-	global $text, $storedata, $frontend, $us, $removed_sutras;
+	global $text, $storedata, $us, $removed_sutras;
 	$text = one(array("++"),array("+"),0); // To remove double consecutive + signs before storing.
 	if (!in_array($style,array("pa","hn","st","red"))) { $style="sa"; }
 	if (!isset($note)) { $note=0; }
-	if ($frontend!=="0" && !in_array($sutra_number,$removed_sutras))
+	if (!in_array($sutra_number,$removed_sutras))
 	{
 		$storedata[]=array($text,$sutra_number,$style,$note,$us);		
 	}
@@ -3414,7 +3421,41 @@ function generatedforms($list,$outputfile)
 		}
 	}
 }
-
+function vidhisutraseparator($storedata)
+{
+	$vidhisutra = array();
+	foreach ($storedata as $value)
+	{
+		if ($value[2] === "sa")
+		{
+			$vidhisutra[] = $value[1];
+		}
+	}
+	$vidhisutra = array_unique($vidhisutra);
+	$vidhisutra = array_values($vidhisutra);
+	return $vidhisutra;
+}
+function allsutras($storedata)
+{
+	foreach ($storedata as $value)
+	{
+		if ($value[2] !== "drop")
+		{
+			$allsutra[] = $value[1];
+		}
+	}
+	$allsutra = array_unique($allsutra);
+	$allsutra = array_values($allsutra);
+	return $allsutra;
+}
+function difflister($firstfile,$secondfile)
+{
+	$firstlist = file($firstfile);
+	$firstlist = array_map('trim',$firstlist);
+	$secondlist = file($secondfile);
+	$secondlist = array_map('trim',$secondlist);
+	return array_diff($firstlist,$secondlist);
+}
 
 /* Functions which are not used in the code */
 /* Function f to find the nth letter in the word */
