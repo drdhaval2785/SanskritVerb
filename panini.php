@@ -12472,7 +12472,6 @@ if ((isset($argv[0])|| $test ===1) )
 }
 elseif ($type==="tiGanta")
 {
-	echo "yes";
 	$ou = array_map('convert',$ou);
 	tablemaker($ou);
 	/* Closing the HTML */
