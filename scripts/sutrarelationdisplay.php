@@ -1,7 +1,14 @@
 <?php
 include 'function.php';
 include 'slp-dev.php';
-$data = file('../sutrarelations/difflog2.txt');
+if (isset($argv[0]))
+{
+	$data = file('../sutrarelations/difflog1.txt');
+}
+else
+{
+	$data = file('../sutrarelations/difflog2.txt');
+}
 $data = array_map('trim',$data);
 
 function sutradisplay($sutra_number)
@@ -78,11 +85,11 @@ function sutradisplay($sutra_number)
 	}
 }
 
-
+$counter = 1;
 foreach($data as $datum)
 {
 	$parts = explode(':',$datum);
-	echo convert($parts[1])."-".convert($parts[2])."<br/>\n";
+	echo $counter." - ".convert($parts[1])." - ".convert($parts[2])."<br/>\n";
 	echo "If rule <b>".sutradisplay($parts[0])." didn't exist</b>, the following rules would <b>not have applied</b>.<br/>\n";
 	$barredsutras = explode(',',$parts[3]);
 	$barr = array();
@@ -100,5 +107,6 @@ foreach($data as $datum)
 	}
 	echo implode(', ',$neww)."<br/>\n";
 	echo "<hr/>\n";
+	$counter++;
 }
 ?>
