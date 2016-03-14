@@ -4843,7 +4843,7 @@ if ($lakAra==="liw" && arr($text,'/['.pc('hl').'][iI][+][aAiIuUfFxXeEoO]/') && !
 	storedata('6.4.82','sa',0);
 }
 /* vA jRRbhramutrasAm (6.4.124) */
-if ($lakAra==="liw" && in_array($fo,array("jF","Bramu!","trasa!")) && !ends(array($so),array("tip","mip"),2) && sub(array("ja+jar","ba+Bram","ta+tras"),array("+"),blank(0),0) )
+if ($lakAra==="liw" && in_array($fo,array("jF","Bramu!","trasI!")) && !ends(array($so),array("tip","mip"),2) && sub(array("ja+jar","ba+Bram","ta+tras"),array("+"),blank(0),0) )
 {
     $text=two(array("ja+jar","ba+Bram","ta+tras"),array("+"),array("jer","Brem","tres"),array("+"),1);
 	storedata('6.4.124','sa',0);
