@@ -1574,7 +1574,7 @@ elseif ( $sarvadhatuka===1 && $verbset==="tanAdi" && sub(array("+"),$tiG,blank(0
 {
     $text=two(array("+"),$tiG,array("+u+"),$tiG,0);
     $text=one(array("+u+u"),array("+u+"),0);
-	storedata('3.1.71','sa',0);
+	storedata('3.1.79','sa',0);
     $vik=array_merge($vik,array("u"));
     $set=2;    
 }
@@ -2094,6 +2094,17 @@ elseif ($lakAra==="liw" && $veda===0 && (anekAca($verb_without_anubandha) || $sa
 		$text = one(array("a+Am"),array("+Am"),0);
 		storedata('6.1.101','sa',0);
 	}
+}
+/* vidAGkurvantvityanyatarasyAm (3.1.41) */
+// Pending to test whether it is only for specific vid dhAtu or generic.
+if ($lakAra==="low" && $fo==="vida!")
+{
+    $text1=pr2(array("+"),$tiG,blank(0),array("+Am+kf+"),$tiG,blank(0),$text);
+	$text=array_merge($text,$text1);
+	storedata('3.1.41','sa',0);
+	$fo="qukfY";
+    $text=pr2(array("+Am+kf+"),$tiG,blank(0),array("+Am+kf+u+"),$tiG,blank(0),$text);
+	storedata('3.1.79','sa',0);
 }
 /* jAgro'viciNNalGitsu (7.3.85) */
 if ( arr($text,'/jAgf[+]Am[+]/') && $lakAra==="liw")
@@ -3279,7 +3290,7 @@ elseif ( ends($vik,array("Slu","Sapluk"),1) && sub(array("UrRu+"),$halAdi_pit_sA
 	storedata('7.3.90','sa',0);
 }
 /* uto vRddhirluki hali (7.3.89) */
-elseif ( ends($vik,array("Sapluk"),1) &&  pr2(array("u+"),$halAdi_pit_sArvadhAtuka_pratyayas,blank(0),array("O+"),$halAdi_pit_sArvadhAtuka_pratyayas,blank(0),$text)!==$text )
+elseif ( ends($vik,array("Sapluk"),1) &&  pr2(array("u+"),$halAdi_pit_sArvadhAtuka_pratyayas,blank(0),array("O+"),$halAdi_pit_sArvadhAtuka_pratyayas,blank(0),$text)!==$text && $fo!=="qukfY")
 {
     $text=pr2(array("u+"),$halAdi_pit_sArvadhAtuka_pratyayas,blank(0),array("O+"),$halAdi_pit_sArvadhAtuka_pratyayas,blank(0),$text);
 	storedata('7.3.89','sa',0);
