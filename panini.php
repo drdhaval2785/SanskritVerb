@@ -28,8 +28,8 @@ include "scripts/dev-slp.php"; // includes code for devanagari to SLP.
 
 /* hides error reports. */
 // If the warning is shown with line number of function.php and you are not able to trace the line which called it, turn the all error reporting on. It will help you locate the wrong entries in a reasonably narrow space, because there are so many notices around.
-error_reporting(E_ERROR | E_WARNING | E_PARSE);
-//error_reporting(0);
+//error_reporting(E_ERROR | E_WARNING | E_PARSE);
+error_reporting(0);
 
 /* set execution time to an hour */
 ini_set('max_execution_time', 36000);
@@ -3872,6 +3872,15 @@ if (arr($text,'/['.pc('hl').']['.pc('hl').'][f][+]/') && in_array($so,$taG) && (
     $text=one(array("+"),array("+i"),1);
 	storedata('7.2.43','sa',0);
 	$Agama=array_merge($Agama,array("iw"));
+	$text=one(array("f+i"),array("ar+i"),0);
+	storedata('7.3.84','sa',0);
+	if (arr($text,'/(['.pc('hl').']['.pc('hl').']ar[+]i)s/'))
+	{
+		storedata('8.3.55','pa',0);
+		storedata('8.3.57','pa',0);
+		$text = change('/(['.pc('hl').']['.pc('hl').']ar[+]i)s/','$1z');
+		storedata('8.3.59','sa',0);
+	}
 }
 /* vettervibhASA (7.1.7) */
 if ( in_array($so,$tiG) && $verbset==="adAdi" && sub(array("vid"),array("+"),array("ate","ata","atAm"),0) )
@@ -4760,11 +4769,11 @@ if (in_array($fo,array("adx!","ada!","f","vyeY")) && $lakAra==="liw" && $so==="s
     $text=two(array("ad","f","vyay"),array("+"),array("ad","f","vyay"),array("+i"),0);
 	storedata('7.4.66','sa',0);
 }
-/* Rtazca saMyogAderguNaH (7.2.42) */
+/* Rtazca saMyogAderguNaH (7.4.10) */
 if ( arr($text,'/['.pc('hl').']['.pc('hl').'][f][+]/') && $lakAra==="liw" && in_array("k",$itpratyaya) )
 {
     $text=three($hl,$hl,array("f+"),$hl,$hl,array("ar+"),0);
-	storedata('7.2.42','sa',0);
+	storedata('7.4.10','sa',0);
 }
 /* masjinazorjhali (7.1.60) */ 
 if (in_array($fo,array("wumasjo!","RaSa!")) && sub(array("masj","naS"),array("+"),prat('Jl'),0) )
