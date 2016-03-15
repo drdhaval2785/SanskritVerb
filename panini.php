@@ -2020,7 +2020,6 @@ if (in_array($fo,array("zmiN")) && in_array($so,$tiG) && sub(array("smi"),array(
     $text=three(array("smi"),array("+"),array("Ri"),array("smA"),array("+"),array("Ri"),1);
 	storedata('6.1.57','sa',0);
 }
-print_r($text);
 /* vibhASA lIyateH (6.1.50) */
 if (in_array($fo,array("lI","lIN")) && in_array($so,$tiG) && sub(array("lI"),array("+"),array("Ri"),0) )
 {
@@ -2269,14 +2268,17 @@ if (arr($text,'/\+Ri[c]{0,1}\+/'))
 	{
 		$text=two(array("f","hrI","vlI","rI","knUy","kzmAy","blI"),array("+"),array("fp","hrIp","vlIp","rIp","knUp","kzmAp","blIp"),array("+"),0);
 		storedata('7.3.36','sa',0);
-		storedata('3.1.32','sa',0);
+		if (!arr($text,'/kzmAp/'))
+		{
+			$text=two(array("fp","hrIp","vlIp","rIp","knUp","kzmAp","blIp"),array("+"),array("arp","hrep","vlep","rep","knop","kzmAp","blep"),array("+"),0);
+			storedata('7.3.86','sa',0);
+		}
 	}
 	/* arttihrIvlIrIknUyIkSmAyyAtAM puGNau (7.3.36) */
 	if (arr($text,'/[A][+][R][i]/') && sub(array("A"),array("+"),array("Ri"),0) && in_array($so,$tiG))
 	{
 		$text=two(array("A"),array("+"),array("Ap"),array("+"),0);
 		storedata('7.3.36','sa',0);
-		storedata('3.1.32','sa',0);
 	}
 	/* bhiyo hetubhaye Suk (7.3.40) */
 	if (in_array($fo,array("YiBI")) && in_array($so,$tiG) && $_GET['cond39']==='1' && sub(array("BI",),array("+"),array("Ri"),0) )
