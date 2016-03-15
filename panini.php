@@ -2020,6 +2020,13 @@ if (in_array($fo,array("zmiN")) && in_array($so,$tiG) && sub(array("smi"),array(
     $text=three(array("smi"),array("+"),array("Ri"),array("smA"),array("+"),array("Ri"),1);
 	storedata('6.1.57','sa',0);
 }
+print_r($text);
+/* vibhASA lIyateH (6.1.50) */
+if (in_array($fo,array("lI","lIN")) && in_array($so,$tiG) && sub(array("lI"),array("+"),array("Ri"),0) )
+{
+    $text=three(array("lI"),array("+"),array("Ri"),array("lA"),array("+"),array("Ri"),1);
+	storedata('6.1.57','sa',0);
+}
 /* bibheterhetubhaye (6.1.55) */
 if (in_array($fo,array("YiBI")) && in_array($so,$tiG) && $_GET['cond39']==='1' && sub(array("BI",),array("+"),array("Ri"),0) )
 {
@@ -2228,9 +2235,15 @@ if ( arr($text,'/jAgf[+]Am[+]/') && $lakAra==="liw")
 if (arr($text,'/\+Ri[c]{0,1}\+/'))
 {
 	/* lIlornuglukAvanyatarsyAM snehanipAtane (7.3.39) */
-	if (in_array($fo,array("lA","lI","lIN")) && in_array($so,$tiG) && sub(array("lA","lI"),array("+"),array("Ri"),0) )
+	if (in_array($fo,array("lI","lIN")) && in_array($so,$tiG) && sub(array("lI"),array("+"),array("Ri"),0) )
 	{
-		$text=three(array("lA","lI"),array("+"),array("Ri"),array("lAl","lIn"),array("+"),array("Ri"),1);
+		$text=three(array("lI"),array("+"),array("Ri"),array("lIn"),array("+"),array("Ri"),1);
+		storedata('7.3.39','sa',0);
+	}
+	/* lIlornuglukAvanyatarsyAM snehanipAtane (7.3.39) */
+	if (in_array($fo,array("lA")) && in_array($so,$tiG) && sub(array("lA"),array("+"),array("Ri"),0) )
+	{
+		$text=three(array("lA"),array("+"),array("Ri"),array("lAl"),array("+"),array("Ri"),1);
 		storedata('7.3.39','sa',0);
 	}
 	/* lugAgamastu tasya vaktavyaH (vA) */
@@ -2266,13 +2279,13 @@ if (arr($text,'/\+Ri[c]{0,1}\+/'))
 		storedata('3.1.32','sa',0);
 	}
 	/* bhiyo hetubhaye Suk (7.3.40) */
-	elseif (in_array($fo,array("YiBI")) && in_array($so,$tiG) && $_GET['cond39']==='1' && sub(array("BI",),array("+"),array("Ri"),0) )
+	if (in_array($fo,array("YiBI")) && in_array($so,$tiG) && $_GET['cond39']==='1' && sub(array("BI",),array("+"),array("Ri"),0) )
 	{
 		$text=three(array("BI"),array("+"),array("Ri"),array("BIz"),array("+"),array("Ri"),0);
 		storedata('7.3.40','sa',0);
 	}
 	/* dhUJprIJornugvaktavyaH (vA) */
-	elseif (in_array($fo,array("prIY","DUY")) && in_array($so,$tiG) && sub(array("prI","DU"),array("+"),array("Ri"),0))
+	if (in_array($fo,array("prIY","DUY")) && in_array($so,$tiG) && sub(array("prI","DU"),array("+"),array("Ri"),0) )
 	{
 		$text=three(array("prI","DU"),array("+"),array("Ri"),array("prIn","DUn"),array("+"),array("Ri"),0);
 		storedata('7.3.37-1','sa',0);
@@ -2328,7 +2341,6 @@ if (arr($text,'/\+Ri[c]{0,1}\+/'))
 		$text = two(array("e","o","E","O"),array("+i+"),array("ay","av","Ay","Av"),array("i+"),0);
 		storedata('6.1.78','sa',0);
 	}
-	print_r($text);
 	/* mitAM hrasvaH (6.4.92) patch for ciY curAdi S.B. part 2 page 395 */
 	if ($fo==="ciY" && $verbset==="curAdi")
 	{
