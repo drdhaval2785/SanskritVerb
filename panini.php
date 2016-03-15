@@ -2230,6 +2230,18 @@ if ( arr($text,'/jAgf[+]Am[+]/') && $lakAra==="liw")
 	storedata('7.3.85','sa',0);
 	$jAgro=1;
 } else {$jAgro=0;}
+/* upadhAyAzca (7.1.101) */
+if (arr($text,'/[F]['.pc('hl').'MH][+]/') && in_array($so,$tiG)) 
+{
+    $text=three(array("F"),$hl,array("+"),array("ir"),$hl,array("+"),0);
+	storedata('7.1.101','sa',0);
+	/* upadhAyAM ca (8.2.78) */
+	if (arr($text,'/[iu][r]['.pc('hl').'][+]/'))
+	{
+		$text=three(array("ir","ur"),$hl,array("+"),array("Ir","Ur"),$hl,array("+"),0);
+		storedata('8.2.78','sa',0);
+	}
+}
 /* curAdi Ric handling */
 if (arr($text,'/\+Ri[c]{0,1}\+/'))
 {
@@ -2320,6 +2332,41 @@ if (arr($text,'/\+Ri[c]{0,1}\+/'))
 		$text = three(array("a"),$hl,array("+Ric+","+Ri+"),array("A"),$hl,array("+Ric+","+Ri+"),0);
 		storedata('7.2.116','sa',0);
 	}
+	/* dalivaliskhaliraNidhvanitrapikzapayasceti bhojaH (ga) */ 
+	if ( in_array($fo,array("dala!","vala","sKala!","raRa!","Dvana!","trapU!z","kzapa!")) && sub(array("A"),$hl,array("+Ric+","+Ri+"),0) )
+	{
+		$text = three(array("A"),$hl,array("+Ric+","+Ri+"),array("a"),$hl,array("+Ric+","+Ri+"),0);
+		storedata('dalivali','sa',0);
+	} 
+	/* jvalahvalahmalaNamAmanupasargAdvA (ga) */ 
+	if ( in_array($fo,array("jvala!","hvala","hmala!","Rama!")) && sub(array("A"),$hl,array("+Ric+","+Ri+"),0) && $us==="")
+	{
+		$text = three(array("A"),$hl,array("+Ric+","+Ri+"),array("a"),$hl,array("+Ric+","+Ri+"),1);
+		storedata('jvala','sa',0);
+	} 
+	/* na kamyamicamAm (ga) */ 
+	if ( in_array($fo,array("kamu!","ama!","camu!")) && sub(array("A"),$hl,array("+Ric+","+Ri+"),0) )
+	{
+		$text = three(array("A"),$hl,array("+Ric+","+Ri+"),array("a"),$hl,array("+Ric+","+Ri+"),0);
+		storedata('nakami','sa',0);
+	}
+	/* glAsnAvanuvamAM ca (ga) */ 
+	if ( in_array($fo,array("glE","zRA","vanu!","wuvama!")) && sub(array("A"),$hl,array("+Ric+","+Ri+"),0) )
+	{
+		$text = three(array("A"),$hl,array("+Ric+","+Ri+"),array("a"),$hl,array("+Ric+","+Ri+"),0);
+		storedata('glA','sa',0);
+	}
+	if ( (in_array($fo,array("janI!","jFz","knasu!","raYja!")) || preg_match('/am$/',$verb_without_anubandha) ) && sub(array("A"),$hl,array("+Ric+","+Ri+"),0) )
+	{
+		$text = three(array("A"),$hl,array("+Ric+","+Ri+"),array("a"),$hl,array("+Ric+","+Ri+"),0);
+		storedata('janI','sa',0);
+	} 
+	/* raJjerNau mRgaramaNe nalopaH vaktavyaH (vA) */
+	if (arr($text,'/raYj[+]Ri/'))
+	{
+		$text = one(array('raYj+Ri'),array('raj+Ri'),1);
+		storedata('mfga','sa',0);
+	}
 	/* mitAM hrasvaH (6.4.92) */ 
 	if ( in_array($fo,$mitcurAdiverbs) && ($verbset === "curAdi" || $verbset === "none" || in_array($sanAdi,array("Ric","RiN")) ) && sub(array("A"),$hl,array("+Ric+","+Ri+"),0))
 	{
@@ -2327,11 +2374,13 @@ if (arr($text,'/\+Ri[c]{0,1}\+/'))
 		$text = one(array("cap+Ric","cap+Ri"),array("cAp+Ric","cAp+Ri"),0);
 		storedata('6.4.92','sa',0);
 	}
+	/* mitAM hrasvaH (6.4.92) */ 
 	if ( in_array($fo,$ghaTAdi_mit) && ($verbset === "BvAdi" || $verbset === "none" ) && sub(array("A"),$hl,array("+Ric+","+Ri+"),0) )
 	{
 		$text = three(array("A"),$hl,array("+Ric+","+Ri+"),array("a"),$hl,array("+Ric+","+Ri+"),0);
 		storedata('6.4.92','sa',0);
 	} 
+	/* mitAM hrasvaH (6.4.92) */ 
 	if ( ($_GET['cond57']==="1"||$_GET['cond58']==="1"||$_GET['cond59']==="1"||$_GET['cond60']==="1"||$_GET['cond61']==="1"||$_GET['cond62']==="1"||$_GET['cond63']==="1"||$_GET['cond64']==="1"||$_GET['cond65']==="1"||$_GET['cond66']==="1"||$_GET['cond67']==="1"||$_GET['cond68']==="1"||$_GET['cond69']==="1"||$_GET['cond70']==="1") && sub(array("A"),$hl,array("+Ric+","+Ri+"),0) )
 	{
 		$text = three(array("A"),$hl,array("+Ric+","+Ri+"),array("a"),$hl,array("+Ric+","+Ri+"),0);
@@ -3484,18 +3533,6 @@ if (in_array($fo,$pvAdi) && $shit===1 && $fo!=="jyA" && ( $verbset==="kryAdi" ||
 {
     $text=three(array("A","I","U","F",),$shitpratyayareplace,array("+"),array("a","i","u","f",),$shitpratyayareplace,array("+"),0);
 	storedata('7.3.80','sa',0);
-}
-/* upadhAyAzca (7.1.101) */
-if (arr($text,'/[F]/') && sub(array("F"),$hl,array("+"),0) && in_array($so,$tiG)) 
-{
-    $text=three(array("F"),$hl,array("+"),array("ir"),$hl,array("+"),0);
-	storedata('7.1.101','sa',0);
-}
-/* upadhAyAM ca (8.2.78) */
-if (arr($text,'/[iu][r]['.pc('hl').'][+]/'))
-{
-    $text=three(array("ir","ur"),$hl,array("+"),array("Ir","Ur"),$hl,array("+"),0);
-	storedata('8.2.78','sa',0);
 }
 /* Duplication because of caG */
 if ($caG===1 && arr($text,'/^['.pc('hl').']/'))
