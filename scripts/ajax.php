@@ -1155,7 +1155,7 @@ if( in_array($_POST['step'],array('11','12','13')) && ends($arrWord,array("madI!
             $html .= '<input required type="radio" value="2" name="cond64" checked> अन्य ';
             $html .= '</div>';            
 }
-if( in_array($_POST['step'],array('11','12','13')) && ends($arrWord,array("Sama!"),2) )
+if( in_array($_POST['step'],array('11','12','13')) && ends($arrWord,array("Samu!"),2) )
 {
             $html .= '<div id="step22">';
             $html .= '<input required type="radio" value="1" name="cond65" > दर्शने ';
@@ -1190,7 +1190,7 @@ if( in_array($_POST['step'],array('11','12','13')) && ends($arrWord,array("jYA")
             $html .= '<input required type="radio" value="2" name="cond69" checked> अन्य ';
             $html .= '</div>';            
 }
-if( in_array($_POST['step'],array('11','12','13')) && ends($arrWord,array("Cadi!"),2) )
+if( in_array($_POST['step'],array('11','12','13')) && ends($arrWord,array("Cadi!r"),2) )
 {
             $html .= '<div id="step22">';
             $html .= '<input required type="radio" value="1" name="cond70" > ऊर्जने ';
