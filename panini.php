@@ -473,7 +473,7 @@ if ($type==='tiGanta')
 		$verbpada=verb_pada('1.3.60');
 	}
 	/* mriyaterluGliGozca (1.3.61) */
-	elseif ( in_array($first,array("mfN")) && in_array($lakAra,array("law","low","laN","viDiliN","sArvaDAtukalew","ASIrliN","luN")))
+	elseif ( in_array($first,array("mfN")) && !in_array($lakAra,array("law","low","laN","viDiliN","sArvaDAtukalew","ASIrliN","luN")))
 	{
 		$verbpada=verb_pada('1.3.61');
 	}
@@ -3128,6 +3128,7 @@ if (  in_array($lakAra,array("luw")) && pr2(array("+"),blank(0),$tiG1,array("+")
     $text=pr2(array("+"),blank(0),$tiG1,array("+"),array("tAs+"),$tiG1,$text);
 	storedata('3.1.33','sa',0);
 	$tAs=1;
+	$syatAsI=1;
 } else { $tAs=0; }
 /* luTaH prathamasya DAraurasaH (2.4.85) */
 if ( in_array($lakAra,array("luw")) && $tAs===1 && pr2(array("+"),array("tAs+"),array("ti","tas","anti","te","Ate","ante"),array("+"),array("tAss+"),$tiG1,$text)!==$text )
@@ -3834,7 +3835,7 @@ if (arr($text,'/['.pc('ec').'][+][i][+]/') )
 	storedata('6.1.78','sa',0);
 }
 /* syasicsIyuTtAsiSu bhAvakarmaNorupadeze'jjhanagrahadRzAM ciNvadiT ca (6.4.62) */
-if (($syatAsI===1||$sic===1||$sIyuT===1) && (arr($text,'/^[^+]*['.pc('ac').'][+]/')||in_array($fo,array("hana!","graha!","dfSi!r"))) && in_array($vAcya,array("bhAva","karma")))
+if (($syatAsI===1||$sic===1||$sIyuT===1) && (arr($text,'/^[^+]*['.pc('ac').'][+]/')||in_array($fo,array("hana!","graha!","dfSi!r"))||$_GET['sanAdi']==="Ric") && in_array($vAcya,array("bhAva","karma")))
 {
 	$text=change('/[+]([^+]+)$/','+i$1');
 	storedata('6.4.62','sa',0);
@@ -3844,7 +3845,7 @@ if (($syatAsI===1||$sic===1||$sIyuT===1) && (arr($text,'/^[^+]*['.pc('ac').'][+]
 	$Agama=array_merge($Agama,array("iw"));
 	/* aco JNiti (7.2.115) */ 
 	if ( arr($text,'/['.pc('ac').'][+]/') )
-	{ 
+	{
 		$text = two($ac,array("+"),vriddhi($ac),array("+"),0);
 		storedata('7.2.115','sa',3);
 	}
@@ -3856,11 +3857,16 @@ if (($syatAsI===1||$sic===1||$sIyuT===1) && (arr($text,'/^[^+]*['.pc('ac').'][+]
 		$hohante=1; // 0 - this sUtra has not applied. 1 - this sUtra has applied.
 	}	
 	/* ata upadhAyAH (7.2.116) */
-	// more on enumeration kind. Not used regexes deliberately.
 	if ( arr($text,'/[a]['.pc('hl').'][+]i/') )
 	{
 		$text = three(array("a"),$hl,array("+i"),array("A"),$hl,array("+i"),0);
 		storedata('7.2.116','sa',0);
+	}
+	/* ciNNamulordIrgho'nyatarasyAm (6.4.93) */
+	if ( arr($text,'/[A]['.pc('hl').'][+]i/') && $_GET['sanAdi']==="Ric")
+	{
+		$text = three(array("A"),$hl,array("+i"),array("a"),$hl,array("+i"),1);
+		storedata('6.4.93','sa',0);
 	}
 }
 /* ho hanterJNinneSu (7.3.54) */
