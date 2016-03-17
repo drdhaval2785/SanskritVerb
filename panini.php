@@ -1021,7 +1021,7 @@ if (in_array($lakAra,$ArdhadhAtuka_lakAra) || $sanAdi==="yak")
 		$id_dhAtu='sew'; // because vaDa is anekAc.
 	}
 	/* AtmanepadeSvanyatarasyAm (2.4.44) */ 
-	if ( in_array($fo,array("hana!")) && in_array($lakAra,array("luN")) && in_array($so,$taG) )
+	if ( in_array($fo,array("hana!")) && in_array($lakAra,array("luN")) && in_array($so,$taG) && $vAcya==="kartR")
 	{
 		$text = two(array("hana!"),array("+"),array("vaDa!"),array("+"),1);
 		storedata('2.4.44','sa',0);
@@ -2313,9 +2313,9 @@ if ($sanAdi==="yak")
 if (arr($text,'/\+Ri[c]{0,1}\+/')||$ciN===1)
 {
 	/* ho hanterJNinneSu (7.3.54) */
-	if ( arr(array($fo),'/[h][a][n]/') && !in_array($fo,array("ahan","dIrGAhan")) &&  in_array($sanAdi,array("Ric","RiN")) )
+	if ( arr(array($fo),'/[h][a][n]/') && !in_array($fo,array("ahan","dIrGAhan"))  )
 	{
-		$text = two(array("han"),array("+Ri"),array("Gan"),array("+Ri"),0);
+		$text = two(array("han"),array("+Ri","+i"),array("Gan"),array("+Ri","+i"),0);
 		storedata('7.3.54','sa',0);
 		$hohante=1; // 0 - this sUtra has not applied. 1 - this sUtra has applied.
 	}	
@@ -2528,7 +2528,7 @@ if (arr($text,'/\+Ri[c]{0,1}\+/')||$ciN===1)
 		$text = one(array("a+i+"),array("i+"),0);
 		storedata('6.4.48','sa',0);
 	}
-	/* pugantalaghUpadhasya ca (7.3.86) and sArvadhAtukArdhadhAtukayoH (7.3.84) */
+	/* pugantalaghUpadhasya ca (7.3.86) */
 	if (arr($text,'/[iufx](['.pc('hl').']{1})\+i\+/' ) && $caG!==1 && $aG!==1 && $vijait!==1)
 	{
 		$hlam=array();
@@ -4124,7 +4124,7 @@ if (arr($text,'/sic/') && sub(array("+sic+",),blank(0),blank(0),0) && in_array($
 	storedata('1.3.9','sa',0);
 }
 /* liGsicorAtmanepadeSu (7.2.42) */
-if ( in_array($so,$taG) && ($sic===1||$sIyuT===1) && (in_array($fo,array("vfN","vfY")) || ends(array($verb_without_anubandha),array("F"),1)) && $ardhadhatuka===1)
+if ( in_array($so,$taG) && ($sic===1||$sIyuT===1) && (in_array($fo,array("vfN","vfY")) || ends(array($verb_without_anubandha),array("F"),1)) && $ardhadhatuka===1 && $ciN!==1)
 {
     $text=one(array("+"),array("+i"),1);
 	storedata('7.2.42','sa',0);
@@ -4294,7 +4294,7 @@ elseif ($didhI!==1 && $bhUsuvo!==1  && arr($text,'/nu/') && pr2(array("nu+"),$pi
 if ($debug===1) {dibug("3400");}
 foreach ($tiG1 as $value) {$iDtiG = "i".$value;} // defining iDtiG i.e. iDAgama+tiG1.
 /* RRta iddhAtoH (7.1.100) */
-if (arr($text,'/F\+/') && in_array($so,$tiG) && ($sarvadhatuka===1 || in_array("Sa",$vik) || arr($text,'/[+]yAs[+]/')))
+if (arr($text,'/F\+/') && in_array($so,$tiG) && ($sarvadhatuka===1 || in_array("Sa",$vik) || arr($text,'/[+]yAs[+]/')) && $ciN!==1)
 {
     $text=two(array("F"),array("+"),array("ir"),array("+"),0);
 	storedata('7.1.100','sa',0);
@@ -5343,6 +5343,12 @@ if ( $ciN===1 )
 		$text=three(array("i","u","f","x"),$hl,array("+i"),array("e","o","ar","al"),$hl,array("+i"),0);
 		storedata('7.3.86','sa',0);
 	}
+	/* sArvadhAtukArdhadhAtukayoH (7.3.84) patch for bhAvakarma luG seT dhAtus */
+	if(arr($text,'/F[+]i/') && in_array($vAcya,array("bhAva","karma")) && $lakAra==="luN" && $id_dhAtu!=="aniw")
+	{
+		$text = change('/F[+]i/','ar+i');
+		storedata('7.3.84','sa',0);
+	}
 }
 /* yIvarNayordIdhIvevyoH (7.4.53) */
 if (in_array($fo,array("diDIN","vevIN")) && sub(array("dIDI","vevI"),array("+"),array("i","I","y"),0) )
@@ -5557,7 +5563,7 @@ elseif ( (in_array($fo,array("vfN","vfY")) || ends(array($verb_without_anubandha
 	storedata('7.2.38','sa',0);
 }
 /* RRta iddhAtoH (7.1.100) */
-if (arr($text,'/F\+s/') && ($sarvadhatuka===1 || $ardhadhatuka===1) )
+if (arr($text,'/F\+s/') && ($sarvadhatuka===1 || $ardhadhatuka===1) && $ciN!==1)
 {
     $text=three(array("F"),array("+"),array("s"),array("ir"),array("+"),array("s"),0);
 	storedata('7.2.100','sa',0);
@@ -9500,16 +9506,16 @@ if (arr($text,'/[iufx][+][j]/') && $so==="jas")
 }
 /* RRta iddhAtoH (7.1.100) */
 $kRR = array("kF","tF","gF"); // Creating a list of RR-anta words. They are anukaraNas of dhAtus mostly. If additional forms are found, list them here.
-if (arr($text,'/[ktg][F][+]/'))
+if (arr($text,'/[ktg][F][+]/') )
 {
     $dhatu = 1;
 }
-if (arr($text,'/[ktg][F][+]/'))
+if (arr($text,'/[ktg][F][+]/') && $ciN!==1)
 {
     $text = two(array("F"),array("+"),array("ir"),array("+"),1);
 	storedata('7.1.100','sa',3);
 }
-if ( $dhatu === 1 && arr($text,'/F\+/') && !arr($text,'/[ktg][F][+]/') )
+if ( $dhatu === 1 && arr($text,'/F\+/') && !arr($text,'/[ktg][F][+]/')  && $ciN!==1)
 {
     $text = two(array("F"),array("+"),array("ir"),array("+"),0);
 	storedata('7.1.100','sa',3);
