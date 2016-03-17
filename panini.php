@@ -2202,15 +2202,15 @@ elseif ( in_array($so,array("Ja")) && preg_match('/[A]$/',$verb_without_anubandh
 	echo "no jhontaH";
 }
 /* jho'ntaH (7.1.3) */
-elseif (in_array($so,array("Ja")) && $lakAra!=="liw" && $jhasyaran!==1) // because liTastajhayorezirec.
+if (arr($text,'/[+]Ja$/') && in_array($so,array("Ja")) && $lakAra!=="liw" && $jhasyaran!==1) // because liTastajhayorezirec.
 {
     $text=two(array("+"),array("Ja"),array("+"),array("anta"),0);
 	storedata('7.1.3','sa',0);
 }
 /* AtmanepadeSvanataH (7.1.5) */
-elseif ( in_array($so,array("Ja")) && !sub(array("a+"),array("Ja"),blank(0),0) && pr2(array("+"),array("Ja"),blank(0),array("+"),array("ata"),blank(0),$text)!==$text  )
+elseif ( in_array($so,array("Ja")) && !sub(array("a+"),array("Ja"),blank(0),0) && arr($text,'/[^a][+]Ja$/') )
 {
-    $text=pr2(array("+"),array("Ja"),blank(0),array("+"),array("ata"),blank(0),$text);
+    $text=change('/([^a][+])Ja$/','$1ata');
 	storedata('7.1.5','sa',0);
 }
 /* UrNotezca pratiSedho vaktavyaH (vA) */
@@ -2310,7 +2310,7 @@ if ($sanAdi==="yak")
 	}
 }
 /* curAdi Ric handling */
-if (arr($text,'/\+Ri[c]{0,1}\+/'))
+if (arr($text,'/\+Ri[c]{0,1}\+/')||$ciN===1)
 {
 	/* ho hanterJNinneSu (7.3.54) */
 	if ( arr(array($fo),'/[h][a][n]/') && !in_array($fo,array("ahan","dIrGAhan")) &&  in_array($sanAdi,array("Ric","RiN")) )
@@ -2380,23 +2380,23 @@ if (arr($text,'/\+Ri[c]{0,1}\+/'))
 	}
 	/* jAgro'viciNNalGitsu (7.3.85) */
 	// Only coded for Ri and Git. Rest pending.
-	if ( arr($text,'/jAgf[+]Ri/') )
+	if ( arr($text,'/jAgf[+]Ri/') || arr($text,'/jAgf[+]i/') )
 	{
-		$text = two(array('jAgf'),array("+Ri"),array('jAgar'),array("+Ri"),0);
+		$text = two(array('jAgf'),array("+Ri","+i"),array('jAgar'),array("+Ri","+i"),0);
 		storedata('7.3.85','sa',0);
 		$jAgro=1;
 	}
 	/* aco JNiti (7.2.115) */
-	if (arr($text,'/['.pc('ac').']\+Ri[Nc]{0,1}\+/') && !in_array($fo,$curAdi_adanta))
+	if (arr($text,'/['.pc('ac').']\+Ri[Nc]{0,1}\+/')||arr($text,'/['.pc('ac').']\+i$/') && !in_array($fo,$curAdi_adanta))
 	{
-		$text = two($ac,array("+Ric+","+RiN","+Ri+"),vriddhi($ac),array("+Ric+","+RiN","+Ri+"),0);
+		$text = two($ac,array("+Ric+","+RiN","+Ri+","+i"),vriddhi($ac),array("+Ric+","+RiN","+Ri+","+i"),0);
 		storedata('7.2.115','sa',0);
 	}
 	/* ata upadhAyAH (7.2.116) */
 	// more on enumeration kind. Not used regexes deliberately.
-	if ( $atolopa!==1 && $Naugami!==1 && $jAgro!==1 && arr($text,'/[a]['.pc('hl').'][+]Ric{0,1}[+]/') && !(arr(array($verb_without_anubandha),'/^['.pc('hl').']/')&&$caG===1))
+	if ( $atolopa!==1 && $Naugami!==1 && $jAgro!==1 && (arr($text,'/[a]['.pc('hl').'][+]Ric{0,1}[+]/')||arr($text,'/[a]['.pc('hl').'][+]i$/')) && !(arr(array($verb_without_anubandha),'/^['.pc('hl').']/')&&$caG===1))
 	{
-		$text = three(array("a"),$hl,array("+Ric+","+Ri+"),array("A"),$hl,array("+Ric+","+Ri+"),0);
+		$text = three(array("a"),$hl,array("+Ric+","+Ri+","+i"),array("A"),$hl,array("+Ric+","+Ri+","+i"),0);
 		storedata('7.2.116','sa',0);
 	}
 	/* mitAM hrasvaH (6.4.92) */ 
@@ -3024,9 +3024,9 @@ if ( $lakAra==="low" && pr2(array("+"),array("si"),blank(0),array("+"),array("hi
 	storedata('3.4.87','sa',0);
 }
 /* AtmanepadeSvanataH (7.1.5) */
-if ( in_array($so,array("Ja")) && preg_match('/[A]$/',$verb_without_anubandha) && ends(array("Sap","Sa"),$vik,2) && pr2(array("+"),array("Ja"),blank(0),array("+"),array("ata"),blank(0),$text)!==$text)
+if ( in_array($so,array("Ja")) && preg_match('/[A]$/',$verb_without_anubandha) && ends(array("Sap","Sa"),$vik,2) && ar($text,'/([^a][+])Ja$/'))
 {
-    $text=pr2(array("+"),array("Ja"),blank(0),array("+"),array("ata"),blank(0),$text);
+    $text=change('/([^a][+])Ja$/','$1ata');
 	storedata('7.1.5','sa',0);
 }
 /* Patch to prevent Ato GitaH (7.2.81) in gAN etc*/
@@ -3209,9 +3209,9 @@ if ( $ksa===1 && $luGset===7 && in_array($so,$taG)  && in_array($fo,array("duha!
 	storedata('7.3.73','sa',0);
 }
 /* AtmanepadeSvanataH (7.1.5) */
-if ( in_array($so,array("Ja")) && $set===2 && pr2(array("+"),array("Ja"),blank(0),array("+"),array("ata"),blank(0),$text)!==$text)
+if ( in_array($so,array("Ja")) && $set===2 && arr($text,'/([^a][+])Ja$/'))
 {
-    $text=pr2(array("+"),array("Ja"),blank(0),array("+"),array("ata"),blank(0),$text);
+    $text=change('/([^a][+])Ja$/','$1ata');
 	storedata('7.1.5','sa',0);
 }
 /* Ato GitaH (7.2.81) */
@@ -3851,19 +3851,27 @@ if (arr($text,'/['.pc('ec').'][+][i][+]/') )
 	$text = two(prat('ec'),array("+i+",),$ayavayavah,array("+i+",),0);
 	storedata('6.1.78','sa',0);
 }
+/* Patch to remove anubandhas from sic in bhAvakarma */
+if ($sic===1 && in_array($vAcya,array("bhAva","karma")) && arr($text,'/[+]sic[+]/'))
+{
+	storedata('1.3.2','pa',0);
+	storedata('1.3.3','sa',0);
+	$text = one(array("+sic+"),array("+s"),0);
+	storedata('1.3.9','sa',0);
+}
 /* syasicsIyuTtAsiSu bhAvakarmaNorupadeze'jjhanagrahadRzAM ciNvadiT ca (6.4.62) */
 if (($syatAsI===1||$sic===1||$sIyuT===1) && (arr($text,'/^[^+]*['.pc('ac').'][+]/')||in_array($fo,array("hana!","graha!","dfSi!r"))||$_GET['sanAdi']==="Ric") && in_array($vAcya,array("bhAva","karma")))
 {
-	$text=change('/[+]([^+]+)$/','+i$1');
+	$text1=change('/[+]([^+]+)$/','+i$1');
+	$text=array_merge($text,$text1);
 	storedata('6.4.62','sa',0);
 	$ciN=1;
 	$Nit=1;
-	$id_dhAtu = "sew";
 	$Agama=array_merge($Agama,array("iw"));
 	/* aco JNiti (7.2.115) */ 
-	if ( arr($text,'/['.pc('ac').'][+]/') )
+	if ( arr($text,'/['.pc('ac').'][+]i/') )
 	{
-		$text = two($ac,array("+"),vriddhi($ac),array("+"),0);
+		$text = two($ac,array("+i"),vriddhi($ac),array("+i"),0);
 		storedata('7.2.115','sa',3);
 	}
 	/* ho hanterJNinneSu (7.3.54) */
@@ -3884,6 +3892,13 @@ if (($syatAsI===1||$sic===1||$sIyuT===1) && (arr($text,'/^[^+]*['.pc('ac').'][+]
 	{
 		$text = three(array("A"),$hl,array("+i"),array("a"),$hl,array("+i"),1);
 		storedata('6.4.93','sa',0);
+	}
+	echo $id_dhAtu, $id_pratyaya;
+	/* ArdhadhAtukasyeDvalAdeH ( ) */
+	if ($id_dhAtu!=="aniw" && $id_pratyaya!=="aniw")
+	{
+		$text = change('/[+](s[^+]*)$/','+i$1');
+		storedata('7.2.35','sa',0);
 	}
 }
 /* ho hanterJNinneSu (7.3.54) */
@@ -3966,8 +3981,9 @@ if ( in_array($fo,array("iN")) && sub(array("gA"),array("+"),blank(0),0) && in_a
 	$kGiti=1;
 	storedata('1.1.5','pa',0);
 }
+print_r($text);
 /* gAGkuTAdibhyo'JNinGit (1.2.1) */ 
-if ( ((in_array($fo,$tudAdi_kuTAdi) && ($verbset==="tudAdi" || $verbset==="none" )) ) && in_array($lakAra,$ArdhadhAtuka_lakAra) && $Nit===0 && $Jit===0 && !in_array("R",$it) && !in_array("Y",$it))
+if ( ((in_array($fo,$tudAdi_kuTAdi) && ($verbset==="tudAdi" || $verbset==="none" )) ) && in_array($lakAra,$ArdhadhAtuka_lakAra) && (($Nit===0 && $Jit===0)||$ciN===1) && ((!in_array("R",$it) && !in_array("Y",$it))||$ciN===1))
 {
 	$itpratyaya=array_merge($itpratyaya,array("N"));
 	$it=array_merge($it,array("N"));
@@ -5310,7 +5326,6 @@ if ( in_array($fo,array("pada!")) && $lakAra==="luN" && $so==="ta" )
 	storedata('3.1.60','sa',0);
 	$ciN=1;
 }
-echo $ciN; print_r($text);
 /* ciNo luk (6.4.104) */ 
 if ( $ciN===1 )
 { 
@@ -5867,7 +5882,7 @@ if( in_array($so,$tiG) && (arr($text,'/[iIuUfFxeoEOhyvrl]\+izIDv/') || (arr($tex
 	storedata('8.3.79','sa',0);
 }
 /* iNaH SIdhvaMluGliTAM dho'GgAt (8.3.78) */
-elseif( in_array($so,$tiG) && ((arr($text,'/zIDv/') && sub($iN2,array("+zIDv"),blank(0),0)) || ( (arr($text,'/Dv/') &&sub($iN2,array("+Dv"),blank(0),0)) && in_array($lakAra,array("luN","liw")) )) )
+if( in_array($so,$tiG) && ((arr($text,'/zIDv/') && sub($iN2,array("+zIDv"),blank(0),0)) || ( (arr($text,'/Dv/') &&sub($iN2,array("+Dv"),blank(0),0)) && in_array($lakAra,array("luN","liw")) )) )
 {
 	$text = two($iN2,array("+zIDv","+Dv"),$iN2,array("+zIQv","+Qv"),0);
 	storedata('8.3.78','sa',0);
@@ -11492,7 +11507,14 @@ if ((arr($text,'/[+]$/') || arr($text,'/[+]['.pc("Jl").']/')) && sub($druh,blank
 	storedata('8.2.33','sa',0);
 }
 /* dAderdhAtorghaH (8.2.32) */
-if ((arr($text,'/[+]$/') || arr($text,'/[+]['.pc("Jl").']/')) && sub($dade,blank(0),blank(0),0) )
+if (arr($text,'/^d[^+]+[h][+]['.pc("Jl").']/') && sub($dade,blank(0),blank(0),0) )
+{
+    $text = two(array("dah","dAh","dih","duh","dfh","drAh","druh"),prat("Jl"),array("daG","dAG","diG","duG","dfG","drAG","druG"),prat("Jl"),0);
+	storedata('8.2.32','sa',0);
+    $hodha1 = 1; // 0 - doesn't prevent ho DhaH. 1 - prevents ho DhaH.
+}
+/* dAderdhAtorghaH (8.2.32) */
+if (arr($text,'/^d[^+]+[h][+]$/') && sub($dade,blank(0),blank(0),0) )
 {
     $text = one(array("dah","dAh","dih","duh","dfh","drAh","druh"),array("daG","dAG","diG","duG","dfG","drAG","druG"),0);
 	storedata('8.2.32','sa',0);
