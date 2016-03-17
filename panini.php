@@ -1284,11 +1284,28 @@ if ($lakAra==="luN")
 	/* smottare laG ca (3.3.176) */
 	// pending.
 	/* cli luGi (3.1.43) */
-	$text = pr2(array("+"),$tiG,blank(0),array("+cli+"),$tiG,blank(0),$text);
+	$text = pr2(array("+"),$tiG1,blank(0),array("+cli+"),$tiG1,blank(0),$text);
 	storedata('3.1.43','sa',0);
 	$set=2;
+	/* ciN bhAvakarmaNoH (3.1.66) */
+	if (in_array($vAcya,array("bhAva","karma")) && $so==="ta" )
+	{
+		$text = one(array("+cli+"),array("+ciR+"),0);
+		storedata('3.1.66','sa',0);
+		$it = array_merge($it,array("R"));
+		$itpratyaya = array_merge($itpratyaya,array("R"));
+		$Nit=1;
+		$ciN=1;
+		/* ciNo luk (6.4.104) */
+		$text = one(array("+ciR+ta"),array("+ciR"),0);
+		storedata('6.4.104','sa',0);
+		storedata('1.3.7','pa',0);
+		storedata('1.3.3','pa',0);
+		$text = one(array("+ciR"),array("+i"),0);
+		storedata('1.3.9','sa',0);
+	}
 	/* zala igupadhAdaniTaH ksaH (3.1.45) */
-	if (in_array($fo,array("kruSa!","diSa!","riSa!","ruSa!","liSa!","tviza!","dviza!","miha!","ruha!","liha!","duha!")) )
+	elseif (in_array($fo,array("kruSa!","diSa!","riSa!","ruSa!","liSa!","tviza!","dviza!","miha!","ruha!","liha!","duha!")) )
 	{
 		$text = one(array("+cli+"),array("+sa+"),0);
 		storedata('3.1.45','sa',0);
@@ -2174,9 +2191,9 @@ if (arr($text,'/['.flat($ac).'][!]/') && in_array($so,$tiG) )
 	storedata('1.3.9','sa',0);
 }
 /* AtmanepadeSvanataH (7.1.5) */
-if ( in_array($so,array("Ja")) && $set===2 && pr2(array("+"),array("Ja"),blank(0),array("+"),array("ata"),blank(0),$text)!==$text)
+if ( in_array($so,array("Ja")) && $set===2 && arr($text,'/[^a][+]Ja$/'))
 {
-    $text=pr2(array("+"),array("Ja"),blank(0),array("+"),array("ata"),blank(0),$text);
+    $text=change('/([^a][+])Ja$/','$1ata');
 	storedata('7.1.5','sa',0);
 }
 /* AtmanepadeSvanataH (7.1.5) */
@@ -5285,7 +5302,7 @@ if ( in_array($fo,array("dIpI!","janI!","buDa!","pUrI!","tAyf!","o!pyAyI!")) && 
     $text = three(array("dIp","jan","buD","pUr","tAy","pyAy"),array("+"),array("ista","ta"),array("dIp","jan","buD","pUr","tAy","pyAy"),array("+ciR+"),array("ista","ta"),1);
 	storedata('3.1.61','sa',0);
 	$ciN=1;
-} else { $ciN=0; }
+}
 /* ciN te padaH (3.1.60) */ 
 if ( in_array($fo,array("pada!")) && $lakAra==="luN" && $so==="ta" )
 { 
@@ -5293,6 +5310,7 @@ if ( in_array($fo,array("pada!")) && $lakAra==="luN" && $so==="ta" )
 	storedata('3.1.60','sa',0);
 	$ciN=1;
 }
+echo $ciN; print_r($text);
 /* ciNo luk (6.4.104) */ 
 if ( $ciN===1 )
 { 
@@ -12682,7 +12700,7 @@ $itprakriti = array();
 $itpratyaya = array();
 $Agama=array();
 //$sanAdi="";
-$TAp=0; $DAp=0; $cAp=0; $GIp=0; $GIn=0; $GIS=0; $kGiti=0; $abhyasta=0; $ajAdyataSTAp=0; $tusma=0; $upasarga_joined=0; $sicivRddhi=0; $atolopa=0; $caG=0; $aG=0; $zluvat=0; $aniditAm=0; $kGiti=0; $uzca=0; $abhyAsa=0; $Adezapratyaya=0; $jherjus=0; $sijabhyastavidibhyazca=0;
+$TAp=0; $DAp=0; $cAp=0; $GIp=0; $GIn=0; $GIS=0; $kGiti=0; $abhyasta=0; $ajAdyataSTAp=0; $tusma=0; $upasarga_joined=0; $sicivRddhi=0; $atolopa=0; $caG=0; $aG=0; $zluvat=0; $aniditAm=0; $kGiti=0; $uzca=0; $abhyAsa=0; $Adezapratyaya=0; $jherjus=0; $sijabhyastavidibhyazca=0; $ciN=0;
 $temp = scrape1($first,0,2,1); 
 $verb_without_anubandha=$temp[0];
 $storedata=array();
