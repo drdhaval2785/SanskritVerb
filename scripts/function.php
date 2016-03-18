@@ -304,7 +304,7 @@ $noaccentsanubandhaslp=array_map('trim',$noaccentsanubandha);
 $noaccentwithoutanusvar=array_map('removeanusvar',$noaccentsanubandhaslp);
 $noaccentniranubandhaslp=array_map('verbprocess',$noaccentsanubandhaslp);*/
 // Verb pada by sUtra number database
-$verb_sutra_pada=array("1.3.13:A","1.3.15:p","1.3.16:p","1.3.14:A","1.3.20:A","1.3.23:A","vA903:A","1.3.24:A","1.3.25:A","1.3.26:A","1.3.31:A","1.3.79:p","1.3.32:A","1.3.33:A","1.3.34:A","1.3.35:A","1.3.37:A","1.3.36:A","1.3.43:u","1.3.39:A","1.3.40:A","1.3.41:A","1.3.42:A","1.3.44:A","1.3.45:A","1.3.46:A","1.3.47:A","1.3.50:u","1.3.49:A","1.3.52:A","1.3.53:A","1.3.54:A","1.3.55:A","1.3.56:A","1.3.58:p","1.3.59:p","1.3.57:A","1.3.60:A","1.3.61:p","1.3.65:A","1.3.66:A","1.3.68:A","1.3.69:A","1.3.70:A","1.3.71:A","1.3.18:A","1.3.19:A","1.3.21:A","1.3.22:A","1.3.27:A","1.3.28:A","1.3.29:A","1.3.30:A","1.3.51:A","1.3.57:A","1.3.83:p","1.3.84:p","1.3.74:u","1.3.91:u","1.3.92:u","1.3.93:u","1.3.12:A","1.3.73:u","1.3.75:u","1.3.76:u","1.3.80:p","1.3.81:p","1.3.82:p","1.3.86:p","1.3.89:A","1.3.90:u","1.3.87:p","1.3.72:u","1.3.38:u","AkusmAd:A","AgarvAd:A","1.3.21-7:u","uBayapadI:u","AtmanepadI:A","parasmEpadI:p","vA 903:A","1.3.29-2:A");
+$verb_sutra_pada=array("1.3.13:A","1.3.15:p","1.3.16:p","1.3.14:A","1.3.20:A","1.3.23:A","vA903:A","1.3.24:A","1.3.25:A","1.3.26:A","1.3.31:A","1.3.79:p","1.3.32:A","1.3.33:A","1.3.34:A","1.3.35:A","1.3.37:A","1.3.36:A","1.3.43:u","1.3.39:A","1.3.40:A","1.3.41:A","1.3.42:A","1.3.44:A","1.3.45:A","1.3.46:A","1.3.47:A","1.3.50:u","1.3.49:A","1.3.52:A","1.3.53:A","1.3.54:A","1.3.55:A","1.3.56:A","1.3.58:p","1.3.59:p","1.3.57:A","1.3.60:A","1.3.61:p","1.3.65:A","1.3.66:A","1.3.68:A","1.3.69:A","1.3.70:A","1.3.71:A","1.3.18:A","1.3.19:A","1.3.21:A","1.3.22:A","1.3.27:A","1.3.28:A","1.3.29:A","1.3.30:A","1.3.51:A","1.3.57:A","1.3.83:p","1.3.84:p","1.3.74:u","1.3.91:u","1.3.92:u","1.3.93:u","1.3.12:A","1.3.73:u","1.3.75:u","1.3.76:u","1.3.80:p","1.3.81:p","1.3.82:p","1.3.86:p","1.3.89:A","1.3.90:u","1.3.87:p","1.3.72:u","1.3.38:u","AkusmAd:A","AgarvAd:A","1.3.21-7:u","uBayapadI:u","AtmanepadI:A","parasmEpadI:p","vA 903:A","1.3.29-2:A","3.1.90:u");
 /* changing the pada of verb in case of upasargas */
 $toatmane=array("niviSa!","parikrIY","vikrIY","avakrIY","viji","parAji","AkrIqf!","anukrIqf!","samkrIqf!","parikrIqf!","samsTA","avasTA","prasTA","visTA","udtapa!","vitapa!","Ayama!","Ahana!","samgamx!","samfcCa!","sampracCa!","samsvf","samf","samzru","nihveY","samhveY","upahveY","vihveY","avagf","jijYA","SuSru","susmf","didfSir",);
 $sutraenglish=array("nerviSaH (1.3.17)","parivyavebhyaH kriyaH (1.3.18)","parivyavebhyaH kriyaH (1.3.18)","parivyavebhyaH kriyaH (1.3.18)","viparAbhyAM jeH (1.3.19)","viparAbhyAM jeH (1.3.19)","krIDo'nusaMparibhyazca (1.3.21)","krIDo'nusaMparibhyazca (1.3.21)","krIDo'nusaMparibhyazca (1.3.21)","krIDo'nusaMparibhyazca (1.3.21)","samavaparivibhyaH sthaH (1.3.22)","samavaparivibhyaH sthaH (1.3.22)","samavaparivibhyaH sthaH (1.3.22)","samavaparivibhyaH sthaH (1.3.22)","udvibhyAM tapaH (1.3.27)","udvibhyAM tapaH (1.3.27)","AGo yamahanaH (1.3.28)","AGo yamahanaH (1.3.28)","samo gamyRcCipracCisvarAyartishruvidibhyaH (1.3.29)","samo gamyRcCipracCisvarAyartishruvidibhyaH (1.3.29)","samo gamyRcCipracCisvarAyartishruvidibhyaH (1.3.29)","samo gamyRcCipracCisvarAyartishruvidibhyaH (1.3.29)","samo gamyRcCipracCisvarAyartishruvidibhyaH (1.3.29)","samo gamyRcCipracCisvarAyartishruvidibhyaH (1.3.29)","samo gamyRcCipracCisvarAyartishruvidibhyaH (1.3.29)","nisamupavibhyo hvaH (1.3.30)","nisamupavibhyo hvaH (1.3.30)","nisamupavibhyo hvaH (1.3.30)","nisamupavibhyo hvaH (1.3.30)","avAdgraH (1.3.51)","jJAzrusmRdRzAM sanaH (1.3.57)","jJAzrusmRdRzAM sanaH (1.3.57)","jJAzrusmRdRzAM sanaH (1.3.57)","jJAzrusmRdRzAM sanaH (1.3.57)",);
@@ -3139,7 +3139,7 @@ function print_to_file($text,$sutra_number,$style,$note)
 /* function tablemaker */
 function tablemaker($ou)
 {
-	global $verbpada;
+	global $verbpada, $vAcya;
 	if ($verbpada==='p')
 	{
 			echo "<table border='1'>
@@ -3196,6 +3196,64 @@ function tablemaker($ou)
 		<td>$ou[6]</td>
 		<td>$ou[7]</td>
 		<td>$ou[8]</td>
+		</tr>
+		</table>
+		";
+	}
+	elseif ($verbpada==='u' && in_array($vAcya,array("bhAva","karmakartR")))
+	{
+			echo "<table border='1'>
+		<tr>
+		<td>परस्मैपद</td>
+		<td>एकवचनम्‌</td>
+		<td>द्विवचनम्‌</td>
+		<td>बहुवचनम्‌</td>
+		</tr>
+		<tr>
+		<td>प्रथमपुरुष</td>
+		<td>$ou[0]</td>
+		<td></td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>मध्यमपुरुष</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>उत्तमपुरुष</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		</tr>
+		</table>
+		";
+		echo "<hr/>";
+			echo "<table border='1'>
+		<tr>
+		<td>आत्मनेपद</td>
+		<td>एकवचनम्‌</td>
+		<td>द्विवचनम्‌</td>
+		<td>बहुवचनम्‌</td>
+		</tr>
+		<tr>
+		<td>प्रथमपुरुष</td>
+		<td>$ou[1]</td>
+		<td></td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>मध्यमपुरुष</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>उत्तमपुरुष</td>
+		<td></td>
+		<td></td>
+		<td></td>
 		</tr>
 		</table>
 		";

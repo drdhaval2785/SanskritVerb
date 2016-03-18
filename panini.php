@@ -262,8 +262,13 @@ if ($type==='tiGanta')
 	if ($debug===1) {dibug("200");}
 
 	/* Deciding the pratyaya by doing padanirdhARaNa of parasmai, Atmane, ubhaya */ 
+	/* kuzirajoH prAcAM zyan parasmaipadaM ca (3.1.90) */
+	if ( in_array($vAcya,array("karmakartR")) && in_array($fo,array("kuza!","raYja!"))&& $pada==="pratyaya" && $lakAra!=="")
+	{
+		$verbpada=verb_pada('3.1.90'); // See function.php for details of function.
+	}
 	/* bhAvakarmaNoH (1.3.13) */
-	if ( in_array($vAcya,array("karma","bhAva","karmakartR")) && $pada==="pratyaya" && $lakAra!=="")
+	elseif ( in_array($vAcya,array("karma","bhAva","karmakartR")) && $pada==="pratyaya" && $lakAra!=="")
 	{
 		$verbpada=verb_pada('1.3.13'); // See function.php for details of function.
 		$sanAdi = "yak";
@@ -817,42 +822,6 @@ if ($sambuddhi===1)
 {
 	gui($text,'sambuddhi','red',0);
 }
-/* preprocessing for the sup pratyayas. */
-// Joining the two input words 
-if ($second === "") // if there is no pratyaya. This doesn't happen in subanta / tiGanta generation. But kept it for other uses.
-{
-    $input = ltrim(chop($first));
-}
-elseif ($first === "") // if there is no prakRti. This doesn't happen in subanta / tiGanta generation. But kept it for other uses, like sandhi etc.
-{
-    $input = ltrim(chop($second));
-}
-elseif ($type==="tiGanta") // this option is used for subanta / tiGanta generation. $input is 'prakRti'+'pratyaya'.
-{
-	$nonpurelakara = str_replace(array("viDiliN","ASIrliN","sArvaDAtukalew","ArDaDAtukalew","law","liw","luw","lfw","low","laN","luN","lfN"),array("li!N","li!N","le!w","le!w","la!w","li!w","lu!w","lf!w","lo!w","la!N","lu!N","lf!N"),$lakAra);
-	if ($_GET['sanAdi']==="Ric" && $sanAdi==="yak" && !in_array($lakAra,array("law","low","laN","viDiliN")))
-	{
-		$input = ltrim(chop($first."+Ric+".$second));
-	}
-	elseif ($sanAdi==="yak" && !in_array($lakAra,array("law","low","laN","viDiliN")))
-	{
-		$input = ltrim(chop($first."+".$second));
-	}
-	elseif ($sanAdi==="yak" && $verbset==="curAdi")
-	{
-		$input = ltrim(chop($first."+Ric+yak+".$nonpurelakara));
-	}
-	else
-	{
-		$input = ltrim(chop($first."+".$sanAdi."+".$nonpurelakara));
-	}
-	$input = str_replace("++","+",$input); // If $sanAdi is "", there would be two +s consecutively. To overcome this hurdle, this patch is created.
-}
-else 
-{
-	$input = ltrim(chop($first."+".$second));
-	$input = str_replace("++","+",$input);
-}
 /* main coding part starts from here. Based on Siddhantakaumudi text. */
 /* Defining an array $text. */
 //Here we will store the output after the process of sUtras. The first member is $input. 
@@ -891,8 +860,17 @@ elseif (in_array($so,$tiG) && $vAcya==="karmakartR")
 {
 	storedata('3.1.87','pa',0);
 }
+/* na duhasnunamAM yakciNau (3.1.89) */
+if (in_array($vAcya,array("karmakartR")) && $so==="ta" && in_array($fo,array("duha!","zRu","Rama!")) &&  in_array($lakAra,array("law","low","laN","viDiliN")))
+{
+	storedata('3.1.89','sa',0);
+}
+/* kuzirajoH prAcAM zyanparasmaipadaM ca (3.1.90) */
+elseif ( in_array($vAcya,array("karmakartR")) && $pada==="pratyaya" && in_array($fo,array("kuza!","raYja!")) && in_array($lakAra,array("law","low","laN","viDiliN",)) )
+{
+}
 /* sArvadhAtuke yak (3.1.67) */
-if ( in_array($vAcya,array("karma","bhAva","karmakartR")) && $pada==="pratyaya" && in_array($lakAra,array("law","low","laN","viDiliN",)) )
+elseif ( in_array($vAcya,array("karma","bhAva","karmakartR")) && $pada==="pratyaya" && in_array($lakAra,array("law","low","laN","viDiliN",)) )
 {
 	if ($verbset==="curAdi")
 	{
@@ -927,6 +905,40 @@ if ( in_array($fo,array("vftu!","vfDu!","SfDu!","syandU!",)) && in_array($lakAra
 	storedata('7.2.59','sa',0);
 }
 if ($debug===1) {dibug("800");}
+
+/* preprocessing for the sup pratyayas. */
+// Joining the two input words 
+if ($second === "") // if there is no pratyaya. This doesn't happen in subanta / tiGanta generation. But kept it for other uses.
+{
+    $input = ltrim(chop($text[0]));
+}
+elseif ($first === "") // if there is no prakRti. This doesn't happen in subanta / tiGanta generation. But kept it for other uses, like sandhi etc.
+{
+    $input = ltrim(chop($second));
+}
+elseif ($type==="tiGanta") // this option is used for subanta / tiGanta generation. $input is 'prakRti'+'pratyaya'.
+{
+	$nonpurelakara = str_replace(array("viDiliN","ASIrliN","sArvaDAtukalew","ArDaDAtukalew","law","liw","luw","lfw","low","laN","luN","lfN"),array("li!N","li!N","le!w","le!w","la!w","li!w","lu!w","lf!w","lo!w","la!N","lu!N","lf!N"),$lakAra);
+	$input = ltrim(chop($text[0]."+".$nonpurelakara));
+	if ($_GET['sanAdi']==="Ric" && $sanAdi==="yak" && !in_array($lakAra,array("law","low","laN","viDiliN")))
+	{
+		$input = ltrim(chop($text[0]."+Ric+".$second));
+	}
+	elseif ($sanAdi==="yak" && !in_array($lakAra,array("law","low","laN","viDiliN")))
+	{
+		$input = ltrim(chop($text[0]."+".$second));
+	}
+	elseif ($sanAdi==="yak" && $verbset==="curAdi")
+	{
+		$input = ltrim(chop($text[0]."+Ric+yak+".$nonpurelakara));
+	}
+	$input = str_replace("++","+",$input); // If $sanAdi is "", there would be two +s consecutively. To overcome this hurdle, this patch is created.
+}
+else 
+{
+	$input = ltrim(chop($text[0]."+".$second));
+	$input = str_replace("++","+",$input);
+}
 $text = array($input); // Defining first member of the array as $input (combined words first and second)
 /* dhAtvAdeza before ArdhadhAtuka pratyayas as per sahajabodha 2 p. 62 */
 if (in_array($lakAra,$ArdhadhAtuka_lakAra) || $sanAdi==="yak")
@@ -1310,8 +1322,13 @@ if ($lakAra==="luN")
 		storedata('3.1.60','sa',0);
 		$ciN=1;
 	}
+	/* na duhasnunamAM yakciNau (3.1.89) */
+	elseif (in_array($vAcya,array("karmakartR")) && $so==="ta" && in_array($fo,array("duha!","zRu","Rama!")))
+	{
+		storedata('3.1.89','sa',0);
+	}
 	/* acaH karmakartari (3.1.62) */
-	elseif (in_array($vAcya,array("karmakartR")) && $so==="ta" && arr($text,'/['.pc('ac').'][+]ta$/'))
+	elseif (in_array($vAcya,array("karmakartR")) && $so==="ta" && arr($text,'/['.pc('ac').'][+]cli[+]ta$/'))
 	{
 		$text = one(array("+cli+"),array("+ciR+"),1);
 		storedata('3.1.62','sa',0);
@@ -1319,6 +1336,26 @@ if ($lakAra==="luN")
 		$itpratyaya = array_merge($itpratyaya,array("R"));
 		$Nit=1;
 		$ciN=2;
+	}
+	/* duhazca (3.1.63) */
+	elseif (in_array($vAcya,array("karmakartR")) && $so==="ta" && arr($text,'/^duha[!][+]cli[+]ta$/'))
+	{
+		$text = one(array("duha!+cli+"),array("duha!+ciR+"),1);
+		storedata('3.1.63','sa',0);
+		$it = array_merge($it,array("R"));
+		$itpratyaya = array_merge($itpratyaya,array("R"));
+		$Nit=1;
+		$ciN=2;
+	}
+	/* na rudhaH (3.1.64) */
+	elseif (in_array($vAcya,array("karmakartR")) && $so==="ta" && arr($text,'/^ruDi[!]r[+]cli[+]ta$/'))
+	{
+		storedata('3.1.64','sa',0);
+	}
+	/* tapo'nutApe ca (3.1.65) */
+	elseif (in_array($vAcya,array("karmakartR")) && $so==="ta" && arr($text,'/^tapa[!][+]cli[+]ta$/'))
+	{
+		storedata('3.1.65','sa',0);
 	}
 	/* ciN bhAvakarmaNoH (3.1.66) */
 	elseif (in_array($vAcya,array("bhAva","karma")) && $so==="ta" )
@@ -1649,6 +1686,15 @@ elseif ( $sarvadhatuka===1 && $verbset==="divAdi"  && in_array($fo,$divAdi) && s
     $vik=array_merge($vik,array("Syan"));
     $set=1;
 }
+/* kuzirajoH prAcAM zyanparasmaipadaM ca (3.1.90) */
+elseif ( in_array($vAcya,array("karmakartR")) && $pada==="pratyaya" && in_array($fo,array("kuza!","raYja!")) && in_array($lakAra,array("law","low","laN","viDiliN",)) )
+{
+    $text=two(array("+"),$tiG,array("+Syan+"),$tiG,0);
+    $text=one(array("+Syan+Syan"),array("+Syan+"),0);
+	storedata('3.1.90','sa',0);
+    $vik=array_merge($vik,array("Syan"));
+    $set=1;
+}
 /* svAdibhyaH znuH (3.1.73) */
 elseif ( $sarvadhatuka===1 && $verbset==="svAdi" && sub(array("+"),$tiG,blank(0),0) && in_array($fo,$svAdi) && $sanAdi==="")
 {
@@ -1691,7 +1737,7 @@ elseif ( $sarvadhatuka===1 && $verbset==="kryAdi" && sub(array("+"),$tiG,blank(0
     $set=2;
 }
 /* kartari zap (3.1.68) */
-elseif ($sarvadhatuka===1 && (in_array($verbset,array("BvAdi","adAdi","juhotyAdi","curAdi")) || $sanAdi!=="" ) && sub(array("+"),$tiG,blank(0),0) && $sanAdi!=="yak")
+elseif ($sarvadhatuka===1 && (in_array($verbset,array("BvAdi","adAdi","juhotyAdi","curAdi")) || $sanAdi!=="" ) && sub(array("+"),$tiG,blank(0),0) && !arr($text,'/[+]yak[+]/'))
 {
     $text=two(array("+"),$tiG,array("+Sap+"),$tiG,0);
     $text=one(array("+Sap+Sap"),array("+Sap+"),0);
@@ -1830,8 +1876,9 @@ if (( ($sarvadhatuka===1 && $verbset==="juhotyAdi" && sub(array("+Sap+"),$tiG,bl
 		storedata('7.1.102','sa',0);
 	}*/	
 }
+print_r($text);
 /* adiprabhRtibhyaH zapaH (2.4.72) */
-if ( $sarvadhatuka===1 && $verbset==="adAdi" && in_array($fo,$adAdi) && sub(array("+Sap+"),$tiG,blank(0),0) && $sanAdi==="" )
+if ( $sarvadhatuka===1 && $verbset==="adAdi" && in_array($fo,$adAdi) && sub(array("+Sap+"),$tiG,blank(0),0) && ($sanAdi===""||($vAcya==="karmakartR"&&!arr($text,'/yak/'))) )
 {
     $text=two(array("+Sap+"),$tiG,array("+"),$tiG,0);
 	storedata('2.4.72','sa',0);
@@ -12767,7 +12814,11 @@ else
 }
 $vidhisutras[] = vidhisutraseparator($storedata);
 $allsutras[] = allsutras($storedata);
-if (in_array($vAcya,array("bhAva","karmakartR")))
+if (in_array($vAcya,array("bhAva","karmakartR")) && $verbpada==="u" && $w===0 )
+{
+	$w = $w+8;
+}
+elseif (in_array($vAcya,array("bhAva","karmakartR")) )
 {
 	break;
 }
