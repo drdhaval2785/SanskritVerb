@@ -263,7 +263,7 @@ if ($type==='tiGanta')
 
 	/* Deciding the pratyaya by doing padanirdhARaNa of parasmai, Atmane, ubhaya */ 
 	/* bhAvakarmaNoH (1.3.13) */
-	if ( in_array($vAcya,array("karma","bhAva")) && $pada==="pratyaya" && $lakAra!=="")
+	if ( in_array($vAcya,array("karma","bhAva","karmakartR")) && $pada==="pratyaya" && $lakAra!=="")
 	{
 		$verbpada=verb_pada('1.3.13'); // See function.php for details of function.
 		$sanAdi = "yak";
@@ -861,7 +861,7 @@ else
 $text = array($first); // Displaying only the verb in the initial phase
 
 /* Special message for bhAvavAcya */
-if ($vAcya==="bhAva")
+if (in_array($vAcya,array("bhAva","karmakartR")))
 {
 	storedata('BAvauni','red',0);
 }
@@ -881,8 +881,18 @@ if (in_array($so,$tiG) && $pada==="pratyaya" && $lakAra!=="" && $sanAdi==="Ric")
 	$text = change('/([^+])$/','$1+Ric');
 	storedata('3.1.26','sa',0);
 }
+/* tapastapaHkarmakasyaiva (3.1.88) */
+if ($fo==="tapa!" && in_array($so,$tiG) && $vAcya==="karmakartR")
+{
+	storedata('3.1.88','pa',0);
+}
+/* karmavat karmaNA tulyakriyaH (3.1.87) */
+elseif (in_array($so,$tiG) && $vAcya==="karmakartR")
+{
+	storedata('3.1.87','pa',0);
+}
 /* sArvadhAtuke yak (3.1.67) */
-if ( in_array($vAcya,array("karma","bhAva")) && $pada==="pratyaya" && in_array($lakAra,array("law","low","laN","viDiliN",)) )
+if ( in_array($vAcya,array("karma","bhAva","karmakartR")) && $pada==="pratyaya" && in_array($lakAra,array("law","low","laN","viDiliN",)) )
 {
 	if ($verbset==="curAdi")
 	{
@@ -1299,6 +1309,16 @@ if ($lakAra==="luN")
 		$text = three(array("pad"),array("+"),array("ta"),array("pad"),array("+ciR+"),array("ta"),0);
 		storedata('3.1.60','sa',0);
 		$ciN=1;
+	}
+	/* acaH karmakartari (3.1.62) */
+	elseif (in_array($vAcya,array("karmakartR")) && $so==="ta" && arr($text,'/['.pc('ac').'][+]ta$/'))
+	{
+		$text = one(array("+cli+"),array("+ciR+"),1);
+		storedata('3.1.62','sa',0);
+		$it = array_merge($it,array("R"));
+		$itpratyaya = array_merge($itpratyaya,array("R"));
+		$Nit=1;
+		$ciN=2;
 	}
 	/* ciN bhAvakarmaNoH (3.1.66) */
 	elseif (in_array($vAcya,array("bhAva","karma")) && $so==="ta" )
@@ -2241,7 +2261,6 @@ elseif ( in_array($so,array("Ja")) && !sub(array("a+"),array("Ja"),blank(0),0) &
     $text=change('/([^a][+])Ja$/','$1ata');
 	storedata('7.1.5','sa',0);
 }
-print_r($text);
 /* UrNotezca pratiSedho vaktavyaH (vA) */
 // Pending. Not giving proper results. Am pratyaya not functioning well.
 if ($lakAra==="liw" && ends(array($fo),array("UrRuY"),4) )
@@ -2348,7 +2367,7 @@ if ( ((in_array($fo,$tudAdi_kuTAdi) && ($verbset==="tudAdi" || $verbset==="none"
 	storedata('1.1.5','pa',0);
 }
 /* curAdi Ric handling */
-if (arr($text,'/\+Ri[c]{0,1}\+/')||$ciN===1)
+if (arr($text,'/\+Ri[c]{0,1}\+/')||$ciN===1||$ciN===2)
 {
 	/* ho hanterJNinneSu (7.3.54) */
 	if ( arr(array($fo),'/[h][a][n]/') && !in_array($fo,array("ahan","dIrGAhan"))  )
@@ -4176,9 +4195,9 @@ if (arr($text,'/sic/') && sub(array("+sic+",),blank(0),blank(0),0) && in_array($
 	storedata('1.3.9','sa',0);
 }
 /* liGsicorAtmanepadeSu (7.2.42) */
-if ( in_array($so,$taG) && ($sic===1||$sIyuT===1) && (in_array($fo,array("vfN","vfY")) || ends(array($verb_without_anubandha),array("F"),1)) && $ardhadhatuka===1 && $ciN!==1)
+if ( in_array($so,$taG) && ($sic===1||$sIyuT===1) && (in_array($fo,array("vfN","vfY")) || ends(array($verb_without_anubandha),array("F"),1)) && $ardhadhatuka===1 )
 {
-    $text=one(array("+"),array("+i"),1);
+    $text=one(array("+s"),array("+is"),1);
 	storedata('7.2.42','sa',0);
 	$Agama=array_merge($Agama,array("iw"));
 	/* sArvadhAtukArdhadhAtukayoH (7.3.84) */
@@ -4348,7 +4367,7 @@ elseif ($didhI!==1 && $bhUsuvo!==1  && arr($text,'/nu/') && pr2(array("nu+"),$pi
 if ($debug===1) {dibug("3400");}
 foreach ($tiG1 as $value) {$iDtiG = "i".$value;} // defining iDtiG i.e. iDAgama+tiG1.
 /* RRta iddhAtoH (7.1.100) */
-if (arr($text,'/F\+/') && in_array($so,$tiG) && ($sarvadhatuka===1 || in_array("Sa",$vik) || arr($text,'/[+]yAs[+]/')) && $ciN!==1)
+if (arr($text,'/F\+/') && in_array($so,$tiG) && ($sarvadhatuka===1 || in_array("Sa",$vik) || arr($text,'/[+]yAs[+]/')) && $ciN!==1 && $ciN!==2)
 {
     $text=two(array("F"),array("+"),array("ir"),array("+"),0);
 	storedata('7.1.100','sa',0);
@@ -5607,14 +5626,14 @@ elseif ( (in_array($fo,array("vfN","vfY")) || ends(array($verb_without_anubandha
 	storedata('7.2.38','sa',0);
 }
 /* RRta iddhAtoH (7.1.100) */
-if (arr($text,'/F\+s/') && ($sarvadhatuka===1 || $ardhadhatuka===1) && $ciN!==1)
+if (arr($text,'/F\+s/') && ($sarvadhatuka===1 || $ardhadhatuka===1) && $ciN!==1 )
 {
     $text=three(array("F"),array("+"),array("s"),array("ir"),array("+"),array("s"),0);
 	storedata('7.2.100','sa',0);
 	/* hali ca (8.2.77) */
-	if (arr($text,'/ir\+sI/') && in_array($so,$tiG) )
+	if (arr($text,'/ir\+s[It]/') && in_array($so,$tiG) )
 	{
-		$text=two(array("ir+"),array("sI"),array("Ir+"),array("sI"),0);
+		$text=two(array("ir+"),array("sI","st"),array("Ir+"),array("sI","st"),0);
 		storedata('8.2.77','sa',0);
 	}
 }
@@ -5917,7 +5936,7 @@ if ( $sic===1 && arr($text,'/[aiufx]\+s/') && sub(array("a","i","u","f","x"),arr
 /* AdezapratyayayoH (8.3.59) */
 if( in_array($so,$tiG) && arr($text,'/([iIuUfFxXeEoOhyvrlkKgGN])([+]*[iI]*)s(['.pc('al').'])/') && !arr($text,'/[+][s]$/') && arr($text,'/s/') && ( $rudAdibhyaH===1 || $SaHsaH===1 || $sic===1 || $syatAsI===1 || ends(array($us),prat('ik'),1) || $sIyuT===1 || ($lakAra==="liw" && arr($text,'/[+]ise$/')) ) && !arr($text,'/\+yAs\+/') && !(arr(array($fo),'/^s/') && arr($text,'/^[^+]*[iIuUfFxeEoOhyvrlkKgGN][+]s/')) )
 {
-	$text = change('/([iIuUfFxXeEoOhyvrlkKgGN])([+]*)s(['.pc('al').'])/','$1$2z$3');
+	$text = change('/([iIuUfFxXeEoOhyvrlkKgGN])([+]*[i]*)s(['.pc('al').'])/','$1$2z$3');
 	$text = change('/([iIuUfFxXeEoOhyvrlkKgGN][+]*[iI]*)sI/','$1zI');
 	$text = change('/zIs([+a-zA-Z]+)$/','zIz$1');
 	$text = change('/[+]is(['.pc('al').'])/','+iz$1');
@@ -6024,11 +6043,11 @@ if(arr($text,'/[iIuUfFxXeoEOhyvrlkKgGN][+]*s['.pc('al').'MH+]+$/') && !arr($text
 	$text = change('/[+]Iz$/','+Is');
 	storedata('8.3.59','sa',0);
 }
-if(arr($text,'/[iIuUfFxXeoEOhyvrlkKgGN][+]s['.pc('al').'MH+]+$/') && ($ksa===1||$sic===1) )
+if(arr($text,'/[iIuUfFxXeoEOhyvrlkKgGN][+][iI]*s['.pc('al').'MH+]+$/') && ($ksa===1||$sic===1) )
 {
 	storedata('8.3.55','pa',0);
 	storedata('8.3.57','pa',0);
-	$text = two($iN1,array("+s"),$iN1,array("+z"),0);
+	$text = two($iN1,array("+s","+is","+Is"),$iN1,array("+z","+iz","+Iz"),0);
 	storedata('8.3.59','sa',0);
 }
 /* For verbs - remove all + marks. */
@@ -9549,17 +9568,7 @@ if (arr($text,'/[iufx][+][j]/') && $so==="jas")
 	storedata('7.3.109','sa',3);
 }
 /* RRta iddhAtoH (7.1.100) */
-$kRR = array("kF","tF","gF"); // Creating a list of RR-anta words. They are anukaraNas of dhAtus mostly. If additional forms are found, list them here.
-if (arr($text,'/[ktg][F][+]/') )
-{
-    $dhatu = 1;
-}
-if (arr($text,'/[ktg][F][+]/') && $ciN!==1)
-{
-    $text = two(array("F"),array("+"),array("ir"),array("+"),1);
-	storedata('7.1.100','sa',3);
-}
-if ( $dhatu === 1 && arr($text,'/F\+/') && !arr($text,'/[ktg][F][+]/')  && $ciN!==1)
+if (in_array($so,$tiG) && arr($text,'/F\+/')  && $ciN!==1)
 {
     $text = two(array("F"),array("+"),array("ir"),array("+"),0);
 	storedata('7.1.100','sa',3);
@@ -12758,7 +12767,7 @@ else
 }
 $vidhisutras[] = vidhisutraseparator($storedata);
 $allsutras[] = allsutras($storedata);
-if ($vAcya==="bhAva")
+if (in_array($vAcya,array("bhAva","karmakartR")))
 {
 	break;
 }

@@ -309,6 +309,13 @@ $(document).ready(function() {
 			$('#step1').html(response);
 		}
   	});
+	$( document ).on( "click", "input:radio[name=vAcya]", function() {
+		if($('input:radio[name=vAcya]:checked').val() === "karmakartR"){
+			$('#step').val('15');
+		 	$.getData();
+			$('#step1').html(response);
+		}
+  	});
 	$( document ).on( "click", "input:radio[name=cond11]", function() {
 		if($('input:radio[name=cond11]:checked').val() == '1'){
 			$('#step').val('11_1');
