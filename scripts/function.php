@@ -2,7 +2,7 @@
 /* This code is developed by Dr. Dhaval Patel (drdhaval2785@gmail.com) of www.sanskritworld.in and Ms. Sivakumari Katuri.
   * Layout assistance by Mr Marcis Gasuns.
   * Available under GNU licence.
-  * Version 1.7.0 date 13 March 2016
+  * Version 1.8.0 date 20 March 2016
   * The latest source code is available at https://github.com/drdhaval2785/SanskritVerb
   * For setup, copy and paste tiGanta.html, tiGanta.php, and scripts folder to your localhost and server and run tiGanta.html.
   * tiGanta.html is the frontend for the code.

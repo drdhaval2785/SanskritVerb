@@ -2,7 +2,7 @@
  /* This code is developed by Dr. Dhaval Patel (drdhaval2785@gmail.com) of www.sanskritworld.in and Ms. Sivakumari Katuri.
   * Layout assistance by Mr Marcis Gasuns.
   * Available under GNU licence.
-  * Version 1.7.0 date 13 March 2016
+  * Version 1.8.0 date 20 March 2016
   * The latest source code is available at https://github.com/drdhaval2785/SanskritVerb .
   * Acknowledgements: The base book for coding has been Astadhyayi sahajabodha of Dr. Pushpa Dikshit, published by Pratibha Prakashan, Delhi.
   * I extend my heartfelt thanks to Ananda Loponen for the code to convert devanagari and various sanskrit transliterations. That can be accessed at http://www.ingmardeboer.nl/php/diCrunch.php?act=help.
@@ -2487,6 +2487,16 @@ if ($sanAdi==="yaN" && $lakAra!=="")
 		$abhyAsa=1;
 		$abhyasta=1;
 	}
+	if (arr($text,'/ya[+]Sap[+]/'))
+	{
+		storedata('1.3.3','pa',0);
+		storedata('1.3.8','pa',0);
+		$text = one(array("ya+Sap+"),array("ya+a+"),0);
+		storedata('1.3.9','sa',0);
+		$text = one(array("ya+a+"),array("ya+"),0);
+		storedata('6.1.97','sa',0);
+	}
+
 	$yaGverb = change('/[+][^+]*$/','');
 	$verb_without_anubandha = str_replace('+','',$yaGverb[0]);
 	$text = one($yaGverb,array($verb_without_anubandha),0);

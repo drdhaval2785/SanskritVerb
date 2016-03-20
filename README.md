@@ -67,6 +67,10 @@ v1.6.0 - 21 February 2016 - The code now has three commentaries mAdhavIyadhAtuvR
 
 v1.6.1 - 12 March 2016 - The code is tested for representative verbs from Siddhantakumudi (round 2) and suspect verb forms are corrected.
 
+v1.7.0 - 13 March 2016 - Decide which sUtra bars which sUtras.
+
+v1.8.0 - 20 March 2016 - Added bhAvavAcya, karmavAcya, karmakartRvAcya, Nijanta and yaGanta forms.
+
 # For understanding the code
 
 Read [this](https://github.com/drdhaval2785/SanskritVerb/Documentations/blob/master/understandcode.md)
