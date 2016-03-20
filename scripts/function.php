@@ -2631,8 +2631,13 @@ function abhyAsa_halAdi()
 		$text=change('/^([^+]*)O[+]/','$1u+');
 		storedata('7.4.59','sa',0);
 	}
+	/* na kavateryaGi (7.4.63) */
+	if($fo==="kuN" && $verbset==="BvAdi" && $sanAdi==="yaN")
+	{
+		storedata('7.4.63','sa',0);
+	}
 	/* kuhozcuH (7.4.62) */
-	if(arr($text,'/^[^+]*[kKgGNh][^+]*[+]/'))
+	elseif(arr($text,'/^[^+]*[kKgGNh][^+]*[+]/'))
 	{
 		$text=change('/^([^+]*)k([^+]*[+])/','$1c$2');
 		$text=change('/^([^+]*)K([^+]*[+])/','$1C$2');
@@ -2660,10 +2665,71 @@ function abhyAsa_halAdi()
 		$liT_Adeza=1;
 	}
 	/* abhyAsAcca (7.3.55) */
-	if (arr($text,'/ja+han+/') && in_array($fo,array("hana!")))
+	if (arr($text,'/ja[+]han[+]/') && in_array($fo,array("hana!")))
 	{
 		$text=one(array("ja+han+"),array("ja+Gan+"),0);
 		storedata('7.3.55','sa',0);
+	}
+	return $text;
+}
+function yaG_abhyAsa_special()
+{
+	global $text;	global $caG; global $lakAra; global $fo; global $storedata, $us, $verbset, $sanAdi; global $liT_Adeza;
+	/* nugato'nunAsikasya (7.4.85) */
+	if (arr($text,'/^([^+]*)a[+]([^+]*[YmNRn])[+]/'))
+	{
+		$text=change('/^([^+]*)a[+]([^+]*[YmNRn])[+]/','$1an$2+');
+		storedata('7.4.85','sa',0);
+	}
+	/* japajabhadahadazabhaJjapazAM ca (7.4.86) */
+	elseif (sub(array("ja+jap","ja+jaB","da+dah","pa+paS","da+daS","ba+Baj"),blank(0),blank(0),0))
+	{
+		$text=one(array("ja+jap","ja+jaB","da+dah","pa+paS","da+daS","ba+Baj"),array("janjap","janjaB","dandah","panpaS","dandaS","banBaj"),0);
+		storedata('7.4.86','sa',0);
+	}
+	/* nIgvaJcusraMsudhvaMsubhraMsukasapatapadaskandAm (7.4.84) */
+	elseif (sub(array("va+vac","sa+sras","da+Dvas","ba+Bras","ca+kas","pa+pat","pa+pad","ca+skad"),blank(0),blank(0),0))
+	{
+		$text=one(array("va+vac","sa+sras","da+Dvas","ba+Bras","ca+kas","pa+pat","pa+pad","ca+skad"),array("vanI+vac","sanI+sras","danI+Dvas","banI+Bras","canI+kas","panI+pat","panI+pad","canI+skad"),0);
+		storedata('7.4.84','sa',0);
+	}
+	/* caraphalozca (7.4.87) and utparasyAtaH (7.4.88) */
+	elseif (sub(array("ca+car","pa+Pal"),blank(0),blank(0),0))
+	{
+		$text=one(array("ca+car","pa+Pal"),array("cancar","panPal"),0);
+		storedata('7.4.87','sa',0);
+		$text=one(array("cancar","panPal"),array("cancur","panPul"),0);
+		storedata('7.4.88','sa',0);
+	}
+	/* rIgRupadhasya ca (7.4.90) */
+	elseif (arr($text,'/^([^+]*)a[+]([^+]*f[^+]{1})[+]/'))
+	{
+		$text=change('/^([^+]*)a[+]([^+]*f[^+]{1})[+]/','$1arI+$2+');
+		storedata('7.4.90','sa',0);
+	}
+	/* rIgRtvata iti vaktavyam (vA 7.4.90-1) */
+	elseif (arr($text,'/^([^+]*)a[+]([^+]*f[^+]*)[+]/'))
+	{
+		$text=change('/^([^+]*)a[+]([^+]*f[^+]*)[+]/','$1arI+$2+');
+		storedata('7.4.90-1','sa',0);
+	}
+	/* dIrgho'kitaH (7.4.83) */
+	elseif (arr($text,'/^([^+]*)a[+]/'))
+	{
+		$text=change('/^([^+]*)a[+]/','$1A+');
+		storedata('7.4.83','sa',0);
+	}
+	/* guNo yaGlukoH (7.4.82) */
+	elseif (arr($text,'/^([^+]*)i[+]/'))
+	{
+		$text=change('/^([^+]*)i[+]/','$1e+');
+		storedata('7.4.82','sa',0);
+	}
+	/* guNo yaGlukoH (7.4.82) */
+	elseif (arr($text,'/^([^+]*)u[+]/'))
+	{
+		$text=change('/^([^+]*)u[+]/','$1o+');
+		storedata('7.4.82','sa',0);
 	}
 	return $text;
 }
