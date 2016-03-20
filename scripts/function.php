@@ -2592,7 +2592,7 @@ function abhyAsa_halAdi()
 		storedata('7.4.68','sa',0);
 		storedata('6.1.104','sa',0);
 	}
-	if (sub(array("dyut+dyut+","svap+svap+"),blank(0),blank(0),0))
+	if (sub(array("dyut+dyut+","svap+svap+"),blank(0),blank(0),0) )
 	{
 		$text=one(array("dyut+dyut+","svap+svap+"),array("dit+dyut+","sup+svap+"),0);
 		storedata('7.4.67','sa',0);
