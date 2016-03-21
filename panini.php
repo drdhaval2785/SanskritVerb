@@ -1970,7 +1970,7 @@ if ( $abhyasta===1 && $so==="Ji"  && in_array($lakAra,array("laN","ASIrliN","viD
 	$sijabhyastavidibhyazca=1;
 }
 /* kRpo ro laH (8.2.18) */
-if (arr($text,'/kfp/') && $caG!==1 && $lakAra!=="liw" && $sanAdi!=="yaN")
+if (arr($text,'/kfp/') && $caG!==1 && $lakAra!=="liw" && $sanAdi!=="yaN" && $sanAdi!=="yaNluk")
 {
     $text=one(array("kfp"),array("kxp"),0);
 	storedata('8.2.18','sa',0);
@@ -4564,6 +4564,12 @@ if ($lakAra==="liw" && (in_array($fo,array("f","fCa!")) || ends(array($verb_with
 	$text = two(array("A+f","A+fcC","A+nf","A+nfcC","F"),array("+"),array("A+ar","A+arcC","A+nar","A+narcC","ar"),array("+"),0);
 	storedata('7.4.11','sa',0);
 }
+/* kRpo ro laH (8.2.18) */
+if (arr($text,'/kfp/') && $sanAdi==="yaNluk")
+{
+    $text=one(array("carI+kfp","cari+kfp","car+kfp","kfp"),array("calI+kxp","cali+kxp","cal+kxp","kxp"),0);
+	storedata('8.2.18','sa',0);
+}
 /* patch to join yAs */
 $text = change('/yA[+]([^+]*)$/','yA$1');		
 /* jusi ca (7.3.83) */
@@ -4709,7 +4715,7 @@ if ($caG===1 && ($sanAdi==="Ric" || $verbset==="curAdi") && !in_array($fo,$curAd
 /* kRpo ro laH (8.2.18) */
 if (arr($text,'/kfp/') )
 {
-    $text=one(array("carI+kfp","kfp"),array("calI+kxp","kxp"),0);
+    $text=one(array("carI+kfp","cari+kfp","car+kfp","kfp"),array("calI+kxp","cali+kxp","cal+kxp","kxp"),0);
 	storedata('8.2.18','sa',0);
 }
 /* aniditAM hala upadhAyAH kGiti (6.4.24) */ 
@@ -12487,7 +12493,7 @@ storedata('8.4.22','sa',0);
 if ($debug===1) {dibug("11200");}
 /* raSAbhyAM no NaH samAnapade (8.4.1) */
 // pUrvasmAdapi vidhau sthAnivadbhAvaH , pUrvatrAsiddhe na sthAnivat (vA 433) and tasya doSaH saMyogAdilopalatvaNatveSu (vA 440) are pending to code.
-if($pada === "pratyaya" && arr($text,'/[rz]([+]*)n/'))
+if($pada === "pratyaya" && arr($text,'/[rz]([+]*)n/') && $sanAdi!=="yaNluk")
 {
 $text = two(array("r","z"),array("n"),array("r","z"),array("R"),0);
 storedata('8.4.1','sa',0);
@@ -12507,7 +12513,7 @@ if( $ekajuttarapada===1 && arr($text,$rasek) && $hohante===0 )
         $value1[] = preg_replace($rasek,$ras1ek,$value);
     }
     $text = $value1;
-storedata('8.4.12','sa',0);
+	storedata('8.4.12','sa',0);
 }
 if (sub(array("SrIpAn+i","vftrahan+"),blank(0),blank(0),0) && !arr($text,'/[+]$/')) // Patch for zrIpANi
 {
@@ -12570,7 +12576,7 @@ elseif (arr($text,'/kzuBn/') && $fo==="kzuBa!" && $verbset==="kryAdi")
 }
 /* aTkupvAGnumvyavAye'pi (8.4.2) and na padAntasya (8.4.37) */
 /* RvarNAnnasya NatvaM vAcyam (vA 4969) */
-elseif (arr($text,$ras) && $hohante!==1 && $_GET['cond2_16_2_1']!=="2" && !sub(array("UruBinn"),blank(0),blank(0),0) && $sanAdi!=="yaN")
+elseif (arr($text,$ras) && $hohante!==1 && $_GET['cond2_16_2_1']!=="2" && !sub(array("UruBinn"),blank(0),blank(0),0) && $sanAdi!=="yaN" && $sanAdi!=="yaNluk")
 { 
 	$inloop=$text;
     foreach ($text as $value)
