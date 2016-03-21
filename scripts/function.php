@@ -238,7 +238,7 @@ $vikaraNa=array("ap","yan","nu","a","na","nA","Aya","Ana","u","Ri","ya","aN");
 $sArvadhAtuka_pratyayas=array("ati","at","ad","atas","anti","an","asi","as","aTas","aTa","ami","am","avas","ava","amas","ama","Ati","At","Ad","Atas","Anti","An","Asi","As","ATas","ATa","Ami","Am","Avas","Ava","Amas","Ama","ate","atE","Ete","ante","antE","ase","asE","ETe","aDve","aDvE","e","E","avahe","avahE","amahe","amahE","Ate","AtE","Ete","Ante","AntE","Ase","AsE","ETe","ADve","ADvE","e","E","Avahe","AvahE","Amahe","AmahE","ti","tas","anti","si","Tas","Ta","mi","vas","mas","tu","tAt","tAm","antu","tAt","tam","ta","Ani","Ava","Ama","t","tAm","an","s","tam","t","am","va","ma","it","itAm","iyus","is","itam","ita","iyam","iva","ima","te","ite","ante","se","iTe","Dve","e","vahe","mahe","tAm","itAm","antAm","sva","iTAm","Dvam","E","AvahE","AmahE","ta","itAm","anta","TAs","iTAm","Dvam","i","vahi","mahi","Ita","IyAtAm","Iran","ITAs","IyATAm","IDvam","Iya","Ivahi","Imahi","ati","atu","us","ti","tas","anti","si","Tas","Ta","mi","vas","mas","tu","tAm","antu","tAt","tam","ta","Ani","Ava","Ama","t","tAm","an","s","tam","ta","am","va","ma","yAt","yAtAm","yus","yAH","yAtam","yAta","yAm","yAva","yAma","te","Ate","ate","se","ATe","Dve","e","vahe","mahe","tAm","AtAm","atAm","sva","ATAm","Dvam","E","AvahE","AmahE","ta","AtAm","ata","TAs","ATAm","Dvam","i","vahi","mahi","Ita","IyAtAm","Iran","ITAs","IyATAm","IDvam","Iya","Ivahi","Imahi","Satf!","SAnac","SAnan","cAnaS","KaS","Sa","eS","SaDyE","SaDyEn","Sap","Syan","Snu","Sa","Snam","SnA","SAyac","SAnac");
 // pit and apit sArvadhAtuka tiG pratyayas
 $halAdi_pit_sArvadhAtuka_tiG_pratyayas=array("ti","si","mi","tu","t","s");
-$ajAdi_pit_sArvadhAtuka_tiG_pratyayas=array("Ani","Ava","Ama","E","AvahE","AmahE","am","AE"); // removed sArvadhAtukalew because it causes problems in ''anti' application to 'znu'.
+$ajAdi_pit_sArvadhAtuka_tiG_pratyayas=array("Ani","Ava","Ama","E","AvahE","AmahE","am","AE","Iti","Isi","Izi","Imi","Itu","It","Is",); // removed sArvadhAtukalew because it causes problems in ''anti' application to 'znu'.
 $halAdi_apit_sArvadhAtuka_tiG_pratyayas=array("tas","Tas","Ta","vas","mas","te","se","Dve","vahe","mahe","tAt","tAm","hi","tAt","tam","ta","tAm","sva","Dvam","tAm","tam","ta","va","ma","ta","TAs","Dvam","vahi","mahi","yAt","yAtAm","yus","yAs","yAtam","yAta","yAm","yAva","yAma",);
 $ajAdi_apit_sArvadhAtuka_tiG_pratyayas=array("anti","Ate","ate","ATe","e","ati","antu","AtAm","atAm","ATAm","atu","an","AtAm","ata","ATAm","i","us","Ita","IyAtAm","Iran","ITAs","IyATAm","IDvam","Iya","Ivahi","Imahi",);
 // pit and apit sArvadhAtuka kRt pratyayas
@@ -248,13 +248,13 @@ $ajAdi_pit_sArvadhAtuka_vikaraNa_pratyayas=array("Sap","a");
 $halAdi_apit_sArvadhAtuka_vikaraNa_pratyayas=array("Syan","Snu","Snam","SnA","SAyac","SAnac","ya"); // watch out for the 'ya' entry. It was made to make application of hali ca possible after robbing the vikaraNa zyan of it markers.
 $ajAdi_apit_sArvadhAtuka_vikaraNa_pratyayas=array("Sa","SAyac","SAnac");
 // ajAdi and halAdi pit total pratyayas 
-$ajAdi_pit_sArvadhAtuka_pratyayas=array("Ani","Ava","Ama","E","AvahE","AmahE","am","Sap","a","AE");
+$ajAdi_pit_sArvadhAtuka_pratyayas=array("Ani","Ava","Ama","E","AvahE","AmahE","am","Sap","a","AE","Iti","Isi","Izi","Imi","Itu","It","Is",);
 $halAdi_pit_sArvadhAtuka_pratyayas=array("ti","si","mi","tu","t","s",);
 // ajAdi and halAdi apit total pratyayas
 $ajAdi_apit_sArvadhAtuka_pratyayas=array("Satf!","SAnac","SAnan","cAnaS","KaS","Sa","eS","SaDyE","SaDyEn","anti","Ate","ate","ATe","e","ati","antu","AtAm","atAm","ATAm","atu","an","AtAm","ata","ATAm","i","us","Ita","IyAtAm","Iran","ITAs","IyATAm","IDvam","Iya","Ivahi","Imahi","Sa","SAyac","SAnac");
 $halAdi_apit_sArvadhAtuka_pratyayas=array("tas","Tas","Ta","vas","mas","te","se","Dve","vahe","mahe","tAt","tAm","hi","tAt","tam","ta","tAm","sva","Dvam","tAm","tam","ta","va","ma","ta","TAs","Dvam","vahi","mahi","yAt","yAtAm","yus","yAs","yAtam","yAta","yAm","yAva","yAma","Syan","Snu","Snam","SnA","SAyac","SAnac","ya");
 // pit pratyayas
-$pit_sArvadhAtuka_pratyayas=array("Ani","Ava","Ama","E","AvahE","AmahE","am","Sap","ti","si","mi","tu","t","s","AE");
+$pit_sArvadhAtuka_pratyayas=array("Ani","Ava","Ama","E","AvahE","AmahE","am","Sap","ti","si","mi","tu","t","s","AE","Iti","Isi","Izi","Imi","Itu","It","Is",);
 // apit pratyayas
 $apit_sArvadhAtuka_pratyayas=array("Satf!","SAnac","SAnan","cAnaS","KaS","Sa","eS","SaDyE","SaDyEn","anti","Ate","ate","ATe","e","ati","antu","AtAm","atAm","ATAm","atu","an","AtAm","ata","ATAm","i","us","Ita","IyAtAm","Iran","ITAs","IyATAm","IDvam","Iya","Ivahi","Imahi","Sa","SAyac","SAnac","tas","Tas","Ta","vas","mas","te","se","Dve","vahe","mahe","tAt","tAm","hi","tAt","tam","ta","tAm","sva","Dvam","tAm","tam","ta","va","ma","ta","TAs","Dvam","vahi","mahi","yAt","yAtAm","yus","yAs","yAtam","yAta","yAm","yAva","yAma","Syan","Snu","Snam","SnA","SAyac","SAnac","ya","ant","Ji");
 // halAdi pratyayas and ajAdi pratyayas
