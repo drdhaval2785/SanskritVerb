@@ -4,6 +4,8 @@ Verb declension for Sanskrit
 
 To understand how the code is organized, please read [this](https://github.com/drdhaval2785/SanskritVerb/blob/master/Documentations/understandcode.md).
 
+Please note that as of v1.2.0, the code from [`drdhaval2785/SanskritSubanta`](https://github.com/drdhaval2785/SanskritSubanta) for subanta generation is now actively maintained here.
+
 ##For using the code online:
 
 * Use http://www.sanskritworld.in/sanskrittool/SanskritVerb/tiGanta.html for tiGanta generation (Verb conjugation.)
