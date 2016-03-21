@@ -2701,11 +2701,27 @@ function yaG_abhyAsa_special()
 		$text=one(array("cancar","panPal"),array("cancur","panPul"),0);
 		storedata('7.4.88','sa',0);
 	}
-	/* rIgRupadhasya ca (7.4.90) */
+	/* rugrikau ca luki (7.4.91) */
+	elseif (arr($text,'/^([^+]*)a[+]([^+]*f[^+]{1})[+]/') && $sanAdi==="yaNluk")
+	{
+		$text=change('/^([^+]*)a[+]([^+]*f[^+]{1})[+]/','$1arI+$2+');
+		$text=one(array("arI+"),array("ari+"),1);
+		$text=one(array("arI+"),array("ar+"),1);
+		storedata('7.4.91','sa',0);
+	}
+	/* rIgRdupadhasya ca (7.4.90) */
 	elseif (arr($text,'/^([^+]*)a[+]([^+]*f[^+]{1})[+]/'))
 	{
 		$text=change('/^([^+]*)a[+]([^+]*f[^+]{1})[+]/','$1arI+$2+');
 		storedata('7.4.90','sa',0);
+	}
+	/* Rtaza(7.4.92) */
+	elseif (arr($text,'/^([^+]*)a[+]([^+]*f)[+]/') && $sanAdi==="yaNluk")
+	{
+		$text=change('/^([^+]*)a[+]([^+]*f)[+]/','$1arI+$2+');
+		$text=one(array("arI+"),array("ari+"),1);
+		$text=one(array("arI+"),array("ar+"),1);
+		storedata('7.4.92','sa',0);
 	}
 	/* rIgRtvata iti vaktavyam (vA 7.4.90-1) */
 	elseif (arr($text,'/^([^+]*)a[+]([^+]*f[^+]*)[+]/'))
