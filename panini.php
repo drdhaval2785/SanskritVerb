@@ -278,6 +278,11 @@ if ($type==='tiGanta')
 	{
 		$verbpada=verb_pada('1.3.12'); // See function.php for details of function.
 	}
+	/* zeSAt kartari parasmaipadam (1.3.78) */
+	elseif ( $pada==="pratyaya" && $lakAra!=="" && $sanAdi==="yaNluk")
+	{
+		$verbpada=verb_pada('1.3.78');
+	}
 	/* Special patch for paNa dhAtu (see kAzikA on 3.1.28) */
 	elseif ( $_GET['cond49']==="1")
 	{
@@ -856,7 +861,7 @@ if (in_array($so,$tiG) && $pada==="pratyaya" && $lakAra!=="" && $sanAdi==="Ric")
 	storedata('3.1.26','sa',0);
 }
 /* nityaM kauTilye gatau (3.1.23) */
-if (in_array($so,$tiG) && in_array($fo,array("gamx!","vraja!")) && $pada==="pratyaya" && $lakAra!=="" && $sanAdi==="yaN")
+if (in_array($so,$tiG) && in_array($fo,array("gamx!","vraja!")) && $pada==="pratyaya" && $lakAra!=="" && in_array($sanAdi,array("yaN")))
 {
 	$text = change('/([^+])$/','$1+yaN');
 	storedata('3.1.23','sa',0);
@@ -867,14 +872,28 @@ elseif (in_array($so,$tiG) && in_array($fo,array("lupx!","zadx!","cara!","japa!"
 	$text = change('/([^+])$/','$1+yaN');
 	storedata('3.1.24','sa',0);
 }
+/* Non application of yaGluganta in some verbs. See S.B. part 2 page 465-66 */
+elseif (in_array($so,$tiG) && (arr(array($verb_without_anubandha),'/[^r]v$/') && !in_array($fo,array("srivu!","mava!"))) && $pada==="pratyaya" && $lakAra!=="" && in_array($sanAdi,array("yaN","yaNluk")) )
+{
+	storedata('noyaN','red',0);
+	echo "No yaGluganta for this verb.";
+	exit(0);
+}
+/* Non application of yaGluganta in some verbs. See S.B. part 2 page 465-66 */
+elseif (in_array($so,$tiG) && !in_array($fo,array("mavya!")) && arr(array($verb_without_anubandha),'/y$/') && $pada==="pratyaya" && $lakAra!=="" && in_array($sanAdi,array("yaN","yaNluk")) )
+{
+	storedata('noyaN','red',0);
+	echo "No yaGluganta for this verb.";
+	exit(0);
+}
 /* dhAtorekAco halAdeH kriyAsamabhivyAhAre yaG (3.1.22) */
-elseif (in_array($so,$tiG) && arr(array($verb_without_anubandha),'/^['.pc(hl).']+['.pc('ac').'][^'.pc('ac').']*$/') && $pada==="pratyaya" && $lakAra!=="" && $sanAdi==="yaN" && $verbset!=="curAdi")
+elseif (in_array($so,$tiG) && arr(array($verb_without_anubandha),'/^['.pc(hl).']+['.pc('ac').'][^'.pc('ac').']*$/') && $pada==="pratyaya" && $lakAra!=="" && in_array($sanAdi,array("yaN","yaNluk")) && $verbset!=="curAdi")
 {
 	$text = change('/([^+])$/','$1+yaN');
 	storedata('3.1.22','sa',0);
 }
 /* sUcisUtrimUtryaTatyartyashUrNotInAM yaG vaktavyam (vA 3.1.22-9) */
-elseif (in_array($so,$tiG) && in_array($fo,array("awa!","f","aSU!","UrRuY","suca","mUtra","sUtra")) && $pada==="pratyaya" && $lakAra!=="" && $sanAdi==="yaN")
+elseif (in_array($so,$tiG) && in_array($fo,array("awa!","f","aSU!","UrRuY","suca","mUtra","sUtra")) && $pada==="pratyaya" && $lakAra!=="" && in_array($sanAdi,array("yaN","yaNluk")))
 {
 	$text = change('/([^+])$/','$1+yaN');
 	storedata('3.1.22-9','sa',0);
@@ -884,6 +903,13 @@ elseif (in_array($so,$tiG) && $lakAra!=="" && $sanAdi==="yaN")
 {
 	storedata('noyaN','red',0);
 	echo "No yaGanta for this verb.";
+	exit(0);
+}
+/* Non application of yaG in some cases */
+elseif (in_array($so,$tiG) && $lakAra!=="" && $sanAdi==="yaNluk")
+{
+	storedata('noyaN','red',0);
+	echo "No yaGluganta for this verb.";
 	exit(0);
 }
 /* ArdhadhAtukaM zeSaH (3.4.114) */ 
