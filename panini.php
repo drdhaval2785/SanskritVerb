@@ -912,7 +912,6 @@ elseif (in_array($so,$tiG) && $lakAra!=="" && $sanAdi==="yaNluk")
 	echo "No yaGluganta for this verb.";
 	exit(0);
 }
-print_r($text);
 /* yaGo'ci ca (2.4.74) */
 if ($sanAdi==="yaNluk")
 {
@@ -2338,6 +2337,13 @@ if (in_array($so,array("Ji")) && ($lakAra==="ASIrliN"||$lakAra==="viDiliN") )
     $text=two(array("+"),array("Ji"),array("+"),array("jus"),0);
 	storedata('3.4.108','sa',0);
     $jherjus=1;
+}
+/* sijabhyastavidibhyazca (3.4.109) */
+if ( $sanAdi==="yaNluk" && in_array($lakAra,array("laN","ASIrliN","viDiliN","luN","lfN")))
+{
+	$text = change('/[+]Ji$/','+jus');
+	storedata('3.4.109','sa',0);
+	$sijabhyastavidibhyazca=1;
 }
 /* laGaH zAkaTAyanasyaiva (3.4.111) */
 if ( in_array($so,array("Ji")) && $lakAra==="laN" && arr($text,'/A\+Ji/') && !arr($text,'/\+SnA\+Ji$/'))
@@ -4907,6 +4913,17 @@ if (arr($text,'/[^+]*A\+/') && !in_array($lakAra,array("viDiliN","ASIrliN")) && 
     $text=three(array("A"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("I"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,0);
 	storedata('6.4.113','sa',0);
 }
+if ($sanAdi==="yaNluk" && arr($text,'/[^+]*A[+]['.pc('hl').'][^+]*$/') && !in_array($lakAra,array("ASIrliN")) && sub(array("A"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,0) && (in_array("N",$it)||in_array("k",$it)) && $abhyasta===1 && $ghu!==1 && $sarvadhatuka===1 && $sanAdi==="yaNluk")
+{
+    $text=three(array("A"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("I"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,0);
+	storedata('6.4.113','sa',0);
+}
+/* eranekAco'saMyogapUrvasya (6.4.82) */
+if ($sanAdi==="yaNluk" && arr($text,'/[iI][+]['.pc('ac').'][^+]*$/') )
+{
+	$text = change('/[iI][+](['.pc('ac').'][^+]*)$/','y+$1');
+	storedata('6.4.82','sa',0);
+}
 /* ghvasoreddhAvabhyAsalopazca (6.4.119) */
 if (in_array($fo,array("qudAY","quDAY","dAY","DAY")) && sub(array("dadA","daDA"),array("+"),array("hi"),0) && in_array($so,$tiG) ) 
 {
@@ -5124,7 +5141,6 @@ if ($lakAra==="liw" && $so==="sip" && arr($text,'/[iIuUfFxXeEoO]\+/') && sub(pra
 {
 	$id_dhAtu="vew";
 }
-print_r($text);
 /* yaGo vA (7.3.94) */
 if ($sanAdi==="yaNluk" && pr2(array("+"),array("ti","si","mi","tu","t","s"),blank(0),array("+"),array("ti","si","mi","tu","t","s"),blank(0),$text)!==$text)
 {
