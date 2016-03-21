@@ -4919,9 +4919,9 @@ if ($sanAdi==="yaNluk" && arr($text,'/[^+]*A[+]['.pc('hl').'][^+]*$/') && !in_ar
 	storedata('6.4.113','sa',0);
 }
 /* eranekAco'saMyogapUrvasya (6.4.82) */
-if ($sanAdi==="yaNluk" && arr($text,'/[iI][+]['.pc('ac').'][^+]*$/') )
+if ($sanAdi==="yaNluk" && arr($text,'/['.pc('ac').']['.pc('hl').'][iI][+]['.pc('ac').'][^+]*$/') )
 {
-	$text = change('/[iI][+](['.pc('ac').'][^+]*)$/','y+$1');
+	$text = change('/(['.pc('ac').']['.pc('hl').'])[iI][+](['.pc('ac').'][^+]*)$/','$1y+$2');
 	storedata('6.4.82','sa',0);
 }
 /* ghvasoreddhAvabhyAsalopazca (6.4.119) */
@@ -12517,7 +12517,7 @@ storedata('8.4.22','sa',0);
 if ($debug===1) {dibug("11200");}
 /* raSAbhyAM no NaH samAnapade (8.4.1) */
 // pUrvasmAdapi vidhau sthAnivadbhAvaH , pUrvatrAsiddhe na sthAnivat (vA 433) and tasya doSaH saMyogAdilopalatvaNatveSu (vA 440) are pending to code.
-if($pada === "pratyaya" && arr($text,'/[rz]([+]*)n/') && $sanAdi!=="yaNluk")
+if($pada === "pratyaya" && arr($text,'/[rz]([+]*)n/') && !($sanAdi==="yaNluk" && arr($text,'/r[iI]*[+]n/')))
 {
 $text = two(array("r","z"),array("n"),array("r","z"),array("R"),0);
 storedata('8.4.1','sa',0);
@@ -12600,7 +12600,7 @@ elseif (arr($text,'/kzuBn/') && $fo==="kzuBa!" && $verbset==="kryAdi")
 }
 /* aTkupvAGnumvyavAye'pi (8.4.2) and na padAntasya (8.4.37) */
 /* RvarNAnnasya NatvaM vAcyam (vA 4969) */
-elseif (arr($text,$ras) && $hohante!==1 && $_GET['cond2_16_2_1']!=="2" && !sub(array("UruBinn"),blank(0),blank(0),0) && $sanAdi!=="yaN" && $sanAdi!=="yaNluk")
+elseif (arr($text,$ras) && $hohante!==1 && $_GET['cond2_16_2_1']!=="2" && !sub(array("UruBinn"),blank(0),blank(0),0) && $sanAdi!=="yaN" && !($sanAdi==="yaNluk" && arr($text,'/r[iI]*[+]n/')))
 { 
 	$inloop=$text;
     foreach ($text as $value)
