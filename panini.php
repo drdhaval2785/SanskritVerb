@@ -5124,6 +5124,14 @@ if ($lakAra==="liw" && $so==="sip" && arr($text,'/[iIuUfFxXeEoO]\+/') && sub(pra
 {
 	$id_dhAtu="vew";
 }
+print_r($text);
+/* yaGo vA (7.3.94) */
+if ($sanAdi==="yaNluk" && pr2(array("+"),array("ti","si","mi","tu","t","s"),blank(0),array("+"),array("ti","si","mi","tu","t","s"),blank(0),$text)!==$text)
+{
+	$text1 = pr2(array("+"),array("ti","si","mi","tu","t","s"),blank(0),array("+I"),array("ti","si","mi","tu","t","s"),blank(0),$text);
+	$text = array_merge($text,$text1);
+	storedata('7.3.94','sa',0);
+}
 /* patch for yAsuT Agama to combine it with the next pratyaya. because it would not be getting iDAgama. */
 //$text = one(array("+yA+"),array("+yA"),0);
 /* Adding iDAgama actually */
