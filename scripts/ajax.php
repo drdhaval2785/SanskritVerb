@@ -1197,6 +1197,20 @@ if( in_array($_POST['step'],array('11','12','13','15')) && ends($arrWord,array("
             $html .= '<input required type="radio" value="2" name="cond70" checked> अन्य ';
             $html .= '</div>';            
 }
+if( in_array($_POST['step'],array('11','12','13','15')) && ends($arrWord,array("Cadi!r"),2) )
+{
+            $html .= '<div id="step22">';
+            $html .= '<input required type="radio" value="1" name="cond70" > ऊर्जने ';
+            $html .= '<input required type="radio" value="2" name="cond70" checked> अन्य ';
+            $html .= '</div>';            
+}
+if( in_array($_POST['step'],array('11','12','13','15')) && ends($arrWord,array("iN","iR"),2) && $sanAdi==="san")
+{
+            $html .= '<div id="step22">';
+            $html .= '<input required type="radio" value="1" name="cond71" > अबोधने ';
+            $html .= '<input required type="radio" value="2" name="cond71" checked> अन्य ';
+            $html .= '</div>';            
+}
 
 //display the output
 $html = trim($html);
