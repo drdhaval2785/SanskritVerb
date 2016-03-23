@@ -4598,7 +4598,6 @@ if (arr($text,'/cC[+][YmNRn]/') || (arr($text,'/cC[+]['.pc('Jl').']/') && $kGiti
     $text = change('/cC[+]/','S+');
 	storedata('6.4.19','sa',0);
 }
-print_r($text);
 /* jvaratvarazrivyavimavAmupadhAyAzca (6.4.20) */ 
 // kvau pending.
 if (in_array($fo,array("jvara!","YitvarA!","srivu!","ava!","mava!")) && ( (arr($text,'/[^+]*v[^+]*[+][YmNRn'.pc('Jl').']/') && $kGiti===1) || ($sanAdi==="yaNluk" && $kGiti!==1 && arr($text,'/[^+]*v[^+]*[+][YmNRn'.pc('Jl').']/'))))
@@ -4608,7 +4607,6 @@ if (in_array($fo,array("jvara!","YitvarA!","srivu!","ava!","mava!")) && ( (arr($
     $text = change('/av[+]([YmNRn'.pc('Jl').'])/','U+$1');
 	storedata('6.4.20','sa',0);
 }
-print_r($text);
 /* rAllopaH (6.4.21) */ 
 // kvau pending.
 if ((arr($text,'/r[Cv][+][YmNRn]/') || (arr($text,'/r[Cv][+]['.pc('Jl').']/') && $kGiti===1) || ($sanAdi==="yaNluk" && $kGiti!==1 && arr($text,'/r[Cv][+]['.pc('Jl').']/')) ))
