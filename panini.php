@@ -2197,10 +2197,10 @@ if ($type==="tiGanta" )
 		$text = change('/^([^+]*)['.pc('hl').'][+]/','$1+');
 		storedata('1.3.9','sa',0);
 	}
-	if (arr($text,'/[^+]*['.pc('ac').'][!][+]/'))
+	if (arr($text,'/['.pc('ac').'][!]/'))
 	{
 		storedata('1.3.2','pa',0);
-		$text = change('/([^+]*)['.pc('ac').'][!][+]/','$1+');
+		$text = change('/['.pc('ac').'][!]/','');
 		storedata('1.3.9','sa',0);
 	}
 }
@@ -2212,7 +2212,6 @@ if ( (in_array($sanAdi,array("Ric","RiN","yak","yaN","yaNluk")) || arr($text,'/[
 	$text = two(array("e","o","E","O"),array("+Ri+"),array("A","A","A","A"),array("+Ri+"),0);
 	storedata('6.1.45','sa',0);
 }
-
 /* yaNluk dvitva */
 if ($sanAdi==="yaNluk")
 {
@@ -3009,6 +3008,7 @@ if ( in_array($fo,$aniditverbs) && sub(array("+"),array("Syan","Sna","SnA","Snu"
 	storedata('6.4.24','sa',0);
     $aniditAm = 1; // 0 - this sUtra has not applied. 1 - this sUtra has applied.
 }
+
 /* ze tRmphAdInAM numvAcyaH (vA) */ 
 if ( in_array($fo,array("tfPa!","tfmPa!","dfPa!","dfmPa!","guPa!","gumPa!","uBa!","umBa!","SuBa!","SumBa!",)) && sub(array("tfP","tuP","dfP","fP","guP","uB","SuB","tup","tfh"),array("+Sa+"),blank(0),0) )
 {
@@ -3842,12 +3842,16 @@ elseif ( in_array("k",$itpratyaya) && in_array($fo,array("brUY","Yizvapa!","yaja
     $text = samprasarana(array("uac","suap","iaj","uap","ue","vie","hie","uad","Su"),0);
 }
 /* grahijyAvayivyadhivaSTivicativRzcatipRcCatibhRjjatInAM Giti ca (6.1.16) */
-if ( in_array($fo,array("jyA","graha!","vaya!","vyaDa!","vaSa!","vyaca!","o!vraScU!","praCa!","Brasja!")) && ((sub(array("jyA","grah","vay","vyaD","vaS","vyac","vraSc","pracC","Brasj"),array("+"),$apit_sArvadhAtuka_pratyayas,0) && $sarvadhatuka===1) || in_array("N",$itpratyaya) || in_array("k",$itpratyaya) || in_array("SnA",$vik)) )
+if ($sanAdi==="yaNluk" && in_array($fo,array("vaSa!","vyaca!","o!vraScU!","praCa!","Brasja!")) )
+{
+}
+/* grahijyAvayivyadhivaSTivicativRzcatipRcCatibhRjjatInAM Giti ca (6.1.16) */
+elseif ( in_array($fo,array("jyA","graha!","vaya!","vyaDa!","vaSa!","vyaca!","o!vraScU!","praCa!","Brasja!")) && ((sub(array("jyA","grah","vay","vyaD","vaS","vyac","vraSc","pracC","Brasj"),array("+"),$apit_sArvadhAtuka_pratyayas,0) && $sarvadhatuka===1) || in_array("N",$itpratyaya) || in_array("k",$itpratyaya) || in_array("SnA",$vik)) )
 {
     $text=two(array("jyA","grah","vay","vyaD","vaS","vyac","vraSc","pracC","Brasj"),array("+"),array("jiA","gfh","uy","viD","uS","vic","vfSc","pfcC","Bfsj"),array("+"),0);
 	storedata('6.1.16','sa',0);
     $text = samprasarana(array("jyA","grah","vay","vyaD","vaS","vyac","vraSc","pracC","Brasj"),0);
-	}
+}
 if ($debug===1) {dibug("2600");}
 /* jAgro'viciNNalGitsu (7.3.85) */
 // Only coded for Ri and Git. Rest pending.
@@ -4579,8 +4583,39 @@ if (arr($text,'/kfp/') && $sanAdi==="yaNluk")
 	storedata('8.2.18','sa',0);
 }
 /* patch to join yAs */
-$text = change('/yA[+]([^+]*)$/','yA$1');		
+$text = change('/[+]yA[+]([^+]*)$/','+yA$1');		
+/* yaGo vA (7.3.94) */
+if ($sanAdi==="yaNluk" && pr2(array("+"),array("ti","si","mi","tu","t","s"),blank(0),array("+"),array("ti","si","mi","tu","t","s"),blank(0),$text)!==$text)
+{
+	$text1 = pr2(array("+"),array("ti","si","mi","tu","t","s"),blank(0),array("+I"),array("ti","si","mi","tu","t","s"),blank(0),$text);
+	$text = array_merge($text,$text1);
+	storedata('7.3.94','sa',0);
+}
+/* cCvoH zUDanunAsike (6.4.19) */ 
+// kvau pending.
+if (arr($text,'/cC[+][YmNRn]/') || (arr($text,'/cC[+]['.pc('Jl').']/') && $kGiti===1)  )
+{
+    $text = change('/cC[+]/','S+');
+	storedata('6.4.19','sa',0);
+}
 print_r($text);
+/* jvaratvarazrivyavimavAmupadhAyAzca (6.4.20) */ 
+// kvau pending.
+if (in_array($fo,array("jvara!","YitvarA!","srivu!","ava!","mava!")) && ( (arr($text,'/[^+]*v[^+]*[+][YmNRn'.pc('Jl').']/') && $kGiti===1) || ($sanAdi==="yaNluk" && $kGiti!==1 && arr($text,'/[^+]*v[^+]*[+][YmNRn'.pc('Jl').']/'))))
+{
+    $text = change('/var[+]([YmNRn'.pc('Jl').'])/','Ur+$1');
+    $text = change('/sriv[+]([YmNRn'.pc('Jl').'])/','srU+$1');
+    $text = change('/av[+]([YmNRn'.pc('Jl').'])/','U+$1');
+	storedata('6.4.20','sa',0);
+}
+print_r($text);
+/* rAllopaH (6.4.21) */ 
+// kvau pending.
+if ((arr($text,'/r[Cv][+][YmNRn]/') || (arr($text,'/r[Cv][+]['.pc('Jl').']/') && $kGiti===1) || ($sanAdi==="yaNluk" && $kGiti!==1 && arr($text,'/r[Cv][+]['.pc('Jl').']/')) ))
+{
+    $text = change('/r([Cv])[+]([YmNRn'.pc('Jl').'])/','r+$2');
+	storedata('6.4.21','sa',0);
+}
 /* jusi ca (7.3.83) */
 if ( ($jherjus===1 || $sijabhyastavidibhyazca===1) && arr($text,'/[iIuUfFxX]\+us/') && $lakAra!=="liw" ) // liT has 'us' which is not 'jus'
 {
@@ -4618,17 +4653,26 @@ elseif ($atolopa!==1 && !($verbset==="tudAdi" && $sarvadhatuka===1) && ($sarvadh
 	$text=three(array("i","u","f","x"),$hl,array("+et","+eT","+isy","+syeT","+sya"),array("e","o","ar","al"),$hl,array("+et","+eT","+isy","+syeT","+sya"),0);
 	storedata('7.3.86','sa',0);
 }
+/* nAbhyastasyAci piti sArvadhAtuke (7.3.87) */
+elseif ( ($sarvadhatuka===1 || $ardhadhatuka===1) && (in_array($fo,array("Riji!r","viji!r","vizx!"))||$sanAdi==="yaNluk" ) && pr2(array("i","u","f","x"),$hlplus,$ajAdi_pit_sArvadhAtuka_pratyayas,array("e","o","ar","al"),$hlplus,$ajAdi_pit_sArvadhAtuka_pratyayas,$text)!==$text)
+{
+	storedata('7.3.87','sa',0);
+	// Patch for yaGluganta where there is optional ajAdi / halAdi (I).
+	if ($sanAdi==="yaNluk")
+	{
+		$text = change('/[iI](['.pc('hl').'][+]['.pc('hl').'])/','e$1');
+		$text = change('/[uU](['.pc('hl').'][+]['.pc('hl').'])/','o$1');
+		$text = change('/[fF](['.pc('hl').'][+]['.pc('hl').'])/','ar$1');
+		$text = change('/[x](['.pc('hl').'][+]['.pc('hl').'])/','al$1');
+		storedata('7.3.86','sa',0);
+	}
+}
 /* pugantalaghUpadhasya ca (7.3.86) */
 elseif ($atolopa!==1 && $ardhadhatuka===1 && $kGiti!==1  && $didhI!==1 && $vijait!==1 && $sIyuT!==1 && $ksa!==1 && $vijait!==1&& !in_array("k",$itpratyaya) && !in_array("N",$itpratyaya) && arr($text,'/[iufx]([+]*)['.pc('hl').']\+/') && pr2(array("i","u","f","x"),$hlplus,$ArdhadhAtuka_tiG_pratyayas,array("e","o","ar","al"),$hlplus,$ArdhadhAtuka_tiG_pratyayas,$text)!==$text  && $caG!==1 && $aG!==1 && $kGiti!==1 && $vijait!==1)
 {
     $text=pr2(array("i","u","f","x"),$hlplus,$ArdhadhAtuka_tiG_pratyayas,array("e","o","ar","al"),$hlplus,$ArdhadhAtuka_tiG_pratyayas,$text);
 	$text = three(array("GarR","tarR","arR","kzeR"),array("+"),array("sta","sTAs"),array("GfR","tfR","fR","kziR"),array("+"),array("sta","sTAs"),1); // see sahajabodha part 2 page 250.
 	storedata('7.3.86','sa',0);
-}
-/* nAbhyastasyAci piti sArvadhAtuke (7.3.87) */
-elseif ( ($sarvadhatuka===1 || $ardhadhatuka===1) && in_array($fo,array("Riji!r","viji!r","vizx!")) && pr2(array("i","u","f","x"),$hlplus,$ajAdi_pit_sArvadhAtuka_pratyayas,array("e","o","ar","al"),$hlplus,$ajAdi_pit_sArvadhAtuka_pratyayas,$text)!==$text)
-{
-	storedata('7.3.87','pa',0);
 }
 /* pugantalaghUpadhasya ca (7.3.86) */
 elseif ( $atolopa!==1 && ($sarvadhatuka===1 || $ardhadhatuka===1) && arr($text,'/[iufx]['.pc('hl').'][+]/') && pr2(array("i","u","f","x"),$hlplus,$pit_sArvadhAtuka_pratyayas,array("e","o","ar","al"),$hlplus,$pit_sArvadhAtuka_pratyayas,$text)!==$text && !arr($text,"/[+][i][y][+][t]$/")  && $didhI!==1 && $kGiti===0 && $ksa!==1 && $vijait!==1 && !($verbset==="tudAdi" && $sarvadhatuka===1) && $caG!==1 && $aG!==1 && $kGiti!==1 && $vijait!==1)
@@ -4680,7 +4724,6 @@ elseif ( $sanAdi==="yaNluk" && $kGiti!==1 && arr($text,'/[fFxX][+][^+]*$/') && $
     $text=two(array("f","F","x","X",),array("+"),array("ar","ar","al","al"),array("+"),0);
 	storedata('7.3.84','sa',0);
 }
-print_r($text);
 foreach ($tiG1 as $value) {$iDtiG = "i".$value;} // defining iDtiG i.e. iDAgama+tiG1.
 /* RRta iddhAtoH (7.1.100) */
 if (arr($text,'/F\+/') && in_array($so,$tiG) && ($sarvadhatuka===1 || in_array("Sa",$vik) || arr($text,'/[+]yAs[+]/')) && $ciN!==1 && $ciN!==2 )
@@ -4746,7 +4789,7 @@ if (arr($text,'/kfp/') )
 	storedata('8.2.18','sa',0);
 }
 /* aniditAM hala upadhAyAH kGiti (6.4.24) */ 
-if ( in_array($fo,$aniditverbs) && (in_array("N",$itpratyaya) || in_array("k",$itpratyaya)) && !in_array($sanAdi,array("Ric"))  && !($so==="mahiN" && $sanAdi==="") && arr($text,'/[NYRnmM]['.pc('hl').'][+]/')  && !in_array("i",$it) && !($lakAra==="viDiliN" && $sanAdi==="") && !($verbset==="ruDAdi" && $sanAdi==="") && $aniditAm!==1 && !in_array("Sap",$vik)) # For application after NeraniTi
+if ( in_array($fo,$aniditverbs) && (in_array("N",$itpratyaya) || in_array("k",$itpratyaya)) && !in_array($sanAdi,array("Ric"))  && !($so==="mahiN" && $sanAdi==="") && arr($text,'/[NYRnmM]['.pc('hl').'][+]/')  && !in_array("i",$it) && !($lakAra==="viDiliN" && $sanAdi==="") && !($verbset==="ruDAdi" && $sanAdi==="") && $aniditAm!==1 && !in_array("Sap",$vik) && $sanAdi!=="yaNluk") # For application after NeraniTi
 {
 	if (in_array($fo,$irendiditverbs) && $lakAra==="luN")
 	{
@@ -4940,9 +4983,9 @@ if ($sanAdi==="yaNluk" && arr($text,'/[^+]*[+][^+]*A[+]['.pc('hl').'][^+]*$/') &
 	storedata('6.4.113','sa',0);
 }
 /* eranekAco'saMyogapUrvasya (6.4.82) */
-if ($sanAdi==="yaNluk" && arr($text,'/['.pc('ac').']['.pc('hl').'][iI][+]['.pc('ac').'][^+]*$/') )
+if ($sanAdi==="yaNluk" && arr($text,'/[^'.pc('hl').']['.pc('hl').'][iI][+]['.pc('ac').'][^+]*$/') )
 {
-	$text = change('/(['.pc('ac').']['.pc('hl').'])[iI][+](['.pc('ac').'][^+]*)$/','$1y+$2');
+	$text = change('/([^'.pc('hl').']['.pc('hl').'])[iI][+](['.pc('ac').'][^+]*)$/','$1y+$2');
 	storedata('6.4.82','sa',0);
 }
 /* ghvasoreddhAvabhyAsalopazca (6.4.119) */
@@ -5046,7 +5089,7 @@ if ( (arr($text,'/[s]['.flat($hl).']$/') || arr($text,'/vr[aA]Sc\+/')) && in_arr
 	storedata('8.2.29','sa',0);
 }
 /* grahijyAvayivyadhivaSTivicativRzcatipRcCatibhRjjatInAM Giti ca (6.1.16) */
-if (in_array($fo,array("jyA")) && in_array("N",$it) && $so!=="mahiN")
+if (in_array($fo,array("jyA")) && in_array("N",$it) && $so!=="mahiN" && $sanAdi!=="yaNluk")
 {
     $text=two(array("jyA"),array("+"),array("jiA"),array("+"),0);
 	storedata('6.1.16','sa',0);
@@ -5161,13 +5204,6 @@ if ( ((in_array($fo,array("lI")) && $verbset==="kryAdi") || (in_array($fo,array(
 if ($lakAra==="liw" && $so==="sip" && arr($text,'/[iIuUfFxXeEoO]\+/') && sub(prat('ic'),array("+"),$tiG1,0) && $fo==="aja!")
 {
 	$id_dhAtu="vew";
-}
-/* yaGo vA (7.3.94) */
-if ($sanAdi==="yaNluk" && pr2(array("+"),array("ti","si","mi","tu","t","s"),blank(0),array("+"),array("ti","si","mi","tu","t","s"),blank(0),$text)!==$text)
-{
-	$text1 = pr2(array("+"),array("ti","si","mi","tu","t","s"),blank(0),array("+I"),array("ti","si","mi","tu","t","s"),blank(0),$text);
-	$text = array_merge($text,$text1);
-	storedata('7.3.94','sa',0);
 }
 /* patch for yAsuT Agama to combine it with the next pratyaya. because it would not be getting iDAgama. */
 //$text = one(array("+yA+"),array("+yA"),0);
@@ -5315,7 +5351,6 @@ elseif ( in_array($so,$tiG) && $sanAdi==="yaNluk" && arr($text,'/[+][^+]*[iu][rv
 	$text = change('/([+][^+]*)u([rv][+]['.pc('hl').'])/','$1U$2');
 	storedata('8.2.77','sa',0);
 }
-print_r($text);
 /* ata upadhAyAH (7.2.116) */
 // more on enumeration kind. Not used regexes deliberately.
 if ( arr($text,'/[a]['.pc('hl').'][+]i[+]/') && $ciN!==1)
@@ -5816,6 +5851,29 @@ if (($vras===1 && arr($text,'/Sz/') && sub(array("vfSz","vraSz"),blank(0),blank(
     $text = one(array("cz"),array("z"),0);
 	storedata('par@56-1','sa',0);
 }
+/* cCvoH zUDanunAsike (6.4.19) */ 
+// kvau pending.
+if (arr($text,'/cC[+][YmNRn]/') || (arr($text,'/cC[+]['.pc('Jl').']/') && $kGiti===1)  )
+{
+    $text = change('/cC[+]/','S+');
+	storedata('6.4.19','sa',0);
+}
+/* jvaratvarazrivyavimavAmupadhAyAzca (6.4.20) */ 
+// kvau pending.
+if (in_array($fo,array("jvara!","YitvarA!","srivu!","ava!","mava!")) && (arr($text,'/cC[+][YmNRn]/') || (arr($text,'/cC[+]['.pc('Jl').']/') && $kGiti===1)))
+{
+    $text = change('/var[+]/','ur+');
+    $text = change('/sriv[+]/','sru+');
+    $text = change('/av[+]/','u+');
+	storedata('6.4.20','sa',0);
+}
+/* rAllopaH (6.4.21) */ 
+// kvau pending.
+if ((arr($text,'/r[Cv][+][YmNRn]/') || (arr($text,'/r[Cv][+]['.pc('Jl').']/') && $kGiti===1) ))
+{
+    $text = change('/r([Cv])[+]/','r+');
+	storedata('6.4.21','sa',0);
+}
 /* vivikz patch for overcoming skoH saMyogAdyorante ca */
 if (arr($text,'/vivikz\+/') && in_array($so,$tiG))
 {
@@ -6287,6 +6345,10 @@ if( in_array($so,$tiG) && arr($text,'/([iIuUfFxXeEoOhyvrlkKgGN])([+]*[iI]*)s(['.
 	$text = change('/([iIuUfFxXeEoOhyvrlkKgGN][+]*[iI]*)sI/','$1zI');
 	$text = change('/zIs([+a-zA-Z]+)$/','zIz$1');
 	$text = change('/[+]is(['.pc('al').'])/','+iz$1');
+	if ($sanAdi==="yaNluk")
+	{
+		$text = change('/rI[+]z/','rI+s');
+	}
 	storedata('8.3.59','sa',0);
 	$Adezapratyaya=1;
 }
@@ -12177,9 +12239,9 @@ if (arr($text,'/r([+]*)r/'))
     $ro = 1; // 0 - This sUtra has not applied. 1 - This sUtra has applied.
 } else { $ro = 0; }
 /* Dhralope pUrvasya dIrgho'NaH (6.3.111) */
-$ana = array("a","A","i","I","u","U","f","F","x","X");
-$anna = array("A","A","I","I","U","U","F","F","X","X");
-if (($ro ===1 || $dho===1) && arr($text,'/[aAiIuUfFxX]([+]*)[#][rQ]/'))
+$ana = array("a","A","i","I","u","U");
+$anna = array("A","A","I","I","U","U");
+if (($ro ===1 || $dho===1) && arr($text,'/[aAiIuU]([+]*)[#][rQ]/'))
 {
 $text = two($ana,array('#r','#Q'),$anna,array(' r',' Q'),0);
 	storedata('6.3.111','sa',0);
@@ -12781,12 +12843,16 @@ if (arr($text,'/r([+]*)r/'))
 } else { $ro = 0; }
 if ($debug===1) {dibug("11400");}
 /* Dhralope pUrvasya dIrgho'NaH (6.3.111) */
-$ana = array("a","A","i","I","u","U","f","F","x","X");
-$anna = array("A","A","I","I","U","U","F","F","X","X");
-if (($ro ===1 || $dho===1) && arr($text,'/[aAiIuUfFxX]([+]*)[#][rQ]/'))
+$ana = array("a","A","i","I","u","U");
+$anna = array("A","A","I","I","U","U");
+if (($ro ===1 || $dho===1) && arr($text,'/[aAiIuU]([+]*)[#][rQ]/'))
 {
 $text = two($ana,array('#r','#Q'),$anna,array('r','Q'),0);
 storedata('6.3.111','sa',0);
+}
+else
+{
+	$text = one(array("#"),array(""),0);
 }
 /* yaro'nunAsike'nunAsiko vA (8.4.45) */ // this is applicable to only sparzas.
 $yara = array("J","B","G","Q","D","j","b","g","q","d","K","P","C","W","T","c","w","t","k","p"); // array of yar varNas.
