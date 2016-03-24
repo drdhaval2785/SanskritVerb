@@ -2519,10 +2519,16 @@ function caG_ajAdi()
 function san_ajAdi()
 {
 	global $text; global $fo; global $storedata, $us;	global $liT_Adeza;
-	if (arr($text,'/^(['.pc('ac').']['.pc('al').'MH]*[ndrNYRm])(['.pc('hl').']['.pc('ac').'])([^+]*)[+]/'))
+	/* ajAderdvitIyasya (6.1.2) */
+	if (arr($text,'/^UrRu[+][i]*za/'))
+	{
+		$text = change('/^UrRu([+][i]*za)/','UrRunu$1');
+		storedata('6.1.2','sa',0);
+	}
+	/* na ndrAH saMyogAdayaH (6.1.3) */
+	elseif (arr($text,'/^(['.pc('ac').']['.pc('al').'MH]*[ndrNYRm])(['.pc('hl').']['.pc('ac').'])([^+]*)[+]/'))
 	{
 		$text = change('/^(['.pc('ac').']['.pc('al').'MH]*[ndrNYRm])(['.pc('hl').']['.pc('ac').'])([^+]*)[+]/','$1$2$2$3+');
-		/* na ndrAH saMyogAdayaH (6.1.3) */
 		storedata('6.1.3','sa',0);
 		$nandra=1;
 	}
@@ -2542,9 +2548,14 @@ function san_ajAdi()
 		storedata('bakAra','sa',0);
 		$bakara=1;
 	}
-	elseif (arr($text,'/^(['.pc('ac').']['.pc('hl').'MH]*)(['.pc('hl').']*['.pc('ac').'])([^+]*)[+]/'))
+	elseif (arr($text,'/^(['.pc('ac').']['.pc('hl').'MH])(['.pc('hl').'MH]*)(['.pc('ac').'])([^+]*)[+]/'))
 	{
-		$text = change('/^(['.pc('ac').']['.pc('hl').'MH]*)(['.pc('hl').']['.pc('ac').'])([^+]*)[+]/','$1$2+$2+$3+');
+		$text = change('/^(['.pc('ac').'])(['.pc('hl').'MH])(['.pc('hl').'MH]*)(['.pc('ac').'])([^+]*)[+]/','$1$2$4+$2$3$4$5+');
+		storedata('6.1.2','sa',0);
+	}
+	if (sub(array("IrDsa+"),blank(0),blank(0),0))
+	{
+		$text = one(array("IrDsa+"),array("IrDsa+sa+"),0);
 		storedata('6.1.2','sa',0);
 	}
 	/* Making changes to abhyAsa */
@@ -2567,29 +2578,29 @@ function san_ajAdi()
 		storedata('7.4.60','sa',0);
 	}
 	/* kuhozcuH (7.4.62) */
-	if(arr($text,'/^[^+]*[kKgGNh][^+]*[+]/'))
+	if(arr($text,'/^[^kKgGNh]*[kKgGNh][^+]*[+]/'))
 	{
-		$text=change('/^([^+]*)k([^+]*[+])/','$1c$2');
-		$text=change('/^([^+]*)K([^+]*[+])/','$1C$2');
-		$text=change('/^([^+]*)g([^+]*[+])/','$1j$2');
-		$text=change('/^([^+]*)G([^+]*[+])/','$1J$2');
-		$text=change('/^([^+]*)N([^+]*[+])/','$1Y$2');
-		$text=change('/^([^+]*)h([^+]*[+])/','$1j$2');
+		$text=change('/^([^kKgGNh]*)k([^+]*[+])/','$1c$2');
+		$text=change('/^([^kKgGNh]*)K([^+]*[+])/','$1C$2');
+		$text=change('/^([^kKgGNh]*)g([^+]*[+])/','$1j$2');
+		$text=change('/^([^kKgGNh]*)G([^+]*[+])/','$1J$2');
+		$text=change('/^([^kKgGNh]*)N([^+]*[+])/','$1Y$2');
+		$text=change('/^([^kKgGNh]*)h([^+]*[+])/','$1j$2');
 		storedata('7.4.62','sa',0);
 	}
 	/* abhyAse carca (8.4.54) */
-	if (arr($text,'/^[^+]*[JBGQDKPCWT][^+]*[+]/'))
+	if (arr($text,'/^[^JBGQDKPCWT]*[JBGQDKPCWT][^+]*[+]/'))
 	{
-		$text=change('/^([^+]*)J([^+]*[+])/','$1j$2');
-		$text=change('/^([^+]*)B([^+]*[+])/','$1b$2');
-		$text=change('/^([^+]*)G([^+]*[+])/','$1g$2');
-		$text=change('/^([^+]*)Q([^+]*[+])/','$1q$2');
-		$text=change('/^([^+]*)D([^+]*[+])/','$1d$2');
-		$text=change('/^([^+]*)K([^+]*[+])/','$1k$2');
-		$text=change('/^([^+]*)P([^+]*[+])/','$1p$2');
-		$text=change('/^([^+]*)C([^+]*[+])/','$1c$2');
-		$text=change('/^([^+]*)W([^+]*[+])/','$1w$2');
-		$text=change('/^([^+]*)T([^+]*[+])/','$1t$2');
+		$text=change('/^([^JBGQDKPCWT]*)J([^+]*[+])/','$1j$2');
+		$text=change('/^([^JBGQDKPCWT]*)B([^+]*[+])/','$1b$2');
+		$text=change('/^([^JBGQDKPCWT]*)G([^+]*[+])/','$1g$2');
+		$text=change('/^([^JBGQDKPCWT]*)Q([^+]*[+])/','$1q$2');
+		$text=change('/^([^JBGQDKPCWT]*)D([^+]*[+])/','$1d$2');
+		$text=change('/^([^JBGQDKPCWT]*)K([^+]*[+])/','$1k$2');
+		$text=change('/^([^JBGQDKPCWT]*)P([^+]*[+])/','$1p$2');
+		$text=change('/^([^JBGQDKPCWT]*)C([^+]*[+])/','$1c$2');
+		$text=change('/^([^JBGQDKPCWT]*)W([^+]*[+])/','$1w$2');
+		$text=change('/^([^JBGQDKPCWT]*)T([^+]*[+])/','$1t$2');
 		storedata('8.4.54','sa',0);
 	}
 	return $text;
