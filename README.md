@@ -70,4 +70,4 @@ This will give you frontend to interact with the machine.
 
 **v1.7.0** - 13 March 2016 - Decide which sUtra bars which sUtras.
 
-**v1.8.0** - 20 March 2016 - Added bhAvavAcya, karmavAcya, karmakartRvAcya, Nijanta and yaGanta forms.
+**v1.8.0** - 20 March 2016 - Added **bhAvavAcya**, **karmavAcya**, **karmakartRvAcya**, **Nijanta** and **yaGanta** forms.
