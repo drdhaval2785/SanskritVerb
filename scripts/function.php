@@ -2061,7 +2061,7 @@ function suffix_display()
 			if ($sanAdi!=="")
 			{
 			echo "<p class = red >".convert($lakAra) ." लकार<br>".convert($fo)." + ".convert($sanAdi)." + ".convert($so)." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n";
-			fputs($outfile,"<p class = red >".convert($lakAra) ." लकार<br>".convert($fo)." + ".convert($sanAdi)." + ".convert($so)." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n<hr>\n");    
+			//fputs($outfile,"<p class = red >".convert($lakAra) ." लकार<br>".convert($fo)." + ".convert($sanAdi)." + ".convert($so)." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n<hr>\n");    
 			}
 			else
 			{
@@ -2518,7 +2518,7 @@ function caG_ajAdi()
 }
 function san_ajAdi()
 {
-	global $text; global $fo; global $storedata, $us;	global $liT_Adeza;
+	global $text; global $fo; global $storedata, $us;
 	/* ajAderdvitIyasya (6.1.2) */
 	if (arr($text,'/^UrRu[+][i]*za/'))
 	{
@@ -2602,6 +2602,88 @@ function san_ajAdi()
 		$text=change('/^([^JBGQDKPCWT]*)W([^+]*[+])/','$1w$2');
 		$text=change('/^([^JBGQDKPCWT]*)T([^+]*[+])/','$1t$2');
 		storedata('8.4.54','sa',0);
+	}
+	return $text;
+}
+function san_aGgAdikArya()
+{
+	global $text;global $fo; global $storedata, $us, $san, $ac;
+	/* udoSThyapUrvasya (7.1.102) */
+	if ( arr($text,'/[pPbBmv]F[+][i]*sa/'))
+	{
+		$text=change('/([pPbBmv])F([+][i]*sa)/','$1ur$2');
+		storedata('7.1.102','sa',0);
+	}
+	/* RRta iddhAtoH (7.1.100) */
+	elseif (arr($text,'/F[+]/'))
+	{
+		$text=change('/F([+][i]*sa)/','$1ir$2');
+		storedata('7.1.100','sa',0);
+	}
+	/* sani mImAghurabhalabhazakapatapadAM aca is (7.4.54) */
+	elseif (sub(array("mI","mA","dA","DA","raB","laB","Sak","pad","pat"),array("+sa+"),blank(0),0))
+	{
+		$text=two(array("mI","mA","dA","DA","raB","laB","Sak","pad","pat"),array("+sa+"),array("mis","mis","dis","Dis","risB","lisB","Sisk","pisd","pist"),array("+sa+"),0);
+		storedata('7.4.54','sa',0);
+	}
+	/* ApjJapyRdhAmIt (7.4.55) */
+	elseif ( sub(array("jYap"),array("+sa+"),blank(0),0))
+	{
+		$text = two(array("jYap"),array("+sa+"),array("jYIp"),array("+sa+"),0);
+		storedata('7.4.55','sa',0);
+	}
+	/* dambha icca (7.4.56) */
+	elseif ( sub(array("damB"),array("+sa+"),blank(0),0))
+	{
+		$text = two(array("damB"),array("+sa+"),array("dimB"),array("+sa+"),1);
+		$text = two(array("damB"),array("+sa+"),array("dImB"),array("+sa+"),0);
+		storedata('7.4.56','sa',0);
+	}
+	/* muco'karmakasya guNo vA (7.4.57) */
+	elseif ( sub(array("muc"),array("+sa+"),blank(0),0))
+	{
+		$text = two(array("muc"),array("+sa+"),array("moc"),array("+sa+"),1);
+		storedata('7.4.57','sa',0);
+	}
+	/* ajjhanagamAM sani (6.4.16) */
+	elseif ( arr($text,'/^[^+]*['.pc('ac').'][+]*[sz]a[+]/') && $san===1 && $fo!=="UrRuY" )
+	{
+		$text = two($ac,array("+sa+"),dirgha($ac),array("+sa+"),0);
+		storedata('6.4.16','sa',0);
+	}
+	/* cCvoH zUDanunAsike (6.4.19) */ 
+	if (arr($text,'/v[+]sa[+]/') )
+	{
+		$text = change('/v[+]sa[+]/','U+sa+');
+		storedata('6.4.19','sa',0);
+		$text = change('/iU[+]sa[+]/','yU+sa+');
+		storedata('6.1.77','sa',0);
+	}
+	/* grahijyAvayivyadhivaSTivicativRzcatipRcCatibhRjjatInAM Giti ca (6.1.16) */
+	if ( in_array($fo,array("graha!","praCa!",)) && sub(array("grah","pracC",),array("+sa"),blank(0),0) )
+	{
+		$text=two(array("grah","pracC"),array("+sa"),array("gfh","pfcC"),array("+sa"),0);
+		storedata('6.1.16','sa',0);
+	}
+	/* vacisvapiyajAdInAm kiti (6.1.15) */
+	if ( in_array($fo,array("Yizvapa!")) && sub(array("svap"),array("+sa"),blank(0),0) )
+	{
+		$text=two(array("svap"),array("+sa"),array("sup"),array("+sa"),0);
+		storedata('6.1.15','sa',0);
+	}
+	/* aniditAM hala upadhAyAH kGiti (6.4.24) */
+	if (in_array($fo,array("tfMhU!","damBu!")) && sub(array("tfMh","damB"),array("+sa"),blank(0),0) )
+	{
+		$text = two(array("tfMh","damB"),array("+sa"),array("tfh","daB"),array("+sa"),0);
+		storedata('6.4.24','sa',0);
+	}
+	/* hali ca (8.2.77) */
+	if ( arr($text,'/^[^+]*[iuf][rv][+]sa/') )
+	{
+		$text = change('/^([^+]*)i([rv][+]['.pc('hl').'])/','$1I$2');
+		$text = change('/^([^+]*)u([rv][+]['.pc('hl').'])/','$1U$2');
+		$text = change('/^([^+]*)f([rv][+]['.pc('hl').'])/','$1F$2');
+		storedata('8.2.77','sa',0);
 	}
 	return $text;
 }
