@@ -2578,14 +2578,14 @@ function san_ajAdi()
 		storedata('7.4.60','sa',0);
 	}
 	/* kuhozcuH (7.4.62) */
-	if(arr($text,'/^[^kKgGNh]*[kKgGNh][^+]*[+]/'))
+	if(arr($text,'/^[^kKgGh]*[kKgGNh][^+]*[+]/'))
 	{
-		$text=change('/^([^kKgGNh]*)k([^+]*[+])/','$1c$2');
-		$text=change('/^([^kKgGNh]*)K([^+]*[+])/','$1C$2');
-		$text=change('/^([^kKgGNh]*)g([^+]*[+])/','$1j$2');
-		$text=change('/^([^kKgGNh]*)G([^+]*[+])/','$1J$2');
-		$text=change('/^([^kKgGNh]*)N([^+]*[+])/','$1Y$2');
-		$text=change('/^([^kKgGNh]*)h([^+]*[+])/','$1j$2');
+		$text=change('/^([^kKgGh]*)k([^+]*[+])/','$1c$2');
+		$text=change('/^([^kKgGh]*)K([^+]*[+])/','$1C$2');
+		$text=change('/^([^kKgGh]*)g([^+]*[+])/','$1j$2');
+		$text=change('/^([^kKgGh]*)G([^+]*[+])/','$1J$2');
+		$text=change('/^([^kKgGh]*)N([^+]*[+])/','$1Y$2');
+		$text=change('/^([^kKgGh]*)h([^+]*[+])/','$1j$2');
 		storedata('7.4.62','sa',0);
 	}
 	/* abhyAse carca (8.4.54) */

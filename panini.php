@@ -1777,7 +1777,7 @@ elseif (in_array($so,$tiG) && in_array($fo,array("Divi!","kfvi!")) && $sarvadhat
 }
 // first treatment of curAdi, because, it will take Nic before vikaraNa pratyaya.
 /* satyApapAzarUpavINAtUlazlokasenAlomatvacavarmacUrNacurAdibhyo Nic (3.1.25) */
-elseif (in_array($so,$tiG) && $Nizri!==1 && $verbset==="curAdi" && in_array($fo,$curAdi) && $aG!==1 && !arr($text,'/[+]sic[+]/') && $sanAdi!=="yak")
+elseif (in_array($so,$tiG) && $Nizri!==1 && $verbset==="curAdi" && in_array($fo,$curAdi) && $aG!==1 && !arr($text,'/[+]sic[+]/') && $sanAdi!=="yak" && $sanAdi!=="san")
 {
 	$text=two(array("+"),$tiG,array("+Ric+"),$tiG,0); 
 	$text=two(array("+sa+Ric+"),$tiG,array("+sa+"),$tiG,0); 
@@ -1877,7 +1877,7 @@ elseif ($sarvadhatuka===1 && (in_array($verbset,array("BvAdi","adAdi","juhotyAdi
 }
 /* for regular input without user selection */
 /* satyApapAzarUpavINAtUlazlokasenAlomatvacavarmacUrNacurAdibhyo Nic (3.1.25) */
-elseif ( $sarvadhatuka===1 && $verbset==="none" && sub(array("+"),$tiG,blank(0),0) && in_array($fo,$curAdi) && $aG!==1)
+elseif ( $sarvadhatuka===1 && $verbset==="none" && sub(array("+"),$tiG,blank(0),0) && in_array($fo,$curAdi) && $aG!==1 && $sanAdi!=="san" && $sanAdi!=="yaN")
 {
     $text=two(array("+"),$tiG,array("+Ric+"),$tiG,0);
     $text=one(array("+Ric+Ric"),array("+Ric"),0);
@@ -2030,7 +2030,7 @@ if (arr($text,'/kfp/') && $caG!==1 && $lakAra!=="liw" && $sanAdi!=="yaN" && $san
 	storedata('8.2.18','sa',0);
 }
 /* Che ca (6.1.73) */
-if (arr($text,'/[aiufx][+]*C/') )
+if (arr($text,'/[aiufx][+]*C/') && $sanAdi!=="san")
 {
 	$text = two(array("a","i","u","f","x"),array("C"),array("at","it","ut","ft","xt"),array("C"),0);
 	storedata('6.1.73','sa',0);
@@ -2218,6 +2218,7 @@ if (in_array($fo,$pvAdi) && sub(array("+"),$shitpratyaya,blank(0),0) && $fo!=="j
     $text=three(array("A","I","U","F",),array("+"),$shitpratyaya,array("a","i","u","f",),array("+"),$shitpratyaya,0);
 	storedata('7.3.80','sa',0);
 }
+print_r($text);
 /* idito numdhAtoH (7.1.58) */ # See https://github.com/drdhaval2785/SanskritVerb/issues/293 regarding location shifting.
 if ( in_array("i",$it) && $lakAra!=="" && in_array($fo,array("cakzi!N")) )
 {
@@ -2234,6 +2235,7 @@ elseif (in_array($so,$tiG) &&  in_array("i",$it) && $lakAra!=="" && !in_array($f
 	$text = one(array("+yank+"),array("+yak+"),0);
 	storedata('7.1.58','sa',0);
 }
+print_r($text);
 
 /* dhAtu it removal */
 if ($type==="tiGanta" )
@@ -2757,6 +2759,12 @@ if ($sanAdi==="san")
 	storedata('1.3.62','pa',0);
 	storedata('1.3.3','pa',0);
 	storedata('1.3.8','pa',0);
+	/* curAdi adanta */
+	if (arr($text,'/a[+]san[+]/'))
+	{
+		$text = change('/a[+]san[+]/','+san+');
+		storedata('6.4.48','sa',0);
+	}
 	$text = one(array("+san+Sap+"),array("+sa+a+"),0);
 	storedata('1.3.9','sa',0);
 	$text = one(array("+sa+a+"),array("+sa+"),0);
@@ -2842,7 +2850,6 @@ if ( arr($text,'/^UrRunu[+]*[sz]a[+]/') && $san===1 && $fo==="UrRuY" )
 	$text = change('/^UrRunu([+]*[sz]a[+])/','UrRunU$1');
 	storedata('6.4.16','sa',0);
 }
-print_r($text);
 /* atra lopo'bhyAsasya (7.4.58) */
 if ( sub(array("Ipsi+sa+","Irdsi+sa"),blank(0),blank(0),0) && $san===1)
 {
