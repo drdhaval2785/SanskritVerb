@@ -94,6 +94,8 @@ $text = three(array("N","Y","R","n","m","M"),$hl,array("+"),array("","","","",""
 e.g. 	storedata('6.4.24','sa',0); would store the information that the rule applied is '6.4.24', the mode of display is 'sa' and the notes are 0.
 Read storedata function in function.php for further details on other possible values.
 
+3.7. `change` function changes a given regular expression in the whole of $text array.
+
 # Typical code block
 
 ```
