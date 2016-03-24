@@ -6,6 +6,8 @@ To understand how the code is organized, please read [this](https://github.com/d
 
 Please note that as of v1.2.0, the code from [`drdhaval2785/SanskritSubanta`](https://github.com/drdhaval2785/SanskritSubanta) for subanta generation is now actively maintained here.
 
+Research paper on subanta generator presented at 16th World Sanskrit Conference - [Here](http://www.sanskritworld.in/index/detailview/book_id/prakriyapradarshini).
+
 ##For using the code online:
 
 * Use http://www.sanskritworld.in/sanskrittool/SanskritVerb/tiGanta.html for tiGanta generation (Verb conjugation.)

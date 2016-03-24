@@ -2464,7 +2464,88 @@ function caG_ajAdi()
 		storedata('6.1.2','pa',0);
 		$text = change('/^(['.pc('ac').']['.pc('hl').'MH]*)(['.pc('hl').']['.pc('ac').'])([^+]*)([+][ae])/','$1$2+$2+$3+$4');
 		// caGi (6.1.11)
-		storedata('6.1.11','sa',0);
+		if ($caG===1)
+		{
+			storedata('6.1.11','sa',0);
+		}
+	}
+	/* Making changes to abhyAsa */
+	/* urat (7.4.66) */
+	if (arr($text,'/([^+]*)[fF][+]/'))
+	{
+		$text = change('/([^+]*)[fF][+]/','$1a+');
+		storedata('7.4.66','sa',0);
+	}
+	/* zarpUrvAH khayaH (7.4.61) */
+	if (arr($text,'/^([^+]*)[Szs](['.pc('Ky').'][^+]*[+])/'))
+	{
+		$text = change('/^([^+]*)[Szs](['.pc('Ky').'][^+]*[+])/','$1$2');
+		storedata('7.4.61','sa',0);
+	}
+	/* halAdiH zeSaH (7.4.60) */
+	elseif(arr($text,'/^(['.pc('hl').'])[^'.pc('ac').']*(['.pc('ac').'])([^+]*[+])/'))
+	{
+		$text = change('/^(['.pc('hl').'])[^'.pc('ac').']*(['.pc('ac').'])([^+]*[+])/','$1$2$3');
+		storedata('7.4.60','sa',0);
+	}
+	/* kuhozcuH (7.4.62) */
+	if(arr($text,'/^[^+]*[kKgGNh][^+]*[+]/'))
+	{
+		$text=change('/^([^+]*)k([^+]*[+])/','$1c$2');
+		$text=change('/^([^+]*)K([^+]*[+])/','$1C$2');
+		$text=change('/^([^+]*)g([^+]*[+])/','$1j$2');
+		$text=change('/^([^+]*)G([^+]*[+])/','$1J$2');
+		$text=change('/^([^+]*)N([^+]*[+])/','$1Y$2');
+		$text=change('/^([^+]*)h([^+]*[+])/','$1j$2');
+		storedata('7.4.62','sa',0);
+	}
+	/* abhyAse carca (8.4.54) */
+	if (arr($text,'/^[^+]*[JBGQDKPCWT][^+]*[+]/'))
+	{
+		$text=change('/^([^+]*)J([^+]*[+])/','$1j$2');
+		$text=change('/^([^+]*)B([^+]*[+])/','$1b$2');
+		$text=change('/^([^+]*)G([^+]*[+])/','$1g$2');
+		$text=change('/^([^+]*)Q([^+]*[+])/','$1q$2');
+		$text=change('/^([^+]*)D([^+]*[+])/','$1d$2');
+		$text=change('/^([^+]*)K([^+]*[+])/','$1k$2');
+		$text=change('/^([^+]*)P([^+]*[+])/','$1p$2');
+		$text=change('/^([^+]*)C([^+]*[+])/','$1c$2');
+		$text=change('/^([^+]*)W([^+]*[+])/','$1w$2');
+		$text=change('/^([^+]*)T([^+]*[+])/','$1t$2');
+		storedata('8.4.54','sa',0);
+	}
+	return $text;
+}
+function san_ajAdi()
+{
+	global $text; global $fo; global $storedata, $us;	global $liT_Adeza;
+	if (arr($text,'/^(['.pc('ac').']['.pc('al').'MH]*[ndrNYRm])(['.pc('hl').']['.pc('ac').'])([^+]*)[+]/'))
+	{
+		$text = change('/^(['.pc('ac').']['.pc('al').'MH]*[ndrNYRm])(['.pc('hl').']['.pc('ac').'])([^+]*)[+]/','$1$2$2$3+');
+		/* na ndrAH saMyogAdayaH (6.1.3) */
+		storedata('6.1.3','sa',0);
+		$nandra=1;
+	}
+	/* IrSyatestRtIyasya dve (vA 6.1.3-2) */
+	elseif (arr($text,'/^Irzyiza/'))
+	{
+		$text1 = change('/^Irzyiza/','Irzyiyiza');
+		$text2 = change('/^Irzyiza/','Irzyizisa');
+		$text = array_merge($text1,$text2);
+		storedata('6.1.3-2','sa',0);
+		$nandra=1;
+	}
+	elseif (arr($text,'/^(['.pc('ac').']['.pc('al').'MH]*[b])(['.pc('hl').']['.pc('ac').'][^+]*)[+]/'))
+	{
+		$text = change('/^(['.pc('ac').']['.pc('al').'MH]*[b])(['.pc('hl').']['.pc('ac').'])([^+]*)[+]/','$1$2$2$3+');
+		/* bakArasyApyayaM pratiSedhaH (vA) */
+		storedata('bakAra','sa',0);
+		$bakara=1;
+	}
+	elseif (arr($text,'/^(['.pc('ac').']['.pc('hl').'MH]*)(['.pc('hl').']*['.pc('ac').'])([^+]*)[+]/'))
+	{
+		$text = change('/^(['.pc('ac').']['.pc('hl').'MH]*)(['.pc('hl').']['.pc('ac').'])([^+]*)[+]/','$1$2+$2+$3+');
+		storedata('6.1.2','sa',0);
 	}
 	/* Making changes to abhyAsa */
 	/* urat (7.4.66) */
