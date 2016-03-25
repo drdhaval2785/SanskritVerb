@@ -2837,7 +2837,7 @@ function abhyAsa_halAdi()
 		$liT_Adeza=1;
 	}
 	/* vrazcabhrasjasRjamRjayajarAjabhrAjacCazAM zaH (8.2.36) */
-	if (sub(array("vraSc"),array("+sa+"),blank(0),0))
+	/* if (sub(array("vraSc"),array("+sa+"),blank(0),0))
 	{
 		$text = two(array("vraSc"),array("+sa+"),array("vrac"),array("+sa+"),0); 
 		storedata('8.2.29','sa',0);
@@ -2846,14 +2846,14 @@ function abhyAsa_halAdi()
 		$text = two(array("vraz"),array("+sa+"),array("vrak"),array("+sa+"),0); 
 		storedata('8.2.41','sa',0);
 		$coku=1;
-	}
+	}*/
 	/* coH kuH (8.2.30) */
-	if ((arr($text,'/['.flat($cu).'][+]sa[+]/')) ) 
+	/*if ((arr($text,'/['.flat($cu).'][+]sa[+]/')) ) 
 	{
 		$text = three($cu,array("+"),prat('Jl'),$ku,array("+"),prat('Jl'),0); 
 		storedata('8.2.30','sa',0);
 		$coku=1; // 0 - doesn't prevent kvinpratyayasya kuH. 1 - prevents kvinpratyayasya kuH.
-	}
+	}*/
 	/* abhyAse carca (8.4.54) */
 	if (arr($text,'/^[^+]*[JBGQDKPCWT][^+]*[+]/'))
 	{

@@ -2973,7 +2973,7 @@ elseif ($sanAdi==="san" && arr($text,'/^['.pc('hl').']/'))
 		$text = change('/[uU]([+]*[pPbBmyrlvh][a])/','i$1');
 		storedata('7.4.80','sa',0);
 	}
-	$text = one(array("+isa+","+sa+"),array("isa+","sa+"),0);
+	$text = one(array("+isa+","+sa+"),array("isa+","+sa+"),0);
 	if (arr($text,'/[iIuUfFxXeEoOhyvrlkKgGN][+]*sa[+]/'))
 	{
 		$text = change('/([iIuUfFxXeEoOhyvrlkKgGN][+]*)sa[+]/','$1za+');
@@ -4659,6 +4659,12 @@ if (  in_array($so,$tiG)&& $fo==="mfjU!" && (in_array("N",$itpratyaya)||in_array
 elseif (  in_array($so,$tiG)&& $fo==="mfjU!" && !(in_array("N",$itpratyaya)||in_array("k",$itpratyaya)) )
 {
     $text=two(array("mfj"),array("+"),array("mArj"),array("+"),0);
+	storedata('7.2.114','sa',0);
+}
+/* mRjervRddhiH (7.2.114) */
+if ( $san===1 && $fo==="mfjU!" && arr($text,'/[+]marjiza[+]/') )
+{
+    $text=one(array("+marjiza+"),array("+mArjiza+"),0);
 	storedata('7.2.114','sa',0);
 }
 /* mRjervRddhiH patch for 'tu' of loT lakAra */
@@ -6669,7 +6675,23 @@ if ( $sic===1 && arr($text,'/[aiufx]\+s/') && sub(array("a","i","u","f","x"),arr
 	storedata('8.2.27','sa',0);
 }
 /* AdezapratyayayoH (8.3.59) */
-if( in_array($so,$tiG) && arr($text,'/([iIuUfFxXeEoOhyvrlkKgGN])([+]*[iI]*)s(['.pc('al').'])/') && !arr($text,'/[+][s]$/') && arr($text,'/s/') && ( $rudAdibhyaH===1 || $SaHsaH===1 || $sic===1 || $syatAsI===1 || ends(array($us),prat('ik'),1) || $sIyuT===1 || ($lakAra==="liw" && arr($text,'/[+]ise$/')) ) && !arr($text,'/\+yAs\+/') && !(arr(array($fo),'/^s/') && arr($text,'/^[^+]*[iIuUfFxeEoOhyvrlkKgGN][+]s/')) )
+if($san===1 && in_array($so,$tiG) && arr($text,'/^([^+]*[+][^+]*[iIuUfFxXeEoOhyvrlkKgGN][+])s/') )
+{
+	$in = $text;
+	/* stautiNyoreva SaNyabhyAsAt (8.3.61) */	
+	if (arr($text,'/^[^+]*[iIuU][+]s[^+]*iz[^+]*[+]/'))
+	{
+		storedata('8.3.61','sa',0);
+	}
+	$text = change('/^([^+]*[+][^+]*[iIuUfFxXeEoOhyvrlkKgGN])[+]s/','$1+z');
+	if ($in!==$text)
+	{
+		storedata('8.3.59','sa',0);
+		$Adezapratyaya=1;		
+	}
+}
+/* AdezapratyayayoH (8.3.59) */
+elseif( in_array($so,$tiG) && arr($text,'/([iIuUfFxXeEoOhyvrlkKgGN])([+]*[iI]*)s(['.pc('al').'])/') && !arr($text,'/[+][s]$/') && arr($text,'/s/') && ( $rudAdibhyaH===1 || $SaHsaH===1 || $sic===1 || $syatAsI===1 || ends(array($us),prat('ik'),1) || $sIyuT===1 || ($lakAra==="liw" && arr($text,'/[+]ise$/')) ) && !arr($text,'/\+yAs\+/') && !(arr(array($fo),'/^s/') && arr($text,'/^[^+]*[iIuUfFxeEoOhyvrlkKgGN][+]s/')) )
 {
 	$in = $text;
 	/* stautiNyoreva SaNyabhyAsAt (8.3.61) */	
