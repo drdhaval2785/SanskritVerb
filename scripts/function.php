@@ -2614,6 +2614,12 @@ function san_aGgAdikArya()
 		$text=two(array("hvA"),array("+sa+"),array("hu"),array("+sa+"),0);
 		storedata('6.1.33','sa',0);
 	}
+	/* janasanakhanAM saJjhaloH (6.4.42) */
+	if (arr($text,'/[jsK]an[+]sa[+]/') ) 
+	{
+		$text=change('/([jsK])an([+]sa[+])/','$1A$2');
+		storedata('6.4.42','sa',0);
+	}
 	/* sani mImAghurabhalabhazakapatapadAM aca is (7.4.54) */
 	if (sub(array("mI","mA","dA","DA","raB","laB","Sak","pad","pat"),array("+sa+"),blank(0),0))
 	{
@@ -2672,15 +2678,15 @@ function san_aGgAdikArya()
 		storedata('6.4.24','sa',0);
 	}
 	/* udoSThyapUrvasya (7.1.102) */
-	if ( arr($text,'/[pPbBmv]F[+][i]*sa/'))
+	if ( arr($text,'/[pPbBmv]F[+]sa/'))
 	{
-		$text=change('/([pPbBmv])F([+][i]*sa)/','$1ur$2');
+		$text=change('/([pPbBmv])F([+]sa)/','$1ur$2');
 		storedata('7.1.102','sa',0);
 	}
 	/* RRta iddhAtoH (7.1.100) */
-	elseif (arr($text,'/F[+]/'))
+	elseif (arr($text,'/F[+]sa/'))
 	{
-		$text=change('/F([+][i]*sa)/','ir$1');
+		$text=change('/F([+]sa)/','ir$1');
 		storedata('7.1.100','sa',0);
 	}
 	return $text;
