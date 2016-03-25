@@ -2659,10 +2659,11 @@ function san_aGgAdikArya()
 		$text = change('/iU[+]sa[+]/','yU+sa+');
 		storedata('6.1.77','sa',0);
 	}
+	print_r($text);
 	/* grahijyAvayivyadhivaSTivicativRzcatipRcCatibhRjjatInAM Giti ca (6.1.16) */
-	if ( in_array($fo,array("graha!","praCa!",)) && sub(array("grah","pracC",),array("+sa"),blank(0),0) )
+	if ( in_array($fo,array("graha!","praCa!",)) && sub(array("grah","praC",),array("+sa","+isa"),blank(0),0) )
 	{
-		$text=two(array("grah","pracC"),array("+sa"),array("gfh","pfcC"),array("+sa"),0);
+		$text=two(array("grah","praC"),array("+sa","+isa"),array("gfh","pfC"),array("+sa","+isa"),0);
 		storedata('6.1.16','sa',0);
 	}
 	/* vacisvapiyajAdInAm kiti (6.1.15) */
