@@ -2848,18 +2848,24 @@ elseif ($sanAdi==="san" && arr($text,'/^['.pc('hl').']/'))
 {
 	/* pUrvavat sanaH (1.3.62) */
 	storedata('1.3.62','pa',0);
-	storedata('1.3.3','pa',0);
-	storedata('1.3.8','pa',0);
 	/* curAdi adanta */
 	if (arr($text,'/a[+]san[+]/'))
 	{
 		$text = change('/a[+]san[+]/','+san+');
 		storedata('6.4.48','sa',0);
 	}
-	$text = one(array("+san+Sap+"),array("+sa+a+"),0);
+	storedata('1.3.3','pa',0);
+	$text = one(array("+san+"),array("+sa+"),0);
 	storedata('1.3.9','sa',0);
-	$text = one(array("+sa+a+"),array("+sa+"),0);
-	storedata('6.1.97','sa',0);
+	if (arr($text,'/[+]sa[+]Sap[+]/'))
+	{
+		storedata('1.3.3','pa',0);
+		storedata('1.3.8','pa',0);
+		$text = one(array("+sa+Sap+"),array("+sa+a+"),0);
+		storedata('1.3.9','sa',0);
+		$text = one(array("+sa+a+"),array("+sa+"),0);
+		storedata('6.1.97','sa',0);
+	}
 	if ($id_dhAtu==="sew")
 	{
 		$text = one(array("+sa+"),array("+isa+"),0);
@@ -2989,9 +2995,9 @@ if ( arr($text,'/^UrRunu[+]*[sz]a[+]/') && $san===1 && $fo==="UrRuY" )
 }
 /* atra lopo'bhyAsasya (7.4.58) */
 // Pending. Will need to enumerate all forms here.
-if ( sub(array("Ipsi+sa+","Irdsi+sa","di+ditsa+","di+Ditsa+","mi+mitsa+"),blank(0),blank(0),0) && $san===1)
+if ( sub(array("Ipsi+sa+","Irdsi+sa","di+ditsa+","di+Ditsa+","mi+mitsa+","Si+Sikza+","ri+riBsa+","li+liBsa+","pi+pitsa+","pi+pidsa+","mu+mokza+"),blank(0),blank(0),0) && $san===1)
 {
-	$text = one(array("Ipsi+sa+","Irdsi+sa","di+ditsa+","di+Ditsa+","mi+mitsa+"),array("Ipsa+","Irdsa+","ditsa+","Ditsa+","mitsa+"),0);
+	$text = one(array("Ipsi+sa+","Irdsi+sa","di+ditsa+","di+Ditsa+","mi+mitsa+","Si+Sikza+","ri+riBsa+","li+liBsa+","pi+pitsa+","pi+pidsa+","mu+mokza+"),array("Ipsa+","Irdsa+","ditsa+","Ditsa+","mitsa+","Sikza+","riBsa+","liBsa+","pitsa+","pidsa+","mokza+"),0);
 	storedata('7.4.58','sa',0);
 }
 /* curAdi Ric handling */
@@ -3327,7 +3333,7 @@ $svAdiajanta=array("zuY","ziY","SiY","qumiY","ciY","stfY","kfY","vfY","DuY","dUY
 $svAdihalanta=array_diff($svAdi,$svAdiajanta);
 /* separate itsaJjJAprakaraNam for tiGanta (According to sahajabodha text) */
 /* lazakvataddhite (1.3.8) */
-if (arr($text,'/[+][lSkKgGN][^+]*$/') && $taddhita === 0  && in_array($so,$tiG) )
+if (arr($text,'/[+][lSkKgGN][^+]*$/') && $taddhita === 0  && in_array($so,$tiG) && $san!==1)
 {
     it('/([+][lSkKgGN])/');
 	storedata('1.3.8','pa',0);
@@ -5661,7 +5667,7 @@ if ( in_array($so,$tiG) && arr($text,'/[kC]u[rv]\+/'))
 	storedata('8.2.79','pa',0);
 }
 /* hali ca (8.2.77) */
-elseif ( in_array($so,$tiG) && arr($text,'/^[^+]*[iuf][rv][+]['.pc('hl').']/') )
+elseif ( in_array($so,$tiG) && arr($text,'/^[^+]*[iuf][rv][+]['.pc('hl').']/') && $san!==1 )
 {
     //$text=three(array("i","u","f"),array("r+","v+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("I","U","F"),array("r+","v+"),$halAdi_apit_sArvadhAtuka_pratyayas,0);
 	$text = change('/^([^+]*)i([rv][+]['.pc('hl').'])/','$1I$2');
@@ -6326,9 +6332,9 @@ if (arr($text,'/[zQ]/') && sub(array("z","Q"),array("s"),blank(0),0))
 }
 /* coH kuH (8.2.30) */
 $coku=0;
-if ((arr($text,'/['.flat($cu).'][+]['.pc('Jl').']/')) && !in_array($fo,$noco) && in_array($so,$tiG) && ($syatAsI!==1 || $id_dhAtu !== "sew" )) // need to test for veT dhAtus. Pending.
+if ((arr($text,'/['.flat($cu).'][+]*['.pc('Jl').']/')) && !in_array($fo,$noco) && in_array($so,$tiG) && ($syatAsI!==1 || $id_dhAtu !== "sew" )) // need to test for veT dhAtus. Pending.
 {
-	$text = three($cu,array("+"),prat('Jl'),$ku,array("+"),prat('Jl'),0); 
+	$text = three($cu,array("+",""),prat('Jl'),$ku,array("+",""),prat('Jl'),0); 
 	storedata('8.2.30','sa',0);
 	$coku=1; // 0 - doesn't prevent kvinpratyayasya kuH. 1 - prevents kvinpratyayasya kuH.
 }
@@ -10617,7 +10623,7 @@ if (in_array($fo,array("SrIpA")) && $gender==="n" && $so==="Ne")
     display(0);    */
 }
 /* lazakvataddhite (1.3.8) */
-if (((arr($text,'/[+][lSkKgGN]/'))||$sarva2===1||$purva===1) && $taddhita === 0  && $sarva === 0)
+if (((arr($text,'/[+][lSkKgGN]/'))||$sarva2===1||$purva===1) && $taddhita === 0  && $sarva === 0 && $san!==1)
 {
     it('/([+][lSkKgGN])/');
 	storedata('1.3.8','pa',0);
@@ -12486,7 +12492,7 @@ if (arr($text,'/divn/'))
 {
     $dhatu=1;
 }
-if ($dhatu===1 && $lakAra!=="liw" && (arr($text,'/[rv]['.pc('hl').']/')|| arr($text,'/[v][n][+]/') ) && $karoti!==1  && !($us==="nis" && in_array($so,$tiG)) && sub(array("i","u","f","x"),array("r","v"),$hl,0) )
+if ($dhatu===1 && $lakAra!=="liw" && (arr($text,'/[rv]['.pc('hl').']/')|| arr($text,'/[v][n][+]/') ) && $karoti!==1  && !($us==="nis" && in_array($so,$tiG)) && sub(array("i","u","f","x"),array("r","v"),$hl,0) && $san!==1)
 {
     $text = three(array("i","I","u","U","f","F","x","X",),array("r","v"),$hl,array("I","I","U","U","F","F","F","F",),array("r","v"),$hl,0);
 	storedata('8.2.77','sa',0);
