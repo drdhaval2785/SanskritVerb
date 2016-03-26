@@ -2,7 +2,7 @@
 /* This code is developed by Dr. Dhaval Patel (drdhaval2785@gmail.com) of www.sanskritworld.in and Ms. Sivakumari Katuri.
   * Layout assistance by Mr Marcis Gasuns.
   * Available under GNU licence.
-  * Version 1.8.0 date 20 March 2016
+  * Version 1.9.0 date 26 March 2016
   * The latest source code is available at https://github.com/drdhaval2785/SanskritVerb
   * For setup, copy and paste tiGanta.html, tiGanta.php, and scripts folder to your localhost and server and run tiGanta.html.
   * tiGanta.html is the frontend for the code.
@@ -2361,7 +2361,7 @@ function ekAcobazo()
     global $text; global $verb_without_anubandha; global $storedata;
 	foreach ($text as $value)
 	{	
-		if ( !anekAca($verb_without_anubandha) && ( preg_match('/[bgqd](['.pc('al').']*)[JBGQD][+][sD]/',$value) || preg_match('/[JBGQD][+]$/',$value) ) )
+		if ( !anekAca($verb_without_anubandha) && ( preg_match('/[bgqd](['.pc('al').']*)[JBGQD][+][sDz]/',$value) || preg_match('/[JBGQD][+]$/',$value) ) )
 		{
 			$value = preg_replace('/([b])(['.pc('al').']*)([JBGQD][+])/',"B$2$3",$value);
 			$value = preg_replace('/([g])(['.pc('al').']*)([JBGQD][+])/',"G$2$3",$value);
@@ -2621,13 +2621,21 @@ function san_aGgAdikArya()
 		storedata('6.4.42','sa',0);
 	}
 	/* sani mImAghurabhalabhazakapatapadAM aca is (7.4.54) */
-	if (sub(array("mI","mA","dA","DA","raB","laB","Sak","pad","pat"),array("+sa+"),blank(0),0))
+	if (sub(array("mI","mA","dA","DA","raB","laB","Sak","pad","pat","raD"),array("+sa+"),blank(0),0))
 	{
 		$text=two(array("mI","mA","dA","DA","raB","laB","Sak","pad","pat"),array("+sa+"),array("mis","mis","dis","Dis","risB","lisB","Sisk","pisd","pist"),array("+sa+"),0);
-		storedata('7.4.54','sa',0);
-		if (sub(array("risB","lisB","Sisk","pisd","pist"),array("+sa+"),blank(0),0))
+		if (arr($text,'/raD[+]sa/'))
 		{
-			$text = two(array("risB","lisB","Sisk","pisd","pist"),array("+sa+"),array("riB","liB","Sik","pid","pit"),array("+sa+"),0);
+			$text = two(array("raD"),array("+sa+"),array("risD"),array("+sa+"),0);
+			storedata('7.4.54-1','sa',0);
+		}
+		else
+		{
+			storedata('7.4.54','sa',0);
+		}
+		if (sub(array("risB","lisB","Sisk","pisd","pist","risD"),array("+sa+"),blank(0),0))
+		{
+			$text = two(array("risB","lisB","Sisk","pisd","pist","risD"),array("+sa+"),array("riB","liB","Sik","pid","pit","riD"),array("+sa+"),0);
 			storedata('8.2.29','sa',0);
 		}
 	}
@@ -2650,10 +2658,22 @@ function san_aGgAdikArya()
 		$text = two(array("muc"),array("+sa+"),array("moc"),array("+sa+"),1);
 		storedata('7.4.57','sa',0);
 	}
+	/* tanotervibhASA (6.4.17) */
+	elseif ( arr($text,'/^tan[+]*[sz]a[+]/') && $san===1)
+	{
+		$text = two(array("tan"),array("+sa+"),array("tAn"),array("+sa+"),1);
+		storedata('6.4.17','sa',0);
+	}
 	/* ajjhanagamAM sani (6.4.16) */
 	elseif ( arr($text,'/^[^+]*['.pc('ac').'][+]*[sz]a[+]/') && $san===1 && $fo!=="UrRuY" )
 	{
 		$text = two($ac,array("+sa+"),dirgha($ac),array("+sa+"),0);
+		storedata('6.4.16','sa',0);
+	}
+	/* ajjhanagamAM sani (6.4.16) */
+	elseif ( arr($text,'/han[+]*[sz]a[+]/') && $san===1 && $fo!=="UrRuY" )
+	{
+		$text = two(array("han"),array("+sa+"),array("hAn"),array("+sa+"),0);
 		storedata('6.4.16','sa',0);
 	}
 	/* cCvoH zUDanunAsike (6.4.19) */ 
@@ -2677,9 +2697,9 @@ function san_aGgAdikArya()
 		storedata('6.1.15','sa',0);
 	}
 	/* aniditAM hala upadhAyAH kGiti (6.4.24) */
-	if (in_array($fo,array("tfMhU!","damBu!")) && sub(array("tfMh","damB"),array("+sa"),blank(0),0) )
+	if (in_array($fo,array("tfMhU!","damBu!")) && sub(array("tfMh","dimB","dImB"),array("+sa"),blank(0),0) )
 	{
-		$text = two(array("tfMh","damB"),array("+sa"),array("tfh","daB"),array("+sa"),0);
+		$text = two(array("tfMh","dimB","dImB"),array("+sa"),array("tfh","diB","dIB"),array("+sa"),0);
 		storedata('6.4.24','sa',0);
 	}
 	/* udoSThyapUrvasya (7.1.102) */
@@ -2836,24 +2856,6 @@ function abhyAsa_halAdi()
 		storedata('7.4.62','sa',0);
 		$liT_Adeza=1;
 	}
-	/* vrazcabhrasjasRjamRjayajarAjabhrAjacCazAM zaH (8.2.36) */
-	/* if (sub(array("vraSc"),array("+sa+"),blank(0),0))
-	{
-		$text = two(array("vraSc"),array("+sa+"),array("vrac"),array("+sa+"),0); 
-		storedata('8.2.29','sa',0);
-		$text = two(array("vrac"),array("+sa+"),array("vraz"),array("+sa+"),0); 
-		storedata('8.2.36','sa',0);
-		$text = two(array("vraz"),array("+sa+"),array("vrak"),array("+sa+"),0); 
-		storedata('8.2.41','sa',0);
-		$coku=1;
-	}*/
-	/* coH kuH (8.2.30) */
-	/*if ((arr($text,'/['.flat($cu).'][+]sa[+]/')) ) 
-	{
-		$text = three($cu,array("+"),prat('Jl'),$ku,array("+"),prat('Jl'),0); 
-		storedata('8.2.30','sa',0);
-		$coku=1; // 0 - doesn't prevent kvinpratyayasya kuH. 1 - prevents kvinpratyayasya kuH.
-	}*/
 	/* abhyAse carca (8.4.54) */
 	if (arr($text,'/^[^+]*[JBGQDKPCWT][^+]*[+]/'))
 	{
@@ -2871,9 +2873,9 @@ function abhyAsa_halAdi()
 		$liT_Adeza=1;
 	}
 	/* abhyAsAcca (7.3.55) */
-	if (arr($text,'/ja[+]han[+]/') && in_array($fo,array("hana!")))
+	if (arr($text,'/ja[+]h[aA]n[+]/') && in_array($fo,array("hana!")))
 	{
-		$text=one(array("ja+han+"),array("ja+Gan+"),0);
+		$text=one(array("ja+han+","ja+hAn+"),array("ja+Gan+","ja+GAn+"),0);
 		storedata('7.3.55','sa',0);
 	}
 	/* saH syArdhadhAtuke (7.4.49) */
@@ -3928,7 +3930,6 @@ foreach ($text as $stti => $string)  // 'aifkcwh', 'aifkcwhsz', 'kim', 'aif'
 
     $output[$string] = $values1;
 }
-// print_r($output);
 $output = flatten($output);
 $output = array_unique($output);
 $output = array_values($output);

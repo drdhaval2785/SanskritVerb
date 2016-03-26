@@ -2,7 +2,7 @@
  /* This code is developed by Dr. Dhaval Patel (drdhaval2785@gmail.com) of www.sanskritworld.in and Ms. Sivakumari Katuri.
   * Layout assistance by Mr Marcis Gasuns.
   * Available under GNU licence.
-  * Version 1.8.0 date 20 March 2016
+  * Version 1.9.0 date 26 March 2016
   * The latest source code is available at https://github.com/drdhaval2785/SanskritVerb .
   * Acknowledgements: The base book for coding has been Astadhyayi sahajabodha of Dr. Pushpa Dikshit, published by Pratibha Prakashan, Delhi.
   * I extend my heartfelt thanks to Ananda Loponen for the code to convert devanagari and various sanskrit transliterations. That can be accessed at http://www.ingmardeboer.nl/php/diCrunch.php?act=help.
@@ -777,7 +777,7 @@ elseif ($type==='tiGanta')
 			gui2('7.2.70');
 		}
 		/* se'sici kRtacRtacCRdatRdanRtaH (7.2.57) */
-		elseif (in_array($fo,array("kftI!","cfta!","Cfda!","tfda!","nfta!")) && (in_array($lakAra,array("lfw","lfN")) || $san===1) )
+		elseif (in_array($fo,array("kftI!","cfta!","Cfda!","tfda!","nfta!","nftI!")) && (in_array($lakAra,array("lfw","lfN")) || $san===1) )
 		{
 			$id_dhAtu="vew";
 			gui2('7.2.57');
@@ -1018,9 +1018,8 @@ if ($so==="Ji" && $verbset==="adAdi" && in_array($fo,array("vaca!"))  )
 	storedata('~1','red',0);
 }
 /* na vRdbhyazcaturbhyaH (7.2.59) */
-if ( in_array($fo,array("vftu!","vfDu!","SfDu!","syandU!",)) && in_array($lakAra,array("lfw","lfN")) && in_array($so,$taG))
+if ( in_array($fo,array("vftu!","vfDu!","SfDu!","syandU!",)) && (in_array($lakAra,array("lfw","lfN")) || $san===1) && in_array($so,$taG))
 {
-	$verbpada="A";
 	$id_dhAtu="sew";
 	storedata('7.2.59','sa',0);
 }
@@ -2995,9 +2994,9 @@ if ( arr($text,'/^UrRunu[+]*[sz]a[+]/') && $san===1 && $fo==="UrRuY" )
 }
 /* atra lopo'bhyAsasya (7.4.58) */
 // Pending. Will need to enumerate all forms here.
-if ( sub(array("Ipsi+sa+","Irdsi+sa","di+ditsa+","di+Ditsa+","mi+mitsa+","Si+Sikza+","ri+riBsa+","li+liBsa+","pi+pitsa+","pi+pidsa+","mu+mokza+"),blank(0),blank(0),0) && $san===1)
+if ( sub(array("Ipsi+sa+","Irdsi+sa","di+dit+sa+","di+Dit+sa+","mi+mit+sa+","Si+Sik+sa+","ri+riB+sa+","li+liB+sa+","pi+pit+sa+","pi+pid+sa+","mu+mokza+","di+dIB+sa+","di+diB+sa+"),blank(0),blank(0),0) && $san===1)
 {
-	$text = one(array("Ipsi+sa+","Irdsi+sa","di+ditsa+","di+Ditsa+","mi+mitsa+","Si+Sikza+","ri+riBsa+","li+liBsa+","pi+pitsa+","pi+pidsa+","mu+mokza+"),array("Ipsa+","Irdsa+","ditsa+","Ditsa+","mitsa+","Sikza+","riBsa+","liBsa+","pitsa+","pidsa+","mokza+"),0);
+	$text = one(array("Ipsi+sa+","Irdsi+sa","di+dit+sa+","di+Dit+sa+","mi+mit+sa+","Si+Sik+sa+","ri+riB+sa+","li+liB+sa+","pi+pit+sa+","pi+pid+sa+","mu+mok+za+","di+dIB+sa+","di+diB+sa+"),array("Ipsa+","Irdsa+","dit+sa+","Dit+sa+","mit+sa+","Sik+sa+","riB+sa+","liB+sa+","pit+sa+","pid+sa+","mok+sa+","dIB+sa+","diB+sa+"),0);
 	storedata('7.4.58','sa',0);
 }
 /* curAdi Ric handling */
@@ -6312,7 +6311,7 @@ if (arr($text,'/[h]$/')  && $hodha1===0 && $hodha2 === 0 && $hodha3 === 0 )
 	storedata('8.2.31','sa',0);
 }
 /* ekAco bazo bhaS jhaSantasya sdhvoH (8.2.37) */  
-if ( /*anekAca($verb_without_anubandha)==false &&*/ ( arr($text,'/[bgqd](['.pc('al').']*)[JBGQD][+][s]/') || arr($text,'/[bgqd](['.pc('al').']*)[JBGQD][+]Dv/') || arr($text,'/[JBGQD][+]$/') || $pada==="pada") )
+if ( /*anekAca($verb_without_anubandha)==false &&*/ ( arr($text,'/[bgqd](['.pc('al').']*)[JBGQD][+][sz]/') || arr($text,'/[bgqd](['.pc('al').']*)[JBGQD][+]Dv/') || arr($text,'/[JBGQD][+]$/') || $pada==="pada") )
 {
 	ekAcobazo(); // created a new function 19/12/2014.
 }
@@ -6334,6 +6333,12 @@ if (arr($text,'/['.pc('hl').'][+][stsD]$/')  && !arr($text,'/s[+]s$/') && in_arr
 if (arr($text,'/[zQ]/') && sub(array("z","Q"),array("s"),blank(0),0))
 {
     $text = two(array("z","Q"),array("s"),array("k","k"),array("s"),0);
+	storedata('8.2.41','sa',0);
+}
+/* SaDhoH kassi (8.2.41) */
+elseif ($san===1 && arr($text,'/[zQ][+]z/') )
+{
+    $text = two(array("z","Q"),array("z"),array("k","k"),array("z"),0);
 	storedata('8.2.41','sa',0);
 }
 /* coH kuH (8.2.30) */
@@ -12333,7 +12338,8 @@ else
 $druh = array("druh","muh","snuh","snih","droh","moh","snoh","sneh");
 if ((arr($text,'/[+]$/') || arr($text,'/[+]['.pc("Jl").']/')) && sub($druh,blank(0),blank(0),0) )
 {
-    $text = one(array("druh","muh","snuh","snih","droh","moh","snoh","sneh"),array("druG","muG","snuG","sniG","droG","moG","snoG","sneG"),1);
+    $text = change('/h([+]['.pc('Jl').'])/','G$1');
+	$text = change('/h$/','G');
 	storedata('8.2.33','sa',0);
 }
 /* dAderdhAtorghaH (8.2.32) */
