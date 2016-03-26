@@ -2999,6 +2999,7 @@ if ( sub(array("Ipsi+sa+","Irdsi+sa","di+dit+sa+","di+Dit+sa+","mi+mit+sa+","Si+
 	$text = one(array("Ipsi+sa+","Irdsi+sa","di+dit+sa+","di+Dit+sa+","mi+mit+sa+","Si+Sik+sa+","ri+riB+sa+","li+liB+sa+","pi+pit+sa+","pi+pid+sa+","mu+mok+za+","di+dIB+sa+","di+diB+sa+"),array("Ipsa+","Irdsa+","dit+sa+","Dit+sa+","mit+sa+","Sik+sa+","riB+sa+","liB+sa+","pit+sa+","pid+sa+","mok+sa+","dIB+sa+","diB+sa+"),0);
 	storedata('7.4.58','sa',0);
 }
+print_r($text);
 /* curAdi Ric handling */
 if (arr($text,'/\+Ri[c]{0,1}\+/')||$ciN===1||$ciN===2)
 {
@@ -3189,7 +3190,7 @@ if (arr($text,'/\+Ri[c]{0,1}\+/')||$ciN===1||$ciN===2)
 	}
 	storedata('1.3.3','pa',0);
 	storedata('1.3.7','pa',0);
-	$text=one(array('+Ric+caN+','+Ri+caN+'),array('i+a+','i+a+'),0);
+	$text=one(array('+Ric+Sap','+Ric+caN+','+Ri+caN+',),array('i+a','i+a+','i+a+'),0);
 	$text = one(array("+Ric+","+Ri+"),array("+i+","+i+"),0);
 	$text = one(array("+caN+"),array("+a+"),0);
 	storedata('1.3.9','sa',0);
@@ -3257,7 +3258,7 @@ if (arr($text,'/\+Ri[c]{0,1}\+/')||$ciN===1||$ciN===2)
 		storedata('7.3.84','sa',0);
 		if (arr($text,'/e\+['.pc('ac').']/'))
 		{
-			$text=two(array("e+"),$ac,array("ay+"),$ac,0);
+			$text=two(array("e+"),$ac,array("ay"),$ac,0);
 			storedata('6.1.78','sa',0);			
 		}
 	}
@@ -10684,6 +10685,7 @@ if ($nomidelision!==1 && sub(array("+"),$inbetweenpratyaya,array("+"),0) )
     $text=two(prat('hl'),array("+"),blank(count(prat('hl'))),array("+"),0);
 	storedata('1.3.9','sa',0);
 }
+
 /* it additions in case of kvin and kvip */
 if ($kvin===1)
 {
