@@ -13,6 +13,7 @@ $tran = $_POST['tran'];
 $lakAra= $_POST['lakAra'];
 $sanAdi = $_POST['sanAdi'];
 $us = $_POST['upasarga'];
+$number = $_POST['number'];
 
 // IAST and devanagari handling
 // Code for converting from IAST to SLP
@@ -1070,7 +1071,7 @@ if( in_array($_POST['step'],array('11','12','13','15')) && ends($arrWord,array("
             $html .= '<input required type="radio" value="2" name="cond52" checked> अन्य ';
             $html .= '</div>';            
 }
-if( in_array($_POST['step'],array('11','12','13','15')) && ends($arrWord,array("ziDU!",),2) && $sanAdi==="Ric")
+if( in_array($_POST['step'],array('11','12','13','15')) && ends($arrWord,array("ziDu!",),2) && $sanAdi==="Ric")
 {
             $html .= '<div id="step22">';
             $html .= '<input required type="radio" value="1" name="cond53" > पारलौकिक ज्ञान ';
@@ -1118,13 +1119,6 @@ if( in_array($_POST['step'],array('11','12','13','15')) && ends($arrWord,array("
             $html .= '<div id="step22">';
             $html .= '<input required type="radio" value="1" name="cond59" > अवतंसने ';
             $html .= '<input required type="radio" value="2" name="cond59" checked> अन्य ';
-            $html .= '</div>';            
-}
-if( in_array($_POST['step'],array('11','12','13','15')) && ends($arrWord,array("Dvana!"),2) 	)
-{
-            $html .= '<div id="step22">';
-            $html .= '<input required type="radio" value="1" name="cond60" > शब्दे ';
-            $html .= '<input required type="radio" value="2" name="cond60" checked> अन्य ';
             $html .= '</div>';            
 }
 if( in_array($_POST['step'],array('11','12','13','15')) && ends($arrWord,array("cala!"),2) 	)
@@ -1176,7 +1170,7 @@ if( in_array($_POST['step'],array('11','12','13','15')) && ends($arrWord,array("
             $html .= '<input required type="radio" value="2" name="cond67" checked> अन्य ';
             $html .= '</div>';            
 }
-if( in_array($_POST['step'],array('11','12','13','15')) && ends($arrWord,array("SrA"),2) )
+if( in_array($_POST['step'],array('11','12','13','15')) && ends($arrWord,array("SrA","SrE"),2) )
 {
             $html .= '<div id="step22">';
             $html .= '<input required type="radio" value="1" name="cond68" > पाके ';
