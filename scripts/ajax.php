@@ -1184,7 +1184,7 @@ if( in_array($_POST['step'],array('11','12','13','15')) && ends($arrWord,array("
             $html .= '<input required type="radio" value="2" name="cond69" checked> अन्य ';
             $html .= '</div>';            
 }
-if( in_array($_POST['step'],array('11','12','13','15')) && ends($arrWord,array("Cadi!r"),2) )
+if( in_array($_POST['step'],array('11','12','13','15')) && ends($arrWord,array("Cada"),2) )
 {
             $html .= '<div id="step22">';
             $html .= '<input required type="radio" value="1" name="cond70" > ऊर्जने ';

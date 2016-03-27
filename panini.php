@@ -3089,6 +3089,12 @@ if (arr($text,'/\+Ri[c]{0,1}\+/')||$ciN===1||$ciN===2)
 		$text = two($ac,array("+Ric+","+RiN","+Ri+","+i"),vriddhi($ac),array("+Ric+","+RiN","+Ri+","+i"),0);
 		storedata('7.2.115','sa',0);
 	}
+	/* ato lopaH (6.4.48) */
+	if ( arr($text,'/a[+]Ri/') && in_array($fo,$curAdi_adanta) && ($verbset==="none"||$verbset==="curAdi"))
+	{
+		$text = change('/a[+]Ri/','+Ri');
+		storedata('6.4.48','sa',0);
+	}
 	/* nodAttopadezasya mAntasyAcameH (7.3.34) */
 	if ( $id_dhAtu==="sew" && !in_array($fo,array("camu!","kamu!","wuvama!")) && $atolopa!==1 && $Naugami!==1 && $jAgro!==1 && (arr($text,'/am[+]Ric{0,1}[+]/')||arr($text,'/am[+]i$/')) && !(arr(array($verb_without_anubandha),'/^['.pc('hl').']/') && $caG===1))
 	{
@@ -3107,7 +3113,6 @@ if (arr($text,'/\+Ri[c]{0,1}\+/')||$ciN===1||$ciN===2)
 		$text = change('/(^[^+]*)a(['.pc(hl).'])[+]i[+]/','$1A$2+i+');
 		storedata('7.2.116','sa',0);
 	}
-	print_r($text);
 	/* skhadir avaparibhyAm ca (ga) */ 
 	if ( in_array($fo,array("sKada!")) && sub(array("A"),$hl,array("+Ric+","+Ri+","+i+"),0) && !in_array($us,array("ava","pari")))
 	{
@@ -4482,18 +4487,18 @@ if ( $Nit===1 && $atolopa!==1 && $Naugami!==1 && $jAgro!==1 && sub(array("a"),$h
 	storedata('7.2.116','sa',0);
 }
 /* mitAM hrasvaH (6.4.92) */ 
-if ( in_array($fo,$mitcurAdiverbs) && ($verbset === "curAdi" || $verbset === "none" ) && sub(array("A"),$hl,array("+Ri+"),0))
+if ( in_array($fo,$mitcurAdiverbs) && ($verbset === "curAdi" || $verbset === "none" ) && sub(array("A"),$hl,array("+Ri+"),0) && $sanAdi!=="Ric")
 {
     $text = three(array("A"),$hl,array("+Ri+"),array("a"),$hl,array("+Ri+"),0);
 	$text = one(array("cap+Ri"),array("cAp+Ri"),0);
 	storedata('6.4.92','sa',0);
 }
-elseif ( (in_array($fo,$mitcurAdiverbs)||in_array($fo,$ghaTAdi_mit) ) && in_array($verbset,array("BvAdi","curAdi","kryAdi"))  && arr($text,'/(['.pc('hl').'])A(['.pc('hl').']+)aya[+]/'))
+elseif ( (in_array($fo,$mitcurAdiverbs)||in_array($fo,$ghaTAdi_mit) ) && in_array($verbset,array("BvAdi","curAdi","kryAdi"))  && arr($text,'/(['.pc('hl').'])A(['.pc('hl').']+)aya[+]/') && $sanAdi!=="Ric")
 {
 	$text = change('/(['.pc('hl').'])A(['.pc('hl').']+)aya[+]/','$1a$2aya+');
 	storedata('6.4.92','sa',0);
 }
-elseif ( in_array($fo,$ghaTAdi_mit) && ($verbset === "BvAdi" || $verbset === "none" ) && sub(array("A"),$hl,array("+Ri+"),0) )
+elseif ( in_array($fo,$ghaTAdi_mit) && ($verbset === "BvAdi" || $verbset === "none" ) && sub(array("A"),$hl,array("+Ri+"),0)  && $sanAdi!=="Ric")
 {
     $text = three(array("A"),$hl,array("+Ri+"),array("a"),$hl,array("+Ri+"),0);
 	storedata('6.4.92','sa',0);
