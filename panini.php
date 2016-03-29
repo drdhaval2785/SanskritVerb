@@ -2471,7 +2471,7 @@ if ($sanAdi==="yaN" && $lakAra!=="")
 	$itpratyaya = array_merge($itpratyaya,array("N"));
 	$it = array_merge($it,array("N"));
 	/* ghumAsthAgApAjahAtisAM hali (6.4.66) */
-	if ( in_array($fo,array("do","deN","qudAY","dAR","Dew","quDAY","mA","zWA","iN","pA","hA","zo","gAN")) && sub(array("A+ya+"),blank(0),blank(0),0) )
+	if ( in_array($fo,array("do","deN","qudAY","dAR","Dew","quDAY","mA","zWA","iN","pA","hA","zo","gAN","mAN","meN","gA","iN","ik","gE","o!hAk")) && sub(array("A+ya+"),blank(0),blank(0),0) && !in_array($number,array("02.0051","03.0008")))
 	{
 		$text=one(array("A+ya"),array("I+ya"),0);
 		storedata('6.4.66','sa',0);
@@ -2700,8 +2700,9 @@ if ($sanAdi==="yak")
 	storedata('1.3.3','pa',0);
 	$text = one(array("+yak+"),array("+ya+"),0);
 	storedata('1.3.9','sa',0);
+	print_r($text); echo $fo;
 	/* ghumAsthAgApAjahAtisAM hali (6.4.66) */
-	if ( in_array($fo,array("do","deN","qudAY","dAR","Dew","quDAY","mA","zWA","iN","pA","hA","sA","gAN")) && sub(array("A+ya+"),blank(0),blank(0),0) )
+	if ( in_array($fo,array("do","deN","qudAY","dAR","Dew","quDAY","mA","zWA","iN","pA","hA","sA","gAN","mAN","meN","gA","iN","ik","gE","o!hAk","zo")) && sub(array("A+ya+"),blank(0),blank(0),0) && !in_array($number,array("02.0051","03.0008")) )
 	{
 		$text=one(array("A+ya"),array("I+ya"),0);
 		storedata('6.4.66','sa',0);
@@ -5839,7 +5840,7 @@ if (arr($text,'/A\+i/') && sub(array("A+"),array("i"),$tiG1,0) && $lakAra!=="" &
 	storedata('6.4.64','sa',0);
 }
 /* ghumAsthAgApAjahAtisAM hali (6.4.66) */
-if ( in_array($fo,array("do","deN","qudAY","dAR","Dew","quDAY","mA","zWA","iN","pA","hA","sA","gAN")) && ends($it,array("N","k"),2) && sub(array("A+"),$ArdhadhAtuka_pratyayas,blank(0),0) && $lakAra!=="" )
+if ( in_array($fo,array("do","deN","qudAY","dAR","Dew","quDAY","mA","zWA","iN","pA","hA","sA","gAN","mAN","meN","gA","iN","ik","gE","o!hAk","zo")) && ends($it,array("N","k"),2) && sub(array("A+"),$ArdhadhAtuka_pratyayas,blank(0),0) && $lakAra!==""  && !in_array($number,array("02.0051","03.0008")))
 {
     $text=two(array("A+"),$ArdhadhAtuka_pratyayas,array("I+"),$ArdhadhAtuka_pratyayas,0);
 	storedata('6.4.66','sa',0);
