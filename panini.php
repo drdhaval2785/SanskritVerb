@@ -1105,7 +1105,7 @@ if (in_array($lakAra,$ArdhadhAtuka_lakAra) || in_array($sanAdi,array("yak","yaN"
 		storedata('2.4.48','sa',0);
     }
     /* vibhASA zveH (6.1.30) */ 
-    if (in_array($fo,array("wuo!Svi")) && ($lakAra==="liw"||$sanAdi==="yaN"))
+    if (in_array($fo,array("wuo!Svi")) && ($lakAra==="liw"||in_array($sanAdi,array("yaN","yak"))))
     {
         $text=one(array("wuo!Svi+"),array("Su+"),1);
 		storedata('6.1.30','sa',0);
@@ -2700,7 +2700,6 @@ if ($sanAdi==="yak")
 	storedata('1.3.3','pa',0);
 	$text = one(array("+yak+"),array("+ya+"),0);
 	storedata('1.3.9','sa',0);
-	print_r($text); echo $fo;
 	/* ghumAsthAgApAjahAtisAM hali (6.4.66) */
 	if ( in_array($fo,array("do","deN","qudAY","dAR","Dew","quDAY","mA","zWA","iN","pA","hA","sA","gAN","mAN","meN","gA","iN","ik","gE","o!hAk","zo")) && sub(array("A+ya+"),blank(0),blank(0),0) && !in_array($number,array("02.0051","03.0008")) )
 	{
@@ -4543,7 +4542,6 @@ if (arr($text,'/iy/') && sub(array("+a+iy","+sa+iy","+sya+iy","ya+iy"),array("+"
     $text = one(array("a+i+"),array("e"),0);
 	storedata('6.1.87','sa',0);
 }
-print_r($text);
 /* AdguNaH (6.1.87) patch for sya Agama */
 if (sub(array("sya+"),array("i+"),blank(0),0))
 {
@@ -4594,9 +4592,9 @@ if ($sic===1 && in_array($vAcya,array("bhAva","karma")) && arr($text,'/[+]sic[+]
 	storedata('1.3.9','sa',0);
 }
 /* syasicsIyuTtAsiSu bhAvakarmaNorupadeze'jjhanagrahadRzAM ciNvadiT ca (6.4.62) */
-if (($syatAsI===1||$sic===1||$sIyuT===1) && (preg_match('/['.pc('ac').']$/',$fo)||in_array($fo,array("hana!","graha!","dfSi!r"))||$_GET['sanAdi']==="Ric") && in_array($vAcya,array("bhAva","karma")))
+if (($syatAsI===1||$sic===1||$sIyuT===1) && arr($text,'/[+]s([^+]+)$/') && (preg_match('/['.pc('ac').']$/',$fo)||in_array($fo,array("hana!","graha!","dfSi!r"))||$_GET['sanAdi']==="Ric") && in_array($vAcya,array("bhAva","karma")))
 {
-	$text1=change('/[+]([^+]+)$/','+i$1');
+	$text1=change('/[+]s([^+]+)$/','+is$1');
 	$text=array_merge($text,$text1);
 	storedata('6.4.62','sa',0);
 	$ciN=1;
@@ -5096,8 +5094,16 @@ elseif ( $sanAdi==="yaNluk" && $kGiti!==1 && arr($text,'/[fFxX][+][^+]*$/') && $
 	storedata('7.3.84','sa',0);
 }
 foreach ($tiG1 as $value) {$iDtiG = "i".$value;} // defining iDtiG i.e. iDAgama+tiG1.
+/* udoSThyapUrvasya (7.1.102) */
+if (arr($text,'/^[pPbBmv]F[+]/')  && in_array($so,$tiG) && ($sarvadhatuka===1 || in_array("Sa",$vik) || arr($text,'/[+]yAs[+]/')) && $ciN!==1 && $ciN!==2 )
+{
+	$text = change('/^([pPbBmv])F[+]/','$1ur+');
+	storedata('7.1.102','sa',0);
+	$text = change('/^([pPbBmv])ur[+]/','$1Ur+');
+	storedata('8.2.77','sa',0);
+}
 /* RRta iddhAtoH (7.1.100) */
-if (arr($text,'/F\+/') && in_array($so,$tiG) && ($sarvadhatuka===1 || in_array("Sa",$vik) || arr($text,'/[+]yAs[+]/')) && $ciN!==1 && $ciN!==2 )
+elseif (arr($text,'/F\+/') && in_array($so,$tiG) && ($sarvadhatuka===1 || in_array("Sa",$vik) || arr($text,'/[+]yAs[+]/')) && $ciN!==1 && $ciN!==2 )
 {
     $text=two(array("F"),array("+"),array("ir"),array("+"),0);
 	storedata('7.1.100','sa',0);
@@ -5979,13 +5985,13 @@ if (in_array($fo,array("SAsu!")) && arr($text,'/SAs[+]['.pc('hl').']/') && ends(
 	storedata('6.4.34','sa',0);
 }
 /* zAsivasighasInAM ca (8.3.60) */
-if ( in_array($fo,array("SAsu!","vasa!")) && in_array($so,$tiG) && sub(array("Sis","us"),array("+"),blank(0),0) )
+if ( in_array($fo,array("SAsu!","vasa!")) && in_array($so,$tiG) && sub(array("Sis","us"),array("+"),blank(0),0) && !in_array($number,array("02.0111")))
 {
     $text = two(array("Sis","us"),array("+"),array("Siz","uz"),array("+"),0);
 	storedata('8.3.60','sa',0);
 }
 /* zAsivasighasInAM ca (8.3.60) */
-if ( arr($text,'/[G][s][+]/') && ends(array($fo),array("Gasa!","ada!"),4) && in_array($so,$tiG) )
+if ( arr($text,'/[G][s][+]/') && ends(array($fo),array("ada!","Gasx!"),4) && in_array($so,$tiG) )
 {
     $text = two(array("Gs"),array("+"),array("Gz"),array("+"),0);
 	storedata('8.3.60','sa',0);
@@ -6370,7 +6376,7 @@ elseif ($san===1 && arr($text,'/[zQ][+]z/') )
 }
 /* coH kuH (8.2.30) */
 $coku=0;
-if ((arr($text,'/['.flat($cu).'][+]*['.pc('Jl').']/')) && !in_array($fo,$noco) && in_array($so,$tiG) && ($syatAsI!==1 || $id_dhAtu !== "sew" )) // need to test for veT dhAtus. Pending.
+if ((arr($text,'/['.flat($cu).'][+]*['.pc('Jl').']/')) && !in_array($fo,$noco) && in_array($so,$tiG) && ($syatAsI!==1 || $id_dhAtu !== "sew" ) && !in_array("6.1.73",allsutras($storedata))) // need to test for veT dhAtus. Pending.
 {
 	$text = three($cu,array("+",""),prat('Jl'),$ku,array("+",""),prat('Jl'),0); 
 	storedata('8.2.30','sa',0);
@@ -12346,7 +12352,7 @@ if ( arr($text,'/['.pc('Jl').']([+]*)s([+]*)['.pc('Jl').']/') )
 	storedata('8.2.26','sa',0);
 }
 /* coH kuH (8.2.30) */
-if ((arr($text,'/['.flat($cu).'][+]['.pc('Jl').']/')) && !in_array($fo,$noco)&& ( $kvinku===0 || $ancu===1) )
+if ((arr($text,'/['.flat($cu).'][+]['.pc('Jl').']/')) && !in_array($fo,$noco)&& ( $kvinku===0 || $ancu===1) && !in_array("6.1.73",allsutras($storedata)) )
 {
 $text = three($cu,array("+"),prat('Jl'),$ku,array("+"),prat('Jl'),0); 
 storedata('8.2.30','sa',0);

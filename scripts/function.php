@@ -3823,6 +3823,9 @@ echo '$iditverbs1=array("'.implode('","',$val2).'");<br/>';
 echo '$iditverbs2=array("'.implode('","',$val1).'");';
 }
 
+
+
+
 /* Functions which are not used in the code */
 /* Function f to find the nth letter in the word */
 function f($text,$n) // Not used in code.
