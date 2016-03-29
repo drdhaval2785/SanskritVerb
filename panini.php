@@ -1047,10 +1047,6 @@ elseif ($type==="tiGanta") // this option is used for subanta / tiGanta generati
 	{
 		$input = ltrim(chop($text[0]."+".$second));
 	}
-	elseif ($sanAdi==="yak" && $verbset==="curAdi")
-	{
-		$input = ltrim(chop($text[0]."+Ric+yak+".$nonpurelakara));
-	}
 	$input = str_replace("++","+",$input); // If $sanAdi is "", there would be two +s consecutively. To overcome this hurdle, this patch is created.
 }
 else 
@@ -1269,6 +1265,7 @@ if ( in_array($fo,array("kamu!")) && $pada==="pratyaya" && $lakAra!=="" && $sanA
     $verbpada="A";
 }*/
 
+print_r($text);
 /* Displaying general information about lakAras */
 /* laT vartamAne (3.2.123) */
 if (in_array($so,$tiG) && $pada==="pratyaya" && $lakAra==="law")
