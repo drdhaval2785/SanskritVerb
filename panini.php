@@ -3103,7 +3103,7 @@ if (arr($text,'/\+Ri[c]{0,1}\+/')||$ciN===1||$ciN===2)
 		storedata('7.3.35','sa',0);
 	}
 	/* ata upadhAyAH (7.2.116) */
-	elseif ( $atolopa!==1 && $Naugami!==1 && $jAgro!==1 && (arr($text,'/[a]['.pc('hl').'][+]Ric{0,1}[+]/')||arr($text,'/[a]['.pc('hl').'][+]i$/')) && !(arr(array($verb_without_anubandha),'/^['.pc('hl').']/') && $caG===1))
+	elseif ( $atolopa!==1 && $Naugami!==1 && $jAgro!==1 && (arr($text,'/[a]['.pc('hl').'][+]Ric{0,1}[+]/')||arr($text,'/[a]['.pc('hl').'][+]i$/')) && !preg_match('/a$/',$fo) && !(arr(array($verb_without_anubandha),'/^['.pc('hl').']/') && $caG===1))
 	{
 		$text = change('/(^[^+]*)a(['.pc(hl).'])[+]Ric[+]/','$1A$2+Ric+');
 		$text = change('/(^[^+]*)a(['.pc(hl).'])[+]Ri[+]/','$1A$2+Ri+');
