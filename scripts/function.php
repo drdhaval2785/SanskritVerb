@@ -3844,7 +3844,7 @@ function verbdataerrors()
 		$i++;
 	}
 }
-verbdataerrors();
+//verbdataerrors();
 
 /* Functions which are not used in the code */
 /* Function f to find the nth letter in the word */
