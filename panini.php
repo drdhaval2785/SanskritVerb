@@ -1769,7 +1769,7 @@ elseif (in_array($so,$tiG) && in_array($fo,array("Divi!","kfvi!")) && $sarvadhat
 }
 // first treatment of curAdi, because, it will take Nic before vikaraNa pratyaya.
 /* satyApapAzarUpavINAtUlazlokasenAlomatvacavarmacUrNacurAdibhyo Nic (3.1.25) */
-elseif (in_array($so,$tiG) && $Nizri!==1 && $verbset==="curAdi" && in_array($fo,$curAdi) && $aG!==1 && !arr($text,'/[+]sic[+]/') && $sanAdi!=="san" && $sanAdi!=="Ric")
+elseif (in_array($so,$tiG) && $Nizri!==1 && $verbset==="curAdi" && in_array($fo,$curAdi) && $aG!==1 && !arr($text,'/[+]sic[+]/') && $sanAdi!=="san" && $sanAdi!=="Ric" && $sanAdi!=="yaN" && $sanAdi!=="yaNluk")
 {
 	$text=two(array("+"),$tiG,array("+Ric+"),$tiG,0); 
 	$text=two(array("+sa+Ric+"),$tiG,array("+sa+"),$tiG,0); 
@@ -1869,7 +1869,7 @@ elseif ($sarvadhatuka===1 && (in_array($verbset,array("BvAdi","adAdi","juhotyAdi
 }
 /* for regular input without user selection */
 /* satyApapAzarUpavINAtUlazlokasenAlomatvacavarmacUrNacurAdibhyo Nic (3.1.25) */
-elseif ( $sarvadhatuka===1 && $verbset==="none" && sub(array("+"),$tiG,blank(0),0) && in_array($fo,$curAdi) && $aG!==1 && $sanAdi!=="san" && $sanAdi!=="yaN" && $sanAdi!=="Ric")
+elseif ( $sarvadhatuka===1 && $verbset==="none" && sub(array("+"),$tiG,blank(0),0) && in_array($fo,$curAdi) && $aG!==1 && $sanAdi!=="san" && $sanAdi!=="yaN" && $sanAdi!=="Ric" && $sanAdi!=="yaN" && $sanAdi!=="yaNluk")
 {
     $text=two(array("+"),$tiG,array("+Ric+"),$tiG,0);
     $text=one(array("+Ric+Ric"),array("+Ric"),0);
@@ -2622,7 +2622,6 @@ if ($sanAdi==="yaN" && $lakAra!=="")
 		$text = one(array("yayak+"),array("ya+yak+"),0);
 	}
 }
-print_r($text);
 /* UrNotezca pratiSedho vaktavyaH (vA) */
 // Pending. Not giving proper results. Am pratyaya not functioning well.
 if ($lakAra==="liw" && ends(array($fo),array("UrRuY"),4) )
@@ -3784,7 +3783,6 @@ if ( arr($text,'/A[+]a[+][Aai]/') && in_array($so,$tiG) )
 	storedata('6.1.9','sa',0);
 	$set=2;
 }
-print_r($text);
 if ($debug===1) {dibug("2200");}
 /* thAsasse (3.4.80) */
 if ( $pada === "pratyaya" && in_array($so,array("TAs")) && in_array($lakAra,array("law","liw","luw","lfw","sArvaDAtukalew","ArDaDAtukalew","low")) && sub(array("+"),array("TAs","saTAs","sATAs"),blank(0),0) )

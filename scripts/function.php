@@ -2956,10 +2956,23 @@ function yaG_abhyAsa_special()
 		storedata('7.4.82','sa',0);
 	}
 	/* dIrgho'kitaH (7.4.83) */
-	if (arr($text,'/^([^+]*)a[+]/'))
+	elseif (arr($text,'/^([^+]*)a[+][^A]*[+]/'))
+	{
+		$text=change('/^([^+]*)a([+][^A]*[+])/','$1A$2');
+		storedata('7.4.83','sa',0);
+	}
+	/* dIrgho'kitaH (7.4.83) */
+	// Patch because of optional forms in these three by ye vibhASA.
+	if (sub(array("ja+jAn","sa+sAn","ca+KAn"),blank(0),blank(0),0) && in_array($fo,array("janI!","zana!","Kanu!")))
 	{
 		$text=change('/^([^+]*)a[+]/','$1A+');
 		storedata('7.4.83','sa',0);
+	}
+	/* guNo yaGlukoH (7.4.82) */
+	if (arr($text,'/^ji[+]GnI[+]/'))
+	{
+		$text=change('/^ji[+]GnI[+]/','je+GnI+');
+		storedata('7.4.82','sa',0);
 	}
 	return $text;
 }
