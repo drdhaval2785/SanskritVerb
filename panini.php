@@ -985,6 +985,7 @@ elseif (in_array($so,$tiG) && $vAcya==="karmakartR")
 if (in_array($vAcya,array("karmakartR")) && $so==="ta" && in_array($fo,array("duha!","zRu","Rama!")) &&  in_array($lakAra,array("law","low","laN","viDiliN")))
 {
 	storedata('3.1.89','sa',0);
+	$vsuf="";
 }
 /* kuzirajoH prAcAM zyanparasmaipadaM ca (3.1.90) */
 elseif ( in_array($vAcya,array("karmakartR")) && $pada==="pratyaya" && in_array($fo,array("kuza!","raYja!")) && in_array($lakAra,array("law","low","laN","viDiliN",)) )
@@ -1442,26 +1443,26 @@ if ($lakAra==="luN")
 		storedata('3.1.60','sa',0);
 		$ciN=1;
 	}
+	/* duhazca (3.1.63) */
+	elseif ($vAcya==="karmakartR" && $so==="ta" && arr($text,'/^duha[!][+]cli[+]ta$/'))
+	{
+		$text = one(array("duha!+cli+ta"),array("duha!+ciR+ta"),1);
+		storedata('3.1.63','sa',0);
+		$it = array_merge($it,array("R"));
+		$itpratyaya = array_merge($itpratyaya,array("R"));
+		$Nit=1;
+		$ciN=2;
+	}
 	/* na duhasnunamAM yakciNau (3.1.89) */
 	elseif (in_array($vAcya,array("karmakartR")) && $so==="ta" && in_array($fo,array("duha!","zRu","Rama!")))
 	{
 		storedata('3.1.89','sa',0);
 	}
 	/* acaH karmakartari (3.1.62) */
-	elseif (in_array($vAcya,array("karmakartR")) && $so==="ta" && arr($text,'/['.pc('ac').'][+]cli[+]ta$/'))
+	elseif (in_array($vAcya,array("karmakartR")) && $so==="ta" && preg_match('/['.pc('ac').']$/',$verb_without_anubandha) && arr($text,'/[+]cli[+]ta$/'))
 	{
 		$text = one(array("+cli+"),array("+ciR+"),1);
 		storedata('3.1.62','sa',0);
-		$it = array_merge($it,array("R"));
-		$itpratyaya = array_merge($itpratyaya,array("R"));
-		$Nit=1;
-		$ciN=2;
-	}
-	/* duhazca (3.1.63) */
-	elseif (in_array($vAcya,array("karmakartR")) && $so==="ta" && arr($text,'/^duha[!][+]cli[+]ta$/'))
-	{
-		$text = one(array("duha!+cli+"),array("duha!+ciR+"),1);
-		storedata('3.1.63','sa',0);
 		$it = array_merge($it,array("R"));
 		$itpratyaya = array_merge($itpratyaya,array("R"));
 		$Nit=1;
@@ -1478,7 +1479,7 @@ if ($lakAra==="luN")
 		storedata('3.1.65','sa',0);
 	}
 	/* ciN bhAvakarmaNoH (3.1.66) */
-	elseif (in_array($vAcya,array("bhAva","karma")) && $so==="ta" )
+	elseif (in_array($vAcya,array("bhAva","karma","karmakartR")) && $so==="ta" )
 	{
 		$text = one(array("+cli+"),array("+ciR+"),0);
 		storedata('3.1.66','sa',0);
@@ -1748,7 +1749,6 @@ if ( $sic!==0 && $so==="Ji" && sub(array("A"),array("+"),array("Ji"),0) )
 	storedata('3.4.110','sa',0);
 }
 if ($debug===1) {dibug("1300");}
-print_r($text);
 /* zruvaH zR ca (3.1.74) */
 if (in_array($fo,array("Sru")) && $sarvadhatuka===1 && sub(array("Sru"),array("+"),$tiG,0) && in_array($so,$tiG))
 {
@@ -4636,7 +4636,7 @@ if ( in_array($so,$taG) && ($sic===1||$sIyuT===1) && ends(array($verb_without_an
 	$kGiti=1; $uzca=1;
 }
 /* syasicsIyuTtAsiSu bhAvakarmaNorupadeze'jjhanagrahadRzAM ciNvadiT ca (6.4.62) */
-if (($syatAsI===1||$sic===1||$sIyuT===1) && arr($text,'/[+][st]([^+]+)$/') && (preg_match('/['.pc('ac').']$/',$verb_without_anubandha)||in_array($fo,array("hana!","graha!","dfSi!r"))||$_GET['sanAdi']==="Ric") && in_array($vAcya,array("bhAva","karma")))
+if (($syatAsI===1||$sic===1||$sIyuT===1) && arr($text,'/[+][st]([^+]+)$/') && (preg_match('/['.pc('ac').']$/',$verb_without_anubandha)||in_array($fo,array("hana!","graha!","dfSi!r"))||$_GET['sanAdi']==="Ric") && in_array($vAcya,array("bhAva","karma","karmakartR")) && $ciN===0)
 {
 	$text1=change('/[+]([st])([^+]+)$/','+i$1$2');
 	$text=array_merge($text,$text1);
@@ -4694,6 +4694,7 @@ if (($syatAsI===1||$sic===1||$sIyuT===1) && arr($text,'/[+][st]([^+]+)$/') && (p
 		storedata('7.2.35','sa',0);
 	}
 }
+echo $ciN;
 /* ciNNamulordIrgho'nyatarasyAm (6.4.93) */
 if ( arr($text,'/[a]['.pc('hl').'][+]i/') && $_GET['sanAdi']==="Ric")
 {
@@ -5629,19 +5630,10 @@ if ($lakAra==="liw" && $so==="sip" && arr($text,'/[iIuUfFxXeEoO]\+/') && sub(pra
 /* patch for yAsuT Agama to combine it with the next pratyaya. because it would not be getting iDAgama. */
 //$text = one(array("+yA+"),array("+yA"),0);
 /* Adding iDAgama actually */
-if ($id_dhAtu==="sew" && $id_pratyaya==="sew" && !($yAsuT===1 && $lakAra==="ASIrliN")  && !in_array("iw",$Agama) && $caG!==1 && $ciN!==1 && $san!==1) // for seT dhAtus
+if ($id_dhAtu==="sew" && $id_pratyaya==="sew" && !($yAsuT===1 && $lakAra==="ASIrliN")  && (!in_array("iw",$Agama)||$ciN!==0) && $caG!==1 && $san!==1) // for seT dhAtus
 {
-	$text1= array();
-	foreach ($text as $value)
-	{
-		$parts = explode('+',$value);
-		if (preg_match('/^['.pc('vl').']/',$parts[count($parts)-1]))
-		{
-		$parts[count($parts)-1]="i".$parts[count($parts)-1];
-		}
-		$text1[]=implode('+',$parts);
-	}
-	$text = $text1;
+	$text = change('/[+](['.pc('vl').'][^+]*)$/','+i$1');
+	$text = change('/[+]ii/','+i');
 	// Removing unwanted iDAgama which happenned accidentally
 	$text = one(array("+iyAs+","Ay+t","daridrA+is","+a+i","+sa+i"),array("+yAs+","Ay+it","daridrA+s","+a+","+sa+"),0);
 	$text = two(array("sfap","spfaS","mfaS","kfaz","tfap","dfap"),array("+i"),array("sarp","sparS","marS","karz","tarp","darp"),array("+i"),0); // not before iDAgama.
