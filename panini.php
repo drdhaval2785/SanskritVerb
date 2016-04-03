@@ -2466,6 +2466,14 @@ if ($sanAdi==="yaN" && $lakAra!=="")
 		$text=one(array("A+ya"),array("I+ya"),0);
 		storedata('6.4.66','sa',0);
 	}
+	/* svapisyamivyeJAM yaGi (6.1.19) */
+	if ( in_array($fo,array("Yizvapa!","syamu!","vyeY")) && sub(array("+ya+"),blank(0),blank(0),0) && in_array($sanAdi,array("yaN","yaNluk")))
+	{
+		$text=two(array("svap","syam","vyA"),array("+ya"),array("suap","siam","viA"),array("+ya"),0);
+		storedata('6.1.19','sa',0);
+		$text=two(array("suap","siam","viA"),array("+ya"),array("sup","sim","vi"),array("+ya"),0);
+		storedata('6.4.108','sa',0);
+	}
 	/* I ghrAdhmoH (7.4.31) */
 	if (arr($text,'/^DmA[+]/')||arr($text,'/^GrA[+]/'))
 	{
@@ -2514,6 +2522,11 @@ if ($sanAdi==="yaN" && $lakAra!=="")
 		$text = change('/([^+]*)ir[+]/','$1Ir+');
 		storedata('8.2.77','sa',0);
 	}
+	/* na vazaH (6.1.20) */
+	elseif ( in_array($fo,array("vaSa!")) && sub(array("+ya+"),blank(0),blank(0),0) && in_array($sanAdi,array("yaN","yaNluk")))
+	{
+		storedata('6.1.20','sa',0);
+	}
 	/* grahijyAvayivyadhivaSTivicativRzcatipRcCatibhRjjatInAM Giti ca (6.1.16) */
 	elseif ( in_array($fo,array("jyA","graha!","vyaDa!","vyaca!","o!vraScU!","praCa!","Brasja!")) && sub(array("jyA","grah","vyaD","vyac","vraSc","pracC","Brasj"),array("+"),$apit_sArvadhAtuka_pratyayas,0)  )
 	{
@@ -2543,7 +2556,7 @@ if ($sanAdi==="yaN" && $lakAra!=="")
 		storedata('GnI','sa',0);
 	}
 	/* akRtsArvadhAtukayordIrghaH (7.4.25) */
-	elseif (arr($text,'/^['.pc('hl').'][^+]*['.pc('ac').'][+]/'))
+	elseif (arr($text,'/^['.pc('hl').'][^+]*['.pc('ac').'][+]ya[+]/'))
 	{
 		$text=two($ac,array("+ya+"),dirgha($ac),array("+ya+"),0);
 		storedata('7.4.25','sa',0);		
@@ -2596,14 +2609,20 @@ if ($sanAdi==="yaN" && $lakAra!=="")
 		$text = one(array("ya+a+"),array("ya+"),0);
 		storedata('6.1.97','sa',0);
 	}
-	$yaGverb = change('/[+][^+]*$/','');
-	$verb_without_anubandha = str_replace('+','',$yaGverb[0]);
-	$text = one($yaGverb,array($verb_without_anubandha),0);
+	$val1 = array();
+	foreach ($text as $value)
+	{
+		$yaGverb = preg_replace('/[+][^+]*$/','',$value);
+		$verb_without_anubandha = str_replace('+','',$yaGverb);
+		$val1[] = str_replace($yaGverb,$verb_without_anubandha,$value);
+	}
+	$text = $val1;
 	if ($vsuf==="yak") // yak got merged with the predecessor. To give it back.
 	{
 		$text = one(array("yayak+"),array("ya+yak+"),0);
 	}
 }
+print_r($text);
 /* UrNotezca pratiSedho vaktavyaH (vA) */
 // Pending. Not giving proper results. Am pratyaya not functioning well.
 if ($lakAra==="liw" && ends(array($fo),array("UrRuY"),4) )
@@ -3765,6 +3784,7 @@ if ( arr($text,'/A[+]a[+][Aai]/') && in_array($so,$tiG) )
 	storedata('6.1.9','sa',0);
 	$set=2;
 }
+print_r($text);
 if ($debug===1) {dibug("2200");}
 /* thAsasse (3.4.80) */
 if ( $pada === "pratyaya" && in_array($so,array("TAs")) && in_array($lakAra,array("law","liw","luw","lfw","sArvaDAtukalew","ArDaDAtukalew","low")) && sub(array("+"),array("TAs","saTAs","sATAs"),blank(0),0) )
@@ -3776,10 +3796,7 @@ if ( $pada === "pratyaya" && in_array($so,array("TAs")) && in_array($lakAra,arra
 //elseif (sub(array("+"),$taGplus,blank(0),0) && in_array($so,$taG) && in_array($lakAra,array("law","liw","luw","lfw","sArvaDAtukalew","ArDaDAtukalew","low")) && $jhasyaran!==1)
 elseif ( in_array($so,$taG) && in_array($lakAra,array("law","liw","luw","lfw","sArvaDAtukalew","ArDaDAtukalew","low")) && $jhasyaran!==1)
 {
-    for($i=0;$i<count($text);$i++)
-    {
-        $text[$i]=Ti1($text[$i])."e";
-    }
+	$text = change('/(['.pc('ac').']['.pc('hl').']*)$/','e');
 	storedata('3.4.79','sa',0);
 }
 /* vaito'nyatra (3.4.96) */
@@ -4207,8 +4224,13 @@ elseif ( in_array("k",$itpratyaya) && in_array($fo,array("brUY","Yizvapa!","yaja
 	storedata('6.1.15','sa',0);
     $text = samprasarana(array("uac","suap","iaj","uap","ue","vie","hie","uad","Su"),0);
 }
+/* na vazaH (6.1.20) */
+elseif ( in_array($fo,array("vaSa!")) && sub(array("ya"),blank(0),blank(0),0) && in_array($sanAdi,array("yaN","yaNluk")))
+{
+	storedata('6.1.20','sa',0);
+}
 /* grahijyAvayivyadhivaSTivicativRzcatipRcCatibhRjjatInAM Giti ca (6.1.16) */
-if ($sanAdi==="yaNluk" && in_array($fo,array("vaSa!","vyaca!","o!vraScU!","praCa!","Brasja!")) )
+elseif ($sanAdi==="yaNluk" && in_array($fo,array("vaSa!","vyaca!","o!vraScU!","praCa!","Brasja!")) )
 {
 }
 /* grahijyAvayivyadhivaSTivicativRzcatipRcCatibhRjjatInAM Giti ca (6.1.16) */
