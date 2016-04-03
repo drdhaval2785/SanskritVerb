@@ -6032,7 +6032,6 @@ if ( arr($text,'/[G][s][+]/') && ends(array($fo),array("ada!","Gasx!"),4) && in_
     $text = two(array("Gs"),array("+"),array("Gz"),array("+"),0);
 	storedata('8.3.60','sa',0);
 }
-echo "hi";
 $novrddhi=0;
 if ($debug===1) {dibug("4100");}
 /* ato rlAntasya (7.2.2) */
