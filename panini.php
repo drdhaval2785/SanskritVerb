@@ -1748,6 +1748,7 @@ if ( $sic!==0 && $so==="Ji" && sub(array("A"),array("+"),array("Ji"),0) )
 	storedata('3.4.110','sa',0);
 }
 if ($debug===1) {dibug("1300");}
+print_r($text);
 /* zruvaH zR ca (3.1.74) */
 if (in_array($fo,array("Sru")) && $sarvadhatuka===1 && sub(array("Sru"),array("+"),$tiG,0) && in_array($so,$tiG))
 {
@@ -1768,7 +1769,7 @@ elseif (in_array($so,$tiG) && in_array($fo,array("Divi!","kfvi!")) && $sarvadhat
 }
 // first treatment of curAdi, because, it will take Nic before vikaraNa pratyaya.
 /* satyApapAzarUpavINAtUlazlokasenAlomatvacavarmacUrNacurAdibhyo Nic (3.1.25) */
-elseif (in_array($so,$tiG) && $Nizri!==1 && $verbset==="curAdi" && in_array($fo,$curAdi) && $aG!==1 && !arr($text,'/[+]sic[+]/') && $vsuf!=="yak" && $sanAdi!=="san" && $sanAdi!=="Ric")
+elseif (in_array($so,$tiG) && $Nizri!==1 && $verbset==="curAdi" && in_array($fo,$curAdi) && $aG!==1 && !arr($text,'/[+]sic[+]/') && $sanAdi!=="san" && $sanAdi!=="Ric")
 {
 	$text=two(array("+"),$tiG,array("+Ric+"),$tiG,0); 
 	$text=two(array("+sa+Ric+"),$tiG,array("+sa+"),$tiG,0); 
@@ -4523,7 +4524,6 @@ if (arr($text,'/[+][cjYwWqQR]/') && in_array($so,$tiG))
     $text = one(array("+wA","+jus","+Ri","+Ra"),array("+A","+us","+i","+a"),0);
 	storedata('1.3.9','sa',0);
 }
-print_r($text);
 /* upadeze'janunAsika it (1.3.2)*/ 
 // Patch for sic
 if (arr($text,'/[+]si[+]/') && $sic===1 )
@@ -4540,7 +4540,6 @@ if (arr($text,'/[+]sic[+]/') && $sic===1 )
     $text = one(array("+sic+"),array("+s"),0);
 	storedata('1.3.9','sa',0);
 }
-print_r($text);
 /* lopo vyorvali (6.1.66) */
 // patch for sIyuT
 if ( !in_array($sanAdi,array("Ric")) && arr($text,'/Iy/') && sub(array("+Iy","+sIy"),array("+"),prat("vl"),0))
@@ -6804,7 +6803,6 @@ if( in_array($so,$tiG) && (arr($text,'/[iIuUfFxeoEOhyvrl]\+izIDv/') || (arr($tex
 	$text = two($iN2,array("+izIDv","+iDv"),$iN2,array("+izIQv","+iQv"),1);
 	storedata('8.3.79','sa',0);
 }
-print_r($text);
 /* iNaH SIdhvaMluGliTAM dho'GgAt (8.3.78) */
 if( in_array($so,$tiG) && ((arr($text,'/zIDv/') && sub($iN2,array("+zIDv"),blank(0),0)) || ( (arr($text,'/Dv/') && sub($iN2,array("+Dv"),blank(0),0)) && in_array($lakAra,array("luN","liw")) )) )
 {
