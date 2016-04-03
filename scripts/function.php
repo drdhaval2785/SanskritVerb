@@ -2956,9 +2956,9 @@ function yaG_abhyAsa_special()
 		storedata('7.4.82','sa',0);
 	}
 	/* dIrgho'kitaH (7.4.83) */
-	elseif (arr($text,'/^([^+]*)a[+][^A]*[+]/'))
+	elseif (arr($text,'/^([^+]*)a[+][^+]*[+]/'))
 	{
-		$text=change('/^([^+]*)a([+][^A]*[+])/','$1A$2');
+		$text=change('/^([^+]*)a([+][^+]*[+])/','$1A$2');
 		storedata('7.4.83','sa',0);
 	}
 	/* dIrgho'kitaH (7.4.83) */

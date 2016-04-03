@@ -2621,6 +2621,10 @@ if ($sanAdi==="yaN" && $lakAra!=="")
 	{
 		$text = one(array("yayak+"),array("ya+yak+"),0);
 	}
+	if (arr($text,'/yasic[+]/'))
+	{
+		$text = one(array("yasic+"),array("ya+sic+"),0);
+	}
 }
 /* UrNotezca pratiSedho vaktavyaH (vA) */
 // Pending. Not giving proper results. Am pratyaya not functioning well.
@@ -5671,6 +5675,14 @@ if ($id_dhAtu==="vew" && $id_pratyaya==="sew" && !($yAsuT===1 && $lakAra==="ASIr
 	{
 		$text = change('/[+](s[^+]+)$/','+i$1');
 	}
+	storedata('7.2.35','sa',0);
+	$Agama=array_merge($Agama,array("iw"));
+}
+// Patch for yaN
+if ($sanAdi==="yaN" && in_array($lakAra,array("luw","lfw","lfN","ASIrliN","sArvaDAtukalew","ArDaDAtukalew","luN")))
+{
+	$text = change('/[+](['.pc('vl').'][^+]*)$/','+i$1');
+	$text = change('/[+]ii/','+i');
 	storedata('7.2.35','sa',0);
 	$Agama=array_merge($Agama,array("iw"));
 }
