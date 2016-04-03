@@ -4694,7 +4694,6 @@ if (($syatAsI===1||$sic===1||$sIyuT===1) && arr($text,'/[+][st]([^+]+)$/') && (p
 		storedata('7.2.35','sa',0);
 	}
 }
-echo $ciN;
 /* ciNNamulordIrgho'nyatarasyAm (6.4.93) */
 if ( arr($text,'/[a]['.pc('hl').'][+]i/') && $_GET['sanAdi']==="Ric")
 {
