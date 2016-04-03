@@ -1,9 +1,0 @@
-Changelog
-
-Unfortunately Version 1.0 to 3.0 does not have any logging. It was in initial days of my coding, so I was not that particular about the changelog maintenence.
-
-1. Version 4.0 - 10 June 2015.
-a. The code is refractored. Now the GUI and the core grammar coding is separated. 
-b. The output is sent to browser as well as stored in verboutput folder.
-
-2. Shift to Ubuntu machine for development 2 October 2015.
