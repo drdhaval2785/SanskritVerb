@@ -3586,7 +3586,6 @@ if ($lakAra==="liw" && sub(array("+Am+"),$tiG1,blank(0),0) )
 	$text=$val;
 	$fo="qukfY";
 	$verb_without_anubandha="kf";
-	print_r($text);
 }
 /* asaMyogAlliT kit (1.2.5) */
 if (!arr(array($verb_without_anubandha),'/['.pc('hl').'M]['.pc('hl').']$/') && $lakAra==="liw" && !in_array($so,array("tip","sip","mip")))
@@ -12098,7 +12097,6 @@ if (arr($text,'/[H]$/') && $start===1  && $pada ==="pada" )
 	storedata('8.2.66','sa',0);
       $r1= 1;
 }
-print_r($text);
 /* ahan(8.2.68) and ro'supi (8.2.69) and rUparAtrirathantareSu vAcyam (vA 4847) */ 
 $noahan = array("vftrahan","bahuvftrahan");
 if (arr($text,'/h[aA]n\+/') && sub(array("ahan","Ahan","AhAn"),array("+"),blank(0),0) && !sub($noahan,blank(0),blank(0),0) && !(in_array($so,$sup)) && $pada==="pada" && $type!=="tiGanta")
