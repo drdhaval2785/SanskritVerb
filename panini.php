@@ -1549,6 +1549,7 @@ if ($sanAdi==="san" && arr($text,'/^['.pc('ac').']/'))
 		storedata('7.4.58','sa',0);
 	}
 	$text = change('/[+]/','');
+	$verb_without_anubandha = $text[0];
 }
 /* sannanta dvitva */
 elseif ($sanAdi==="san" && arr($text,'/^['.pc('hl').']/'))
@@ -1689,7 +1690,6 @@ elseif ($sanAdi==="san" && arr($text,'/^['.pc('hl').']/'))
 		$text = change('/^UrRunu([+]*[sz]a$)/','UrRunU$1');
 		storedata('6.4.16','sa',0);
 	}
-	print_r($text);
 	/* atra lopo'bhyAsasya (7.4.58) */
 	// Pending. Will need to enumerate all forms here.
 	if ( sub(array("Ipsi+sa","Irdsi+sa","di+dit+sa","di+Dit+sa","mi+mit+sa","Si+Sik+sa","ri+riB+sa","li+liB+sa","pi+pit+sa","pi+pid+sa","mu+mokza","di+dIB+sa","di+diB+sa"),blank(0),blank(0),0) && $san===1)
@@ -1698,6 +1698,7 @@ elseif ($sanAdi==="san" && arr($text,'/^['.pc('hl').']/'))
 		storedata('7.4.58','sa',0);
 	}
 	$text = change('/[+]/','');
+	$verb_without_anubandha = $text[0];
 }
 /* tapastapaHkarmakasyaiva (3.1.88) */
 if ($fo==="tapa!" && in_array($so,$tiG) && $vAcya==="karmakartR")
