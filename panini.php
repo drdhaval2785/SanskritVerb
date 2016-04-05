@@ -4115,9 +4115,13 @@ if ( $lakAra==="low" && pr2(array("e"),array(""),blank(0),array("Am"),array(""),
 /* tuhyostAtaGGAziSyanyatarsyAm (7.1.35) */
 if (  in_array($so,$tiG) && pr2(array("+"),array("tu","hi"),blank(0),array("+"),array("tAt","tAt"),blank(0),$text)!==$text)
 {
-    $text1=pr2(array("+"),array("tu","hi"),blank(0),array("+"),array("tAt","tAt"),blank(0),$text);
+    $text1=pr2(array("+"),array("tu","hi"),blank(0),array("+"),array("tAtaN","tAtaN"),blank(0),$text);
     $text = array_merge($text,$text1);
 	storedata('7.1.35','sa',0);
+	storedata('1.3.2','pa',0);
+	storedata('1.3.3','pa',0);
+	$text = change('/tAtaN$/','tAt');
+	storedata('1.3.9','sa',0);
 }
 /* ancu definitions */
 if ($_GET['cond1_13_1']==="1")
