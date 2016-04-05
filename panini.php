@@ -1307,9 +1307,7 @@ if ($sanAdi==="yaNluk")
 		$abhyAsa=1;
 		$abhyasta=1;
 		abhyAsa_halAdi();
-		print_r($text);
 		yaG_abhyAsa_special();
-		print_r($text);
 		$text = change('/[+]/','');
 		$verb_without_anubandha = $text[0];
 	}
@@ -5615,10 +5613,11 @@ if ($didhI!==1 && $bhUsuvo!==1  && $kGiti!==1 && arr($text,'/['.pc('hl').'][+]u[
     $text=pr2($hl,array("+u+"),$pit_sArvadhAtuka_pratyayas,$hl,array("+o+"),$pit_sArvadhAtuka_pratyayas,$text);    
 	storedata('7.3.84','sa',0);
 }
+print_r($text);
 /* sArvadhAtukArdhadhAtukayoH (7.3.84) */
-if ( ($sarvadhatuka===1 || $ardhadhatuka===1)   && $didhI!==1 && $bhUsuvo!==1 && arr($text,'/\+I\+/') && pr2(array("i","I","u","U","f","F","x","X",),array("+I+"),$halAdi_pit_sArvadhAtuka_pratyayas,array("e","e","o","o","ar","ar","al","al",),array("+I"),$halAdi_pit_sArvadhAtuka_pratyayas,$text)!==$text )
+if ( ($sarvadhatuka===1 || $ardhadhatuka===1)   && $didhI!==1 && $bhUsuvo!==1 && arr($text,'/\+I[+]*['.pc('hl').']/') && pr2(array("i","I","u","U","f","F","x","X",),array("+I+","+I"),$halAdi_pit_sArvadhAtuka_pratyayas,array("e","e","o","o","ar","ar","al","al",),array("+I","+I"),$halAdi_pit_sArvadhAtuka_pratyayas,$text)!==$text )
 {
-    $text=pr2(array("i","I","u","U","f","F","x","X",),array("+I+"),$halAdi_pit_sArvadhAtuka_pratyayas,array("e","e","o","o","ar","ar","al","al",),array("+I"),$halAdi_pit_sArvadhAtuka_pratyayas,$text);
+    $text=pr2(array("i","I","u","U","f","F","x","X",),array("+I+","+I"),$halAdi_pit_sArvadhAtuka_pratyayas,array("e","e","o","o","ar","ar","al","al",),array("+I","+I"),$halAdi_pit_sArvadhAtuka_pratyayas,$text);
 	storedata('7.3.84','sa',0);
 }
 $text = one(array("sI+t","sI+s"),array("sIt","sIs"),0); // See https://github.com/drdhaval2785/SanskritVerb/issues/281
@@ -5678,7 +5677,11 @@ if (arr($text,'/['.pc('hl').']\+nA\+hi/') && in_array($so,$tiG) )
     $text=two($hl,array("+nA+hi"),$hl,array("+Ana+hi"),0);
 	storedata('3.1.83','sa',0);
 }
-//$text = one(array("+yA+"),array("+yA"),0);
+if (arr($text,'/yAam/'))
+{
+	$text = change('/yAam$/','yAm');
+	storedata('6.1.101','sa',0);
+}
 /* I halyaghoH (6.4.113) */
 if (arr($text,'/\+nA\+/') && sub(array("+"),array("nA+"),$halAdi_apit_sArvadhAtuka_pratyayas,0) && (in_array("N",$it)||in_array("N",$it)) && $sanAdi!=="yaN")
 {
