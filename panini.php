@@ -879,6 +879,44 @@ if ($sambuddhi===1)
 // Right now what will happen is that 1 member -> 2 members by some sUtra. For next sUtra, we will take these two members one by one and store their results in $text itself.
 $text = array($first); // Displaying only the verb in the initial phase
 
+print_r($text);
+/* dhAtu it removal */
+if ($type==="tiGanta" )
+{
+	/* patch to stop elision of verbs ending with i!r */
+	if (arr($text,'/[i][!][r]$/'))
+	{
+		$nomidelision=1;
+		storedata('1.3.7-4','pa',0);
+		$text = change('/i[!]r$/','');
+		storedata('1.3.9','sa',0);
+	}
+	elseif (arr($text,'/^[^+]*['.pc('hl').']/') && !in_array($fo,array("Riji!r","viji!r","vizx!")) && !arr(array($fo),'/[Ff]$/') && $nomidelision!==1)
+	{
+		storedata('1.3.3','pa',0);
+		$text = change('/^([^+]*)['.pc('hl').']$/','$1');
+		storedata('1.3.9','sa',0);
+	}
+	if (arr($text,'/['.pc('ac').'][!]/'))
+	{
+		storedata('1.3.2','pa',0);
+		$text = change('/['.pc('ac').'][!]/','');
+		storedata('1.3.9','sa',0);
+	}
+	/* AdirJiTuDavaH (1.3.5) */
+	if ((arr($text,'/^Yi/')||arr($text,'/^wu/')||arr($text,'/^qu/')) && $pada=== "pratyaya" && in_array($so,$tiG))
+	{
+		if(substr($first,0,2) === "Yi") { $itprakriti = array_merge($itprakriti,array("Yi")); }
+		if(substr($first,0,2) === "wu") { $itprakriti = array_merge($itprakriti,array("wu")); }
+		if(substr($first,0,2) === "qu") { $itprakriti = array_merge($itprakriti,array("qu")); }
+		storedata('1.3.5','pa',0);
+		$text = change('/^Yi/','');
+		$text = change('/^wu/','');
+		$text = change('/^qu/','');
+		storedata('1.3.9','sa',0);
+	}
+}
+print_r($text);
 /* Special message for bhAvavAcya */
 if (in_array($vAcya,array("bhAva","karmakartR")))
 {
@@ -2333,16 +2371,6 @@ if (in_array($so,$tiG) && $lakAra!=="" && in_array($fo,array("pA","GrA","DmA","z
     $nomidelision=1; // We will remember this while doing halantyam and prevent halantyam application, because these are not upadeza
 	$vijait=1; // to prevent application of pugantalaghUpadhasya ca.
 }
-/* AdirJiTuDavaH (1.3.5) */
-if ((substr($first,0,2) === "Yi" || substr($first,0,2) === "wu" || substr($first,0,2) === "qu") && $pada=== "pratyaya" && in_array($so,$tiG))
-{
-    if(substr($first,0,2) === "Yi") { $itprakriti = array_merge($itprakriti,array("Yi")); }
-    if(substr($first,0,2) === "wu") { $itprakriti = array_merge($itprakriti,array("wu")); }
-    if(substr($first,0,2) === "qu") { $itprakriti = array_merge($itprakriti,array("qu")); }
-	storedata('1.3.5','pa',0);
-    $text = first(array("Yi","wu","qu"),array("","",""),0); // function first removes and replaces specific strings from the words. For details see function.php.
-	storedata('1.3.9','sa',0);
-}
 if ($debug===1) {dibug("1600");}
 /* satva vidhi, natva vidhi, numAgama vidhi, anusvArasandhi, parasavarNasandhi, upadhAdIrghavidhi on dhAtus (Acc to sahajabodha) */
 // We are presuming that the verb entered is the verb with anusvAra and it markers, but without accent marks. I will have to revert back to handle without it markers and with accent marks specifically later.
@@ -2483,31 +2511,6 @@ elseif (in_array($so,$tiG) &&  in_array("i",$it) && $lakAra!=="" && !in_array($f
     $text = two($iditverbs2,array("+"),$iditverbs1,array("+"),0);
 	$text = one(array("+yank+"),array("+yak+"),0);
 	storedata('7.1.58','sa',0);
-}
-
-/* dhAtu it removal */
-if ($type==="tiGanta" )
-{
-	/* patch to stop elision of verbs ending with i!r */
-	if (arr(array($fo),'/[i][!][r]$/'))
-	{
-		$nomidelision=1;
-		storedata('1.3.7-4','pa',0);
-		$text = change('/i[!]r[+]/','+');
-		storedata('1.3.9','sa',0);
-	}
-	elseif (arr($text,'/^[^+]*['.pc('hl').'][+]/') && sub(array(substr($fo,-1)),array("+"),blank(0),0) && !in_array($fo,array("Riji!r","viji!r","vizx!")) && !arr(array($fo),'/[Ff]$/') && $nomidelision!==1)
-	{
-		storedata('1.3.3','pa',0);
-		$text = change('/^([^+]*)['.pc('hl').'][+]/','$1+');
-		storedata('1.3.9','sa',0);
-	}
-	if (arr($text,'/['.pc('ac').'][!]/'))
-	{
-		storedata('1.3.2','pa',0);
-		$text = change('/['.pc('ac').'][!]/','');
-		storedata('1.3.9','sa',0);
-	}
 }
 /* Adeca upadeze'ziti (6.1.45) */ 
 // special patch for sanAdi Ric.
