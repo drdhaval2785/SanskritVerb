@@ -2428,7 +2428,7 @@ function link_vartika($s) {
 
 function caG_halAdi()
 {
-	global $text; global $storedata, $us;
+	global $text; global $storedata, $us, $sanAdi;
 	if (arr($text,'/^(['.pc('hl').']*['.pc('ac').']{1}['.pc('hl').'MH]*)[+]a[+]/'))
 	{
 		$text = change('/^(['.pc('hl').']*['.pc('ac').']{1}['.pc('hl').'MH]*)[+]a[+]/','$1+$1+a+');
@@ -2436,6 +2436,10 @@ function caG_halAdi()
 	elseif (arr($text,'/^(['.pc('hl').']*['.pc('ac').']{1})['.pc('hl').'MH]*['.pc('ac').']['.pc('al').'MH]*[+]a[+]/'))
 	{
 		$text = change('/^(['.pc('hl').']*['.pc('ac').']{1})(['.pc('hl').'MH]*['.pc('ac').']['.pc('al').'MH]*[+]a[+])/','$1+$1$2');
+	}	
+	elseif ($sanAdi==="Ric" && arr($text,'/^(['.pc('hl').']*['.pc('ac').']{1})[+]Ric[+]a[+]/'))
+	{
+		$text = change('/^(['.pc('hl').']*['.pc('ac').']{1})[+]Ric[+]a[+]/','$1+$1+Ric+a+');
 	}	
 	/* caGi (6.1.11) */
 	storedata('6.1.1','pa',0);
