@@ -879,7 +879,6 @@ if ($sambuddhi===1)
 // Right now what will happen is that 1 member -> 2 members by some sUtra. For next sUtra, we will take these two members one by one and store their results in $text itself.
 $text = array($first); // Displaying only the verb in the initial phase
 
-print_r($text);
 /* dhAtu it removal */
 if ($type==="tiGanta" )
 {
@@ -916,7 +915,6 @@ if ($type==="tiGanta" )
 		storedata('1.3.9','sa',0);
 	}
 }
-print_r($text);
 /* Special message for bhAvavAcya */
 if (in_array($vAcya,array("bhAva","karmakartR")))
 {
