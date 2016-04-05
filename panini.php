@@ -915,6 +915,43 @@ if ($type==="tiGanta" )
 		storedata('1.3.9','sa',0);
 	}
 }
+/* satva vidhi, natva vidhi, numAgama vidhi, anusvArasandhi, parasavarNasandhi, upadhAdIrghavidhi on dhAtus (Acc to sahajabodha) */
+// We are presuming that the verb entered is the verb with anusvAra and it markers, but without accent marks. I will have to revert back to handle without it markers and with accent marks specifically later.
+/* subdhAtuSThivuSvakAdInAM satvapratiSedho vaktavyaH (vA 3499) */
+if (in_array($fo,array("zWivu!","zvazk")) )
+{
+	storedata('6.1.64-1','sa',0);
+}
+/* dhAtvAdeH SaH saH (6.1.64), No naH (6.1.65) and upadhAyAm ca (8.2.78) */
+elseif (arr($text,'/^[z]/') || arr($text,'/^[R]/') || arr($text,'/[iu][r][d]/')) 
+{
+   if (arr($text,'/^[z]/'))
+   {
+	   $text = change('/^([z])/','s');
+		storedata('6.1.64','sa',0);
+		$SaHsaH=1;
+		if (arr($text,'/^[s][wWqQR]/'))
+		{
+			$text=two(array("s"),$Tu,array("s"),$tu,0);
+			storedata('par@56-1','sa',0);
+		}
+   }
+   if (arr($text,'/^[R]/'))
+   {
+	   $text = change('/^([R])/','n');
+		storedata('6.1.65','sa',0);
+		if (arr($text,'/^[n][wWqQR]/'))
+		{
+			$text=two(array("n"),$Tu,array("n"),$tu,0);
+			storedata('par@56-1','sa',0);
+		}
+   }
+   if (arr($text,'/[iu][r][d]/'))
+   {
+	   $text=one(array("ird","urd"),array("Ird","Urd"),0);
+		storedata('8.2.78','sa',0);
+   }           
+}
 /* Special message for bhAvavAcya */
 if (in_array($vAcya,array("bhAva","karmakartR")))
 {
@@ -2377,43 +2414,6 @@ if (in_array($so,$tiG) && $lakAra!=="" && in_array($fo,array("pA","GrA","DmA","z
 	$vijait=1; // to prevent application of pugantalaghUpadhasya ca.
 }
 if ($debug===1) {dibug("1600");}
-/* satva vidhi, natva vidhi, numAgama vidhi, anusvArasandhi, parasavarNasandhi, upadhAdIrghavidhi on dhAtus (Acc to sahajabodha) */
-// We are presuming that the verb entered is the verb with anusvAra and it markers, but without accent marks. I will have to revert back to handle without it markers and with accent marks specifically later.
-/* subdhAtuSThivuSvakAdInAM satvapratiSedho vaktavyaH (vA 3499) */
-if (in_array($fo,array("zWivu!","zvazk")) )
-{
-	storedata('6.1.64-1','sa',0);
-}
-/* dhAtvAdeH SaH saH (6.1.64), No naH (6.1.65) and upadhAyAm ca (8.2.78) */
-elseif (arr($text,'/^[z]/') || arr($text,'/^[R]/') || arr($text,'/[iu][r][d]/')) 
-{
-   if (arr($text,'/^[z]/'))
-   {
-	   $text = change('/^([z])/','s');
-		storedata('6.1.64','sa',0);
-		$SaHsaH=1;
-		if (arr($text,'/^[s][wWqQR]/'))
-		{
-			$text=two(array("s"),$Tu,array("s"),$tu,0);
-			storedata('par@56-1','sa',0);
-		}
-   }
-   if (arr($text,'/^[R]/'))
-   {
-	   $text = change('/^([R])/','n');
-		storedata('6.1.65','sa',0);
-		if (arr($text,'/^[n][wWqQR]/'))
-		{
-			$text=two(array("n"),$Tu,array("n"),$tu,0);
-			storedata('par@56-1','sa',0);
-		}
-   }
-   if (arr($text,'/[iu][r][d]/'))
-   {
-	   $text=three(array("ir","ur"),$hl,array("+"),array("Ir","Ur"),$hl,array("+"),0);
-		storedata('8.2.78','sa',0);
-   }           
-}
 
 /* daMzasaJjasvaJjAM zapi (6.4.25) */
 if (in_array($fo,array("daMSa!","zaYja!","zvaYja!")) && sub(array("daMSa!","saYja!","svaYja!"),array("+Sap+"),$tiG,0) )
