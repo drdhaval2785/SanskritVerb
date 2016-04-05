@@ -2832,11 +2832,12 @@ function abhyAsa_halAdi()
 		$liT_Adeza=1;
 	}
 	/* hrasvaH (7.4.59) */
+	//if (arr($text,'/^([^+]*)[AIUeoEO][+]/'))
 	if (arr($text,'/^([^+]*)[AIUeoEO][+]/'))
 	{
-		$text=change('/^([^+]*)A[+]/','$1a+');
+		/*$text=change('/^([^+]*)A[+]/','$1a+');
 		$text=change('/^([^+]*)I[+]/','$1i+');
-		$text=change('/^([^+]*)U[+]/','$1u+');
+		$text=change('/^([^+]*)U[+]/','$1u+');*/
 		$text=change('/^([^+]*)e[+]/','$1i+');
 		$text=change('/^([^+]*)o[+]/','$1u+');
 		$text=change('/^([^+]*)E[+]/','$1i+');
