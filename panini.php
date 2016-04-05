@@ -938,6 +938,13 @@ if (in_array($so,$tiG) && $pada==="pratyaya" && $lakAra!=="" && $sanAdi==="Ric")
 	$text = change('/([^+])$/','$1+Ric');
 	storedata('3.1.26','sa',0);
 }
+/* Adeca upadeze'ziti (6.1.45) */ 
+// special patch for sanAdi Ric.
+if ( (in_array($sanAdi,array("Ric","RiN","yaN","yaNluk","san")) || arr($text,'/[+]Ri/') || $vsuf==="yak") && ends(array($verb_without_anubandha),array("e","o","E","O"),0) && !(in_array($fo,array("vyeY","veY","hveY")) && $vsuf==="yak")  )
+{
+    $text=two(array("e","o","E","O"),array("+"),array("A","A","A","A"),array("+"),0);
+	storedata('6.1.45','sa',0);
+}
 /* sanAdi Ric handling */
 if (arr($text,'/[+]Ric$/') && $sanAdi==="Ric" && $lakAra!=="luN")
 {
@@ -2511,14 +2518,6 @@ elseif (in_array($so,$tiG) &&  in_array("i",$it) && $lakAra!=="" && !in_array($f
     $text = two($iditverbs2,array("+"),$iditverbs1,array("+"),0);
 	$text = one(array("+yank+"),array("+yak+"),0);
 	storedata('7.1.58','sa',0);
-}
-/* Adeca upadeze'ziti (6.1.45) */ 
-// special patch for sanAdi Ric.
-if ( (in_array($sanAdi,array("Ric","RiN","yaN","yaNluk","san")) || arr($text,'/[+]Ri/') || $vsuf==="yak") && ends(array($verb_without_anubandha),array("e","o","E","O"),0) && !(in_array($fo,array("vyeY","veY","hveY")) && $vsuf==="yak")  )
-{
-    $text=two(array("e","o","E","O"),array("+"),array("A","A","A","A"),array("+"),0);
-	$text = two(array("e","o","E","O"),array("+Ri+"),array("A","A","A","A"),array("+Ri+"),0);
-	storedata('6.1.45','sa',0);
 }
 /* yaNluk dvitva */
 if ($sanAdi==="yaNluk")
