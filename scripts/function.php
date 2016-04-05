@@ -2613,79 +2613,79 @@ function san_aGgAdikArya()
 {
 	global $text;global $fo; global $storedata, $us, $san, $ac;
 	/* abhyastasya ca (6.1.33) */
-	if (sub(array("hvA"),array("+sa+"),blank(0),0))
+	if (arr($text,'/hvA+sa$/'))
 	{
-		$text=two(array("hvA"),array("+sa+"),array("hu"),array("+sa+"),0);
+		$text=two(array("hvA"),array("+sa"),array("hu"),array("+sa"),0);
 		storedata('6.1.33','sa',0);
 	}
 	/* janasanakhanAM saJjhaloH (6.4.42) */
-	if (arr($text,'/[jsK]an[+]sa[+]/') ) 
+	if (arr($text,'/[jsK]an[+]sa$/') ) 
 	{
-		$text=change('/([jsK])an([+]sa[+])/','$1A$2');
+		$text=change('/([jsK])an([+]sa)$/','$1A$2');
 		storedata('6.4.42','sa',0);
 	}
 	/* sani mImAghurabhalabhazakapatapadAM aca is (7.4.54) */
-	if (sub(array("mI","mA","dA","DA","raB","laB","Sak","pad","pat","raD"),array("+sa+"),blank(0),0))
+	if (sub(array("mI","mA","dA","DA","raB","laB","Sak","pad","pat","raD"),array("+sa"),blank(0),0))
 	{
-		$text=two(array("mI","mA","dA","DA","raB","laB","Sak","pad","pat"),array("+sa+"),array("mis","mis","dis","Dis","risB","lisB","Sisk","pisd","pist"),array("+sa+"),0);
-		if (arr($text,'/raD[+]sa/'))
+		$text=two(array("mI","mA","dA","DA","raB","laB","Sak","pad","pat"),array("+sa"),array("mis","mis","dis","Dis","risB","lisB","Sisk","pisd","pist"),array("+sa"),0);
+		if (arr($text,'/raD[+]sa$/'))
 		{
-			$text = two(array("raD"),array("+sa+"),array("risD"),array("+sa+"),0);
+			$text = two(array("raD"),array("+sa"),array("risD"),array("+sa"),0);
 			storedata('7.4.54-1','sa',0);
 		}
 		else
 		{
 			storedata('7.4.54','sa',0);
 		}
-		if (sub(array("risB","lisB","Sisk","pisd","pist","risD"),array("+sa+"),blank(0),0))
+		if (sub(array("risB","lisB","Sisk","pisd","pist","risD"),array("+sa"),blank(0),0))
 		{
-			$text = two(array("risB","lisB","Sisk","pisd","pist","risD"),array("+sa+"),array("riB","liB","Sik","pid","pit","riD"),array("+sa+"),0);
+			$text = two(array("risB","lisB","Sisk","pisd","pist","risD"),array("+sa"),array("riB","liB","Sik","pid","pit","riD"),array("+sa"),0);
 			storedata('8.2.29','sa',0);
 		}
 	}
 	/* ApjJapyRdhAmIt (7.4.55) */
-	elseif ( sub(array("jYap"),array("+sa+"),blank(0),0))
+	elseif ( sub(array("jYap"),array("+sa"),blank(0),0))
 	{
-		$text = two(array("jYap"),array("+sa+"),array("jYIp"),array("+sa+"),0);
+		$text = two(array("jYap"),array("+sa"),array("jYIp"),array("+sa"),0);
 		storedata('7.4.55','sa',0);
 	}
 	/* dambha icca (7.4.56) */
-	elseif ( sub(array("damB"),array("+sa+"),blank(0),0))
+	elseif ( sub(array("damB"),array("+sa"),blank(0),0))
 	{
-		$text = two(array("damB"),array("+sa+"),array("dimB"),array("+sa+"),1);
-		$text = two(array("damB"),array("+sa+"),array("dImB"),array("+sa+"),0);
+		$text = two(array("damB"),array("+sa"),array("dimB"),array("+sa"),1);
+		$text = two(array("damB"),array("+sa"),array("dImB"),array("+sa"),0);
 		storedata('7.4.56','sa',0);
 	}
 	/* muco'karmakasya guNo vA (7.4.57) */
-	elseif ( sub(array("muc"),array("+sa+"),blank(0),0))
+	elseif ( sub(array("muc"),array("+sa"),blank(0),0))
 	{
-		$text = two(array("muc"),array("+sa+"),array("moc"),array("+sa+"),1);
+		$text = two(array("muc"),array("+sa"),array("moc"),array("+sa"),1);
 		storedata('7.4.57','sa',0);
 	}
 	/* tanotervibhASA (6.4.17) */
-	elseif ( arr($text,'/^tan[+]*[sz]a[+]/') && $san===1)
+	elseif ( arr($text,'/^tan[+]*[sz]a$/') && $san===1)
 	{
-		$text = two(array("tan"),array("+sa+"),array("tAn"),array("+sa+"),1);
+		$text = two(array("tan"),array("+sa"),array("tAn"),array("+sa"),1);
 		storedata('6.4.17','sa',0);
 	}
 	/* ajjhanagamAM sani (6.4.16) */
-	elseif ( arr($text,'/^[^+]*['.pc('ac').'][+]*[sz]a[+]/') && $san===1 && $fo!=="UrRuY" )
+	elseif ( arr($text,'/^[^+]*['.pc('ac').'][+]*[sz]a$/') && $san===1 && $fo!=="UrRuY" )
 	{
-		$text = two($ac,array("+sa+"),dirgha($ac),array("+sa+"),0);
+		$text = two($ac,array("+sa"),dirgha($ac),array("+sa"),0);
 		storedata('6.4.16','sa',0);
 	}
 	/* ajjhanagamAM sani (6.4.16) */
-	elseif ( arr($text,'/han[+]*[sz]a[+]/') && $san===1 && $fo!=="UrRuY" )
+	elseif ( arr($text,'/han[+]*[sz]a$/') && $san===1 && $fo!=="UrRuY" )
 	{
-		$text = two(array("han"),array("+sa+"),array("hAn"),array("+sa+"),0);
+		$text = two(array("han"),array("+sa"),array("hAn"),array("+sa"),0);
 		storedata('6.4.16','sa',0);
 	}
 	/* cCvoH zUDanunAsike (6.4.19) */ 
-	if (arr($text,'/v[+]sa[+]/') )
+	if (arr($text,'/v[+]sa$/') )
 	{
-		$text = change('/v[+]sa[+]/','U+sa+');
+		$text = change('/v[+]sa$/','U+sa');
 		storedata('6.4.19','sa',0);
-		$text = change('/iU[+]sa[+]/','yU+sa+');
+		$text = change('/iU[+]sa$/','yU+sa');
 		storedata('6.1.77','sa',0);
 	}
 	/* grahijyAvayivyadhivaSTivicativRzcatipRcCatibhRjjatInAM Giti ca (6.1.16) */
@@ -2707,15 +2707,15 @@ function san_aGgAdikArya()
 		storedata('6.4.24','sa',0);
 	}
 	/* udoSThyapUrvasya (7.1.102) */
-	if ( arr($text,'/[pPbBmv]F[+]sa/'))
+	if ( arr($text,'/[pPbBmv]F[+]sa$/'))
 	{
-		$text=change('/([pPbBmv])F([+]sa)/','$1ur$2');
+		$text=change('/([pPbBmv])F([+]sa)$/','$1ur$2');
 		storedata('7.1.102','sa',0);
 	}
 	/* RRta iddhAtoH (7.1.100) */
-	elseif (arr($text,'/F[+]sa/'))
+	elseif (arr($text,'/F[+]sa$/'))
 	{
-		$text=change('/F([+]sa)/','ir$1');
+		$text=change('/F([+]sa)$/','ir$1');
 		storedata('7.1.100','sa',0);
 	}
 	return $text;
