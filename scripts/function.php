@@ -2358,10 +2358,10 @@ function Adezapratyaya($text)
 
 function ekAcobazo()
 {
-    global $text; global $verb_without_anubandha; global $storedata;
+    global $text; global $verb_without_anubandha; global $storedata, $sanAdi;
 	foreach ($text as $value)
 	{	
-		if ( !anekAca($verb_without_anubandha) && ( preg_match('/[bgqd](['.pc('al').']*)[JBGQD][+][sDz]/',$value) || preg_match('/[JBGQD][+]$/',$value) ) )
+		if ( (!anekAca($verb_without_anubandha||$sanAdi==="yaNluk")) && ( preg_match('/[bgqd](['.pc('al').']*)[JBGQD][+][sDz]/',$value) || preg_match('/[JBGQD][+]$/',$value) ) )
 		{
 			$value = preg_replace('/([b])(['.pc('al').']*)([JBGQD][+])/',"B$2$3",$value);
 			$value = preg_replace('/([g])(['.pc('al').']*)([JBGQD][+])/',"G$2$3",$value);
@@ -2894,9 +2894,9 @@ function yaG_abhyAsa_special()
 {
 	global $text;	global $caG; global $lakAra; global $fo; global $storedata, $us, $verbset, $sanAdi; global $liT_Adeza;
 	/* nugato'nunAsikasya (7.4.85) */
-	if (arr($text,'/^([^+]*)a[+]([^+]*[YmNRn])/'))
+	if (arr($text,'/^([^+]*)a[+]([^+]*[YmNRn])$/'))
 	{
-		$text=change('/^([^+]*)a[+]([^+]*[YmNRn])/','$1an$2');
+		$text=change('/^([^+]*)a[+]([^+]*[YmNRn])$/','$1an$2');
 		storedata('7.4.85','sa',0);
 	}
 	/* japajabhadahadazabhaJjapazAM ca (7.4.86) */

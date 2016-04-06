@@ -993,11 +993,17 @@ elseif (in_array($so,$tiG) && (arr(array($verb_without_anubandha),'/[^r]v$/') &&
 	exit(0);
 }
 /* Non application of yaGluganta in some verbs. See S.B. part 2 page 465-66 */
-elseif (in_array($so,$tiG) && !in_array($fo,array("mavya!")) && arr(array($verb_without_anubandha),'/y$/') && $pada==="pratyaya" && $lakAra!=="" && in_array($sanAdi,array("yaN","yaNluk")) )
+elseif (in_array($so,$tiG) && in_array($fo,array("mavya!")) && $pada==="pratyaya" && $lakAra!=="" && in_array($sanAdi,array("yaN","yaNluk")) )
 {
 	storedata('noyaN','red',0);
 	echo "No yaGluganta for this verb.";
 	exit(0);
+}
+/* Non application of yaGluganta in some verbs. See S.B. part 2 page 465-66 */
+elseif (in_array($so,$tiG) && !in_array($fo,array("mavya!")) && arr(array($verb_without_anubandha),'/y$/') && $pada==="pratyaya" && $lakAra!=="" && in_array($sanAdi,array("yaN","yaNluk")) )
+{
+	$text = change('/([^+])$/','$1+yaN');
+	storedata('3.1.24','sa',0);
 }
 /* dhAtorekAco halAdeH kriyAsamabhivyAhAre yaG (3.1.22) */
 elseif (in_array($so,$tiG) && arr(array($verb_without_anubandha),'/^['.pc(hl).']+['.pc('ac').'][^'.pc('ac').']*$/') && $pada==="pratyaya" && $lakAra!=="" && in_array($sanAdi,array("yaN","yaNluk")) && $verbset!=="curAdi")
@@ -1309,7 +1315,7 @@ if ($sanAdi==="yaNluk")
 		abhyAsa_halAdi();
 		yaG_abhyAsa_special();
 		$text = change('/[+]/','');
-		$verb_without_anubandha = $text[0];
+		$verb_without_anubandha = $text[count($text)-1];
 	}
 }
 /* sanAdi yaN handling */
@@ -1760,7 +1766,7 @@ if ($debug===1) {dibug("800");}
 // Joining the two input words 
 if ($second === "") // if there is no pratyaya. This doesn't happen in subanta / tiGanta generation. But kept it for other uses.
 {
-    $input = ltrim(chop($text[0]));
+    $input = ltrim(chop($text[count($text)-1]));
 }
 elseif ($first === "") // if there is no prakRti. This doesn't happen in subanta / tiGanta generation. But kept it for other uses, like sandhi etc.
 {
@@ -1769,12 +1775,12 @@ elseif ($first === "") // if there is no prakRti. This doesn't happen in subanta
 elseif ($type==="tiGanta") // this option is used for subanta / tiGanta generation. $input is 'prakRti'+'pratyaya'.
 {
 	$nonpurelakara = str_replace(array("viDiliN","ASIrliN","sArvaDAtukalew","ArDaDAtukalew","law","liw","luw","lfw","low","laN","luN","lfN"),array("li!N","li!N","le!w","le!w","la!w","li!w","lu!w","lf!w","lo!w","la!N","lu!N","lf!N"),$lakAra);
-	$input = ltrim(chop($text[0]."+".$nonpurelakara));
+	$input = ltrim(chop($text[count($text)-1]."+".$nonpurelakara));
 	$input = str_replace("++","+",$input); // If $sanAdi is "", there would be two +s consecutively. To overcome this hurdle, this patch is created.
 }
 else 
 {
-	$input = ltrim(chop($text[0]."+".$vsuf."+".$second));
+	$input = ltrim(chop($text[count($text)-1]."+".$vsuf."+".$second));
 	$input = str_replace("++","+",$input);
 }
 $text = array($input); // Defining first member of the array as $input (combined words first and second)
@@ -5339,7 +5345,8 @@ elseif ( in_array($fo,array("pF","PF","bF","BF","mF")) && sub(array("pipar","biB
 {
 	//$text=three(array("pipar","biBar","mimar","pF","BF","mF"),array("+"),$apit_sArvadhAtuka_pratyayas,array("pipur","biBur","mimur","pur","Bur","mur"),array("+"),$apit_sArvadhAtuka_pratyayas,0);
 	$text=two(array("pipar","biBar","mimar","pF","BF","mF"),array("+"),array("pipur","biBur","mimur","pur","Bur","mur"),array("+"),0);
-	$text=change('/ur[+]tu$/','ar+tu');
+	$text=change('/ur[+]tu$/','F+tu');
+	$text=change('/ur[+]Itu$/','F+Itu');
 	storedata('7.1.102','sa',0);
 }
 elseif(arr($text,'/gup\+Ay/'))
@@ -5437,14 +5444,17 @@ foreach ($tiG1 as $value) {$iDtiG = "i".$value;} // defining iDtiG i.e. iDAgama+
 if (arr($text,'/^[pPbBmv]F[+]/')  && in_array($so,$tiG) && ($sarvadhatuka===1 || in_array("Sa",$vik) || arr($text,'/[+]yAs[+]/')) && $ciN!==1 && $ciN!==2 )
 {
 	$text = change('/^([pPbBmv])F[+]/','$1ur+');
+	$text = change('/^([pPbBmv])ur[+]Itu/','$1f+Itu');
 	storedata('7.1.102','sa',0);
 	$text = change('/^([pPbBmv])ur[+]/','$1Ur+');
 	storedata('8.2.77','sa',0);
 }
 /* RRta iddhAtoH (7.1.100) */
-elseif (arr($text,'/F\+/') && in_array($so,$tiG) && ($sarvadhatuka===1 || in_array("Sa",$vik) || arr($text,'/[+]yAs[+]/')) && $ciN!==1 && $ciN!==2 )
+elseif (arr($text,'/[^pPbBmv]F\+/') && in_array($so,$tiG) && ($sarvadhatuka===1 || in_array("Sa",$vik) || arr($text,'/[+]yAs[+]/')) && $ciN!==1 && $ciN!==2 )
 {
+	print_r($text);
     $text=two(array("F"),array("+"),array("ir"),array("+"),0);
+	$text=change('/([iu])r[+]Itu$/','ar+Itu');
 	storedata('7.1.100','sa',0);
 	if (arr($text,'/ir[+]['.pc('hl').']/') && $sanAdi==="yaNluk")
 	{
@@ -5524,6 +5534,13 @@ if ( in_array($fo,$aniditverbs) && (in_array("N",$itpratyaya) || in_array("k",$i
 		storedata('6.4.24','sa',0);
 		$aniditAm = 1; // 0 - this sUtra has not applied. 1 - this sUtra has applied.		
 	}
+}
+/* aniditAM hala upadhAyAH kGiti (6.4.24) */ 
+if ($sanAdi==="yaNluk" && !in_array("i",$it) && $kGiti===1 && arr($text,'/[nMNYRm]['.pc('hl').'][+]/')  )
+{
+	$text = three(array("n","M","N","Y","R","m"),$hl,array("+"),array("","","","","",""),$hl,array("+"),0);        
+	storedata('6.4.24','sa',0);
+	$aniditAm = 1;
 }
 if ($debug===1) {dibug("3500");}
 /* usyapadAntasya (6.1.96) */
@@ -5613,7 +5630,6 @@ if ($didhI!==1 && $bhUsuvo!==1  && $kGiti!==1 && arr($text,'/['.pc('hl').'][+]u[
     $text=pr2($hl,array("+u+"),$pit_sArvadhAtuka_pratyayas,$hl,array("+o+"),$pit_sArvadhAtuka_pratyayas,$text);    
 	storedata('7.3.84','sa',0);
 }
-print_r($text);
 /* sArvadhAtukArdhadhAtukayoH (7.3.84) */
 if ( ($sarvadhatuka===1 || $ardhadhatuka===1)   && $didhI!==1 && $bhUsuvo!==1 && arr($text,'/\+I[+]*['.pc('hl').']/') && pr2(array("i","I","u","U","f","F","x","X",),array("+I+","+I"),$halAdi_pit_sArvadhAtuka_pratyayas,array("e","e","o","o","ar","ar","al","al",),array("+I","+I"),$halAdi_pit_sArvadhAtuka_pratyayas,$text)!==$text )
 {
@@ -7006,6 +7022,13 @@ if (arr($text,'/jahI\+hi/') && sub(array("jahI"),array("+"),array("hi"),0) && (i
     $text=three(array("jahI"),array("+"),array("hi"),array("jahi"),array("+"),array("hi"),1);
     $text=three(array("jahI"),array("+"),array("hi"),array("jahA"),array("+"),array("hi"),1);
 	storedata('6.4.115','sa',0);
+}
+/* lopo vyorvali (6.1.66) */
+// Patch for yaNluganta
+if ($sanAdi==="yaNluk" && arr($text,'/[vy][+]*['.pc('vl').']/') && in_array($so,$tiG) && !in_array("6.1.77",sutrasfromstoredata()))
+{
+    $text=change('/([vy])([+]*['.pc('vl').'])/','$2');
+	storedata('6.1.66','sa',0);
 }
 /* Joining aGga and pratyayas */
 /* ato dIrgho yaJi (7.3.101) */
