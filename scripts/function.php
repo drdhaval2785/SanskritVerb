@@ -2552,6 +2552,11 @@ function san_ajAdi()
 		storedata('bakAra','sa',0);
 		$bakara=1;
 	}
+	elseif (arr($text,'/^(['.pc('ac').']['.pc('hl').'MH])(['.pc('hl').'MH]+)(['.pc('ac').'])([^+]*)$/'))
+	{
+		$text = change('/^(['.pc('ac').'])(['.pc('hl').'MH])(['.pc('hl').'MH]+)(['.pc('ac').'])([^+]*)$/','$1$2$3$4+$3$4$5');
+		storedata('6.1.2','sa',0);
+	}
 	elseif (arr($text,'/^(['.pc('ac').']['.pc('hl').'MH])(['.pc('hl').'MH]*)(['.pc('ac').'])([^+]*)$/'))
 	{
 		$text = change('/^(['.pc('ac').'])(['.pc('hl').'MH])(['.pc('hl').'MH]*)(['.pc('ac').'])([^+]*)$/','$1$2$4+$2$3$4$5');
@@ -2718,6 +2723,56 @@ function san_aGgAdikArya()
 		$text=change('/F([+]sa)$/','ir$1');
 		storedata('7.1.100','sa',0);
 	}
+	print_r($text);
+	/* dAderdhAtorghaH (8.2.32) */
+	if (arr($text,'/['.pc('hl').'][+][sz]a$/') && sub(array("dah","dAh","dih","duh","dfh","drAh","druh","deh"),array("+sa"),blank(0),0) )
+	{
+		$text = two(array("dah","dAh","dih","duh","dfh","drAh","druh","deh"),array("+sa"),array("daG","dAG","diG","duG","dfG","drAG","druG","deG"),array("+sa"),0);
+		storedata('8.2.32','sa',0);
+	}
+	/* naho dhaH (8.2.34) */
+	elseif (in_array($fo,array("Raha!")) && (arr($text,'/h[+][sz]a$/') ) && sub(array("nah","nAh"),blank(0),blank(0),0) )
+	{
+		$text = one(array("nah+sa","nAh+sa"),array("naD+sa","nAD+sa"),0);
+		storedata('8.2.34','sa',0);
+	}
+	/* ho DhaH (8.2.31) */ 
+	elseif (arr($text,'/[h][+][sz]a$/') )
+	{
+		$text = change('/[h]([+][sz]a)$/','Q$1');
+		storedata('8.2.31','sa',0);
+	} 
+	/* ekAco bazo bhaS jhaSantasya sdhvoH (8.2.37) */  
+	if ( arr($text,'/[bgqd](['.pc('al').']*)[JBGQD][+][sz]a$/')  )
+	{
+		ekAcobazo(); // created a new function 19/12/2014.
+	}
+	/* SaDhoH kassi (8.2.41) */
+	if (arr($text,'/[zQ][+]sa$/') )
+	{
+		$text = change('/[zQ][+]sa$/','k+sa');
+		storedata('8.2.41','sa',0);
+	}
+	/* coH kuH (8.2.30) */
+	$coku=0; global $cu;
+	if (arr($text,'/['.flat($cu).'][+]*[sz]a$/'))
+	{
+		$text = two($cu,array("+sa","+za"),$ku,array("+sa","+za"),0); 
+		storedata('8.2.30','sa',0);
+		$coku=1; // 0 - doesn't prevent kvinpratyayasya kuH. 1 - prevents kvinpratyayasya kuH.
+	}
+	/* khari ca (8.4.55) */ 
+	$Jl1 = array("J","B","G","Q","D","j","b","g","q","d","K","P","C","W","T","c","w","t","k","p","S","z","s","h"); // complete jhal.
+	$Jl2 = array("J","B","G","Q","D","j","b","g","q","d","K","P","C","W","T","h"); // jhal without car.
+    while(arr($text,'/[JBGQDjbgqdKPCWTh]([+]*)['.pc('Kr').']/')) // this rule can apply add infinitum.
+    {
+        if ( (arr($text,'/[JBGQDjbgqdKPCWTcwtkpSzsh]([+]*)['.pc('Kr').']/') || $dhut === 1))
+        {
+        $text = two($Jl1,prat('Kr'),savarna(prat('Jl'),prat('cr')),prat('Kr'),0);
+		storedata('8.4.55','sa',0);
+        }
+    }
+
 	return $text;
 }
 function liT_ajAdi()
