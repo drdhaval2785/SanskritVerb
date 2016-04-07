@@ -2723,7 +2723,6 @@ function san_aGgAdikArya()
 		$text=change('/F([+]sa)$/','ir$1');
 		storedata('7.1.100','sa',0);
 	}
-	print_r($text);
 	/* dAderdhAtorghaH (8.2.32) */
 	if (arr($text,'/['.pc('hl').'][+][sz]a$/') && sub(array("dah","dAh","dih","duh","dfh","drAh","druh","deh"),array("+sa"),blank(0),0) )
 	{
