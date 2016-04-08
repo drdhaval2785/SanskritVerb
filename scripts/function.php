@@ -2723,6 +2723,62 @@ function san_aGgAdikArya()
 		$text=change('/F([+]sa)$/','ir$1');
 		storedata('7.1.100','sa',0);
 	}
+	/* masjinazorjhali (7.1.60) */ 
+	if (in_array($fo,array("wumasjo!","RaSa!")) && sub(array("masj","naS"),array("+"),array("sa"),0) )
+	{ 
+		$text = three(array("masj","naS"),array("+"),array("sa"),array("mansj","nanS"),array("+"),array("sa"),0);
+		storedata('7.1.60','sa',0);
+	}
+	/* bhrasjo ropadhayoH ramanyatarasyAm (6.4.47) */ 
+	if (in_array($fo,array("Brasja!")) && sub(array("Brasj"),array("+sa"),blank(0),0) )
+	{ 
+		$text = two(array("Brasj"),array("+sa"),array("Barj"),array("+sa"),1);
+		storedata('6.4.47','sa',0);
+	}
+	/* mRjervRddhiH (7.2.114) */
+	if (  $fo==="mfjU!" && arr($text,'/mfj[+][i]*sa$/') )
+	{
+		$text=two(array("mfj"),array("+sa","+isa"),array("mArj"),array("+sa","+isa"),0);
+		storedata('7.2.114','sa',0);
+	}
+	$vrasca = array("vfSc","vraSc","sfj","mfj","yaj","rAj","BrAj","devej","parivrAj","Bfj","ftvij","mArj","vraSc","Brasj","sraj","sfaj","Barj","vrASc","vrAc","vrac","BrAj","BArj");
+	$vrashca = array("vfSz","vraSz","sfz","mfz","yaz","rAz","BrAz","devez","parivrAz","Bfz","ftviz","mArz","vraSz","Brasz","sraz","sfaz","Barz","vrAz","vrAz","vraz","BrAz","BArz");
+	if (in_array($fo,array("o!vraScU!","sfja!","mfja!","yaja!","rAjf!","wuBrAjf!","Bfja!","mfjU!","Brasja!")) && sub($vrasca,array("+"),array("sa"),0)  )
+	{
+		if (sub($vrasca,array("+sa"),blank(0),0))
+		{
+		$text = two($vrasca,array("+sa"),$vrashca,array("+sa"),0);
+		}
+		storedata('8.2.36','sa',0);
+		$vras = 1; // 0 - This sUtra has not applied. 1 - This sUtra has applied.
+	}
+	if (arr($text,'/[CS][+]sa$/'))
+	{
+		$text = change('/[CS][+]sa/','z+sa');
+		storedata('8.2.36','sa',0);
+		$vras=1;
+	}
+	/* nimittApAye naimittikasyApyapAyaH (paribhASA) */ 
+	if (( arr($text,'/Sz/') && sub(array("vfSz","vraSz"),blank(0),blank(0),0))  || arr($text,'/cz/'))
+	{
+		$text = one(array("vfSz","vraSz"),array("vfsz","vrasz"),0);
+		$text = one(array("cz"),array("z"),0);
+		storedata('par@56-1','sa',0);
+	}
+	/* skoH saMyogAdyorante ca (8.2.29) */
+	if (arr($text,'/s['.pc('hl').'][+]sa/'))
+	{
+		$text = change('/s(['.pc('hl').'][+]sa)/','$1');
+		storedata('8.2.29','sa',0);
+	}
+	/* coH kuH (8.2.30) */
+	$coku=0; global $cu, $ku;
+	if (arr($text,'/['.flat($cu).'][+]*[sz]a$/'))
+	{
+		$text = two($cu,array("+sa","+za"),$ku,array("+sa","+za"),0); 
+		storedata('8.2.30','sa',0);
+		$coku=1; // 0 - doesn't prevent kvinpratyayasya kuH. 1 - prevents kvinpratyayasya kuH.
+	}
 	/* dAderdhAtorghaH (8.2.32) */
 	if (arr($text,'/['.pc('hl').'][+][sz]a$/') && sub(array("dah","dAh","dih","duh","dfh","drAh","druh","deh"),array("+sa"),blank(0),0) )
 	{
@@ -2751,14 +2807,6 @@ function san_aGgAdikArya()
 	{
 		$text = change('/[zQ][+]sa$/','k+sa');
 		storedata('8.2.41','sa',0);
-	}
-	/* coH kuH (8.2.30) */
-	$coku=0; global $cu;
-	if (arr($text,'/['.flat($cu).'][+]*[sz]a$/'))
-	{
-		$text = two($cu,array("+sa","+za"),$ku,array("+sa","+za"),0); 
-		storedata('8.2.30','sa',0);
-		$coku=1; // 0 - doesn't prevent kvinpratyayasya kuH. 1 - prevents kvinpratyayasya kuH.
 	}
 	/* khari ca (8.4.55) */ 
 	$Jl1 = array("J","B","G","Q","D","j","b","g","q","d","K","P","C","W","T","c","w","t","k","p","S","z","s","h"); // complete jhal.
