@@ -6396,7 +6396,6 @@ if ( arr($text,'/['.pc('hl').']['.pc('hl').'][f][+]/') && $lakAra==="liw" && in_
     $text=three($hl,$hl,array("f+"),$hl,$hl,array("ar+"),0);
 	storedata('7.4.10','sa',0);
 }
-print_r($text);
 /* masjinazorjhali (7.1.60) */ 
 if (in_array($fo,array("wumasjo!","RaSa!")) && sub(array("masj","naS"),array("+"),prat('Jl'),0) )
 { 
