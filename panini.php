@@ -1339,8 +1339,9 @@ if (arr($text,'/[+]Ric$/') && $sanAdi==="Ric" && $lakAra!=="luN")
 	/* glAsnAvanuvamAM ca (ga) */ 
 	elseif ( in_array($fo,array("glE","zRA","vanu!","wuvama!")) && sub(array("A"),$hl,array("+Ric"),0) )
 	{
-		$text = three(array("A"),$hl,array("+Ric"),array("a"),$hl,array("+Ric"),0);
-		storedata('glA','sa',0);
+		storedata('glA','pa',0);
+		$text = three(array("A"),$hl,array("+Ric"),array("a"),$hl,array("+Ric"),1);
+		storedata('6.4.92','sa',0);
 	}
 	/* raJjerNau mRgaramaNe nalopaH vaktavyaH (vA) */
 	elseif (arr($text,'/raYj[+]Ri/'))
