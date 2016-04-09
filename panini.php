@@ -1155,7 +1155,7 @@ if (arr($text,'/[+]Ric$/') && $sanAdi==="Ric" && $lakAra!=="luN")
 	/* nityaM smayateH (6.1.57) */
 	if (in_array($fo,array("zmiN")) && in_array($so,$tiG) && sub(array("smi"),array("+"),array("Ri"),0) )
 	{
-		$text=three(array("smi"),array("+"),array("Ri"),array("smA"),array("+"),array("Ri"),1);
+		$text=three(array("smi"),array("+"),array("Ri"),array("smA"),array("+"),array("Ri"),0);
 		storedata('6.1.57','sa',0);
 	}
 	/* vibhASA lIyateH (6.1.51) */
@@ -3181,7 +3181,7 @@ if ( $_GET['cond51']==='1' && in_array($so,$tiG) && sub(array("i",),array("+"),a
 	$Naugami = 1;
 } else { $Naugami = 0; }
 /* nityaM smayateH (6.1.57) */
-if (in_array($fo,array("zmiN")) && in_array($so,$tiG) && sub(array("smi"),array("+"),array("Ri"),0) )
+if (in_array($fo,array("zmiN")) && in_array($so,$taG) && sub(array("smi"),array("+"),array("Ri"),0) )
 {
     $text=three(array("smi"),array("+"),array("Ri"),array("smA"),array("+"),array("Ri"),1);
 	storedata('6.1.57','sa',0);
