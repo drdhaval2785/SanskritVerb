@@ -1343,6 +1343,13 @@ if (arr($text,'/[+]Ric$/') && $sanAdi==="Ric" && $lakAra!=="luN")
 		$text = three(array("A"),$hl,array("+Ric"),array("a"),$hl,array("+Ric"),1);
 		storedata('6.4.92','sa',0);
 	}
+	/* glAsnAvanuvamAM ca (ga) */ 
+	elseif ( in_array($fo,array("jYA")) && sub(array("A"),$hl,array("+Ric"),0) )
+	{
+		storedata('jYA','pa',0);
+		$text = three(array("A"),$hl,array("+Ric"),array("a"),$hl,array("+Ric"),1);
+		storedata('6.4.92','sa',0);
+	}
 	/* raJjerNau mRgaramaNe nalopaH vaktavyaH (vA) */
 	elseif (arr($text,'/raYj[+]Ri/'))
 	{
