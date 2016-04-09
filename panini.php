@@ -564,6 +564,11 @@ if ($type==='tiGanta')
 	{
 		$verbpada=verb_pada('1.3.74');
 	}
+	/* budhayudhanazajaneGprudrusrubhyo NeH (1.3.86) */
+	elseif ( in_array($first,array("buDa!","yuDa!","naSa!","iN","pru","dru","sru")) && $vAcya==="kartR" && ($verbset==="curAdi"||$sanAdi==="Ric"))
+	{
+		$verbpada=verb_pada('1.3.86');
+	}
 	/* Nicazca (1.3.74) */
 	elseif ( $sanAdi==="Ric")
 	{
@@ -656,12 +661,6 @@ if ($type==='tiGanta')
 	elseif ( ends(array($first),array("mfza!"),2) && $us==="pari" && $vAcya==="kartR")
 	{
 		$verbpada=verb_pada('1.3.82');
-	}
-	/* budhayudhanazajaneGprudrusrubhyo NeH (1.3.86) */
-	// NeH coding pending.
-	elseif ( in_array($first,array("buDa!","yuDa!","naSa!","iN","pru","dru","sru")) && $vAcya==="kartR" && ($verbset==="curAdi"||$sanAdi==="Ric"))
-	{
-		$verbpada=verb_pada('1.3.86');
 	}
 	/* na pAdamyAGyamAGyasaparimuharucinRtivadavasaH (1.3.89) */
 	elseif ( in_array($us.$first,array("pA","Ayama!","damu!","Ayasu!","parimuha!","ruca!","nftI!","vada!","vasa!")) && $vAcya==="kartR" && in_array($sanAdi,array("Ric","RiN")))
