@@ -606,7 +606,7 @@ if ($type==='tiGanta')
 	}
 	/* vRdbhyaH syasanoH (1.3.92) */
 	// san is pending. lRluToH syAtAsI - got the lakAras from here.
-	elseif ( in_array($first,array("vftu!","vrDu!","SfDu!","syandU!","kfpU!","kxpU!")) && $vAcya==="kartR" && in_array($lakAra,array("lfN","lfw")))
+	elseif ( in_array($first,array("vftu!","vfDu!","SfDu!","syandU!","kfpU!","kxpU!")) && $vAcya==="kartR" && (in_array($lakAra,array("lfN","lfw"))||$san===1))
 	{
 		$verbpada=verb_pada('1.3.92');
 	}
@@ -1044,6 +1044,13 @@ elseif (in_array($so,$tiG) && $lakAra!=="" && $sanAdi==="yaNluk")
 	echo "No yaGluganta for this verb.";
 	exit(0);
 }
+/* na vRdbhyazcaturbhyaH (7.2.59) */
+if ( in_array($_GET['first'],array("vftu!","vfDu!","SfDu!","syandU!",)) && (in_array($lakAra,array("lfw","lfN")) || $san===1) && in_array($so,$taG))
+{
+	$id_dhAtu="sew";
+	storedata('7.2.59','sa',0);
+}
+if ($debug===1) {dibug("800");}
 /* yaGo'ci ca (2.4.74) */
 if ($sanAdi==="yaNluk")
 {
@@ -1069,6 +1076,17 @@ if ( (in_array($sanAdi,array("Ric","RiN","yaN","yaNluk","san")) || arr($text,'/[
 {
     $text=two(array("e","o","E","O"),array("+"),array("A","A","A","A"),array("+"),0);
 	storedata('6.1.45','sa',0);
+}
+/* luGsanorghaslR (2.4.37) */ 
+if (in_array($fo,array("ada!")) && $san===1 )
+{
+	$text=one(array("ad+san"),array("Gasx!+san"),0);
+	storedata('2.4.37','sa',0);
+	storedata('1.3.2','pa',0);
+	$text=one(array("Gasx!+san"),array("Gas+san"),0);
+	storedata('1.3.9','sa',0);
+	$fo = "Gasx!";
+	$it = array_merge($it,array("x"));
 }
 /* sanAdi Ric handling */
 if (arr($text,'/[+]Ric$/') && $sanAdi==="Ric" && $lakAra!=="luN")
@@ -1101,7 +1119,7 @@ if (arr($text,'/[+]Ric$/') && $sanAdi==="Ric" && $lakAra!=="luN")
 	/* vo vidhUnane juk (7.3.38) */
 	elseif (in_array($fo,array("vA")) && in_array($so,$tiG) && sub(array("vA"),array("+"),array("Ri"),0) )
 	{
-		$text=three(array("vA"),array("+"),array("Ri"),array("vAj"),array("+"),array("Ri"),0);
+		$text=three(array("vA"),array("+"),array("Ri"),array("vAj"),array("+"),array("Ri"),1);
 		storedata('7.3.38','sa',0);
 	}
 	/* zAcCAsAhvAvyAvepAM yuk (7.3.37) */
@@ -1743,7 +1761,7 @@ elseif ($sanAdi==="san" && arr($text,'/^['.pc('hl').']/'))
 		$itpratyaya=array_merge($itpratyaya,array("k"));
 		$it=array_merge($it,array("k"));
 		storedata('1.2.26','sa',0);
-		$kGiti=2;
+		$ralo=1;
 		storedata('1.1.5','sa',0);
 	}
 	/* halantAcca (1.2.10) */
@@ -1816,6 +1834,7 @@ elseif ($sanAdi==="san" && arr($text,'/^['.pc('hl').']/'))
 	/* pugantalaghUpadhasya ca (7.3.86) */
 	if (arr($text,'/[iufx]['.pc('hl').'][+]isa$/') && $ralo===1)
 	{
+		echo "yes";
 		$text1 = $text;
 		$text = change('/[i](['.pc('hl').'][+]isa$)/','e$1');
 		$text = change('/[u](['.pc('hl').'][+]isa$)/','o$1');
@@ -1853,16 +1872,10 @@ elseif ($sanAdi==="san" && arr($text,'/^['.pc('hl').']/'))
 		$text = change('/[uU]([+]*[pPbBmyrlvh][a])/','i$1');
 		storedata('7.4.80','sa',0);
 	}
-	/* sanyataH (7.4.79) */
-	if ( arr($text,'/^([^+]*)a[+]/') && $san===1 )
-	{
-		$text = change('/^([^+]*)a[+]/','$1i+');
-		storedata('7.4.79','sa',0);
-	}
 	/* atra lopo'bhyAsasya (7.4.58) */
-	if ( sub(array("Ipsi+sa","Irdsi+sa","di+dit+sa","di+Dit+sa","mi+mit+sa","Si+Sik+sa","ri+riB+sa","li+liB+sa","pi+pit+sa","pi+pid+sa","mu+mok+sa","di+dIB+sa","di+diB+sa"),blank(0),blank(0),0) && $san===1)
+	if ( sub(array("Ipsi+sa","Irdsi+sa","di+dit+sa","di+Dit+sa","mi+mit+sa","Si+Sik+sa","ri+rip+sa","li+lip+sa","pi+pit+sa","pi+pit+sa","mu+mok+sa","di+DIp+sa","di+Dip+sa","ri+rit+sa"),blank(0),blank(0),0) && $san===1)
 	{
-		$text = one(array("Ipsi+sa","Irdsi+sa","di+dit+sa","di+Dit+sa","mi+mit+sa","Si+Sik+sa","ri+riB+sa","li+liB+sa","pi+pit+sa","pi+pid+sa","mu+mok+sa","di+dIB+sa","di+diB+sa"),array("Ipsa","Irdsa","dit+sa","Dit+sa","mit+sa","Sik+sa","riB+sa","liB+sa","pit+sa","pid+sa","mok+sa","dIB+sa","diB+sa"),0);
+		$text = one(array("Ipsi+sa","Irdsi+sa","di+dit+sa","di+Dit+sa","mi+mit+sa","Si+Sik+sa","ri+rip+sa","li+lip+sa","pi+pit+sa","pi+pit+sa","mu+mok+sa","di+DIp+sa","di+Dip+sa","ri+rit+sa"),array("Ipsa","Irdsa","dit+sa","Dit+sa","mit+sa","Sik+sa","rip+sa","lip+sa","pit+sa","pit+sa","mok+sa","DIp+sa","Dip+sa","rit+sa"),0);
 		storedata('7.4.58','sa',0);
 	}
 	/* AdezapratyayayoH (8.3.59) */
@@ -1894,6 +1907,12 @@ elseif ($sanAdi==="san" && arr($text,'/^['.pc('hl').']/'))
 		$in = $text;
 		storedata('8.3.59','sa',0);
 		$Adezapratyaya=1;		
+	}
+	/* sanyataH (7.4.79) */
+	if ( arr($text,'/^([^+]*)a[+]/') && $san===1 )
+	{
+		$text = change('/^([^+]*)a[+]/','$1i+');
+		storedata('7.4.79','sa',0);
 	}
 	/* ajjhanagamAM sani (6.4.16) */
 	// Patch for UrRuY
@@ -1968,13 +1987,6 @@ if ($so==="Ji" && $verbset==="adAdi" && in_array($fo,array("vaca!"))  )
 {
 	storedata('~1','red',0);
 }
-/* na vRdbhyazcaturbhyaH (7.2.59) */
-if ( in_array($fo,array("vftu!","vfDu!","SfDu!","syandU!",)) && (in_array($lakAra,array("lfw","lfN")) || $san===1) && in_array($so,$taG))
-{
-	$id_dhAtu="sew";
-	storedata('7.2.59','sa',0);
-}
-if ($debug===1) {dibug("800");}
 
 /* preprocessing for the sup pratyayas. */
 // Joining the two input words 
@@ -5673,9 +5685,9 @@ if ($caG===1 && ($sanAdi==="Ric" || $verbset==="curAdi") && !in_array($fo,$curAd
 	san();
 }
 /* kRpo ro laH (8.2.18) */
-if (arr($text,'/kfp/') )
+if (arr($text,'/karp/') )
 {
-    $text=one(array("carI+kfp","cari+kfp","car+kfp","kfp"),array("calI+kxp","cali+kxp","cal+kxp","kxp"),0);
+    $text=one(array("karp"),array("kalp"),0);
 	storedata('8.2.18','sa',0);
 }
 /* aniditAM hala upadhAyAH kGiti (6.4.24) */ 
@@ -7253,11 +7265,11 @@ if( in_array($so,$tiG) && arr($text,'/([iIuUfFxXeEoOhyvrlkKgGN])([+]*[iI]*)s(['.
 	$text = change('/([iIuUfFxXeEoOhyvrlkKgGN][+]*[iI]*)sI/','$1zI');
 	$text = change('/zIs([+a-zA-Z]+)$/','zIz$1');
 	$text = change('/[+]is(['.pc('al').'])/','+iz$1');
-	$text = change('/^([^+]*[iIuU][+])z([^+]*iz[^+]*[+])/','$1s$2');
-	/* stautiNyoreva SaNyabhyAsAt (8.3.61) */	
-	if (arr($text,'/^[^+]*[iIuU]z[^+]*[iez]/') && $san===1)
+	$text = change('/^([^+]*[iIuUfFeEoOhyvrl][+])z([^+]*iz[^+]*[+])/','$1s$2');
+	/* stautiNyoreva SaNyabhyAsAt (8.3.61) */
+	if (arr($text,'/^[^iIuUfFxeEoOhyvrl]*[iIuUfFxeEoOhyvrl]z/') && $san===1)
 	{
-		$text= change('/^([^+]*[iIuU])z([^+]*[ie]z)/','$1s$2');
+		$text= change('/^([^iIuUfFxeEoOhyvrl]*[iIuUfFxeEoOhyvrl])z/','$1s');
 	}
 	if ($sanAdi==="yaNluk")
 	{
