@@ -877,7 +877,12 @@ if ($sambuddhi===1)
 // The reason behind creating an array and not keeping it a string is - sometimes the sUtras give 2 / more optional outputs. In that case, it is impossible to manage the string. 
 // Right now what will happen is that 1 member -> 2 members by some sUtra. For next sUtra, we will take these two members one by one and store their results in $text itself.
 $text = array($first); // Displaying only the verb in the initial phase
-
+/* ik dhAtu is always with 'aDi' */
+if ($first==="ik" && in_array($so,$tiG))
+{
+	$us = $us."+aDi";
+	$us = ltrim($us,'+');
+}
 /* dhAtu it removal */
 if ($type==="tiGanta" )
 {
@@ -12587,6 +12592,21 @@ if ($us!=="" && in_array($so,$tiG) && $upasarga_joined!==1)
     $text=Adyanta($text,$usplus,1);
 	$text=change('/^[+]/','');
     $upasarga_joined=1;
+	/* akaH savarNe dIrghaH (6.1.101) patch for upasargas */ 
+	if (arr($text,'/[aA][+]*[aA]/'))
+	{
+	$text = change('/[aA][+]*[aA]/','A');
+		storedata('6.1.101','sa',0);
+	}    
+	/* iko yaNaci (6.1.77) */
+	if (arr($text,'/[iIuUfFx][+]*['.pc('ac').']/'))
+	{
+		$text = change('/[iI][+]*(['.pc('ac').'])/','y$1');
+		$text = change('/[uU][+]*(['.pc('ac').'])/','v$1');
+		$text = change('/[fF][+]*(['.pc('ac').'])/','r$1');
+		$text = change('/[x][+]*(['.pc('ac').'])/','l$1');
+		storedata('6.1.77','sa',0);
+	}
 	$us = "";
 }
 
@@ -13606,25 +13626,6 @@ $text = one(array("+"),array(""),0);
 if ( arr($text,'/['.pc('hl').'][+]['.pc('ac').']/') )
 {
 $text = one(array("+"),array(""),0);
-}
-/* upasarga addition */
-if ($us!=="")
-{
-	/* akaH savarNe dIrghaH (6.1.101) patch for upasargas */ 
-	if (arr($text,'/[aA][aA]/'))
-	{
-		$text = change('/[aA][aA]/','A');
-		storedata('6.1.101','sa',0);
-	}    
-	/* iko yaNaci (6.1.77) */
-	if (arr($text,'/[iIuUfFx]['.pc('ac').']/'))
-	{
-		$text = change('/[iI](['.pc('ac').'])/','y$1');
-		$text = change('/[uU](['.pc('ac').'])/','v$1');
-		$text = change('/[fF](['.pc('ac').'])/','r$1');
-		$text = change('/[x](['.pc('ac').'])/','l$1');
-		storedata('6.1.77','sa',0);
-	}
 }
 
 $ras = '/([rzfF])([aAiIuUfFxXeoEOhyvrkKgGNpPbBmM+]*)([n])/';
