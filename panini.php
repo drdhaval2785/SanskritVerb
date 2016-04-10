@@ -3846,7 +3846,6 @@ if ( in_array($fo,$aniditverbs) && sub(array("+"),array("Syan","Sna","SnA","Snu"
 	storedata('6.4.24','sa',0);
     $aniditAm = 1; // 0 - this sUtra has not applied. 1 - this sUtra has applied.
 }
-
 /* ze tRmphAdInAM numvAcyaH (vA) */ 
 if ( in_array($fo,array("tfPa!","tfmPa!","dfPa!","dfmPa!","guPa!","gumPa!","uBa!","umBa!","SuBa!","SumBa!",)) && sub(array("tfP","tuP","dfP","fP","guP","uB","SuB","tup","tfh"),array("+Sa+"),blank(0),0) )
 {
