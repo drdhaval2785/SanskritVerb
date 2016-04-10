@@ -1168,11 +1168,11 @@ if (arr($text,'/[+]Ric$/') && $sanAdi==="Ric" && $lakAra!=="luN")
 		$text=three(array("lI"),array("+"),array("Ri"),array("lA"),array("+"),array("Ri"),1);
 		storedata('6.1.51','sa',0);
 	}
-	/* bibheterhetubhaye (6.1.55) */
+	/* bibheterhetubhaye (6.1.56) */
 	if (in_array($fo,array("YiBI")) && in_array($so,$tiG) && $_GET['cond39']==='1' && sub(array("BI",),array("+"),array("Ri"),0) )
 	{
 		$text=three(array("BI"),array("+"),array("Ri"),array("BA"),array("+"),array("Ri"),1);
-		storedata('6.1.55','sa',0);
+		storedata('6.1.56','sa',0);
 	}
 	/* krIGjInAM Nau (6.1.48) */
 	if ( in_array($fo,array("qukrIY","ji","iN")) && in_array($number,array("01.1096","02.0041","09.0001")) && in_array($so,$tiG) && sub(array("krI","ji","i"),array("+"),array("Ri"),0) )
