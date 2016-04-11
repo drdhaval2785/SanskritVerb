@@ -1352,6 +1352,7 @@ if (arr($text,'/[+]Ric$/') && $sanAdi==="Ric" && $lakAra!=="luN")
 		$text = change('/a[+]Ri/','+Ri');
 		storedata('6.4.48','sa',0);
 	}
+	print_r($text); echo $atolopa, $Naugami, $jAgro;
 	/* nodAttopadezasya mAntasyAcameH (7.3.34) */
 	if ( $id_dhAtu==="sew" && !in_array($fo,array("camu!","kamu!","wuvama!")) && $atolopa!==1 && $Naugami!==1 && $jAgro!==1 && (arr($text,'/am[+]Ric{0,1}[+]/')||arr($text,'/am[+]i$/')) && !(arr(array($verb_without_anubandha),'/^['.pc('hl').']/') && $caG===1))
 	{
@@ -1363,7 +1364,7 @@ if (arr($text,'/[+]Ric$/') && $sanAdi==="Ric" && $lakAra!=="luN")
 		storedata('7.3.35','sa',0);
 	}
 	/* ata upadhAyAH (7.2.116) */
-	elseif ( $atolopa!==1 && $Naugami!==1 && $jAgro!==1 && (arr($text,'/[a]['.pc('hl').'][+]Ric{0,1}[+]/')||arr($text,'/[a]['.pc('hl').'][+]i$/')) && !preg_match('/a$/',$fo) && !(arr(array($verb_without_anubandha),'/^['.pc('hl').']/') && $caG===1))
+	elseif ( $atolopa!==1 && $Naugami!==1 && $jAgro!==1 && (arr($text,'/[a]['.pc('hl').'][+]Ric{0,1}$/')||arr($text,'/[a]['.pc('hl').'][+]i$/')) && !preg_match('/a$/',$fo) && !(arr(array($verb_without_anubandha),'/^['.pc('hl').']/') && $caG===1) )
 	{
 		$text = change('/(^[^+]*)a(['.pc(hl).'])[+]Ric$/','$1A$2+Ric');
 		storedata('7.2.116','sa',0);
