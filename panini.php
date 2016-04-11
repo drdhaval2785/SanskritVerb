@@ -674,8 +674,7 @@ if ($type==='tiGanta')
 		$verbpada=verb_pada('1.3.90');
 	}
 	/* nigaraNacalanArthebhyazca (1.3.87) */
-	// NeH coding pending.
-	elseif ( in_array($first,array("nigF","aSa!","Buja!","cala!","cupa!","kapi!",)) && $vAcya==="kartR")
+	elseif ( in_array($first,array("nigF","aSa!","Buja!","cala!","cupa!","kapi!",)) && $vAcya==="kartR" && ($sanAdi==="Ric"||$verbset==="curAdi"))
 	{
 		$verbpada=verb_pada('1.3.87');
 	}
@@ -1091,6 +1090,69 @@ if (in_array($fo,array("ada!")) && $san===1 )
 	storedata('1.3.9','sa',0);
 	$fo = "Gasx!";
 	$it = array_merge($it,array("x"));
+}
+/* defining the sUtras mandating sanAdis */
+/* guptijkidbhyaH san (3.1.5) */
+echo $_GET['cond47']; print_r($text);
+if ( $_GET['cond47']==="1" )
+{
+    $text=change('/([^+]+)$/','$1+san');
+	storedata('3.1.5','sa',0);
+    $sanAdi="san";
+}
+/* mAnbadhadAnzAnbhyo dIrghazcAbhyAsasya (3.1.6) */
+// right now only coded for san pratyaya and not for dIrghatva of abhyAsa, because abhyAsa is not taught yet.
+if ( $_GET['cond48']==="1" )
+{
+    $text=change('/([^+]+)$/','$1+san');
+	storedata('3.1.6','sa',0);
+    $sanAdi="san";
+}
+/* gupUdhUpavicCipaNipanibhya AyaH (3.1.28) */
+if ( sub(array("gup","DUp","viC","pan","paR"),array("+"),blank(0),0) || ($fo==="DUpa!" && sub(array("DUpa!"),array("+"),$sArvadhAtuka_pratyayas,0) && $verbset==="BvAdi") || $_GET['cond49']==="1"  )
+{
+    $text=change('/([^+]+)$/','$1+Aya');
+	storedata('3.1.28','sa',0);
+    $sanAdi="Aya";
+	storedata('1.3.2','pa',0);
+	$text = change('/['.pc('ac').'][!][+]Aya/','+Aya');
+	$text = change('/fta[!][+]IyaN/','ft+IyaN');
+	$text = change('/kamu[!][+]RiN/','kam+RiN');
+	$id_dhAtu="sew";
+	storedata('1.3.9','sa',0);
+	if (arr($text,'/gup[+]Aya/'))
+	{
+		$text = change('/gup[+]Aya/','gopAya');
+		storedata('7.3.86','sa',0);
+	}
+}
+/* RterIyaG (3.1.29) */
+if ( in_array($fo,array("fta!")) && $pada==="pratyaya" && $lakAra!=="")
+{
+    $text=three(array("fta!"),array("+"),$lakAralist,array("fta!"),array("+IyaN+"),$lakAralist,0);
+	storedata('3.1.29','sa',0);
+    $sanAdi="IyaN";
+    $verbpada="A";
+	storedata('1.3.2','pa',0);
+	$text = change('/fta[!][+]IyaN/','ft+IyaN');
+	storedata('1.3.9','sa',0);
+}
+/* kamerNiG (3.1.30) */
+if ( in_array($fo,array("kamu!")) && $pada==="pratyaya" && $lakAra!=="" && $sanAdi!=="Ric" && $vsuf!=="yak")
+{
+    $text=three(array("kamu!"),array("+"),$lakAralist,array("kamu!"),array("+RiN+"),$lakAralist,0);
+	storedata('3.1.30','sa',0);
+    $sanAdi="RiN";
+    $verbpada="A";
+	storedata('1.3.2','pa',0);
+	$text = change('/kamu[!][+]RiN/','kam+RiN');
+	storedata('1.3.9','sa',0);
+	storedata('1.3.3','pa',0);
+	storedata('1.3.7','pa',0);
+	$text = change('/kam[+]RiN/','kam+i');
+	storedata('1.3.9','sa',0);	
+	$text = one(array("kam+i"),array("kAmi"),0);
+	storedata('7.2.116','sa',0);
 }
 /* sanAdi Ric handling */
 if (arr($text,'/[+]Ric$/') && $sanAdi==="Ric" && $lakAra!=="luN")
@@ -1786,6 +1848,7 @@ elseif ($sanAdi==="san" && arr($text,'/^['.pc('hl').']/'))
 		storedata('1.1.5','sa',0);
 	}
     /* vija iT (1.2.2) */ 
+    /* vija iT (1.2.2) */ 
     elseif ( in_array($fo,array("o!vijI!")) && $san===1 && $id_dhAtu==="sew" && $id_pratyaya==="sew" && $verbset==="tudAdi")
     {
         $itpratyaya=array_merge($itpratyaya,array("N"));
@@ -2159,68 +2222,6 @@ if (in_array($lakAra,$ArdhadhAtuka_lakAra)||$san===1)
 		storedata('1.2.2','pa',0);
 		$vijait=1;
     } else {$vijait=0; }
-}
-/* defining the sUtras mandating sanAdis */
-/* guptijkidbhyaH san (3.1.5) */
-if ( $_GET['cond47']==="1" )
-{
-    $text=three(array("gupa!","tija!","kita!"),array("+"),$lakAralist,array("gupa!","tija!","kita!"),array("+san+"),$lakAralist,0);
-	storedata('3.1.5','sa',0);
-    $sanAdi="san";
-}
-/* mAnbadhadAnzAnbhyo dIrghazcAbhyAsasya (3.1.6) */
-// right now only coded for san pratyaya and not for dIrghatva of abhyAsa, because abhyAsa is not taught yet.
-if ( $_GET['cond48']==="1" )
-{
-    $text=three(array("mAna!","baDa!","dAna!","SAna!"),array("+"),$lakAralist,array("mAna!","baDa!","dAna!","SAna!"),array("+san+"),$lakAralist,0);
-	storedata('3.1.6','sa',0);
-    $sanAdi="san";
-}
-/* gupUdhUpavicCipaNipanibhya AyaH (3.1.28) */
-if ( sub(array("gupU!","DUpa!","viCa!","pana!","paRa!"),array("+"),blank(0),0) || ($fo==="DUpa!" && sub(array("DUpa!"),array("+"),$sArvadhAtuka_pratyayas,0) && $verbset==="BvAdi") || $_GET['cond49']==="1"  )
-{
-    $text=three(array("gupU!","DUpa!","viCa!","pana!","paRa!"),array("+"),$lakAralist,array("gupU!","DUpa!","viCa!","pana!","paRa!"),array("+Aya+"),$lakAralist,0);
-	storedata('3.1.28','sa',0);
-    $sanAdi="Aya";
-	storedata('1.3.2','pa',0);
-	$text = change('/['.pc('ac').'][!][+]Aya/','+Aya');
-	$text = change('/fta[!][+]IyaN/','ft+IyaN');
-	$text = change('/kamu[!][+]RiN/','kam+RiN');
-	$id_dhAtu="sew";
-	storedata('1.3.9','sa',0);
-	if (arr($text,'/gup[+]Aya/'))
-	{
-		$text = change('/gup[+]Aya/','gopAya');
-		storedata('7.3.86','sa',0);
-	}
-}
-/* RterIyaG (3.1.29) */
-if ( in_array($fo,array("fta!")) && $pada==="pratyaya" && $lakAra!=="")
-{
-    $text=three(array("fta!"),array("+"),$lakAralist,array("fta!"),array("+IyaN+"),$lakAralist,0);
-	storedata('3.1.29','sa',0);
-    $sanAdi="IyaN";
-    $verbpada="A";
-	storedata('1.3.2','pa',0);
-	$text = change('/fta[!][+]IyaN/','ft+IyaN');
-	storedata('1.3.9','sa',0);
-}
-/* kamerNiG (3.1.30) */
-if ( in_array($fo,array("kamu!")) && $pada==="pratyaya" && $lakAra!=="" && $sanAdi!=="Ric" && $vsuf!=="yak")
-{
-    $text=three(array("kamu!"),array("+"),$lakAralist,array("kamu!"),array("+RiN+"),$lakAralist,0);
-	storedata('3.1.30','sa',0);
-    $sanAdi="RiN";
-    $verbpada="A";
-	storedata('1.3.2','pa',0);
-	$text = change('/kamu[!][+]RiN/','kam+RiN');
-	storedata('1.3.9','sa',0);
-	storedata('1.3.3','pa',0);
-	storedata('1.3.7','pa',0);
-	$text = change('/kam[+]RiN/','kam+i');
-	storedata('1.3.9','sa',0);	
-	$text = one(array("kam+i"),array("kAmi"),0);
-	storedata('7.2.116','sa',0);
 }
 /* AyAdaya ArdhadhAtuke vA (3.1.31) */
 // Right now it is difficult to handle optional forms in this case. Commenting it out
@@ -5551,7 +5552,6 @@ elseif(arr($text,'/p\+i\+/') && sub(array("fp","hrIp","vlIp","rIp","knUp","kzmAp
 /* pugantalaghUpadhasya ca (7.3.86) */
 elseif ($atolopa!==1 && !($verbset==="tudAdi" && $sarvadhatuka===1) && ($sarvadhatuka===1 || $ardhadhatuka===1) && arr($text,'/[iufx]['.pc('hl').'][+]/')  && $didhI!==1 && $vijait!==1 && sub(array("i","u","f","x"),$hl,array("+u+","+i+","+a+","+et","+eT","+isy","+syeT","+sya"),0) && !in_array("N",$itpratyaya) && !in_array("k",$itpratyaya) && $caG!==1 && $aG!==1 && $kGiti!==1 && $vijait!==1)
 {
-	echo "one";
     $text=three(array("i","u","f","x"),$hl,array("+u+","+i+","+a+"),array("e","o","ar","al"),$hl,array("+u+","+i+","+a+"),0);
 	$text=three(array("i","u","f","x"),$hl,array("+et","+eT","+isy","+syeT","+sya"),array("e","o","ar","al"),$hl,array("+et","+eT","+isy","+syeT","+sya"),0);
 	storedata('7.3.86','sa',0);
@@ -14150,7 +14150,7 @@ $itpratyaya = array();
 $Agama=array();
 //$sanAdi="";
 $TAp=0; $DAp=0; $cAp=0; $GIp=0; $GIn=0; $GIS=0; $kGiti=0; $abhyasta=0; $ajAdyataSTAp=0; $tusma=0; $upasarga_joined=0; $sicivRddhi=0; $atolopa=0; $caG=0; $aG=0; $zluvat=0; $aniditAm=0; $kGiti=0; $uzca=0; $abhyAsa=0; $Adezapratyaya=0; $jherjus=0; $sijabhyastavidibhyazca=0; $ciN=0; $Nit=0;
-$us = $_GET['upasarga'];
+$us = $_GET['upasarga']; $sanAdi=$_GET['sanAdi'];
 $temp = scrape1($first,0,2,1); 
 $verb_without_anubandha=$temp[0];
 $storedata=array();
