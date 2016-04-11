@@ -1093,7 +1093,6 @@ if (in_array($fo,array("ada!")) && $san===1 )
 }
 /* defining the sUtras mandating sanAdis */
 /* guptijkidbhyaH san (3.1.5) */
-echo $_GET['cond47']; print_r($text);
 if ( $_GET['cond47']==="1" )
 {
     $text=change('/([^+]+)$/','$1+san');
@@ -1102,14 +1101,14 @@ if ( $_GET['cond47']==="1" )
 }
 /* mAnbadhadAnzAnbhyo dIrghazcAbhyAsasya (3.1.6) */
 // right now only coded for san pratyaya and not for dIrghatva of abhyAsa, because abhyAsa is not taught yet.
-if ( $_GET['cond48']==="1" )
+elseif ( $_GET['cond48']==="1" )
 {
     $text=change('/([^+]+)$/','$1+san');
 	storedata('3.1.6','sa',0);
     $sanAdi="san";
 }
 /* gupUdhUpavicCipaNipanibhya AyaH (3.1.28) */
-if ( sub(array("gup","DUp","viC","pan","paR"),array("+"),blank(0),0) || ($fo==="DUpa!" && sub(array("DUpa!"),array("+"),$sArvadhAtuka_pratyayas,0) && $verbset==="BvAdi") || $_GET['cond49']==="1"  )
+elseif ( sub(array("gup","DUp","viC","pan","paR"),array("+"),blank(0),0) || ($fo==="DUpa!" && sub(array("DUpa!"),array("+"),$sArvadhAtuka_pratyayas,0) && $verbset==="BvAdi") || $_GET['cond49']==="1"  )
 {
     $text=change('/([^+]+)$/','$1+Aya');
 	storedata('3.1.28','sa',0);
