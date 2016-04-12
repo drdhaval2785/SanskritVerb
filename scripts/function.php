@@ -3123,6 +3123,13 @@ function san()
 	{
 		storedata('7.4.79','sa',0);
 	}
+	/* mAnbadhadAnzAnbhyo dIrghazcAbhyAsasya (3.1.6) */
+	if ( $manbadha===1 )
+	{
+		$text=change('/([^+]*)i[+]/','$1I+');
+		storedata('3.1.6','sa',0);
+		$sanAdi="san"; $san=1;
+	}
 
 	foreach ($text as $value)
 	{

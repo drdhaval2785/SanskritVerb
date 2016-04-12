@@ -1097,15 +1097,14 @@ if ( $_GET['cond47']==="1" )
 {
     $text=change('/([^+]+)$/','$1+san');
 	storedata('3.1.5','sa',0);
-    $sanAdi="san";
+    $sanAdi="san"; $san=1;
 }
 /* mAnbadhadAnzAnbhyo dIrghazcAbhyAsasya (3.1.6) */
-// right now only coded for san pratyaya and not for dIrghatva of abhyAsa, because abhyAsa is not taught yet.
 elseif ( $_GET['cond48']==="1" )
 {
     $text=change('/([^+]+)$/','$1+san');
 	storedata('3.1.6','sa',0);
-    $sanAdi="san";
+    $sanAdi="san"; $san=1; $manbadha=1;
 }
 /* gupUdhUpavicCipaNipanibhya AyaH (3.1.28) */
 elseif ( sub(array("gup","DUp","viC","pan","paR"),array("+"),blank(0),0) || ($fo==="DUpa!" && sub(array("DUpa!"),array("+"),$sArvadhAtuka_pratyayas,0) && $verbset==="BvAdi") || $_GET['cond49']==="1"  )
@@ -1848,7 +1847,6 @@ elseif ($sanAdi==="san" && arr($text,'/^['.pc('hl').']/'))
 		storedata('1.1.5','sa',0);
 	}
     /* vija iT (1.2.2) */ 
-    /* vija iT (1.2.2) */ 
     elseif ( in_array($fo,array("o!vijI!")) && $san===1 && $id_dhAtu==="sew" && $id_pratyaya==="sew" && $verbset==="tudAdi")
     {
         $itpratyaya=array_merge($itpratyaya,array("N"));
@@ -1909,7 +1907,6 @@ elseif ($sanAdi==="san" && arr($text,'/^['.pc('hl').']/'))
 	/* pugantalaghUpadhasya ca (7.3.86) */
 	if (arr($text,'/[iufx]['.pc('hl').'][+]isa$/') && $ralo===1)
 	{
-		echo "yes";
 		$text1 = $text;
 		$text = change('/[i](['.pc('hl').'][+]isa$)/','e$1');
 		$text = change('/[u](['.pc('hl').'][+]isa$)/','o$1');
@@ -1988,6 +1985,12 @@ elseif ($sanAdi==="san" && arr($text,'/^['.pc('hl').']/'))
 	{
 		$text = change('/^([^+]*)a[+]/','$1i+');
 		storedata('7.4.79','sa',0);
+	}
+	/* mAnbadhadAnzAnbhyo dIrghazcAbhyAsasya (3.1.6) */
+	if ( $manbadha===1 )
+	{
+		$text=change('/([^+]*)i[+]/','$1I+');
+		storedata('3.1.6','sa',0);
 	}
 	/* ajjhanagamAM sani (6.4.16) */
 	// Patch for UrRuY
