@@ -1351,7 +1351,6 @@ if (arr($text,'/[+]Ric$/') && $sanAdi==="Ric" && $lakAra!=="luN")
 		$text = change('/a[+]Ri/','+Ri');
 		storedata('6.4.48','sa',0);
 	}
-	print_r($text); echo $atolopa, $Naugami, $jAgro;
 	/* nodAttopadezasya mAntasyAcameH (7.3.34) */
 	if ( $id_dhAtu==="sew" && !in_array($fo,array("camu!","kamu!","wuvama!")) && $atolopa!==1 && $Naugami!==1 && $jAgro!==1 && (arr($text,'/am[+]Ric{0,1}[+]/')||arr($text,'/am[+]i$/')) && !(arr(array($verb_without_anubandha),'/^['.pc('hl').']/') && $caG===1))
 	{
@@ -3897,7 +3896,6 @@ if (in_array($so,$tiG) && arr(array($fo),'/[!]['.pc('hl').']$/') && $nomidelisio
 // Patch for removal of verb halantyam
 if (in_array($so,$tiG) && arr(array($fo),'/['.pc('hl').']$/') && !arr(array($fo),'/i[!]r$/') && !arr(array($fo),'/[aU][!]z$/') && sub(array(substr($fo,-1)),array("+"),blank(0),0))
 {
-	print_r($text);
 	storedata('1.3.3','pa',0);
 	$text=three($hlplus,$vikaraNa,array("+"),blank1("+",count($hlplus)),$vikaraNa,array("+"),0);
 	echo $_GET['first'];
@@ -3906,7 +3904,6 @@ if (in_array($so,$tiG) && arr(array($fo),'/['.pc('hl').']$/') && !arr(array($fo)
 		$text=change('/^([^+]*)['.pc('hl').'][+]/','$1+');
 		$text = one(array("i!r"),array("i!"),0);
 	}
-	print_r($text);
 	$text = change('/(^[^+]+)['.pc('hl').']([+]jus)/','$1$2'); // Check why this was kept here. Gave wrong form of kftI! rudhAdi viDiliN Ji, so commented out
 	$text=two($hlplus,array("Ri+"),blank1("+",count($hlplus)),array("Ri+"),0);
 	storedata('1.3.9','sa',0);
