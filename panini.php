@@ -1613,7 +1613,7 @@ if ($sanAdi==="yaN" && $lakAra!=="")
 	/* aniditAM hala upadhAyAH kGiti (6.4.24) */ 
 	elseif ( !itcheck(array("i"),1) && arr($text,'/[nMNYRm]['.pc('hl').'][+]ya$/') )
 	{
-		$text = three(array("n","M","N","Y","R","m"),$hl,array("+ya"),array("","","","","",""),$hl,array("+ya"),0);        
+		$text = three(array("n","M","N","Y","R","m"),$hl,array("+ya"),array("","","","","",""),$hl,array("+ya"),0);
 		storedata('6.4.24','sa',0);
 		$aniditAm = 1;
 	}
@@ -2049,6 +2049,42 @@ elseif ( in_array($vAcya,array("karma","bhAva","karmakartR")) && $pada==="pratya
 	storedata('3.1.67','sa',0);
 	$it=array_merge($it,array("k"));
 	$itpratyaya=array_merge($itpratyaya,array("k"));
+}
+/* yak pratyaya handling */
+if ($vsuf==="yak")
+{
+	/* halantyam and tasya lopaH */
+	storedata('1.3.3','pa',0);
+	$text = one(array("+yak"),array("+ya"),0);
+	storedata('1.3.9','sa',0);
+	/* aniditAM hala upadhAyAH kGiti (6.4.24) */ 
+	if ( !itcheck(array("i"),1) && arr($text,'/[nMNYRm]['.pc('hl').'][+]ya$/') )
+	{
+		$text = three(array("n","M","N","Y","R","m"),$hl,array("+ya"),array("","","","","",""),$hl,array("+ya"),0);
+		storedata('6.4.24','sa',0);
+		$aniditAm = 1;
+	}
+	/* ghumAsthAgApAjahAtisAM hali (6.4.66) */
+	if ( in_array($fo,array("do","deN","qudAY","dAR","Dew","quDAY","mA","zWA","iN","pA","hA","sA","gAN","mAN","meN","gA","iN","ik","gE","o!hAk","zo")) && sub(array("A+ya+"),blank(0),blank(0),0) && !in_array($number,array("02.0051","03.0008")) )
+	{
+		$text=one(array("A+ya"),array("I+ya"),0);
+		storedata('6.4.66','sa',0);
+	}
+	/* yasya halaH (6.4.49) */
+	if (arr($text,'/(['.pc('hl').'])ya[+]ya$/'))
+	{
+		$text=change('/(['.pc('hl').'])ya[+]ya$/','$1+ya');
+		storedata('6.4.49','sa',0);
+	}
+	/* ato lopaH (6.4.48) */
+	elseif (arr($text,'/a[+]ya$/'))
+	{
+		$text=change('/a[+]ya$/','+ya');
+		storedata('6.4.48','sa',0);
+	}
+	$text = change('/[+]/','');
+	$verb_without_anubandha = $text[0];
+	$fo = $text[0];
 }
 /* sanAdyantA dhAtavaH (3.1.32) */
 if (in_array($so,$tiG) && $pada==="pratyaya" && $lakAra!=="" && $sanAdi!=="")
@@ -3734,32 +3770,6 @@ if (arr($text,'/\+Ri[c]{0,1}\+/')||$ciN===1||$ciN===2)
 	if ($caG===1)
 	{
 		$text = change('/(['.pc('hl').'])[+]i[+]/','$1i+');
-	}
-}
-/* yak pratyaya handling */
-if ($vsuf==="yak")
-{
-	/* halantyam and tasya lopaH */
-	storedata('1.3.3','pa',0);
-	$text = one(array("+yak+"),array("+ya+"),0);
-	storedata('1.3.9','sa',0);
-	/* ghumAsthAgApAjahAtisAM hali (6.4.66) */
-	if ( in_array($fo,array("do","deN","qudAY","dAR","Dew","quDAY","mA","zWA","iN","pA","hA","sA","gAN","mAN","meN","gA","iN","ik","gE","o!hAk","zo")) && sub(array("A+ya+"),blank(0),blank(0),0) && !in_array($number,array("02.0051","03.0008")) )
-	{
-		$text=one(array("A+ya"),array("I+ya"),0);
-		storedata('6.4.66','sa',0);
-	}
-	/* yasya halaH (6.4.49) */
-	if (arr($text,'/(['.pc('hl').'])ya[+]ya[+]/'))
-	{
-		$text=change('/(['.pc('hl').'])ya[+]ya[+]/','$1+ya+');
-		storedata('6.4.49','sa',0);
-	}
-	/* ato lopaH (6.4.48) */
-	elseif (arr($text,'/a[+]ya[+]/'))
-	{
-		$text=change('/a[+]ya[+]/','+ya+');
-		storedata('6.4.48','sa',0);
 	}
 }
 /* AmaH (2.4.81) and kRJcAnuprayujyate liTi (3.1.40) */
