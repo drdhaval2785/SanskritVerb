@@ -3897,10 +3897,16 @@ if (in_array($so,$tiG) && arr(array($fo),'/[!]['.pc('hl').']$/') && $nomidelisio
 // Patch for removal of verb halantyam
 if (in_array($so,$tiG) && arr(array($fo),'/['.pc('hl').']$/') && !arr(array($fo),'/i[!]r$/') && !arr(array($fo),'/[aU][!]z$/') && sub(array(substr($fo,-1)),array("+"),blank(0),0))
 {
+	print_r($text);
 	storedata('1.3.3','pa',0);
 	$text=three($hlplus,$vikaraNa,array("+"),blank1("+",count($hlplus)),$vikaraNa,array("+"),0);
-	$text=change('/^([^+]*)['.pc('hl').'][+]/','$1+');
-	$text = one(array("i!r"),array("i!"),0);
+	echo $_GET['first'];
+	if(preg_match('/['.pc('hl').']$/',$_GET['first']))
+	{
+		$text=change('/^([^+]*)['.pc('hl').'][+]/','$1+');
+		$text = one(array("i!r"),array("i!"),0);
+	}
+	print_r($text);
 	$text = change('/(^[^+]+)['.pc('hl').']([+]jus)/','$1$2'); // Check why this was kept here. Gave wrong form of kftI! rudhAdi viDiliN Ji, so commented out
 	$text=two($hlplus,array("Ri+"),blank1("+",count($hlplus)),array("Ri+"),0);
 	storedata('1.3.9','sa',0);
