@@ -1370,8 +1370,9 @@ if (arr($text,'/[+]Ric$/') && $sanAdi==="Ric" && $lakAra!=="luN")
 	/* skhadir avaparibhyAm ca (ga) */ 
 	if ( in_array($fo,array("sKada!")) && sub(array("A"),$hl,array("+Ric"),0) && !in_array($us,array("ava","pari")))
 	{
+		storedata('sKad','pa',0);
 		$text = three(array("A"),$hl,array("+Ric"),array("a"),$hl,array("+Ric"),0);
-		storedata('sKad','sa',0);
+		storedata('6.4.92','sa',0);
 	} 
 	/* mitAM hrasvaH (6.4.92) */ 
 	elseif ( ($_GET['cond57']==="1"||$_GET['cond58']==="1"||$_GET['cond59']==="1"||$_GET['cond60']==="1"||$_GET['cond61']==="1"||$_GET['cond62']==="1"||$_GET['cond63']==="1"||$_GET['cond64']==="1"||$_GET['cond65']==="1"||($_GET['cond66']==="1"&&$number==="09.0030")||($_GET['cond67']==="1"&&$number==="09.0026")||$_GET['cond68']==="1"||$_GET['cond69']==="1"||$_GET['cond70']==="1") && sub(array("A"),$hl,array("+Ric"),0) )
@@ -1399,14 +1400,16 @@ if (arr($text,'/[+]Ric$/') && $sanAdi==="Ric" && $lakAra!=="luN")
 	/* dalivaliskhaliraNidhvanitrapikzapayasceti bhojaH (ga) */ 
 	elseif ( in_array($fo,array("dala!","vala","sKala!","raRa!","Dvana!","trapU!z","kzapa!")) && sub(array("A"),$hl,array("+Ric"),0) )
 	{
+		storedata('dalivali','pa',0);
 		$text = three(array("A"),$hl,array("+Ric"),array("a"),$hl,array("+Ric"),1);
-		storedata('dalivali','sa',0);
+		storedata('6.4.92','sa',0);
 	} 
 	/* jvalahvalahmalaNamAmanupasargAdvA (ga) */ 
 	elseif ( in_array($fo,array("jvala!","hvala!","hmala!","Rama!")) && sub(array("A"),$hl,array("+Ric"),0) && $us=="")
 	{
+		storedata('jvala','pa',0);
 		$text = three(array("A"),$hl,array("+Ric"),array("a"),$hl,array("+Ric"),1);
-		storedata('jvala','sa',0);
+		storedata('6.4.92','sa',0);
 	} 
 	/* na kamyamicamAm (ga) */ 
 	elseif ( in_array($fo,array("kamu!","ama!","camu!")) && sub(array("A"),$hl,array("+Ric"),0) )
@@ -1448,8 +1451,9 @@ if (arr($text,'/[+]Ric$/') && $sanAdi==="Ric" && $lakAra!=="luN")
 	} 
 	elseif ( (in_array($fo,array("janI!","jFz","knasu!","raYja!")) || preg_match('/am$/',$verb_without_anubandha) ) && sub(array("A"),$hl,array("+Ric"),0) )
 	{
+		storedata('janI','pa',0);
 		$text = three(array("A"),$hl,array("+Ric"),array("a"),$hl,array("+Ric"),0);
-		storedata('janI','sa',0);
+		storedata('6.4.92','sa',0);
 	} 
 	/* hanasto'ciNNaloH (7.3.32) */ 
 	if ( arr($text,'/GAn[+][R]*i/'))
