@@ -1376,6 +1376,19 @@ if (arr($text,'/[+]Ric$/') && $sanAdi==="Ric" && $lakAra!=="luN")
 	/* mitAM hrasvaH (6.4.92) */ 
 	elseif ( ($_GET['cond57']==="1"||$_GET['cond58']==="1"||$_GET['cond59']==="1"||$_GET['cond60']==="1"||$_GET['cond61']==="1"||$_GET['cond62']==="1"||$_GET['cond63']==="1"||$_GET['cond64']==="1"||$_GET['cond65']==="1"||($_GET['cond66']==="1"&&$number==="09.0030")||($_GET['cond67']==="1"&&$number==="09.0026")||$_GET['cond68']==="1"||$_GET['cond69']==="1"||$_GET['cond70']==="1") && sub(array("A"),$hl,array("+Ric"),0) )
 	{
+		if ($_GET['cond57']==="1") { storedata('smf','pa',0); }
+		elseif ($_GET['cond58']==="1") { storedata('Dvana','pa',0); }
+		elseif ($_GET['cond59']==="1") { storedata('svana','pa',0); }
+		elseif ($_GET['cond60']==="1") { storedata('cala','pa',0); }
+		elseif ($_GET['cond62']==="1") { storedata('laqa','pa',0); }
+		elseif ($_GET['cond63']==="1") { storedata('yama','pa',0); }
+		elseif ($_GET['cond64']==="1") { storedata('madI','pa',0); }
+		elseif ($_GET['cond65']==="1") { storedata('Samu','pa',0); }
+		elseif ($_GET['cond66']==="1") { storedata('nF','pa',0); }
+		elseif ($_GET['cond67']==="1") { storedata('dF','pa',0); }
+		elseif ($_GET['cond68']==="1") { storedata('SrA','pa',0); }
+		elseif ($_GET['cond69']==="1") { storedata('jYA','pa',0); }
+		elseif ($_GET['cond70']==="1") { storedata('Cadir','pa',0); }
 		$text = three(array("A"),$hl,array("+Ric"),array("a"),$hl,array("+Ric"),0);
 		storedata('6.4.92','sa',0);
 	}
