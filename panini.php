@@ -1443,14 +1443,14 @@ if (arr($text,'/[+]Ric$/') && $sanAdi==="Ric" && $lakAra!=="luN")
 		storedata('mfga','sa',0);
 	}
 	/* mitAM hrasvaH (6.4.92) */ 
-	elseif ( in_array($fo,$mitcurAdiverbs) && ($verbset === "curAdi" || $verbset === "none" || in_array($sanAdi,array("Ric","RiN")) ) && sub(array("A"),$hl,array("+Ric"),0))
+	elseif ( in_array($fo,$mitcurAdiverbs) && ($verbset === "curAdi" || $verbset === "none" || in_array($sanAdi,array("Ric","RiN")) ) && sub(array("A"),$hl,array("+Ric"),0) && !in_array($number,array("10.0248")))
 	{
 		$text = three(array("A"),$hl,array("+Ric"),array("a"),$hl,array("+Ric"),0);
 		$text = one(array("cap+Ric"),array("cAp+Ric"),0);
 		storedata('6.4.92','sa',0);
 	}
 	/* mitAM hrasvaH (6.4.92) */ 
-	elseif ( in_array($fo,$ghaTAdi_mit) && ($verbset === "BvAdi" || $verbset === "none" ) && sub(array("A"),$hl,array("+Ric"),0) )
+	elseif ( in_array($fo,$ghaTAdi_mit) && ($verbset === "BvAdi" || $verbset === "none" ) && sub(array("A"),$hl,array("+Ric"),0) && !in_array($number,array("10.0248")) )
 	{
 		$text = three(array("A"),$hl,array("+Ric"),array("a"),$hl,array("+Ric"),0);
 		storedata('6.4.92','sa',0);
