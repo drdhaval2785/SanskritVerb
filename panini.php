@@ -885,6 +885,17 @@ if ($first==="ik" && in_array($so,$tiG))
 /* dhAtu it removal */
 if ($type==="tiGanta" )
 {
+	/* bhUvAdayo dhAtavaH (1.3.1) */
+	if (in_array($so,$tiG) && $pada==="pratyaya" && $lakAra!=="")
+	{
+		storedata('1.3.1','pa',0);
+	}
+	/* dAdhA ghvadAp (1.1.20) */
+	if ( in_array($fo,$ghuset) )
+	{
+		storedata('1.1.20','pa',0);
+		$ghu=1;
+	} else { $ghu=0; }
 	/* patch to stop elision of verbs ending with i!r */
 	if (arr($text,'/[i][!][r]$/'))
 	{
@@ -972,11 +983,6 @@ elseif (arr($text,'/^[z]/') || arr($text,'/^[R]/') || arr($text,'/[iu][r][d]/'))
 if (in_array($vAcya,array("bhAva","karmakartR")))
 {
 	storedata('BAvauni','red',0);
-}
-/* bhUvAdayo dhAtavaH (1.3.1) */
-if (in_array($so,$tiG) && $pada==="pratyaya" && $lakAra!=="")
-{
-	storedata('1.3.1','pa',0);
 }
 /* tatprayojako hetuzca (14.55) */
 if (in_array($so,$tiG) && $pada==="pratyaya" && $lakAra!=="" && $sanAdi==="Ric")
@@ -3199,12 +3205,6 @@ if (in_array($so,$tiG) && sub(array("+"),$shitpratyaya,blank(0),0) && $lakAra!==
 	storedata('3.4.113','pa',0);
     $shit=1;
 }
-/* dAdhA ghvadAp (1.1.20) */
-if ( in_array($fo,$ghuset) )
-{
-	storedata('1.1.20','pa',0);
-    $ghu=1;
-} else { $ghu=0; }
 /* pvAdInAM hrasvaH (7.3.80) */
 if (in_array($fo,$pvAdi) && sub(array("+"),$shitpratyaya,blank(0),0) && $fo!=="jyA" && $verbset==="kryAdi")
 {

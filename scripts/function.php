@@ -2616,7 +2616,7 @@ function san_ajAdi()
 }
 function san_aGgAdikArya()
 {
-	global $text;global $fo; global $storedata, $us, $san, $ac;
+	global $text;global $fo; global $storedata, $us, $san, $ac, $ghu;
 	/* abhyastasya ca (6.1.33) */
 	if (arr($text,'/hvA+sa$/'))
 	{
@@ -2630,7 +2630,7 @@ function san_aGgAdikArya()
 		storedata('6.4.42','sa',0);
 	}
 	/* sani mImAghurabhalabhazakapatapadAM aca is (7.4.54) */
-	if (sub(array("mI","mA","dA","DA","raB","laB","Sak","pad","pat","raD"),array("+sa"),blank(0),0))
+	if (sub(array("mI","mA","raB","laB","Sak","pad","pat","raD"),array("+sa"),blank(0),0) || $ghu===1)
 	{
 		$text=two(array("mI","mA","dA","DA","raB","laB","Sak","pad","pat"),array("+sa"),array("mis","mis","dis","Dis","risB","lisB","Sisk","pisd","pist"),array("+sa"),0);
 		if (arr($text,'/raD[+]sa$/'))
