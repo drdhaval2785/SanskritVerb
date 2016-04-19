@@ -1373,7 +1373,6 @@ if (arr($text,'/[+]Ric$/') && $sanAdi==="Ric" && $lakAra!=="luN")
 		$text = change('/(^[^+]*)a(['.pc(hl).'])[+]Ric$/','$1A$2+Ric');
 		storedata('7.2.116','sa',0);
 	}
-	print_r($text); echo $verbset;
 	/* skhadir avaparibhyAm ca (ga) */ 
 	if ( in_array($fo,array("sKada!")) && sub(array("A"),$hl,array("+Ric"),0) && !in_array($us,array("ava","pari")))
 	{
@@ -1463,7 +1462,6 @@ if (arr($text,'/[+]Ric$/') && $sanAdi==="Ric" && $lakAra!=="luN")
 		$text = three(array("A"),$hl,array("+Ric"),array("a"),$hl,array("+Ric"),0);
 		storedata('6.4.92','sa',0);
 	} 
-	print_r($text);
 	/* hanasto'ciNNaloH (7.3.32) */ 
 	if ( arr($text,'/GAn[+][R]*i/'))
 	{
@@ -3706,7 +3704,6 @@ if (arr($text,'/\+Ri[c]{0,1}\+/')||$ciN===1||$ciN===2)
 		$text = three(array("A"),$hl,array("+Ric+","+Ri+","+i+"),array("a"),$hl,array("+Ric+","+Ri+","+i+"),0);
 		storedata('janI','sa',0);
 	} 
-	print_r($text);
 	/* hanasto'ciNNaloH (7.3.32) */ 
 	if ( arr($text,'/GAn[+][R]*i/'))
 	{
