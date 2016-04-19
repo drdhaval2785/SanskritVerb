@@ -3807,14 +3807,15 @@ if (arr($text,'/\+Ri[c]{0,1}\+/')||$ciN===1||$ciN===2)
 		$text = change('/(['.pc('hl').'])[+]i[+]/','$1i+');
 	}
 }
+print_r($text);
 /* AmaH (2.4.81) and kRJcAnuprayujyate liTi (3.1.40) */
-if ($lakAra==="liw" && sub(array("+Am+"),$tiG1,blank(0),0) )
+if ($lakAra==="liw" && sub(array("Am+"),$tiG1,blank(0),0) )
 {
 	$beforeampratyaya = $text;
-	$text = two(array("+Am+"),$tiG,array("+Am+"),blank(count($tiG)),0);
+	$text = two(array("Am+"),$tiG,array("Am+"),blank(count($tiG)),0);
 	storedata('2.4.81','sa',0);
 	$text = $beforeampratyaya;
-	$text=one(array("+Am+"),array("+Am+kf+"),0);
+	$text=one(array("Am+"),array("Am+kf+"),0);
 	//$text=one(array("+Am+kf+"),array("+Am+BU+"),1); // Trying for kf only right now.
 	//$text=one(array("+Am+kf+"),array("+Am+as+"),1);
 	storedata('3.1.40','sa',0);
