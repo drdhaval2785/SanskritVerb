@@ -482,7 +482,7 @@ if ($type==='tiGanta')
 		$verbpada=verb_pada('1.3.59');
 	}
 	/* jJAzrusmRdRzAM sanaH (1.3.57) */
-	elseif ( $_GET['cond37']==="1")
+	elseif ( in_array($fo,array("jYA","Sru","smfN","dfSi!r")) && $san===1)
 	{
 		$verbpada=verb_pada('1.3.57');
 	}
