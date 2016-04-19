@@ -3522,6 +3522,7 @@ if ($caG===1 && arr($text,'/^['.pc('hl').']/') && $sanAdi==="Ric")
 	abhyAsa_halAdi();
 	$abhyAsa=1;
 }
+print_r($text);
 /* curAdi Ric handling */
 if (arr($text,'/\+Ri[c]{0,1}\+/')||$ciN===1||$ciN===2)
 {
@@ -3796,7 +3797,7 @@ if (arr($text,'/\+Ri[c]{0,1}\+/')||$ciN===1||$ciN===2)
 		$text=two($hl,array("+i+"),$hl,array("e+"),0);
 		$text=two($hl,array("i+"),$hl,array("e+"),0);
 		storedata('7.3.84','sa',0);
-		if (arr($text,'/e\+['.pc('ac').']/'))
+		if (arr($text,'/e\+['.pc('ac').']/') && ($vsuf===1 || in_array($sanAdi,array("Ric","san","yaN","yaNluk"))))
 		{
 			$text=two(array("e+"),$ac,array("ay"),$ac,0);
 			storedata('6.1.78','sa',0);			
@@ -4399,6 +4400,7 @@ if ( in_array($lakAra,array("lfw","lfN")) && pr2(array("+"),blank(0),$tiG1,array
 	storedata('3.1.33','sa',0);
 	$syatAsI=1;
 } else {$syatAsI = 0; }
+print_r($text);
 /* syatAsI lRlutoH (3.1.33) */
 if (  in_array($lakAra,array("luw")) && pr2(array("+"),blank(0),$tiG1,array("+"),array("tAs+"),$tiG1,$text)!==$text )
 {
@@ -14219,10 +14221,10 @@ if ((isset($argv[0])|| $test ===1) )
 	$generatedformfile = fopen('generatedforms.xml','a+');
 	$verblist = verbformlist();
 	$verbsingerard = verblist();
-	wrongformlist($ou,$verblist,"fast"); // Uncomment this if you want only the list of suspect verbs for which Gerard has database.
-	//wrongformlist($ou,$verblist); // Uncomment this if you want to get the list of all suspect verbs for irrespecitve of Gerard's database.
+	//wrongformlist($ou,$verblist,"fast"); // Uncomment this if you want only the list of suspect verbs for which Gerard has database.
+	wrongformlist($ou,$verblist); // Uncomment this if you want to get the list of all suspect verbs for irrespecitve of Gerard's database.
 	generatedforms($ou,$generatedformfile);
-	fclose($suspecentryfile);
+	fclose($suspectentryfile);
 	fclose($generatedformfile);
 	/*$susinput = file_get_contents('suspectverbforms.txt');
 	$susoutput = convert($susinput);
