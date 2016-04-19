@@ -6975,10 +6975,14 @@ elseif ($san===1 && arr($text,'/[zQ][+]z/') )
     $text = two(array("z","Q"),array("z"),array("k","k"),array("z"),0);
 	storedata('8.2.41','sa',0);
 }
+print_r($text);
+$text = change('/(['.pc('hl').'])[+]a[+]/','$1a+');
+print_r($text);
 /* coH kuH (8.2.30) */
 $coku=0;
-if ((arr($text,'/['.flat($cu).'][+]*['.pc('Jl').']/')) && !in_array($fo,$noco) && in_array($so,$tiG) && ($syatAsI!==1 || $id_dhAtu !== "sew" ) && !in_array("6.1.73",allsutras($storedata)) && $sanAdi!=="san") // need to test for veT dhAtus. Pending.
+if ((arr($text,'/[cCjJY][+]['.pc('Jl').']/')) && !in_array($fo,$noco) && in_array($so,$tiG) && ($syatAsI!==1 || $id_dhAtu !== "sew" ) && !in_array("6.1.73",allsutras($storedata)) && $sanAdi!=="san") // need to test for veT dhAtus. Pending.
 {
+	print_r($text);
 	$text = three($cu,array("+",""),prat('Jl'),$ku,array("+",""),prat('Jl'),0); 
 	storedata('8.2.30','sa',0);
 	$coku=1; // 0 - doesn't prevent kvinpratyayasya kuH. 1 - prevents kvinpratyayasya kuH.
@@ -11348,7 +11352,6 @@ if (arr($text,'/hiMs\+/'))
     $it=array_merge($it,array("i"));
     $itprakriti=array_merge($it,array("i"));
 }
-print_r($text); print_r($it);
 /* aniditAM hala upadhAyAH kGiti (6.4.24) */ 
 if ( !in_array("i",$it) && arr($text,'/[nM]['.pc('hl').'][+]/') && ( itcheck(array("k","N"),1)|| $ancu===1 ) && !($kruJca===1 && sub(array("krunc","kruYc"),blank(0),blank(0),0) ) && $nance===0 && $so!=="mahiN" && !(arr($text,'/[NYRnmM]['.pc('hl').'][+]a[+]/') && in_array("Sap",$vik)) && $lakAra!=="viDiliN" && $verbset!=="ruDAdi" && $aniditAm!==1 && !in_array("Sap",$vik))
 {
@@ -11356,7 +11359,6 @@ if ( !in_array("i",$it) && arr($text,'/[nM]['.pc('hl').'][+]/') && ( itcheck(arr
 	storedata('6.4.24','sa',0);
     $aniditAm = 1; // 0 - this sUtra has not applied. 1 - this sUtra has applied.
 }
-print_r($text);
 /* samaH sami (6.3.93) */ 
 if (preg_match('/[s][a][m][a][n][c]/',$fo) && sub(array("anc","Anc"),array("+"),blank(0),0) && $ancu===1)
 {
@@ -12974,6 +12976,7 @@ if ( arr($text,'/['.pc('Jl').']([+]*)s([+]*)['.pc('Jl').']/') )
 	$text = three(prat("Jl"),array("s"),prat("Jl"),prat("Jl"),array(""),prat("Jl"),0); 
 	storedata('8.2.26','sa',0);
 }
+$text = change('/(['.pc('hl').'])[+]a[+]/','$1a+');
 /* coH kuH (8.2.30) */
 if ((arr($text,'/['.flat($cu).'][+]['.pc('Jl').']/')) && !in_array($fo,$noco)&& ( $kvinku===0 || $ancu===1) && !in_array("6.1.73",allsutras($storedata)) )
 {
