@@ -3419,11 +3419,6 @@ if ( in_array($so,array("Ja")) && $set===2 && arr($text,'/[^a][+]Ja$/'))
     $text=change('/([^a][+])Ja$/','$1ata');
 	storedata('7.1.5','sa',0);
 }
-/* AtmanepadeSvanataH (7.1.5) */
-/*elseif ( in_array($so,array("Ja")) && preg_match('/[A]$/',$verb_without_anubandha) && ends(array("Sap","Sa"),$vik,2) && pr2(array("+"),array("Ja"),blank(0),array("+"),array("ata"),blank(0),$text)!==$text)
-{
-	echo "no jhontaH";
-}*/
 /* jho'ntaH (7.1.3) */
 if (arr($text,'/[+]Ja$/') && in_array($so,array("Ja")) && $lakAra!=="liw" && $jhasyaran!==1) // because liTastajhayorezirec.
 {
@@ -7136,8 +7131,7 @@ if ($lakAra!=="" && $type==="tiGanta")
         $text = two(array("i+","I+","u+","U+"),$ac,array("iy+","iy+","uv+","uv+"),$ac,0);
 		$text = one(array("uv+uv+"),array("u+uv+"),0);
 		storedata('6.4.77','sa',3);
-//        echo "<p class = hn >gatikAraketarapUrvapadasya yaN neSyate (vA 5034) mandates that eranekAco.../oH supi rule doesn't apply in cases where the pUrvapada is neither gati nor kAraka. iyaG or uvaG is applied in that case. :</p>\n";
-//        echo "<p class = hn >गतिकारकेतरपूर्वपदस्य यण्‌ नेष्यते (वा ५०३४) से गति / कारक से भिन्न पूर्वपद होने पर एरनेकाचो.../ओः सुपि सूत्र नहीं लागू होता । इयङ्‌ या उवङ्‌ की प्रवृत्ति होती है । :</p>\n";
+		storedata('gatik','pa',0);
 	}
     if (arr($text,'/\+nu\+['.pc('ac').']/') )//&& $sIyuT!==1)
     {
@@ -7162,8 +7156,7 @@ if ($lakAra!=="" && $type==="tiGanta")
     {
         $text = three(array("i","I"),array("+"),$ac,array("y","y"),array("+"),$ac,0);                
 		storedata('6.4.82','sa',3);
-//        echo "<p class = hn >gatikAraketarapUrvapadasya yaN neSyate (vA 5034) mandates that this rule doesn't apply in cases where the pUrvapada is neither gati nor kAraka. iyaG or uvaG is applied in that case. :</p>\n";
-//        echo "<p class = hn >गतिकारकेतरपूर्वपदस्य यण्‌ नेष्यते (वा ५०३४) से गति / कारक से भिन्न पूर्वपद होने पर यह सूत्र नहीं लागू होता । इयङ्‌ या उवङ्‌ की प्रवृत्ति होती है । :</p>\n";
+		storedata('gatik','pa',0);
     }
     /* oH supi (6.4.83) */ 
     if ($dhatu===1 && in_array($fo,array("ullU")) && $pada==="pratyaya" && anekAca($fo) && $nabhusu===0 && $dfmBU===0 && in_array($so,$sup))
@@ -7175,8 +7168,7 @@ if ($lakAra!=="" && $type==="tiGanta")
     {
         $text = three(array("u","U"),array("+"),$ac,array("v","v"),array("+"),$ac,0);
 		storedata('6.4.83','sa',3);
-//        echo "<p class = hn >gatikAraketarapUrvapadasya yaN neSyate (vA 5034) mandates that this rule doesn't apply in cases where the pUrvapada is neither gati nor kAraka. iyaG or uvaG is applied in that case. :</p>\n";
-//        echo "<p class = hn >गतिकारकेतरपूर्वपदस्य यण्‌ नेष्यते (वा ५०३४) से गति / कारक से भिन्न पूर्वपद होने पर यह सूत्र नहीं लागू होता । इयङ्‌ या उवङ्‌ की प्रवृत्ति होती है । :</p>\n";
+		storedata('gatik','pa',0);
     }    
 	/* akaH savarNe dIrghaH (6.1.101) */
 	if ( arr($text,'/^[iIuU]/') && sub(array("i+i","I+I","u+u","U+U"),blank(0),blank(0),0) && $abhyAsa===1)
@@ -7398,13 +7390,6 @@ if (arr($text,'/['.pc('Jy').']\+/') && ( sub(array("N"),$ku,array("+"),0) || sub
 	storedata('8.2.23','sa',0);	
 	storedata('par@56-1','sa',0);
 }
-/*elseif ( sub($hl,$hl,array("+"),0) && in_array($so,$tiG) && $ratsasya===0 && !arr($text,'/['.pc('hl').']['.pc('hl').'][+]['.pc('ac').']/') && $pada==="pada" )
-{
-    $text = three($hl,$hl,array("+"),$hl,blank(count($hl)),array("+"),0);
-    echo "<p class = sa >By saMyogAntasya lopaH (".link_sutra("8.2.23").") :</p>\n";
-    echo "<p class = sa >संयोगान्तस्य लोपः (८.२.२३) :</p>\n";
-    display(0);
-}*/ // bracketed because pfcC+yAs gave pfcyAs. pending to check.
 elseif (arr($text,'/['.pc('hl').']['.pc('hl').']$/') && in_array($so,$tiG) && $ratsasya===0)
 {
     $text = pr2($hl,$hl,blank(0),$hl,blank(count($hl)),blank(0),$text);
@@ -7639,7 +7624,7 @@ elseif ( $_GET['cond1_1_1_6_4']==="1" || $_GET['cond2_1_2_1_6_4']==="1" )
 elseif ( $_GET['cond1_1_1_6_4']==="2" && !in_array($fo,array("anyatara","anyatarA")) && $_GET['cond2_1_2_1_6_4']==="2")
 {
     $sarvafinal = 0; 
-    $sarvanama=array_diff($sarvanama,array("atara","atama","atarA","atamA")); echo "hi";
+    $sarvanama=array_diff($sarvanama,array("atara","atama","atarA","atamA"));
 }
 elseif (ends(array($fo),array("anyatama","anyatamA"),1))
 {
@@ -9264,9 +9249,7 @@ if ($GIn===1 )
         if (sub(array("i","I","u","U","f","F","x","X","y","v"),prat('ac'),array("c"),0))
         {
 			storedata('par@56','pa',0);
-/*			echo "<p class = pa >Though iko yaNaci is antaraGga than lopa by acaH, its application is barred by 'akRtavyUhAH pANinIyAH (pa 57).</p>\n";
-        echo "<p class = pa >इको यणचि से प्राप्त यण्‌ अन्तरङ्ग होने पर भी अकृतव्यूहाः पाणिनीयाः (प ५७) से वह अचः का बाध नहीं करता ।</p>\n";
-        display(0);        */
+			storedata('akftaaca','pa',0);
         }
         $text = two(array("yac","ac","Ac"),array("+"),array("ic","c","ac"),array("+"),0);
 		storedata('6.4.138','sa',0);
@@ -10101,17 +10084,13 @@ if ( (($tri === "f" && ends(array($fo),array("tri"),1)) || (ends(array($fo),arra
 	storedata('7.2.99','sa',3);
     if ($svamo===1)
     {
-//        echo "<p class = hn >By anityatva of na lumatAGgasya paribhASA.</p>\n";
-        $text = one(array("tri+","catur+"),array("tisf+","catasf+"),1);
+		storedata('nalumanitya','pa',0);
+		$text = one(array("tri+","catur+"),array("tisf+","catasf+"),1);
     }
     else
     {
         $text = one(array("tri+","catur+"),array("tisf+","catasf+"),0);
     }
-	if ($svamo===1)
-    {
-//        echo "<p class = hn >न लुमताऽङ्गस्य इति निषेधस्य अनित्यत्वम्‌ ।</p>\n";
-    }    
 }
 if ($gender==="f" && $tri === "f" && ends(array($fo),array("tri","catur"),1) && !ends(array($fo),array("stri"),1) && $svamo===1)
 {
@@ -11303,8 +11282,7 @@ if ( preg_match('/[aA][n][c]/',$fo) && $aniditAm === 1 && sub(array("ac","Ac"),a
 		storedata('akftaaca','pa',0);
     }
     $text = two(array("yac","ac","Ac"),array("+"),array("ic","c","ac"),array("+"),0);
-    echo "<p class = sa >acaH (".link_sutra("6.4.138").") :</p>\n";
-    echo "<p class = sa >अचः (६.४.१३८) :</p>\n";
+	storedata('6.4.138','sa',3);
     if ($nance===1)
     {
 		storedata('nalopABAva','pa',0);
