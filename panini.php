@@ -11244,7 +11244,7 @@ if ($atu===1 && !itcheck(array("u"),1) && $sarvanamasthana1===1 )
     }
 if ($sarvanamasthana1===1 && ( ($ancu===0 && $dhatu===1)  ) && $kruJca===0 && arr(array($fo),'/[a][t]$/'))
     {
-		storedata('DAtougit','pa',0);0
+		storedata('DAtougit','pa',0);
     }
 if ($debug===1) {dibug("9000");}
 //if ($sarvanamasthana1===1 && $nAbhyasta===0 &&  (( $dhatu===0 && arr($text,'/[uUfFxX][!][+]/') ) ||  ($ancu===1 && $dhatu===1) ||  ( ($kvip===1 || $kvin===1)&& $dhatu===1 && arr(array($fo),'/[a][t]$/')) || $bhavat===1 ) && $kruJca===0 && $vAnapuMsaka===0)
@@ -11985,7 +11985,7 @@ if (arr($text,'/[a][yv][i][t][A]$/') && in_array("iw",$Agama) && $ardhadhatuka==
 	storedata('1.1.7','sa',0);
 }
 if ($debug===1) {dibug("9800");}
-/* vAnto yi pratyaye (6.1.71), goryutau CandasyupasaMkhyAnam (vA 3543), adhvaparimANe ca (vA 3544) dhAtostannimittasyaiva (6.1.80) */
+/* vAnto yi pratyaye (6.1.79), goryutau CandasyupasaMkhyAnam (vA 3543), adhvaparimANe ca (vA 3544) dhAtostannimittasyaiva (6.1.80) */
 $o = array("o","O"); 
 $oo = 'oO'; 
 $y = array("y"); 
@@ -11995,23 +11995,23 @@ $dhato1 = array("urRa","ra","na","sna","kza","kzRa","Da","Dra","da","dra","sra",
 if ($type!=="tiGanta" && arr($text,'/o/') && sub($dhato,$y,blank(0),0) && $pada ==="pratyaya" && $start ===1)
 {
 $text = two($dhato,$y,$dhato1,array("vy"),0);
-storedata('6.1.77','sa',0);
+storedata('6.1.79','sa',0);
 } 
 if (arr($text,'/[oO][+]*[y]/') && $pada ==="pratyaya" && !sub($dhato,$y,blank(0),0))
 {
     if (arr($text,'/gav[+]*y/'))
     {
     $text = two($o,$y,$ab,$y,0);
-	storedata('6.1.71','sa',0);
+	storedata('6.1.79','sa',0);
     }
     elseif (arr($text,'/[oO][+]*yat/'))
     {
-	storedata('6.1.77','sa',0);
+	storedata('6.1.80','sa',0);
     }
     else
     {
     $text = two($o,$y,$ab,$y,0);
-	storedata('6.1.71','sa',0);
+	storedata('6.1.79','sa',0);
     }
 }
 /* kSayyajayyau zakyArthe (6.1.81)*/
@@ -13376,27 +13376,6 @@ if (sub(array("SrIpAn+i","vftrahan+"),blank(0),blank(0),0) && !arr($text,'/[+]$/
     $text=one(array("SrIpAn+i","vftrahan+"),array("SrIpAR+i","vftrahaR+"),0);
 	storedata('8.4.12','sa',0);
 }
-/* Patch to remove the + sign */
-// For dvitva, + sign pauses many problems. Now we don't have to remember what was prakRti and what was pratyaya. Therefore we can afford to remove + sign now.
-if (arr($text,'/['.pc('hl').' ][+]['.pc('hl').']/') || arr($text,'/[HM!][+]['.pc('hl').']/') || arr($text,'/['.pc('hl').'][+][HM]/'))
-{
-$text = three($hl,array("+"," +"),$hl,$hl,array(""," "),$hl,0);    
-$text = three(array("H","M","!"),array("+"),$hl,array("H","M","!"),array(""),$hl,0);    
-$text = three($hl,array("+"),array("H","M"),$hl,array("+"),array("H","M"),0);    
-}
-if ( arr($text,'/['.pc('ac').'HM! ][+]['.pc('ac').']/') || arr($text,'/[HM!][+]['.pc('ac').']/') )
-{  
-$text = one(array("+"),array(""),0);
-}
-if ( arr($text,'/['.pc('ac').' ][+]['.pc('hl').'MH]/') || arr($text,'/[+]$/')  || arr($text,'/['.pc('hl').'][+][HM]/'))
-{  
-$text = one(array("+"),array(""),0);
-}
-if ( arr($text,'/['.pc('hl').'][+]['.pc('ac').']/') )
-{
-$text = one(array("+"),array(""),0);
-}
-
 $ras = '/([rzfF])([aAiIuUfFxXeoEOhyvrkKgGNpPbBmM+]*)([n])/';
 $rasend = '/([rzfF])([aAiIuUfFxXeoEOhyvrkKgGNpPbBmM+]*)([n])$/';
 $rasgrep= '/([rzfF][aAiIuUfFxXeoEOhyvrkKgGNpPbBmM+]*[n])/';
@@ -13413,8 +13392,8 @@ elseif (arr($text,'/kzuBn/') && $fo==="kzuBa!" && $verbset==="kryAdi")
 }
 /* aTkupvAGnumvyavAye'pi (8.4.2) and na padAntasya (8.4.37) */
 /* RvarNAnnasya NatvaM vAcyam (vA 4969) */
-elseif (arr($text,$ras) && $hohante!==1 && $_GET['cond2_16_2_1']!=="2" && !sub(array("UruBinn"),blank(0),blank(0),0) && $sanAdi!=="yaN" && !($sanAdi==="yaNluk" && arr($text,'/r[iI]*[+]n/')))
-{ 
+elseif (arr($text,$ras) && $hohante!==1 && $_GET['cond2_16_2_1']!=="2" && !sub(array("UruBinn"),blank(0),blank(0),0) && $sanAdi!=="yaN" && !($sanAdi==="yaNluk" && arr($text,'/r[iI]*[+]n/')) && !($type==="sandhi"&&arr($text,'/[rzfF]([aAiIuUfFxXeoEOhyvrkKgGNpPbBmM]*)[+]([aAiIuUfFxXeoEOhyvrkKgGNpPbBmM]*)n/')) )
+{
 	$inloop=$text;
     foreach ($text as $value)
     {
@@ -13454,6 +13433,26 @@ if (arr($text,$rasend) && $hohante!==1 && $AcArya!==1 )
 	storedata('8.4.37','pa',0);
 }
 if ($debug===1) {dibug("11300");}
+/* Patch to remove the + sign */
+// For dvitva, + sign pauses many problems. Now we don't have to remember what was prakRti and what was pratyaya. Therefore we can afford to remove + sign now.
+if (arr($text,'/['.pc('hl').' ][+]['.pc('hl').']/') || arr($text,'/[HM!][+]['.pc('hl').']/') || arr($text,'/['.pc('hl').'][+][HM]/'))
+{
+$text = three($hl,array("+"," +"),$hl,$hl,array(""," "),$hl,0);    
+$text = three(array("H","M","!"),array("+"),$hl,array("H","M","!"),array(""),$hl,0);    
+$text = three($hl,array("+"),array("H","M"),$hl,array("+"),array("H","M"),0);    
+}
+if ( arr($text,'/['.pc('ac').'HM! ][+]['.pc('ac').']/') || arr($text,'/[HM!][+]['.pc('ac').']/') )
+{  
+$text = one(array("+"),array(""),0);
+}
+if ( arr($text,'/['.pc('ac').' ][+]['.pc('hl').'MH]/') || arr($text,'/[+]$/')  || arr($text,'/['.pc('hl').'][+][HM]/'))
+{  
+$text = one(array("+"),array(""),0);
+}
+if ( arr($text,'/['.pc('hl').'][+]['.pc('ac').']/') )
+{
+$text = one(array("+"),array(""),0);
+}
 /* stoH zcunA zcuH (8.4.40) */
 $stu = array("s","t","T","d","D","n"); // sakAra and tavarga.
 $zcu = array("S","c","C","j","J","Y"); // zakAra and cavarga.
@@ -13597,114 +13596,120 @@ storedata('8.4.48-2','sa',0);
 $cayo=0;
 if ($dvitva===1)
 {
-	/* cayo dvitIyAH zari pauSkarasAderiti vAcyam (vA 5023) */
-	if (arr($text,'/[NR]([+]*)[Szs]/'))
+	/* triprabhRtiSu zAkaTAyanasya (8.4.50)*/
+	if (arr($text,'/['.pc('ac').'][+]*['.pc('hl').'MH][+]*['.pc('hl').'MH][+]*['.pc('hl').'MH]/'))
 	{
-	$text = two(array("Nk","Rw"),prat('Sr'),array("NK","RW"),prat('Sr'),1);
-	storedata('8.4.48-3','sa',0);
-	$cayo=1; 
-	} else {$cayo = 0; }
-	/*anaci ca (8.4.47)*/ // Here the sudhI + upAsya - what about the Asy - Assy is possbile ? Code gives it. But there are 4 options. Code gives two only.
-	// The cause for using $hrasva instead of $ac is that the dIrgha vowels are debarred by dIrghAdAcAyANAm.
-	// Here instead of using pratyAhAra hl, we shall do manual enumeration of all the members. Because of "anusvAravisargajihvAmUlIyopadhmAnIyayamAnAmakAropari zarSu ca pAThasyopasaGkhyAtatvenAnusvArasyApyactvAt (in derivation of samskAra) 
-	$hrasvaplus = array("M","!","'"); // additionalities mentioned in saMskAra derivation.
-	$hala1 = array("y","v","l","Y","m","N","R","n","J","B","G","Q","D","j","b","g","q","d","K","P","C","W","T","c","w","t","k","p","S","z","s","M",);
-	$hala2 = array("h","y","v","r","l","Y","m","N","R","n","J","B","G","Q","D","j","b","g","q","d","K","P","C","W","T","c","w","t","k","p","S","z","s","M",); // added h,y
-	if(arr($text,'/[aiufx]([+]*)[yvlYmNRnJBGQDjbgqdKPCWTcwtkpSzsM]([+]*)[hyvrlYmNRnJBGQDjbgqdKPCWTcwtkpSzsM]/'))
-	{
-		$text = dvitva($hrasva,$hala1,$hala2,array(""),2,1);
-		if (sub($dirgha,$hala1,$hala2,0))
-		{
-		storedata('8.4.47','sa',1);
-		storedata('8.4.52','sa',1);
-		}
-		else
-		{
-		storedata('8.4.47','sa',1);
-		}
+		print_r($text);
+		$text = change('/(['.pc('ac').'][+]*)(['.pc('hl').'MH][+]*)(['.pc('hl').'MH][+]*['.pc('hl').'MH])/','$1$2$2$3');
+		print_r($text);
+		storedata('tripr','sa',0);
 	}
-	if(arr($text,'/[M!\']([+]*)['.pc('hl').']([+]*)[hyvrlYmNRnJBGQDjbgqdKPCWTcwtkpSzsM]/'))
+	else
 	{
-		$text = dvitva($hrasvaplus,$hl,$hala2,array(""),2,1);
-		if (arr($text,'/AIUFXeoEO]([+]*)['.pc('hl').']([+]*)[hyvrlYmNRnJBGQDjbgqdKPCWTcwtkpSzsM]/'))
+		/* cayo dvitIyAH zari pauSkarasAderiti vAcyam (vA 5023) */
+		if (arr($text,'/[NR]([+]*)[Szs]/'))
 		{
-		storedata('8.4.47','sa',1);
-		storedata('8.4.52','sa',1);
-		}
-		else
+		$text = two(array("Nk","Rw"),prat('Sr'),array("NK","RW"),prat('Sr'),1);
+		storedata('8.4.48-3','sa',0);
+		$cayo=1; 
+		} else {$cayo = 0; }
+		/*anaci ca (8.4.47)*/ // Here the sudhI + upAsya - what about the Asy - Assy is possbile ? Code gives it. But there are 4 options. Code gives two only.
+		// The cause for using $hrasva instead of $ac is that the dIrgha vowels are debarred by dIrghAdAcAyANAm.
+		// Here instead of using pratyAhAra hl, we shall do manual enumeration of all the members. Because of "anusvAravisargajihvAmUlIyopadhmAnIyayamAnAmakAropari zarSu ca pAThasyopasaGkhyAtatvenAnusvArasyApyactvAt (in derivation of samskAra) 
+		$hrasvaplus = array("M","!","'"); // additionalities mentioned in saMskAra derivation.
+		$hala1 = array("y","v","l","Y","m","N","R","n","J","B","G","Q","D","j","b","g","q","d","K","P","C","W","T","c","w","t","k","p","S","z","s","M",);
+		$hala2 = array("h","y","v","r","l","Y","m","N","R","n","J","B","G","Q","D","j","b","g","q","d","K","P","C","W","T","c","w","t","k","p","S","z","s","M",); // added h,y
+		if(arr($text,'/[aiufx]([+]*)[yvlYmNRnJBGQDjbgqdKPCWTcwtkpSzsM]([+]*)[hyvrlYmNRnJBGQDjbgqdKPCWTcwtkpSzsM]/'))
 		{
-		storedata('8.4.47','sa',1);
-		}
-	}
-	if(checkarray($dirgha,$hl,array('r','l'),blank(0))!==0 && $sthanivadbhav===1) // for function checkarray, see function.php
-	{
-	$text = dvitva($dirgha,$hala1,$hala2,array(""),2,1);
-		if (sub($dirgha,$hl,array('r','l'),0))
-		{
-		storedata('8.4.47','sa',1);
-		storedata('8.4.52','sa',1);
-		}
-		else
-		{
-		storedata('8.4.47','sa',1);
-		}
-	}
-	/* By anaci ca (according to mahAbhASya example of vAkk) */ 
-	if (arr($text,'/['.flat($ac).']['.flat($hl).']$/') || (preg_match('/['.flat($ac).']['.flat($hl).']$/',$first) && $input === $first ))
-	{
-		foreach ($text as $value)
-		{
-			$split = str_split($value);
-			$post = $split[count($split)-1];
-			if (in_array($post,$hl))
+			$text = dvitva($hrasva,$hala1,$hala2,array(""),2,1);
+			if (sub($dirgha,$hala1,$hala2,0))
 			{
-			$pre = chop($value,$post); 
-			$value1[] = str_replace($value,$pre.$post.$post,$value);
+			storedata('8.4.47','sa',1);
+			storedata('8.4.52','sa',1);
 			}
 			else
 			{
-				$value1[] = $value;
+			storedata('8.4.47','sa',1);
 			}
 		}
-		$text = array_merge($text,$value1);
-		$text = array_unique($text);
-		$text = array_values($text);
-		$value1 = array();
-		if (arr($text,'/[AIUFXeoEO]([+]*)[yvlYmNRnJBGQDjbgqdKPCWTcwtkpSzsM]([+]*)[hyvrlYmNRnJBGQDjbgqdKPCWTcwtkpSzsM]/'))
+		if(arr($text,'/[M!\']([+]*)['.pc('hl').']([+]*)[hyvrlYmNRnJBGQDjbgqdKPCWTcwtkpSzsM]/'))
 		{
-		storedata('8.4.47','sa',1);
-		storedata('8.4.52','sa',1);
+			$text = dvitva($hrasvaplus,$hl,$hala2,array(""),2,1);
+			if (arr($text,'/AIUFXeoEO]([+]*)['.pc('hl').']([+]*)[hyvrlYmNRnJBGQDjbgqdKPCWTcwtkpSzsM]/'))
+			{
+			storedata('8.4.47','sa',1);
+			storedata('8.4.52','sa',1);
+			}
+			else
+			{
+			storedata('8.4.47','sa',1);
+			}
 		}
-		else
+		if(checkarray($dirgha,$hl,array('r','l'),blank(0))!==0 && $sthanivadbhav===1) // for function checkarray, see function.php
 		{
-		storedata('8.4.47','sa',1);
+		$text = dvitva($dirgha,$hala1,$hala2,array(""),2,1);
+			if (sub($dirgha,$hl,array('r','l'),0))
+			{
+			storedata('8.4.47','sa',1);
+			storedata('8.4.52','sa',1);
+			}
+			else
+			{
+			storedata('8.4.47','sa',1);
+			}
 		}
-	}
-	/* zaraH khayaH (vA 5019) */
-	$shara = array("S","z","s",); // zar varNas.
-	if (arr($text,'/[Szs]([+]*)['.pc('Ky').']/'))
-	{
-	$text = dvitva($shara,prat('Ky'),array(""),array(""),2,1);
-	storedata('8.4.47-2','sa',1);
-	}
-	/* aco rahAbhyAM dve (8.4.46) */ 
-	$rh = array("r","h"); // r,h
-	if (arr($text,'/[rh]([+]*)['.pc('yr').']/'))
-	{
-		if (arr($text,'/[rh]([+]*)['.pc('Sr').']([+]*)['.pc('ac').']/')) // patch to show prohibition by zaro'ci.
+		/* By anaci ca (according to mahAbhASya example of vAkk) */ 
+		if (arr($text,'/['.flat($ac).']['.flat($hl).']$/') || (preg_match('/['.flat($ac).']['.flat($hl).']$/',$first) && $input === $first ))
 		{
-		storedata('8.4.48','sa',0);
+			foreach ($text as $value)
+			{
+				$split = str_split($value);
+				$post = $split[count($split)-1];
+				if (in_array($post,$hl))
+				{
+				$pre = chop($value,$post); 
+				$value1[] = str_replace($value,$pre.$post.$post,$value);
+				}
+				else
+				{
+					$value1[] = $value;
+				}
+			}
+			$text = array_merge($text,$value1);
+			$text = array_unique($text);
+			$text = array_values($text);
+			$value1 = array();
+			if (arr($text,'/[AIUFXeoEO]([+]*)[yvlYmNRnJBGQDjbgqdKPCWTcwtkpSzsM]([+]*)[hyvrlYmNRnJBGQDjbgqdKPCWTcwtkpSzsM]/'))
+			{
+			storedata('8.4.47','sa',1);
+			storedata('8.4.52','sa',1);
+			}
+			else
+			{
+			storedata('8.4.47','sa',1);
+			}
 		}
-		else
+		/* zaraH khayaH (vA 5019) */
+		$shara = array("S","z","s",); // zar varNas.
+		if (arr($text,'/[Szs]([+]*)['.pc('Ky').']/'))
 		{
-			$text = dvitva($ac,$rh,prat('yr'),array(""),3,1);
-			storedata('8.4.46','sa',1);
+		$text = dvitva($shara,prat('Ky'),array(""),array(""),2,1);
+		storedata('8.4.47-2','sa',1);
 		}
-	}
-	/* triprabhRtiSu zAkaTAyanasya (8.4.50)*/
-	if (arr($text,'/['.pc('ac').']([+]*)['.pc('hl').']([+]*)['.pc('hl').']([+]*)['.pc('hl').']/'))
-	{
-		storedata('tripr','pa',0);
+		/* aco rahAbhyAM dve (8.4.46) */ 
+		$rh = array("r","h"); // r,h
+		if (arr($text,'/[rh]([+]*)['.pc('yr').']/'))
+		{
+			if (arr($text,'/[rh]([+]*)['.pc('Sr').']([+]*)['.pc('ac').']/')) // patch to show prohibition by zaro'ci.
+			{
+			storedata('8.4.48','sa',0);
+			}
+			else
+			{
+				$text = dvitva($ac,$rh,prat('yr'),array(""),3,1);
+				storedata('8.4.46','sa',1);
+			}
+		}
 	}
 }
 /* sarvatra zAkalyasya (8.4.51) */
