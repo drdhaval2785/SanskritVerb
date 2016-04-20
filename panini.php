@@ -51,8 +51,8 @@ $header = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http:
 $debug = 0; // 0 - no debugging. 1 - debugging on. It shows execution of some important time consuming scripts.
 
 /* Reading from the HTML input. */
-//$first = $_GET["first"]; // word entered by the user.
 $first = toslp($_GET["first"]); // to change the word input in devanagari / IAST to slp.
+$sec = toslp($_GET["sec"]); // For sandhi frontend
 $us = $_GET["upasarga"]; // upasarga. Added on 14 Dec 2014.
 $tran = $_GET['tran']; // "Devanagari" - devanagari, "IAST" - IAST, "SLP1" - SLP1 transliteration.
 $lakAra = $_GET['lakAra']; // There are 12 possible lakAras (mentioned in tiGanta.html)
@@ -159,6 +159,13 @@ elseif ($type==='subanta') {
 	fputs($logfile,"verb = $first, transliteration = $tran\n");
 	echo $header; // creating header. This will ensure that the HTML is shown with UTF-8 encoding with necessary stylesheet.
 }
+elseif ($type==='sandhi') {
+	if (!is_dir('sandhioutput')) {mkdir ('sandhioutput');}
+	$logfile = fopen('sandhioutput//log.txt','a+'); 
+	fputs($logfile,date('D, d M Y H:i:s')."\n");
+	fputs($logfile,"first = $first, second = $sec\n");
+	echo $header; // creating header. This will ensure that the HTML is shown with UTF-8 encoding with necessary stylesheet.
+}
 if ($debug===1) {dibug("100");}
 
 if (!isset($argv[0]) and $type==='tiGanta')
@@ -226,6 +233,7 @@ $sic=0;
 $caG=0;
 $vras=0;
 $dvitva=0;
+if ($type==="sandhi") {$dvitva=1;}
 $id_pratyaya="sew"; // right now taking it as default. Will feed later on.
 $R = array(); // creating an array where we can store whether the word has 'R' as it marker.
 $num = array(); // creating an array where we can store whether the word has 'num' Agama. 
@@ -320,7 +328,6 @@ if ($type==='tiGanta')
 		$verbpada=verb_pada('1.3.20');
 	}
 	/* parAGgakarmakAnna niSedhaH (vA 903) */
-	// Pending to refactor because I am not able to locate vArtika number in MB.
 	elseif ( $_GET['cond14_1']==="2" )
 	{
 		$verbpada=verb_pada('vA 903'); // Not able to locate the vArtika. So added it in the $verb_sutra_pada array.
@@ -875,7 +882,10 @@ if ($sambuddhi===1)
 //Here we will store the output after the process of sUtras. The first member is $input. 
 // The reason behind creating an array and not keeping it a string is - sometimes the sUtras give 2 / more optional outputs. In that case, it is impossible to manage the string. 
 // Right now what will happen is that 1 member -> 2 members by some sUtra. For next sUtra, we will take these two members one by one and store their results in $text itself.
-$text = array($first); // Displaying only the verb in the initial phase
+if ($type==="tiGanta")
+{
+	$text = array($first); // Displaying only the verb in the initial phase
+}
 /* ik dhAtu is always with 'aDi' */
 if ($first==="ik" && in_array($so,$tiG))
 {
@@ -957,40 +967,43 @@ elseif (in_array($so,$tiG) &&  in_array("i",$it) && $lakAra!=="" && !in_array($f
 }
 /* satva vidhi, natva vidhi, numAgama vidhi, anusvArasandhi, parasavarNasandhi, upadhAdIrghavidhi on dhAtus (Acc to sahajabodha) */
 // We are presuming that the verb entered is the verb with anusvAra and it markers, but without accent marks. I will have to revert back to handle without it markers and with accent marks specifically later.
-/* subdhAtuSThivuSvakAdInAM satvapratiSedho vaktavyaH (vA 3499) */
-if (in_array($fo,array("zWivu!","zvazk")))
+if ($type==="tiGanta")
 {
-	storedata('6.1.64-1','sa',0);
-}
-/* dhAtvAdeH SaH saH (6.1.64), No naH (6.1.65) and upadhAyAm ca (8.2.78) */
-elseif (arr($text,'/^[z]/') || arr($text,'/^[R]/') || arr($text,'/[iu][r][d]/')) 
-{
-   if (arr($text,'/^[z]/'))
-   {
-	   $text = change('/^([z])/','s');
-		storedata('6.1.64','sa',0);
-		$SaHsaH=1;
-		if (arr($text,'/^[s][wWqQR]/'))
-		{
-			$text=two(array("s"),$Tu,array("s"),$tu,0);
-			storedata('par@56-1','sa',0);
-		}
-   }
-   if (arr($text,'/^[R]/'))
-   {
-	   $text = change('/^([R])/','n');
-		storedata('6.1.65','sa',0);
-		if (arr($text,'/^[n][wWqQR]/'))
-		{
-			$text=two(array("n"),$Tu,array("n"),$tu,0);
-			storedata('par@56-1','sa',0);
-		}
-   }
-   if (arr($text,'/[iu][r][d]/'))
-   {
-	   $text=one(array("ird","urd"),array("Ird","Urd"),0);
-		storedata('8.2.78','sa',0);
-   }           
+	/* subdhAtuSThivuSvakAdInAM satvapratiSedho vaktavyaH (vA 3499) */
+	if (in_array($fo,array("zWivu!","zvazk")))
+	{
+		storedata('6.1.64-1','sa',0);
+	}
+	/* dhAtvAdeH SaH saH (6.1.64), No naH (6.1.65) and upadhAyAm ca (8.2.78) */
+	elseif (arr($text,'/^[z]/') || arr($text,'/^[R]/') || arr($text,'/[iu][r][d]/')) 
+	{
+	   if (arr($text,'/^[z]/'))
+	   {
+		   $text = change('/^([z])/','s');
+			storedata('6.1.64','sa',0);
+			$SaHsaH=1;
+			if (arr($text,'/^[s][wWqQR]/'))
+			{
+				$text=two(array("s"),$Tu,array("s"),$tu,0);
+				storedata('par@56-1','sa',0);
+			}
+	   }
+	   if (arr($text,'/^[R]/'))
+	   {
+		   $text = change('/^([R])/','n');
+			storedata('6.1.65','sa',0);
+			if (arr($text,'/^[n][wWqQR]/'))
+			{
+				$text=two(array("n"),$Tu,array("n"),$tu,0);
+				storedata('par@56-1','sa',0);
+			}
+	   }
+	   if (arr($text,'/[iu][r][d]/'))
+	   {
+		   $text=one(array("ird","urd"),array("Ird","Urd"),0);
+			storedata('8.2.78','sa',0);
+	   }           
+	}
 }
 /* Special message for bhAvavAcya */
 if (in_array($vAcya,array("bhAva","karmakartR")))
@@ -1094,7 +1107,7 @@ if ( in_array($sanAdi,array("yaN","san")) )
 }
 /* Adeca upadeze'ziti (6.1.45) */ 
 // special patch for sanAdi Ric.
-if ( (in_array($sanAdi,array("Ric","RiN","yaN","yaNluk","san")) || arr($text,'/[+]Ri/') || $vsuf==="yak") && ends(array($verb_without_anubandha),array("e","o","E","O"),0) && !(in_array($fo,array("vyeY","veY","hveY")) && $vsuf==="yak")  )
+if (in_array($so,$tiG) && (in_array($sanAdi,array("Ric","RiN","yaN","yaNluk","san")) || arr($text,'/[+]Ri/') || $vsuf==="yak") && ends(array($verb_without_anubandha),array("e","o","E","O"),0) && !(in_array($fo,array("vyeY","veY","hveY")) && $vsuf==="yak")  )
 {
     $text=two(array("e","o","E","O"),array("+"),array("A","A","A","A"),array("+"),0);
 	storedata('6.1.45','sa',0);
@@ -1126,7 +1139,7 @@ elseif ( $_GET['cond48']==="1" )
     $sanAdi="san"; $san=1; $manbadha=1;
 }
 /* gupUdhUpavicCipaNipanibhya AyaH (3.1.28) */
-elseif ( sub(array("gup","DUp","viC","pan","paR"),array("+"),blank(0),0) || ($fo==="DUpa!" && sub(array("DUpa!"),array("+"),$sArvadhAtuka_pratyayas,0) && $verbset==="BvAdi") || $_GET['cond49']==="1"  )
+elseif (in_array($so,$tiG) && sub(array("gup","DUp","viC","pan","paR"),array("+"),blank(0),0) || ($fo==="DUpa!" && sub(array("DUpa!"),array("+"),$sArvadhAtuka_pratyayas,0) && $verbset==="BvAdi") || $_GET['cond49']==="1"  )
 {
     $text=change('/([^+]+)$/','$1+Aya');
 	storedata('3.1.28','sa',0);
@@ -1172,7 +1185,7 @@ if ( in_array($fo,array("kamu!")) && $pada==="pratyaya" && $lakAra!=="" && $sanA
 	storedata('7.2.116','sa',0);
 }
 /* sanAdi Ric handling */
-if (arr($text,'/[+]Ric$/') && $sanAdi==="Ric" && $lakAra!=="luN")
+if (in_array($so,$tiG) && arr($text,'/[+]Ric$/') && $sanAdi==="Ric" && $lakAra!=="luN")
 {
 	/* ho hanterJNinneSu (7.3.54) */
 	if ( arr(array($fo),'/[h][a][n]/') && !in_array($fo,array("ahan","dIrGAhan"))  )
@@ -2175,6 +2188,10 @@ elseif ($type==="tiGanta") // this option is used for subanta / tiGanta generati
 		$input[$i] = str_replace("++","+",$stat); // If $sanAdi is "", there would be two +s consecutively. To overcome this hurdle, this patch is created.
 	}
 }
+elseif ($type==="sandhi") 
+{
+	$input = array(ltrim(chop($first."+".$sec)));
+}
 $text = $input;
 /* dhAtvAdeza before ArdhadhAtuka pratyayas as per sahajabodha 2 p. 62 */
 if (in_array($lakAra,$ArdhadhAtuka_lakAra) || in_array($sanAdi,array("yaN","san","yaNluk")) || $vsuf==="yak")
@@ -2266,7 +2283,6 @@ if (in_array($lakAra,$ArdhadhAtuka_lakAra) || in_array($sanAdi,array("yaN","san"
 	if ($fo==="aja!" && $ardhadhatuka===1 && sub(array("vi+vI","vI"),array("+"),prat('vl'),0))
 	{
 		$text = three(array("vi+vI","vI"),array("+"),prat('vl'),array("aj","aj"),array("+"),prat('vl'),1);
-		// pending to refactor.
 		storedata('7.2.35-1','sa',0);
 	}
     /* ajervyaghaJapoH (2.4.56) */ 
@@ -3088,13 +3104,13 @@ if ( $abhyasta===1 && $so==="Ji" && $sanAdi!=="yaNluk" && in_array($lakAra,array
 	$sijabhyastavidibhyazca=1;
 }
 /* kRpo ro laH (8.2.18) */
-if (arr($text,'/kfp/') && $caG!==1 && $lakAra!=="liw" && $sanAdi!=="yaN" && $sanAdi!=="yaNluk")
+if (in_array($so,$tiG) && arr($text,'/kfp/') && $caG!==1 && $lakAra!=="liw" && $sanAdi!=="yaN" && $sanAdi!=="yaNluk")
 {
     $text=one(array("kfp"),array("kxp"),0);
 	storedata('8.2.18','sa',0);
 }
 /* Che ca (6.1.73) */
-if (arr($text,'/[aiufx][+]*C/') && $sanAdi!=="san")
+if (in_array($so,$tiG) && arr($text,'/[aiufx][+]*C/') && $sanAdi!=="san")
 {
 	$text = two(array("a","i","u","f","x"),array("C"),array("at","it","ut","ft","xt"),array("C"),0);
 	storedata('6.1.73','sa',0);
@@ -3129,9 +3145,7 @@ if ( !in_array($fo,$allverbs) && sub(array("+Ric+Sap+","+RiN+Sap+"),$tiG,blank(0
     if (sub($avyaya,array("+Ric","+RiN"),blank(0),0) && in_array($fo,$avyaya) && !anekAca($fo))
     {
         $text = three(array($first),array("+Ric+Sap+","+RiN+Sap+"),$tiG,array(Ti1($first)),array("+Ric+Sap+","+RiN+Sap+"),$tiG,0);
-        echo "<p class = sa >By avyayAnAM bhamAtre TilopaH (vA) :</p>\n"; 
-        echo "<p class = sa >अव्ययानां भमात्रे टिलोपः (वा) :</p>\n";
-        display(0);        
+		storedata('Bawi','sa',0);
     }
     /* prakRtyaikAc (6.4.163) */
     elseif (sub(array("+Ric+Sap+","+RiN+Sap+"),$tiG,blank(0),0) && !anekAca($fo))
@@ -3879,7 +3893,7 @@ $svAdiajanta=array("zuY","ziY","SiY","qumiY","ciY","stfY","kfY","vfY","DuY","dUY
 $svAdihalanta=array_diff($svAdi,$svAdiajanta);
 /* separate itsaJjJAprakaraNam for tiGanta (According to sahajabodha text) */
 /* lazakvataddhite (1.3.8) */
-if (arr($text,'/[+][lSkKgGN][^+]*/') && $taddhita === 0  && in_array($so,$tiG) )
+if ( arr($text,'/[+][lSkKgGN][^+]*/') && $taddhita === 0  && in_array($so,$tiG) )
 {
     it('/([+][lSkKgGN])/');
 	storedata('1.3.8','pa',0);
@@ -6232,7 +6246,6 @@ if ($fo==="aja!" && $ardhadhatuka===1 && sub(array("vi+vI","vI","ve","vE"),array
 {
 	$text = three(array("vi+vI","vI","ve","vE"),array("+",),prat('vl'),array("aj","aj","aj","aj"),array("+i"),prat('vl'),1);
 	$text = three(array("vi+vI","vI","ve","vE"),array("+i",),prat('vl'),array("aj","aj","aj","aj"),array("+i"),prat('vl'),1);
-	// pending to refactor.
 	storedata('7.2.35-1','sa',0);
 	if($lakAra==="liw")
 	{
@@ -6945,7 +6958,7 @@ if (arr($text,'/[h]$/')  && $hodha1===0 && $hodha2 === 0 && $hodha3 === 0 )
 	storedata('8.2.31','sa',0);
 }
 /* ekAco bazo bhaS jhaSantasya sdhvoH (8.2.37) */  
-if ( /*anekAca($verb_without_anubandha)==false &&*/ ( arr($text,'/[bgqd](['.pc('al').']*)[JBGQD][+][sz]/') || arr($text,'/[bgqd](['.pc('al').']*)[JBGQD][+]Dv/') || arr($text,'/[JBGQD][+]$/') || $pada==="pada") )
+if ( /*anekAca($verb_without_anubandha)==false &&*/ in_array($so,$tiG) && ( arr($text,'/[bgqd](['.pc('al').']*)[JBGQD][+][sz]/') || arr($text,'/[bgqd](['.pc('al').']*)[JBGQD][+]Dv/') || arr($text,'/[JBGQD][+]$/') || $pada==="pada") )
 {
 	ekAcobazo(); // created a new function 19/12/2014.
 }
@@ -6975,14 +6988,11 @@ elseif ($san===1 && arr($text,'/[zQ][+]z/') )
     $text = two(array("z","Q"),array("z"),array("k","k"),array("z"),0);
 	storedata('8.2.41','sa',0);
 }
-print_r($text);
 $text = change('/(['.pc('hl').'])[+]a[+]/','$1a+');
-print_r($text);
 /* coH kuH (8.2.30) */
 $coku=0;
 if ((arr($text,'/[cCjJY][+]['.pc('Jl').']/')) && !in_array($fo,$noco) && in_array($so,$tiG) && ($syatAsI!==1 || $id_dhAtu !== "sew" ) && !in_array("6.1.73",allsutras($storedata)) && $sanAdi!=="san") // need to test for veT dhAtus. Pending.
 {
-	print_r($text);
 	$text = three($cu,array("+",""),prat('Jl'),$ku,array("+",""),prat('Jl'),0); 
 	storedata('8.2.30','sa',0);
 	$coku=1; // 0 - doesn't prevent kvinpratyayasya kuH. 1 - prevents kvinpratyayasya kuH.
@@ -8116,11 +8126,7 @@ if ($_GET['cond1_18']===2)
 $samaliGga = array("asmad","asmat","yuzmad","yuzmat"); // list of words which are same in all three genders.
 if (in_array($fo,$samaliGga) || $shat===1)
 {
-	// Pending to refactor
-	/*
-    echo "<p class = pa >asmad, yuSmad and words having SaT saJjJA have same forms in all three genders.</p>\n";
-    echo "<p class = pa >अस्मद्युष्मद्‍षट्सञ्ज्ञकाः त्रिषु सरूपाः ।</p>\n";
-    display(0);*/
+	storedata('asmtri','pa',0);
 }
 /* checking for presence of aJcu verb. */
 if (sub(array("aYc","AYc","anc","Anc"),blank(0),blank(0),0))
@@ -8285,37 +8291,30 @@ elseif ( (in_array($fo,$ajAdi) || $ajAdyataSTAp===1) && $kevala!==1)
 	storedata('4.1.4','sa',0);
 	// pending to refactor because these are explanations.
 /* displaying various sub part of ajAdi gaNa and relevant explanation for introduction of word in ajAdi gaNa */
-/*    if( sub(array("aja","eqaka","aSva","cawaka","mUzika"),array("+"),blank(0),0))    
+    if( sub(array("aja","eqaka","aSva","cawaka","mUzika"),array("+"),blank(0),0))    
     {
-    echo "<p class = hn >jAtilakSaNa GIS pratyaya is barred by this sUtra. </p>\n";
-    echo "<p class = hn >जातिलक्षण ङीष्‌ प्रत्यय का बाध करने के लिए अजादि गण में इनका समावेश किया गया है ।</p>\n";
+		storedata('aja','pa',0);
     }
     if( sub(array("triPala","tryanIka"),array("+"),blank(0),0) && $_GET['cond2_15']==="1")
     {
-    echo "<p class = hn >This sUtra prevents application of NIp pratyaya by 'dvigoH'.</p>\n";
-    echo "<p class = hn >'द्विगोः' से प्राप्त ङीप्‌ प्रत्यय का बाध करने के लिए अजादि गण में इनका समावेश किया गया है ।</p>\n";
+		storedata('dviguaja','pa',0);
     }
     if( sub(array("bAla","vatsa","hoQa","manda","bilAta","kanya"),array("+"),blank(0),0))
     {
-    echo "<p class = hn >These have been enumerated in ajAdi gaNa to bar application of GIp pratyaya by 'vayasi prathame'.</p>\n";
-    echo "<p class = hn >'वयसि प्रथमे' से प्राप्त ङीप्‌ प्रत्यय का बाध करने के लिए अजादि गण में इनका समावेश किया गया है ।</p>\n";        
+		storedata('vayasiaja','pa',0);
     }    
     if( sub(array("kruYc","uzRih","devaviS","diS","dfS","kzuD","vAc","gir",),array("+"),blank(0),0))
     {
-    echo "<p class = hn >These are not ending with akAra. Therefore included in ajAdi class for TAp pratyaya.</p>\n";
-    echo "<p class = hn >अदन्तत्व नहीं होने के कारण टाप्‌ प्रत्यय के लिए समर्थ बनाने के लिए अजादि गण में इनका समावेश किया गया है ।</p>\n";        
+		storedata('anadantaaja','pa',0);
     }    
     if( sub(array("jyezWa","kanizWa","maDyama"),array("+"),blank(0),0))
     {
-    echo "<p class = hn >Even in puMyoga, this word takes TAp pratyaya.</p>\n";
-    echo "<p class = hn >पुंयोग में भी टाप्‌ प्रत्यय के लिए समर्थ बनाने के लिए अजादि गण में इनका समावेश किया गया है ।</p>\n";        
+		storedata('puMyogaaja','pa',0);
     }    
     if( sub(array("kokila"),array("+"),blank(0),0))
     {
-    echo "<p class = hn >Even in jAti, this word takes TAp pratyaya.</p>\n";
-    echo "<p class = hn >जाति में भी टाप्‌ प्रत्यय के लिए समर्थ बनाने के लिए अजादि गण में इनका समावेश किया गया है ।</p>\n";        
+		storedata('jAtiaja','pa',0);
     }    
-  */
     $text = last(array($so),array("+wAp+".$so),0);
     $TAp = 1;
 }
@@ -11285,7 +11284,7 @@ if (in_array($fo,array("SrIpA")) && $gender==="n" && $so==="Ne")
     display(0);    */
 }
 /* lazakvataddhite (1.3.8) */
-if (((arr($text,'/[+][lSkKgGN]/'))||$sarva2===1||$purva===1) && $taddhita === 0  && $sarva === 0 && $san!==1)
+if ((in_array($type,array("subanta","tiGanta"))||($type==="sandhi"&&$pada==="pratyaya")) && ((arr($text,'/[+][lSkKgGN]/'))||$sarva2===1||$purva===1) && $taddhita === 0  && $sarva === 0 && $san!==1)
 {
     it('/([+][lSkKgGN])/');
 	storedata('1.3.8','pa',0);
@@ -13980,7 +13979,7 @@ if ($dvitva===1)
 	}
 	/* zaraH khayaH (vA 5019) */
 	$shara = array("S","z","s",); // zar varNas.
-	if (arr($txt,'/[Szs]([+]*)['.pc('Ky').']/'))
+	if (arr($text,'/[Szs]([+]*)['.pc('Ky').']/'))
 	{
 	$text = dvitva($shara,prat('Ky'),array(""),array(""),2,1);
 	storedata('8.4.47-2','sa',1);
