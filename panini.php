@@ -889,7 +889,7 @@ if ($type==="tiGanta")
 	$text = array($first); // Displaying only the verb in the initial phase
 }
 /* ik dhAtu is always with 'aDi' */
-if ($first==="ik" && in_array($so,$tiG))
+if (in_array($first,array("ik","iN")) && in_array($so,$tiG))
 {
 	$us = $us."+aDi";
 	$us = ltrim($us,'+');
@@ -2316,7 +2316,7 @@ if (in_array($lakAra,$ArdhadhAtuka_lakAra) || in_array($sanAdi,array("yaN","san"
 	/* vibhASA luGlRGoH (2.4.50) */ 
 	if ( in_array($fo,array("iN")) && in_array($lakAra,array("luN","lfN")) && $Nit===0 && $Jit===0 && !in_array($sanAdi,array("Ric","RiN")))
 	{
-		$text = two(array("i"),array("+"),array("gAN"),array("+"),1);
+		$text = two(array("i"),array("+"),array("gA"),array("+"),1);
 		storedata('2.4.50','sa',0);
 	}
 }
@@ -12412,10 +12412,21 @@ if ($us!=="" && in_array($so,$tiG) && $upasarga_joined!==1)
     $text=Adyanta($text,$usplus,1);
 	$text=change('/^[+]/','');
     $upasarga_joined=1;
+	$us = "";
 	/* akaH savarNe dIrghaH (6.1.101) patch for upasargas */ 
 	if (arr($text,'/[aA][+]*[aA]/'))
 	{
 	$text = change('/[aA][+]*[aA]/','A');
+		storedata('6.1.101','sa',0);
+	}    
+	if (arr($text,'/[iI][+]*[iI]/'))
+	{
+	$text = change('/[iI][+]*[iI]/','I');
+		storedata('6.1.101','sa',0);
+	}    
+	if (arr($text,'/[uU][+]*[uU]/'))
+	{
+	$text = change('/[uU][+]*[uU]/','U');
 		storedata('6.1.101','sa',0);
 	}    
 	/* iko yaNaci (6.1.77) */
@@ -12427,7 +12438,6 @@ if ($us!=="" && in_array($so,$tiG) && $upasarga_joined!==1)
 		$text = change('/[x][+]*(['.pc('ac').'])/','l$1');
 		storedata('6.1.77','sa',0);
 	}
-	$us = "";
 }
 
 /* tripAdI functions */
