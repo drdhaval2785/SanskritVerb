@@ -45,9 +45,8 @@ Temporary Items
 # Other files
 generatedforms.xml
 suspectverbforms.txt
-verboutput/*.*
-UoHyd_all_forms.txt
 wrongformfinder.sh
+verboutput/*.*
 Data/allsutrani/*.*
 suspectforms/*.*
 generatedforms/*.*
@@ -55,3 +54,4 @@ nounoutput/*.*
 sandhioutput/*.*
 Data/dhaatupaatha/*
 sutrarelations/*.*
+UoHyd_all_forms.txt
