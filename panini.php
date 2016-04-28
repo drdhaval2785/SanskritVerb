@@ -3631,7 +3631,7 @@ if (arr($text,'/\+Ri[c]{0,1}\+/')||$ciN===1||$ciN===2)
 		storedata('6.4.48','sa',0);
 	}
 	/* nodAttopadezasya mAntasyAcameH (7.3.34) */
-	if ( $id_dhAtu==="sew" && !in_array($fo,array("camu!","kamu!","wuvama!")) && $atolopa!==1 && $Naugami!==1 && $jAgro!==1 && (arr($text,'/am[+]Ric{0,1}[+]/')||arr($text,'/am[+]i$/')) && !(arr(array($verb_without_anubandha),'/^['.pc('hl').']/') && $caG===1))
+	if ( $id_dhAtu==="sew" && !in_array($fo,array("camu!","kamu!","wuvama!")) && $atolopa!==1 && $Naugami!==1 && $jAgro!==1 && ($ciN===1||arr($text,'/am[+]i$/')) && !(arr(array($verb_without_anubandha),'/^['.pc('hl').']/') && $caG===1))
 	{
 		storedata('7.3.34','sa',0);
 	}
