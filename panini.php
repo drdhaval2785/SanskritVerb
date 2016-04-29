@@ -5132,6 +5132,14 @@ if (arr($text,'/['.pc('hl').'][+][sts]$/') && !arr($text,'/s[+]s$/') && in_array
     $pada="pada"; // there is no pratyaya left now.
     $halGyAbbhyo=1;
 }
+/* astisico'pRkte (7.3.96) */
+// asti
+// nyAsa says that अस्तिग्रहणं लङर्थम्‌.
+if ( arr($text,'/as[+][st]$/') && $number==="02.0060" && $lakAra==="laN")
+{
+	$text = pr2(array("as"),array("+"),array("s","t"),array("as"),array("+"),array("Is","It"),$text);
+	storedata('7.3.96','sa',0);
+}
 /* skoH saMyogAdyorante ca (8.2.29) */
 if (arr($text,'/s[+]s$/') && in_array($so,array("su!","sip")) )
 {
@@ -6387,14 +6395,6 @@ if ( ($sic!==0 && arr($text,'/\+([i]*)s([+]*)['.pc('hl').']$/')))
 	storedata('8.2.28','sa',0);
 	$text = two(array("+i+I"),$hl,array("+I"),$hl,0);
 	storedata('6.1.97','sa',0);
-}
-/* astisico'pRkte (7.3.96) */
-// asti
-// nyAsa says that अस्तिग्रहणं लङर्थम्‌.
-if ( arr($text,'/as[+][st]$/') && $number==="02.0060" && $lakAra==="laN")
-{
-	$text = pr2(array("as"),array("+"),array("s","t"),array("as"),array("+"),array("Is","It"),$text);
-	storedata('7.3.96','sa',0);
 }
 /* tAsastyorlopaH (7.4.50) */
 if ( (in_array($fo,array("asa!")) && $verbset==="adAdi" ) && arr($text,'/as\+s/') )
