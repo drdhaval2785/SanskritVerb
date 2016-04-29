@@ -4770,12 +4770,6 @@ if (in_array("Sa",$vik) && (sub(array("f"),array("+a+"),blank(0),0) || (sub(arra
     $text=two(array("ri"),array("+a+"),array("riy"),array("+a+"),0);
 	storedata('6.4.77','sa',0);
 }
-/* IzaH se (7.2.77) */
-if (in_array($fo,array("ISa!")) && sub(array("+"),array("s"),blank(0),0) && in_array($so,$tiG))
-{
-    $text=three(array("IS"),array("+"),array("s"),array("IS"),array("+"),array("is"),0);
-	storedata('7.2.77','sa',0);
-}
 /* dviSazca (3.4.112) */
 if (in_array($fo,array("dviza!"))  && in_array($so,$tiG) && $lakAra==="laN" && pr2(array("dviz"),array("+"),array("an"),array("dviz"),array("+"),array("us"),$text)!==$text)
 {
@@ -6257,6 +6251,12 @@ if ((arr($text,'/r[Cv][+][YmNRn]/') || (arr($text,'/r[Cv][+]['.pc('Jl').']/') &&
 {
     $text = change('/r([Cv])[+]([YmNRn'.pc('Jl').'])/','r+$2');
 	storedata('6.4.21','sa',0);
+}
+/* IzaH se (7.2.77) */
+if (in_array($fo,array("ISa!")) && sub(array("+"),array("s"),blank(0),0) && in_array($so,$tiG))
+{
+    $text=three(array("IS"),array("+"),array("s"),array("IS"),array("+"),array("is"),0);
+	storedata('7.2.77','sa',0);
 }
 /* Ato yuk ciNkRtoH (7.3.33) */
 if ( arr($text,'/[^+]*A[+]i/') && ($ciN===1||$kRt===1||$Nit===1||$Jit===1) )
