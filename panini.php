@@ -6413,7 +6413,7 @@ if ( $atolopa!==1 && $ardhadhatuka===1 && $didhI!==1 && ($sIyuT===1||$sic===1) &
 	storedata('7.3.86','sa',0);
 }
 /* sArvadhAtukArdhadhAtukayoH (7.3.84) patch for UrNu */
-if ( arr($text,'/u\+i/') && sub(array("UrRunu","UrRu"),array("+"),array("i"),0) )
+if ( arr($text,'/u\+i[^+]+/') && sub(array("UrRunu","UrRu"),array("+"),array("i"),0) )
 {
     $text=two(array("UrRunu","UrRu"),array("+i"),array("UrRuno","UrRo"),array("+i"),1);
 	storedata('7.3.84','sa',0);
