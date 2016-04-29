@@ -4672,10 +4672,10 @@ if ($rudhAdibhyaH===1)
     }
 }
 /* bhuvo vugluGliToH (6.4.88) */
-if ( arr($text,'/[B][U][+][R'.pc('ac').']/') && in_array($lakAra,array("luN","liw")) && !($sanAdi==="Ric" && $lakAra==="luN"))
+if ( arr($text,'/[B][U][+][R'.pc('ac').'Tvm]/') && in_array($lakAra,array("luN","liw")) && !($sanAdi==="Ric" && $lakAra==="luN"))
 {
     $text = two(array("BU+"),$ac,array("BUv+"),$ac,0);
-    $text = one(array("BU+R"),array("BUv+R"),0);
+    $text = two(array("BU+"),array("R","T","v","m"),array("BUv+"),array("R","T","v","m"),0);
 	storedata('6.4.88','sa',0);	
 }
 /* liTi dhAtoranabhyAsasya (6.1.8) */
@@ -7362,11 +7362,11 @@ if( in_array($so,$tiG) && ((arr($text,'/zIDv/') && sub($iN2,array("+zIDv"),blank
 	storedata('8.3.78','sa',0);
 }
 /* iNaH SIdhvaMluGliTAM dho'GgAt (8.3.78) */
-elseif( in_array($so,$tiG) && arr($text,'/[+]iDv/') && in_array($lakAra,array("luN","liw"))  )
+/*elseif( in_array($so,$tiG) && arr($text,'/[+]iDv/') && in_array($lakAra,array("luN","liw"))  )
 {
 	$text = one(array("+iDv"),array("+iQv"),0);
 	storedata('8.3.78','sa',0);
-}
+}*/
 /* rAtsasya (8.2.24) */
 if ((arr($text,('/[r][+][s]$/')) && $pada === "pratyaya") || (arr($text,('/[r][s][+]/')) && $pada === "pada") )
 {
