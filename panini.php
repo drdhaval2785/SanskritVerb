@@ -5575,13 +5575,6 @@ if (in_array($fo,array("jvara!","YitvarA!","srivu!","ava!","mava!")) && ( (arr($
     $text = change('/av[+]([YmNRn'.pc('Jl').'])/','U+$1');
 	storedata('6.4.20','sa',0);
 }
-/* rAllopaH (6.4.21) */ 
-// kvau pending.
-if ((arr($text,'/r[Cv][+][YmNRn]/') || (arr($text,'/r[Cv][+]['.pc('Jl').']/') && $kGiti===1) || ($sanAdi==="yaNluk" && $kGiti!==1 && arr($text,'/r[Cv][+]['.pc('Jl').']/')) ))
-{
-    $text = change('/r([Cv])[+]([YmNRn'.pc('Jl').'])/','r+$2');
-	storedata('6.4.21','sa',0);
-}
 /* jusi ca (7.3.83) */
 if ( ($jherjus===1 || $sijabhyastavidibhyazca===1) && arr($text,'/[iIuUfFxX]\+us/') && $lakAra!=="liw" ) // liT has 'us' which is not 'jus'
 {
@@ -6249,6 +6242,13 @@ if (in_array($fo,array("wuo!Svi")) && sub(array("Svi"),array("+"),prat('vl'),0) 
 {
 	$text = three(array("Svi","Su+Su"),array("+"),prat('vl'),array("Svi","Su+Su"),array("+i"),prat('vl'),0);
 	storedata('7.2.35','sa',0);
+}
+/* rAllopaH (6.4.21) */ 
+// kvau pending.
+if ((arr($text,'/r[Cv][+][YmNRn]/') || (arr($text,'/r[Cv][+]['.pc('Jl').']/') && $kGiti===1) || ($sanAdi==="yaNluk" && $kGiti!==1 && arr($text,'/r[Cv][+]['.pc('Jl').']/')) ) )
+{
+    $text = change('/r([Cv])[+]([YmNRn'.pc('Jl').'])/','r+$2');
+	storedata('6.4.21','sa',0);
 }
 /* Ato yuk ciNkRtoH (7.3.33) */
 if ( arr($text,'/[^+]*A[+]i/') && ($ciN===1||$kRt===1||$Nit===1||$Jit===1) )
