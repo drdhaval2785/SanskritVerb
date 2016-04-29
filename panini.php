@@ -7137,9 +7137,15 @@ if ($lakAra!=="" && $type==="tiGanta")
 		storedata('6.4.77','sa',0);
     }
     /* ATazca (6.1.90) */
-    if (arr($text,'/A['.pc('ac').']/') && in_array("Aw",$Agama) )
+    if (arr($text,'/^A['.pc('ac').']/') && in_array("Aw",$Agama) )
     {
-        $text = two(array("A"),$ac,array(""),vriddhi($ac),0);
+        $text = change('/A[aA]/','A');
+        $text = change('/A[iI]/','E');
+        $text = change('/A[uU]/','O');
+        $text = change('/A[fF]/','Ar');
+        $text = change('/A[xX]/','Al');
+        $text = change('/A[eE]/','E');
+        $text = change('/A[oO]/','O');
 		storedata('6.1.90','sa',0);
     }
     /* gatikAraketarapUrvapadasya yaN neSyate (vA 5034) */
