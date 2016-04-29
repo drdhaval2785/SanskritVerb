@@ -3196,37 +3196,37 @@ if (in_array($fo,array("wuBrASf!","wuBlASf!","BrASf!","BlASf!","Bramu!","kramu!"
 	storedata('3.1.70','sa',0);
 }
 /* kramaH parasmaipadeSu (7.3.76) */
-if (in_array($fo,array("kramu!")) && sub(array("kramu!",),array("+"),$shitpratyaya,0) && $lakAra!=="" && in_array($so,$tis) )
+if (in_array($fo,array("kramu!")) && sub(array("kram",),array("+"),$shitpratyaya,0) && $lakAra!=="" && in_array($so,$tis) )
 {
-    $text=three(array("kramu!"),array("+"),$shitpratyaya,array("krAm"),array("+"),$shitpratyaya,0);
+    $text=three(array("kram"),array("+"),$shitpratyaya,array("krAm"),array("+"),$shitpratyaya,0);
 	storedata('7.3.76','sa',0);
     $nomidelision=1; // We will remember this while doing halantyam and prevent halantyam application, because these are not upadeza
 }
 /* zamAmaSTAnAM dIrghaH zyani (7.3.74) */
-if (in_array($fo,array("Samu!","tamu!","damu!","Sramu!","kzamU!","Bramu!","klamu!","madI!","mada!"))  && sub(array("Samu!","tamu!","damu!","Sramu!","kzamU!","Bramu!","klamu!","madI!","mada!"),array("+"),array("Syan"),0) && $lakAra!=="")
+if (in_array($fo,array("Samu!","tamu!","damu!","Sramu!","kzamU!","Bramu!","klamu!","madI!","mada!"))  && sub(array("Sam","tam","dam","Sram","kzam","Bram","klam","mad","mad"),array("+"),array("Syan"),0) && $lakAra!=="")
 {
-    $text=two(array("Samu!","tamu!","damu!","Sramu!","kzamU!","Bramu!","klamu!","madI!","mada!"),array("+Syan"),array("SAm","tAm","dAm","SrAm","kzAm","BrAm","klAm","mAd","mAd"),array("+Syan"),0);
+    $text=two(array("Sam","tam","dam","Sram","kzam","Bram","klam","mad","mad"),array("+Syan"),array("SAm","tAm","dAm","SrAm","kzAm","BrAm","klAm","mAd","mAd"),array("+Syan"),0);
 	storedata('7.3.74','sa',0);
     $nomidelision=1; // We will remember this while doing halantyam and prevent halantyam application, because these are not upadeza
 }
 /* SThivuklamyAcamAM ziti (7.3.75) */
-if ( in_array($fo,array("zWivu!","klamu!","camu!")) && (sub(array("zWivu!","klamu!",),array("+"),$shitpratyaya,0) || (sub(array("camu!"),array("+"),$shitpratyaya,0) && $us==="A")) && $lakAra!=="" )
+if ( in_array($fo,array("zWivu!","klamu!","camu!")) && (sub(array("zWiv","klam",),array("+"),$shitpratyaya,0) || (sub(array("cam"),array("+"),$shitpratyaya,0) && $us==="A")) && $lakAra!=="" )
 {
-    $text=three(array("zWivu!","klamu!","camu!"),array("+"),$shitpratyaya,array("zWIv","klAm","cAm"),array("+"),$shitpratyaya,0);
+    $text=three(array("zWiv","klam","cam"),array("+"),$shitpratyaya,array("zWIv","klAm","cAm"),array("+"),$shitpratyaya,0);
 	storedata('7.3.75','sa',0);
     $nomidelision=1; // We will remember this while doing halantyam and prevent halantyam application, because these are not upadeza
 }
 /* akSo'nyatarasyAm (3.1.75) */
-if (in_array($fo,array("akzU!"))  && sub(array("akzU!"),array("+"),array("Sap"),0) && $lakAra!=="" )
+if (in_array($fo,array("akzU!"))  && sub(array("akz"),array("+"),array("Sap"),0) && $lakAra!=="" )
 {
-    $text=three(array("akzU!"),array("+"),array("Sap"),array("akzU!"),array("+"),array("Snu"),1);
+    $text=three(array("akz"),array("+"),array("Sap"),array("akz"),array("+"),array("Snu"),1);
 	storedata('3.1.75','sa',0);
 }
 if ($debug===1) {dibug("1700");}
 /* tanUkaraNe takSaH (3.1.76) */
-if (in_array($fo,array("takzU!")) && sub(array("takzU!"),array("+"),array("Sap"),0) && $lakAra!=="" && $_GET['cond45']==="1" )
+if (in_array($fo,array("takzU!")) && sub(array("takz"),array("+"),array("Sap"),0) && $lakAra!=="" && $_GET['cond45']==="1" )
 {
-    $text=three(array("takzU!"),array("+"),array("Sap"),array("takzU!"),array("+"),array("Snu"),1);
+    $text=three(array("takz"),array("+"),array("Sap"),array("takz"),array("+"),array("Snu"),1);
 	storedata('3.1.76','sa',0);
 }
 /* tiGzitsArvadhAtukam (3.4.113) */
