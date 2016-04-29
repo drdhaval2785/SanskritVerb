@@ -7118,14 +7118,13 @@ if ($lakAra!=="" && $type==="tiGanta")
     }
     // special patch for IDAgama of turustu... to make it amenable to aci znudhAtu...
     $text=one(array("+I+"),array("+I"),0);
-	if ((arr($text,'/^i[+]i/')||arr($text,'/^u[+]u/')) && $kGiti===1) # Patch because of https://github.com/drdhaval2785/SanskritVerb/issues/375
+	if ((arr($text,'/^i[+]i/')) && $kGiti===1) # Patch because of https://github.com/drdhaval2785/SanskritVerb/issues/375
 	{
 		$text = change('/^[i][+][i]/','I');
-		$text = change('/^[u][+][u]/','U');
 		storedata('6.1.101','sa',0);
 	}
 	/* aci znudhAtubhruvAM yvoriyaGuvaGau (6.4.77) */
-    if (($dhatu===1||$fo==="BrU") && arr($text,'/[iuIU][+][aAiIuUfFxeEoO]/') && $pada==="pratyaya" && ( anekAca($fo)===false  || in_array($so,$tiG) || arr($text,'/[B][U][+]/')||$fo==="suDI" || in_array("Sa",$vik) ) && $dfmBU===0 && $didhI!==1 && $nabhusu!==1 && !sub(array("+"),array("I"),array("+"),0) && ($abhyasta!==1 || in_array($fo,array("hrI"))) && ($sIyuT!==1 || $verbset==="adAdi") && !in_array("u",$vik))
+    if (($dhatu===1||$fo==="BrU") && arr($text,'/[iuIU][+][aAiIuUfFxeEoO]/') && $pada==="pratyaya" && ( anekAca($fo)===false  || in_array($so,$tiG) || arr($text,'/[B][U][+]/')||$fo==="suDI" || in_array("Sa",$vik) ) && $dfmBU==0 && $didhI!==1 && $nabhusu!==1 && !sub(array("+"),array("I"),array("+"),0) && ($sIyuT!==1 || $verbset==="adAdi") && !in_array("u",$vik))
     {
         $text = two(array("i+","I+","u+","U+"),$ac,array("iy+","iy+","uv+","uv+"),$ac,0);
 		$text = one(array("uv+uv+"),array("u+uv+"),0);
