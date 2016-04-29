@@ -12000,7 +12000,7 @@ elseif ($type!=="tiGanta" && arr($text,'/o/') && sub($dhato,$y,blank(0),0) && $p
 $text = two($dhato,$y,$dhato1,array("vy"),0);
 storedata('6.1.79','sa',0);
 } 
-if (arr($text,'/[oO][+]*[y]/') && $pada ==="pratyaya" && !sub($dhato,$y,blank(0),0))
+if ($type!=="tiGanta" && arr($text,'/[oO][+]*[y]/') && $pada ==="pratyaya" && !sub($dhato,$y,blank(0),0))
 {
     if (arr($text,'/gav[+]*y/'))
     {
