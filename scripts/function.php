@@ -2874,9 +2874,9 @@ function liT_ajAdi()
 			$text=change('/^[A][+]a(['.pc('hl').'MH]['.pc('hl').'MH])/','A+na$1');
 			storedata('7.4.71','sa',0);
 		}
-		if(arr($text,'/^([^+]*[+])f/'))
+		if(arr($text,'/^([^+]*[+])f(['.pc('hl').'MH]['.pc('hl').'MH])/'))
 		{
-			$text=change('/^([^+]*[+])f/','$1nf');
+			$text=change('/^([^+]*[+])f(['.pc('hl').'MH]['.pc('hl').'MH])/','$1nf$2');
 			storedata('nuqviDO fkAra','sa',0);
 		}
 		/* aznotezca (7.4.72) */
