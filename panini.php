@@ -5840,7 +5840,7 @@ if (($sarvadhatuka===1 || $ardhadhatuka===1) &&  (in_array("N",$it)||in_array("k
     $kGiti=1;
 }
 /* bhUsuvostiGi (7.3.88) */
-if ( ($sarvadhatuka===1 || $verbset==="adAdi" || $gAtisthA===1 || $lakAra==="luN") && in_array($fo,array("BU","zUN","asa!")) && arr($text,'/[Bs]U\+/') && $sanAdi!=="yaNluk")
+if ( ($sarvadhatuka===1 || $verbset==="adAdi" || $gAtisthA===1 || $lakAra==="luN") && in_array($fo,array("BU","zUN","asa!")) && arr($text,'/[Bs]U\+/') && $sanAdi!=="yaNluk" && !in_array($lakAra,array("luw","lfw")))
 {
 	storedata('7.3.88','sa',0);
 	$bhUsuvo=1;
