@@ -2841,7 +2841,7 @@ function liT_ajAdi()
 	{
 		storedata('6.1.2','pa',0);
 		$text=change('/^([^+]*['.pc('ac').'])(['.pc('hl').'MH]*['.pc('ac').'])[+]/','$1$2+$2+');
-		$text=one(array("UrRuRu"),array("UrRunu"),0);
+		$text=one(array("UrRu+rRu"),array("UrRu+nu"),0);
 		storedata('6.1.8','sa',0);
 	}
 	else
@@ -2852,7 +2852,7 @@ function liT_ajAdi()
 		storedata('6.1.8','sa',0);
 	}
 	/* halAdiH zeSaH (7.4.60) */
-	if(arr($text,'/^(['.pc('ac').'])[^+]*[+]/'))
+	if(arr($text,'/^(['.pc('ac').'])[^+]*[+]/') && !arr($text,'/UrRu/'))
 	{
 		$text = change('/^(['.pc('ac').'])([^+]*)[+]/','$1+');
 		storedata('7.4.60','sa',0);
