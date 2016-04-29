@@ -3182,17 +3182,17 @@ if (in_array($fo,$iditverbs))
     $it=array_merge($it,array("i"));
 }
 /* iSugamiyamAM CaH (7.3.77) */
-if ( in_array($fo,array("iza!","gamx!","yama!")) && sub(array("iza!","gamx!","yama!"),array("+"),$shitpratyaya,0) && in_array($verbset,array("BvAdi","tudAdi")))
+if ( in_array($fo,array("iza!","gamx!","yama!")) && sub(array("iz","gam","yam"),array("+"),$shitpratyaya,0) && in_array($verbset,array("BvAdi","tudAdi")))
 {
-    $text=three(array("iza!","gamx!","yama!"),array("+"),$shitpratyaya,array("iC","gaC","yaC"),array("+"),$shitpratyaya,0);
+    $text=three(array("iz","gam","yam"),array("+"),$shitpratyaya,array("iC","gaC","yaC"),array("+"),$shitpratyaya,0);
 	storedata('7.3.77','sa',0);
     $nomidelision=1; // We will remember this while doing halantyam and prevent halantyam application, because these are not upadeza
 }
 /* vA bhrAzabhlAzabhramukramutrasitruTilaSaH (3.1.70) */
-if (in_array($fo,array("wuBrASf!","wuBlASf!","BrASf!","BlASf!","Bramu!","kramu!","klamu!","trasI!","truwI!","laza!")) && sub(array("wuBrASf!","wuBlASf!","BrASf!","BlASf!","Bramu!","kramu!","klamu!","trasI!","truwI!","laza!"),array("+"),array("Sap","Syan"),0) && $lakAra!=="" )
+if (in_array($fo,array("wuBrASf!","wuBlASf!","BrASf!","BlASf!","Bramu!","kramu!","klamu!","trasI!","truwI!","laza!")) && sub(array("BrASf!","BlAS","BrAS","BlAS","Bram","kram","klam","tras","truw","laz"),array("+"),array("Sap","Syan"),0) && $lakAra!=="" )
 {
-    $text=two(array("wuBrASf!","wuBlASf!","BrASf!","BlASf!","Bramu!","kramu!","klamu!","trasI!","truwI!","laza!"),array("+Sap"),array("wuBrASf!","wuBlASf!","BrASf!","BlASf!","Bramu!","kramu!","klamu!","trasI!","truwI!","laza!"),array("+Syan"),0);
-    $text=two(array("wuBrASf!","wuBlASf!","BrASf!","BlASf!","Bramu!","kramu!","klamu!","trasI!","truwI!","laza!"),array("+Syan"),array("wuBrASf!","wuBlASf!","BrASf!","BlASf!","Bramu!","kramu!","klamu!","trasI!","truwI!","laza!"),array("+Sap"),1);
+    $text=two(array("BrAS","BlAS","BrAS","BlAS","Bram","kram","klam","tras","truw","laz"),array("+Sap"),array("wuBrASf!","wuBlASf!","BrASf!","BlASf!","Bramu!","kramu!","klamu!","trasI!","truwI!","laza!"),array("+Syan"),0);
+    $text=two(array("BrAS","BlAS","BrAS","BlAS","Bram","kram","klam","tras","truw","laz"),array("+Syan"),array("wuBrASf!","wuBlASf!","BrASf!","BlASf!","Bramu!","kramu!","klamu!","trasI!","truwI!","laza!"),array("+Sap"),1);
 	storedata('3.1.70','sa',0);
 }
 /* kramaH parasmaipadeSu (7.3.76) */
