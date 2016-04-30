@@ -87,8 +87,8 @@ for($i=0;$i<count($pureverb);$i++)
 	if (count($mdv)===0 && count($kzr)===0 && count($dp)===0)
 	{
 		// The keys which match on forcing the anusvAra conversion
-		// Changed fifth letters to 'n'
-		$verbwithoutanubandha_anusvAra_adjusted = str_replace(array("N","Y","R","m"),array("n","n","n","n"),$verbwithoutanubandha[$i]);
+		// Changed fifth letters to 'n' and 'tw','dq' issue e.g. cutw instead of cuww
+		$verbwithoutanubandha_anusvAra_adjusted = str_replace(array("N","Y","R","m","ww","qq"),array("n","n","n","n","tw","dq"),$verbwithoutanubandha[$i]);
 		$key2 = array_keys($dhatuwithoutanubandha,$verbwithoutanubandha_anusvAra_adjusted);
 		foreach($key2 as $k)
 		{
