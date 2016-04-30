@@ -1,8 +1,16 @@
 # -*- coding: utf-8 -*-
+"""
+Usage:
+python comparedb.py testfile
+e.g.
+python comparedb.py ../generatedforms/generatedforms30042016.xml
+"""
 import sys, re
 import codecs
 import string
 import datetime
+from lxml import etree
+from io import StringIO, BytesIO
 
 # Function to return timestamp
 def timestamp():
@@ -14,6 +22,14 @@ def triming(lst):
 		member = member.strip()
 		output.append(member)
 	return output
+def testverbformlist(testxml):
+	roots = etree.parse(testxml)
+	# Typical line in XML file is in `<forms><f form="aMsayati"><root name="aMsa" num="10.0460"/><law/><tip/></f></forms>` format.
+	# Therefore, the data which we want e.g. 'aMSayati' is in /forms/f-get('form') location. Fetching it below.
+	roo = roots.xpath('/forms/f') # Returns a list of all /forms/f in the database.
+	verbformlist = [(member.get('form'),member.find('root').get('name'),member.find('root').get('num'),member.getchildren()[-2].tag,member.getchildren()[-1].tag) for member in roo] # For all /forms/f in database, we get its attribute 'forms' e.g. 'aMSayati'.
+	print "Total", len(verbformlist), "entries in test list"
+	return verbformlist
 def baseverbformlist(testdb,lstofbasedb):
 	output = []
 	for basedb in lstofbasedb:
@@ -22,7 +38,6 @@ def baseverbformlist(testdb,lstofbasedb):
 			fin = codecs.open(basedb,'r','utf-8')
 			data = fin.read()
 			fetch = data.split(',')
-			print len(fetch), basedb
 			output += fetch
 		else:
 			fetch = []
@@ -32,8 +47,20 @@ def baseverbformlist(testdb,lstofbasedb):
 			for datum in data:
 				parts = datum.split('-')
 				fetch.append(parts[0])
-			print len(fetch), basedb
 			output += fetch
-	print len(output)
+	print "Total", len(output), "entries in base list"
 	return output
-baseverbformlist('',['../Data/verbforms_gerard.txt','../Data/verbforms_amba.txt','../Data/okforms.txt'])
+
+if __name__=="__main__":
+	testfile = sys.argv[1]
+	base = baseverbformlist('',['../Data/verbforms_gerard.txt','../Data/verbforms_amba.txt','../Data/okforms.txt'])
+	test = testverbformlist(testfile)
+	suspect = codecs.open('../suspectforms/suspectverbforms.txt','w','utf-8')
+	print "Printing the following suspect entries to ../suspectforms/suspectverbforms.txt"
+	print 
+	for (member,verb,num,lakAra,tiG) in test:
+		if member.endswith('cakara'):
+			pass
+		elif not member in base:
+			print (member,verb,num,lakAra,tiG)
+			suspect.write(member+','+verb+','+num+','+lakAra+','+tiG+'\n')
