@@ -4223,3 +4223,4 @@ AniDvam,ana!,04.0072,luN,Ta
 ayeTAH,aya!,01.1031,viDiliN,sip
 ayeTAH,aya!,01.0546,viDiliN,TAs
 ArbAma,arba!,01.0481,laN,mas
+AsyaH,asu!,04.0106,laN,sip

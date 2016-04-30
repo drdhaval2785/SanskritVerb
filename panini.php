@@ -2828,7 +2828,7 @@ if ($lakAra==="luN")
 		$itpratyaya = array_merge($itpratyaya,array("k"));
 	}
 	/* puSAdidyutAdilRditaH parasmaipadeSu (3.1.55) */
-	elseif ( ( (in_array($fo,$divAdi_puSAdi)&&$verbset==="divAdi")||(in_array($fo,$bhvAdi_dyutAdi)&&$verbset==="BvAdi")||in_array($fo,$lRdit)) && $fo!=="Apx!" && in_array($so,$tis) )
+	elseif ( ( (in_array($fo,$divAdi_puSAdi)&&$verbset==="divAdi")||(in_array($fo,$bhvAdi_dyutAdi)&&$verbset==="BvAdi")||in_array($fo,$lRdit)) && in_array($so,$tis) )
 	{
 		$text = one(array("+cli+"),array("+aN+"),0);
 		storedata('3.1.55','sa',0);
