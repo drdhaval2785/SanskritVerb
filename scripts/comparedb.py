@@ -59,7 +59,7 @@ if __name__=="__main__":
 	print "Printing the following suspect entries to ../suspectforms/suspectverbforms.txt"
 	print 
 	for (member,verb,num,lakAra,tiG) in test:
-		if member.endswith('cakara'):
+		if member.endswith('cakara') or member.endswith("iDve") or member.endswith("iDvam"):
 			pass
 		elif not member in base:
 			print (member,verb,num,lakAra,tiG)

@@ -4219,3 +4219,7 @@ aNkzyataH,aYjU!,07.0316,lfw,tas
 aNkzyaTaH,aYjU!,07.0316,lfw,Tas
 aNkzyAvaH,aYjU!,07.0316,lfw,vas
 aNkzyAmaH,aYjU!,07.0316,lfw,mas
+AniDvam,ana!,04.0072,luN,Ta
+ayeTAH,aya!,01.1031,viDiliN,sip
+ayeTAH,aya!,01.0546,viDiliN,TAs
+ArbAma,arba!,01.0481,laN,mas
