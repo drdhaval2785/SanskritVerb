@@ -3434,19 +3434,19 @@ elseif ( in_array($so,array("Ja")) && !sub(array("a+"),array("Ja"),blank(0),0) &
 }
 /* UrNotezca pratiSedho vaktavyaH (vA) */
 // Pending. Not giving proper results. Am pratyaya not functioning well.
-if ($lakAra==="liw" && ends(array($fo),array("UrRuY"),4) )
+if ($lakAra==="liw" && $fo==="UrRuY" )
 {
 	storedata('3.1.36-6','sa',0);
 }
 /* ijAdezca gurumato'nRcCaH (3.1.36) */
-elseif ($lakAra==="liw" && (arr(array($verb_without_anubandha),'/^[IUFXeEoO]/') || arr(array($verb_without_anubandha),'/^[iufx]['.pc('hl').']['.pc('hl').']/')) && !ends(array($fo),array("fCa!"),4) )
+elseif ($lakAra==="liw" && (arr(array($verb_without_anubandha),'/^[IUFXeEoO]/') || arr(array($verb_without_anubandha),'/^[iufx]['.pc('hl').']['.pc('hl').']/')) && $fo!=="fCa!" )
 {
     $text=pr2(array("+"),$tiG,blank(0),array("+Am+"),$tiG,blank(0),$text);
     $text=pr2(array("+"),array("eS","e","irec","ire"),blank(0),array("+Am+"),array("eS","e","irec","ire"),blank(0),$text);
 	storedata('3.1.36','sa',0);
 }
 /* dayAyAysazca (3.1.37) */
-elseif ($lakAra==="liw" && ends(array($fo),array("daya!","aya!","Asa!"),4) )
+elseif ($lakAra==="liw" && in_array($fo,array("daya!","aya!","Asa!")) )
 {
     $text=two(array("+"),$tiG,array("+Am+"),$tiG,0);
     $text=change('/[+]eS$/','+Am+eS');
@@ -3454,14 +3454,14 @@ elseif ($lakAra==="liw" && ends(array($fo),array("daya!","aya!","Asa!"),4) )
 	storedata('3.1.37','sa',0);
 }
 /* uSavidajAgRbhyo'nyatarasyAm (3.1.38) */
-elseif ($lakAra==="liw" && ends(array($fo),array("uza!","vida!","jAgf"),4) )
+elseif ($lakAra==="liw" && in_array($fo,array("uza!","vida!","jAgf")) )
 {
 	// Pending to make this optional. See https://github.com/drdhaval2785/SanskritVerb/issues/384
 	$text=three(array("uz","vid","jAgf"),array("+"),$tiG,array("uz","vid","jAgf"),array("+Am+"),$tiG,0);
 	storedata('3.1.38','sa',0);
 }
 /* bhIhrIbhRhuvAM zluvacca (3.1.39) */
-elseif ($lakAra==="liw" && ends(array($fo),array("YiBI","hrI","quBfY","hu"),4) && $zluvat!==1)
+elseif ($lakAra==="liw" && in_array($fo,array("YiBI","hrI","quBfY","hu")) && $zluvat!==1)
 {
     $text=pr2(array("hu","BI","BfY","hrI"),array("+"),$tiG,array("hu","BI","BfY","hrI"),array("+Am+"),$tiG,$text);
 	storedata('3.1.39','sa',0);
@@ -6425,14 +6425,14 @@ if ( arr($text,'/bu\+BUv\+/') && $lakAra==="liw")
 	storedata('7.4.73','sa',0);
 }
 /* aco JNiti patch for liT. */
-if ( in_array($so,array("tip")) && $lakAra==="liw" && arr($text,'/['.pc('ac').']\+([^+]*)$/') && (sub($ac,array("+"),$tiG1,0)||sub($ac,array("+"),$iDtiG,0)) ) # See https://github.com/drdhaval2785/SanskritVerb/issues/305
+if ( in_array($so,array("tip")) && $lakAra==="liw" && arr($text,'/['.pc('ac').']\+([^+]*)$/')  ) # See https://github.com/drdhaval2785/SanskritVerb/issues/305
 {
     $text = pr2($ac,array("+"),$tiG1,vriddhi($ac),array("+"),$tiG1,$text);
     $text = pr2($ac,array("+"),$iDtiG,vriddhi($ac),array("+"),$iDtiG,$text);
 	storedata('7.2.115','sa',0);
 }
 /* aco JNiti patch for liT mip. */
-if ( in_array($so,array("mip")) && $lakAra==="liw" && arr($text,'/['.pc('ac').']\+([^+]*)$/') && (sub($ac,array("+"),$tiG1,0)||sub($ac,array("+"),$iDtiG,0)) ) # See https://github.com/drdhaval2785/SanskritVerb/issues/305
+if ( in_array($so,array("mip")) && $lakAra==="liw" && arr($text,'/['.pc('ac').']\+([^+]*)$/') ) # See https://github.com/drdhaval2785/SanskritVerb/issues/305
 {
 	storedata('7.1.91','pa',0);
     $text1 = pr2($ac,array("+"),$tiG1,vriddhi($ac),array("+"),$tiG1,$text);
@@ -12541,13 +12541,12 @@ else
 {
     $kvinku=0;
 }
-
 /* vrazcabhrasjamRjayajarAjabhrAjacChazAM ca (8.2.36) */
 // TubhrAjR dIptau and ejR bhejR bhrAjR dIptau are different. This is pending to code.
 // parau vrajeH SaH padAnte (u 217) pending.
 $vrasca = array("vfSc","sfj","mfj","yaj","rAj","BrAj","devej","parivrAj","Bfj","ftvij");
 $vrashca = array("vfSz","sfz","mfz","yaz","rAz","BrAz","devez","parivrAz","Bfz","ftviz");
-if (arr($text,'/[cj]/') && $_GET['cond1_9_3']!=="2" && ($kvinku===0 || ($fo==="asfj" && in_array($so,array("su!","am")))) && (sub($vrasca,array("+"),prat("Jl"),0) ||  ( sub($vrasca,array("+"),blank(0),0) && $pada==="pada")) )
+if (arr($text,'/[cj][+]/') && $_GET['cond1_9_3']!=="2" && ($kvinku===0 || ($fo==="asfj" && in_array($so,array("su!","am")))) && (sub($vrasca,array("+"),prat("Jl"),0) ||  ( sub($vrasca,array("+"),blank(0),0) && $pada==="pada")) )
 {
     if (sub($vrasca,prat('Jl'),blank(0),0))
     {
@@ -13456,9 +13455,7 @@ if ($debug===1) {dibug("11300");}
 // For dvitva, + sign pauses many problems. Now we don't have to remember what was prakRti and what was pratyaya. Therefore we can afford to remove + sign now.
 if (arr($text,'/['.pc('hl').' ][+]['.pc('hl').']/') || arr($text,'/[HM!][+]['.pc('hl').']/') || arr($text,'/['.pc('hl').'][+][HM]/'))
 {
-$text = three($hl,array("+"," +"),$hl,$hl,array(""," "),$hl,0);    
-$text = three(array("H","M","!"),array("+"),$hl,array("H","M","!"),array(""),$hl,0);    
-$text = three($hl,array("+"),array("H","M"),$hl,array("+"),array("H","M"),0);    
+$text = change('/(['.pc('hl').'HM!])([ ]*)([+])(['.pc('hl').'HM])/','$1$2$4');
 }
 if ( arr($text,'/['.pc('ac').'HM! ][+]['.pc('ac').']/') || arr($text,'/[HM!][+]['.pc('ac').']/') )
 {  
@@ -13938,18 +13935,17 @@ $text=array();
 if ($debug===1) {dibug('11740');}
 }
 
-
 /* Post Generation processes e.g. CLI application, testing etc. */
 if ((isset($argv[0])|| $test ===1) )
 { 
-	$suspectentryfile = fopen('suspectverbforms.txt','a+');
+	//$suspectentryfile = fopen('suspectverbforms.txt','a+');
 	$generatedformfile = fopen('generatedforms.xml','a+');
-	$verblist = verbformlist();
-	$verbsingerard = verblist();
+	//$verblist = verbformlist();
+	//$verbsingerard = verblist();
 	//wrongformlist($ou,$verblist,"fast"); // Uncomment this if you want only the list of suspect verbs for which Gerard has database.
-	wrongformlist($ou,$verblist); // Uncomment this if you want to get the list of all suspect verbs for irrespecitve of Gerard's database.
+	//wrongformlist($ou,$verblist); // Uncomment this if you want to get the list of all suspect verbs for irrespecitve of Gerard's database.
 	generatedforms($ou,$generatedformfile);
-	fclose($suspectentryfile);
+	//fclose($suspectentryfile);
 	fclose($generatedformfile);
 	/*$susinput = file_get_contents('suspectverbforms.txt');
 	$susoutput = convert($susinput);
