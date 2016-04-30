@@ -84,21 +84,23 @@ for($i=0;$i<count($pureverb);$i++)
 			$dp[] = $dhatupradipa[$k];
 		}
 	}
-	// The keys which match on forcing the anusvAra conversion
-	// Changed fifth letters to 'n'
-	/*
-	$verbwithoutanubandha_anusvAra_adjusted = str_replace(array("N","Y","R","m"),array("n","n","n","n"),$verbwithoutanubandha);
-	$key2 = array_keys($dhatuwithoutanubandha,$verbwithoutanubandha_anusvAra_adjusted);
-	foreach($key2 as $k)
+	if (count($mdv)===0 && count($kzr)===0 && count($dp)===0)
 	{
-		// If verb sets are equal
-		if($verbset[$i]===$gana[$k])
+		// The keys which match on forcing the anusvAra conversion
+		// Changed fifth letters to 'n'
+		$verbwithoutanubandha_anusvAra_adjusted = str_replace(array("N","Y","R","m"),array("n","n","n","n"),$verbwithoutanubandha[$i]);
+		$key2 = array_keys($dhatuwithoutanubandha,$verbwithoutanubandha_anusvAra_adjusted);
+		foreach($key2 as $k)
 		{
-			$mdv[] = $madhav[$k];
-			$kzr[] = $kzir[$k];
-			$dp[] = $dhatupradipa[$k];
+			// If verb sets are equal
+			if($verbset[$i]===$gana[$k])
+			{
+				$mdv[] = $madhav[$k];
+				$kzr[] = $kzir[$k];
+				$dp[] = $dhatupradipa[$k];
+			}
 		}
-	}*/
+	}
 	$mdv = array_diff($mdv,array("X")); $mdv = array_unique($mdv); $mdv = array_values($mdv);
 	$kzr = array_diff($kzr,array("X")); $kzr = array_unique($kzr); $kzr = array_values($kzr);
 	$dp = array_diff($dp,array("X")); $dp = array_unique($dp); $dp = array_values($dp);
