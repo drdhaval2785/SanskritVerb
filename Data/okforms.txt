@@ -4210,3 +4210,12 @@ iryAsam-(F,ASIrliN,mip,kryAdi,09.0032)
 iryAsva-(F,ASIrliN,vas,kryAdi,09.0032)
 iryAsma-(F,ASIrliN,mas,kryAdi,09.0032)
 ArIzyAma-(F,lfN,mas,kryAdi,09.0032)
+ANkiDvam,aki!,01.0092,luN,Ta
+ANGiDvam,aGi!,01.0115,luN,Ta
+aNktAsTaH,aYjU!,07.0316,luw,Tas
+aNktAsvaH,aYjU!,07.0316,luw,vas
+aNktAsmaH,aYjU!,07.0316,luw,mas
+aNkzyataH,aYjU!,07.0316,lfw,tas
+aNkzyaTaH,aYjU!,07.0316,lfw,Tas
+aNkzyAvaH,aYjU!,07.0316,lfw,vas
+aNkzyAmaH,aYjU!,07.0316,lfw,mas
