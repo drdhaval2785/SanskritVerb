@@ -30,6 +30,16 @@ def testverbformlist(testxml):
 	verbformlist = [(member.get('form'),member.find('root').get('name'),member.find('root').get('num'),member.getchildren()[-2].tag,member.getchildren()[-1].tag) for member in roo] # For all /forms/f in database, we get its attribute 'forms' e.g. 'aMSayati'.
 	print "Total", len(verbformlist), "entries in test list"
 	return verbformlist
+# function to find out the list of verbs whose result still remains in the suspect list
+def findverbsfromlist(suspectfile):
+	#acAYcakAra,acu!,01.0999,liw,tip
+	#Expected output is 01.0999
+	fin = codecs.open(suspectfile,'r','utf-8')
+	data = fin.readlines()
+	output = [member.split(',')[2] for member in data]
+	output = list(set(output))
+	return output
+
 def baseverbformlist(testdb,lstofbasedb):
 	output = []
 	for basedb in lstofbasedb:
@@ -52,6 +62,7 @@ def baseverbformlist(testdb,lstofbasedb):
 	return output
 
 if __name__=="__main__":
+	"""
 	testfile = sys.argv[1]
 	base = baseverbformlist('',['../Data/verbforms_gerard.txt','../Data/verbforms_amba.txt','../Data/okforms.txt'])
 	test = testverbformlist(testfile)
@@ -64,3 +75,6 @@ if __name__=="__main__":
 		elif not member in base:
 			print (member,verb,num,lakAra,tiG)
 			suspect.write(member+','+verb+','+num+','+lakAra+','+tiG+'\n')
+	"""
+	print ' '.join(findverbsfromlist('../suspectforms/suspectverbforms30042016.txt'))
+	
