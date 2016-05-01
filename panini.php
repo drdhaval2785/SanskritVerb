@@ -6326,7 +6326,7 @@ elseif (arr($text,'/([+]*)i\+/') && in_array($so,$tiG) && $ardhadhatuka===1&& (!
 }
 /* na bhakurChurAm (8.2.79) */
 // bham pending
-if ( in_array($so,$tiG) && arr($text,'/[kC]u[rv]\+/'))
+if ( in_array($so,$tiG) && arr($text,'/[kC]u[rv]\+/') && $number!=="06.0067") // kura Sabde doesn't have applicability of this rule. See http://localhost/SanskritVerb/Data/dhaatupaatha/files-6-9-2014/mA954.html
 {
 	storedata('8.2.79','pa',0);
 }

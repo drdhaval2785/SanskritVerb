@@ -4996,3 +4996,5 @@ akuRwizyatam,kuwi!,01.0363,lfN,Tas
 cukuRqatuH,kuqi!,01.0362,liw,tas
 cukuRquH,kuqi!,01.0362,liw,Ji
 cukuRqaTuH,kuqi!,01.0362,liw,Tas
+kopitAsvaH,kupa!,04.0310,luw,vas
+kumBayizIQvam,kuBi!,10.0158,ASIrliN,Dvam
