@@ -4639,3 +4639,4 @@ akapizyaDvam,kapa!,01.0877,lfN,Ta
 akapizye,kapa!,01.0877,lfN,mip
 akapizyAvahi,kapa!,01.0877,lfN,vas
 akapizyAmahi,kapa!,01.0877,lfN,mas
+karvatam,karva!,01.0664,low,Tas

@@ -1173,7 +1173,6 @@ if ( in_array($fo,array("fta!")) && $pada==="pratyaya" && $lakAra!=="")
     $sanAdi="IyaN";
     $verbpada="A";
 }
-print_r($text);
 /* kamerNiG (3.1.30) */
 if ( in_array($fo,array("kamu!")) && $pada==="pratyaya" && $lakAra!=="" && $sanAdi!=="Ric" && $vsuf!=="yak")
 {
