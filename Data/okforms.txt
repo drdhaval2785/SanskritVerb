@@ -4998,3 +4998,11 @@ cukuRquH,kuqi!,01.0362,liw,Ji
 cukuRqaTuH,kuqi!,01.0362,liw,Tas
 kopitAsvaH,kupa!,04.0310,luw,vas
 kumBayizIQvam,kuBi!,10.0158,ASIrliN,Dvam
+akorizyat,kura!,06.0067,lfN,tip
+akorizyatAm,kura!,06.0067,lfN,tas
+akorizyan,kura!,06.0067,lfN,Ji
+akorizyaH,kura!,06.0067,lfN,sip
+akorizyatam,kura!,06.0067,lfN,Tas
+akorizyam,kura!,06.0067,lfN,mip
+akorizyAva,kura!,06.0067,lfN,vas
+akorizyAma,kura!,06.0067,lfN,mas
