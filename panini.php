@@ -5572,6 +5572,7 @@ if (arr($text,'/cC[+][YmNRn]/') || (arr($text,'/cC[+]['.pc('Jl').']/') && $kGiti
     $text = change('/cC[+]/','S+');
 	storedata('6.4.19','sa',0);
 }
+echo $kGiti, $vijait; print_r($itpratyaya);
 /* jusi ca (7.3.83) */
 if ( ($jherjus===1 || $sijabhyastavidibhyazca===1) && arr($text,'/[iIuUfFxX]\+us/') && $lakAra!=="liw" ) // liT has 'us' which is not 'jus'
 {
@@ -5600,6 +5601,13 @@ elseif(arr($text,'/gup\+Ay/'))
 elseif(arr($text,'/p\+i\+/') && sub(array("fp","hrIp","vlIp","rIp","knUp","kzmAp","blIp"),array("+"),array("i+"),0)  && $vijait!==1) // for puganta
 {
 	$text = three(array("fp","hrIp","vlIp","rIp","knUp","kzmAp","blIp"),array("+"),array("i+"),array("arp","hrep","vlep","rep","knop","kzmAp","blep"),array("+"),array("i+"),0); 
+	storedata('7.3.86','sa',0);
+}
+/* pugantalaghUpadhasya ca (7.3.86) */
+// Patch for tanAdi
+elseif(arr($text,'/[iufx]['.pc('hl').'][+]u[+]/'))
+{
+    $text=three(array("i","u","f","x"),$hl,array("+u+"),array("e","o","ar","al"),$hl,array("+u+"),0);
 	storedata('7.3.86','sa',0);
 }
 /* pugantalaghUpadhasya ca (7.3.86) */
