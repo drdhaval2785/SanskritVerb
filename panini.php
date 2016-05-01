@@ -6627,7 +6627,7 @@ elseif ( arr($text,'/['.pc('ac').'](['.pc('hl').'M]*)[+][i][s]/') && $sic===1 &&
 {
 	storedata('7.2.4','pa',0);
 	$novrddhi=1;
-	if (arr($text,'/[iufx](['.pc('hl').'M]*)[+][i][s]/'))
+	if (arr($text,'/[iufx](['.pc('hl').'M]*)[+][i][s]/') && $kGiti!==1)
 	{
 		$text=three(array("i","u","f","x"),$hl,array("+is"),array("e","o","ar","al"),$hl,array("+is"),0);
 		storedata('7.3.86','sa',0);
