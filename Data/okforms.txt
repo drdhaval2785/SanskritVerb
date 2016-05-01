@@ -4640,3 +4640,7 @@ akapizye,kapa!,01.0877,lfN,mip
 akapizyAvahi,kapa!,01.0877,lfN,vas
 akapizyAmahi,kapa!,01.0877,lfN,mas
 karvatam,karva!,01.0664,low,Tas
+kaqQvam,kaSa!,02.0016,low,Ta
+akazWAH,kaSa!,02.0016,laN,sip
+akaqQvam,kaSa!,02.0016,laN,Ta
+cakasatuH,kasa!,01.0996,liw,tas

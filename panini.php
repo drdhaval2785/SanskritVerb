@@ -7128,20 +7128,6 @@ if ($lakAra!=="" && $type==="tiGanta")
 		$text = change('/^[i][+][i]/','I');
 		storedata('6.1.101','sa',0);
 	}
-	/* akaH savarNe dIrghaH (6.1.101) */
-	if ( arr($text,'/^[iIuU][+][iIuU][^+]/') && sub(array("i+i","I+I","u+u","U+U"),blank(0),blank(0),0) && $abhyAsa===1)
-	{
-		$text=one(array("i+i","I+I","u+u","U+U"),array("I","I","U","U"),0);
-		storedata('6.1.101','sa',0);
-	}
-	/* aci znudhAtubhruvAM yvoriyaGuvaGau (6.4.77) */
-    elseif (($dhatu===1||$fo==="BrU") && arr($text,'/[iuIU][+][aAiIuUfFxeEoO]/') && $pada==="pratyaya" && ( anekAca($fo)===false  || in_array($so,$tiG) || arr($text,'/[B][U][+]/')||$fo==="suDI" || in_array("Sa",$vik) ) && $dfmBU==0 && $didhI!==1 && $nabhusu!==1 && !sub(array("+"),array("I"),array("+"),0) && ($sIyuT!==1 || $verbset==="adAdi") && !in_array("u",$vik))
-    {
-        $text = two(array("i+","I+","u+","U+"),$ac,array("iy+","iy+","uv+","uv+"),$ac,0);
-		$text = one(array("uv+uv+"),array("u+uv+"),0);
-		storedata('6.4.77','sa',3);
-		storedata('gatik','pa',0);
-	}
     if (arr($text,'/\+nu\+['.pc('ac').']/') )//&& $sIyuT!==1)
     {
         $text = two(array("+nu+"),$ac,array("+nuv+"),$ac,0);
@@ -7162,7 +7148,7 @@ if ($lakAra!=="" && $type==="tiGanta")
     /* gatikAraketarapUrvapadasya yaN neSyate (vA 5034) */
     // This is attached with eranekAco... So, trying to put a note and making the iyaG and yaN optional.
     /* eranekAco'saMyogapUrvasya (6.4.82) */
-    if ($dhatu===1 && arr($text,'/[iI][+]['.pc('ac').']/') && in_array($fo,array("unnI")) && $pada==="pratyaya" && anekAca($fo) && $nabhusu===0)
+    if ($dhatu===1 && arr($text,'/[iI][+]['.pc('ac').']/') && in_array($fo,array("unnI")) && $pada==="pratyaya" && (anekAca($fo) || $abhyasta===1 ) && $nabhusu===0)
     {
 		storedata('eranekAc','sa',0);
         $unni=1; // 0 - the word is not unnI. 1 - the word is unnI
@@ -7185,6 +7171,20 @@ if ($lakAra!=="" && $type==="tiGanta")
 		storedata('6.4.83','sa',3);
 		storedata('gatik','pa',0);
     }    
+	/* akaH savarNe dIrghaH (6.1.101) */
+	if ( arr($text,'/^[iIuU][+][iIuU][^+]/') && sub(array("i+i","I+I","u+u","U+U"),blank(0),blank(0),0) && $abhyAsa===1)
+	{
+		$text=one(array("i+i","I+I","u+u","U+U"),array("I","I","U","U"),0);
+		storedata('6.1.101','sa',0);
+	}
+	/* aci znudhAtubhruvAM yvoriyaGuvaGau (6.4.77) */
+    elseif (($dhatu===1||$fo==="BrU") && arr($text,'/[iuIU][+][aAiIuUfFxeEoO]/') && $pada==="pratyaya" && ( anekAca($fo)===false  || in_array($so,$tiG) || arr($text,'/[B][U][+]/')||$fo==="suDI" || in_array("Sa",$vik) ) && $dfmBU==0 && $didhI!==1 && $nabhusu!==1 && !sub(array("+"),array("I"),array("+"),0) && ($sIyuT!==1 || $verbset==="adAdi") && !in_array("u",$vik))
+    {
+        $text = two(array("i+","I+","u+","U+"),$ac,array("iy+","iy+","uv+","uv+"),$ac,0);
+		$text = one(array("uv+uv+"),array("u+uv+"),0);
+		storedata('6.4.77','sa',3);
+		storedata('gatik','pa',0);
+	}
 	/* akaH savarNe dIrghaH (6.1.101) */
 	if ( arr($text,'/^[iIuU]/') && sub(array("i+i","I+I","u+u","U+U"),blank(0),blank(0),0) && $abhyAsa===1)
 	{
