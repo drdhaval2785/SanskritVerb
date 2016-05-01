@@ -38,8 +38,9 @@ def createrecheck(suspectfile,recheckfile):
 		[form,verb,number,lakAra,suffix] = datum.split(',')
 		if (number,lakAra) not in output:
 			output.append((number,lakAra))
-			fout.write('echo "'+counter+' - Processing '+number+' '+lakAra+" analysis started at $(timestamp)\"\n")
+			fout.write('echo "'+str(counter)+' - Processing '+number+' '+lakAra+" analysis started at $(timestamp)\"\n")
 			fout.write('php panini.php '+number+' '+lakAra+'\n')
+			counter += 1
 	print "Total", len(output), "entries in recheck.sh.\nKindly run this script after corrections."
 	fout.write("echo \'</forms>\' >> generatedforms.xml\n")
 	fout.write('python comparedb.py generatedforms.xml suspectverbforms.txt\n')
