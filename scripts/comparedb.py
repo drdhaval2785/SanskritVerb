@@ -55,15 +55,18 @@ def baseverbformlist(testdb,lstofbasedb):
 			data = fin.readlines()
 			data = triming(data)
 			for datum in data:
-				parts = datum.split('-')
+				parts = re.split('-,',datum)
 				fetch.append(parts[0])
 			output += fetch
 	print "Total", len(output), "entries in base list"
 	return output
-
+def gananame(number):
+	gana = ['BvAdi','adAdi','juhotyAdi','divAdi','svAdi','tudAdi','ruDAdi','tanAdi','kryAdi','curAdi']
+	gn = number.split('.')[0]
+	gn = int(gn)
+	return gana[gn]
 
 if __name__=="__main__":
-	"""
 	testfile = sys.argv[1]
 	base = baseverbformlist('',['../Data/verbforms_gerard.txt','../Data/verbforms_amba.txt','../Data/okforms.txt'])
 	test = testverbformlist(testfile)
@@ -76,7 +79,4 @@ if __name__=="__main__":
 			pass
 		elif not member in base:
 			print (member,verb,num,lakAra,tiG)
-			suspect.write(member+','+verb+','+num+','+lakAra+','+tiG+'\n')
-	"""
-	#print ' '.join(findverbsfromlist('../suspectforms/suspectverbforms30042016.txt'))
-	createrecheck('../suspectforms/suspectverbforms30042016.txt','../recheck.sh')
+			suspect.write(member+'-('+verb+','+lakAra+','+tiG+','+gananame(num)','+num+')\n')
