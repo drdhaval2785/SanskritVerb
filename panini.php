@@ -6522,7 +6522,7 @@ if (  $ardhadhatuka===1 && $didhI!==1 && $kGiti!==1 && $bhUsuvo!==1 && arr($text
 	storedata('7.3.84','sa',0);
 }
 /* pugantalaghUpadhasya ca (7.3.86) */
-if ( $didhI!==1 && $kGiti!==1 && $vijait!==1 && $lakAra==="liw" && $ardhadhatuka===1 && arr($text,'/[iufF]['.pc('hl').']\+/') && (sub(array("i","u","f","x"),$hlplus,$tiG1,0) || sub(array("i","u","f","x"),$hlplus,$iDtiG,0) )  && !($verbset==="tudAdi" && $sarvadhatuka===1) && $abhyAsasyAsavarNe!==1)
+if ( $didhI!==1 && $kGiti!==1 && $vijait!==1 && $lakAra==="liw" && $ardhadhatuka===1 && arr($text,'/[iufF]['.pc('hl').']\+/') && !($verbset==="tudAdi" && $sarvadhatuka===1) && $abhyAsasyAsavarNe!==1)
 {
 	$text=three(array("i","u","f","x"),$hlplus,$iDtiG,array("e","o","ar","al"),$hlplus,$iDtiG,0);
 	$text=three(array("i","u","f","x"),$hlplus,$tiG1,array("e","o","ar","al"),$hlplus,$tiG1,0);
@@ -7127,8 +7127,14 @@ if ($lakAra!=="" && $type==="tiGanta")
 		$text = change('/^[i][+][i]/','I');
 		storedata('6.1.101','sa',0);
 	}
+	/* akaH savarNe dIrghaH (6.1.101) */
+	if ( arr($text,'/^[iIuU][+][iIuU][^+]/') && sub(array("i+i","I+I","u+u","U+U"),blank(0),blank(0),0) && $abhyAsa===1)
+	{
+		$text=one(array("i+i","I+I","u+u","U+U"),array("I","I","U","U"),0);
+		storedata('6.1.101','sa',0);
+	}
 	/* aci znudhAtubhruvAM yvoriyaGuvaGau (6.4.77) */
-    if (($dhatu===1||$fo==="BrU") && arr($text,'/[iuIU][+][aAiIuUfFxeEoO]/') && $pada==="pratyaya" && ( anekAca($fo)===false  || in_array($so,$tiG) || arr($text,'/[B][U][+]/')||$fo==="suDI" || in_array("Sa",$vik) ) && $dfmBU==0 && $didhI!==1 && $nabhusu!==1 && !sub(array("+"),array("I"),array("+"),0) && ($sIyuT!==1 || $verbset==="adAdi") && !in_array("u",$vik))
+    elseif (($dhatu===1||$fo==="BrU") && arr($text,'/[iuIU][+][aAiIuUfFxeEoO]/') && $pada==="pratyaya" && ( anekAca($fo)===false  || in_array($so,$tiG) || arr($text,'/[B][U][+]/')||$fo==="suDI" || in_array("Sa",$vik) ) && $dfmBU==0 && $didhI!==1 && $nabhusu!==1 && !sub(array("+"),array("I"),array("+"),0) && ($sIyuT!==1 || $verbset==="adAdi") && !in_array("u",$vik))
     {
         $text = two(array("i+","I+","u+","U+"),$ac,array("iy+","iy+","uv+","uv+"),$ac,0);
 		$text = one(array("uv+uv+"),array("u+uv+"),0);
