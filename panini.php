@@ -7358,7 +7358,12 @@ if( in_array($so,$tiG) && arr($text,'/([iIuUfFxXeEoOhyvrlkKgGN])([+]*[iI]*)s(['.
 	{
 		$text = change('/rI[+]z/','rI+s');
 	}
-	if ($in!==$text)
+	// kusma dhAtu has 's' in upadeza. Therefore, reverting it back.
+	if (arr($text,'/kuzm/'))
+	{
+		$text = change('/kuzm/','kusm');
+	}
+	if ($in!==$text )
 	{
 		storedata('8.3.59','sa',0);
 		$Adezapratyaya=1;		
