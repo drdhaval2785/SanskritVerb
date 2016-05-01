@@ -5754,10 +5754,11 @@ if ($caG===1 && ($sanAdi==="Ric" || $verbset==="curAdi") && !in_array($fo,$curAd
 	storedata('7.4.93','pa',0);
 	san();
 }
+print_r($text);
 /* kRpo ro laH (8.2.18) */
-if (arr($text,'/karp/') )
+if (arr($text,'/karp/')||arr($text,'/kfp/') )
 {
-    $text=one(array("karp"),array("kalp"),0);
+    $text=one(array("karp","kfp"),array("kalp","kxp"),0);
 	storedata('8.2.18','sa',0);
 }
 /* aniditAM hala upadhAyAH kGiti (6.4.24) */ 
