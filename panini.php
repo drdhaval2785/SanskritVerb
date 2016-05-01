@@ -5381,6 +5381,11 @@ elseif ($ardhadhatuka===1 && (in_array("N",$itpratyaya)||in_array("k",$itpratyay
     $kGiti=1;
 }
 if ($debug===1) {dibug("3200");}
+// Patch to add 'Iy' to the next part.
+if ($lakAra==="viDiliN")
+{
+	$text=change('/[+]Iy[+](['.pc('ac').'])/','+Iy$1');
+}
 /* huznuvoH sArvadhAtuke (6.4.87) */
 if ($sarvadhatuka===1 && $jherjus!==1 && arr($text,'/u\+/') && sub($hl,array("+nu","+u",),array("+"),0) && sub(array("u+"),$ajAdi_apit_sArvadhAtuka_tiG_pratyayas,blank(0),0) )
 {
