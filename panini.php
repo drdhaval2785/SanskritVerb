@@ -3119,6 +3119,8 @@ if (in_array($so,$tiG) && arr($text,'/[aiufx][+]*C/') && $sanAdi!=="san")
 	storedata('6.1.73','sa',0);
 	$text = change('/([aiufx][+]*)tC/','$1cC');
 	storedata('8.4.40','sa',0);
+	$faltu = change('/cC(.*)[+].*$/','cC$1');
+	$verb_without_anubandha = $faltu[0];
 }
 /* Nau prAtipadikasya iSThavatkAryaM bhavatIti vaktavyam (vA) */
 if ( !in_array($fo,$allverbs) && sub(array("+Ric+Sap+","+RiN+Sap+"),$tiG,blank(0),0) )
