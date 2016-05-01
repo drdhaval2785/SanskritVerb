@@ -1136,21 +1136,21 @@ if (in_array($fo,array("ada!")) && $san===1 )
 /* guptijkidbhyaH san (3.1.5) */
 if ( $_GET['cond47']==="1" )
 {
-    $text=change('/([^+]+)$/','$1+san');
+    $text=change('/(.+)$/','$1+san');
 	storedata('3.1.5','sa',0);
     $sanAdi="san"; $san=1;
 }
 /* mAnbadhadAnzAnbhyo dIrghazcAbhyAsasya (3.1.6) */
 elseif ( $_GET['cond48']==="1" )
 {
-    $text=change('/([^+]+)$/','$1+san');
+    $text=change('/(.+)$/','$1+san');
 	storedata('3.1.6','sa',0);
     $sanAdi="san"; $san=1; $manbadha=1;
 }
 /* gupUdhUpavicCipaNipanibhya AyaH (3.1.28) */
 elseif (in_array($so,$tiG) && sub(array("gup","DUp","viC","pan","paR"),array("+"),blank(0),0) || ($fo==="DUpa!" && sub(array("DUpa!"),array("+"),$sArvadhAtuka_pratyayas,0) && $verbset==="BvAdi") || $_GET['cond49']==="1"  )
 {
-    $text=change('/([^+]+)$/','$1+Aya');
+    $text=change('/(.+)$/','$1+Aya');
 	storedata('3.1.28','sa',0);
     $sanAdi="Aya";
 	storedata('1.3.2','pa',0);
@@ -1168,24 +1168,19 @@ elseif (in_array($so,$tiG) && sub(array("gup","DUp","viC","pan","paR"),array("+"
 /* RterIyaG (3.1.29) */
 if ( in_array($fo,array("fta!")) && $pada==="pratyaya" && $lakAra!=="")
 {
-    $text=three(array("fta!"),array("+"),$lakAralist,array("fta!"),array("+IyaN+"),$lakAralist,0);
+    $text=change('/ft$/','ft+IyaN');
 	storedata('3.1.29','sa',0);
     $sanAdi="IyaN";
     $verbpada="A";
-	storedata('1.3.2','pa',0);
-	$text = change('/fta[!][+]IyaN/','ft+IyaN');
-	storedata('1.3.9','sa',0);
 }
+print_r($text);
 /* kamerNiG (3.1.30) */
 if ( in_array($fo,array("kamu!")) && $pada==="pratyaya" && $lakAra!=="" && $sanAdi!=="Ric" && $vsuf!=="yak")
 {
-    $text=three(array("kamu!"),array("+"),$lakAralist,array("kamu!"),array("+RiN+"),$lakAralist,0);
+    $text=change('/kam$/','kam+RiN');
 	storedata('3.1.30','sa',0);
     $sanAdi="RiN";
     $verbpada="A";
-	storedata('1.3.2','pa',0);
-	$text = change('/kamu[!][+]RiN/','kam+RiN');
-	storedata('1.3.9','sa',0);
 	storedata('1.3.3','pa',0);
 	storedata('1.3.7','pa',0);
 	$text = change('/kam[+]RiN/','kam+i');
