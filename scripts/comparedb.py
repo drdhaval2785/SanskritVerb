@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 """
 Usage:
-python comparedb.py testfile
+python comparedb.py testfile suspectfile
 e.g.
-python comparedb.py ../generatedforms/generatedforms30042016.xml
+python comparedb.py ../generatedforms/generatedforms30042016.xml ../suspectforms/suspectverbforms30042016.txt
 """
 import sys, re
 import codecs
@@ -61,12 +61,14 @@ def baseverbformlist(testdb,lstofbasedb):
 	print "Total", len(output), "entries in base list"
 	return output
 
+
 if __name__=="__main__":
 	"""
 	testfile = sys.argv[1]
 	base = baseverbformlist('',['../Data/verbforms_gerard.txt','../Data/verbforms_amba.txt','../Data/okforms.txt'])
 	test = testverbformlist(testfile)
-	suspect = codecs.open('../suspectforms/suspectverbforms.txt','w','utf-8')
+	suspectfile = sys.argv[2]
+	suspect = codecs.open(suspectfile,'w','utf-8')
 	print "Printing the following suspect entries to ../suspectforms/suspectverbforms.txt"
 	print 
 	for (member,verb,num,lakAra,tiG) in test:
@@ -76,5 +78,5 @@ if __name__=="__main__":
 			print (member,verb,num,lakAra,tiG)
 			suspect.write(member+','+verb+','+num+','+lakAra+','+tiG+'\n')
 	"""
-	print ' '.join(findverbsfromlist('../suspectforms/suspectverbforms30042016.txt'))
-	
+	#print ' '.join(findverbsfromlist('../suspectforms/suspectverbforms30042016.txt'))
+	createrecheck('../suspectforms/suspectverbforms30042016.txt','../recheck.sh')
