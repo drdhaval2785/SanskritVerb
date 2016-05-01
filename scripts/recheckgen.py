@@ -29,14 +29,16 @@ def createrecheck(suspectfile,recheckfile):
 	data = triming(data)
 	output = []
 	fout.write('# Define a timestamp function\ntimestamp() {\n  date +"%d-%m-%Y %H:%M:%S"\n}\ntimestamp\n')
+	fout.write('number=1\n')
 	fout.write('rm -f "suspectverbforms.txt"\nrm -f "generatedforms.xml"\nrm -f "suspectverbforms_deva.txt"\n')
 	fout.write("echo \'<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\' > generatedforms.xml\necho \'<forms>\' >> generatedforms.xml\n")
+	counter = 1
 	for datum in data:
 		#aMsayAYcakara,aMsa,10.0460,liw,mip
 		[form,verb,number,lakAra,suffix] = datum.split(',')
 		if (number,lakAra) not in output:
 			output.append((number,lakAra))
-			fout.write('echo "Processing '+number+' '+lakAra+" analysis started at $(timestamp)\"\n")
+			fout.write('echo "'+counter+' - Processing '+number+' '+lakAra+" analysis started at $(timestamp)\"\n")
 			fout.write('php panini.php '+number+' '+lakAra+'\n')
 	print "Total", len(output), "entries in recheck.sh.\nKindly run this script after corrections."
 	fout.write("echo \'</forms>\' >> generatedforms.xml\n")

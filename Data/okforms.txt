@@ -4247,3 +4247,14 @@ IrkzyAsma,Irkzya!,01.0587,ASIrliN,mas
 IrzyAYcakruH,Irzya!,01.0588,liw,Ji
 IrzyAYcakara,Irzya!,01.0588,liw,mip
 IrzyyAstAm,Irzya!,01.0588,ASIrliN,tas
+unttaH,undI!,07.0020,law,tas
+uNKAYcakAra,uKi!,01.0137,liw,tip
+uNKAYcakratuH,uKi!,01.0137,liw,tas
+uNKAYcakruH,uKi!,01.0137,liw,Ji
+uNKAYcakarTa,uKi!,01.0137,liw,sip
+uNKAYcakraTuH,uKi!,01.0137,liw,Tas
+uNKAYcakra,uKi!,01.0137,liw,Ta
+uNKAYcakara,uKi!,01.0137,liw,mip
+uNKAYcakAra,uKi!,01.0137,liw,mip
+uNKAYcakfva,uKi!,01.0137,liw,vas
+uNKAYcakfma,uKi!,01.0137,liw,mas
