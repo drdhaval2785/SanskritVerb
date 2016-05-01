@@ -5572,7 +5572,6 @@ if (arr($text,'/cC[+][YmNRn]/') || (arr($text,'/cC[+]['.pc('Jl').']/') && $kGiti
     $text = change('/cC[+]/','S+');
 	storedata('6.4.19','sa',0);
 }
-echo $kGiti, $vijait; print_r($itpratyaya);
 /* jusi ca (7.3.83) */
 if ( ($jherjus===1 || $sijabhyastavidibhyazca===1) && arr($text,'/[iIuUfFxX]\+us/') && $lakAra!=="liw" ) // liT has 'us' which is not 'jus'
 {

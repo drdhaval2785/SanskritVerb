@@ -2903,7 +2903,7 @@ function liT_halAdi()
 
 function abhyAsa_halAdi()
 {
-	global $text;	global $caG; global $lakAra; global $fo; global $storedata, $us, $verbset, $sanAdi; global $liT_Adeza, $coku, $cu, $ku, $san;
+	global $text;	global $caG; global $lakAra; global $fo; global $storedata, $us, $verbset, $sanAdi; global $liT_Adeza, $coku, $cu, $ku, $san, $id_dhAtu, $id_pratyaya;
 	/* liTyabhyAsasyobhayeSAm (6.1.17) */
 	if(sub(array("vac+vac+","svap+svap+","yaj+yaj+","vap+vap+","vah+vah+","vas+vas+","vad+vad+","ve+ve+","hve+hve+","Svi+Svi+","vye+vye+","grah+grah+","jyA+jyA+","vay+vay+","vyaD+vyaD+","vaS+vaS+","vyac+vyac+","vraSc+vraSc+","pracC+pracC+","Brasj+Brasj+"),blank(0),blank(0),0) && !in_array($sanAdi,array("yaN","yaNluk","san")))
 	{
@@ -2996,7 +2996,7 @@ function abhyAsa_halAdi()
 		storedata('7.3.55','sa',0);
 	}
 	/* saH syArdhadhAtuke (7.4.49) */
-	if (arr($text,'/s\+s/') )
+	if (arr($text,'/s\+s/') && $id_dhAtu==="aniw" && $id_pratyaya==="aniw")
 	{
 		$text = one(array("s+s"),array("t+s",),0);
 		storedata('7.4.49','sa',0);
