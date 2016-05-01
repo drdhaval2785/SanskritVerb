@@ -3887,15 +3887,6 @@ if ($lakAra==="liw")
 }
 $svAdiajanta=array("zuY","ziY","SiY","qumiY","ciY","stfY","kfY","vfY","DuY","dUY","wudu","hi","pf","spf","df","ri","kzi","ciri","jiri");
 $svAdihalanta=array_diff($svAdi,$svAdiajanta);
-/* separate itsaJjJAprakaraNam for tiGanta (According to sahajabodha text) */
-/* lazakvataddhite (1.3.8) */
-if ( arr($text,'/[+][lSkKgGN][^+]*/') && $taddhita === 0  && in_array($so,$tiG) )
-{
-    it('/([+][lSkKgGN])/');
-	storedata('1.3.8','pa',0);
-    $text = two(array("+"),array("Sap","Syan","SnA","SAnac","Satf","Snu","Sa","Sya"),array("+"),array("ap","yan","nA","Anac","atf","nu","a","ya"),0);
-	storedata('1.3.9','sa',0);
-}
 /* aniditAM hala upadhAyAH kGiti (6.4.24) */ 
 if ( in_array($fo,$aniditverbs) && sub(array("+"),array("Syan","Sna","SnA","Snu","Sa"),array("+"),0) && $so!=="mahiN" && !in_array("i",$it) && $verbset!=="ruDAdi" && $aniditAm!==1)
 {
@@ -3916,6 +3907,15 @@ if (in_array($fo,array("mIN")) && in_array($so,$tiG) && $veda===1 && sub(array("
 {
     $text = two(array("mIN",),$shitpratyaya,array("miN",),$shitpratyaya,1);
 	storedata('7.3.81','sa',0);
+}
+/* separate itsaJjJAprakaraNam for tiGanta (According to sahajabodha text) */
+/* lazakvataddhite (1.3.8) */
+if ( arr($text,'/[+][lSkKgGN][^+]*/') && $taddhita === 0  && in_array($so,$tiG) )
+{
+    it('/([+][lSkKgGN])/');
+	storedata('1.3.8','pa',0);
+    $text = two(array("+"),array("Sap","Syan","SnA","SAnac","Satf","Snu","Sa","Sya"),array("+"),array("ap","yan","nA","Anac","atf","nu","a","ya"),0);
+	storedata('1.3.9','sa',0);
 }
 /* na vibhaktau tusmAH (1.3.4) */
 //if (arr($text,'/[tTdDnsm]$/') && $pada=== "pratyaya" && sub(array("+"),$navibhaktau,blank(0),0) && in_array($so,$tiG))
