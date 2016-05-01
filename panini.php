@@ -3622,12 +3622,6 @@ if (arr($text,'/\+Ri[c]{0,1}\+/')||$ciN===1||$ciN===2)
 		$text = pr2($ac,array("+i"),blank(0),vriddhi($ac),array("+i"),blank(0),$text);
 		storedata('7.2.115','sa',0);
 	}
-	/* ato lopaH (6.4.48) */
-	if ( arr($text,'/a[+]Ri/') && in_array($fo,$curAdi_adanta) && ($verbset==="none"||$verbset==="curAdi"))
-	{
-		$text = change('/a[+]Ri/','+Ri');
-		storedata('6.4.48','sa',0);
-	}
 	/* nodAttopadezasya mAntasyAcameH (7.3.34) */
 	if ( $id_dhAtu==="sew" && !in_array($fo,array("camu!","kamu!","wuvama!")) && $atolopa!==1 && $Naugami!==1 && $jAgro!==1 && ($ciN===1||arr($text,'/am[+]i$/')) && !(arr(array($verb_without_anubandha),'/^['.pc('hl').']/') && $caG===1))
 	{
@@ -3752,6 +3746,21 @@ if (arr($text,'/\+Ri[c]{0,1}\+/')||$ciN===1||$ciN===2)
 		$text = one(array("cAp+i+","cAyi+"),array("capi+","cayi+"),0);
 		storedata('6.4.92','sa',0);
 	}
+	/* pugantalaghUpadhasya ca (7.3.86) */
+	if (arr($text,'/^[^+]*[iufx](['.pc('hl').']{1})\+i/' ) && $caG!==1 && $aG!==1 && $vijait!==1 )
+	{
+		$hlam=array();
+		foreach ($hl as $av) {$hlam[] = $av."+i";}
+		$text=three(array("i","u","f","x"),$hl,array("+i"),array("e","o","ar","al"),$hl,array("i"),0);
+		$text=three(array("i","u","f","x"),$hl,$hlam,array("e","o","ar","al"),$hl,$hlam,0);
+		storedata('7.3.86','sa',0);
+	}
+	/* ato lopaH (6.4.48) */
+	if ( arr($text,'/a[+]Ri/') && in_array($fo,$curAdi_adanta) && ($verbset==="none"||$verbset==="curAdi"))
+	{
+		$text = change('/a[+]Ri/','+Ri');
+		storedata('6.4.48','sa',0);
+	}
 	/* ato lopaH (6.4.48) */
 	if ( arr($text,'/ai[+]/') && in_array($fo,$curAdi_adanta) && ($verbset==="none"||$verbset==="curAdi"))
 	{
@@ -3775,15 +3784,6 @@ if (arr($text,'/\+Ri[c]{0,1}\+/')||$ciN===1||$ciN===2)
 	{
 		$text = one(array("a+i+"),array("i+"),0);
 		storedata('6.4.48','sa',0);
-	}
-	/* pugantalaghUpadhasya ca (7.3.86) */
-	if (arr($text,'/^[^+]*[iufx](['.pc('hl').']{1})\+i/' ) && $caG!==1 && $aG!==1 && $vijait!==1 )
-	{
-		$hlam=array();
-		foreach ($hl as $av) {$hlam[] = $av."+i";}
-		$text=three(array("i","u","f","x"),$hl,array("+i"),array("e","o","ar","al"),$hl,array("i"),0);
-		$text=three(array("i","u","f","x"),$hl,$hlam,array("e","o","ar","al"),$hl,$hlam,0);
-		storedata('7.3.86','sa',0);
 	}
 	/* sidhyaterapAralaukike (6.1.49) */
 	if ( $_GET['cond53']==='2' && sub(array("seDi"),array("+"),blank(0),0) )
