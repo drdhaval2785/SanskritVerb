@@ -110,7 +110,7 @@ uKi!:gatyarTaH:uNK:01:0137:pa:sew:उ॑खिँ॑:84:87:
 uca!:samavAye:uc:04:0135:pa:sew:उ॑चँ॑:863:883:903
 uCI!:vivAse:uC:06:0015:pa:sew:उ॑छीँ॑::944:964
 uCI!:vivAse:uC:01:0244:pa:sew:उ॑छीँ॑:122:129:130
-ujJa!:utsarge:ujJ:06:0024:pa:sew:उ॑ज्झँ॑:::
+ujJa!:utsarge:ujJ:06:0024:pa:sew:उ॑ज्झँ॑:928:951:971
 uCi!:uYCe:uYC:06:0014:pa:sew:उ॑छिँ॑:921:943:963
 uCi!:uYCe:uYC:01:0243:pa:sew:उ॑छिँ॑:121:128:129
 uWa!:upaGAte ityeke:uW:01:0852:pa:sew:उ॑ठँ॑:213:226:

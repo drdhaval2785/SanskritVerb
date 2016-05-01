@@ -67,7 +67,7 @@ function listdata($filename)
 list($verbwithanubandha,$meaning,$verbwithoutanubandha,$verbset,$verbnumber,$verbpada,$verbiDAgama,$pureverb,$output) = splitverbdata($verbdata);
 list($anukrama,$gana,$dhatuwithanubandha,$dhatuwithoutanubandha,$artha,$iT,$pada,$madhav,$kzir,$dhatupradipa,$uttara) = listdata('../Data/dhaatugana.txt');
 $fin = fopen('../Data/dhaatuganascrapertrial.txt','w+');
-//fputs($fin,'"');
+fputs($fin,'"');
 for($i=0;$i<count($pureverb);$i++)
 {
 	// Removed accent for uniform comparision
@@ -88,7 +88,7 @@ for($i=0;$i<count($pureverb);$i++)
 	{
 		// The keys which match on forcing the anusvAra conversion
 		// Changed fifth letters to 'n' and 'tw','dq' issue e.g. cutw instead of cuww
-		$verbwithoutanubandha_anusvAra_adjusted = str_replace(array("N","Y","R","m","ww","qq"),array("n","n","n","n","tw","dq"),$verbwithoutanubandha[$i]);
+		$verbwithoutanubandha_anusvAra_adjusted = str_replace(array("N","Y","R","m","ww","qq","jJ"),array("n","n","n","n","tw","dq","dJ"),$verbwithoutanubandha[$i]);
 		$key2 = array_keys($dhatuwithoutanubandha,$verbwithoutanubandha_anusvAra_adjusted);
 		foreach($key2 as $k)
 		{
@@ -105,10 +105,10 @@ for($i=0;$i<count($pureverb);$i++)
 	$kzr = array_diff($kzr,array("X")); $kzr = array_unique($kzr); $kzr = array_values($kzr);
 	$dp = array_diff($dp,array("X")); $dp = array_unique($dp); $dp = array_values($dp);
 	//"ahi!:BAzArTaH ca:aMh:10:0328:u:sew:अ॑हिँ॑ः1:1:1"
-	//fputs($fin,$verbwithanubandha[$i].":".$meaning[$i].":".$verbwithoutanubandha[$i].":".$verbset[$i].":".$verbnumber[$i].":".$verbpada[$i].":".$verbiDAgama[$i].":".$pureverb[$i].":".implode(',',$mdv).":".implode(',',$kzr).":".implode(',',$dp).'","');
-	fputs($fin,$verbwithanubandha[$i].":".$meaning[$i].":".$verbwithoutanubandha[$i].":".$verbset[$i].":".$verbnumber[$i].":".$verbpada[$i].":".$verbiDAgama[$i].":".$pureverb[$i].":".implode(',',$mdv).":".implode(',',$kzr).":".implode(',',$dp)."\n");
+	fputs($fin,$verbwithanubandha[$i].":".$meaning[$i].":".$verbwithoutanubandha[$i].":".$verbset[$i].":".$verbnumber[$i].":".$verbpada[$i].":".$verbiDAgama[$i].":".$pureverb[$i].":".implode(',',$mdv).":".implode(',',$kzr).":".implode(',',$dp).'","');
+	//fputs($fin,$verbwithanubandha[$i].":".$meaning[$i].":".$verbwithoutanubandha[$i].":".$verbset[$i].":".$verbnumber[$i].":".$verbpada[$i].":".$verbiDAgama[$i].":".$pureverb[$i].":".implode(',',$mdv).":".implode(',',$kzr).":".implode(',',$dp)."\n");
 	$mdv = array(); $kzr=array(); $dp=array();
 }
-//fputs($fin,'"');
+fputs($fin,'"');
 fclose($fin);
 ?>
