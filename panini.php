@@ -729,6 +729,8 @@ elseif ($type==='tiGanta')
 	/* idAgama decision */
 	$temp = scrape1($first,0,2,1); 
 	$verb_without_anubandha=$temp[0];
+	if (preg_match_all('/[aAiIuUfFxXeEoO]/',$verb_without_anubandha) > 1 && isset($argv[0])) 
+	{ echo "Verb has more than one voewl. Exiting."; exit(0); }
 	if (in_array($lakAra,array("lfw","lfN","luw","ASIrliN","luN","liw","ArDaDAtukalew"))||$san===1) // checking whether ArdhadhAtuka lakAra or not.
 	{
 		/* smipUGraJjavazAM sani (7.2.74) */
