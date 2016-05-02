@@ -7024,14 +7024,14 @@ elseif ( (in_array($fo,array("vfN","vfY")) || ends(array($verb_without_anubandha
 	storedata('7.2.38','sa',0);
 }
 /* RRta iddhAtoH (7.1.100) */
-if ( (arr($text,'/F\+s/')||arr($text,'/F[+]yA/')) && ($sarvadhatuka===1 || $ardhadhatuka===1) && $ciN!==1 )
+if ( arr($text,'/F[+]['.pc('hl').']/') && ($sarvadhatuka===1 || $ardhadhatuka===1) && $ciN!==1 )
 {
-    $text=three(array("F"),array("+"),array("s","yA"),array("ir"),array("+"),array("s","yA"),0);
-	storedata('7.2.100','sa',0);
+    $text=change('/F[+](['.pc('hl').'])/','ir+$1');
+	storedata('7.1.100','sa',0);
 	/* hali ca (8.2.77) */
-	if ((arr($text,'/ir\+s[It]/')||arr($text,'/ir[+]yA/')) && in_array($so,$tiG) )
+	if (arr($text,'/ir[+](['.pc('hl').'])/') && in_array($so,$tiG) )
 	{
-		$text=two(array("ir+"),array("sI","st","yA"),array("Ir+"),array("sI","st","yA"),0);
+		$text=change('/ir[+](['.pc('hl').'])/','Ir+$1');
 		storedata('8.2.77','sa',0);
 	}
 }
