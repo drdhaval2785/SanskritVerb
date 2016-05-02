@@ -936,7 +936,7 @@ if ($type==="tiGanta" )
 		$text = change('/i[!]r$/','');
 		storedata('1.3.9','sa',0);
 	}
-	elseif (arr($text,'/^[^+]*['.pc('hl').']$/') && !in_array($fo,array("Riji!r","viji!r","vizx!")) && !arr(array($fo),'/[Ff]$/') && $nomidelision!==1)
+	elseif (arr($text,'/^[^+]*['.pc('hl').']$/') && !in_array($fo,array("Riji!r","viji!r","vizx!")) && !arr(array($fo),'/[Ff]$/') )
 	{
 		storedata('1.3.3','pa',0);
 		$text = change('/^([^+]*)['.pc('hl').']$/','$1');
@@ -3501,7 +3501,7 @@ if ( arr($text,'/jAgf[+]Am[+]/') && $lakAra==="liw")
 	$jAgro=1;
 } else {$jAgro=0;}
 /* upadhAyAzca (7.1.101) */
-if (arr($text,'/[F]['.pc('hl').'MH][+]/') && in_array($so,$tiG)) 
+if (arr($text,'/[F]['.pc('hl').'MH][+]/') && in_array($so,$tiG))
 {
     $text=three(array("F"),$hl,array("+"),array("ir"),$hl,array("+"),0);
 	storedata('7.1.101','sa',0);
