@@ -5282,3 +5282,5 @@ akrakzi,kfza!,06.0006,luN,iw
 akfkzAvahi,kfza!,06.0006,luN,vahi
 akfkzAmahi,kfza!,06.0006,luN,mahiN
 akrakzam,kfza!,01.1145,luN,mip
+kfRAva,kFY,09.0018,low,vas
+kfRAma,kFY,09.0018,low,mas
