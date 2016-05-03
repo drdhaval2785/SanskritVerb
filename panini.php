@@ -13421,9 +13421,9 @@ if (arr($text,'/AcAryAnI/'))
 	storedata('4.1.49-6','sa',0);
 }
 /* kSubhnAdiSu ca (8.4.39) */
-elseif (arr($text,'/kzuBn/') && $fo==="kzuBa!" && $verbset==="kryAdi")
+elseif (arr($text,'/kzuB[+]*n/') && $fo==="kzuBa!" && $verbset==="kryAdi")
 {
-	storedata('8.4.39','pa',0);
+	storedata('8.4.39','sa',0);
 }
 /* aTkupvAGnumvyavAye'pi (8.4.2) and na padAntasya (8.4.37) */
 /* RvarNAnnasya NatvaM vAcyam (vA 4969) */
