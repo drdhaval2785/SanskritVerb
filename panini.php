@@ -3974,7 +3974,6 @@ if (in_array($so,$tiG) && arr(array($fo),'/['.pc('hl').']$/') && !arr(array($fo)
 	$text=two($hlplus,array("Ri+"),blank1("+",count($hlplus)),array("Ri+"),0);
 	storedata('1.3.9','sa',0);
 }
-print_r($text);
 if ($debug===1) {dibug("1900");}
 /* halantyam (1.3.3) and tasya lopaH (1.3.9) */
 if (in_array($so,$tiG) && (arr($text,'/['.pc('hl').'][+]/') || (arr($text,'/['.pc('hl').']$/') && $tusma!==1) ||sub(array("+"),$inbetweenpratyaya,array("+"),0) || sub($hl,array("+"),$vikaraNa,0) || $rudhAdibhyaH===1 || pr2($hl,array("+"),array("va","ma"),blank(count($hl)),array("+"),array("va","ma"),$text)!==$text) ) # $ad === 1 removed because of https://github.com/drdhaval2785/SanskritVerb/issues/318
@@ -4005,7 +4004,6 @@ if (in_array($so,$tiG) && (arr($text,'/['.pc('hl').'][+]/') || (arr($text,'/['.p
 		storedata('1.3.9','sa',0);
 	}
 }
-print_r($text);
 /* cuTU (1.3.7) */
 if (arr($text,'/[+][c][a][+]/') && in_array($so,$tiG)) // for caG
 {
