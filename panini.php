@@ -3189,8 +3189,8 @@ if ( in_array($fo,array("iza!","gamx!","yama!")) && sub(array("iz","gam","yam"),
 /* vA bhrAzabhlAzabhramukramutrasitruTilaSaH (3.1.70) */
 if (in_array($fo,array("wuBrASf!","wuBlASf!","BrASf!","BlASf!","Bramu!","kramu!","klamu!","trasI!","truwI!","laza!")) && sub(array("BrASf!","BlAS","BrAS","BlAS","Bram","kram","klam","tras","truw","laz"),array("+"),array("Sap","Syan"),0) && $lakAra!=="" )
 {
-    $text=two(array("BrAS","BlAS","BrAS","BlAS","Bram","kram","klam","tras","truw","laz"),array("+Sap"),array("wuBrASf!","wuBlASf!","BrASf!","BlASf!","Bramu!","kramu!","klamu!","trasI!","truwI!","laza!"),array("+Syan"),0);
-    $text=two(array("BrAS","BlAS","BrAS","BlAS","Bram","kram","klam","tras","truw","laz"),array("+Syan"),array("wuBrASf!","wuBlASf!","BrASf!","BlASf!","Bramu!","kramu!","klamu!","trasI!","truwI!","laza!"),array("+Sap"),1);
+    $text=two(array("BrAS","BlAS","BrAS","BlAS","Bram","kram","klam","tras","truw","laz"),array("+Sap"),array("BrAS","BlAS","BrAS","BlAS","Bram","kram","klam","tras","truw","laz"),array("+Syan"),0);
+    $text=two(array("BrAS","BlAS","BrAS","BlAS","Bram","kram","klam","tras","truw","laz"),array("+Syan"),array("BrAS","BlAS","BrAS","BlAS","Bram","kram","klam","tras","truw","laz"),array("+Sap"),1);
 	storedata('3.1.70','sa',0);
 }
 /* kramaH parasmaipadeSu (7.3.76) */
