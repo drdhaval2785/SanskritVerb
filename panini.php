@@ -13468,7 +13468,6 @@ if (arr($text,$rasend) && $hohante!==1 && $AcArya!==1 )
 	storedata('8.4.37','pa',0);
 }
 if ($debug===1) {dibug("11300");}
-print_r($text);
 /* pratizeDe svaradIrGayalopezu lopAjAdeSaH na sTAnivat (1.1.58-1) */
 if ( arr($text,'/[vy][+]*['.pc('vl').']/') && in_array($so,$tiG) && in_array("6.1.77",sutrasfromstoredata()))
 {
