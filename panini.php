@@ -13468,6 +13468,20 @@ if (arr($text,$rasend) && $hohante!==1 && $AcArya!==1 )
 	storedata('8.4.37','pa',0);
 }
 if ($debug===1) {dibug("11300");}
+print_r($text);
+/* pratizeDe svaradIrGayalopezu lopAjAdeSaH na sTAnivat (1.1.58-1) */
+if ( arr($text,'/[vy][+]*['.pc('vl').']/') && in_array($so,$tiG) && in_array("6.1.77",sutrasfromstoredata()))
+{
+	storedata('1.1.58-1','pa',0);
+}
+/* lopo vyorvali (6.1.66) */
+// Not a very good solution. The second member is there to prevent application of this rule in 'vraj'
+elseif ( arr($text,'/[vy][+]*['.pc('vl').']/') && !(arr($text,'/[vy][+]n/')&&$verbset==="kryAdi") && !arr($text,'/vr/') && in_array($so,$tiG) && !in_array("6.1.77",sutrasfromstoredata()))
+{
+    $text=change('/([vy])([+]*['.pc('vl').'])/','$2');
+	storedata('6.1.66','sa',0);
+}
+
 /* Patch to remove the + sign */
 // For dvitva, + sign pauses many problems. Now we don't have to remember what was prakRti and what was pratyaya. Therefore we can afford to remove + sign now.
 if (arr($text,'/['.pc('hl').' ][+]['.pc('hl').']/') || arr($text,'/[HM!][+]['.pc('hl').']/') || arr($text,'/['.pc('hl').'][+][HM]/'))
@@ -13884,18 +13898,6 @@ if( $veda===1 && sub(array("apasparDeTAm","AnarcuH","AnarhuH","cucyuvize","tatyA
 {
 	$text = one(array("apasparDeTAm","AnarcuH","AnarhuH","cucyuvize","tatyAja"),array("apaspfDeTAm","AnfcuH","AnfhuH","cicyuze","tityAja"),0);
 	storedata('6.1.35','sa',0);
-}
-/* pratizeDe svaradIrGayalopezu lopAjAdeSaH na sTAnivat (1.1.58-1) */
-if ( arr($text,'/[vy][+]*['.pc('vl').']/') && in_array($so,$tiG) && in_array("6.1.77",sutrasfromstoredata()))
-{
-	storedata('1.1.58-1','pa',0);
-}
-/* lopo vyorvali (6.1.66) */
-// Not a very good solution. The second member is there to prevent application of this rule in 'vraj'
-elseif ( arr($text,'/[vy][+]*['.pc('vl').']/') && !arr($text,'/vr/') && in_array($so,$tiG) && !in_array("6.1.77",sutrasfromstoredata()))
-{
-    $text=change('/([vy])([+]*['.pc('vl').'])/','$2');
-	storedata('6.1.66','sa',0);
 }
 if ($debug===1) {dibug('11700');}
 //$us='';
