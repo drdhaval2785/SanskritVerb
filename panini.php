@@ -1479,7 +1479,7 @@ if (in_array($so,$tiG) && arr($text,'/[+]Ric$/') && $sanAdi==="Ric" && $lakAra!=
 		storedata('6.4.92','sa',0);
 	}
 	/* mitAM hrasvaH (6.4.92) */ 
-	elseif ( in_array($fo,$ghaTAdi_mit) && ($verbset === "BvAdi" || $verbset === "none" ) && sub(array("A"),$hl,array("+Ric"),0) && !in_array($number,array("10.0248")) )
+	elseif ( in_array($fo,$ghaTAdi_mit) && ($verbset === "BvAdi" || $verbset === "none" ) && sub(array("A"),$hl,array("+Ric"),0) && !in_array($number,array("01.0347")) ) // There are verbs with the same spelling, but not in ghaTAdi e.g. Rawa! nfttO 01.0347. So excluding them.
 	{
 		storedata('GawAdi','pa',0);
 		$text = three(array("A"),$hl,array("+Ric"),array("a"),$hl,array("+Ric"),0);
