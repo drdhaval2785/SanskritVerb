@@ -578,11 +578,6 @@ if ($type==='tiGanta')
 	{
 		$verbpada=verb_pada('1.3.86');
 	}
-	/* Nicazca (1.3.74) */
-	elseif ( $sanAdi==="Ric")
-	{
-		$verbpada=verb_pada('1.3.74');
-	}
 	/* AkusmAdAtmanepadinaH (dhAtupATha) */
 	elseif ( $verbset==='curAdi' && in_array($first,$AkusmIya) )
 	{
@@ -604,7 +599,7 @@ if ($type==='tiGanta')
 		$verbpada=verb_pada('AgarvAd');
 	}
 	/* Nicazca (1.3.74) */
-	elseif ( $verbset==='curAdi' )
+	elseif ( $sanAdi==="Ric" || $verbset==="curAdi")
 	{
 		$verbpada=verb_pada('1.3.74');
 	}
@@ -6294,7 +6289,6 @@ elseif ( arr($text,'/j\+/') && pr2(array("mfj","marj"),array("+","+i"),$ArdhadhA
     $text=pr2(array("mfj","marj"),array("+","+i"),$ArdhadhAtuka_tiG_pratyayas,array("mArj","mArj"),array("+","+i"),$ArdhadhAtuka_tiG_pratyayas,$text);
 	storedata('7.2.114','sa',0);
 }
-print_r($itpratyaya); print_r($text);
 /* gamahanajanakhanaghasAM lopaH kGiti (6.4.98) */
 if (in_array($fo,array("gamx!","hana!","jana!","Gasa!","Kanu!","janI!","ada!")) && ends($itpratyaya,array("k","N"),2) && sub(array("gam","Gan","jan","Gas","Kan","han"),array("+"),$ac,0) && in_array($so,$tiG) && $aG!==1 && !in_array($lakAra,array("viDiliN")))
 {
@@ -6308,7 +6302,6 @@ if (in_array($fo,array("hana!","gamx!","jana!","Kanu!","Gasa!","ada!")) && (pr2(
     $text = pr2(array("han","gam","jan","Kan","Gas"),array("+"),array("iva","ima","iTa"),array("hn","gm","jn","Kn","Gs"),array("+"),array("iva","ima","iTa"),$text);
 	storedata('6.4.98','sa',0);
 }
-print_r($text);
  /* anudAttasya cardupadhasyAnyatarasyAm (6.1.59) */ 
 if (in_array($fo,array("sfpx!","spfSa!","mfSa!","kfza!","tfpa!","dfpa!")) && arr($text,'/[f]['.pc('hl').'][+]['.pc('Jl').']/') )
 {
