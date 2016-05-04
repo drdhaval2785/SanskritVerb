@@ -1188,7 +1188,7 @@ if ( in_array($fo,array("kamu!")) && $pada==="pratyaya" && $lakAra!=="" && $sanA
 	storedata('7.2.116','sa',0);
 }
 /* sanAdi Ric handling */
-if (in_array($so,$tiG) && arr($text,'/[+]Ric$/') && $sanAdi==="Ric")
+if (in_array($so,$tiG) && arr($text,'/[+]Ric$/') && $sanAdi==="Ric" && $lakAra!=="luN")
 {
 	/* ho hanterJNinneSu (7.3.54) */
 	if ( arr(array($fo),'/[h][a][n]/') && !in_array($fo,array("ahan","dIrGAhan"))  )
@@ -1244,7 +1244,6 @@ if (in_array($so,$tiG) && arr($text,'/[+]Ric$/') && $sanAdi==="Ric")
 		$text=three(array("vI"),array("+"),array("Ri"),array("vA"),array("+"),array("Ri"),1);
 		storedata('6.1.55','sa',0);
 	}
-	print_r($text);
 	/* Nau gamirabodhane (2.4.46) */
 	if ( $_GET['cond51']==='1' && in_array($so,$tiG) && sub(array("i",),array("+"),array("Ri"),0) )
 	{
@@ -1376,7 +1375,7 @@ if (in_array($so,$tiG) && arr($text,'/[+]Ric$/') && $sanAdi==="Ric")
 		$jAgro=1;
 	}
 	/* aco JNiti (7.2.115) */
-	if ((arr($text,'/['.pc('ac').']\+Ric$/')||arr($text,'/['.pc('ac').']\+i$/')) && !(in_array($fo,$curAdi_adanta) && $verbset==="curAdi"))
+	if ((arr($text,'/['.pc('ac').']\+Ric$/')||arr($text,'/['.pc('ac').']\+i$/')) && !(in_array($fo,$curAdi_adanta) && $verbset==="curAdi") && $fo!=="UrRuY")
 	{
 		$text = two($ac,array("+Ric"),vriddhi($ac),array("+Ric"),0);
 		storedata('7.2.115','sa',0);
@@ -2952,7 +2951,7 @@ if ($lakAra==="luN")
 	/* NizridrusrubhyaH kartari caG (3.1.48) */
 	elseif ($sanAdi==="Ric" && in_array($so,$tiG) && $vAcya==="kartR" )
 	{
-		$text=two(array("i+cli+"),$tiG,array("i+caN+"),$tiG,0);
+		$text=two(array("i+cli+","Ric+cli+"),$tiG,array("i+caN+","Ric+caN+"),$tiG,0);
 		storedata('3.1.48','sa',0);
 		$Nizri=1;
 		$it = array_merge($it,array("N"));
@@ -6091,6 +6090,12 @@ if ( arr($text,'/^[iIuU][+]*[aAfFxeoEO]/') && $abhyAsa===1)
     $text=change('/^([uU])([+]*[aAfFxeoEO])/','$1v$2');
 	storedata('6.4.78','sa',0);
 	$abhyAsasyAsavarNe=1;
+}
+/* sravatizRNotidravatipravatiplavaticyavatInAM vA (7.4.81) */
+if (in_array($sanAdi,array("san","Ric")) && sub(array("su+srav","su+srAv","Su+Srav","Su+SrAv","su+srav","su+srAv","du+drav","du+drAv","pu+prav","pu+prAv","pu+plav","pu+plAv","cu+cyav","cu+cyAv"),blank(0),blank(0),0))
+{
+	$text = one(array("su+srav","su+srAv","Su+Srav","Su+SrAv","su+srav","su+srAv","du+drav","du+drAv","pu+prav","pu+prAv","pu+plav","pu+plAv","cu+cyav","cu+cyAv"),array("si+srav","si+srAv","Si+Srav","Si+SrAv","si+srav","si+srAv","di+drav","di+drAv","pi+prav","pi+prAv","pi+plav","pi+plAv","ci+cyav","ci+cyAv"),1);
+	storedata('7.4.81','sa',0);
 }
 /* na mAGyoge (6.4.74) */
 if ( in_array($lakAra,array("luN","laN","lfN",)) && $_GET['cond50']==='1')

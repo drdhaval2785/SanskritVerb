@@ -2923,7 +2923,6 @@ function abhyAsa_halAdi()
 		storedata('7.4.67','sa',0);
 		storedata('6.1.108','sa',0);
 	}
-	print_r($text);
 	/* changes to abhyAsa */
 	/* zarpUrvAH khayaH (7.4.61) */
 	if (arr($text,'/^[Szs]['.pc('Ky').']['.pc('ac').'][^+]*[+]/'))
