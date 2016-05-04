@@ -3408,7 +3408,7 @@ if (arr($text,'/['.flat($ac).'][!]/') && in_array($so,$tiG) )
 	storedata('1.3.9','sa',0);
 }
 /* AtmanepadeSvanataH (7.1.5) */
-if ( in_array($so,array("Ja")) && $set===2 && arr($text,'/[^a][+]Ja$/'))
+if ( in_array($so,array("Ja")) && arr($text,'/[^a][+]Ja$/'))
 {
     $text=change('/([^a][+])Ja$/','$1ata');
 	storedata('7.1.5','sa',0);
