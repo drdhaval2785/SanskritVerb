@@ -1188,7 +1188,7 @@ if ( in_array($fo,array("kamu!")) && $pada==="pratyaya" && $lakAra!=="" && $sanA
 	storedata('7.2.116','sa',0);
 }
 /* sanAdi Ric handling */
-if (in_array($so,$tiG) && arr($text,'/[+]Ric$/') && $sanAdi==="Ric" && $lakAra!=="luN")
+if (in_array($so,$tiG) && arr($text,'/[+]Ric$/') && $sanAdi==="Ric")
 {
 	/* ho hanterJNinneSu (7.3.54) */
 	if ( arr(array($fo),'/[h][a][n]/') && !in_array($fo,array("ahan","dIrGAhan"))  )
@@ -1244,6 +1244,7 @@ if (in_array($so,$tiG) && arr($text,'/[+]Ric$/') && $sanAdi==="Ric" && $lakAra!=
 		$text=three(array("vI"),array("+"),array("Ri"),array("vA"),array("+"),array("Ri"),1);
 		storedata('6.1.55','sa',0);
 	}
+	print_r($text);
 	/* Nau gamirabodhane (2.4.46) */
 	if ( $_GET['cond51']==='1' && in_array($so,$tiG) && sub(array("i",),array("+"),array("Ri"),0) )
 	{
@@ -2949,7 +2950,7 @@ if ($lakAra==="luN")
 		$text = one(array("Una+Ric+","Dvana+Ric+","ila!+Ric+","arda!+Ric+"),array("Uni+","Dvani+","li+","ardi+"),0);
 	}
 	/* NizridrusrubhyaH kartari caG (3.1.48) */
-	elseif ($sanAdi==="Ric" && $lakAra!=="luN" && in_array($so,$tiG) && $vAcya==="kartR" )
+	elseif ($sanAdi==="Ric" && in_array($so,$tiG) && $vAcya==="kartR" )
 	{
 		$text=two(array("i+cli+"),$tiG,array("i+caN+"),$tiG,0);
 		storedata('3.1.48','sa',0);
