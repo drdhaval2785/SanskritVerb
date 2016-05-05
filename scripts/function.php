@@ -2437,9 +2437,9 @@ function caG_halAdi()
 	{
 		$text = change('/^(['.pc('hl').']*['.pc('ac').']{1})(['.pc('hl').'MH]*['.pc('ac').']['.pc('al').'MH]*[+]a[+])/','$1+$1$2');
 	}	
-	elseif ($sanAdi==="Ric" && arr($text,'/^(['.pc('hl').']*['.pc('ac').']{1})[+]Ric[+]a[+]/'))
+	elseif ($sanAdi==="Ric" && arr($text,'/^(['.pc('hl').']+['.pc('al').']*)[+]Ric[+]a[+]/'))
 	{
-		$text = change('/^(['.pc('hl').']*['.pc('ac').']{1})[+]Ric[+]a[+]/','$1+$1+Ric+a+');
+		$text = change('/^(['.pc('hl').']+['.pc('al').']*)[+]Ric[+]a[+]/','$1+$1+Ric+a+');
 	}	
 	/* caGi (6.1.11) */
 	storedata('6.1.1','pa',0);

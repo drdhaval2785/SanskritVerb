@@ -4973,7 +4973,6 @@ if (in_array($fo,array("Divi!","kfvi!")) && sub(array("Dinv","kfnv"),array("+"),
     $text=three(array("Dinv","kfnv"),array("+"),array("u+"),array("Dina","kfna"),array("+"),array("u+"),0);
 	storedata('3.1.80','sa',0);
 }
-print_r($text);
 /* lopaH pibaterIccAbhyAsasya (7.4.4) */
 if (in_array($fo,array("pA")) && in_array($so,$tiG) && !(ends(array($fo),array("pA"),2) && $verbset==="adAdi") && $luGset===5 && sub(array("pa+pAy"),array("+"),array("Ri"),0))
 {
