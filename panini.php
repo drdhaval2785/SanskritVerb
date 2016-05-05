@@ -4973,28 +4973,28 @@ if (in_array($fo,array("Divi!","kfvi!")) && sub(array("Dinv","kfnv"),array("+"),
     $text=three(array("Dinv","kfnv"),array("+"),array("u+"),array("Dina","kfna"),array("+"),array("u+"),0);
 	storedata('3.1.80','sa',0);
 }
+print_r($text);
 /* lopaH pibaterIccAbhyAsasya (7.4.4) */
 if (in_array($fo,array("pA")) && in_array($so,$tiG) && !(ends(array($fo),array("pA"),2) && $verbset==="adAdi") && $luGset===5 && sub(array("pa+pAy"),array("+"),array("Ri"),0))
 {
-    $text=three(array("pa+pAy"),array("+"),array("Ri"),array("pI+py"),array("+"),array("Ri"),0);
+    $text=two(array("pa+pAyi"),array("+"),array("pI+pyi"),array("+"),0);
 	storedata('7.4.4','sa',0);
 }
 /* tiSThaterit (7.4.5) */
-if ( in_array($fo,array("zWA")) && in_array($so,$tiG)  && $luGset===5 && sub(array("ta+sTAp"),array("+"),array("Ri"),0) )
+if ( in_array($fo,array("zWA")) && in_array($so,$tiG)  && $luGset===5 && sub(array("ta+sTApi"),array("+"),array(""),0) )
 {
-    $text=three(array("ta+sTAp"),array("+"),array("Ri"),array("ta+sTip"),array("+"),array("Ri"),0);
+    $text=two(array("ta+sTApi"),array("+"),array("ta+sTipi"),array("+"),0);
 	storedata('7.4.5','sa',0);
 }
 /* jighratervA (7.4.6) */
-if ( in_array($fo,array("GrA")) && in_array($so,$tiG)  && $luGset===5 && sub(array("ja+GrAp"),array("+"),array("Ri"),0) )
+if ( in_array($fo,array("GrA")) && in_array($so,$tiG)  && $luGset===5 && sub(array("ja+GrApi"),array("+"),array(""),0) )
 {
-    $text=three(array("ja+GrAp"),array("+"),array("Ri"),array("ja+Grip"),array("+"),array("Ri"),1);
+    $text=two(array("ja+GrApi"),array("+"),array("ja+Gripi"),array("+"),1);
 	storedata('7.4.6','sa',0);
 }
 /* yasya halaH (6.4.49) */
 if (arr($text,'/['.pc('hl').']([+]*)ya\+/')  && $ardhadhatuka===1 && sub(array("+"),$ArdhadhAtuka_pratyayas,array(""),0) && $sanAdi!=="yaN")
 {
-    //$text = three($hl,array("ya+"),$ArdhadhAtuka_pratyayas,$hl,array("+"),$ArdhadhAtuka_pratyayas,0);
 	$text = two(array("ya+"),$ArdhadhAtuka_pratyayas,array("+"),$ArdhadhAtuka_pratyayas,0);
 	storedata('6.4.49','sa',0);
 	$atolopa=1;
