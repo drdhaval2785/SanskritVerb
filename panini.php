@@ -2472,7 +2472,7 @@ if ( in_array($lakAra,array("liw")) )
 /* mInAtiminotidIGAM lyapi ca (6.1.50) */
 if ( in_array($fo,array("qumiY","mIY","dIN")) && $ardhadhatuka===1 && (($lakAra==="liw" && in_array($so,array("tip","sip","mip")))||in_array($lakAra,array("luw","lfw","luN"))||($lakAra==="ASIrliN" && in_array($so,$taG)) ))
 {
-    $text=two(array("qumiY","mIY","dIN"),$tiG,array("mA","mA","dA"),$tiG,0);
+    $text=two(array("mi","mI","dI"),array("+"),array("mA","mA","dA"),array("+"),0);
 	storedata('6.1.50','sa',0);
 	$mInAti=1;
 }
@@ -2490,9 +2490,9 @@ if (in_array($fo,array("Sru")) && $sarvadhatuka===1 && sub(array("Sru"),array("+
     $set=2;
 }
 /* dhivikRNvyora ca (3.1.80) */
-elseif (in_array($so,$tiG) && in_array($fo,array("Divi!","kfvi!")) && $sarvadhatuka===1 && sub(array("Divi!","kfvi!"),array("+"),$tiG,0))
+elseif (in_array($so,$tiG) && in_array($fo,array("Divi!","kfvi!")) && $sarvadhatuka===1 && sub(array("Dinv","kfnv"),array("+"),$tiG,0))
 {
-    $text=three(array("Divi!","kfvi!"),array("+"),$tiG,array("Divi!","kfvi!"),array("+u+"),$tiG,0);
+    $text=three(array("Dinv!","kfnv!"),array("+"),$tiG,array("Dinv","kfnv!"),array("+u+"),$tiG,0);
     $text=one(array("+u+u"),array("+u+"),0);
 	storedata('3.1.80','sa',0);
     $vik=array_merge($vik,array("u"));
