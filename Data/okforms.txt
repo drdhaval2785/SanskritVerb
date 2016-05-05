@@ -7517,3 +7517,11 @@ guDyetam,guDa!,04.0014,viDiliN,Tas
 guDyeyam,guDa!,04.0014,viDiliN,mip
 guDyeva,guDa!,04.0014,viDiliN,vas
 guDyema,guDa!,04.0014,viDiliN,mas
+guDnAva,guDa!,09.0053,low,vas
+guDnAma,guDa!,09.0053,low,mas
+gopeya,gupa!,01.1125,viDiliN,mip
+gopevahi,gupa!,01.1125,viDiliN,vas
+gopemahi,gupa!,01.1125,viDiliN,mas
+jugopTa,gupU!,01.0461,liw,sip
+jugupva,gupU!,01.0461,liw,vas
+jugupma,gupU!,01.0461,liw,mas
