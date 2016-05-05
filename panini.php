@@ -6973,7 +6973,7 @@ if (arr($text,'/[h]$/')  && $hodha1===0 && $hodha2 === 0 && $hodha3 === 0 )
 	storedata('8.2.31','sa',0);
 }
 /* ekAco bazo bhaS jhaSantasya sdhvoH (8.2.37) */  
-if ( /*anekAca($verb_without_anubandha)==false &&*/ in_array($so,$tiG) && ( arr($text,'/[bgqd](['.pc('al').']*)[JBGQD][+][sz]/') || arr($text,'/[bgqd](['.pc('al').']*)[JBGQD][+]Dv/') || arr($text,'/[JBGQD][+]$/') || $pada==="pada") )
+if ( anekAca($verb_without_anubandha)==false && in_array($so,$tiG) && ( arr($text,'/[bgqd](['.pc('al').']*)[JBGQD][+][sz]/') || arr($text,'/[bgqd](['.pc('al').']*)[JBGQD][+]Dv/') || arr($text,'/[JBGQD][+]$/') || $pada==="pada") )
 {
 	ekAcobazo(); // created a new function 19/12/2014.
 }
@@ -12827,11 +12827,10 @@ if (arr($text,'/[h]$/')  && $hodha1===0 && $hodha2 === 0 && $hodha3 === 0 && $kv
 	storedata('8.2.31','sa',0);
 }
 $text=change('/[+]$/','');
-/* ekAco bazo bhaS jhaSantasya sdhvoH (8.2.37) */  // Not good code. Think hard.
-if (( arr($text,'/[+][sd]/') || arr($text,'/[+]$/') || $pada==="pada") && sub($ekaco,array("+"),blank(0),0) )
+/* ekAco bazo bhaS jhaSantasya sdhvoH (8.2.37) */  
+if ( anekAca($verb_without_anubandha)==false && in_array($so,$tiG) && ( arr($text,'/[bgqd](['.pc('al').']*)[JBGQD][+][sz]/') || arr($text,'/[bgqd](['.pc('al').']*)[JBGQD][+]Dv/') || arr($text,'/[JBGQD][+]$/') || $pada==="pada") )
 {
-	 $text = one($ekaco,$ekaco1,0);
-	storedata('8.2.37','sa',0);
+	ekAcobazo(); // created a new function 19/12/2014.
 }
 /* jhalAM jazo'nte (8.2.39) */
 if (arr($text,'/['.pc('Jl').']$/') && $pada==="pada" )
