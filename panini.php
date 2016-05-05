@@ -3576,7 +3576,7 @@ if (arr($text,'/\+Ri[c]{0,1}\+/')||$ciN===1||$ciN===2)
 	/* vo vidhUnane juk (7.3.38) */
 	elseif (in_array($fo,array("vA")) && in_array($so,$tiG) && sub(array("vA"),array("+"),array("Ri"),0) )
 	{
-		$text=three(array("vA"),array("+"),array("Ri"),array("vAj"),array("+"),array("Ri"),0);
+		$text=three(array("vA"),array("+"),array("Ri"),array("vAj"),array("+"),array("Ri"),1);
 		storedata('7.3.38','sa',0);
 	}
 	/* zAcCAsAhvAvyAvepAM yuk (7.3.37) */
