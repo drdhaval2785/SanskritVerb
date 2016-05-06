@@ -12950,7 +12950,7 @@ if (arr($text,'/divn/'))
 {
     $dhatu=1;
 }
-if ($dhatu===1 && $lakAra!=="liw" && (arr($text,'/[rv]['.pc('hl').']/')|| arr($text,'/[v][n][+]/') ) && $karoti!==1  && !($us==="nis" && in_array($so,$tiG)) && sub(array("i","u","f","x"),array("r","v"),$hl,0) && $san!==1)
+if ($dhatu===1 && $lakAra!=="liw" && (arr($text,'/[rv]['.pc('hl').']/')|| arr($text,'/[v][n][+]/') ) && $karoti!==1  && !($us==="nis" && in_array($so,$tiG)) && arr($text,'/[iufx][rv][+]*['.pc('hl').']/') && $san!==1)
 {
     $text = three(array("i","I","u","U","f","F","x","X",),array("r","v"),$hl,array("I","I","U","U","F","F","F","F",),array("r","v"),$hl,0);
 	storedata('8.2.77','sa',0);
@@ -13484,7 +13484,7 @@ if ( arr($text,'/[vy][+]*['.pc('vl').']/') && in_array($so,$tiG) && in_array("6.
 }
 /* lopo vyorvali (6.1.66) */
 // Not a very good solution. The second member is there to prevent application of this rule in 'vraj'
-elseif ( arr($text,'/[vy][+]*['.pc('vl').']/') && !(arr($text,'/[vy][+]n/')&&$verbset==="kryAdi") && !arr($text,'/vr/') && in_array($so,$tiG) && !in_array("6.1.77",sutrasfromstoredata()))
+elseif ( arr($text,'/[vy][+]*['.pc('vl').']/') && !(arr($text,'/[vy][+]n/')&&$verbset==="kryAdi") && !preg_match('/[vy]['.pc('vl').']/',$verb_without_anubandha) && in_array($so,$tiG) && !in_array("6.1.77",sutrasfromstoredata()))
 {
     $text=change('/([vy])([+]*['.pc('vl').'])/','$2');
 	storedata('6.1.66','sa',0);
