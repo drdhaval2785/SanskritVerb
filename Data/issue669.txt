@@ -1,17 +1,9 @@
 YikzvidA!:snehanamocanayoH gAtraprasravaRe:kzvid:01:1133:A:sew:ञिक्ष्वि॑दाँ॑:629:472,654:667<-->YikzvidA!:avyakte Sabde:kzvid:01:1133:pa:sew:ञिक्ष्वि॑दाँ॑:629:472,654:667
 ci:BAzArTaH ca:ci:10:0325:u:sew:चि॑:1212:1226:<-->juci!:BAzArTaH ca:juYc:10:0325:u:sew:चि॑:::
-duHKa:tatkriyAyAm:duHKa:10:0011:u:sew:दुः॑ख॑:1431:1448:1487<-->midi!:snehane:mind:10:0011:u:sew:मि॑दिँ॑:1139:1155:1193
-dfhi!:vfdDO:dfMh:01:0147:pa:sew:दृ॑हिँ॑:446:465:473<-->laKi!:gatyarTaH:laNK:01:0147:pa:sew:ल॑खिँ॑:84:87:88
-dfBI!:Baye granTe:dfB:10:0048:u:sew:दृ॑भीँ॑:1338:1356:1391<-->laji!:hiMsAbalAdAnaniketanezu:laYj:10:0048:u:sew:ल॑जि॑:::
-DU:viDUnane:Du:06:0133:pa:sew:धू॑:1001:1022:1053<-->puRa!:karmaRi SuBe:puR:06:0133:pa:sew:पु॑णँ॑:947:970:990
-DUSa!:kAntikaraRe ityapare:DUS:10:0141:u:sew:धू॑शँ॑:::<-->pisi!:BAzArTaH:piMs:10:0141:u:sew:पि॑सिँ॑:1321::1374
-u!Drasa!:uGrasa! uYCe:Dras:10:0060:u:sew:उँ॑ध्र॑सँ॑:1311:1335:1369<-->paTi!:gatO:panT:10:0060:u:sew:प॑थिँ॑:1166:1181:1222
-u!Drasa!:uGrasa! uYCe:Dras:10:0060:u:sew:उँ॑ध्र॑सँ॑:1311:1335:1369<-->mfza!:titikzAyAm:mfz:10:0060:u:sew:मृ॑षँ॒॑:1364:1380:1417
 piCa!:kuwwane:piC:10:0061:u:sew:पि॑छँ॑:1167::1223<-->mfjU!:SOcAlaNkArayoH:mfj:10:0061:u:sew:मृ॑जूँ॑:1363::1416
 piji!:BAzArTaH:piYj:10:0020:u:sew:पि॑जिँ॑:1159,1321:1174:1214,1374<-->baDa!:saMyamane:baD:10:0020:u:sew:ब॑धँ॑:1145:1161:1199
 piSa!:avayave ayaM dIpanAyAmapi:piS:10:0105:pa:sew:पि॑शँ॑:1038:1057:1090<-->mada!:tfptiyoge:mad:10:0105:A:sew:म॑दँ॒:1278:1296:1329
 pIN:pAne:pI:04:0036:A:aniw:पी॒ङ्:784:806:823<-->lIN:SlezaRe:lI:04:0036:A:aniw:ली॒ङ्:782:804:821
-puRa!:saNGAte ityanye:puR:10:0059:u:sew:पु॑णँ॑:::<-->vida!:cetanAKyAnanivAsezu:vid:10:0059:A:sew:वि॑दँ॒:1281:1299:1332
 puTa!:BAzArTaH:puT:10:0013:u:sew:पु॑थँ॑:1321::1374<-->o!laqi!:olaqi! utkzepane u!laqi! ityanye:laRq:10:0013:u:sew:ओँ॑ल॑डिँ॑:1140:1156:1194
 puTa!:BAzArTaH:puT:10:0013:u:sew:पु॑थँ॑:1321::1374<-->vasa:snehacCedApaharaRezu:vasa:10:0013:u:sew:व॑स॑:1442::1498
 purva!:pUraRe:purv:01:0657:pa:sew:पु॑र्वँ॑:::370<-->purva!:pUraRe:pUrv:01:0657:pa:sew:पु॑र्वँ॑:::370
