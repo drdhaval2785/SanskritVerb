@@ -1127,7 +1127,6 @@ if (in_array($fo,array("ada!")) && $san===1 )
 	$fo = "Gasx!";
 	$it = array_merge($it,array("x"));
 }
-print_r($text);
 /* defining the sUtras mandating sanAdis */
 /* guptijkidbhyaH san (3.1.5) */
 if ( $_GET['cond47']==="1" )
@@ -6981,6 +6980,15 @@ if (arr($text,'/[h]$/')  && $hodha1===0 && $hodha2 === 0 && $hodha3 === 0 )
 if ( anekAca($verb_without_anubandha)==false && in_array($so,$tiG) && ( arr($text,'/[bgqd](['.pc('al').']*)[JBGQD][+][sz]/') || arr($text,'/[bgqd](['.pc('al').']*)[JBGQD][+]Dv/') || arr($text,'/[JBGQD][+]$/') || $pada==="pada") )
 {
 	ekAcobazo(); // created a new function 19/12/2014.
+}
+/* pugantalaghUpadhasya ca (7.3.86) patch for veT dhAtus having ksa */
+if ($ksa===1 && $id_dhAtu==="vew")
+{
+	$text=change('/[i]([Szsh][+]is)/','e$1');
+	$text=change('/[u]([Szsh][+]is)/','o$1');
+	$text=change('/[f]([Szsh][+]is)/','ar$1');
+	$text=change('/[x]([Szsh][+]is)/','al$1');
+	storedata('7.3.86','sa',0);
 }
 /* halGyAbbhyo dIrghAtsutisyapRktaM hal (6.1.68) and apRkta ekAlpratyayaH (1.2.41) */
 // GyAp pending. only hal handled now.
