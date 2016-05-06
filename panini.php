@@ -1127,6 +1127,7 @@ if (in_array($fo,array("ada!")) && $san===1 )
 	$fo = "Gasx!";
 	$it = array_merge($it,array("x"));
 }
+print_r($text);
 /* defining the sUtras mandating sanAdis */
 /* guptijkidbhyaH san (3.1.5) */
 if ( $_GET['cond47']==="1" )
@@ -1143,15 +1144,13 @@ elseif ( $_GET['cond48']==="1" )
     $sanAdi="san"; $san=1; $manbadha=1;
 }
 /* gupUdhUpavicCipaNipanibhya AyaH (3.1.28) */
-elseif (in_array($so,$tiG) && sub(array("gup","DUp","viC","pan","paR"),array("+"),blank(0),0) || ($fo==="DUpa!" && sub(array("DUpa!"),array("+"),$sArvadhAtuka_pratyayas,0) && $verbset==="BvAdi") || $_GET['cond49']==="1"  )
+elseif (in_array($so,$tiG) && (sub(array("gup","DUp","viC","pan","paR"),array(""),blank(0),0) || ($fo==="DUpa!" && sub(array("DUpa!"),array("+"),$sArvadhAtuka_pratyayas,0) && $verbset==="BvAdi") || $_GET['cond49']==="1" ) )
 {
     $text=change('/(.+)$/','$1+Aya');
 	storedata('3.1.28','sa',0);
     $sanAdi="Aya";
 	storedata('1.3.2','pa',0);
 	$text = change('/['.pc('ac').'][!][+]Aya/','+Aya');
-	$text = change('/fta[!][+]IyaN/','ft+IyaN');
-	$text = change('/kamu[!][+]RiN/','kam+RiN');
 	$id_dhAtu="sew";
 	storedata('1.3.9','sa',0);
 	if (arr($text,'/gup[+]Aya/'))
@@ -1159,6 +1158,7 @@ elseif (in_array($so,$tiG) && sub(array("gup","DUp","viC","pan","paR"),array("+"
 		$text = change('/gup[+]Aya/','gopAya');
 		storedata('7.3.86','sa',0);
 	}
+	$verb_without_anubandha="gopAya";
 }
 /* RterIyaG (3.1.29) */
 if ( in_array($fo,array("fta!")) && $pada==="pratyaya" && $lakAra!=="")
@@ -1167,6 +1167,10 @@ if ( in_array($fo,array("fta!")) && $pada==="pratyaya" && $lakAra!=="")
 	storedata('3.1.29','sa',0);
     $sanAdi="IyaN";
     $verbpada="A";
+	storedata('1.3.3','pa',0);
+	$text=change('/ft[+]IyaN$/','ftIya');
+	storedata('1.3.9','sa',0);
+	$verb_without_anubandha="ftIya";
 }
 /* kamerNiG (3.1.30) */
 if ( in_array($fo,array("kamu!")) && $pada==="pratyaya" && $lakAra!=="" && $sanAdi!=="Ric" && $vsuf!=="yak")
@@ -1181,6 +1185,7 @@ if ( in_array($fo,array("kamu!")) && $pada==="pratyaya" && $lakAra!=="" && $sanA
 	storedata('1.3.9','sa',0);	
 	$text = one(array("kam+i"),array("kAmi"),0);
 	storedata('7.2.116','sa',0);
+	$verb_without_anubandha="kAmi";
 }
 /* sanAdi Ric handling */
 if (in_array($so,$tiG) && arr($text,'/[+]Ric$/') && $sanAdi==="Ric" && $lakAra!=="luN")
