@@ -1,12 +1,6 @@
 YikzvidA!:snehanamocanayoH gAtraprasravaRe:kzvid:01:1133:A:sew:ञिक्ष्वि॑दाँ॑:629:472,654:667<-->YikzvidA!:avyakte Sabde:kzvid:01:1133:pa:sew:ञिक्ष्वि॑दाँ॑:629:472,654:667
-gupa!:BAzArTaH:gup:10:0147:u:sew:गु॑पँ॑:1321::1374<-->SuWi!:SozaRe:SuRW:10:0147:u:sew:शु॑ठिँ॑:1226:1241:1278
-gF:vijYAne:gF:10:0146:A:sew:गॄ॑::1298:1331<-->SuWa!:Alasye:SuW:10:0146:u:sew:शु॑ठँ॑:1225:1240:1277
 ci:BAzArTaH ca:ci:10:0325:u:sew:चि॑:1212:1226:<-->juci!:BAzArTaH ca:juYc:10:0325:u:sew:चि॑:::
-cIva!:BAzArTaH:cIb:10:0305:u:sew:ची॑वँ॑:1321::1374<-->cIva!:BAzArTaH:cIv:10:0305:u:sew:ची॑वँ॑:1321::1374
-cuda!:saYcodane:cud:10:0081:u:sew:चु॑दँ॑:1180:1196:1236<-->tila!:snehane:til:10:0081:u:sew:ति॑लँ॑:1192:1208:1248
 Cuwa!:Cedane:Cuw:06:0105:pa:sew:छु॑टँ॑:987:1008:1030<-->piSa!:avayave ayaM dIpanAyAmapi:piS:06:0105:pa:sew:पि॑शँ॑:1038:1057:1090
-jartsa!:pariBAzaRahiMsAtarjanezu:jarc:01:0813:pa:sew:ज॑र्त्सँ॑:::<-->jartsa!:pariBAzaRahiMsAtarjanezu:jarj:01:0813:pa:sew:ज॑र्त्सँ॑:433::459
-jartsa!:pariBAzaRahiMsAtarjanezu:jarc:01:0813:pa:sew:ज॑र्त्सँ॑:::<-->jartsa!:pariBAzaRahiMsAtarjanezu:jarts:01:0813:pa:sew:ज॑र्त्सँ॑:::
 jasu!:hiMsAyAm:jas:10:0108:u:sew:ज॑सुँ॑:1245,1290:1263:1298,1342<-->pasi!:nASane ityeke:paMS:10:0108:u:sew:प॑सिँ॑:1199:1215:1255
 juqa!:preraRe:juq:10:0051:u:sew:जु॑डँ॑:1227:1242:1279<-->zAntva!:sAmaprayoge:sAntv:10:0051:u:sew:षा॑न्त्वँ॑:1161::1216
 jF:vayohAnO:jF:10:0025:u:sew:जॄ॑:1332:1351:1385<-->Dfza!:prasahane:Dfz:10:0025:u:sew:धृ॑षँ॑:1365::1418
