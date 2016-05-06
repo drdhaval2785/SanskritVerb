@@ -1,26 +1,6 @@
 YikzvidA!:snehanamocanayoH gAtraprasravaRe:kzvid:01:1133:A:sew:ञिक्ष्वि॑दाँ॑:629:472,654:667<-->YikzvidA!:avyakte Sabde:kzvid:01:1133:pa:sew:ञिक्ष्वि॑दाँ॑:629:472,654:667
 ci:BAzArTaH ca:ci:10:0325:u:sew:चि॑:1212:1226:<-->juci!:BAzArTaH ca:juYc:10:0325:u:sew:चि॑:::
-piCa!:kuwwane:piC:10:0061:u:sew:पि॑छँ॑:1167::1223<-->mfjU!:SOcAlaNkArayoH:mfj:10:0061:u:sew:मृ॑जूँ॑:1363::1416
-piji!:BAzArTaH:piYj:10:0020:u:sew:पि॑जिँ॑:1159,1321:1174:1214,1374<-->baDa!:saMyamane:baD:10:0020:u:sew:ब॑धँ॑:1145:1161:1199
-piSa!:avayave ayaM dIpanAyAmapi:piS:10:0105:pa:sew:पि॑शँ॑:1038:1057:1090<-->mada!:tfptiyoge:mad:10:0105:A:sew:म॑दँ॒:1278:1296:1329
-pIN:pAne:pI:04:0036:A:aniw:पी॒ङ्:784:806:823<-->lIN:SlezaRe:lI:04:0036:A:aniw:ली॒ङ्:782:804:821
-puTa!:BAzArTaH:puT:10:0013:u:sew:पु॑थँ॑:1321::1374<-->o!laqi!:olaqi! utkzepane u!laqi! ityanye:laRq:10:0013:u:sew:ओँ॑ल॑डिँ॑:1140:1156:1194
-puTa!:BAzArTaH:puT:10:0013:u:sew:पु॑थँ॑:1321::1374<-->vasa:snehacCedApaharaRezu:vasa:10:0013:u:sew:व॑स॑:1442::1498
-purva!:pUraRe:purv:01:0657:pa:sew:पु॑र्वँ॑:::370<-->purva!:pUraRe:pUrv:01:0657:pa:sew:पु॑र्वँ॑:::370
-puza!:DAraRe:puz:10:0079:u:sew:पु॑षँ॑:1319:1338:1372<-->pusta!:AdarAnAdarayoH:pust:10:0079:u:sew:पु॑स्तँ॑:1179:1195:1235,1270
-pUrI!:ApyAyane:pUr:10:0046:u:sew:पू॑रीँ॑:1323:1341:1375<-->SranTa!:sandarBe:SranT:10:0046:u:sew:श्र॑न्थँ॑:1353:1368:1406
-banDa!:banDane:banD:09:0021:pa:aniw:ब॒न्धँ॑:1110:1126:1163<-->SF:hiMsAyAm:SF:09:0021:pa:sew:शॄ॑:1089::1140
-balha!:BAzArTaH:balh:10:0301:u:sew:ब॑ल्हँ॑:::<-->balha!:BAzArTaH:valh:10:0301:u:sew:ब॑ल्हँ॑:1321::1374
-bfha!:vfdDO bfhi!r vfhi!r vfdDO Sabde ca ityeke:bfh:01:0836:pa:sew:बृ॑हँ॑::465:<-->bfha!:vfdDO bfhi!r vfhi!r vfdDO Sabde ca ityeke:vfh:01:0836:pa:sew:बृ॑हँ॑::465:
-BfMSu!:aDaHpatane:BfMS:04:0006:pa:sew:भृं॑शुँ॑:::<-->zRasu!:nirasane:snas:04:0006:pa:sew:ष्ण॑सुँ॑:::
-wumasjo!:SudDO:majj:06:0151:pa:aniw:टुम॒स्जोँ॑:1017:1037:1069<-->wumasjo!:SudDO:masj:06:0151:pa:aniw:टुम॒स्जोँ॑:1017:1037:1069
-maska!:gatyarTaH:mazk:01:0107:A:sew:म॑स्कँ॒:73:72:74<-->maska!:gatyarTaH:mask:01:0107:A:sew:म॑स्कँ॒:73:72:74
-YimidA!:snehane:mid:10:0012:pa:sew:ञिमि॑दाँ॑:878:899:918<-->hisi!:hiMsAyAm:hiMs:10:0012:u:sew:हि॑सिँ॑:1346:1362:1399
-yuja!:saMyamane:yuj:10:0074:u:sew:यु॑जँ॑:1326::1378<-->vaqi!:viBAjane ityeke:vaRq:10:0074:u:sew:व॑डिँ॑::1190:
-laja:apavAraRe ityeke:laja:10:0010:u:sew:ल॑ज॑:1422::1477<-->laqa!:upasevAyAm jihvonmaTane laqiH mit 1926:laq:10:0010:u:sew:ल॑डँ॑:1138:1154:1192
-o!laqi!:olaqi! utkzepane u!laqi! ityanye:laRq:10:0013:u:sew:ओँ॑ल॑डिँ॑:1140:1156:1194<-->vasa:snehacCedApaharaRezu:vasa:10:0013:u:sew:व॑स॑:1442::1498
-lubi!:adarSane ardana ityeke:lumb:10:0159:u:sew:लु॑बिँ॑:1235:1250:1287<-->viCa!:BAzArTaH:viC:10:0159:u:sew:वि॑छँ॑:1321::1374
-lUza!:hiMsAyAm:lUz:10:0100:u:sew:लू॑षँ॑:1195:1211:1251<-->sPuwa!:Bedane:sPuw:10:0100:u:sew:स्फु॑टँ॑:1293::
-vASf!:Sabde:vAS:04:0059:A:sew:वा॑शृँ॒:804:825:843<-->Sliza!:AliNgane:Sliz:04:0059:pa:aniw:श्लि॒षँ॑:827:846:866
-zvaska!:gatyarTaH:zvask:01:0105:A:sew:ष्व॑स्कँ॒:::<-->zvaska!:gatyarTaH:svazk:01:0105:A:sew:ष्व॑स्कँ॒:::
-zvaska!:gatyarTaH:svazk:01:0105:A:sew:ष्व॑स्कँ॒:::<-->zvaska!:gatyarTaH:svask:01:0105:A:sew:ष्व॑स्कँ॒:::
+piji!:BAzArTaH:piYj:02:0020:u:sew:पि॑जिँ॑:1159,1321:1174:1214,1374<-->piji!:varRe samparcana ityeke uBayannetyanye avayava ityapare avyakte Sabda itItare:piYj:02:0020:A:sew:पि॑जिँ॒:678::716
+puza!:DAraRe:puz:04:0079:u:sew:पु॑षँ॑:1319:1338:1372<-->puza!:puzwO:puz:04:0079:pa:aniw:पु॒षँ॑:823:842:862
+pF:pAlanapUraRayoH:pF:03:0004:u:sew:पॄ॑:1146:1162:1200<-->pF:pUraRe:pF:03:0004:pa:sew:पॄ॒:735:757:
+vida!:cetanAKyAnanivAsezu:vid:02:0059:A:sew:वि॑दँ॒:1281:1299:1332<-->vida!:jYAne:vid:02:0059:pa:sew:वि॑दँ॑:714:736:753
