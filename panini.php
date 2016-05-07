@@ -4322,7 +4322,7 @@ if ( in_array($so,array("Ja")) && preg_match('/[A]$/',$verb_without_anubandha) &
 }
 /* Patch to prevent Ato GitaH (7.2.81) in gAN etc*/
 // See https://github.com/drdhaval2785/SanskritVerb/issues/421
-if ( arr($text,'/A[+]a[+][Aai]/') && in_array($so,$tiG) )
+if ( arr($text,'/A[+]a[+][Aai]/') && in_array($so,$tiG) && $aG!==1)
 {
 	$text = one(array("A+a+A","A+a+a","A+a+i"),array("A+A","A+a","A+i"),0);
 	storedata('6.1.9','sa',0);
@@ -4506,6 +4506,21 @@ if ( in_array($so,array("Ja")) && $set===2 && arr($text,'/([^a][+])Ja$/'))
     $text=change('/([^a][+])Ja$/','$1ata');
 	storedata('7.1.5','sa',0);
 }
+print_r($text); print_r($itpratyaya);
+/* Ato lopa iTi ca (6.4.64) */
+if ( (in_array("N",$itpratyaya)||in_array("k",$itpratyaya) )  && $lakAra!=="" && ($caG===1||$aG===1) && arr($text,'/^[^+]+A[+]a[+]/') )
+{
+    $text=change('/^([^+]+)A([+]a[+])/','$1$2');
+	storedata('6.4.64','sa',0);
+}
+/* Ato lopa iTi ca (6.4.64) */
+elseif (arr($text,'/^[^+]+[+][^+]+[A][+]['.pc('ac').']/') && !arr($text,'/[+]yA[+]am$/') && (in_array("N",$itpratyaya)||in_array("k",$itpratyaya) ) && pr2(array("A"),array("+"),$tiG1,array("A"),array("+"),$tiG1,$text)!==$text && $lakAra!=="")
+{
+    $text=pr2(array("A"),array("+"),$tiG1,array(""),array("+"),$tiG1,$text);
+    $text=two($hl,array("+sic+"),$hl,array("A+sic+"),0);
+	storedata('6.4.64','sa',0);
+}
+print_r($text);
 /* Ato GitaH (7.2.81) */
 if ( arr($text,'/[a][+][A]/') && in_array($so,$tiG) ) // bad
 {
@@ -4951,19 +4966,6 @@ if ( arr($text,'/a[+]iy[+]['.pc('vl').']/') && in_array($so,$tiG) )
 	storedata('6.1.87','sa',0);
 }
 if ($debug===1) {dibug("2900");}
-/* Ato lopa iTi ca (6.4.64) */
-if ( (in_array("N",$itpratyaya)||in_array("k",$itpratyaya) )  && $lakAra!=="" && $caG===1 && arr($text,'/^[^+]+A[+]a[+]/') )
-{
-    $text=change('/^([^+]+)A([+]a[+])/','$1$2');
-	storedata('6.4.64','sa',0);
-}
-/* Ato lopa iTi ca (6.4.64) */
-elseif (arr($text,'/^[^+]+[+][^+]+[A][+]['.pc('ac').']/') && !arr($text,'/[+]yA[+]am$/') && (in_array("N",$itpratyaya)||in_array("k",$itpratyaya) ) && pr2(array("A"),array("+"),$tiG1,array("A"),array("+"),$tiG1,$text)!==$text && $lakAra!=="")
-{
-    $text=pr2(array("A"),array("+"),$tiG1,array(""),array("+"),$tiG1,$text);
-    $text=two($hl,array("+sic+"),$hl,array("A+sic+"),0);
-	storedata('6.4.64','sa',0);
-}
 /* ze mucAdInAm (7.1.59) */
 if ( ($verbset==="tudAdi" || ($verbset==="none" && in_array($fo,$tudAdi)) ) && $lakAra!=="" && (sub($tudAdi_mucAdi,array("+"),array("a+"),0) || sub($tudAdi_mucAdi,array("+"),array("e"),0))  )
 {
