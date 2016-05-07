@@ -7985,3 +7985,13 @@ aGazizyAmahi,Gaza!,01.0740,lfN,mas
 jiGiRRivahe,GiRi!,01.0502,liw,vas
 jiGiRRimahe,GiRi!,01.0502,liw,mas
 GiRRE,GiRi!,01.0502,low,mip
+jiGftaH,Gf,03.0152,law,tas
+jiGfTaH,Gf,03.0152,law,Tas
+jiGfvaH,Gf,03.0152,law,vas
+jiGfmaH,Gf,03.0152,law,mas
+jiGftAt,Gf,03.0152,low,tip
+jiGftAt,Gf,03.0152,low,sip
+ajiGaH,Gf,03.0152,laN,tip
+ajiGaruH,Gf,03.0152,laN,Ji
+ajiGaH,Gf,03.0152,laN,sip
+GfRRE,GfRi!,01.0504,low,mip
