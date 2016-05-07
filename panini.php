@@ -1374,9 +1374,9 @@ if (in_array($so,$tiG) && arr($text,'/[+]Ric$/') && $sanAdi==="Ric" && $lakAra!=
 		$jAgro=1;
 	}
 	/* aco JNiti (7.2.115) */
-	if ((arr($text,'/['.pc('ik').']\+Ric$/')||arr($text,'/['.pc('ik').']\+i$/')) && !(in_array($fo,$curAdi_adanta) && $verbset==="curAdi") && $fo!=="UrRuY")
+	if ((arr($text,'/['.pc('ic').']\+Ric$/')||arr($text,'/['.pc('ic').']\+i$/')) && !(in_array($fo,$curAdi_adanta) && $verbset==="curAdi") && $fo!=="UrRuY")
 	{
-		$text = two($ik,array("+Ric"),vriddhi($ik),array("+Ric"),0);
+		$text = two($ac,array("+Ric"),vriddhi($ac),array("+Ric"),0);
 		storedata('7.2.115','sa',0);
 	}
 	/* ato lopaH (6.4.48) */
@@ -3635,10 +3635,10 @@ if (arr($text,'/\+Ri[c]{0,1}\+/')||$ciN===1||$ciN===2)
 		$jAgro=1;
 	}
 	/* aco JNiti (7.2.115) */
-	if ((arr($text,'/['.pc('ik').']\+Ri[Nc]{0,1}\+/')) && !in_array($fo,$curAdi_adanta) && !arr($text,'/^hu[+]Ric[+]a[+]/') )
+	if ((arr($text,'/['.pc('ic').']\+Ri[Nc]{0,1}\+/')) && !in_array($fo,$curAdi_adanta) && !arr($text,'/^hu[+]Ric[+]a[+]/') )
 	{
-		$text = two($ik,array("+Ric+","+RiN"),vriddhi($ik),array("+Ric+","+RiN","+Ri+","+i"),0);
-		$text = pr2($ik,array("+i"),blank(0),vriddhi($ik),array("+i"),blank(0),$text);
+		$text = two($ac,array("+Ric+","+RiN"),vriddhi($ac),array("+Ric+","+RiN","+Ri+","+i"),0);
+		$text = pr2($ac,array("+i"),blank(0),vriddhi($ac),array("+i"),blank(0),$text);
 		storedata('7.2.115','sa',0);
 	}
 	/* nodAttopadezasya mAntasyAcameH (7.3.34) */
