@@ -4506,7 +4506,6 @@ if ( in_array($so,array("Ja")) && $set===2 && arr($text,'/([^a][+])Ja$/'))
     $text=change('/([^a][+])Ja$/','$1ata');
 	storedata('7.1.5','sa',0);
 }
-print_r($text); print_r($itpratyaya);
 /* Ato lopa iTi ca (6.4.64) */
 if ( (in_array("N",$itpratyaya)||in_array("k",$itpratyaya) )  && $lakAra!=="" && ($caG===1||$aG===1) && arr($text,'/^[^+]+A[+]a[+]/') )
 {
@@ -4520,7 +4519,6 @@ elseif (arr($text,'/^[^+]+[+][^+]+[A][+]['.pc('ac').']/') && !arr($text,'/[+]yA[
     $text=two($hl,array("+sic+"),$hl,array("A+sic+"),0);
 	storedata('6.4.64','sa',0);
 }
-print_r($text);
 /* Ato GitaH (7.2.81) */
 if ( arr($text,'/[a][+][A]/') && in_array($so,$tiG) ) // bad
 {
