@@ -3107,7 +3107,6 @@ function san()
 		$val1[]=implode('+',$parts);
 	}
 	$text = $val1;
-	print_r($text);
 	/* atsmRdRtvaraprathamradastRRspazAm (7.4.95) */	
 	if (in_array($parts[1],array("smar","dar","tvar","praT","mrad","star","spaS","smari","dari","tvari","praTi","mradi","stari","spaSi")))
 	{
