@@ -140,6 +140,8 @@ $curAdi=array("aMsa","ahi!","aNka","aNga","aYcu!","aji!","awwa!","anDa","ama!","
 $adAdi=array("ada!","iN","ik","ana!","asa!","ASAsu!","Asa!","iN","iR","ik","Iqa!","Ira!","ISa!","UrRuY","kasi!","kaSa!","kasa!","ku","wukzu","kzRu","KyA","cakAsf!","cakzi!N","jakza!","jAgf","tu","daridrA","dAp","diha!","dIDIN","duha!","dyu","drA","dviza!","Risi!","Riji!","Ru","pA","piji!","pfcI!","pfji!","prA","psA","brUY","BA","mA","mfjU!","yA","yu","rA","ru","rudi!r","lA","liha!","vaca!","vaSa!","vasa!","vA","vida!","vI","vfjI!","vfji!","vevIN","SAsu!","Siji!","SIN","SrA","Svasa!","zasti!","zasa!","zu","zUN","zwuY","zRA","zRu","Yizvapa!","hana!","hnuN");
 $juhotyAdi=array("ki","kita!","gA","Gf","jana!","tura!","qudAY","Dana!","quDAY","Diza!","Riji!r","pf","pF","Basa!","YiBI","quBfY","mAN","viji!r","vizx!","sf","o!hAN","o!hAk","hu","hf","hrI","f",);
 $juhotyAdireplace=array("kiki","kikit","gigA","GiGf","jajan","tutur","dadA","daDan","daDA","diDiz","nenij","pipf","pipF","baBas","biBI","biBf","mimA","vevij","veviz","sisf","hihA","hahA","huhu","hihf","jihrI","if",);
+$juhotyAdia=array("ki","kit","gA","Gf","jan","tur","dA","Dan","DA","Diz","nij","pf","pF","Bas","BI","Bf","mA","vij","viz","sf","hA","hA","hu","hf","hrI","f",);
+$juhotyAdib=array("kiki","kikit","gigA","GiGf","jajan","tutur","dadA","daDan","daDA","diDiz","nenij","pipf","pipF","baBas","biBI","biBf","mimA","vevij","veviz","sisf","hihA","hahA","huhu","hihf","jihrI","if",);
 $svAdi=array("aSU!","aha!","Apx!","f","fDu!","kfY","kzi","kzI","camu!","ciY","ciri","jiri","tika!","tiga!","tfpa!","daGa!","damBu!","dASa!","wudu","dF","DuY","DUY","YiDfzA!","pf","qumiY","rADa!","ri","vfY","Sakx!","SiY","zaGa!","sADa!","ziY","zuY","zwiGa!","stfY","spf","smf","hi");
 $rudhAdi=array("aYjU!","YiinDI!","undI!","kftI!","kzudi!r","Kida!","Cidi!r","u!Cfdi!r","taYcU!","u!tfdi!r","tfha!","pizx!","pfcI!","BaYjo!","Bidi!r","Buja!","yuji!r","rici!r","ruDi!r","vici!r","o!vijI!","vida!","vfjI!","Sizx!","hisi!");
 $tanAdi=array("fRu!","qukfY","kzaRu!","kziRu!","GfRu!","tanu!","tfRu!","manu!","vanu!","zanu!");
@@ -3214,7 +3216,7 @@ function firstmember($a,$b)
 
 function zlu()
 {
-	global $first, $text, $juhotyAdi, $tiG, $storedata, $so, $pada, $us;
+	global $first, $text, $juhotyAdia, $juhotyAdib, $tiG, $storedata, $so, $pada, $us;
 	// taking replacements directly from sahajabodha p 329. Only hu's process is shown. For everything else there is direct substitution.
 	$juhotyAdireplace1=array("kiki","kikit","gAgA","GiGf","jajan","tutur","dAdA","daDan","dADA","diDiz","nenij","pipf","pipF","baBas","biBI","biBfMS","mimA","vevij","veviz","sisf","hihA","hahA","huhu","hihf","jihrI","if");
 	$juhotyAdireplace2=array("kiki","kikit","gigA","GiGf","jajan","tutur","dadA","daDan","daDA","diDiz","nenij","pipf","pipF","baBas","biBI","biBfMS","mimA","vevij","veviz","sisf","hihA","hahA","huhu","hihf","jihrI","if",);
@@ -3239,8 +3241,7 @@ function zlu()
 	}
 	else
 	{
-		$text=two($juhotyAdi,array("+"),$juhotyAdireplace1,array("+"),0);
-		//$text=two(array("BI"),array("+"),array("biBI"),array("+"),0);
+		$text=two($juhotyAdia,array("+"),$juhotyAdireplace1,array("+"),0);
 		$text=change('/(['.pc('hl').']+)if[+]/','$1f+');
 		storedata('6.1.10','sa',0);
 		$text=two($juhotyAdireplace1,array("+"),$juhotyAdireplace2,array("+"),0);
