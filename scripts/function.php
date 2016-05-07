@@ -2905,7 +2905,7 @@ function abhyAsa_halAdi()
 {
 	global $text;	global $caG; global $lakAra; global $fo; global $storedata, $us, $verbset, $sanAdi; global $liT_Adeza, $coku, $cu, $ku, $san, $id_dhAtu, $id_pratyaya;
 	/* liTyabhyAsasyobhayeSAm (6.1.17) */
-	if(sub(array("vac+vac+","svap+svap+","yaj+yaj+","vap+vap+","vah+vah+","vas+vas+","vad+vad+","ve+ve+","hve+hve+","Svi+Svi+","vye+vye+","grah+grah+","jyA+jyA+","vay+vay+","vyaD+vyaD+","vaS+vaS+","vyac+vyac+","vraSc+vraSc+","pracC+pracC+","Brasj+Brasj+"),blank(0),blank(0),0) && !in_array($sanAdi,array("yaN","yaNluk","san")))
+	if($lakAra==="liw" && sub(array("vac+vac+","svap+svap+","yaj+yaj+","vap+vap+","vah+vah+","vas+vas+","vad+vad+","ve+ve+","hve+hve+","Svi+Svi+","vye+vye+","grah+grah+","jyA+jyA+","vay+vay+","vyaD+vyaD+","vaS+vaS+","vyac+vyac+","vraSc+vraSc+","pracC+pracC+","Brasj+Brasj+"),blank(0),blank(0),0) && !in_array($sanAdi,array("yaN","yaNluk","san")))
 	{
 		$text=one(array("vac+vac+","svap+svap+","yaj+yaj+","vap+vap+","vah+vah+","vas+vas+","vad+vad+","ve+ve+","hve+hve+","Svi+Svi+","vye+vye+","grah+grah+","jyA+jyA+","vay+vay+","vyaD+vyaD+","vaS+vaS+","vyac+vyac+","vraSc+vraSc+","pracC+pracC+","Brasj+Brasj+"),array("uc+vac+","sup+svap+","ij+yaj+","up+vap+","uh+vah+","us+vas+","ud+vad+","u+ve+","hu+hve+","Su+Svi+","vi+vye+","gfh+grah+","ji+jyA+","uy+vay+","viD+vyaD+","uS+vaS+","vic+vyac+","vfSc+vraSc+","pfcC+pracC+","Bfsj+Brasj+"),0);
 		storedata('6.1.17','sa',0);

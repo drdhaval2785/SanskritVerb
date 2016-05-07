@@ -1990,7 +1990,7 @@ elseif ($sanAdi==="san" && arr($text,'/^['.pc('hl').']/'))
 		}
 	}
 	/* oH puyaNjyapare (7.4.80) */
-	if (arr($text,'/[uU]([+]*[pPbBmyrlvh][a])/'))
+	if (arr($text,'/[uU]([+]*[pPbBmyrlvh][a])/') && $sanAdi==="san")
 	{
 		$text = change('/[uU]([+]*[pPbBmyrlvh][a])/','i$1');
 		storedata('7.4.80','sa',0);
@@ -2753,8 +2753,41 @@ if ($lakAra==="luN")
 	$text = change('/[+]([^+]*)$/','+cli+$1');
 	storedata('3.1.43','sa',0);
 	$set=2;
+	/* NizridrusrubhyaH kartari caG (3.1.48) */
+	if ($sanAdi==="Ric" && in_array($so,$tiG) && $vAcya==="kartR" )
+	{
+		$text=two(array("i+cli+","Ric+cli+"),$tiG,array("i+caN+","Ric+caN+"),$tiG,0);
+		storedata('3.1.48','sa',0);
+		$Nizri=1;
+		$it = array_merge($it,array("N"));
+		$itpratyaya = array_merge($itpratyaya,array("N"));
+		$luGset=5;
+		$caG=1;
+	}
+	/* NizridrusrubhyaH kartari caG (3.1.48) */
+	elseif ( $verbset==="curAdi" && in_array($so,$tiG) && $vAcya==="kartR" )
+	{
+		$text=two(array("Ric+cli+"),$tiG,array("+Ric+caN+"),$tiG,0);
+		$text=one(array("++","+Ric+Ric+",),array("+","+Ric+",),0);
+		storedata('3.1.48','sa',0);
+		$Nizri=1;
+		$it = array_merge($it,array("N"));
+		$itpratyaya = array_merge($itpratyaya,array("N"));
+		$luGset=5;
+		$caG=1;
+	}
+	elseif ( ends(array($fo),array("SriY","sru","dru"),2) && in_array($so,$tiG) && $vAcya==="kartR")
+	{
+		$text=two(array("+cli+"),$tiG,array("+caN+"),$tiG,0);
+		storedata('3.1.48','sa',0);
+		$Nizri=1;
+		$it = array_merge($it,array("N"));
+		$itpratyaya = array_merge($itpratyaya,array("N"));
+		$luGset=5;
+		$caG=1;
+	}
 	/* dIpajanabudhapUritAyipyAyibhyo'nyatarasyAm (3.1.61) */ 
-	if ( in_array($fo,array("dIpI!","janI!","buDa!","pUrI!","tAyf!","o!pyAyI!")) && $lakAra==="luN" && $so==="ta" )
+	elseif ( in_array($fo,array("dIpI!","janI!","buDa!","pUrI!","tAyf!","o!pyAyI!")) && $lakAra==="luN" && $so==="ta" )
 	{ 
 		$text = three(array("dIpI!","janI!","buDa!","pUrI!","tAyf!","o!pyAyI!"),array("+cli+"),array("ista","ta"),array("dIpI!","janI!","buDa!","pUrI!","tAyf!","o!pyAyI!"),array("+ciR+"),array("ista","ta"),1);
 		storedata('3.1.61','sa',0);
@@ -2954,39 +2987,6 @@ if ($lakAra==="luN")
 		$sic=1; 
 		$luGset=9;
 		$text = one(array("Una+Ric+","Dvana+Ric+","ila!+Ric+","arda!+Ric+"),array("Uni+","Dvani+","li+","ardi+"),0);
-	}
-	/* NizridrusrubhyaH kartari caG (3.1.48) */
-	elseif ($sanAdi==="Ric" && in_array($so,$tiG) && $vAcya==="kartR" )
-	{
-		$text=two(array("i+cli+","Ric+cli+"),$tiG,array("i+caN+","Ric+caN+"),$tiG,0);
-		storedata('3.1.48','sa',0);
-		$Nizri=1;
-		$it = array_merge($it,array("N"));
-		$itpratyaya = array_merge($itpratyaya,array("N"));
-		$luGset=5;
-		$caG=1;
-	}
-	/* NizridrusrubhyaH kartari caG (3.1.48) */
-	elseif ( ( $sanAdi==="Ric" || $verbset==="curAdi" ) && in_array($so,$tiG) && $vAcya==="kartR" )
-	{
-		$text=two(array("Ric+cli+"),$tiG,array("+Ric+caN+"),$tiG,0);
-		$text=one(array("++","+Ric+Ric+",),array("+","+Ric+",),0);
-		storedata('3.1.48','sa',0);
-		$Nizri=1;
-		$it = array_merge($it,array("N"));
-		$itpratyaya = array_merge($itpratyaya,array("N"));
-		$luGset=5;
-		$caG=1;
-	}
-	elseif ( ends(array($fo),array("SriY","sru","dru"),2) && in_array($so,$tiG) && $vAcya==="kartR")
-	{
-		$text=two(array("+cli+"),$tiG,array("+caN+"),$tiG,0);
-		storedata('3.1.48','sa',0);
-		$Nizri=1;
-		$it = array_merge($it,array("N"));
-		$itpratyaya = array_merge($itpratyaya,array("N"));
-		$luGset=5;
-		$caG=1;
 	}
 	/* kamezclezcaG vAcyaH (vA) */
 	elseif ( ends(array($fo),array("kamu!"),2) && in_array($so,$tiG) && $vsuf!=="yak")
