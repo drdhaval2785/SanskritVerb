@@ -5923,9 +5923,9 @@ if ( ((in_array($fo,array("lI")) && $verbset==="kryAdi") || (in_array($fo,array(
 	storedata('6.1.50','sa',0);
 }
 /* otaH zyani (7.3.71) */
-if ($verbset==="divAdi" && in_array("Syan",$vik) && arr($text,'/o[+]ya/') && in_array($so,$tiG) )
+if ($verbset==="divAdi" && in_array("Syan",$vik) && arr($text,'/o[+]y[ae]/') && in_array($so,$tiG) )
 {
-    $text=change('/o[+]ya/','ya');
+    $text=change('/o[+](y[ae])/','$1');
 	storedata('7.3.71','sa',0);
 }
 /* dadhastathozca (8.2.38) */
