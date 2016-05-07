@@ -4795,14 +4795,6 @@ elseif ( in_array($fo,array("jyA","graha!","vaya!","vyaDa!","vaSa!","vyaca!","o!
     $text = samprasarana(array("jyA","grah","vay","vyaD","vaS","vyac","vraSc","pracC","Brasj"),0);
 }
 if ($debug===1) {dibug("2600");}
-/* jAgro'viciNNalGitsu (7.3.85) */
-// Only coded for Ri and Git. Rest pending.
-if ( arr($text,'/[j][A][g][f][+]/') && $bhasyADhe!==1 && (!in_array("N",$it)||$lakAra==="ASIrliN"||$vsuf==="yak") )
-{
-    $text = two(array('jAgf'),array("+"),array('jAgar'),array("+"),0);
-	storedata('7.3.85','sa',0);
-	$jAgro=1;
-}
 /* riG zayagliGkSu (7.4.28) */
 if (in_array("Sa",$vik) && (sub(array("f"),array("+a+"),blank(0),0) || (sub(array("f"),array("+y"),blank(0),0) && $lakAra!=="" )))
 {
@@ -4949,6 +4941,14 @@ if ($sarvadhatuka===1 && !in_array('1.2.4',sutrasfromstoredata()) && !in_array("
 	{
 		storedata('1.1.5','sa',0);
 	}
+}
+/* jAgro'viciNNalGitsu (7.3.85) */
+// Only coded for Ri and Git. Rest pending.
+if ( arr($text,'/[j][A][g][f][+]/') && $bhasyADhe!==1 && (!in_array("N",$itpratyaya)||$lakAra==="ASIrliN"||$vsuf==="yak") )
+{
+    $text = two(array('jAgf'),array("+"),array('jAgar'),array("+"),0);
+	storedata('7.3.85','sa',0);
+	$jAgro=1;
 }
 /* sArvadhAtukArdhadhAtukayoH (7.3.84) */
 if ( $didhI!==1 && $kGiti!==1 && $caG!==1 && !($lakAra==="liw" && in_array($fo,array("uN"))) && arr($text,'/[iIuUfFxX]\+[uiae]\+/') && ($sarvadhatuka===1 || $ardhadhatuka===1) && !($ad===1 && sub(array("i","I","u","U","f","F","x","X"),array("+"),$ajAdi_apit_sArvadhAtuka_pratyayas,0) ) )
