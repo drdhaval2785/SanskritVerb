@@ -1299,7 +1299,7 @@ if (in_array($so,$tiG) && arr($text,'/[+]Ric$/') && $sanAdi==="Ric" && $lakAra!=
 		storedata('7.3.43','sa',0);
 	}
 	/* radhijabhoraci (7.1.61) */
-	if ( in_array($fo,array("raDa!","jaBI!")) && sub(array("raD","jaB"),array("+"),array("Ri","i"),0) )
+	if ( in_array($fo,array("raDa!","jaBi!")) && sub(array("raD","jaB"),array("+"),array("Ri","i"),0) )
 	{
 		$text=three(array("raD","jaB"),array("+"),array("Ri","i"),array("ranD","janB"),array("+"),array("Ri","i"),0);    
 		storedata('7.1.61','sa',0);
@@ -3338,7 +3338,7 @@ if ( in_array($fo,array("ruha!")) && sub(array("ruh"),array("+"),array("Ri"),0) 
 	storedata('7.3.43','sa',0);
 }
 /* radhijabhoraci (7.1.61) */
-if ( in_array($fo,array("raDa!","jaBI!")) && sub(array("raD","jaB"),array("+"),array("Ri","i"),0) )
+if ( in_array($fo,array("raDa!","jaBi!")) && sub(array("raD","jaB"),array("+"),array("Ri","i"),0) )
 {
     $text=three(array("raD","jaB"),array("+"),array("Ri","i"),array("ranD","janB"),array("+"),array("Ri","i"),0);    
 	storedata('7.1.61','sa',0);
@@ -6411,7 +6411,7 @@ if ( $lakAra!=="" && arr($text,'/s\+D/') && in_array($so,$tiG))
 	storedata('8.2.25','sa',0);
 }
 /* radhijabhoraci (7.1.61) */
-if (in_array($fo,array("raDa!","jaBI!")) && sub(array("raD","jaB"),array("+"),$ac,0) )
+if (in_array($fo,array("raDa!","jaBi!")) && sub(array("raD","jaB"),array("+"),$ac,0) )
 {
     $text=three(array("raD","jaB"),array("+"),$ac,array("ranD","janB"),array("+"),$ac,0);
 	storedata('7.1.61','sa',0);
