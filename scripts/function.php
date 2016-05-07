@@ -3107,19 +3107,21 @@ function san()
 		$val1[]=implode('+',$parts);
 	}
 	$text = $val1;
+	print_r($text);
 	/* atsmRdRtvaraprathamradastRRspazAm (7.4.95) */	
-	if (in_array($parts[1],array("smar","dar","tvar","praT","mrad","star","spaS")))
+	if (in_array($parts[1],array("smar","dar","tvar","praT","mrad","star","spaS","smari","dari","tvari","praTi","mradi","stari","spaSi")))
 	{
+		$text = one(array("si+smar","di+dar","ti+tvar","pi+praT","mi+mrad","ti+star","pi+spaS","si+smari","di+dari","ti+tvari","pi+praTi","mi+mradi","ti+stari","pi+spaSi"),array("sa+smar","da+dar","ta+tvar","pa+praT","ma+mrad","ta+star","pa+spaS","sa+smari","da+dari","ta+tvari","pa+praTi","ma+mradi","ta+stari","pa+spaSi"),0);
 		storedata('7.4.95','sa',0);
 	}
 	/* vibhASA veSTiceSTyoH (7.4.96) */	
-	elseif (in_array($parts[1],array("vezw","cezw")))
+	elseif (in_array($parts[1],array("vezw","cezw","vezwi","cezwi")))
 	{
 		$text = one(array("vi+vezw","ci+cezw"),array("va+vezw","ca+cezw"),1);
 		storedata('7.4.96','sa',0);
 	}	
 	/* I ca gaNaH (7.4.97) */	
-	elseif (in_array($parts[1],array("gaR")))
+	elseif (in_array($parts[1],array("gaR","gaRi")))
 	{
 		$text = one(array("ja+gaR"),array("jI+gaR"),0);
 		storedata('7.4.97','sa',0);
