@@ -10897,3 +10897,16 @@ aJarizyAva,JFz,04.0026,lfN,vas
 aJarIzyAva,JFz,04.0026,lfN,vas
 aJarizyAma,JFz,04.0026,lfN,mas
 aJarIzyAma,JFz,04.0026,lfN,mas
+wiwike,wikf!,01.0108,liw,tip
+wiwikAte,wikf!,01.0108,liw,tas
+wiwikire,wikf!,01.0108,liw,Ji
+wiwikize,wikf!,01.0108,liw,sip
+wiwikATe,wikf!,01.0108,liw,Tas
+wiwikiDve,wikf!,01.0108,liw,Ta
+wiwike,wikf!,01.0108,liw,mip
+wiwikivahe,wikf!,01.0108,liw,vas
+wiwikimahe,wikf!,01.0108,liw,mas
+wIkaDve,wIkf!,01.0109,law,Ta
+wIke,wIkf!,01.0109,law,mip
+wIkAvahe,wIkf!,01.0109,law,vas
+wIkAmahe,wIkf!,01.0109,law,mas
