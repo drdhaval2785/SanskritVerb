@@ -5866,7 +5866,7 @@ if (($sarvadhatuka===1 || $ardhadhatuka===1) &&  (in_array("N",$it)||in_array("k
     $kGiti=1;
 }
 /* bhUsuvostiGi (7.3.88) */
-if ( ($sarvadhatuka===1 || $verbset==="adAdi" || $gAtisthA===1 || $lakAra==="luN") && in_array($fo,array("BU","zUN","asa!")) && arr($text,'/[Bs]U\+/') && $sanAdi!=="yaNluk" && !in_array($lakAra,array("luw","lfw","lfN")))
+if ( ($sarvadhatuka===1 || $gAtisthA===1 ) && in_array($fo,array("BU","zUN","asa!")) && arr($text,'/[Bs]U\+/') && $sanAdi!=="yaNluk" && !in_array($lakAra,array("luw","lfw","lfN")) )
 {
 	storedata('7.3.88','sa',0);
 	$bhUsuvo=1;
@@ -6226,10 +6226,6 @@ if ($id_dhAtu==="vew" && $id_pratyaya==="sew" && !($yAsuT===1 && $lakAra==="ASIr
 	// Removing unwanted iDAgama which happenned accidentally
 	$text = one(array("+iyAs+","Ay+t","vaD+s","gopAya+s","gopAya+s","gup+is","+sa+i"),array("+yAs+","Ay+it","vaD+is","gopAya+is","gopAya+is","gup+s","+sa+"),0);
 	$text = two(array("sfap","spfaS","mfaS","kfaz","tfap","dfap"),array("+i"),array("sarp","sparS","marS","karz","tarp","darp"),array("+i"),0); // not before iDAgama.
-	if ($lakAra==="luN")
-	{
-		$text = change('/[+](s[^+]+)$/','+i$1');
-	}
 	storedata('7.2.35','sa',0);
 	$Agama=array_merge($Agama,array("iw"));
 }
