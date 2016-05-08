@@ -4918,7 +4918,7 @@ if (arr($text,'/[d][a][r][i][d][r][A][+]/') && sub(array("daridrA"),array("+"),$
 
 /* pvAdInAM hrasvaH (7.3.80) */
 $shitpratyayareplace=array("a","ya","nu","na","nA","Aya","Ana");
-if (in_array($fo,$pvAdi) && $shit===1 && $fo!=="jyA" && ( $verbset==="kryAdi" || ($verbset==="none" && ends(array($fo),$kryAdi,4) ) ))
+if (in_array($fo,$pvAdi) && $shit===1 && ( $verbset==="kryAdi" || ($verbset==="none" && ends(array($fo),$kryAdi,4) ) ))
 {
     $text=three(array("A","I","U","F",),$shitpratyayareplace,array("+"),array("a","i","u","f",),$shitpratyayareplace,array("+"),0);
 	storedata('7.3.80','sa',0);
