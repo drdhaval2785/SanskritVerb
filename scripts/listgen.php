@@ -124,10 +124,13 @@ function listgenerator($debug)
 	$devanagariallverbs = array_map('convert',$allverbs);
 	$basearray = array($bhvAdi,$adAdi,$juhotyAdi,$divAdi,$svAdi,$tudAdi,$ruDAdi,$tanAdi,$kryAdi,$curAdi,$bhvAdi1,$adAdi1,$juhotyAdi1,$divAdi1,$svAdi1,$tudAdi1,$ruDAdi1,$tanAdi1,$kryAdi1,$curAdi1,$allverbs,$allverbs1,$parasmai,$Atmane,$ubhaya,$svaritetverbs,$anudAttetverbs,$udAttetverbs,$nonuniqueverbs,$Gitverbs,$Jitverbs,$devanagariallverbs);
 	$basearraynames = array('$bhvAdi','$adAdi','$juhotyAdi','$divAdi','$svAdi','$tudAdi','$ruDAdi','$tanAdi','$kryAdi','$curAdi','$bhvAdi1','$adAdi1','$juhotyAdi1','$divAdi1','$svAdi1','$tudAdi1','$ruDAdi1','$tanAdi1','$kryAdi1','$curAdi1','$allverbs','$allverbs1','$parasmai','$Atmane','$ubhaya','$svaritetverbs','$anudAttetverbs','$udAttetverbs','$nonuniqueverbs','$Gitverbs','$Jitverbs','$devanagariallverbs');
+	$logfile = fopen('../Data/verbdatasummary.txt','w');
 	for($i=0;$i<count($basearray);$i++)
 	{
 		arraydisplayer($basearray[$i],$basearraynames[$i]);
+		fputs($logfile,$basearraynames[$i].":".count($basearray[$i])."\n");
 	}
+	fclose($logfile);
 	if($debug==='1')
 	{
 		echo "bhvAdi ".count($bhvAdi)."<br/>\n";
