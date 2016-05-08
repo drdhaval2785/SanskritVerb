@@ -7014,11 +7014,12 @@ elseif ($san===1 && arr($text,'/[zQ][+]z/') )
 	storedata('8.2.41','sa',0);
 }
 $text = change('/(['.pc('hl').'])[+]a[+]/','$1a+');
+print_r($text);
 /* coH kuH (8.2.30) */
 $coku=0;
 if ((arr($text,'/[cCjJY][+]['.pc('Jl').']/')) && !in_array($fo,$noco) && in_array($so,$tiG) && ($syatAsI!==1 || $id_dhAtu !== "sew" ) && !in_array("6.1.73",allsutras($storedata)) && $sanAdi!=="san") // need to test for veT dhAtus. Pending.
 {
-	$text = three($cu,array("+",""),prat('Jl'),$ku,array("+",""),prat('Jl'),0); 
+	$text = three($cu,array("+"),prat('Jl'),$ku,array("+"),prat('Jl'),0); 
 	storedata('8.2.30','sa',0);
 	$coku=1; // 0 - doesn't prevent kvinpratyayasya kuH. 1 - prevents kvinpratyayasya kuH.
 }
@@ -7028,6 +7029,7 @@ elseif (!in_array($so,$noco) && arr($text,'/['.flat($cu).'][+]$/') && in_array($
 	storedata('8.2.30','sa',0);
 	$coku=1; // 0 - doesn't prevent kvinpratyayasya kuH. 1 - prevents kvinpratyayasya kuH.
 }
+print_r($text);
 /* patch for nimittApAye naimittikasyApAyaH in coH kuH */
 if ($coku === 1 && sub(array("Y"),$ku,blank(0),0))
 {
