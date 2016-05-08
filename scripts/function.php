@@ -1461,7 +1461,7 @@ function mit($pattern,$b,$merge)
 /* function samprasarana */
 function samprasarana($input,$merge)
 {
-    global $text; global $ac; global $storedata;
+    global $text; global $ac; global $storedata, $lakAra;
     $yan = array("ya","va","ra","la");
     $yanik = array("ia","ua","fa","xa"); // list of samprasAraNa for yaN.
     foreach ($input as $value)
@@ -1487,9 +1487,9 @@ function samprasarana($input,$merge)
 		$text = one(array("u+uc","i+ij","u+up","u+ud","u+uh","u+uS","u+us"),array("Uc","Ij","Up","Ud","Uh","US","us"),0);
 		storedata('6.1.101','sa',0);
 	}
-	if(arr($text,'/ji[+]['.pc(hl).']/'))
+	if(arr($text,'/^ji[+]['.pc(hl).']/') && $lakAra!=="liw")
 	{
-		$text=two(array("ji"),array("+"),array("jI"),array("+"),0);
+		$text=change('/^ji[+]/','jI+');
 		storedata('6.4.2','sa',0);
 	}		
     return $text;

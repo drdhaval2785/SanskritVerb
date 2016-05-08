@@ -3255,7 +3255,7 @@ if (in_array($so,$tiG) && sub(array("+"),$shitpratyaya,blank(0),0) && $lakAra!==
     $shit=1;
 }
 /* pvAdInAM hrasvaH (7.3.80) */
-if (in_array($fo,$pvAdi) && sub(array("+"),$shitpratyaya,blank(0),0) && $fo!=="jyA" && $verbset==="kryAdi")
+if (in_array($fo,$pvAdi) && $fo!=="jyA" && sub(array("+"),$shitpratyaya,blank(0),0) && $fo!=="jyA" && $verbset==="kryAdi")
 {
     $text=three(array("A","I","U","F",),array("+"),$shitpratyaya,array("a","i","u","f",),array("+"),$shitpratyaya,0);
 	storedata('7.3.80','sa',0);
@@ -4915,7 +4915,6 @@ if (arr($text,'/[d][a][r][i][d][r][A][+]/') && sub(array("daridrA"),array("+"),$
     $text = pr2(array("daridrA+"),$halAdi_apit_sArvadhAtuka_pratyayas,blank(0),array("daridri+"),$halAdi_apit_sArvadhAtuka_pratyayas,blank(0),$text);
 	storedata('6.1.114','sa',0);
 }
-
 /* pvAdInAM hrasvaH (7.3.80) */
 $shitpratyayareplace=array("a","ya","nu","na","nA","Aya","Ana");
 if (in_array($fo,$pvAdi) && $shit===1 && ( $verbset==="kryAdi" || ($verbset==="none" && ends(array($fo),$kryAdi,4) ) ))
@@ -6091,14 +6090,10 @@ if ( (arr($text,'/[s]['.flat($hl).']$/') || arr($text,'/vr[aA]Sc\+/')) && in_arr
 if (in_array($fo,array("jyA")) && in_array("N",$it) && $so!=="mahiN" && $sanAdi!=="yaNluk")
 {
     $text=two(array("jyA"),array("+"),array("jiA"),array("+"),0);
-	storedata('6.1.16','sa',0);
-/*    $text=two(array("jiA"),array("+"),array("ji"),array("+"),0);
-	storedata('6.1.104','sa',0);
- */
     $text = samprasarana(array("jyA"),0);
-    $text=two(array("ji"),array("+"),array("jI"),array("+"),0);
+    $text=change('/^ji[+]/','jI');
 	storedata('6.4.2','sa',0);
-    $text=two(array("jI"),array("+"),array("ji"),array("+"),0);
+    $text=change('/^jI[+]/','ji');
 	storedata('7.3.80','sa',0);
 }
 /* znA'bhyastayorAtaH (6.4.112) */
