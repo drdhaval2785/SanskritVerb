@@ -4745,6 +4745,7 @@ if ( $lakAra==="liw" && in_array("k",$itpratyaya) && sub(array("Sa+SF","da+dF","
 	$text = two(array("Sa+SF","da+dF","pa+pF"),array("+"),array("Sa+Sf","da+df","pa+pf"),array("+"),1);
 	storedata('7.4.12','sa',0);
 }
+print_r($text); print_r($itpratyaya); echo $aniditAm;
 /* aniditAM hala upadhAyAH kGiti (6.4.24) */ 
 if ( in_array($fo,$aniditverbs) && (in_array("N",$itpratyaya) || in_array("k",$itpratyaya)) && !in_array($sanAdi,array("Ric"))  && $so!=="mahiN" && !in_array("i",$it) && $lakAra!=="viDiliN" && $verbset!=="ruDAdi" && $aniditAm!==1 && !in_array("Sap",$vik))
 {
