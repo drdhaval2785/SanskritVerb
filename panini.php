@@ -6425,7 +6425,18 @@ if ( (in_array($fo,array("asa!")) && $verbset==="adAdi" ) && arr($text,'/as\+s/'
 	storedata('7.4.50','sa',0);
 }
 /* pugantalaghUpadhasya ca (7.3.86) */
-if ( $atolopa!==1 && $ardhadhatuka===1 && $didhI!==1 && ($sIyuT===1||$sic===1) && $vijait!==1 && $kGiti!==1 && sub(array("i","u","f","x"),$hl,array("+sI","+isI"),0) && !arr($text,"/[+][i][y][+][t]$/") && $vijait!==1)
+// For irito vA (aG/sic optional)
+if ( $aG===1 && $kGiti===1 && $lakAra==="luN" && $sic===1 && sub(array("i","u","f","x"),$hl,array("+sI","+isI","+sam","+isam"),0) )
+{
+	$text=three(array("i","u","f","x"),$hl,array("+sI","+isI","+sam","+isam"),array("e","o","ar","al"),$hl,array("+sI","+isI","+sam","+isam"),0);
+	if ($id_dhAtu==="vew") // e.g. gfhU! - garhizIzwa ang GfzIzwa are expected outcome.
+	{
+		$text=three(array("e","o","ar","al"),$hl,array("+sI"),array("i","u","f","x"),$hl,array("+sI"),0);	
+	}
+	storedata('7.3.86','sa',0);
+}
+/* pugantalaghUpadhasya ca (7.3.86) */
+elseif ( $atolopa!==1 && $ardhadhatuka===1 && $didhI!==1 && ($sIyuT===1||$sic===1) && $vijait!==1 && $kGiti!==1 && sub(array("i","u","f","x"),$hl,array("+sI","+isI"),0) && !arr($text,"/[+][i][y][+][t]$/") && $vijait!==1)
 {
 	$text=three(array("i","u","f","x"),$hl,array("+sI","+isI"),array("e","o","ar","al"),$hl,array("+sI","+isI"),0);
 	if ($id_dhAtu==="vew") // e.g. gfhU! - garhizIzwa ang GfzIzwa are expected outcome.
