@@ -2846,9 +2846,19 @@ if ($lakAra==="luN")
 		$ciN=1;
 	}
 	/* spRzamRzakRSatRpadRpAM sijvA vaktavyaH (vA) */
-	elseif ( in_array($fo,array("spfSa!","mfSa!","kfza!","tfpa!","dfpa!")) && in_array($so,$tis) )
+	elseif ( in_array($fo,array("spfSa!","mfSa!","kfza!")) && in_array($so,$tis) )
 	{
-		$text = one(array("+cli+"),array("+sa+"),1); // ?? is it optional aN or optional ksa?. Pending.
+		$text = one(array("+cli+"),array("+sa+"),1);
+		storedata('3.1.44-7','sa',0);
+		$ksa=1;
+		$luGset=7;
+		$it = array_merge($it,array("k"));
+		$itpratyaya = array_merge($itpratyaya,array("k"));
+	}
+	/* spRzamRzakRSatRpadRpAM sijvA vaktavyaH (vA) */
+	elseif ( in_array($fo,array("tfpa!","dfpa!")) && in_array($so,$tis) && !in_array($number,array("06.0355")))
+	{
+		$text = one(array("+cli+"),array("+aN+"),1);
 		storedata('3.1.44-7','sa',0);
 		$ksa=1;
 		$luGset=7;
