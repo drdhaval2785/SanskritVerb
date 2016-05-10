@@ -3953,9 +3953,9 @@ if ( in_array($fo,$aniditverbs) && sub(array("+"),array("Syan","Sna","SnA","Snu"
     $aniditAm = 1; // 0 - this sUtra has not applied. 1 - this sUtra has applied.
 }
 /* ze tRmphAdInAM numvAcyaH (vA) */ 
-if ( in_array($fo,array("tfPa!","tfmPa!","dfPa!","dfmPa!","guPa!","gumPa!","uBa!","umBa!","SuBa!","SumBa!",)) && sub(array("tfP","tuP","dfP","fP","guP","uB","SuB","tup","tfh"),array("+Sa+"),blank(0),0) )
+if ( in_array($fo,array("tfmPa!","dfmPa!","gumPa!","umBa!","SumBa!",)) && sub(array("tfP","tuP","dfP","fP","guP","uB","SuB","tup","tfh"),array("+Sa+"),blank(0),0) )
 {
-    $text = two(array("tfP","tuP","dfP","fP","guP","uB","SuB","tup","tfh"),array("+Sa+"),array("tfmP","tumP","dfmP","fmP","gumP","umB","SumB","tump","tfnh"),array("+Sa+"),0);        
+    $text = two(array("tfP","tuP","dfP","fP","guP","uB","SuB","tup","tfh"),array("+Sa+"),array("tfmP","tumP","dfmP","fmP","gumP","umB","SumB","tump","tfnh"),array("+Sa+"),0);
 	storedata('7.1.59-1','sa',0);
 }
 /* mInAternigame (7.3.81) */
