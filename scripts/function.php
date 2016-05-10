@@ -3575,25 +3575,25 @@ function tablemaker($ou)
 	{
 			echo "<table border='1'>
 		<tr>
-		<td>परस्मैपद</td>
+		<td>परस्मैपदम्‌</td>
 		<td>एकवचनम्‌</td>
 		<td>द्विवचनम्‌</td>
 		<td>बहुवचनम्‌</td>
 		</tr>
 		<tr>
-		<td>प्रथमपुरुष</td>
+		<td>प्रथमपुरुषः</td>
 		<td>$ou[0]</td>
 		<td>$ou[1]</td>
 		<td>$ou[2]</td>
 		</tr>
 		<tr>
-		<td>मध्यमपुरुष</td>
+		<td>मध्यमपुरुषः</td>
 		<td>$ou[3]</td>
 		<td>$ou[4]</td>
 		<td>$ou[5]</td>
 		</tr>
 		<tr>
-		<td>उत्तमपुरुष</td>
+		<td>उत्तमपुरुषः</td>
 		<td>$ou[6]</td>
 		<td>$ou[7]</td>
 		<td>$ou[8]</td>
@@ -3605,25 +3605,25 @@ function tablemaker($ou)
 	{
 			echo "<table border='1'>
 		<tr>
-		<td>आत्मनेपद</td>
+		<td>आत्मनेपदम्</td>
 		<td>एकवचनम्‌</td>
 		<td>द्विवचनम्‌</td>
 		<td>बहुवचनम्‌</td>
 		</tr>
 		<tr>
-		<td>प्रथमपुरुष</td>
+		<td>प्रथमपुरुषः</td>
 		<td>$ou[0]</td>
 		<td>$ou[1]</td>
 		<td>$ou[2]</td>
 		</tr>
 		<tr>
-		<td>मध्यमपुरुष</td>
+		<td>मध्यमपुरुषः</td>
 		<td>$ou[3]</td>
 		<td>$ou[4]</td>
 		<td>$ou[5]</td>
 		</tr>
 		<tr>
-		<td>उत्तमपुरुष</td>
+		<td>उत्तमपुरुषः</td>
 		<td>$ou[6]</td>
 		<td>$ou[7]</td>
 		<td>$ou[8]</td>
@@ -3635,25 +3635,25 @@ function tablemaker($ou)
 	{
 			echo "<table border='1'>
 		<tr>
-		<td>परस्मैपद</td>
+		<td>परस्मैपदम्</td>
 		<td>एकवचनम्‌</td>
 		<td>द्विवचनम्‌</td>
 		<td>बहुवचनम्‌</td>
 		</tr>
 		<tr>
-		<td>प्रथमपुरुष</td>
+		<td>प्रथमपुरुषः</td>
 		<td>$ou[0]</td>
 		<td></td>
 		<td></td>
 		</tr>
 		<tr>
-		<td>मध्यमपुरुष</td>
+		<td>मध्यमपुरुषः</td>
 		<td></td>
 		<td></td>
 		<td></td>
 		</tr>
 		<tr>
-		<td>उत्तमपुरुष</td>
+		<td>उत्तमपुरुषः</td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -3663,25 +3663,25 @@ function tablemaker($ou)
 		echo "<hr/>";
 			echo "<table border='1'>
 		<tr>
-		<td>आत्मनेपद</td>
+		<td>आत्मनेपदम्</td>
 		<td>एकवचनम्‌</td>
 		<td>द्विवचनम्‌</td>
 		<td>बहुवचनम्‌</td>
 		</tr>
 		<tr>
-		<td>प्रथमपुरुष</td>
+		<td>प्रथमपुरुषः</td>
 		<td>$ou[1]</td>
 		<td></td>
 		<td></td>
 		</tr>
 		<tr>
-		<td>मध्यमपुरुष</td>
+		<td>मध्यमपुरुषः</td>
 		<td></td>
 		<td></td>
 		<td></td>
 		</tr>
 		<tr>
-		<td>उत्तमपुरुष</td>
+		<td>उत्तमपुरुषः</td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -3693,25 +3693,25 @@ function tablemaker($ou)
 	{
 			echo "<table border='1'>
 		<tr>
-		<td>परस्मैपद</td>
+		<td>परस्मैपदम्</td>
 		<td>एकवचनम्‌</td>
 		<td>द्विवचनम्‌</td>
 		<td>बहुवचनम्‌</td>
 		</tr>
 		<tr>
-		<td>प्रथमपुरुष</td>
+		<td>प्रथमपुरुषः</td>
 		<td>$ou[0]</td>
 		<td>$ou[1]</td>
 		<td>$ou[2]</td>
 		</tr>
 		<tr>
-		<td>मध्यमपुरुष</td>
+		<td>मध्यमपुरुषः</td>
 		<td>$ou[3]</td>
 		<td>$ou[4]</td>
 		<td>$ou[5]</td>
 		</tr>
 		<tr>
-		<td>उत्तमपुरुष</td>
+		<td>उत्तमपुरुषः</td>
 		<td>$ou[6]</td>
 		<td>$ou[7]</td>
 		<td>$ou[8]</td>
@@ -3721,25 +3721,25 @@ function tablemaker($ou)
 		echo "<hr/>";
 			echo "<table border='1'>
 		<tr>
-		<td>आत्मनेपद</td>
+		<td>आत्मनेपदम्</td>
 		<td>एकवचनम्‌</td>
 		<td>द्विवचनम्‌</td>
 		<td>बहुवचनम्‌</td>
 		</tr>
 		<tr>
-		<td>प्रथमपुरुष</td>
+		<td>प्रथमपुरुषः</td>
 		<td>$ou[9]</td>
 		<td>$ou[10]</td>
 		<td>$ou[11]</td>
 		</tr>
 		<tr>
-		<td>मध्यमपुरुष</td>
+		<td>मध्यमपुरुषः</td>
 		<td>$ou[12]</td>
 		<td>$ou[13]</td>
 		<td>$ou[14]</td>
 		</tr>
 		<tr>
-		<td>उत्तमपुरुष</td>
+		<td>उत्तमपुरुषः</td>
 		<td>$ou[15]</td>
 		<td>$ou[16]</td>
 		<td>$ou[17]</td>
