@@ -6822,8 +6822,9 @@ if ( ( (in_array("N",$it)||in_array("k",$it))&& in_array($so,$tiG) && ($sIyuT===
 		storedata('7.3.84','sa',0);
 	}
 }*/
+print_r($text);
 /* yIvarNayordIdhIvevyoH (7.4.53) */
-if (in_array($fo,array("diDIN","vevIN")) && sub(array("dIDI","vevI"),array("+"),array("i","I","y"),0) )
+if (in_array($fo,array("dIDIN","vevIN")) && sub(array("dIDI","vevI"),array("+"),array("i","I","y"),0) )
 {
     $text=three(array("dIDI","vevI"),array("+"),array("i","I","y"),array("dID","vev"),array("+"),array("i","I","y"),0);
 	storedata('7.4.53','sa',0);
