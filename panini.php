@@ -2474,7 +2474,7 @@ if ( in_array($lakAra,array("liw")) )
 	storedata('3.4.115','pa',0);
 }
 /* mInAtiminotidIGAM lyapi ca (6.1.50) */
-if ( in_array($fo,array("qumiY","mIY","dIN")) && $ardhadhatuka===1 && (($lakAra==="liw" && in_array($so,array("tip","sip","mip")))||in_array($lakAra,array("luw","lfw","luN"))||($lakAra==="ASIrliN" && in_array($so,$taG)) ))
+if ( in_array($fo,array("qumiY","mIY","dIN")) && $ardhadhatuka===1 && (($lakAra==="liw" && in_array($so,array("tip","sip","mip")))||in_array($lakAra,array("luw","lfw","luN","lfN"))||($lakAra==="ASIrliN" && in_array($so,$taG)) ))
 {
     $text=two(array("mi","mI","dI"),array("+"),array("mA","mA","dA"),array("+"),0);
 	storedata('6.1.50','sa',0);
