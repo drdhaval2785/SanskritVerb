@@ -3180,10 +3180,11 @@ if ( !in_array($fo,$allverbs) && sub(array("+Ric+Sap+","+RiN+Sap+"),$tiG,blank(0
 		storedata('6.4.163','sa',0);
     }
 }
+print_r($text);
 /* pAghrAdhmAsthAmnAdANdRzyartizadasadAM pibajighradhamatiSThamanayacCapazyarcCadhaushIyasIdAH (7.3.78) */
-if (in_array($so,$tiG) && $lakAra!=="" && in_array($fo,array("pA","GrA","DmA","zWA","mnA","dAR","dfSi!r","f","sf","Sadx!","zadx!","zWA")) && sub(array("pA","GrA","DmA","zWA","mnA","dAR","dfSi!r","f","sf","Sadx!","zadx!"),array("+"),$shitpratyaya,0) && !($fo==="f" && $verbset==="svAdi") )
+if (in_array($so,$tiG) && $lakAra!=="" && in_array($fo,array("pA","GrA","DmA","zWA","mnA","dAR","dfSi!r","f","sf","Sadx!","zadx!","zWA")) && sub(array("pA","GrA","DmA","zWA","mnA","dA","dfS","f","sf","Sad","zad"),array("+"),$shitpratyaya,0) && !($fo==="f" && $verbset==="svAdi") )
 {
-    $text=three(array("pA","GrA","DmA","zWA","mnA","dAR","dfSi!r","sf","f","Sadx!","zadx!"),array("+"),$shitpratyaya,array("piba","jiGra","Dama","tizWa","mana","yacCa","paSya","DO","fcCa","SIya","sIda"),array("+"),$shitpratyaya,0);
+    $text=three(array("pA","GrA","DmA","zWA","mnA","dA","dfS","sf","f","Sad","zad"),array("+"),$shitpratyaya,array("piba","jiGra","Dama","tizWa","mana","yacCa","paSya","DO","fcCa","SIya","sIda"),array("+"),$shitpratyaya,0);
 	storedata('7.3.78','sa',0);
     $nomidelision=1; // We will remember this while doing halantyam and prevent halantyam application, because these are not upadeza
 	$vijait=1; // to prevent application of pugantalaghUpadhasya ca.
@@ -3191,15 +3192,15 @@ if (in_array($so,$tiG) && $lakAra!=="" && in_array($fo,array("pA","GrA","DmA","z
 if ($debug===1) {dibug("1600");}
 
 /* daMzasaJjasvaJjAM zapi (6.4.25) */
-if (in_array($fo,array("daMSa!","zaYja!","zvaYja!")) && sub(array("daMSa!","saYja!","svaYja!"),array("+Sap+"),$tiG,0) )
+if (in_array($fo,array("daMSa!","zaYja!","zvaYja!")) && sub(array("daMS","saYj","svaYj"),array("+Sap+"),$tiG,0) )
 {
-    $text=two(array("daMSa!","saYja!","svaYja!"),array("+Sap+"),array("daSa!","saja!","svaja!"),array("+Sap+"),0);
+    $text=two(array("daMS","saYj","svaYj"),array("+Sap+"),array("daS","saj","svaj"),array("+Sap+"),0);
 	storedata('6.4.25','sa',0);
 }
 /* raJjezca (6.4.26) */
-if (in_array($fo,array("raYja!")) && sub(array("raYja!"),array("+Sap+"),$tiG,0) )
+if (in_array($fo,array("raYja!")) && sub(array("raYj"),array("+Sap+"),$tiG,0) )
 {
-    $text=two(array("raYja!"),array("+Sap+"),array("raja!"),array("+Sap+"),0);
+    $text=two(array("raYj"),array("+Sap+"),array("raj"),array("+Sap+"),0);
 	storedata('6.4.26','sa',0);
 }
 /* numAgama as per sahajabodha */
@@ -4919,11 +4920,11 @@ if ($abhyasta===1 && pr2(array("+"),array("anti","antu","an"),blank(0),array("+"
     $text = pr2(array("+"),array("anti","antu","an"),blank(0),array("+"),array("ati","atu","us"),blank(0),$text);
 	storedata('7.1.4','sa',0);
 }
-/* iddaridrasya (6.1.114) */
-if (arr($text,'/[d][a][r][i][d][r][A][+]/') && sub(array("daridrA"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,0) )
+/* iddaridrasya (6.4.114) */
+if (arr($text,'/daridrA[+]/') && sub(array("daridrA"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,0) )
 {
     $text = pr2(array("daridrA+"),$halAdi_apit_sArvadhAtuka_pratyayas,blank(0),array("daridri+"),$halAdi_apit_sArvadhAtuka_pratyayas,blank(0),$text);
-	storedata('6.1.114','sa',0);
+	storedata('6.4.114','sa',0);
 }
 /* pvAdInAM hrasvaH (7.3.80) */
 $shitpratyayareplace=array("a","ya","nu","na","nA","Aya","Ana");
@@ -6212,7 +6213,6 @@ if ($lakAra==="liw" && $so==="sip" && arr($text,'/[iIuUfFxXeEoO]\+/') && sub(pra
 }
 /* patch for yAsuT Agama to combine it with the next pratyaya. because it would not be getting iDAgama. */
 //$text = one(array("+yA+"),array("+yA"),0);
-print_r($text);
 /* Adding iDAgama actually */
 if ($id_dhAtu==="sew" && $id_pratyaya==="sew" && !($yAsuT===1 && $lakAra==="ASIrliN")  && (!in_array("iw",$Agama)||$ciN!==0) && $caG!==1 && $san!==1) // for seT dhAtus
 {
