@@ -6083,7 +6083,7 @@ if ( (in_array($fo,array("mA","zWA","gE","pA","o!hAk","zo","gA")) || $ghu===1) &
 	storedata('6.4.67','sa',0);
 }
 /* vA'nyasya saMyogAdeH (6.4.68) */
-if ( (arr($text,'/['.pc('hl').']['.pc('hl').'][A][+][y]/')) && in_array($so,$tiG) && in_array($lakAra,array("ASIrliN")) ) // Not applicable to sIyuT.
+if ( (arr($text,'/^['.pc('hl').']['.pc('hl').'][A][+][y]/')) && in_array($so,$tiG) && in_array($lakAra,array("ASIrliN")) ) // Not applicable to sIyuT.
 {
 	$text = one(array("A+y"),array("e+y"),1);
 	storedata('6.4.68','sa',0);
