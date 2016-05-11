@@ -3859,7 +3859,7 @@ if (arr($text,'/^[pPbBmv]F[+]/')  && in_array($so,$tiG) && ($sarvadhatuka===1 ||
 	storedata('8.2.77','sa',0);
 }
 /* RRta iddhAtoH (7.1.100) */
-elseif (arr($text,'/[^pPbBmv]F\+/') && in_array($so,$tiG) && ($sarvadhatuka===1 || in_array("Sa",$vik) || arr($text,'/[+]yAs[+]/')) && $ciN!==1 && $ciN!==2 )
+elseif (arr($text,'/^[^pPbBmv]F\+/') && in_array($so,$tiG) && ($sarvadhatuka===1 || in_array("Sa",$vik) || arr($text,'/[+]yAs[+]/')) && $ciN!==1 && $ciN!==2 )
 {
     $text=two(array("F"),array("+"),array("ir"),array("+"),0);
 	$text=change('/([iu])r[+]Itu$/','ar+Itu');
@@ -3881,17 +3881,16 @@ if ($lakAra==="liw" && sub(array("Am+"),$tiG1,blank(0),0) )
 	//$text=one(array("+Am+kf+"),array("+Am+BU+"),1); // Trying for kf only right now.
 	//$text=one(array("+Am+kf+"),array("+Am+as+"),1);
 	storedata('3.1.40','sa',0);
-	if (arr($text,'/[iIuU][+]Am[+]/') && !anekAca($verb_without_anubandha))
+	if (arr($text,'/[iIuU][+]Am[+]/') && !in_array($fo,array("dIDIN","vevIN")))
 	{
 		$text = change('/[iI][+]Am[+]/','e+Am+');
 		$text = change('/[uU][+]Am[+]/','o+Am+');
 		storedata('7.3.84','sa',0);
 	}
-	// For dIDIN, vevIN etc.
-	elseif(arr($text,'/[iIuU][+]Am[+]/') && anekAca($verb_without_anubandha))
+	// For dIDIN, vevIN.
+	elseif(arr($text,'/[iIuU][+]Am[+]/') && in_array($fo,array("dIDIN","vevIN")))
 	{
 		$text = change('/[iI][+]Am[+]/','y+Am+');
-		$text = change('/[uU][+]Am[+]/','v+Am+');
 		storedata('6.1.77','sa',0);		
 	}
 	if (arr($text,'/[eo][+]Am[+]/'))
@@ -6822,7 +6821,6 @@ if ( ( (in_array("N",$it)||in_array("k",$it))&& in_array($so,$tiG) && ($sIyuT===
 		storedata('7.3.84','sa',0);
 	}
 }*/
-print_r($text);
 /* yIvarNayordIdhIvevyoH (7.4.53) */
 if (in_array($fo,array("dIDIN","vevIN")) && sub(array("dIDI","vevI"),array("+"),array("i","I","y"),0) )
 {
