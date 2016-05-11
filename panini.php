@@ -3881,11 +3881,18 @@ if ($lakAra==="liw" && sub(array("Am+"),$tiG1,blank(0),0) )
 	//$text=one(array("+Am+kf+"),array("+Am+BU+"),1); // Trying for kf only right now.
 	//$text=one(array("+Am+kf+"),array("+Am+as+"),1);
 	storedata('3.1.40','sa',0);
-	if (arr($text,'/[iIuU][+]Am[+]/'))
+	if (arr($text,'/[iIuU][+]Am[+]/') && !anekAca($verb_without_anubandha))
 	{
 		$text = change('/[iI][+]Am[+]/','e+Am+');
 		$text = change('/[uU][+]Am[+]/','o+Am+');
 		storedata('7.3.84','sa',0);
+	}
+	// For dIDIN, vevIN etc.
+	elseif(arr($text,'/[iIuU][+]Am[+]/') && anekAca($verb_without_anubandha))
+	{
+		$text = change('/[iI][+]Am[+]/','y+Am+');
+		$text = change('/[uU][+]Am[+]/','v+Am+');
+		storedata('6.1.77','sa',0);		
 	}
 	if (arr($text,'/[eo][+]Am[+]/'))
 	{
