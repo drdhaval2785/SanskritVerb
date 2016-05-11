@@ -6434,7 +6434,6 @@ if ( (in_array($fo,array("asa!")) && $verbset==="adAdi" ) && arr($text,'/as\+s/'
     $text=two(array("as"),array("+s"),array("a"),array("+s"),0);
 	storedata('7.4.50','sa',0);
 }
-print_r($text); echo $ksa;
 /* pugantalaghUpadhasya ca (7.3.86) */
 // For irito vA (aG/sic optional)
 if ( ($aG===1||$ksa===1) && $kGiti===1 && $lakAra==="luN" && $sic===1 && sub(array("i","u","f","x"),$hl,array("+sI","+isI","+sam","+isam"),0) )
