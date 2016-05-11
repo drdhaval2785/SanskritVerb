@@ -2374,9 +2374,17 @@ function ekAcobazo()
 			$value = preg_replace('/([q])(['.pc('al').']*)([JBGQD][+])/',"Q$2$3",$value);
 			$val[] = preg_replace('/([d])(['.pc('al').']*)([JBGQD][+])/',"D$2$3",$value);
 		}
+		elseif (preg_match('/[bgqd](['.pc('al').']*)[JBGQD]$/',$value))
+		{
+			$value = preg_replace('/([b])(['.pc('al').']*)([JBGQD]$)/',"B$2$3",$value);
+			$value = preg_replace('/([g])(['.pc('al').']*)([JBGQD]$)/',"G$2$3",$value);
+			$value = preg_replace('/([q])(['.pc('al').']*)([JBGQD]$)/',"Q$2$3",$value);
+			$val[] = preg_replace('/([d])(['.pc('al').']*)([JBGQD]$)/',"D$2$3",$value);
+		}
 		else
 		{
-				$val[] = $value;
+			$val[] = $value;
+
 		}
 	}
 		$text = $val;

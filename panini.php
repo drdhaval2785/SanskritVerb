@@ -3180,7 +3180,6 @@ if ( !in_array($fo,$allverbs) && sub(array("+Ric+Sap+","+RiN+Sap+"),$tiG,blank(0
 		storedata('6.4.163','sa',0);
     }
 }
-print_r($text);
 /* pAghrAdhmAsthAmnAdANdRzyartizadasadAM pibajighradhamatiSThamanayacCapazyarcCadhaushIyasIdAH (7.3.78) */
 if (in_array($so,$tiG) && $lakAra!=="" && in_array($fo,array("pA","GrA","DmA","zWA","mnA","dAR","dfSi!r","f","sf","Sadx!","zadx!","zWA")) && sub(array("pA","GrA","DmA","zWA","mnA","dA","dfS","f","sf","Sad","zad"),array("+"),$shitpratyaya,0) && !($fo==="f" && $verbset==="svAdi") )
 {
