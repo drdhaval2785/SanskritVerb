@@ -12851,6 +12851,7 @@ adinvizyatam,divi!,01.0676,lfN,Tas
 adinvizyam,divi!,01.0676,lfN,mip
 adinvizyAva,divi!,01.0676,lfN,vas
 adinvizyAma,divi!,01.0676,lfN,mas
+aDikzaTAH,diha!,02.0005,luN,TAs
 
 tfMhmaH,tfha!,07.0018,law,mas
 atfReq,tfha!,07.0018,laN,tip

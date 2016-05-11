@@ -6544,7 +6544,7 @@ if ( in_array($so,array("mip")) && $lakAra==="liw" && arr($text,'/a['.pc('hl').'
 /* dIGo yuDaci kGiti (6.4.63) */
 if ( arr($text,'/dI\+['.pc('ac').']/') && $kGiti===1)
 {
-    $text=three(array("dI"),array("+"),$ac,array("dI"),array("+y"),$ac,0);
+    $text=three(array("dI"),array("+"),$ac,array("dIy"),array("+"),$ac,0);
 	storedata('6.4.63','sa',0);
 }
 if ($debug===1) {dibug("4000");}
