@@ -2884,6 +2884,20 @@ if ($lakAra==="luN")
 		$itpratyaya = array_merge($itpratyaya,array("N"));
 		$aG=1;
 	}
+	/* na dRSaH (3.1.47) */
+	elseif ( ends(array($fo),array("dfSi!r"),2) && in_array($so,$tis) )
+	{
+		$text = one(array("+cli+"),array("+aN+"),1);
+		storedata('3.1.57','sa',0);
+		$aG=1;
+		storedata('3.1.47','pa',0);
+		$text = one(array("+cli+"),array("+sic+"),0);
+		$aG=1;
+		storedata('3.1.44','sa',0);
+		$sic=1; // 1 for sic vikaraNa. 0 for sijluk. 2 for vibhASA.
+		$it = array_merge($it,array("N"));
+		$itpratyaya = array_merge($itpratyaya,array("N"));
+	}
 	/* zala igupadhAdaniTaH ksaH (3.1.45) */
 	elseif (arr($text,'/[^+]*[iIuUfFx]['.pc('Sl').'](['.pc('ac').'][!])*[+]/') && $id_dhAtu==="aniw")
 	{
@@ -2949,15 +2963,6 @@ if ($lakAra==="luN")
 	{
 		$text = one(array("+cli+"),array("+aN+"),0);
 		storedata('3.1.56','sa',0);
-		$aG=1;
-		$it = array_merge($it,array("N"));
-		$itpratyaya = array_merge($itpratyaya,array("N"));
-	}
-	/* na dRSaH (3.1.77) */
-	elseif ( ends(array($fo),array("dfSi!r"),2) && in_array($so,$tis) )
-	{
-		$text = one(array("+cli+"),array("+aN+"),1);
-		storedata('3.1.77','sa',0);
 		$aG=1;
 		$it = array_merge($it,array("N"));
 		$itpratyaya = array_merge($itpratyaya,array("N"));
@@ -5621,6 +5626,7 @@ if (arr($text,'/cC[+][YmNRn]/') || (arr($text,'/cC[+]['.pc('Jl').']/') && $kGiti
     $text = change('/cC[+]/','S+');
 	storedata('6.4.19','sa',0);
 }
+print_r($text);
 /* jusi ca (7.3.83) */
 if ( ($jherjus===1 || $sijabhyastavidibhyazca===1) && arr($text,'/[iIuUfFxX]\+us/') && $lakAra!=="liw" ) // liT has 'us' which is not 'jus'
 {
@@ -6685,7 +6691,7 @@ elseif ( $lakAra==="luN" && $sic!==0 && $kGiti!==1 && in_array($so,$tis) && in_a
 	storedata('7.2.3','sa',0);
 }
 /* vadavrajahalantasya acaH (7.2.3) */ 
-if ( $lakAra==="luN"  && $sic!==0 && $kGiti!==1 && in_array($so,$tis) && $yamarama!==1 && $sicivRddhi!==1 && arr($text,'/['.pc('ac').'](['.pc('hl').'M]*)[+]s[^+]+$/') ) 
+if ( $lakAra==="luN"  && $sic!==0 && in_array($so,$tis) && $yamarama!==1 && $sicivRddhi!==1 && arr($text,'/['.pc('ac').'](['.pc('hl').'M]*)[+]s[^+]+$/') ) 
 {
 	$text = change('/(['.pc('ac').'])(['.pc('hl').'M]*[+]s[^+]+$)/','$1%$2');
 	$text = two($ac,array("%"),vriddhi($ac),array(""),0);
