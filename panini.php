@@ -5626,7 +5626,6 @@ if (arr($text,'/cC[+][YmNRn]/') || (arr($text,'/cC[+]['.pc('Jl').']/') && $kGiti
     $text = change('/cC[+]/','S+');
 	storedata('6.4.19','sa',0);
 }
-print_r($text);
 /* jusi ca (7.3.83) */
 if ( ($jherjus===1 || $sijabhyastavidibhyazca===1) && arr($text,'/[iIuUfFxX]\+us/') && $lakAra!=="liw" ) // liT has 'us' which is not 'jus'
 {
@@ -6197,7 +6196,7 @@ if ( $tAs===1  && !in_array("iw",$Agama) && (in_array($fo,array("saha!","luBa!",
 }
 if ($debug===1) {dibug("3800");}
 /* sthAghvoricca (1.2.17) */
-if ( in_array($fo,array("do","deN","qudAY","dAR","Dew","quDAY","zWA")) && sub(array("A+"),array("s"),blank(0),0) && $lakAra!=="" && $sic!==0 )
+if (in_array($so,$taG) && in_array($fo,array("do","deN","qudAY","dAR","Dew","quDAY","zWA")) && sub(array("A+"),array("s"),blank(0),0) && $lakAra!=="" && $sic!==0)
 {
     $text=two(array("A+"),array("s"),array("i+"),array("s"),0);
 	storedata('1.2.17','sa',0);
