@@ -1,11 +1,11 @@
 import string
 import sys
 def wxtoslp(input):
-	wx = 'aAiIuUqQLeEoOMHhyvrlFmfNnJBGDXjbgdxKPCTWctwkpSRs'
-	slp = 'aAiIuUfFxeEoOMHhyvrlYmNRnJBGQDjbgqdKPCWTcwtkpSzs'
+	wx = 'aAiIuUqQLeEoOMHhyvrlFmfNnJBGDXjbgdxKPCTWctwkpSRsz'
+	slp = 'aAiIuUfFxeEoOMHhyvrlYmNRnJBGQDjbgqdKPCWTcwtkpSzs!'
 	trantab = string.maketrans(wx,slp)
 	return input.translate(trantab)
-print wxtoslp('aBryawe,aBryewe,aBryanwe,aBryase,aBryeWe')
+#print wxtoslp('akR1_akRUz_BvAxiH vyApwO')
 if __name__=="__main__":
 	infile = sys.argv[1]
 	outfile = sys.argv[2]
