@@ -11,6 +11,8 @@ In case we find that there is substantial changes in any of the site, re-copy th
 Output:
 ../Data/issue789/uohyd_array.txt, ../Data/issue789/jnu_array.txt
 These files store the data in a txt file which is then used for regenerating $verbdata in function.php.
+
+jnu_array.txt was converted from Devanagari -> SLP1 via sanscript (manually)
 """
 import sys, re
 import codecs
@@ -50,6 +52,7 @@ def gananametonumber(gananame):
 # Expected output -> aka!:ak:01:ak1_akaz_BvAxiH+kutilAyAM_gawO
 def uohydtrimline(line):
 	line1 = wxtoslp(line)
+	line = line.replace(' ','+')
 	parts = line1.split(' ')
 	[withoutanubandha,withanubandha,gana] = parts[0].split('_')
 	withoutanubandha = withoutanubandha.strip('0123456789')
