@@ -3855,7 +3855,7 @@ if (arr($text,'/\+Ri[c]{0,1}\+/')||$ciN===1||$ciN===2)
 	}
 }
 /* udoSThyapUrvasya (7.1.102) */
-if (arr($text,'/^[pPbBmv]F[+]/')  && in_array($so,$tiG) && ($sarvadhatuka===1 || in_array("Sa",$vik) || arr($text,'/[+]yAs[+]/')) && $ciN!==1 && $ciN!==2 )
+if (arr($text,'/^[pPbBmv]F[+]/')  && in_array($so,$tiG) && !in_array("Sap",$vik) && ($sarvadhatuka===1 || in_array("Sa",$vik) || arr($text,'/[+]yAs[+]/')) && $ciN!==1 && $ciN!==2 )
 {
 	$text = change('/^([pPbBmv])F[+]/','$1ur+');
 	$text = change('/^([pPbBmv])ur[+]Itu/','$1f+Itu');
@@ -3864,7 +3864,7 @@ if (arr($text,'/^[pPbBmv]F[+]/')  && in_array($so,$tiG) && ($sarvadhatuka===1 ||
 	storedata('8.2.77','sa',0);
 }
 /* RRta iddhAtoH (7.1.100) */
-elseif (arr($text,'/^[^pPbBmv]F\+/') && in_array($so,$tiG) && ($sarvadhatuka===1 || in_array("Sa",$vik) || arr($text,'/[+]yAs[+]/')) && $ciN!==1 && $ciN!==2 )
+elseif (arr($text,'/^[^pPbBmv]F\+/') && in_array($so,$tiG)  && !in_array("Sap",$vik) && ($sarvadhatuka===1 || in_array("Sa",$vik) || arr($text,'/[+]yAs[+]/')) && $ciN!==1 && $ciN!==2 )
 {
     $text=two(array("F"),array("+"),array("ir"),array("+"),0);
 	$text=change('/([iu])r[+]Itu$/','ar+Itu');
