@@ -2,6 +2,8 @@
 include('function.php');
 include('dev-slp.php');
 include('slp-dev.php');
+// 1 for $verbdata, 2 for one entry in each line
+$mode = $argv[1];
 //"ahi!:BAzArTaH ca:aMh:10:0328:u:sew:अ॑हिँ॑"
 function splitverbdata($verbdata)
 {
@@ -105,8 +107,14 @@ for($i=0;$i<count($pureverb);$i++)
 	$kzr = array_diff($kzr,array("X")); $kzr = array_unique($kzr); $kzr = array_values($kzr);
 	$dp = array_diff($dp,array("X")); $dp = array_unique($dp); $dp = array_values($dp);
 	//"ahi!:BAzArTaH ca:aMh:10:0328:u:sew:अ॑हिँ॑ः1:1:1"
-	fputs($fin,$verbwithanubandha[$i].":".$meaning[$i].":".$verbwithoutanubandha[$i].":".$verbset[$i].":".$verbnumber[$i].":".$verbpada[$i].":".$verbiDAgama[$i].":".$pureverb[$i].":".implode(',',$mdv).":".implode(',',$kzr).":".implode(',',$dp).'","');
-	//fputs($fin,$verbwithanubandha[$i].":".$meaning[$i].":".$verbwithoutanubandha[$i].":".$verbset[$i].":".$verbnumber[$i].":".$verbpada[$i].":".$verbiDAgama[$i].":".$pureverb[$i].":".implode(',',$mdv).":".implode(',',$kzr).":".implode(',',$dp)."\n");
+	if ($mode==="1")
+	{
+		fputs($fin,$verbwithanubandha[$i].":".$meaning[$i].":".$verbwithoutanubandha[$i].":".$verbset[$i].":".$verbnumber[$i].":".$verbpada[$i].":".$verbiDAgama[$i].":".$pureverb[$i].":".implode(',',$mdv).":".implode(',',$kzr).":".implode(',',$dp).'","');
+	}
+	elseif ($mode==="2")
+	{
+		fputs($fin,$verbwithanubandha[$i].":".$meaning[$i].":".$verbwithoutanubandha[$i].":".$verbset[$i].":".$verbnumber[$i].":".$verbpada[$i].":".$verbiDAgama[$i].":".$pureverb[$i].":".implode(',',$mdv).":".implode(',',$kzr).":".implode(',',$dp)."\n");
+	}
 	$mdv = array(); $kzr=array(); $dp=array();
 }
 fputs($fin,'"');

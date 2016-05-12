@@ -6,6 +6,7 @@ python linkgen789.py
 Input:
 ../Data/issue789/uohyd_linklist.xml, ../Data/issue789/jnu_linklist.xml
 (These two files are copy-pasted from the dropdown of HTML seen on UoHyd and JNU verb generator sites)
+In case we find that there is substantial changes in any of the site, re-copy these XML files.
 
 Output:
 ../Data/issue789/uohyd_array.txt, ../Data/issue789/jnu_array.txt
