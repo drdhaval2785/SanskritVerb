@@ -1821,8 +1821,8 @@ function mit1($array,$b,$merge)
 /* Creating a function to fetch data from the verbdata variable */
 // The function is almost ready. Now rename the variables so that it can be used.
 // $a = the input to take as base, $a1 = ref number of $a, $b = the thing to search. $c 1=whole list, 2=corresponding list. $d=additional field to be displayed, $e=additional condition, $e1= its ref no.
-// Ref nos. 0=upadeza, 1=Meaning, 2=verb without anubandhas, 3=verbset, 4=number in dhatupatha, 5=Atmane/parasmai/ubhaya, 6=seT/aniT. 7. verb with accent. 8. mAdhavIyadhAtuvRtti. 9. kSIrataraGgiNI. 10. dhAtupradIpa. 11.Set+number. 12. Set name.
-// 0 to 10 are in the array. after that we process.
+// Ref nos. 0=upadeza, 1=Meaning, 2=verb without anubandhas, 3=verbset, 4=number in dhatupatha, 5=Atmane/parasmai/ubhaya, 6=seT/aniT. 7. verb with accent. 8. mAdhavIyadhAtuvRtti. 9. kSIrataraGgiNI. 10. dhAtupradIpa. 11.UoHyd. 12. JNU. 13.Set+number. 14. Set name.
+// 0 to 12 are in the array. after that we process.
 function scrape($a,$a1,$b,$c,$d,$e,$e1)
 {
     global $verbdata, $debug;
@@ -1832,8 +1832,8 @@ function scrape($a,$a1,$b,$c,$d,$e,$e1)
     for($i=0;$i<count($verbdata1);$i++)
     {
         $bomb=explode(':',$verbdata1[$i]);
-        $bomb[11]=$bomb[3].".".$bomb[4];
-        $bomb[12]=str_replace(array("01","02","03","04","05","06","07","08","09","10",),array("BvAdi","adAdi","juhotyAdi","divAdi","svAdi","tudAdi","ruDAdi","tanAdi","kryAdi","curAdi",),$bomb[3]);
+        $bomb[13]=$bomb[3].".".$bomb[4];
+        $bomb[14]=str_replace(array("01","02","03","04","05","06","07","08","09","10",),array("BvAdi","adAdi","juhotyAdi","divAdi","svAdi","tudAdi","ruDAdi","tanAdi","kryAdi","curAdi",),$bomb[3]);
         if ($c===1 && $e!=="" && $d!=="")
         {
             if($a===$bomb[$a1] && $e===$bomb[$e1])
@@ -1869,8 +1869,8 @@ function scrape($a,$a1,$b,$c,$d,$e,$e1)
 /* Creating a function to fetch data from the verbdata variable */
 // The function is almost ready. Now rename the variables so that it can be used.
 // $a = the input to take as base, $a1 = ref number of $a, $b = the thing to search. $c 1=whole list, 2=corresponding list. $d=additional field to be displayed, $e=additional condition, $e1= its ref no.
-// Ref nos. 0=upadeza, 1=Meaning, 2=verb without anubandhas, 3=verbset, 4=number in dhatupatha, 5=Atmane/parasmai/ubhaya, 6=seT/aniT. 7. verb with accent  8. mAdhavIyadhAtuvRtti. 9. kSIrataraGgiNI. 10. dhAtupradIpa. 11.Set+number. 12. Set name.
-// 0 to 10 are in the array. after that we process.
+// Ref nos. 0=upadeza, 1=Meaning, 2=verb without anubandhas, 3=verbset, 4=number in dhatupatha, 5=Atmane/parasmai/ubhaya, 6=seT/aniT. 7. verb with accent  8. mAdhavIyadhAtuvRtti. 9. kSIrataraGgiNI. 10. dhAtupradIpa. 11.UoHyd. 12.JNU. 13.Set+number. 14. Set name.
+// 0 to 12 are in the array. after that we process.
 function scrape1($a,$a1,$b,$c)
 {
     global $verbdata, $debug;
@@ -1882,8 +1882,8 @@ function scrape1($a,$a1,$b,$c)
     for($i=0;$i<count($verbdata1);$i++)
     {
 		$bomb=explode(':',$verbdata1[$i]);
-		$bomb[11]=$bomb[3].".".$bomb[4];
-		$bomb[12]=str_replace(array("01","02","03","04","05","06","07","08","09","10",),array("BvAdi","adAdi","juhotyAdi","divAdi","svAdi","tudAdi","ruDAdi","tanAdi","kryAdi","curAdi",),$bomb[3]);
+		$bomb[13]=$bomb[3].".".$bomb[4];
+		$bomb[14]=str_replace(array("01","02","03","04","05","06","07","08","09","10",),array("BvAdi","adAdi","juhotyAdi","divAdi","svAdi","tudAdi","ruDAdi","tanAdi","kryAdi","curAdi",),$bomb[3]);
 			if($a===$bomb[$a1] )
 			{
 				$ret[]=$bomb[$b];
@@ -1897,25 +1897,63 @@ function scrape1($a,$a1,$b,$c)
 // 'Data/dhaatupaatha/files-6-9-2014/mA106.html for mAdhavIyadhAtuvRtti
 // 'Data/dhaatupaatha/files-6-9-2014/kRi106.html for kSIrataraGgiNI
 // 'Data/dhaatupaatha/files-6-9-2014/XA106.html for dhAtupradIpa.
-// $commentary = "m"/"k"/"d"
+// $commentary = "m"/"k"/"d"/"u"/"j"/"i"
 function ldc($numberstring,$commentary)
 {
 	$expansion = str_replace(array("m","k","d"),array("mA","kRi","XA"),$commentary);
-	$commname = str_replace(array("m","k","d"),array("मा.धा.","क्षी.त.","धा.प्र."),$commentary);
-	$errorname = str_replace(array("m","k","d"),array("मा.धा.-X","क्षी.त.-X","धा.प्र.-X"),$commentary);
+	$commname = str_replace(array("m","k","d","u","j","i"),array("मा.धा.","क्षी.त.","धा.प्र.","UoHyd","JNU","INRIA"),$commentary);
+	$errorname = str_replace(array("m","k","d","u","j","i"),array("मा.धा.-X","क्षी.त.-X","धा.प्र.-X","UoHyd-X","JNU-X","INRIA-X"),$commentary);
 	$numberlist = explode(',',$numberstring);
-	if ($numberlist[0]!=="")
+	if (in_array($commentary,array("m","k","d")))
 	{
-		foreach($numberlist as $number)
+		if ($numberlist[0]!=="")
 		{
-			$output[] = '<a href="Data/dhaatupaatha/files-6-9-2014/'.$expansion.$number.'.html" target="_blank">'.$commname.'</a>';
+			foreach($numberlist as $number)
+			{
+				$output[] = '<a href="Data/dhaatupaatha/files-6-9-2014/'.$expansion.$number.'.html" target="_blank">'.$commname.'</a>';
+			}
+		}
+		else
+		{
+			$output[] = $errorname;
 		}
 	}
-	else
+	elseif ($commentary==="u")
 	{
-		$output[] = $errorname;
+		if ($numberlist[0]!=="")
+		{
+			foreach($numberlist as $number)
+			{
+				//http://sanskrit.uohyd.ac.in/cgi-bin/scl/skt_gen/verb/verb_gen.cgi?vb=ak1_akaz_BvAxiH+kutilAyAM_gawO&prayoga=karwari&encoding=WX
+				$output[] = '<a href="http://sanskrit.uohyd.ac.in/cgi-bin/scl/skt_gen/verb/verb_gen.cgi?vb='.$number.'&prayoga=karwari&encoding=WX" target="_blank">'.$commname.'</a>';
+			}
+		}
+		else
+		{
+			$output[] = $errorname;
+		}
+	}
+	elseif ($commentary==="j")
+	{ 
+		if ($numberlist[0]!=="")
+		{
+			foreach($numberlist as $number)
+			{
+				//http://sanskrit.jnu.ac.in/tinanta/tinanta.jsp?t=77
+				$output[] = '<a href="http://sanskrit.jnu.ac.in/tinanta/tinanta.jsp?t='.$number.'" target="_blank">'.$commname.'</a>';
+			}
+		}
+		else
+		{
+			$output[] = $errorname;
+		}
 	}
 	return implode(' , ',$output);
+}
+function inrialink($verbwithoutanubandha,$gana)
+{
+	$gana=str_replace(array("BvAdi","adAdi","juhotyAdi","divAdi","svAdi","tudAdi","ruDAdi","tanAdi","kryAdi","curAdi"),array("1","2","3","4","5","6","7","8","9","10"),$gana);
+	return '<a href="http://sanskrit.inria.fr/cgi-bin/SKT/sktconjug?lex=SH&q='.$verbwithoutanubandha.'&t=SL&c='.$gana.'&font=deva" target="_blank">INRIA</a>';
 }
 // for ajax display in case the verb entered belongs to more than one gaNa.
 function verb_meaning_gana_number($text)
@@ -1923,8 +1961,8 @@ function verb_meaning_gana_number($text)
     global $html;
     $verbaccent=scrape1($text,0,7,1);
     $meaning=scrape1($text,0,1,1);
-    $verbset=scrape1($text,0,12,1);
-    $number=scrape1($text,0,11,1);
+    $verbset=scrape1($text,0,14,1);
+    $number=scrape1($text,0,13,1);
     $html .= '<div id="step22">';
     for($i=0;$i<count($verbaccent);$i++)
     {
@@ -1939,18 +1977,21 @@ function verb_meaning_gana_number1($text)
 	global $frontend, $outfile;
     $verbaccent=scrape1($text,0,7,1);
     $meaning=scrape1($text,0,1,1);
-    $verbset=scrape1($text,0,12,1);
+	$verbwithoutanubandha=scrape1($text,0,2,1);
+    $verbset=scrape1($text,0,14,1);
     $madhav=scrape1($text,0,8,1);
     $kzir=scrape1($text,0,9,1);
     $dp=scrape1($text,0,10,1);
-    $number=scrape1($text,0,11,1);
+	$uohyd=scrape1($text,0,11,1);
+	$jnu=scrape1($text,0,12,1);
+    $number=scrape1($text,0,13,1);
 	if ($frontend==='1')
 	{
 		echo "<p class = st >".toiast($verbaccent[0]).' - '.toiast($meaning[0]).', '.toiast($verbset[0]).' '.$number[0]."</p>\n";
-		echo "<p class = st >".$verbaccent[0].' - '.convert($meaning[0]).', '.convert($verbset[0]).' '.convert($number[0]).', '.ldc($madhav[0],'m').', '.ldc($kzir[0],'k').', '.ldc($dp[0],'d')."</p>\n";
+		echo "<p class = st >".$verbaccent[0].' - '.convert($meaning[0]).', '.convert($verbset[0]).' '.convert($number[0]).', '.ldc($madhav[0],'m').', '.ldc($kzir[0],'k').', '.ldc($dp[0],'d').', '.ldc($uohyd[0],'u').', '.ldc($jnu[0],'j').', '.inrialink($verbwithoutanubandha[0],$verbset[0])."</p>\n";
 		echo "<hr>\n";		
 		fputs($outfile,"<p class = st >".toiast($verbaccent[0]).' - '.toiast($meaning[0]).', '.toiast($verbset[0]).' '.$number[0]."</p>\n");
-		fputs($outfile,"<p class = st >".$verbaccent[0].' - '.convert($meaning[0]).', '.convert($verbset[0]).' '.convert($number[0]).', '.ldc($madhav[0],'m').', '.ldc($kzir[0],'k').', '.ldc($dp[0],'d')."</p>\n");
+		fputs($outfile,"<p class = st >".$verbaccent[0].' - '.convert($meaning[0]).', '.convert($verbset[0]).' '.convert($number[0]).', '.ldc($madhav[0],'m').', '.ldc($kzir[0],'k').', '.ldc($dp[0],'d').', '.ldc($uohyd[0],'u').', '.ldc($jnu[0],'j').', '.inrialink($verbwithoutanubandha[0],$verbset[0])."</p>\n");
 		fputs($outfile,"<hr>\n");		
 	}
 }
@@ -1962,20 +2003,23 @@ function verb_meaning_gana_number2($text)
 	if ($debug===1){
 	echo "verb_meaning_gana_number2 started at ";
 	timestamp();}
-    $verbaccent=scrape($text,0,7,1,"",$verbset,12);
-    $meaning=scrape($text,0,1,1,"",$verbset,12);
-    $verbset1=scrape($text,0,12,1,"",$verbset,12);
-    $madhav=scrape($text,0,8,1,"",$verbset,12);
-    $kzir=scrape($text,0,9,1,"",$verbset,12);
-    $dp=scrape($text,0,10,1,"",$verbset,12);
-    $number=scrape($text,0,11,1,"",$verbset,12);
+    $verbaccent=scrape($text,0,7,1,"",$verbset,14);
+	$verbwithoutanubandha=scrape($text,0,2,1,"",$verbset,14);
+    $meaning=scrape($text,0,1,1,"",$verbset,14);
+    $verbset1=scrape($text,0,14,1,"",$verbset,14);
+    $madhav=scrape($text,0,8,1,"",$verbset,14);
+    $kzir=scrape($text,0,9,1,"",$verbset,14);
+    $dp=scrape($text,0,10,1,"",$verbset,14);
+	$uohyd=scrape($text,0,11,1,"",$verbset,14);
+	$jnu=scrape($text,0,12,1,"",$verbset,14);
+    $number=scrape($text,0,13,1,"",$verbset,14);
 	if ($frontend==='1')
 	{
 		echo "<p class = st >".toiast($verbaccent[0]).' - '.toiast($meaning[0]).', '.toiast($verbset[0]).' '.$number[0]."</p>\n";
-		echo "<p class = st >".$verbaccent[0].' - '.convert($meaning[0]).', '.convert($verbset[0]).' '.convert($number[0]).', '.ldc($madhav[0],'m').', '.ldc($kzir[0],'k').', '.ldc($dp[0],'d')."</p>\n";
+		echo "<p class = st >".$verbaccent[0].' - '.convert($meaning[0]).', '.convert($verbset[0]).' '.convert($number[0]).', '.ldc($madhav[0],'m').', '.ldc($kzir[0],'k').', '.ldc($dp[0],'d').', '.ldc($uohyd[0],'u').', '.ldc($jnu[0],'j').', '.inrialink($verbwithoutanubandha[0],$verbset[0])."</p>\n";
 		echo "<hr>\n";		
 		fputs($outfile,"<p class = st >".toiast($verbaccent[0]).' - '.toiast($meaning[0]).', '.toiast($verbset[0]).' '.$number[0]."</p>\n");
-		fputs($outfile,"<p class = st >".$verbaccent[0].' - '.convert($meaning[0]).', '.convert($verbset[0]).' '.convert($number[0]).', '.ldc($madhav[0],'m').', '.ldc($kzir[0],'k').', '.ldc($dp[0],'d')."</p>\n");
+		fputs($outfile,"<p class = st >".$verbaccent[0].' - '.convert($meaning[0]).', '.convert($verbset[0]).' '.convert($number[0]).', '.ldc($madhav[0],'m').', '.ldc($kzir[0],'k').', '.ldc($dp[0],'d').', '.ldc($uohyd[0],'u').', '.ldc($jnu[0],'j').', '.inrialink($verbwithoutanubandha[0],$verbset[0])."</p>\n");
 		fputs($outfile,"<hr>\n");		
 	}
 	if ($debug===1){
@@ -2001,21 +2045,24 @@ function verb_meaning_gana_number4($number)
 {
 	global $frontend, $outfile, $debug;
  	if ($debug===1) {dibug("verb_meaning_gana_number4 start");}
-    $verbaccent=scrape1($number,11,7,1);
-    $meaning=scrape1($number,11,1,1);
-    $verbset=scrape1($number,11,12,1);
-    $madhav=scrape1($number,11,8,1);
-    $kzir=scrape1($number,11,9,1);
-    $dp=scrape1($number,11,10,1);
-    $number=scrape1($number,11,11,1);
+    $verbaccent=scrape1($number,13,7,1);
+	$verbwithoutanubandha=scrape1($number,13,2,1);
+    $meaning=scrape1($number,13,1,1);
+    $verbset=scrape1($number,13,14,1);
+    $madhav=scrape1($number,13,8,1);
+    $kzir=scrape1($number,13,9,1);
+    $dp=scrape1($number,13,10,1);
+	$uohyd=scrape1($number,13,11,1);
+	$jnu=scrape1($number,13,12,1);
+    $number=scrape1($number,13,13,1);
  	if ($debug===1) {dibug("verb_meaning_gana_number4 middle");}
 	if ($frontend==='1')
 	{
 		echo "<p class = st >".toiast($verbaccent[0]).' - '.toiast($meaning[0]).', '.toiast($verbset[0]).' '.$number[0]."</p>\n";
-		echo "<p class = st >".$verbaccent[0].' - '.convert($meaning[0]).', '.convert($verbset[0]).' '.convert($number[0]).', '.ldc($madhav[0],'m').', '.ldc($kzir[0],'k').', '.ldc($dp[0],'d')."</p>\n";
+		echo "<p class = st >".$verbaccent[0].' - '.convert($meaning[0]).', '.convert($verbset[0]).' '.convert($number[0]).', '.ldc($madhav[0],'m').', '.ldc($kzir[0],'k').', '.ldc($dp[0],'d').', '.ldc($uohyd[0],'u').', '.ldc($jnu[0],'j').', '.inrialink($verbwithoutanubandha[0],$verbset[0])."</p>\n";
 		echo "<hr>\n";		
 		/*fputs($outfile,"<p class = st >".toiast($verbaccent[0]).' - '.toiast($meaning[0]).', '.toiast($verbset[0]).' '.$number[0]."</p>\n");
-		fputs($outfile,"<p class = st >".$verbaccent[0].' - '.convert($meaning[0]).', '.convert($verbset[0]).' '.convert($number[0]).', '.ldc($madhav[0],'m').', '.ldc($kzir[0],'k').', '.ldc($dp[0],'d')."</p>\n");
+		fputs($outfile,"<p class = st >".$verbaccent[0].' - '.convert($meaning[0]).', '.convert($verbset[0]).' '.convert($number[0]).', '.ldc($madhav[0],'m').', '.ldc($kzir[0],'k').', '.ldc($dp[0],'d').', '.ldc($uohyd[0],'u').', '.ldc($jnu[0],'j').', '.inrialink($verbwithoutanubandha[0],$verbset[0])."</p>\n");
 		fputs($outfile,"<hr>\n");*/
 	}
  	if ($debug===1) {dibug("verb_meaning_gana_number4 end");}
@@ -2030,7 +2077,7 @@ function dhatu_from_number($number)
 {
 	global $frontend, $outfile, $debug;
  	if ($debug===1) {dibug("dhatu_from_number start");}
-   $first=scrape1($number,11,0,1);
+   $first=scrape1($number,13,0,1);
  	if ($debug===1) {dibug("dhatu_from_number end");}
 	return $first[0];
 }
@@ -2170,7 +2217,7 @@ function verb_padafinder($text)
     /*global $verbset;
     $verbpada=scrape($text,0,5,1,"",$verbset,12);*/
 	global $number;
-	$verbpada = scrape1($number,11,5,1);
+	$verbpada = scrape1($number,13,5,1);
 	$verbpada=array_unique($verbpada);
 	$verbpada=array_values($verbpada);
     return $verbpada;
@@ -2180,7 +2227,7 @@ function verb_itfinder($text)
 {
     global $verbset;
 	global $fo; global $number;
-    $verb_it=scrape1($number,11,6,1);
+    $verb_it=scrape1($number,13,6,1);
 	$verb_it=array_unique($verb_it);
 	$verb_it=array_values($verb_it);
 	return $verb_it;
