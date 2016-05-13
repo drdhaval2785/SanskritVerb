@@ -2442,12 +2442,13 @@ if (in_array($so,$tiGprathama) && $pada==="pratyaya" && $lakAra!=="")
 	storedata('1.4.108','pa',0);
 }
 /* jakSityAdayaH SaT (6.1.6) */
-if (in_array($fo,array("jakza!","jAgf","daridrA","ASAsu!","cakAsf!","dIDIN","vevIN")) && sub(array("jakza!","jAgf","daridrA","ASAsu!","cakAsf!","dIDIN","vevIN"),blank(0),blank(0),0))
+if (in_array($fo,array("jakza!","jAgf","daridrA","ASAsu!","cakAsf!","dIDIN","vevIN")) && sub(array("jakz","jAgf","daridrA","ASAs","cakAs","dIDI","vevI"),blank(0),blank(0),0))
 {
     $abhyasta=1; 
     $jaksat=1; // 0 - doesn't belong to jakSityAdi. 1 - belongs to jakSityAdi.
 	storedata('6.1.6','pa',0);
 }
+echo $abhyasta;
 /* tiGzitsArvadhAtukam (3.4.113) */ 
 // for tiG.
 if (in_array($lakAra,array("law","low","laN","viDiliN","sArvaDAtukalew"))  && sub(array("+"),$tiG,blank(0),0) )
