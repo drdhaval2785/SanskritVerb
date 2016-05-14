@@ -10,7 +10,7 @@ function listgenerator($debug)
 	global $verbdata;
 	foreach ($verbdata as $verbdatum)
 	{
-		list($verb[],$meaning[],$verb1[],$verbset[],$verbnumber[],$verbpada[],$verbit[],$deva[],$ma[],$ks[],$dh[]) = explode(':',$verbdatum);
+		list($verb[],$meaning[],$verb1[],$verbset[],$verbnumber[],$verbpada[],$verbit[],$deva[],$ma[],$ks[],$dh[],$uohyd[],$jnu[]) = explode(':',$verbdatum);
 	}
 	for($i=0;$i<count($verbdata);$i++)
 	{
