@@ -2496,9 +2496,11 @@ if (in_array($fo,array("Sru")) && $sarvadhatuka===1 && sub(array("Sru"),array("+
 /* dhivikRNvyora ca (3.1.80) */
 elseif (in_array($so,$tiG) && in_array($fo,array("Divi!","kfvi!")) && $sarvadhatuka===1 && sub(array("Dinv","kfnv"),array("+"),$tiG,0))
 {
-    $text=three(array("Dinv!","kfnv!"),array("+"),$tiG,array("Dinv","kfnv!"),array("+u+"),$tiG,0);
+    $text=three(array("Dinv","kfnv"),array("+"),$tiG,array("Dina","kfna"),array("+u+"),$tiG,0);
     $text=one(array("+u+u"),array("+u+"),0);
 	storedata('3.1.80','sa',0);
+    $text=three(array("Dina","kfna"),array("+u+"),$tiG,array("Din","kfn"),array("u+"),$tiG,0);
+	storedata('6.4.48','sa',0);
     $vik=array_merge($vik,array("u"));
     $set=2;
 }
@@ -7263,9 +7265,9 @@ if (arr($text,'/['.pc('ac').']\+nu\+hi/') && in_array($so,$tiG) )
     $text=three($ac,array("+"),array("nu+hi"),$ac,array("+"),array("nu"),0);
 	storedata('6.4.106','sa',0);
 }
-if (arr($text,'/\+u\+hi/') && sub($ac,$hl,array("+u+hi"),0) && in_array($so,$tiG) )
+if (arr($text,'/u\+hi/') && sub($ac,$hl,array("u+hi"),0) && in_array($so,$tiG) )
 {
-    $text=three($ac,$hl,array("+u+hi"),$ac,$hl,array("+u"),0);
+    $text=three($ac,$hl,array("u+hi"),$ac,$hl,array("u"),0);
 	storedata('6.4.106','sa',0);
 }
 /* lopazcAsyAnyatarasyAM mvoH (6.4.107) */
