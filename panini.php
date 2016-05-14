@@ -1157,6 +1157,10 @@ elseif (in_array($so,$tiG) && (sub(array("gup","DUp","viC","pan","paR"),array(""
 		$text = change('/gup[+]Aya/','gopAya');
 		storedata('7.3.86','sa',0);
 	}
+	else
+	{
+		$text = change('/[+]Aya/','Aya');
+	}
 	$verb_without_anubandha="gopAya";
 }
 /* RterIyaG (3.1.29) */
