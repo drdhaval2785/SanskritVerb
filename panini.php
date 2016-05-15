@@ -5987,6 +5987,12 @@ if (arr($text,'/yAam/'))
 	$text = change('/yAam$/','yAm');
 	storedata('6.1.101','sa',0);
 }
+/* jahAtezca (6.4.116) */
+if (arr($text,'/jahA\+/') && sub(array("jahA"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,0) && (in_array("N",$it)||in_array("k",$it)) && $abhyasta===1)
+{
+    $text=three(array("jahA"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("jahi"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,1);
+	storedata('6.4.116','sa',0);
+}
 /* I halyaghoH (6.4.113) */
 if (arr($text,'/\+nA\+/') && sub(array("+"),array("nA+"),$halAdi_apit_sArvadhAtuka_pratyayas,0) && (in_array("N",$it)||in_array("N",$it)) && $sanAdi!=="yaN")
 {
@@ -7304,12 +7310,6 @@ if (arr($text,'/a\+hi/') && in_array($so,$tiG) && $hanterjaH!==1 )
 {
     $text=two(array("a+"),array("hi"),array("a+"),array(""),0);
 	storedata('6.4.105','sa',0);
-}
-/* jahAtezca (6.4.116) */
-if (arr($text,'/jahA\+/') && sub(array("jahA"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,0) && (in_array("N",$it)||in_array("k",$it)) && $abhyasta===1)
-{
-    $text=three(array("jahA"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("jahi"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,1);
-	storedata('6.4.116','sa',0);
 }
 /* znA'bhyastayorAtaH (6.4.112) */
 // For znA
