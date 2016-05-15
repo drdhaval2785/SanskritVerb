@@ -3453,24 +3453,6 @@ if (arr($text,'/['.flat($ac).'][!]/') && in_array($so,$tiG) )
     $text = two($ac,array("!"),blank(count($ac)),array(""),0);
 	storedata('1.3.9','sa',0);
 }
-/* AtmanepadeSvanataH (7.1.5) */
-if ( in_array($so,array("Ja")) && arr($text,'/[^a][+]Ja$/'))
-{
-    $text=change('/([^a][+])Ja$/','$1ata');
-	storedata('7.1.5','sa',0);
-}
-/* jho'ntaH (7.1.3) */
-if (arr($text,'/[+]Ja$/') && in_array($so,array("Ja")) && $lakAra!=="liw" && $jhasyaran!==1) // because liTastajhayorezirec.
-{
-    $text=two(array("+"),array("Ja"),array("+"),array("anta"),0);
-	storedata('7.1.3','sa',0);
-}
-/* AtmanepadeSvanataH (7.1.5) */
-elseif ( in_array($so,array("Ja")) && !sub(array("a+"),array("Ja"),blank(0),0) && arr($text,'/[^a][+]Ja$/') )
-{
-    $text=change('/([^a][+])Ja$/','$1ata');
-	storedata('7.1.5','sa',0);
-}
 /* UrNotezca pratiSedho vaktavyaH (vA) */
 // Pending. Not giving proper results. Am pratyaya not functioning well.
 if ($lakAra==="liw" && $fo==="UrRuY" )
@@ -4058,6 +4040,25 @@ if (in_array($so,$tiG) && (arr($text,'/['.pc('hl').'][+]/') || (arr($text,'/['.p
 		$text = $outoutout;
 		storedata('1.3.9','sa',0);
 	}
+}
+print_r($text);
+/* AtmanepadeSvanataH (7.1.5) */
+if ( in_array($so,array("Ja")) && arr($text,'/[^a][+]Ja$/'))
+{
+    $text=change('/([^a][+])Ja$/','$1ata');
+	storedata('7.1.5','sa',0);
+}
+/* jho'ntaH (7.1.3) */
+if (arr($text,'/[+]Ja$/') && in_array($so,array("Ja")) && $lakAra!=="liw" && $jhasyaran!==1) // because liTastajhayorezirec.
+{
+    $text=two(array("+"),array("Ja"),array("+"),array("anta"),0);
+	storedata('7.1.3','sa',0);
+}
+/* AtmanepadeSvanataH (7.1.5) */
+elseif ( in_array($so,array("Ja")) && !sub(array("a+"),array("Ja"),blank(0),0) && arr($text,'/[^a][+]Ja$/') )
+{
+    $text=change('/([^a][+])Ja$/','$1ata');
+	storedata('7.1.5','sa',0);
 }
 /* cuTU (1.3.7) */
 if (arr($text,'/[+][c][a][+]/') && in_array($so,$tiG)) // for caG

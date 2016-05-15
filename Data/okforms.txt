@@ -18658,3 +18658,16 @@ BujatAt,Bujo!,06.0153,low,sip
 aBujaH,Bujo!,06.0153,laN,sip
 abuBUzaH,BUza!,10.0255,luN,sip
 abuBUzaTAH,BUza!,10.0255,luN,TAs
+uNKAYcakAra,uKi!,01.0137,liw,tip
+uNKAYcakratuH,uKi!,01.0137,liw,tas
+uNKAYcakruH,uKi!,01.0137,liw,Ji
+uNKAYcakarTa,uKi!,01.0137,liw,sip
+uNKAYcakraTuH,uKi!,01.0137,liw,Tas
+uNKAYcakra,uKi!,01.0137,liw,Ta
+uNKAYcakara,uKi!,01.0137,liw,mip
+uNKAYcakAra,uKi!,01.0137,liw,mip
+uNKAYcakfva,uKi!,01.0137,liw,vas
+uNKAYcakfma,uKi!,01.0137,liw,mas
+BfMSayaTaH,BfSi!,10.1045,law,Tas
+BfMSayAvaH,BfSi!,10.1045,law,vas
+BarjeTe,BfjI!,01.0202,law,Tas
