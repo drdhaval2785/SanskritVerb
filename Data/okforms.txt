@@ -18053,3 +18053,16 @@ abIBizye,bIBf!,01.0445,lfN,mip
 abIBizyAvahi,bIBf!,01.0445,lfN,vas
 abIBizyAmahi,bIBf!,01.0445,lfN,mas
 bukkitAsTa,bukka!,01.0126,luw,Ta
+aboDAvahi,buDi!r,01.1016,laN,vahi
+aboDAmahi,buDi!r,01.1016,laN,mahiN
+abuDat,buDi!r,01.1016,luN,tip
+abuDatAm,buDi!r,01.1016,luN,tas
+abuDan,buDi!r,01.1016,luN,Ji
+abuDaH,buDi!r,01.1016,luN,sip
+abuDatam,buDi!r,01.1016,luN,Tas
+abuData,buDi!r,01.1016,luN,Ta
+abuDam,buDi!r,01.1016,luN,mip
+abuDAva,buDi!r,01.1016,luN,vas
+abuDAma,buDi!r,01.1016,luN,mas
+bubusiva,busa!,04.0117,liw,vas
+bubusiva,busa!,04.0129,liw,vas

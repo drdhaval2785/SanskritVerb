@@ -7421,9 +7421,9 @@ if( in_array($so,$tiG) && arr($text,'/([iIuUfFxXeEoOhyvrlkKgGN])([+]*[iI]*)s(['.
 		$text = change('/rI[+]z/','rI+s');
 	}
 	// kusma dhAtu has 's' in upadeza. Therefore, reverting it back.
-	if (in_array($number,array("10.0139","10.0236")) && sub(array("kuzm","DUz"),blank(0),blank(0),0))
+	if (in_array($number,array("10.0139","10.0236","04.0125","01.0807","01.0816","10.0079","01.0817","04.0120","01.0820","04.0117","10.0080","01.0821","04.0116","10.0172","04.0130","01.0818","04.0818","01.0819","04.0276","10.0174","04.0005")) && sub(array("kuzm","DUz","kuz","tuz","piz","puzt","puzw","pez","pyuz","biz","buz","buzt","buzw","bez","byuz","brUz","muz","viz","vuz","vez","vyuz","vrUz","snuz"),blank(0),blank(0),0))
 	{
-		$text = one(array("kuzm","DUz"),array("kusm","DUs"),0);
+		$text = one(array("kuzm","DUz","kuz","tuz","piz","puzt","puzw","pez","pyuz","biz","buz","buzt","buzw","bez","byuz","brUz","muz","viz","vuz","vez","vyuz","vrUz","snuz"),array("kusm","DUs","kus","tus","pis","pust","pust","pes","pyus","bis","bus","bust","bust","bes","byus","brUs","mus","vis","vus","ves","vyus","vrUs","snus"),0);
 	}
 	if ($in!==$text )
 	{
@@ -7520,15 +7520,22 @@ if (arr($text,'/daridrA\+/') && in_array($fo,array("daridrA")) && $ardhadhatuka=
 // Not coded perfectly. This is only for tiG pratyayas.
 if(arr($text,'/[iIuUfFxXeoEOhyvrlkKgGN][+]*s['.pc('al').'MH+]+$/') && !arr($text,'/[iIuUfFxXeoEOhyvrl]\+s$/') && in_array($so,$tiG) && !(arr(array($fo),'/^s/') && arr($text,'/[^+]*[+]s/')) && $Adezapratyaya!==1 && $stauti!==1)
 {
-	storedata('8.3.55','pa',0);
-	storedata('8.3.57','pa',0);
+	$in = $text;
 	$text = two($iN1,array("+s",),$iN1,array("+z",),0);
 	$text = change('/[+]([iI])s/','+$1z');
 	$text = change('/zIs([+a-zA-Z]+)$/','zIz$1');
 	$text = change('/[+]izIs/','+izIz');
 	$text = change('/[+]ise/','+ize');
 	$text = change('/[+]Iz$/','+Is');
-	storedata('8.3.59','sa',0);
+	$text1 = $text;
+	if ($in!==$text)
+	{
+		$text = $in;
+		storedata('8.3.55','pa',0);
+		storedata('8.3.57','pa',0);
+		$text = $text1;
+		storedata('8.3.59','sa',0);
+	}
 }
 if(arr($text,'/[iIuUfFxXeoEOhyvrlkKgGN][+][iI]*s['.pc('al').'MH+]+$/') && ($ksa===1||$sic===1) )
 {

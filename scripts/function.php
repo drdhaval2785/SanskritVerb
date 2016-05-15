@@ -4022,7 +4022,7 @@ function verbdataerrors()
 	global $verbdata;
 	foreach ($verbdata as $verbdatum)
 	{
-		list($verb[],$meaning[],$verb1[],$verbset[],$verbnumber[],$verbpada[],$verbit[],$deva[],$ma[],$ks[],$dh[]) = explode(':',$verbdatum);
+		list($verb[],$meaning[],$verb1[],$verbset[],$verbnumber[],$verbpada[],$verbit[],$deva[],$ma[],$ks[],$dh[],$uohyd[],$jnu[]) = explode(':',$verbdatum);
 	}
 	for($i=0;$i<count($verbdata);$i++)
 	{
@@ -4046,7 +4046,7 @@ function adantanoncurAdi()
 	global $verbdata;
 	foreach ($verbdata as $verbdatum)
 	{
-		list($verb[],$meaning[],$verb1[],$verbset[],$verbnumber[],$verbpada[],$verbit[],$deva[],$ma[],$ks[],$dh[]) = explode(':',$verbdatum);
+		list($verb[],$meaning[],$verb1[],$verbset[],$verbnumber[],$verbpada[],$verbit[],$deva[],$ma[],$ks[],$dh[],$uohyd[],$jnu[]) = explode(':',$verbdatum);
 	}
 	for ($i=0;$i<count($verb);$i++)
 	{
@@ -4062,7 +4062,7 @@ function multivowelverbs()
 	global $verbdata;
 	foreach ($verbdata as $verbdatum)
 	{
-		list($verb[],$meaning[],$verb1[],$verbset[],$verbnumber[],$verbpada[],$verbit[],$deva[],$ma[],$ks[],$dh[]) = explode(':',$verbdatum);
+		list($verb[],$meaning[],$verb1[],$verbset[],$verbnumber[],$verbpada[],$verbit[],$deva[],$ma[],$ks[],$dh[],$uohyd[],$jnu[]) = explode(':',$verbdatum);
 	}
 	for($i=0;$i<count($verb);$i++)
 	{
@@ -4080,6 +4080,25 @@ function multivowelverbs()
 	
 }
 //multivowelverbs();
+/* See issue https://github.com/drdhaval2785/SanskritVerb/issues/798 */
+function sAdeza()
+{
+	global $verbdata;
+	foreach ($verbdata as $verbdatum)
+	{
+		list($verb[],$meaning[],$verb1[],$verbset[],$verbnumber[],$verbpada[],$verbit[],$deva[],$ma[],$ks[],$dh[],$uohyd[],$jnu[]) = explode(':',$verbdatum);
+	}
+	for($i=0;$i<count($verb);$i++)
+	{
+		if (preg_match('/[iIuUfFxXeEoOhyvrlkKgGN]s/',$verb1[$i]))
+		{
+			echo $verbdata[$i]."\n";
+			$i++;
+		}
+	}
+}
+//sAdeza();
+
 
 /* Functions which are not used in the code */
 /* Function f to find the nth letter in the word */
