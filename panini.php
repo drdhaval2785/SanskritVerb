@@ -6607,15 +6607,15 @@ elseif ( $lakAra==="liw" && in_array($fo,array("PaRa!","rAjf!","wuBrAjf!","wuBrA
 	storedata('6.4.125','sa',0);
 }
 /* tRRphalabhajatrapazca (6.4.122) */
-elseif ( $lakAra==="liw" && in_array($fo,array("tF","Pala!","Baja!","trapU!z","YiPalA!")) && !in_array($so,array("tip","mip","sip")) && sub(array("ta+tar","pa+Pal","ta+trap"),array("+"),blank(0),0) )
+elseif ( $lakAra==="liw" && in_array($fo,array("tF","Pala!","Baja!","trapU!z","YiPalA!")) && !in_array($so,array("tip","mip","sip")) && sub(array("ta+tar","pa+Pal","ta+trap","ba+Baj"),array("+"),blank(0),0) )
 {
-    $text=two(array("ta+tar","pa+Pal","ta+trap"),array("+"),array("ter","Pel","trep"),array("+"),0);
+    $text=two(array("ta+tar","pa+Pal","ta+trap","ba+Baj"),array("+"),array("ter","Pel","trep","Bej"),array("+"),0);
 	storedata('6.4.122','sa',0);
 }
 /* tRRphalabhajatrapazca (6.4.122) */
-elseif ( $lakAra==="liw" && in_array($fo,array("tF","Pala!","Baja!","trapU!z","YiPalA!")) && in_array($so,array("sip")) && sub(array("ta+tar+is","pa+Pal+is","ta+trap+is"),array("+"),blank(0),0) )
+elseif ( $lakAra==="liw" && in_array($fo,array("tF","Pala!","Baja!","trapU!z","YiPalA!")) && in_array($so,array("sip")) && sub(array("ta+tar+is","pa+Pal+is","ta+trap+is","ba+Baj+is"),array("+"),blank(0),0) )
 {
-    $text=two(array("ta+tar","pa+Pal","ta+trap"),array("+is"),array("ter","Pel","trep"),array("+is"),0);
+    $text=two(array("ta+tar","pa+Pal","ta+trap","ba+Baj"),array("+is"),array("ter","Pel","trep","Bej"),array("+is"),0);
 	storedata('6.4.122','sa',0);
 }
 /* rAdho hiMsAyAm (6.4.123) */
