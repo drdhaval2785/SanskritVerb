@@ -1143,7 +1143,7 @@ elseif ( $_GET['cond48']==="1" )
     $sanAdi="san"; $san=1; $manbadha=1;
 }
 /* gupUdhUpavicCipaNipanibhya AyaH (3.1.28) */
-elseif (in_array($so,$tiG) && (sub(array("gup","DUp","viC","pan","paR"),array(""),blank(0),0) || ($fo==="DUpa!" && sub(array("DUpa!"),array("+"),$sArvadhAtuka_pratyayas,0) && $verbset==="BvAdi") || $_GET['cond49']==="1" ) )
+elseif (in_array($so,$tiG) && arr($text,'/[pCnR]$/') && (sub(array("gup","DUp","viC","pan","paR"),array(""),blank(0),0) || ($fo==="DUpa!" && sub(array("DUpa!"),array("+"),$sArvadhAtuka_pratyayas,0) && $verbset==="BvAdi") || $_GET['cond49']==="1" ) )
 {
     $text=change('/(.+)$/','$1+Aya');
 	storedata('3.1.28','sa',0);
@@ -2802,7 +2802,7 @@ if ($lakAra==="luN")
 	/* ciN te padaH (3.1.60) */ 
 	elseif ( in_array($fo,array("pada!")) && $lakAra==="luN" && $so==="ta" )
 	{ 
-		$text = three(array("pad"),array("+"),array("ta"),array("pad"),array("+ciR+"),array("ta"),0);
+		$text = three(array("pad"),array("+cli+"),array("ta"),array("pad"),array("+ciR+"),array("ta"),0);
 		storedata('3.1.60','sa',0);
 		$ciN=1;
 	}

@@ -15435,3 +15435,12 @@ nezeya,Rezf!,01.0704,viDiliN,mip
 nezevahi,Rezf!,01.0704,viDiliN,vas
 nezemahi,Rezf!,01.0704,viDiliN,mas
 anezizwa,Rezf!,01.0704,luN,tip
+apakzizyat,pakza!,01.0757,lfN,tip
+apakzizyatAm,pakza!,01.0757,lfN,tas
+apakzizyan,pakza!,01.0757,lfN,Ji
+apakzizyaH,pakza!,01.0757,lfN,sip
+apakzizyatam,pakza!,01.0757,lfN,Tas
+apakzizyam,pakza!,01.0757,lfN,mip
+apakzizyAva,pakza!,01.0757,lfN,vas
+apakzizyAma,pakza!,01.0757,lfN,mas
+apaYcizwa,paci!,01.0198,luN,tip
