@@ -3069,7 +3069,6 @@ function abhyAsa_halAdi()
 		$text = one(array("s+s"),array("t+s",),0);
 		storedata('7.4.49','sa',0);
 	}
-	print_r($text);
 	if ($zlu===1)
 	{
 		/* bhRJAmit (7.4.76) */
@@ -3078,22 +3077,25 @@ function abhyAsa_halAdi()
 			$text=two(array("ba+Bf","ma+mA","ja+hA"),array("+"),array("bi+Bf","mi+mA","ji+hA"),array("+"),0);
 			storedata('7.4.76','sa',0);
 		}
+		/* artipipartyozca (7.4.77) */
 		elseif(in_array($fo,array("f","pF","pf")) && sub(array("a+f","pa+pF","pa+pf"),array("+"),blank(0),0))
 		{
 			$text=two(array("a+f","pa+pF","pa+pf"),array("+"),array("i+f","pi+pF","pi+pf"),array("+"),0);
 			storedata('7.4.77','sa',0);
 		}
+		/* nijAM trayANAM guNaH zlau (7.4.75) */
 		elseif(in_array($fo,array("Riji!r","viji!r","vizx!")) && sub(array("ni+nij","vi+vij","vi+viz"),array("+"),blank(0),0))
 		{
 			$text=two(array("ni+nij","vi+vij","vi+viz"),array("+"),array("ne+nij","ve+vij","ve+viz"),array("+"),0);
 			storedata('7.4.75','sa',0);
 		}		
+		/* bahulaM Chandasi (7.4.78) */
 		elseif(in_array($fo,array("Gf","hf","f","sf","gA")) && sub(array("ja+Gf","ja+hf","a+f","sa+sf","ja+gA"),array("+"),blank(0),0))
 		{
 			$text=two(array("ja+Gf","ja+hf","a+f","sa+sf","ja+gA"),array("+"),array("ji+Gf","ji+hf","i+f","si+sf","ji+gA"),array("+"),0);
-			storedata('7.4.75','sa',0);
+			storedata('7.4.78','sa',0);
 		}		
-		$text = change('/^([^+]*)[+]/','$1');
+		$text = change('/^([^+]*)[+]/','$1'); // Making it anekAc.
 	}
 	return $text;
 }
