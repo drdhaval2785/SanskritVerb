@@ -6390,7 +6390,6 @@ elseif ( in_array($so,$tiG) && $sanAdi==="yaNluk" && arr($text,'/[+][^+]*[iu][rv
 	$text = change('/([+][^+]*)u([rv][+]['.pc('hl').'])/','$1U$2');
 	storedata('8.2.77','sa',0);
 }
-print_r($text);
 /* ata upadhAyAH (7.2.116) */
 // more on enumeration kind. Not used regexes deliberately.
 if ( arr($text,'/[a]['.pc('hl').'][+]i[+]/') && $ciN!==1)
@@ -9476,7 +9475,6 @@ if ($GIS===1 )
     $text = two(array("i","I"),array("+I+"),array("I+","I+"),blank(2),0);
 	storedata('6.1.101','sa',0);
     }    
-    
     /* aniditAM hala upadhAyAH kGiti (6.4.24) */ 
     if ( !itcheck(array("i"),1) && arr($text,'/[nY]['.pc('hl').'][+][I][+]/')  && !(arr($text,'/[NYRnmM]['.pc('hl').'][+]a[+]/') && in_array("Sap",$vik))  && $lakAra!=="viDiliN" && $verbset!=="ruDAdi" && $aniditAm!==1 && !in_array("Sap",$vik))
     {
@@ -11280,13 +11278,15 @@ if (arr($text,'/hiMs\+/'))
     $it=array_merge($it,array("i"));
     $itprakriti=array_merge($it,array("i"));
 }
+print_r($text); print_r($it); print_r($itpratyaya);
 /* aniditAM hala upadhAyAH kGiti (6.4.24) */ 
-if ( !in_array("i",$it) && arr($text,'/[nM]['.pc('hl').'][+]/') && ( itcheck(array("k","N"),1)|| $ancu===1 ) && !($kruJca===1 && sub(array("krunc","kruYc"),blank(0),blank(0),0) ) && $nance===0 && $so!=="mahiN" && !(arr($text,'/[NYRnmM]['.pc('hl').'][+]a[+]/') && in_array("Sap",$vik)) && $lakAra!=="viDiliN" && $verbset!=="ruDAdi" && $aniditAm!==1 && !in_array("Sap",$vik))
+if ( !in_array("i",$it) && arr($text,'/[nM]['.pc('hl').'][+]/') && ( in_array("k",$itpratyaya)||in_array("N",$itpratyaya)|| $ancu===1 ) && !($kruJca===1 && sub(array("krunc","kruYc"),blank(0),blank(0),0) ) && $nance===0 && $so!=="mahiN" && !(arr($text,'/[NYRnmM]['.pc('hl').'][+]a[+]/') && in_array("Sap",$vik)) && $lakAra!=="viDiliN" && $verbset!=="ruDAdi" && $aniditAm!==1 && !in_array("Sap",$vik))
 {
     $text = three(array("n","M"),$hl,array("+"),array("",""),$hl,array("+"),0);        
 	storedata('6.4.24','sa',0);
     $aniditAm = 1; // 0 - this sUtra has not applied. 1 - this sUtra has applied.
 }
+print_r($text);
 /* samaH sami (6.3.93) */ 
 if (preg_match('/[s][a][m][a][n][c]/',$fo) && sub(array("anc","Anc"),array("+"),blank(0),0) && $ancu===1)
 {
