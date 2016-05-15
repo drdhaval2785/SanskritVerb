@@ -3545,12 +3545,12 @@ if (arr($text,'/[F]['.pc('hl').'MH][+]/') && in_array($so,$tiG))
 {
     $text=three(array("F"),$hl,array("+"),array("ir"),$hl,array("+"),0);
 	storedata('7.1.101','sa',0);
-	/* upadhAyAM ca (8.2.78) */
-	if (arr($text,'/[iu][r]['.pc('hl').'][+]/'))
-	{
-		$text=three(array("ir","ur"),$hl,array("+"),array("Ir","Ur"),$hl,array("+"),0);
-		storedata('8.2.78','sa',0);
-	}
+}
+/* upadhAyAM ca (8.2.78) */
+if (in_array($so,$tiG) && arr($text,'/[iu][r]['.pc('hl').'][+]/'))
+{
+	$text=three(array("ir","ur"),$hl,array("+"),array("Ir","Ur"),$hl,array("+"),0);
+	storedata('8.2.78','sa',0);
 }
 /* gAGkuTAdibhyo'JNinGit (1.2.1) */ 
 if ( ((in_array($fo,$tudAdi_kuTAdi) && ($verbset==="tudAdi" || $verbset==="none" )) ) && ((in_array($lakAra,$ArdhadhAtuka_lakAra) &&$ciN===1)||$lakAra==="luN" ) )
@@ -6390,6 +6390,7 @@ elseif ( in_array($so,$tiG) && $sanAdi==="yaNluk" && arr($text,'/[+][^+]*[iu][rv
 	$text = change('/([+][^+]*)u([rv][+]['.pc('hl').'])/','$1U$2');
 	storedata('8.2.77','sa',0);
 }
+print_r($text);
 /* ata upadhAyAH (7.2.116) */
 // more on enumeration kind. Not used regexes deliberately.
 if ( arr($text,'/[a]['.pc('hl').'][+]i[+]/') && $ciN!==1)
