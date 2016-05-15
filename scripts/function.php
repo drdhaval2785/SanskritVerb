@@ -3073,9 +3073,9 @@ function abhyAsa_halAdi()
 	if ($zlu===1)
 	{
 		/* bhRJAmit (7.4.76) */
-		if(in_array($fo,array("BfY","mAN","o!hAN")) && sub(array("ba+Bf","ma+mA","ja+hA"),array("+"),blank(0),0))
+		if(in_array($fo,array("quBfY","mAN","o!hAN")) && sub(array("ba+Bf","ma+mA","ja+hA"),array("+"),blank(0),0))
 		{
-			$text=two(array("ba+Bf","ma+mA","ja+hA"),array("+"),array("biBf","mimA","jihA"),array("+"),0);
+			$text=two(array("ba+Bf","ma+mA","ja+hA"),array("+"),array("bi+Bf","mi+mA","ji+hA"),array("+"),0);
 			storedata('7.4.76','sa',0);
 		}
 		elseif(in_array($fo,array("f","pF","pf")) && sub(array("a+f","pa+pF","pa+pf"),array("+"),blank(0),0))
@@ -3085,7 +3085,7 @@ function abhyAsa_halAdi()
 		}
 		elseif(in_array($fo,array("Riji!r","viji!r","vizx!")) && sub(array("ni+nij","vi+vij","vi+viz"),array("+"),blank(0),0))
 		{
-			$text=two(array("ni+nij","vi+vij","vi+viz"),array("+"),array("nenij","vevij","veviz"),array("+"),0);
+			$text=two(array("ni+nij","vi+vij","vi+viz"),array("+"),array("ne+nij","ve+vij","ve+viz"),array("+"),0);
 			storedata('7.4.75','sa',0);
 		}		
 		$text = change('/^([^+]*)[+]/','$1');
