@@ -18649,3 +18649,12 @@ aBindizyatam,Bidi!,01.0067,lfN,Tas
 aBindizyam,Bidi!,01.0067,lfN,mip
 aBindizyAva,Bidi!,01.0067,lfN,vas
 aBindizyAma,Bidi!,01.0067,lfN,mas
+BujataH,Bujo!,06.0153,law,tas
+BujaTaH,Bujo!,06.0153,law,Tas
+BujAvaH,Bujo!,06.0153,law,vas
+BujAmaH,Bujo!,06.0153,law,mas
+BujatAt,Bujo!,06.0153,low,tip
+BujatAt,Bujo!,06.0153,low,sip
+aBujaH,Bujo!,06.0153,laN,sip
+abuBUzaH,BUza!,10.0255,luN,sip
+abuBUzaTAH,BUza!,10.0255,luN,TAs

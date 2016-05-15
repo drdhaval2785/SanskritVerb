@@ -2965,9 +2965,15 @@ function liT_halAdi()
 
 function abhyAsa_halAdi()
 {
-	global $text;	global $caG; global $lakAra; global $fo; global $storedata, $us, $verbset, $sanAdi; global $liT_Adeza, $coku, $cu, $ku, $san, $id_dhAtu, $id_pratyaya;
+	global $text, $zlu;	global $caG; global $lakAra; global $fo; global $storedata, $us, $verbset, $sanAdi; global $liT_Adeza, $coku, $cu, $ku, $san, $id_dhAtu, $id_pratyaya;
+	/* zlau (6.1.10) */
+	if($zlu===1 && arr($text,'/^(['.pc('al').'MH]+[^+]*)[+]/'))
+	{
+		$text=change('/^(['.pc('al').'MH]+[^+]*)[+]/','$1+$1+');
+		storedata('6.1.10','sa',0);
+	}
 	/* liTyabhyAsasyobhayeSAm (6.1.17) */
-	if($lakAra==="liw" && sub(array("vac+vac+","svap+svap+","yaj+yaj+","vap+vap+","vah+vah+","vas+vas+","vad+vad+","ve+ve+","hve+hve+","Svi+Svi+","vye+vye+","grah+grah+","jyA+jyA+","vay+vay+","vyaD+vyaD+","vaS+vaS+","vyac+vyac+","vraSc+vraSc+","pracC+pracC+","Brasj+Brasj+"),blank(0),blank(0),0) && !in_array($sanAdi,array("yaN","yaNluk","san")))
+	elseif($zlu!==1 && $lakAra==="liw" && sub(array("vac+vac+","svap+svap+","yaj+yaj+","vap+vap+","vah+vah+","vas+vas+","vad+vad+","ve+ve+","hve+hve+","Svi+Svi+","vye+vye+","grah+grah+","jyA+jyA+","vay+vay+","vyaD+vyaD+","vaS+vaS+","vyac+vyac+","vraSc+vraSc+","pracC+pracC+","Brasj+Brasj+"),blank(0),blank(0),0) && !in_array($sanAdi,array("yaN","yaNluk","san")))
 	{
 		$text=one(array("vac+vac+","svap+svap+","yaj+yaj+","vap+vap+","vah+vah+","vas+vas+","vad+vad+","ve+ve+","hve+hve+","Svi+Svi+","vye+vye+","grah+grah+","jyA+jyA+","vay+vay+","vyaD+vyaD+","vaS+vaS+","vyac+vyac+","vraSc+vraSc+","pracC+pracC+","Brasj+Brasj+"),array("uc+vac+","sup+svap+","ij+yaj+","up+vap+","uh+vah+","us+vas+","ud+vad+","u+ve+","hu+hve+","Su+Svi+","vi+vye+","gfh+grah+","ji+jyA+","uy+vay+","viD+vyaD+","uS+vaS+","vic+vyac+","vfSc+vraSc+","pfcC+pracC+","Bfsj+Brasj+"),0);
 		storedata('6.1.17','sa',0);
@@ -3062,6 +3068,26 @@ function abhyAsa_halAdi()
 	{
 		$text = one(array("s+s"),array("t+s",),0);
 		storedata('7.4.49','sa',0);
+	}
+	print_r($text);
+	if ($zlu===1)
+	{
+		/* bhRJAmit (7.4.76) */
+		if(in_array($fo,array("BfY","mAN","o!hAN")) && sub(array("ba+Bf","ma+mA","ja+hA"),array("+"),blank(0),0))
+		{
+			$text=two(array("ba+Bf","ma+mA","ja+hA"),array("+"),array("biBf","mimA","jihA"),array("+"),0);
+			storedata('7.4.76','sa',0);
+		}
+		elseif(in_array($fo,array("f","pF")) && sub(array("a+f","pa+pF",),array("+"),blank(0),0))
+		{
+			$text=two(array("a+f","pa+pF"),array("+"),array("i+f","pi+pF"),array("+"),0);
+			storedata('7.4.77','sa',0);
+		}
+		elseif(in_array($fo,array("Riji!r","viji!r","vizx!")) && sub(array("ni+nij","vi+vij","vi+viz"),array("+"),blank(0),0))
+		{
+			$text=two(array("ni+nij","vi+vij","vi+viz"),array("+"),array("nenij","vevij","veviz"),array("+"),0);
+			storedata('7.4.75','sa',0);
+		}		
 	}
 	return $text;
 }
@@ -3280,6 +3306,7 @@ function zlu()
 	// taking replacements directly from sahajabodha p 329. Only hu's process is shown. For everything else there is direct substitution.
 	$juhotyAdireplace1=array("kiki","kikit","gAgA","GiGf","jajan","tutur","dAdA","daDan","dADA","diDiz","nenij","pipf","pipF","baBas","biBI","biBfMS","mimA","vevij","veviz","sisf","hihA","hahA","huhu","hihf","jihrI","if");
 	$juhotyAdireplace2=array("kiki","kikit","gigA","GiGf","jajan","tutur","dadA","daDan","daDA","diDiz","nenij","pipf","pipF","baBas","biBI","biBfMS","mimA","vevij","veviz","sisf","hihA","hahA","huhu","hihf","jihrI","if",);
+	/* bhRJAmit (7.4.76) */
 	if(sub(array("BfY","mAN","o!hAN"),array("+"),blank(0),0))
 	{
 		$text=two(array("BfY","mAN","o!hAN"),array("+"),array("biBf","mimA","jihA"),array("+"),0);
