@@ -6728,7 +6728,7 @@ if ( arr($text,'/vaDa\+i/') )
     $atolopa=1;
 }
 /* skoH saMyogAdyorante ca (8.2.29) */
-if ( (arr($text,'/[s]['.flat($hl).'][+]/') || arr($text,'/vrASc\+/') ) && in_array($so,$tiG) && in_array($lakAra,array("luN")) && $asyati!==1) // for luN
+if ( (arr($text,'/[s]['.flat($hl).'][+]/') || arr($text,'/vrASc\+/') ) && in_array($so,$tiG) && in_array($lakAra,array("luN")) && $asyati!==1 && !preg_match('/s['.pc('hl').']/',$verb_without_anubandha)) // for luN
 {
 	foreach ($hl as $value) { $ska[] = "s".$value."+"; }
 	$text = one($ska,$hlplus,0);
