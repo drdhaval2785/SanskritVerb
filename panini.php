@@ -3508,7 +3508,8 @@ elseif ($lakAra==="liw" && in_array($fo,array("YiBI","hrI","quBfY","hu")) && $zl
 	$text=pr2(array("hu","BI","Bf","hrI"),array("+Am+"),$tiG,array("ho","Be","Bar","hre"),array("+Am+"),$tiG,$text);
 	storedata('7.3.84','sa',0);
 	$text=pr2(array("ho","Be","Bar","hre"),array("+Am+"),$tiG,array("hav","Bay","Bar","hray"),array("+Am+"),$tiG,$text);
-	storedata('6.1.75','sa',0);
+	storedata('6.1.78','sa',0);
+	$kaspratyaya=1;
 }
 /* kAspratyayAdAmamantre liTi (3.1.35) */
 elseif ($lakAra==="liw" && $veda===0 && (anekAca($verb_without_anubandha) ||  $verbset==="curAdi" || $fo==="kAsf!") )
@@ -3521,7 +3522,7 @@ elseif ($lakAra==="liw" && $veda===0 && (anekAca($verb_without_anubandha) ||  $v
 		$text = one(array("a+Am"),array("+Am"),0);
 		storedata('6.1.101','sa',0);
 	}
-	$kAs=1;
+	$kaspratyaya=1;
 }
 /* vidAGkurvantvityanyatarasyAm (3.1.41) */
 // Pending to test whether it is only for specific vid dhAtu or generic.
@@ -3883,7 +3884,7 @@ elseif (arr($text,'/^[^pPbBmv]F\+/') && in_array($so,$tiG)  && !in_array("Sap",$
 	}
 }
 /* AmaH (2.4.81) and kRJcAnuprayujyate liTi (3.1.40) */
-if ($lakAra==="liw" && $kAs===1 && sub(array("Am+"),$tiG1,blank(0),0) )
+if ($lakAra==="liw" && $kaspratyaya===1 && sub(array("Am+"),$tiG1,blank(0),0) )
 {
 	$beforeampratyaya = $text;
 	$text = two(array("Am+"),$tiG,array("Am+"),blank(count($tiG)),0);

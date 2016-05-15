@@ -18638,3 +18638,14 @@ aBasata,Basu!,04.0113,luN,Ta
 aBasam,Basu!,04.0113,luN,mip
 aBasAva,Basu!,04.0113,luN,vas
 aBasAma,Basu!,04.0113,luN,mas
+BinttaH,Bidi!r,07.0002,law,tas
+aBinad,Bidi!r,07.0002,laN,tip
+aBinad,Bidi!r,07.0002,laN,sip
+aBindizyat,Bidi!,01.0067,lfN,tip
+aBindizyatAm,Bidi!,01.0067,lfN,tas
+aBindizyan,Bidi!,01.0067,lfN,Ji
+aBindizyaH,Bidi!,01.0067,lfN,sip
+aBindizyatam,Bidi!,01.0067,lfN,Tas
+aBindizyam,Bidi!,01.0067,lfN,mip
+aBindizyAva,Bidi!,01.0067,lfN,vas
+aBindizyAma,Bidi!,01.0067,lfN,mas
