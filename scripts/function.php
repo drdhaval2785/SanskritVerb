@@ -3078,9 +3078,9 @@ function abhyAsa_halAdi()
 			$text=two(array("ba+Bf","ma+mA","ja+hA"),array("+"),array("biBf","mimA","jihA"),array("+"),0);
 			storedata('7.4.76','sa',0);
 		}
-		elseif(in_array($fo,array("f","pF")) && sub(array("a+f","pa+pF",),array("+"),blank(0),0))
+		elseif(in_array($fo,array("f","pF","pf")) && sub(array("a+f","pa+pF","pa+pf"),array("+"),blank(0),0))
 		{
-			$text=two(array("a+f","pa+pF"),array("+"),array("i+f","pi+pF"),array("+"),0);
+			$text=two(array("a+f","pa+pF","pa+pf"),array("+"),array("i+f","pi+pF","pi+pf"),array("+"),0);
 			storedata('7.4.77','sa',0);
 		}
 		elseif(in_array($fo,array("Riji!r","viji!r","vizx!")) && sub(array("ni+nij","vi+vij","vi+viz"),array("+"),blank(0),0))
