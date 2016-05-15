@@ -4092,7 +4092,7 @@ if (in_array($fo,array("asu!")) && sub(array("as"),array("+a+"),blank(0),0) && $
 	$asyati=1;
 }
 /* vaca um (7.4.20) */
-if (in_array($fo,array("vaca!")) && $lakAra==="luN" && sub(array("vac"),array("+"),array("a+"),0) && $verbset==="adAdi")
+if (in_array($fo,array("vaca!","brUY")) && $lakAra==="luN" && sub(array("vac"),array("+"),array("a+"),0) && $verbset==="adAdi")
 {
 	$text = one(array("vac+a+"),array("vauc+a+"),0);
 	storedata('7.4.20','sa',0);
