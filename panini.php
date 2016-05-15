@@ -12847,9 +12847,10 @@ if (arr($text,'/^d[^+]+[h][+]$/') && sub($dade,blank(0),blank(0),0) )
     $hodha1 = 1; // 0 - doesn't prevent ho DhaH. 1 - prevents ho DhaH.
 }
 /* naho dhaH (8.2.34) */
-if (arr($text,'/nah/') && (arr($text,'/[+]$/') || arr($text,'/[+]['.pc("Jl").']/')) )
+if (arr($text,'/nah/') && (arr($text,'/[+]$/') || arr($text,'/nah[+]['.pc("Jl").']/')) )
 {
-    $text = one(array("nah",),array("naD"),0);
+	$text = change('/nah[+]*$/','naD');
+	$text = change('/nah([+]*['.pc('Jl').'])/','naD$1');
 	storedata('8.2.34','sa',0);
     $hodha2 = 1; // 0 - doesn't prevent ho DhaH. 1 - prevents ho DhaH.  
 } else { $hodha2 = 0; } 
