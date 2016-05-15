@@ -7215,7 +7215,7 @@ if ($lakAra!=="" && $type==="tiGanta")
     }
     /* gatikAraketarapUrvapadasya yaN neSyate (vA 5034) */
     // This is attached with eranekAco... So, trying to put a note and making the iyaG and yaN optional.
-    /* eranekAco'saMyogapUrvasya (6.4.82) */
+	print_r($text); echo $abhyasta, $nabhusu, $dhatu;
     if ($dhatu===1 && arr($text,'/[iI][+]['.pc('ac').']/') && in_array($fo,array("unnI")) && $pada==="pratyaya" && (anekAca($fo) || $abhyasta===1 ) && $nabhusu===0)
     {
 		storedata('eranekAc','sa',0);

@@ -3088,6 +3088,7 @@ function abhyAsa_halAdi()
 			$text=two(array("ni+nij","vi+vij","vi+viz"),array("+"),array("nenij","vevij","veviz"),array("+"),0);
 			storedata('7.4.75','sa',0);
 		}		
+		$text = change('/^([^+]*)[+]/','$1');
 	}
 	return $text;
 }
