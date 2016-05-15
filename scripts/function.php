@@ -3088,6 +3088,11 @@ function abhyAsa_halAdi()
 			$text=two(array("ni+nij","vi+vij","vi+viz"),array("+"),array("ne+nij","ve+vij","ve+viz"),array("+"),0);
 			storedata('7.4.75','sa',0);
 		}		
+		elseif(in_array($fo,array("Gf","hf","f","sf","gA")) && sub(array("ja+Gf","ja+hf","a+f","sa+sf","ja+gA"),array("+"),blank(0),0))
+		{
+			$text=two(array("ja+Gf","ja+hf","a+f","sa+sf","ja+gA"),array("+"),array("ji+Gf","ji+hf","i+f","si+sf","ji+gA"),array("+"),0);
+			storedata('7.4.75','sa',0);
+		}		
 		$text = change('/^([^+]*)[+]/','$1');
 	}
 	return $text;
