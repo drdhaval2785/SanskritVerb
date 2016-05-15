@@ -3983,7 +3983,7 @@ if (in_array($fo,array("mIN")) && in_array($so,$tiG) && $veda===1 && sub(array("
 }
 /* separate itsaJjJAprakaraNam for tiGanta (According to sahajabodha text) */
 /* lazakvataddhite (1.3.8) */
-if ( arr($text,'/[+][lSkKgGN][^+]*/') && $taddhita === 0  && in_array($so,$tiG) )
+if ( arr($text,'/[+][lSkKgGN][^+]*/') && $taddhita === 0  && in_array($so,$tiG) && sub(array("+"),array("Sap","Syan","SnA","SAnac","Satf","Snu","Sa","Sya"),array("+"),0) )
 {
     it('/([+][lSkKgGN])/');
 	storedata('1.3.8','pa',0);
