@@ -6563,7 +6563,7 @@ if (arr($text,'/A\+i/') && sub(array("A+"),array("i"),$tiG1,0) && $lakAra!=="" &
 	storedata('6.4.64','sa',0);
 }
 /* ghumAsthAgApAjahAtisAM hali (6.4.66) */
-if ( (in_array($fo,array("do","deN","qudAY","dAR","Dew","quDAY","mA","zWA","iN","pA","hA","sA","gAN","mAN","meN","gA","gE","o!hAk","zo")) || (in_array($fo,array("ik","iN"))&&arr($text,'/gA[+]/'))) && ends($it,array("N","k"),2) && sub(array("A+"),$ArdhadhAtuka_pratyayas,blank(0),0) && $lakAra!=="ASIrliN"  && !in_array($number,array("02.0051","03.0008")))
+if ( (in_array($fo,array("do","deN","qudAY","dAR","Dew","quDAY","mA","zWA","iN","pA","hA","sA","gAN","mAN","meN","gA","gE","o!hAk","zo")) || (in_array($fo,array("ik","iN"))&&arr($text,'/gA[+]/'))) && ends($it,array("N","k"),2) && sub(array("A+"),$ArdhadhAtuka_pratyayas,blank(0),0) && $lakAra!=="ASIrliN"  && !in_array($number,array("02.0051","03.0008")) && !in_array("Sapluk",$vik))
 {
     $text=two(array("A+"),$ArdhadhAtuka_pratyayas,array("I+"),$ArdhadhAtuka_pratyayas,0);
 	$text=change('/I[+]tu$/','A+tu'); // To overcome Gittva of tAtaG.
