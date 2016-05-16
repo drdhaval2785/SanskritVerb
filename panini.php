@@ -4041,7 +4041,6 @@ if (in_array($so,$tiG) && (arr($text,'/['.pc('hl').'][+]/') || (arr($text,'/['.p
 		storedata('1.3.9','sa',0);
 	}
 }
-print_r($text);
 /* AtmanepadeSvanataH (7.1.5) */
 if ( in_array($so,array("Ja")) && arr($text,'/[^a][+]Ja$/'))
 {
@@ -5895,8 +5894,14 @@ if (($sarvadhatuka===1 || $ardhadhatuka===1) &&  (in_array("N",$it)||in_array("k
 	storedata('1.1.5','sa',0);
     $kGiti=1;
 }
+/* kGiti ca (1.1.5) */
+if ( ($sarvadhatuka===1 || $gAtisthA===1 ) && in_array($fo,array("BU","zUN","asa!")) && arr($text,'/[Bs]U\+/') && $sanAdi!=="yaNluk" && !in_array($lakAra,array("luw","lfw","lfN")) && !in_array($so,array("tip","sip","mip")) )
+{
+	storedata('1.1.5','sa',0);
+	$bhUsuvo=1;
+}
 /* bhUsuvostiGi (7.3.88) */
-if ( ($sarvadhatuka===1 || $gAtisthA===1 ) && in_array($fo,array("BU","zUN","asa!")) && arr($text,'/[Bs]U\+/') && $sanAdi!=="yaNluk" && !in_array($lakAra,array("luw","lfw","lfN")) )
+elseif ( ($sarvadhatuka===1 || $gAtisthA===1 ) && in_array($fo,array("BU","zUN","asa!")) && arr($text,'/[Bs]U\+/') && $sanAdi!=="yaNluk" && !in_array($lakAra,array("luw","lfw","lfN")) )
 {
 	storedata('7.3.88','sa',0);
 	$bhUsuvo=1;
