@@ -6778,6 +6778,7 @@ if ( (arr($text,'/[s]['.flat($hl).'][+]/') || arr($text,'/vrASc\+/') ) && in_arr
 	$text = one(array("vrASc"),array("vrAc"),0);
 	storedata('8.2.29','sa',0);
 }
+print_r($text);
 /* sArvadhAtukArdhadhAtukayoH (7.3.84) */
 // patch for zvi, jAgf etc.
 if (arr($text,'/\+is/') && sub(array("Svi","jAgf"),array("+"),array("is"),0) )
@@ -12768,7 +12769,6 @@ if (arr($text,'/akz\+/') && sub(array("vivakz","diDakz","pipakz"),array("+"),bla
 	storedata('skoHc','sa',0);
     $pipakS=1; // 0 - doesn't prevent skoH saMyogAdyorante ca. 1 - prevents skoH saMyogAdyorante ca.
 } else { $pipakS=0; }
-
 /* skoH saMyogAdyorante ca (8.2.29) */
 if ( $pada === "pada" && $rakS===0 && $pipakS===0 && (arr($text,'/[sk]([+]*)['.pc('hl').']([+]*)['.pc('Jl').']/') || arr($text,'/[sk]['.flat($hl).'][+]$/')) )
 {
