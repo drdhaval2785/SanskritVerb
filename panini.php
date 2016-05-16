@@ -598,6 +598,11 @@ if ($type==='tiGanta')
 	{
 		$verbpada=verb_pada('AgarvAd');
 	}
+	/* nigaraNacalanArthebhyazca (1.3.87) */
+	elseif ( (in_array($first,array("aSa!","Buja!","cala!","cupa!","kapi!"))|| ($first==="gF"&&$us==="ni") ) && $vAcya==="kartR" && ($sanAdi==="Ric"||$verbset==="curAdi"))
+	{
+		$verbpada=verb_pada('1.3.87');
+	}
 	/* Nicazca (1.3.74) */
 	elseif ( $sanAdi==="Ric" || $verbset==="curAdi")
 	{
@@ -676,11 +681,6 @@ if ($type==='tiGanta')
 	elseif (ends(array($first),array("Aya"),1) && $pada==="pratyaya" && $lakAra!=="")
 	{
 		$verbpada=verb_pada('1.3.90');
-	}
-	/* nigaraNacalanArthebhyazca (1.3.87) */
-	elseif ( in_array($first,array("nigF","aSa!","Buja!","cala!","cupa!","kapi!",)) && $vAcya==="kartR" && ($sanAdi==="Ric"||$verbset==="curAdi"))
-	{
-		$verbpada=verb_pada('1.3.87');
 	}
 	/* aNAvakarmakAccittavatkartRkAt (1.3.88) */
 	// Pending. Ni etc are very confusing at this stage. Will think later.
@@ -6872,7 +6872,6 @@ if (in_array($fo,array("guhU!")) && sub(array("goh"),array("+"),$ac,0) )
 	storedata('6.4.89','sa',0);
 }
 /* vrazcabhrasjamRjayajarAjabhrAjacChazAM ca (8.2.36) */
-// TubhrAjR dIptau and ejR bhejR bhrAjR dIptau are different. This is pending to code.
 // parau vrajeH SaH padAnte (u 217) pending. 
 $vrasca = array("vfSc","sfj","mfj","yaj","rAj","BrAj","devej","parivrAj","Bfj","ftvij","mArj","vraSc","Brasj","sraj","sfaj","Barj","vrASc","vrAc","vrac","BrAj","BArj");
 $vrashca = array("vfSz","sfz","mfz","yaz","rAz","BrAz","devez","parivrAz","Bfz","ftviz","mArz","vraSz","Brasz","sraz","sfaz","Barz","vrAz","vrAz","vraz","BrAz","BArz");
