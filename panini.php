@@ -5624,7 +5624,6 @@ else
 		$text=change('/^(['.pc('hl').'])/','a$1');
 		storedata('6.4.71','sa',0);
 	}
-	print_r($text);
     /* ATazca (6.1.90) */
     if (arr($text,'/^A['.pc('ac').']/') && in_array("Aw",$Agama) )
     {
