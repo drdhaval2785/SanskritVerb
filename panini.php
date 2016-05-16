@@ -303,6 +303,11 @@ if ($type==='tiGanta')
 	{
 		$verbpada="p";
 	}
+	/* Special patch for paNa dhAtu (see kAzikA on 3.1.28) */
+	elseif ( $_GET['cond49']==="1")
+	{
+		$verbpada="p";
+	}
 	/* luTi ca klRpaH (1.3.93) */
 	elseif ( $fo==="kfpU!" && ($san===1 || in_array($lakAra,array("lfN","lfw","luw"))))
 	{
@@ -334,10 +339,10 @@ if ($type==='tiGanta')
 	{
 		$verbpada=verb_pada('vA 903'); // Not able to locate the vArtika. So added it in the $verb_sutra_pada array.
 	}
-	/* prakAzanastheyAkhyayozca (1.3.23) */
-	elseif ( $_GET['cond15']==="1" )
+	/* upasargAdastyUhyorvacanam (vA 49) */
+	elseif ( in_array($first,array("asu!","vaha!")) && $us!=="")
 	{
-		$verbpada=verb_pada('1.3.23');
+		$verbpada=verb_pada('vA 49');
 	}
 	/* udo'nUrdhvakarmaNi (1.3.24) */
 	elseif ( $_GET['cond16']==="2" )
@@ -4087,7 +4092,7 @@ if (arr($text,'/[iuIU][+]a[+]/') && in_array("Sa",$vik))
 	$text = one(array("uv+uv+"),array("u+uv+"),0);
 	storedata('6.4.77','sa',3);
 }
-/* asyatesTuk (7.4.17) */
+/* asyatesthuk (7.4.17) */
 if (in_array($fo,array("asu!")) && sub(array("as"),array("+a+"),blank(0),0) && $lakAra==="luN") 
 {
 	$text = one(array("as+a+"),array("asT+a+"),0);
