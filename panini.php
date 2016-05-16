@@ -2083,6 +2083,7 @@ elseif ($sanAdi==="san" && arr($text,'/^['.pc('hl').']/'))
 		$text = one(array('ariza'),array('arIza'),1);
 		storedata('7.2.38','sa',0);
 	}
+	print_r($text);
 	/* Che ca (6.1.73) */
 	if (arr($text,'/[aiufx][+]*C/'))
 	{
@@ -7456,9 +7457,9 @@ if( in_array($so,$tiG) && arr($text,'/([iIuUfFxXeEoOhyvrlkKgGN])([+]*[iI]*)s(['.
 		$text = change('/rI[+]z/','rI+s');
 	}
 	// kusma dhAtu has 's' in upadeza. Therefore, reverting it back.
-	if (in_array($number,array("10.0139","10.0236","04.0125","01.0807","01.0816","10.0079","01.0817","04.0120","01.0820","04.0117","10.0080","01.0821","04.0116","10.0172","04.0130","01.0818","04.0818","01.0819","04.0276","10.0174","04.0005")) && sub(array("kuzm","DUz","kuz","tuz","piz","puzt","puzw","pez","pyuz","biz","buz","buzt","buzw","bez","byuz","brUz","muz","viz","vuz","vez","vyuz","vrUz","snuz"),blank(0),blank(0),0))
+	if (in_array($number,array("10.0139","10.0236","04.0125","01.0807","01.0816","10.0079","01.0817","04.0120","01.0820","04.0117","10.0080","01.0821","04.0116","10.0172","04.0130","01.0818","04.0818","01.0819","04.0276","10.0174","04.0005","10.0126")) && sub(array("kuzm","DUz","kuz","tuz","piz","puzt","puzw","pez","pyuz","biz","buz","buzt","buzw","bez","byuz","brUz","muz","viz","vuz","vez","vyuz","vrUz","snuz","muzt"),blank(0),blank(0),0))
 	{
-		$text = one(array("kuzm","DUz","kuz","tuz","piz","puzt","puzw","pez","pyuz","biz","buz","buzt","buzw","bez","byuz","brUz","muz","viz","vuz","vez","vyuz","vrUz","snuz"),array("kusm","DUs","kus","tus","pis","pust","pust","pes","pyus","bis","bus","bust","bust","bes","byus","brUs","mus","vis","vus","ves","vyus","vrUs","snus"),0);
+		$text = one(array("kuzm","DUz","kuz","tuz","piz","puzt","puzw","pez","pyuz","biz","buz","buzt","buzw","bez","byuz","brUz","muz","viz","vuz","vez","vyuz","vrUz","snuz","muzt"),array("kusm","DUs","kus","tus","pis","pust","pust","pes","pyus","bis","bus","bust","bust","bes","byus","brUs","mus","vis","vus","ves","vyus","vrUs","snus","must"),0);
 	}
 	if ($in!==$text )
 	{
