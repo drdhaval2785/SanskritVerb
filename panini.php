@@ -6778,7 +6778,6 @@ if ( (arr($text,'/[s]['.flat($hl).'][+]/') || arr($text,'/vrASc\+/') ) && in_arr
 	$text = one(array("vrASc"),array("vrAc"),0);
 	storedata('8.2.29','sa',0);
 }
-print_r($text);
 /* sArvadhAtukArdhadhAtukayoH (7.3.84) */
 // patch for zvi, jAgf etc.
 if (arr($text,'/\+is/') && sub(array("Svi","jAgf"),array("+"),array("is"),0) )
