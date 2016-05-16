@@ -5602,6 +5602,42 @@ if ( (in_array("N",$itpratyaya) || in_array("k",$itpratyaya)) && !in_array($sanA
 	storedata('1.1.5','sa',0);
     $kGiti=1;
 }
+/* na mAGyoge (6.4.74) */
+if ( in_array($lakAra,array("luN","laN","lfN",)) && $_GET['cond50']==='1')
+{
+	storedata('6.4.74','sa',0);
+}
+else
+{
+	/* ADajAdInAm (6.4.72) */
+	// udAttatva pending.
+	if ( in_array($lakAra,array("luN","laN","lfN",)) && arr($text,'/^['.pc('ac').']/') )
+	{
+		$text=change('/^(['.pc('ac').'])/','A$1');
+		storedata('6.4.72','sa',0);
+		$Agama=array("Aw");
+	}
+	/* luGlaGlRGkSvaDudAttaH (6.4.71) */
+	// udAttatva pending.
+	if ( in_array($lakAra,array("luN","laN","lfN",)) && arr($text,'/^['.pc('hl').']/') )
+	{
+		$text=change('/^(['.pc('hl').'])/','a$1');
+		storedata('6.4.71','sa',0);
+	}
+	print_r($text);
+    /* ATazca (6.1.90) */
+    if (arr($text,'/^A['.pc('ac').']/') && in_array("Aw",$Agama) )
+    {
+        $text = change('/A[aA]/','A');
+        $text = change('/A[iI]/','E');
+        $text = change('/A[uU]/','O');
+        $text = change('/A[fF]/','Ar');
+        $text = change('/A[xX]/','Al');
+        $text = change('/A[eE]/','E');
+        $text = change('/A[oO]/','O');
+		storedata('6.1.90','sa',0);
+    }
+}
 /* hrasvAdaGgAt (8.2.27) */
 if ( $sic===1 && arr($text,'/[aiufx]\+s/') && sub(array("a","i","u","f","x"),array("+s"),prat("Jl"),0) && in_array($so,$tiG) && $sanAdi!=="Ric")
 {
@@ -6174,29 +6210,6 @@ if (in_array($sanAdi,array("san","Ric")) && sub(array("su+srav","su+srAv","Su+Sr
 {
 	$text = one(array("su+srav","su+srAv","Su+Srav","Su+SrAv","su+srav","su+srAv","du+drav","du+drAv","pu+prav","pu+prAv","pu+plav","pu+plAv","cu+cyav","cu+cyAv"),array("si+srav","si+srAv","Si+Srav","Si+SrAv","si+srav","si+srAv","di+drav","di+drAv","pi+prav","pi+prAv","pi+plav","pi+plAv","ci+cyav","ci+cyAv"),1);
 	storedata('7.4.81','sa',0);
-}
-/* na mAGyoge (6.4.74) */
-if ( in_array($lakAra,array("luN","laN","lfN",)) && $_GET['cond50']==='1')
-{
-	storedata('6.4.74','sa',0);
-}
-else
-{
-	/* ADajAdInAm (6.4.72) */
-	// udAttatva pending.
-	if ( in_array($lakAra,array("luN","laN","lfN",)) && arr($text,'/^['.pc('ac').']/') )
-	{
-		$text=change('/^(['.pc('ac').'])/','A$1');
-		storedata('6.4.72','sa',0);
-		$Agama=array("Aw");
-	}
-	/* luGlaGlRGkSvaDudAttaH (6.4.71) */
-	// udAttatva pending.
-	if ( in_array($lakAra,array("luN","laN","lfN",)) && arr($text,'/^['.pc('hl').']/') )
-	{
-		$text=change('/^(['.pc('hl').'])/','a$1');
-		storedata('6.4.71','sa',0);
-	}
 }
 /* znasorallopaH (6.4.111) */
 // znam pending.
