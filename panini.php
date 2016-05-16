@@ -4758,7 +4758,6 @@ if ( arr($text,'/[B][U][+][R'.pc('ac').'Tvm]/') && in_array($lakAra,array("luN",
 if ($lakAra==="liw" && arr($text,'/^['.pc('hl').']/'))
 {
 	liT_halAdi();
-	//list($text,$liT_Adeza)=abhyAsa_halAdi();
 	abhyAsa_halAdi();
 	$abhyAsa=1;
 	$abhyasta=1;
@@ -4769,6 +4768,18 @@ if ( $lakAra==="liw" && in_array("k",$itpratyaya) && sub(array("Sa+SF","da+dF","
 {
 	$text = two(array("Sa+SF","da+dF","pa+pF"),array("+"),array("Sa+Sf","da+df","pa+pf"),array("+"),1);
 	storedata('7.4.12','sa',0);
+}
+/* dambhezca (vA) */
+if ( $lakAra==="liw" && !in_array($so,array("tip","sip","mip")) && sub(array("da+damB"),array("+"),blank(0),0) )
+{
+	$text = two(array("da+damB"),array("+"),array("deB"),array("+"),1);
+	storedata('damBeSca','sa',0);
+}
+/* zranthigranthidambhisvaJjInAM kittvaM vA vaktavyam (vA) */
+if ( $lakAra==="liw" && $fo==="zvaYja!")
+{
+	$text = two(array("sa+svaYj"),array("+"),array("sa+svaj"),array("+"),0);
+	storedata('SranTi','sa',0);
 }
 /* aniditAM hala upadhAyAH kGiti (6.4.24) */ 
 if ( in_array($fo,$aniditverbs) && (in_array("N",$itpratyaya) || in_array("k",$itpratyaya)) && !in_array($sanAdi,array("Ric"))  && $so!=="mahiN" && !in_array("i",$it) && $lakAra!=="viDiliN" && $verbset!=="ruDAdi" && $aniditAm!==1 && !in_array("Sap",$vik))
