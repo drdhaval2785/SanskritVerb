@@ -3399,9 +3399,9 @@ elseif (in_array($fo,array("qulaBa!z")) && sub(array("laB"),array("+"),array("Ri
 	storedata('7.1.64','sa',0);
 }
 /* rabherazabliToH (7.1.63) */
-if ( in_array($fo,array("raBa!")) && sub(array("raB"),array("+"),array("Ri","i"),0) )
+if ( in_array($fo,array("raBa!")) && sub(array("raB"),array("+"),array("Ri"),0) )
 {
-    $text=three(array("raB"),array("+"),array("Ri","i"),array("ranB"),array("+"),array("Ri","i"),0);
+    $text=three(array("raB"),array("+"),array("Ri"),array("ranB"),array("+"),array("Ri"),0);
 	storedata('7.1.63','sa',0);
 }
 /* bhaJjezciNi (6.4.33) */
