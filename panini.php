@@ -3530,7 +3530,7 @@ elseif ($lakAra==="liw" && $veda===0 && (anekAca($verb_without_anubandha) ||  $v
 }
 /* vidAGkurvantvityanyatarasyAm (3.1.41) */
 // Pending to test whether it is only for specific vid dhAtu or generic.
-if ($lakAra==="low" && $fo==="vida!")
+if ($lakAra==="low" && $fo==="vida!" && $verbset==="adAdi")
 {
     $text1=pr2(array("+"),$tiG,blank(0),array("+Am+kf+"),$tiG,blank(0),$text);
 	$text=array_merge($text,$text1);
