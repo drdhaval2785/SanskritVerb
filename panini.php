@@ -901,7 +901,7 @@ if ($debug===1) {dibug("900");}
 if (in_array($lakAra,$ArdhadhAtuka_lakAra)||$san===1)
 {
     /* vija iT (1.2.2) */ 
-    if ( in_array($fo,array("o!vijI!")) && (in_array($lakAra,$ArdhadhAtuka_lakAra)||$san===1) && $id_dhAtu==="sew" && $id_pratyaya==="sew" && $verbset==="tudAdi")
+    if ( in_array($fo,array("o!vijI!")) && (in_array($lakAra,$ArdhadhAtuka_lakAra)||$san===1) && $id_dhAtu==="sew" && $id_pratyaya==="sew" )
     {
         $itpratyaya=array_merge($itpratyaya,array("N"));
         $it=array_merge($it,array("N"));
