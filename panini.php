@@ -3930,7 +3930,7 @@ if ($lakAra==="liw" && $kaspratyaya===1 && sub(array("Am+"),$tiG1,blank(0),0) )
 	$verb_without_anubandha="kf";
 }
 /* asaMyogAlliT kit (1.2.5) */
-if (!arr(array($verb_without_anubandha),'/['.pc('hl').'M]['.pc('hl').']$/') && $lakAra==="liw" && !in_array($so,array("tip","sip","mip")))
+if (!arr(array($verb_without_anubandha),'/['.pc('hl').'M]['.pc('hl').']$/') && $lakAra==="liw" && !in_array($so,array("tip","sip","mip")) && !in_array($fo,array("raDa!")) )
 {
 	storedata('1.2.5','pa',0);
 	$it = array_merge($it,array("k"));
