@@ -6694,7 +6694,7 @@ elseif ( $lakAra==="liw" && !ends(array($so),array("tip","mip"),2) && sub(array(
 	storedata('6.4.126','sa',0);
 }
 /* na zasadadavAdiguNAnAm (6.4.126) */
-elseif (arr($text,'/va[+]/') && sub(array("va+vaj","va+vaK","va+vaw","va+vaW","va+vaR","va+van","va+val","va+vaz","va+vam","va+vas"),array("+"),blank(0),0) && $lakAra==="liw" && !ends(array($so),array("tip","mip"),2) )
+elseif (arr($text,'/^va[+]v/') && $lakAra==="liw" && !ends(array($so),array("tip","mip"),2) )
 {
 	storedata('6.4.126','sa',0);
 }
