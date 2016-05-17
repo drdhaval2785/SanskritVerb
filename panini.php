@@ -2886,7 +2886,7 @@ if ($lakAra==="luN")
 		$itpratyaya = array_merge($itpratyaya,array("k"));
 	}
 	/* zala igupadhAdaniTaH ksaH (3.1.45) */
-	elseif (in_array($fo,array("kruSa!","diSa!","riSa!","ruSa!","liSa!","tviza!","dviza!","miha!","ruha!","liha!","duha!")) )
+	elseif (in_array($fo,array("kruSa!","diSa!","riSa!","ruSa!","liSa!","tviza!","dviza!","miha!","ruha!","liha!","duha!","vizu!")) )
 	{
 		$text = one(array("+cli+"),array("+sa+"),0);
 		storedata('3.1.45','sa',0);
