@@ -5714,13 +5714,6 @@ if ( arr($text,'/[B][U][+]['.pc('ac').']/') && in_array($lakAra,array("luN","liw
     $text = two(array("BU+"),$ac,array("BUv+"),$ac,0);
 	storedata('6.4.88','sa',0);	
 }
-/* cCvoH zUDanunAsike (6.4.19) */ 
-// kvau pending.
-if (arr($text,'/cC[+][YmNRn]/') || (arr($text,'/cC[+]['.pc('Jl').']/') && $kGiti===1)  )
-{
-    $text = change('/cC[+]/','S+');
-	storedata('6.4.19','sa',0);
-}
 /* jusi ca (7.3.83) */
 if ( ($jherjus===1 || $sijabhyastavidibhyazca===1) && arr($text,'/[iIuUfFxX]\+us/') && $lakAra!=="liw" ) // liT has 'us' which is not 'jus'
 {
@@ -6348,6 +6341,13 @@ if (in_array($fo,array("wuo!Svi")) && sub(array("Svi"),array("+"),prat('vl'),0) 
 {
 	$text = three(array("Svi","Su+Su"),array("+"),prat('vl'),array("Svi","Su+Su"),array("+i"),prat('vl'),0);
 	storedata('7.2.35','sa',0);
+}
+/* cCvoH zUDanunAsike (6.4.19) */ 
+// kvau pending.
+if (arr($text,'/cC[+][YmNRn]/') || (arr($text,'/cC[+]['.pc('Jl').']/') && $kGiti===1) )
+{
+    $text = change('/cC[+]/','S+');
+	storedata('6.4.19','sa',0);
 }
 /* jvaratvarazrivyavimavAmupadhAyAzca (6.4.20) */ 
 // kvau pending.
