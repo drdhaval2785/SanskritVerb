@@ -4833,7 +4833,7 @@ if (in_array($fo,array("veY")) && $lakAra==="liw" && in_array("k",$itpratyaya) &
 	storedata('6.1.39','sa',0);
 }
 /* vacisvapiyajAdInAM kiti (6.1.15) */
-elseif ( in_array("k",$itpratyaya) && in_array($fo,array("brUY","Yizvapa!","yaja!","quvapa!","vaha!","veY","vyeY","hveY","vada!","wuo!Svi!","vaca!","vasa!")) && sub(array("vac","svap","yaj","vap","vah","ve","vye","hve","vad","Sv","vas"),array("+"),blank(0),0))
+elseif ( in_array("k",$itpratyaya) && (in_array($fo,array("brUY","Yizvapa!"))||(in_array($fo,array("yaja!","quvapa!","vaha!","veY","vyeY","hveY","vada!","wuo!Svi!","vaca!","vasa!"))&&$verbset==="BvAdi")) && sub(array("vac","svap","yaj","vap","vah","ve","vye","hve","vad","Sv","vas"),array("+"),blank(0),0))
 {
     $text=two(array("vac","svap","yaj","vap","vah","ve","vye","hve","vad","Sv","vas"),array("+"),array("uac","suap","iaj","uap","uah","ue","vie","hie","uad","Su","us"),array("+"),0);
 	storedata('6.1.15','sa',0);
@@ -6694,7 +6694,7 @@ elseif ( $lakAra==="liw" && !ends(array($so),array("tip","mip"),2) && sub(array(
 	storedata('6.4.126','sa',0);
 }
 /* na zasadadavAdiguNAnAm (6.4.126) */
-elseif (arr($text,'/va[+]/') && sub(array("va+vaj","va+vaK","va+vaw","va+vaW","va+vaR","va+van","va+val","va+vaz","va+vam"),array("+"),blank(0),0) && $lakAra==="liw" && !ends(array($so),array("tip","mip"),2) )
+elseif (arr($text,'/va[+]/') && sub(array("va+vaj","va+vaK","va+vaw","va+vaW","va+vaR","va+van","va+val","va+vaz","va+vam","va+vas"),array("+"),blank(0),0) && $lakAra==="liw" && !ends(array($so),array("tip","mip"),2) )
 {
 	storedata('6.4.126','sa',0);
 }

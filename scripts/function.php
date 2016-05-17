@@ -2973,7 +2973,7 @@ function abhyAsa_halAdi()
 		storedata('6.1.10','sa',0);
 	}
 	/* liTyabhyAsasyobhayeSAm (6.1.17) */
-	elseif($zlu!==1 && $lakAra==="liw" && sub(array("vac+vac+","svap+svap+","yaj+yaj+","vap+vap+","vah+vah+","vas+vas+","vad+vad+","ve+ve+","hve+hve+","Svi+Svi+","vye+vye+","grah+grah+","jyA+jyA+","vay+vay+","vyaD+vyaD+","vaS+vaS+","vyac+vyac+","vraSc+vraSc+","pracC+pracC+","Brasj+Brasj+"),blank(0),blank(0),0) && !in_array($sanAdi,array("yaN","yaNluk","san")))
+	elseif($zlu!==1 && $lakAra==="liw"  && (in_array($fo,array("brUY","Yizvapa!","jyA","graha!","vaya!","vyaDa!","vaSa!","vyaca!","o!vraScU!","praCa!","Brasja!"))||(in_array($fo,array("yaja!","quvapa!","vaha!","veY","vyeY","hveY","vada!","wuo!Svi!","vaca!","vasa!"))&&$verbset==="BvAdi")) && sub(array("vac+vac+","svap+svap+","yaj+yaj+","vap+vap+","vah+vah+","vas+vas+","vad+vad+","ve+ve+","hve+hve+","Svi+Svi+","vye+vye+","grah+grah+","jyA+jyA+","vay+vay+","vyaD+vyaD+","vaS+vaS+","vyac+vyac+","vraSc+vraSc+","pracC+pracC+","Brasj+Brasj+"),blank(0),blank(0),0) && !in_array($sanAdi,array("yaN","yaNluk","san")))
 	{
 		$text=one(array("vac+vac+","svap+svap+","yaj+yaj+","vap+vap+","vah+vah+","vas+vas+","vad+vad+","ve+ve+","hve+hve+","Svi+Svi+","vye+vye+","grah+grah+","jyA+jyA+","vay+vay+","vyaD+vyaD+","vaS+vaS+","vyac+vyac+","vraSc+vraSc+","pracC+pracC+","Brasj+Brasj+"),array("uc+vac+","sup+svap+","ij+yaj+","up+vap+","uh+vah+","us+vas+","ud+vad+","u+ve+","hu+hve+","Su+Svi+","vi+vye+","gfh+grah+","ji+jyA+","uy+vay+","viD+vyaD+","uS+vaS+","vic+vyac+","vfSc+vraSc+","pfcC+pracC+","Bfsj+Brasj+"),0);
 		storedata('6.1.17','sa',0);

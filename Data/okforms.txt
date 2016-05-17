@@ -23730,3 +23730,4 @@ vapeTAH,quvapa!,01.1158,viDiliN,TAs
 valBAvahE,valBa!,01.0456,low,vas
 valBAmahE,valBa!,01.0456,low,mas
 uzWaH,vaSa!,02.0075,law,Tas
+vasayAYcakara,vasa,10.0488,liw,mip
