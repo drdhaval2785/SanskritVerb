@@ -6477,7 +6477,7 @@ elseif ( ($vsuf==="yak" || $lakAra==="ASIrliN") && sub(array("f"),array("+y"),bl
 	storedata('7.4.28','sa',0);
 }
 /* akRtsArvadhAtukayordIrghaH (7.4.25) */
-elseif (  in_array($so,$tiG) && ($sarvadhatuka!==1||$vsuf==="yak") && $kRt!==1 && (in_array("N",$itpratyaya) || in_array("k",$itpratyaya)) && $lakAra!=="liw" && !arr($text,'/^[y][a][+][y]/') && sub($ac,array("+"),array("y"),0) && !sub($ac,array("+"),array("y+a"),0) )
+elseif (  in_array($so,$tiG) && ($sanAdi==="yaG"||$vsuf==="yak") && $kRt!==1 && (in_array("N",$itpratyaya) || in_array("k",$itpratyaya)) && $lakAra!=="liw" && !arr($text,'/^[y][a][+][y]/') && sub($ac,array("+"),array("y"),0) && !sub($ac,array("+"),array("y+a"),0) )
 {
     $text=three($ac,array("+"),array("y"),dirgha($ac),array("+"),array("y"),0);
 	storedata('7.4.25','sa',0);
