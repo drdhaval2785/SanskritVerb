@@ -2091,7 +2091,6 @@ elseif ($sanAdi==="san" && arr($text,'/^['.pc('hl').']/'))
 		$text = change('/([aiufx][+]*)tC/','$1cC');
 		storedata('8.4.40','sa',0);
 	}
-	print_r($text);
 	/* dIrghAt (6.1.75) and padAntAdvA (6.1.76) */
 	if (arr($text,'/C/') && sub($dirgha,array("C"),blank(0),0)) // for $dirgha see function.php
 	{
@@ -4779,7 +4778,6 @@ if ($lakAra==="liw" && arr($text,'/^['.pc('hl').']/'))
 	$abhyAsa=1;
 	$abhyasta=1;
 }
-
 /* zRRdRRprAM hrasvo vA (7.4.12) */
 if ( $lakAra==="liw" && in_array("k",$itpratyaya) && sub(array("Sa+SF","da+dF","pa+pF"),array("+"),blank(0),0) )
 {
@@ -5681,6 +5679,26 @@ if (arr($text,'/kfp/') && $sanAdi==="yaNluk")
     $text=one(array("carI+kfp","cari+kfp","car+kfp","kfp"),array("calI+kxp","cali+kxp","cal+kxp","kxp"),0);
 	storedata('8.2.18','sa',0);
 }
+/* znA'bhyastayorAtaH (6.4.112) */
+if (arr($text,'/^[^+]*A[+]/') && $abhyasta===1 && pr2(array("A"),array("+"),$apit_sArvadhAtuka_pratyayas,array(""),array("+"),$apit_sArvadhAtuka_pratyayas,$text)!==$text && !arr($text,'/[+]yA[+][mv]a/') && $sarvadhatuka===1)
+{
+	if ($so==="sip" && $lakAra==="liw")
+	{
+		$text=array_merge($text,pr2(array("A"),array("+"),$apit_sArvadhAtuka_pratyayas,array(""),array("+"),$apit_sArvadhAtuka_pratyayas,$text));
+	}
+	else
+	{
+		$text=pr2(array("A"),array("+"),$apit_sArvadhAtuka_pratyayas,array(""),array("+"),$apit_sArvadhAtuka_pratyayas,$text);
+	}
+	storedata('6.4.112','sa',0);
+}
+/* znA'bhyastayorAtaH (6.4.112) */
+// Patch for liT (Because asaMyogAlliT kit)
+if (arr($text,'/A[+]/') && $abhyasta===1 && pr2(array("A"),array("+"),array("atus","aTus","a","ire"),array(""),array("+"),array("atus","aTus","a","ire"),$text)!==$text)
+{
+    $text=pr2(array("A"),array("+"),array("atus","aTus","a","ire"),array(""),array("+"),array("atus","aTus","a","ire"),$text);
+	storedata('6.4.112','sa',0);
+}
 /* patch to join yAs */
 $text = change('/[+]yA[+]([^+]*)$/','+yA$1');		
 /* yaGo vA (7.3.94) */
@@ -6090,26 +6108,6 @@ if (arr($text,'/[^+]*A\+/') && !in_array($lakAra,array("viDiliN","ASIrliN")) && 
 	$text=change('/I[+]tu$/','A+tu'); // To overcome Gittva of tAtaG.
 	storedata('6.4.113','sa',0);
 }
-/* znA'bhyastayorAtaH (6.4.112) */
-if (arr($text,'/^[^+]*A[+]/') && $abhyasta===1 && pr2(array("A"),array("+"),$apit_sArvadhAtuka_pratyayas,array(""),array("+"),$apit_sArvadhAtuka_pratyayas,$text)!==$text && !arr($text,'/[+]yA[+][mv]a/') && $sarvadhatuka===1)
-{
-	if ($so==="sip" && $lakAra==="liw")
-	{
-		$text=array_merge($text,pr2(array("A"),array("+"),$apit_sArvadhAtuka_pratyayas,array(""),array("+"),$apit_sArvadhAtuka_pratyayas,$text));
-	}
-	else
-	{
-		$text=pr2(array("A"),array("+"),$apit_sArvadhAtuka_pratyayas,array(""),array("+"),$apit_sArvadhAtuka_pratyayas,$text);
-	}
-	storedata('6.4.112','sa',0);
-}
-/* znA'bhyastayorAtaH (6.4.112) */
-// Patch for liT (Because asaMyogAlliT kit)
-if (arr($text,'/A[+]/') && $abhyasta===1 && pr2(array("A"),array("+"),array("atus","aTus","a","ire"),array(""),array("+"),array("atus","aTus","a","ire"),$text)!==$text)
-{
-    $text=pr2(array("A"),array("+"),array("atus","aTus","a","ire"),array(""),array("+"),array("atus","aTus","a","ire"),$text);
-	storedata('6.4.112','sa',0);
-}
 /* eranekAco'saMyogapUrvasya (6.4.82) */
 if ($sanAdi==="yaNluk" && arr($text,'/[^'.pc('hl').']['.pc('hl').'][iI][+]['.pc('ac').'][^+]*$/') )
 {
@@ -6458,9 +6456,9 @@ if ( arr($text,'/[a]['.pc('hl').'][+]i[+]/') && $ciN!==1)
 	storedata('7.2.116','sa',0);
 }
 /* ato lopaH (6.4.48) */
-if (arr($text,'/ya\+/') && sub(array("ya"),array("+is","+It","+Is","+it","+yA"),blank(0),0) && $ardhadhatuka===1 )
+if (arr($text,'/[+]ya[+]/') && sub(array("+ya"),array("+is","+It","+Is","+it","+yA"),blank(0),0) && $ardhadhatuka===1 )
 { 	
-	$text = two(array("ya"),array("+is","+It","+Is","+it","+yA"),array("y"),array("+is","+It","+Is","+it","+yA"),0);
+	$text = two(array("+ya"),array("+is","+It","+Is","+it","+yA"),array("y"),array("+is","+It","+Is","+it","+yA"),0);
 	storedata('6.4.48','sa',0);
     $atolopa=1;
 }
