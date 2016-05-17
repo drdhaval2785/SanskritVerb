@@ -21075,3 +21075,13 @@ araPizyatam,raPa!,01.0479,lfN,Tas
 araPizyam,raPa!,01.0479,lfN,mip
 araPizyAva,raPa!,01.0479,lfN,vas
 araPizyAma,raPa!,01.0479,lfN,mas
+rarasa,rasa!,01.0810,liw,mip
+rahati,raha!,01.0832,law,tip
+rahataH,raha!,01.0832,law,tas
+rahanti,raha!,01.0832,law,Ji
+rahasi,raha!,01.0832,law,sip
+rahaTaH,raha!,01.0832,law,Tas
+rahaTa,raha!,01.0832,law,Ta
+rahAmi,raha!,01.0832,law,mip
+rahAvaH,raha!,01.0832,law,vas
+rahAmaH,raha!,01.0832,law,mas
