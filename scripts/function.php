@@ -1469,20 +1469,20 @@ function samprasarana($input,$merge)
     {
         $val1[]=str_replace($yan,$yanik,$value);
     }
-        if ($merge===0)
-        {
-            $text = one($input,$val1,0);        // doing samprasARaNa.            
-        }
-        if ($merge===1)
-        {
-            $text = one($input,$val1,1);        // doing samprasARaNa.            
-        }
-		storedata('1.1.45','sa',0);
-    if (arr($text,'/[iufx][aAiIuUfFxXeEoO]/'))
-    {
-        $text = two(array("i","u","f","x"),$ac,array("i","u","f","x"),blank(count($ac)),2);
+	if ($merge===0)
+	{
+		$text = one($input,$val1,0);        // doing samprasARaNa.            
+	}
+	if ($merge===1)
+	{
+		$text = one($input,$val1,1);        // doing samprasARaNa.            
+	}
+	storedata('1.1.45','sa',0);
+	if (arr($text,'/[iufx][aAiIuUfFxXeEoO]/'))
+	{
+		$text = two(array("i","u","f","x"),$ac,array("i","u","f","x"),blank(count($ac)),2);
 		storedata('6.1.108','sa',0);
-    }   
+	}   
 	if (sub(array("u+uc","i+ij","u+up","u+ud","u+uh","u+uS","u+us"),blank(0),blank(0),0))
 	{
 		$text = one(array("u+uc","i+ij","u+up","u+ud","u+uh","u+uS","u+us"),array("Uc","Ij","Up","Ud","Uh","US","us"),0);
@@ -1493,7 +1493,7 @@ function samprasarana($input,$merge)
 		$text=change('/^ji[+]/','jI+');
 		storedata('6.4.2','sa',0);
 	}		
-    return $text;
+	return $text;
 }
 /* function itcheck */
 // $a to contain the array of it markers to check.

@@ -4852,6 +4852,7 @@ elseif ($sanAdi==="yaNluk" && in_array($fo,array("vaSa!","vyaca!","o!vraScU!","p
 elseif ( in_array($fo,array("jyA","graha!","vaya!","vyaDa!","vaSa!","vyaca!","o!vraScU!","praCa!","Brasja!")) && ((sub(array("jyA","grah","vay","vyaD","vaS","vyac","vraSc","pracC","Brasj"),array("+"),$apit_sArvadhAtuka_pratyayas,0) && $sarvadhatuka===1) || in_array("N",$itpratyaya) || in_array("k",$itpratyaya) || in_array("SnA",$vik) || in_array("Sa",$vik)) && $san!==1 && !($sanAdi==="Ric" && $caG===1))
 {
     $text=two(array("jyA","grah","vay","vyaD","vaS","vyac","vraSc","pracC","Brasj"),array("+"),array("jiA","gfh","uy","viD","uS","vic","vfSc","pfcC","Bfsj"),array("+"),0);
+    $text=two(array("uS"),array("+tu"),array("vaS"),array("+tu"),0);
 	storedata('6.1.16','sa',0);
     $text = samprasarana(array("jyA","grah","vay","vyaD","vaS","vyac","vraSc","pracC","Brasj"),0);
 }
