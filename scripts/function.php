@@ -4133,6 +4133,23 @@ function sAdeza()
 	}
 }
 //sAdeza();
+function issue842()
+{
+	global $verbdata;
+	foreach ($verbdata as $verbdatum)
+	{
+		list($verb[],$meaning[],$verb1[],$verbset[],$verbnumber[],$verbpada[],$verbit[],$deva[],$ma[],$ks[],$dh[],$uohyd[],$jnu[]) = explode(':',$verbdatum);
+	}
+	for($i=0;$i<count($verb);$i++)
+	{
+		if (preg_match('/[NYRnmM]['.pc('hl').']$/',$verb1[$i]) && $verbset[$i]==="10")
+		{
+			echo $verbdata[$i]."\n";
+			$i++;
+		}
+	}
+}
+//issue842();
 
 
 /* Functions which are not used in the code */
