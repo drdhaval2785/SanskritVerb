@@ -6486,8 +6486,13 @@ if ( $lakAra!=="" && arr($text,'/s\+D/') && in_array($so,$tiG))
     $text = one(array("s+D"),array("+D"),0);
 	storedata('8.2.25','sa',0);
 }
+/* neTyaliTi radheH (7.1.62) */
+if (in_array($fo,array("raDa!")) && $lakAra!=="liw" && in_array("iw",$Agama) && sub(array("raD"),array("+i"),blank(0),0) )
+{
+	storedata('7.1.62','sa',0);
+}
 /* radhijabhoraci (7.1.61) */
-if (in_array($fo,array("raDa!","jaBi!")) && sub(array("raD","jaB"),array("+"),$ac,0) )
+elseif (in_array($fo,array("raDa!","jaBi!")) && sub(array("raD","jaB"),array("+"),$ac,0) )
 {
     $text=three(array("raD","jaB"),array("+"),$ac,array("ranD","janB"),array("+"),$ac,0);
 	storedata('7.1.61','sa',0);
