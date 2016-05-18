@@ -6180,7 +6180,6 @@ if ( (arr($text,'/^['.pc('hl').']['.pc('hl').'][A][+][y]/')) && in_array($so,$ti
 	$text = one(array("A+y"),array("e+y"),1);
 	storedata('6.4.68','sa',0);
 }
-print_r($text);
 /* skoH saMyogAdyorante ca (8.2.29) */
 if ( (arr($text,'/[s]['.flat($hl).']$/') || arr($text,'/vr[aA]Sc\+/')) && in_array($so,$tiG) && in_array($lakAra,array("ASIrliN")) && $asyati!==1) // for ASIrliN
 {
@@ -6189,7 +6188,6 @@ if ( (arr($text,'/[s]['.flat($hl).']$/') || arr($text,'/vr[aA]Sc\+/')) && in_arr
 	$text = one(array("+yAs+","vraSc","vrASc"),array("+yA+","vrac","vrAc"),0);
 	storedata('8.2.29','sa',0);
 }
-print_r($text);
 /* grahijyAvayivyadhivaSTivicativRzcatipRcCatibhRjjatInAM Giti ca (6.1.16) */
 if (in_array($fo,array("jyA")) && in_array("N",$it) && $so!=="mahiN" && $sanAdi!=="yaNluk" && !($sanAdi==="Ric" && $caG===1))
 {
