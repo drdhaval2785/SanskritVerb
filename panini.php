@@ -3451,7 +3451,6 @@ if (in_array($so,array("ta","Ja")) && $lakAra==="liw")
     $text=two(array("+"),array("ta","Ja"),array("+"),array("eS","irec"),0);
 	storedata('3.4.81','sa',0);
 }
-print_r($text);
 /* na vyo liTi (6.1.46) */ 
 if (in_array($fo,array("vyeY")) && $lakAra==="liw")
 {
@@ -4834,11 +4833,14 @@ if (in_array($fo,array("veY")) && $lakAra==="liw" && in_array("k",$itpratyaya) &
 	storedata('6.1.39','sa',0);
 }
 /* vacisvapiyajAdInAM kiti (6.1.15) */
-elseif ( in_array("k",$itpratyaya) && (in_array($fo,array("brUY","Yizvapa!"))||(in_array($fo,array("yaja!","quvapa!","vaha!","veY","vyeY","hveY","vada!","wuo!Svi!","vaca!","vasa!"))&&$verbset==="BvAdi")) && sub(array("vac","svap","yaj","vap","vah","ve","vye","hve","vad","Sv","vas"),array("+"),blank(0),0))
+elseif ( in_array("k",$itpratyaya) && (in_array($fo,array("brUY","Yizvapa!"))||(in_array($fo,array("yaja!","quvapa!","vaha!","veY","vyeY","hveY","vada!","wuo!Svi","vaca!","vasa!"))&&$verbset==="BvAdi")) && sub(array("vac","svap","yaj","vap","vah","ve","vye","hve","vad","Sv","vas","Svi"),array("+"),blank(0),0))
 {
-    $text=two(array("vac","svap","yaj","vap","vah","ve","vye","hve","vad","Sv","vas"),array("+"),array("uac","suap","iaj","uap","uah","ue","vie","hie","uad","Su","us"),array("+"),0);
+    $text=two(array("vac","svap","yaj","vap","vah","ve","vye","hve","vad","Sv","vas","Svi"),array("+"),array("uac","suap","iaj","uap","uah","ue","vie","hie","uad","Su","us","Su"),array("+"),0);
 	storedata('6.1.15','sa',0);
     $text = samprasarana(array("uac","suap","iaj","uap","ue","vie","hie","uad","Su"),0);
+	$text=change('/^([^+]*)u/','$1U');
+	$text=change('/^([^+]*)i/','$1I');
+	storedata('6.4.2','sa',0);
 }
 /* na vazaH (6.1.20) */
 elseif ( in_array($fo,array("vaSa!")) && sub(array("ya"),blank(0),blank(0),0) && in_array($sanAdi,array("yaN","yaNluk")))
@@ -5024,7 +5026,7 @@ if ( $didhI!==1 && $kGiti!==1 && $caG!==1 && !($lakAra==="liw" && in_array($fo,a
 	}
 }
 /* lopo vyorvali (6.1.66) */
-if ( arr($text,'/a[+]iy[+]['.pc('vl').']/') && in_array($so,$tiG) ) 
+if ( arr($text,'/[aA][+]iy[+]['.pc('vl').']/') && in_array($so,$tiG) ) 
 {
     $text=two(array("a+iy+"),prat('vl'),array("a+i+"),prat('vl'),0);
 	storedata('6.1.66','sa',0);
