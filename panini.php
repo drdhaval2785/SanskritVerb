@@ -799,7 +799,7 @@ elseif ($type==='tiGanta')
 			gui2('7.2.58');
 		}
 		/* na vRdbhyazcaturbhyaH (7.2.59) */
-		elseif ( in_array($fo,array("vftu!","vfDu!","SfDu!","syandU!",)) && (in_array($lakAra,array("lfw","lfN")) || $san===1 ) )
+		elseif ( $verbset==="BvAdi" && in_array($fo,array("vftu!","vfDu!","SfDu!","syandU!",)) && (in_array($lakAra,array("lfw","lfN")) || $san===1 ) )
 		{
 			$verbpada="u";
 			$id_dhAtu="aniw";
