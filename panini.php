@@ -6282,7 +6282,7 @@ if ($lakAra==="liw" && $so==="sip" && arr($text,'/[iIuUfFxXeEoO]\+/') && sub(pra
 /* patch for yAsuT Agama to combine it with the next pratyaya. because it would not be getting iDAgama. */
 //$text = one(array("+yA+"),array("+yA"),0);
 /* Adding iDAgama actually */
-if ($id_dhAtu==="sew" && $id_pratyaya==="sew" && !($yAsuT===1 && $lakAra==="ASIrliN")  && (!in_array("iw",$Agama)||$ciN!==0) && $caG!==1 && $san!==1) // for seT dhAtus
+if ($id_dhAtu==="sew" && $id_pratyaya==="sew" && !($yAsuT===1 && $lakAra==="ASIrliN")  && (!in_array("iw",$Agama)||$ciN===1) && $caG!==1 && $san!==1) // for seT dhAtus
 {
 	$text = change('/[+](['.pc('vl').'][^+]*)$/','+i$1');
 	$text = change('/[+]ii/','+i');
