@@ -24627,3 +24627,14 @@ avartsyAmahi,vfDu!,01.0863,lfN,mahiN
 vavarQa,vfhU!,06.0073,liw,sip
 vavfhva,vfhU!,06.0073,liw,vas
 vavfhma,vfhU!,06.0073,liw,mas
+avarIzyat,vFY,09.0019,lfN,tip
+avarIzyatAm,vFY,09.0019,lfN,tas
+avarIzyan,vFY,09.0019,lfN,Ji
+avarIzyaH,vFY,09.0019,lfN,sip
+avarIzyatam,vFY,09.0019,lfN,Tas
+avarIzyam,vFY,09.0019,lfN,mip
+avarIzyAva,vFY,09.0019,lfN,vas
+avarIzyAma,vFY,09.0019,lfN,mas
+vavarITa,vF,09.0023,liw,sip
+vavarIva,vF,09.0023,liw,vas
+vavarIma,vF,09.0023,liw,mas
