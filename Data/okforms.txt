@@ -24616,3 +24616,14 @@ avartsyaDvam,vftu!,01.0862,lfN,Dvam
 avartsye,vftu!,01.0862,lfN,iw
 avartsyAvahi,vftu!,01.0862,lfN,vahi
 avartsyAmahi,vftu!,01.0862,lfN,mahiN
+avartsyetAm,vfDu!,01.0863,lfN,AtAm
+avartsyanta,vfDu!,01.0863,lfN,Ja
+avartsyaTAH,vfDu!,01.0863,lfN,TAs
+avartsyeTAm,vfDu!,01.0863,lfN,ATAm
+avartsyaDvam,vfDu!,01.0863,lfN,Dvam
+avartsye,vfDu!,01.0863,lfN,iw
+avartsyAvahi,vfDu!,01.0863,lfN,vahi
+avartsyAmahi,vfDu!,01.0863,lfN,mahiN
+vavarQa,vfhU!,06.0073,liw,sip
+vavfhva,vfhU!,06.0073,liw,vas
+vavfhma,vfhU!,06.0073,liw,mas

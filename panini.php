@@ -6343,6 +6343,27 @@ if (in_array($fo,array("wuo!Svi")) && sub(array("Svi"),array("+"),prat('vl'),0) 
 	$text = three(array("Svi","Su+Su"),array("+"),prat('vl'),array("Svi","Su+Su"),array("+i"),prat('vl'),0);
 	storedata('7.2.35','sa',0);
 }
+/* udoSThyapUrvasya (7.1.102) */
+if (arr($text,'/^[pPbBmv]F[+]/')  && in_array($so,$tiG) && !in_array("Sap",$vik) && ($sarvadhatuka===1 || in_array("Sa",$vik) || arr($text,'/[+]yAs[+]/') ) && $ciN!==1 && $ciN!==2 )
+{
+	$text = change('/^([pPbBmv])F[+]/','$1ur+');
+	$text = change('/^([pPbBmv])ur[+]Itu/','$1f+Itu');
+	storedata('7.1.102','sa',0);
+	$text = change('/^([pPbBmv])ur[+]/','$1Ur+');
+	storedata('8.2.77','sa',0);
+}
+/* RRta iddhAtoH (7.1.100) */
+elseif (arr($text,'/^[^pPbBmv]F\+/') && in_array($so,$tiG)  && !in_array("Sap",$vik) && ($sarvadhatuka===1 || in_array("Sa",$vik) || arr($text,'/[+]yAs[+]/') ) && $ciN!==1 && $ciN!==2 )
+{
+    $text=two(array("F"),array("+"),array("ir"),array("+"),0);
+	$text=change('/([iu])r[+]Itu$/','ar+Itu');
+	storedata('7.1.100','sa',0);
+	if (arr($text,'/ir[+]['.pc('hl').']/') && $sanAdi==="yaNluk")
+	{
+		$text=change('/ir[+](['.pc('hl').'])/','Ir+$1');
+		storedata('8.2.77','sa',0);
+	}
+}
 /* cCvoH zUDanunAsike (6.4.19) */ 
 // kvau pending.
 if (arr($text,'/cC[+][YmNRn]/') || (arr($text,'/cC[+]['.pc('Jl').']/') && $kGiti===1) )
@@ -7146,8 +7167,17 @@ elseif ( (in_array($fo,array("vfN","vfY")) || ends(array($verb_without_anubandha
 	$text=two(array("ar",),array("+i"),array("ar"),array("+I"),1);
 	storedata('7.2.38','sa',0);
 }
+/* udoSThyapUrvasya (7.1.102) */
+if (arr($text,'/^[pPbBmv]F[+]/')  && in_array($so,$tiG) && !in_array("Sap",$vik) && ($sarvadhatuka===1 || in_array("Sa",$vik) || arr($text,'/[+]yAs[+]/') || ($sIyuT===1&&$fo==="vFY")) && $ciN!==1 && $ciN!==2 )
+{
+	$text = change('/^([pPbBmv])F[+]/','$1ur+');
+	$text = change('/^([pPbBmv])ur[+]Itu/','$1f+Itu');
+	storedata('7.1.102','sa',0);
+	$text = change('/^([pPbBmv])ur[+]/','$1Ur+');
+	storedata('8.2.77','sa',0);
+}
 /* RRta iddhAtoH (7.1.100) */
-if ( arr($text,'/F[+]['.pc('hl').']/') && ($sarvadhatuka===1 || $ardhadhatuka===1) && $ciN!==1 )
+elseif ( arr($text,'/F[+]['.pc('hl').']/') && ($sarvadhatuka===1 || $ardhadhatuka===1) && $ciN!==1 )
 {
     $text=change('/F[+](['.pc('hl').'])/','ir+$1');
 	storedata('7.1.100','sa',0);
@@ -13597,7 +13627,7 @@ if ( arr($text,'/[vy][+]*['.pc('vl').']/') && in_array($so,$tiG) && in_array("6.
 }
 /* lopo vyorvali (6.1.66) */
 // Not a very good solution. The second member is there to prevent application of this rule in 'vraj'
-elseif ( arr($text,'/[vy][+]*['.pc('vl').']/') && !(arr($text,'/[vy][+]n/')&&$verbset==="kryAdi") && !preg_match('/[vy]['.pc('vl').']/',$verb_without_anubandha) && in_array($so,$tiG) && !in_array("6.1.77",sutrasfromstoredata()))
+elseif ( arr($text,'/[vy][+]*['.pc('vl').']/') && !(preg_match('/f$/',$verb_without_anubandha)&&arr($text,'/^[^+]*ri[+]/'))  && !(arr($text,'/[vy][+]n/')&&$verbset==="kryAdi") && !preg_match('/[vy]['.pc('vl').']/',$verb_without_anubandha) && in_array($so,$tiG) && !in_array("6.1.77",sutrasfromstoredata()))
 {
     $text=change('/([vy])([+]*['.pc('vl').'])/','$2');
 	storedata('6.1.66','sa',0);
