@@ -3129,12 +3129,6 @@ if ( $sic!==0 && $so==="Ji" && arr($text,'/[+]sic[+]Ji$/') && in_array($lakAra,a
 	storedata('3.4.109','sa',0);
 	$sijabhyastavidibhyazca=1;
 }
-/* AtaH (3.4.110) */
-if ( $sic!==0 && $so==="Ji" && sub(array("A"),array("+"),array("Ji"),0) )
-{
-	$text = three(array("A"),array("+"),array("Ji"),array("A"),array("+"),array("jus"),0);
-	storedata('3.4.110','sa',0);
-}
 if ($sanAdi==="yaN")
 {
 	if (arr($text,'/ya[+]Sap[+]/'))
@@ -3457,8 +3451,27 @@ if (in_array($so,array("ta","Ja")) && $lakAra==="liw")
     $text=two(array("+"),array("ta","Ja"),array("+"),array("eS","irec"),0);
 	storedata('3.4.81','sa',0);
 }
+print_r($text);
+/* na vyo liTi (6.1.46) */ 
+if (in_array($fo,array("vyeY")) && $lakAra==="liw")
+{
+	storedata('6.1.46','sa',0);
+}
+/* Adeca upadeze'ziti (6.1.45) */ 
+elseif (in_array($lakAra,$ArdhadhAtuka_lakAra) && ends(array($verb_without_anubandha),array("e","o","E","O"),0) && !sub(array("e","o","E","O"),array("+"),$shitpratyaya,0))
+{
+    $text=two(array("e","o","E","O"),array("+"),array("A","A","A","A"),array("+"),0);
+	$text = two(array("e","o","E","O"),array("+Ri+"),array("A","A","A","A"),array("+Ri+"),0);
+	storedata('6.1.45','sa',0);
+}
 /* AtaH (3.4.110) */
-if ( $lakAra==="luN" && $so==="Ji" && sub(array("A"),array("+"),array("Ji"),0) )
+if ( $sic!==0 && $so==="Ji" && sub(array("A"),array("+"),array("Ji"),0) )
+{
+	$text = three(array("A"),array("+"),array("Ji"),array("A"),array("+"),array("jus"),0);
+	storedata('3.4.110','sa',0);
+}
+/* AtaH (3.4.110) */
+elseif ( $lakAra==="luN" && $so==="Ji" && sub(array("A"),array("+"),array("Ji"),0) )
 {
 	$text = three(array("A"),array("+"),array("Ji"),array("A"),array("+"),array("jus"),0);
 	storedata('3.4.110','sa',0);
@@ -4647,18 +4660,6 @@ if (in_array($fo,array("sfja!","dfSi!r")) && $lakAra==="liw" && $so==="sip")
 {
 	storedata('7.2.65','sa',0);
 	$id_dhAtu="vew";
-}
-/* na vyo liTi (6.1.46) */ 
-if (in_array($fo,array("vyeY")) && $lakAra==="liw")
-{
-	storedata('6.1.46','sa',0);
-}
-/* Adeca upadeze'ziti (6.1.45) */ 
-elseif (in_array($lakAra,$ArdhadhAtuka_lakAra) && ends(array($verb_without_anubandha),array("e","o","E","O"),0) && !sub(array("e","o","E","O"),array("+"),$shitpratyaya,0))
-{
-    $text=two(array("e","o","E","O"),array("+"),array("A","A","A","A"),array("+"),0);
-	$text = two(array("e","o","E","O"),array("+Ri+"),array("A","A","A","A"),array("+Ri+"),0);
-	storedata('6.1.45','sa',0);
 }
 /* Ata au NalaH (7.1.34) */
 if ($lakAra==="liw" && in_array($so,array("tip","mip")) && arr($text,'/A[+]Ra/') )
