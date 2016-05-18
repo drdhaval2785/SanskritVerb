@@ -11306,9 +11306,8 @@ if (in_array($fo,array("SrIpA")) && $gender==="n" && $so==="Ne")
 {
 	storedata('sanAto','pa',0);
 }
-print_r($text);
 /* lazakvataddhite (1.3.8) */
-if ((in_array($type,array("subanta","tiGanta"))||($type==="sandhi"&&$pada==="pratyaya")) && ((arr($text,'/[+][lSkKgGN]/'))||$sarva2===1||$purva===1) && $taddhita === 0  && $sarva === 0 && $san!==1 && sub(array("+"),array("Sas","Ni","SI","Nas","Ne","Si","kvin"),blank(0),0))
+if ((in_array($type,array("subanta","tiGanta"))||($type==="sandhi"&&$pada==="pratyaya")) && ((arr($text,'/[+][lSkKgGN][^+]*$/'))||$sarva2===1||$purva===1) && $taddhita === 0  && $sarva === 0 && $san!==1 && sub(array("+"),array("Sas","Ni","SI","Nas","Ne","Si","kvin"),blank(0),0))
 {
     it('/([+][lSkKgGN])/');
 	storedata('1.3.8','pa',0);
