@@ -7501,7 +7501,6 @@ if ( $lakAra!=="" && arr($text,'/Dv/') && sub(array("s"),array("Dv"),blank(0),0)
     $text = two(array("s"),array("Dv"),array(""),array("Dv"),0);
 	storedata('8.2.25','sa',0);
 }
-print_r($text);
 /* AdezapratyayayoH (8.3.59) */
 if( in_array($so,$tiG) && arr($text,'/([iIuUfFxXeEoOhyvrlkKgGN])([+]*[iI]*)s(['.pc('al').'])/') && !arr($text,'/[+][s]$/') && arr($text,'/s/') && ( $rudAdibhyaH===1 || arr($text,'/[iIuUfFxeEoOhyvrlkKgGN][+]si$/') || $SaHsaH===1 || $sic===1 || $sic===2 || $syatAsI===1 || ends(array($us),prat('ik'),1) || $sIyuT===1 || ($lakAra==="liw" && arr($text,'/[+]ise$/')) ) && !arr($text,'/\+yAs\+/') && !(arr(array($fo),'/^s/') && arr($text,'/^[^+]*[iIuUfFxeEoOhyvrlkKgGN][+]s/')) )
 {
@@ -7540,7 +7539,6 @@ elseif (arr($text,'/[iIuUfFxeEoOhyvrlkKgGN][+]si$/') && $so==="sip")
 	storedata('8.3.59','sa',0);
 	$Adezapratyaya=1;
 }
-print_r($text);
 /* vibhASeTaH (8.3.79) */
 if( in_array($so,$tiG) && (arr($text,'/[iIuUfFxeoEOhyvrl]\+izIDv/') || (arr($text,'/[iIuUfFxeoEOhyvrl]\+iDv['.pc('al').']+$/') && in_array($lakAra,array("luN","liw")) ))  )
 {
@@ -7626,6 +7624,7 @@ if (arr($text,'/daridrA\+/') && in_array($fo,array("daridrA")) && $ardhadhatuka=
     $text=one(array("daridr+s"),array("daridrA+s"),0);
 	storedata('6.4.114-1','sa',0);	
 }
+print_r($text);
 /* apadAntasya mUrdhanyaH (8.3.55), iNkoH (8.3.57) and AdezapratyayayoH (8.3.59) */
 // Not coded perfectly. This is only for tiG pratyayas.
 if(arr($text,'/[iIuUfFxXeoEOhyvrlkKgGN][+]*s['.pc('al').'MH+]+$/') && !arr($text,'/[iIuUfFxXeoEOhyvrl]\+s$/') && in_array($so,$tiG) && !(arr(array($fo),'/^s/') && arr($text,'/[^+]*[+]s/')) && $Adezapratyaya!==1 && $stauti!==1)
@@ -7647,13 +7646,14 @@ if(arr($text,'/[iIuUfFxXeoEOhyvrlkKgGN][+]*s['.pc('al').'MH+]+$/') && !arr($text
 		storedata('8.3.59','sa',0);
 	}
 }
-if(arr($text,'/[iIuUfFxXeoEOhyvrlkKgGN][+][iI]*s['.pc('al').'MH+]+$/') && ($ksa===1||$sic===1) )
+if(arr($text,'/[iIuUfFxXeoEOhyvrlkKgGN][+][iI]*s['.pc('al').'MH+]+$/') && ($ksa===1||$sic===1||$syatAsI===1) )
 {
 	storedata('8.3.55','pa',0);
 	storedata('8.3.57','pa',0);
 	$text = two($iN1,array("+s","+is","+Is"),$iN1,array("+z","+iz","+Iz"),0);
 	storedata('8.3.59','sa',0);
 }
+print_r($text);
 /* For verbs - remove all + marks. */
 /*if(in_array($so,$tiG))
 {
