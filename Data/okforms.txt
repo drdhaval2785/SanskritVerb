@@ -27702,3 +27702,7 @@ asIkizyaDvam,sIkf!,01.0079,lfN,Ta
 asIkizye,sIkf!,01.0079,lfN,mip
 asIkizyAvahi,sIkf!,01.0079,lfN,vas
 asIkizyAmahi,sIkf!,01.0079,lfN,mas
+suzUse,zUN,04.0027,liw,sip
+suzUQve,zUN,04.0027,liw,Ta
+suzUvahe,zUN,04.0027,liw,vas
+suzUmahe,zUN,04.0027,liw,mas

@@ -5866,9 +5866,9 @@ elseif ( in_array($so,$tiG) && (in_array($fo,$curAdi_adanta) || in_array($fo,arr
 	storedata('7.4.2','sa',0);
 }
 /* Nau caGi upadhAyA hrasvaH (7.4.1) */
-elseif ( in_array($so,$tiG)  && $luGset===5 && !arr($text,'/^['.pc('ac').']/') && sub(array("A","I","U","F","X","e","E","o","O"),$hl,array("i+a","i+e"),0) )
+elseif ( in_array($so,$tiG)  && $luGset===5 && !preg_match('/^['.pc('ac').']/',$verb_without_anubandha) && sub(array("A","I","U","F","X","e","E","o","O"),$hl,array("i+a","i+e","+a+","+e"),0) )
 {
-	$text = three(array("A","I","U","F","X","e","E","o","O"),$hl,array("i+a","i+e"),array("a","i","u","f","x","i","i","u","u"),$hl,array("i+a","i+e"),0);
+	$text = three(array("A","I","U","F","X","e","E","o","O"),$hl,array("i+a","i+e","+a+","+e"),array("a","i","u","f","x","i","i","u","u"),$hl,array("i+a","i+e","+a+","+e"),0);
 	storedata('7.4.1','sa',0);
 }
 /* urRt (7.4.7) */
