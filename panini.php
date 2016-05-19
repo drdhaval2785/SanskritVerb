@@ -7541,13 +7541,14 @@ elseif (arr($text,'/[iIuUfFxeEoOhyvrlkKgGN][+]s[^+]+$/') )
 	storedata('8.3.59','sa',0);
 	$Adezapratyaya=1;
 }
-elseif (arr($text,'/[+]ise$/') && in_array($so,array("sip","TAs")))
+if (arr($text,'/[+]is[^+]+$/') )
 {
-	$text = change('/[+]ise$/','+ize');
+	$text = change('/[+]is([^+]+)$/','+iz$1');
+	$text = change('/zIs/','zIz');
+	print_r($text);
 	storedata('8.3.59','sa',0);
 	$Adezapratyaya=1;
 }
-	print_r($text);
 /* vibhASeTaH (8.3.79) */
 if( in_array($so,$tiG) && (arr($text,'/[iIuUfFxeoEOhyvrl]\+izIDv/') || (arr($text,'/[iIuUfFxeoEOhyvrl]\+iDv['.pc('al').']+$/') && in_array($lakAra,array("luN","liw")) ))  )
 {

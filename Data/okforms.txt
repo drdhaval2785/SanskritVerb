@@ -28162,3 +28162,6 @@ astUpizyatam,zwUpa!,04.0191,lfN,Tas
 astUpizyam,zwUpa!,04.0191,lfN,mip
 astUpizyAva,zwUpa!,04.0191,lfN,vas
 astUpizyAma,zwUpa!,04.0191,lfN,mas
+starItAsTaH,stFY,09.0017,luw,Tas
+starItAsvaH,stFY,09.0017,luw,vas
+starItAsmaH,stFY,09.0017,luw,mas
