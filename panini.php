@@ -7533,9 +7533,9 @@ if( in_array($so,$tiG) && arr($text,'/([iIuUfFxXeEoOhyvrlkKgGN])([+]*[iI]*)s(['.
 		$Adezapratyaya=1;		
 	}
 }
-elseif (arr($text,'/[iIuUfFxeEoOhyvrlkKgGN][+]s[ie]$/') && in_array($so,array("sip","TAs")))
+elseif (arr($text,'/[iIuUfFxeEoOhyvrlkKgGN][+]s[^+]+$/') )
 {
-	$text = change('/([iIuUfFxeEoOhyvrlkKgGN][+])s([ie])$/','$1z$2');
+	$text = change('/([iIuUfFxeEoOhyvrlkKgGN][+])s([^+]+)$/','$1z$2');
 	storedata('8.3.59','sa',0);
 	$Adezapratyaya=1;
 }
