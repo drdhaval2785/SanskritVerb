@@ -7501,7 +7501,6 @@ if ( $lakAra!=="" && arr($text,'/Dv/') && sub(array("s"),array("Dv"),blank(0),0)
     $text = two(array("s"),array("Dv"),array(""),array("Dv"),0);
 	storedata('8.2.25','sa',0);
 }
-print_r($text);
 /* AdezapratyayayoH (8.3.59) */
 if( in_array($so,$tiG) && arr($text,'/([iIuUfFxXeEoOhyvrlkKgGN])([+]*[iI]*)s(['.pc('al').'])/') && !arr($text,'/[+][s]$/') && arr($text,'/s/') && ( $rudAdibhyaH===1 || arr($text,'/[iIuUfFxeEoOhyvrlkKgGN][+]si$/') || $SaHsaH===1 || $sic===1 || $sic===2 || $syatAsI===1 || ends(array($us),prat('ik'),1) || $sIyuT===1 || ($lakAra==="liw" && arr($text,'/[+]ise$/')) ) && !arr($text,'/\+yAs\+/') && !(arr(array($fo),'/^s/') && arr($text,'/^[^+]*[iIuUfFxeEoOhyvrlkKgGN][+]s/')) )
 {
@@ -7534,9 +7533,15 @@ if( in_array($so,$tiG) && arr($text,'/([iIuUfFxXeEoOhyvrlkKgGN])([+]*[iI]*)s(['.
 		$Adezapratyaya=1;		
 	}
 }
-elseif (arr($text,'/[iIuUfFxeEoOhyvrlkKgGN][+][i]*s[ie]$/') && in_array($so,array("sip","TAs")))
+elseif (arr($text,'/[iIuUfFxeEoOhyvrlkKgGN][+]si$/') && in_array($so,array("sip","TAs")))
 {
-	$text = change('/([iIuUfFxeEoOhyvrlkKgGN][+][i]*)s([ie])$/','$1z$2');
+	$text = change('/([iIuUfFxeEoOhyvrlkKgGN][+])si$/','$1zi');
+	storedata('8.3.59','sa',0);
+	$Adezapratyaya=1;
+}
+elseif (arr($text,'/[+]ise$/') && in_array($so,array("sip","TAs")))
+{
+	$text = change('/[+]ise$/','+ize');
 	storedata('8.3.59','sa',0);
 	$Adezapratyaya=1;
 }
