@@ -5562,7 +5562,7 @@ if ( in_array($fo,array("UrRuY"))  && $id_dhAtu==="sew" && $id_pratyaya==="sew" 
 	storedata('1.2.3','sa',0);
 }    
 /* eliding it markers from sic */ 
-if (arr($text,'/sic/') && sub(array("+sic+",),blank(0),blank(0),0) && in_array($so,$tiG) )
+if (arr($text,'/sic/') && $sic!==0 && sub(array("+sic+",),blank(0),blank(0),0) && in_array($so,$tiG) )
 {
 	storedata('1.3.3','pa',0);
 	storedata('1.3.2','pa',0);
