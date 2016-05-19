@@ -3878,7 +3878,6 @@ if (arr($text,'/\+Ri[c]{0,1}\+/')||$ciN===1||$ciN===2)
 		$text = change('/(['.pc('hl').'])[+]i[+]/','$1i+');
 	}
 }
-print_r($text);
 /* udoSThyapUrvasya (7.1.102) */
 if (arr($text,'/^[pPbBmv]F[+]/')  && in_array($so,$tiG) && !in_array("Sap",$vik) && ($sarvadhatuka===1 || in_array("Sa",$vik) || arr($text,'/[+]yA/')) && $ciN!==1 && $ciN!==2 )
 {
@@ -7534,9 +7533,9 @@ if( in_array($so,$tiG) && arr($text,'/([iIuUfFxXeEoOhyvrlkKgGN])([+]*[iI]*)s(['.
 		$Adezapratyaya=1;		
 	}
 }
-elseif (arr($text,'/[iIuUfFxeEoOhyvrlkKgGN][+]si$/') && in_array($so,array("sip","TAs")))
+elseif (arr($text,'/[iIuUfFxeEoOhyvrlkKgGN][+]s[ie]$/') && in_array($so,array("sip","TAs")))
 {
-	$text = change('/([iIuUfFxeEoOhyvrlkKgGN][+])si$/','$1zi');
+	$text = change('/([iIuUfFxeEoOhyvrlkKgGN][+])s([ie])$/','$1z$2');
 	storedata('8.3.59','sa',0);
 	$Adezapratyaya=1;
 }
