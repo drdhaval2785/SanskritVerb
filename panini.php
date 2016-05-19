@@ -7634,9 +7634,10 @@ if (arr($text,'/daridrA\+/') && in_array($fo,array("daridrA")) && $ardhadhatuka=
     $text=one(array("daridr+s"),array("daridrA+s"),0);
 	storedata('6.4.114-1','sa',0);	
 }
+print_r($text);
 /* apadAntasya mUrdhanyaH (8.3.55), iNkoH (8.3.57) and AdezapratyayayoH (8.3.59) */
 // Not coded perfectly. This is only for tiG pratyayas.
-if(arr($text,'/[iIuUfFxXeoEOhyvrlkKgGN][+]*s['.pc('al').'MH+]+$/') && !arr($text,'/[iIuUfFxXeoEOhyvrl]\+s$/') && in_array($so,$tiG) && !(arr(array($fo),'/^s/') && arr($text,'/[^+]*[+]s/')) && $Adezapratyaya!==1 && $stauti!==1)
+if(arr($text,'/[iIuUfFxXeoEOhyvrlkKgGN][+]*s['.pc('al').'MH+]+$/') && !arr($text,'/[iIuUfFxXeoEOhyvrl]\+s$/') && in_array($so,$tiG) && !(arr(array($verb_without_anubandha),'/^s/') && arr($text,'/[^+]*[+]s/')) && $Adezapratyaya!==1 && $stauti!==1)
 {
 	$in = $text;
 	$text = two($iN1,array("+s",),$iN1,array("+z",),0);
@@ -7662,6 +7663,7 @@ if(arr($text,'/[iIuUfFxXeoEOhyvrlkKgGN][+][iI]*s['.pc('al').'MH+]+$/') && ($ksa=
 	$text = two($iN1,array("+s","+is","+Is"),$iN1,array("+z","+iz","+Iz"),0);
 	storedata('8.3.59','sa',0);
 }
+print_r($text);
 /* For verbs - remove all + marks. */
 /*if(in_array($so,$tiG))
 {
