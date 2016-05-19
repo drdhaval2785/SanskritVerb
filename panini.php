@@ -3207,10 +3207,11 @@ if ( !in_array($fo,$allverbs) && sub(array("+Ric+Sap+","+RiN+Sap+"),$tiG,blank(0
 		storedata('6.4.163','sa',0);
     }
 }
+print_r($text);
 /* pAghrAdhmAsthAmnAdANdRzyartizadasadAM pibajighradhamatiSThamanayacCapazyarcCadhaushIyasIdAH (7.3.78) */
-if (in_array($so,$tiG) && $lakAra!=="" && in_array($fo,array("pA","GrA","DmA","zWA","mnA","dAR","dfSi!r","f","sf","Sadx!","zadx!","zWA")) && sub(array("pA","GrA","DmA","zWA","mnA","dA","dfS","f","sf","Sad","zad"),array("+"),$shitpratyaya,0) && !($fo==="f" && $verbset==="svAdi") )
+if (in_array($so,$tiG) && $lakAra!=="" && in_array($fo,array("pA","GrA","DmA","zWA","mnA","dAR","dfSi!r","f","sf","Sadx!","zadx!","zWA")) && sub(array("pA","GrA","DmA","zWA","mnA","dA","dfS","f","sf","Sad","zad","sad"),array("+"),$shitpratyaya,0) && !($fo==="f" && $verbset==="svAdi") )
 {
-    $text=three(array("pA","GrA","DmA","zWA","mnA","dA","dfS","sf","f","Sad","zad"),array("+"),$shitpratyaya,array("piba","jiGra","Dama","tizWa","mana","yacCa","paSya","DO","fcCa","SIya","sIda"),array("+"),$shitpratyaya,0);
+    $text=three(array("pA","GrA","DmA","zWA","mnA","dA","dfS","sf","f","Sad","zad","sad"),array("+"),$shitpratyaya,array("piba","jiGra","Dama","tizWa","mana","yacCa","paSya","DO","fcCa","SIya","sIda","sIda"),array("+"),$shitpratyaya,0);
 	storedata('7.3.78','sa',0);
     $nomidelision=1; // We will remember this while doing halantyam and prevent halantyam application, because these are not upadeza
 	$vijait=1; // to prevent application of pugantalaghUpadhasya ca.
