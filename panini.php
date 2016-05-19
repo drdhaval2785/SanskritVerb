@@ -5053,7 +5053,7 @@ if ($debug===1) {dibug("2900");}
 /* ze mucAdInAm (7.1.59) */
 if ( ($verbset==="tudAdi" || ($verbset==="none" && in_array($fo,$tudAdi)) ) && $lakAra!=="" && (sub($tudAdi_mucAdi,array("+"),array("a+"),0) || sub($tudAdi_mucAdi,array("+"),array("e"),0))  )
 {
-    $mucAdireplace=array("munc","lunp","vind","linp","zinc","Kind","kfnt","pinS");
+    $mucAdireplace=array("munc","lunp","vind","linp","zinc","Kind","kfnt","pinS","sinc");
     $text = two($tudAdi_mucAdi,array("+a","+e"),$mucAdireplace,array("+a","+e"),0);
 	storedata('7.1.59','sa',0);
 }
