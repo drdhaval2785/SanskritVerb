@@ -3033,16 +3033,6 @@ if ($lakAra==="luN")
 		$luGset=5;
 		$caG=1;
 	}
-	/* vibhASA dheTzvyoH (3.1.49) */
-	elseif ( ends(array($fo),array("Dew","wuo!Svi"),2) && in_array($so,$tiG) )
-	{
-		$text = one(array("+cli+"),array("+caN+"),1);
-		storedata('3.1.49','sa',0);
-		$it = array_merge($it,array("N"));
-		$itpratyaya = array_merge($itpratyaya,array("N"));
-		$luGset=5;
-		$caG=1;
-	}
 	/* gupezCandasi (3.1.50) */
 	elseif ( ends(array($fo),array("gupa!"),2) && in_array($so,$tiG) && $_GET['cond55']==="1")
 	{
@@ -3062,6 +3052,16 @@ if ($lakAra==="luN")
 		storedata('1.3.3','pa',0);
 		$text = one(array("+ciR"),array("+i"),0);
 		storedata('1.3.9','sa',0);
+	}
+	/* vibhASA dheTzvyoH (3.1.49) */
+	if ( ends(array($fo),array("Dew","wuo!Svi"),2) && in_array($so,$tiG) )
+	{
+		$text = one(array("+cli+"),array("+caN+"),1);
+		storedata('3.1.49','sa',0);
+		$it = array_merge($it,array("N"));
+		$itpratyaya = array_merge($itpratyaya,array("N"));
+		$luGset=5;
+		//$caG=1;
 	}
 	/* cleH sic (3.1.44) */
 	if (sub(array("+"),array("cli"),array("+"),0) )
@@ -4156,8 +4156,24 @@ if ($debug===1) {dibug("2000");}
 /* zvayateraH (7.4.18) */
 if (in_array($fo,array("wuo!Svi")) && $lakAra==="luN" && sub(array("Svi"),array("+a+"),blank(0),0) )
 {
-	$text = two(array("Svi"),array("+a+"),array("Sva"),array("+a+"),1); // 1 because of aG and caG both forms.
+	$text = two(array("Svi"),array("+a+"),array("Sva"),array("+a+"),0); // 1 because of aG and caG both forms.
 	storedata('7.4.18','sa',0);
+	foreach ($text as $value)
+	{
+		if (preg_match('/[+]caN[+]/',$value))
+		{
+			$caGable[] = preg_replace('/[+]caN[+]/','+a+',$value);
+		}
+		else
+		{
+			$neutral[] = $value;
+		}
+	}
+	$text = $caGable;
+	caG_halAdi();
+	abhyAsa_halAdi();
+	$text = array_merge($text,$neutral);
+	$caGable = array(); $neutral = array();
 }
 /* pataH pum (7.4.19) */
 if (in_array($fo,array("patx!")) && $lakAra==="luN" && sub(array("pat"),array("+a+"),blank(0),0) ) 
@@ -7023,7 +7039,7 @@ if (in_array($fo,array("rudi!r","Yizvapa!","zvapa!","Svasa!","prARa!","ana!","ja
     $rudAdibhyaH = 1;
 }
 /* skoH saMyogAdyorante ca (8.2.29) */
-if ($rakS===0 && $pipakS===0 && $rudAdibhyaH!==1 && (arr($text,'/[sk]['.pc('hl').']\+['.pc('Jl').']/') || arr($text,'/[sk]['.flat($hl).'][+]$/')) )
+if ($rakS===0 && $pipakS===0 && $rudAdibhyaH!==1 && (arr($text,'/['.pc('ac').'][sk]['.pc('hl').']\+['.pc('Jl').']/') || arr($text,'/[sk]['.flat($hl).'][+]$/')) )
 {
     $text = three(array("s","k"),$hlplus,prat("Jl"),array("",""),$hlplus,prat("Jl"),0);
 	storedata('8.2.29','sa',0);
