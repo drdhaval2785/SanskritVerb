@@ -5386,16 +5386,13 @@ if ( in_array($fo,array("Gasa!","Basa!")) && pr2(array("Gas","Bas"),array("+"),$
 	storedata('6.4.100','sa',0);
 }
 /* sArvadhAtukamapit (1.2.4) */
-if (  !in_array("Sap",$vik) && !in_array("N",$itpratyaya) && $sarvadhatuka===1 && sub(array("+"),$apit_sArvadhAtuka_pratyayas,blank(0),0) && $kGiti!==1  && $znasorallopaH!==1)
+if (  !in_array("Sap",$vik) && !in_array("N",$itpratyaya) && $sarvadhatuka===1 && $kGiti!==1  && $znasorallopaH!==1)
 {
     $it=array_merge($it,array("N"));
     $itpratyaya=array_merge($itpratyaya,array("N"));
 	storedata('1.2.4','pa',0);
-	if (pr2(pc('ik'),array("+"),$apit_sArvadhAtuka_pratyayas,pc('ik'),array("+fadfad"),$apit_sArvadhAtuka_pratyayas,$text)!== $text)
-	{
-		storedata('1.1.5','sa',0);
-		$kGiti=1;	
-	}
+	storedata('1.1.5','sa',0);
+	$kGiti=1;	
 }
 /* mRjervRddhiH (7.2.114) */
 if (  in_array($so,$tiG)&& $fo==="mfjU!" && (in_array("N",$itpratyaya)||in_array("k",$itpratyaya)) && arr($text,'/mfj[+]['.pc('ac').']/') )
