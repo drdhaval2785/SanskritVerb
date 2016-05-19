@@ -7537,14 +7537,14 @@ if( in_array($so,$tiG) && arr($text,'/([iIuUfFxXeEoOhyvrlkKgGN])([+]*[iI]*)s(['.
 elseif (arr($text,'/[iIuUfFxeEoOhyvrlkKgGN][+]s[^+]+$/') )
 {
 	$text = change('/([iIuUfFxeEoOhyvrlkKgGN][+])s([^+]+)$/','$1z$2');
-	$text = change('/zIs/','zIz');
+	$text = change('/zIs([^+]+)$/','zIz$1');
 	storedata('8.3.59','sa',0);
 	$Adezapratyaya=1;
 }
 if (arr($text,'/[+]is[^+]+$/') )
 {
 	$text = change('/[+]is([^+]+)$/','+iz$1');
-	$text = change('/zIs/','zIz');
+	$text = change('/zIs([^+]+)$/','zIz$1');
 	print_r($text);
 	storedata('8.3.59','sa',0);
 	$Adezapratyaya=1;
