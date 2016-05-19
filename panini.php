@@ -3862,7 +3862,7 @@ if (arr($text,'/\+Ri[c]{0,1}\+/')||$ciN===1||$ciN===2)
 		storedata('6.4.51','sa',0);
 	}
 	/* sArvadhAtukArdhadhAtukayoH (7.3.84) */
-	if(arr($text,'/['.pc('hl').']([+]*)i\+/') && !in_array($lakAra,array("ASIrliN")) && $caG!==1 && $aG!==1 && $id_dhAtu!=="aniw")
+	if(arr($text,'/['.pc('hl').']([+]*)i\+/') && !(in_array($lakAra,array("ASIrliN"))&&in_array($so,$tis)) && $caG!==1 && $aG!==1 && $id_dhAtu!=="aniw")
 	{
 		$text=two($hl,array("+i+"),$hl,array("e+"),0);
 		$text=two($hl,array("i+"),$hl,array("e+"),0);
@@ -3878,6 +3878,7 @@ if (arr($text,'/\+Ri[c]{0,1}\+/')||$ciN===1||$ciN===2)
 		$text = change('/(['.pc('hl').'])[+]i[+]/','$1i+');
 	}
 }
+print_r($text);
 /* udoSThyapUrvasya (7.1.102) */
 if (arr($text,'/^[pPbBmv]F[+]/')  && in_array($so,$tiG) && !in_array("Sap",$vik) && ($sarvadhatuka===1 || in_array("Sa",$vik) || arr($text,'/[+]yA/')) && $ciN!==1 && $ciN!==2 )
 {
