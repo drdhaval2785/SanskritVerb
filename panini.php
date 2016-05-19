@@ -7527,6 +7527,7 @@ if( in_array($so,$tiG) && arr($text,'/([iIuUfFxXeEoOhyvrlkKgGN])([+]*[iI]*)s(['.
 	{
 		$text = one(array("kuzm","DUz","kuz","tuz","piz","puzt","puzw","pez","pyuz","biz","buz","buzt","buzw","bez","byuz","brUz","muz","viz","vuz","vez","vyuz","vrUz","snuz","muzt"),array("kusm","DUs","kus","tus","pis","pust","pust","pes","pyus","bis","bus","bust","bust","bes","byus","brUs","mus","vis","vus","ves","vyus","vrUs","snus","must"),0);
 	}
+	$text = change('/zIs/','zIz');
 	if ($in!==$text )
 	{
 		storedata('8.3.59','sa',0);
@@ -7536,6 +7537,7 @@ if( in_array($so,$tiG) && arr($text,'/([iIuUfFxXeEoOhyvrlkKgGN])([+]*[iI]*)s(['.
 elseif (arr($text,'/[iIuUfFxeEoOhyvrlkKgGN][+]s[^+]+$/') )
 {
 	$text = change('/([iIuUfFxeEoOhyvrlkKgGN][+])s([^+]+)$/','$1z$2');
+	$text = change('/zIs/','zIz');
 	storedata('8.3.59','sa',0);
 	$Adezapratyaya=1;
 }
@@ -7545,6 +7547,7 @@ elseif (arr($text,'/[+]ise$/') && in_array($so,array("sip","TAs")))
 	storedata('8.3.59','sa',0);
 	$Adezapratyaya=1;
 }
+	print_r($text);
 /* vibhASeTaH (8.3.79) */
 if( in_array($so,$tiG) && (arr($text,'/[iIuUfFxeoEOhyvrl]\+izIDv/') || (arr($text,'/[iIuUfFxeoEOhyvrl]\+iDv['.pc('al').']+$/') && in_array($lakAra,array("luN","liw")) ))  )
 {
