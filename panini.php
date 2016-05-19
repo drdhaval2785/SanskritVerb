@@ -3207,7 +3207,6 @@ if ( !in_array($fo,$allverbs) && sub(array("+Ric+Sap+","+RiN+Sap+"),$tiG,blank(0
 		storedata('6.4.163','sa',0);
     }
 }
-print_r($text);
 /* pAghrAdhmAsthAmnAdANdRzyartizadasadAM pibajighradhamatiSThamanayacCapazyarcCadhaushIyasIdAH (7.3.78) */
 if (in_array($so,$tiG) && $lakAra!=="" && in_array($fo,array("pA","GrA","DmA","zWA","mnA","dAR","dfSi!r","f","sf","Sadx!","zadx!","zWA")) && sub(array("pA","GrA","DmA","zWA","mnA","dA","dfS","f","sf","Sad","zad","sad"),array("+"),$shitpratyaya,0) && !($fo==="f" && $verbset==="svAdi") )
 {
@@ -6833,13 +6832,14 @@ if ( arr($text,'/vaDa\+i/') )
     $atolopa=1;
 }
 /* skoH saMyogAdyorante ca (8.2.29) */
-if ( (arr($text,'/[s]['.flat($hl).'][+]/') || arr($text,'/vrASc\+/') ) && in_array($so,$tiG) && in_array($lakAra,array("luN")) && $asyati!==1 && !preg_match('/s['.pc('hl').']/',$verb_without_anubandha)) // for luN
+if ( (arr($text,'/[s]['.flat($hl).'][+]/') || arr($text,'/vrASc\+/') ) && in_array($so,$tiG) && in_array($lakAra,array("luN")) && $asyati!==1 && !preg_match('/s['.pc('hl').']/',$verb_without_anubandha) && !preg_match('/jj$/',$verb_without_anubandha)) // for luN
 {
 	foreach ($hl as $value) { $ska[] = "s".$value."+"; }
 	$text = one($ska,$hlplus,0);
 	$text = one(array("vrASc"),array("vrAc"),0);
 	storedata('8.2.29','sa',0);
 }
+print_r($text);
 /* sArvadhAtukArdhadhAtukayoH (7.3.84) */
 // patch for zvi, jAgf etc.
 if (arr($text,'/\+is/') && sub(array("Svi","jAgf"),array("+"),array("is"),0) )
