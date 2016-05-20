@@ -5738,7 +5738,6 @@ if (arr($text,'/[^+]*A\+/') && !in_array($lakAra,array("viDiliN","ASIrliN")) && 
 	$text=change('/I[+]tu$/','A+tu'); // To overcome Gittva of tAtaG.
 	storedata('6.4.113','sa',0);
 }
-print_r($text);
 /* znA'bhyastayorAtaH (6.4.112) */
 if (arr($text,'/^[^+]*A[+]/') && $abhyasta===1 && pr2(array("A"),array("+"),$apit_sArvadhAtuka_pratyayas,array(""),array("+"),$apit_sArvadhAtuka_pratyayas,$text)!==$text && !arr($text,'/[+]yA[+][mv]a/') && $sarvadhatuka===1)
 {
@@ -13723,7 +13722,7 @@ storedata('8.4.44','sa',0);
 }
 /* anAmnavatinagarINAmiti vAcyam (vA 5016) */
 $shtu = array("z","w","W","q","Q","R",); // SakAra and Tavarga.
-if (arr($text,'/[zwWqQR]([+]*)n/') && sub($shtu,array("nAm","navat","nagar"),blank(0),0) && $allopo!==1)
+if (arr($text,'/[zwWqQR]([+]*)n/') && pr2($shtu,array("nAm","navat","nagar"),blank(0),$shtu,array("nAm","navat","nagar"),blank(0),$text)!==$text && $allopo!==1)
 {
 $text = two($shtu,array("nAm","navat","nagar"),$shtu,array("RAm","Ravat","Ragar"),0);
 storedata('anAmn','sa',0);
