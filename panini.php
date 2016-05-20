@@ -5021,7 +5021,7 @@ if ($caG===1 && arr($text,'/^['.pc('hl').']/') && $sanAdi!=="Ric")
 	$abhyAsa=1;
 }
 /* sArvadhAtukamapit (1.2.4) */
-if ($sarvadhatuka===1 && !in_array('1.2.4',sutrasfromstoredata()) && !in_array("Sap",$vik) && !($verbset==="juhotyAdi" && in_array($so,$tis)) && pr2(array("+"),$apit_sArvadhAtuka_pratyayas,blank(0),array("+fadfad"),$apit_sArvadhAtuka_pratyayas,blank(0),$text)!== $text)//  && $znasorallopaH!==1 ) // See https://github.com/drdhaval2785/SanskritVerb/issues/267
+if ($sarvadhatuka===1 && !in_array('1.2.4',sutrasfromstoredata()) && !in_array("Sap",$vik) && !($verbset==="juhotyAdi" && in_array($so,array("tip","sip","mip"))) && pr2(array("+"),$apit_sArvadhAtuka_pratyayas,blank(0),array("+fadfad"),$apit_sArvadhAtuka_pratyayas,blank(0),$text)!== $text)//  && $znasorallopaH!==1 ) // See https://github.com/drdhaval2785/SanskritVerb/issues/267
 {
     $it=array_merge($it,array("N"));
     $itpratyaya=array_merge($itpratyaya,array("N"));
@@ -5396,7 +5396,7 @@ if ( in_array($fo,array("Gasa!","Basa!")) && pr2(array("Gas","Bas"),array("+"),$
 	storedata('6.4.100','sa',0);
 }
 /* sArvadhAtukamapit (1.2.4) */
-if (  !in_array("Sap",$vik) && !($verbset==="juhotyAdi" && in_array($so,$tis)) && !in_array("N",$itpratyaya) && $sarvadhatuka===1 && $kGiti!==1  && $znasorallopaH!==1)
+if (  !in_array("Sap",$vik) && !($verbset==="juhotyAdi" && in_array($so,array("tip","sip","mip"))) && !in_array("N",$itpratyaya) && $sarvadhatuka===1 && $kGiti!==1  && $znasorallopaH!==1)
 {
     $it=array_merge($it,array("N"));
     $itpratyaya=array_merge($itpratyaya,array("N"));
