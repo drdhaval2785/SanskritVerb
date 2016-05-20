@@ -5021,7 +5021,7 @@ if ($caG===1 && arr($text,'/^['.pc('hl').']/') && $sanAdi!=="Ric")
 	$abhyAsa=1;
 }
 /* sArvadhAtukamapit (1.2.4) */
-if ($sarvadhatuka===1 && !in_array('1.2.4',sutrasfromstoredata()) && !in_array("Sap",$vik) && pr2(array("+"),$apit_sArvadhAtuka_pratyayas,blank(0),array("+fadfad"),$apit_sArvadhAtuka_pratyayas,blank(0),$text)!== $text)//  && $znasorallopaH!==1 ) // See https://github.com/drdhaval2785/SanskritVerb/issues/267
+if ($sarvadhatuka===1 && !in_array('1.2.4',sutrasfromstoredata()) && !in_array("Sap",$vik) && !($verbset==="juhotyAdi" && in_array($so,$tis)) && pr2(array("+"),$apit_sArvadhAtuka_pratyayas,blank(0),array("+fadfad"),$apit_sArvadhAtuka_pratyayas,blank(0),$text)!== $text)//  && $znasorallopaH!==1 ) // See https://github.com/drdhaval2785/SanskritVerb/issues/267
 {
     $it=array_merge($it,array("N"));
     $itpratyaya=array_merge($itpratyaya,array("N"));
@@ -5396,7 +5396,7 @@ if ( in_array($fo,array("Gasa!","Basa!")) && pr2(array("Gas","Bas"),array("+"),$
 	storedata('6.4.100','sa',0);
 }
 /* sArvadhAtukamapit (1.2.4) */
-if (  !in_array("Sap",$vik) && $verbset!=="juhotyAdi" && !in_array("N",$itpratyaya) && $sarvadhatuka===1 && $kGiti!==1  && $znasorallopaH!==1)
+if (  !in_array("Sap",$vik) && !($verbset==="juhotyAdi" && in_array($so,$tis)) && !in_array("N",$itpratyaya) && $sarvadhatuka===1 && $kGiti!==1  && $znasorallopaH!==1)
 {
     $it=array_merge($it,array("N"));
     $itpratyaya=array_merge($itpratyaya,array("N"));
@@ -5705,6 +5705,36 @@ if (arr($text,'/kfp/') && $sanAdi==="yaNluk")
 {
     $text=one(array("carI+kfp","cari+kfp","car+kfp","kfp"),array("calI+kxp","cali+kxp","cal+kxp","kxp"),0);
 	storedata('8.2.18','sa',0);
+}
+/* jahAtezca (6.4.116) */
+if (arr($text,'/jahA\+/') && sub(array("jahA"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,0) && (in_array("N",$it)||in_array("k",$it)) && $abhyasta===1)
+{
+    $text=three(array("jahA"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("jahi"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,1);
+	storedata('6.4.116','sa',0);
+}
+/* I halyaghoH (6.4.113) */
+if (arr($text,'/\+nA\+/') && sub(array("+"),array("nA+"),$halAdi_apit_sArvadhAtuka_pratyayas,0) && (in_array("N",$it)||in_array("N",$it)) && $sanAdi!=="yaN")
+{
+    $text=two(array("+nA+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("+nI+"),$halAdi_apit_sArvadhAtuka_pratyayas,0);
+	storedata('6.4.113','sa',0);
+}
+if (arr($text,'/\+nA\+y[A+]/') && sub(array("+"),array("nA+yA","nA+y+am"),blank(0),0) && $sanAdi!=="yaN" ) # https://github.com/drdhaval2785/SanskritVerb/issues/335
+{
+    $text=one(array("+nA+yA","nA+y+am"),array("+nI+yA","nI+yam"),0);
+	storedata('6.4.113','sa',0);
+}
+if ($sanAdi==="yaNluk" && arr($text,'/[^+]*A[+]['.pc('hl').'][^+]*$/') && !in_array($lakAra,array("ASIrliN")) && sub(array("A"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,0) && $abhyasta===1 && $ghu!==1 && $sarvadhatuka===1)
+{
+    $text=three(array("A"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("I"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,0);
+	storedata('6.4.113','sa',0);
+}
+print_r($text);
+/* I halyaghoH (6.4.113) */
+if (arr($text,'/[^+]*A\+/') && !in_array($lakAra,array("viDiliN","ASIrliN")) && pr2(array("A"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("I"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,$text)!==$text && (in_array("N",$it)||in_array("k",$it)) && $abhyasta===1 && $ghu!==1 && $sanAdi!=="yaN" && $sanAdi!=="yaNluk")
+{
+    $text=pr2(array("A"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("I"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,$text);
+	$text=change('/I[+]tu$/','A+tu'); // To overcome Gittva of tAtaG.
+	storedata('6.4.113','sa',0);
 }
 /* znA'bhyastayorAtaH (6.4.112) */
 if (arr($text,'/^[^+]*A[+]/') && $abhyasta===1 && pr2(array("A"),array("+"),$apit_sArvadhAtuka_pratyayas,array(""),array("+"),$apit_sArvadhAtuka_pratyayas,$text)!==$text && !arr($text,'/[+]yA[+][mv]a/') && $sarvadhatuka===1)
@@ -6098,35 +6128,6 @@ if (arr($text,'/yAam/'))
 {
 	$text = change('/yAam$/','yAm');
 	storedata('6.1.101','sa',0);
-}
-/* jahAtezca (6.4.116) */
-if (arr($text,'/jahA\+/') && sub(array("jahA"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,0) && (in_array("N",$it)||in_array("k",$it)) && $abhyasta===1)
-{
-    $text=three(array("jahA"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("jahi"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,1);
-	storedata('6.4.116','sa',0);
-}
-/* I halyaghoH (6.4.113) */
-if (arr($text,'/\+nA\+/') && sub(array("+"),array("nA+"),$halAdi_apit_sArvadhAtuka_pratyayas,0) && (in_array("N",$it)||in_array("N",$it)) && $sanAdi!=="yaN")
-{
-    $text=two(array("+nA+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("+nI+"),$halAdi_apit_sArvadhAtuka_pratyayas,0);
-	storedata('6.4.113','sa',0);
-}
-if (arr($text,'/\+nA\+y[A+]/') && sub(array("+"),array("nA+yA","nA+y+am"),blank(0),0) && $sanAdi!=="yaN" ) # https://github.com/drdhaval2785/SanskritVerb/issues/335
-{
-    $text=one(array("+nA+yA","nA+y+am"),array("+nI+yA","nI+yam"),0);
-	storedata('6.4.113','sa',0);
-}
-if ($sanAdi==="yaNluk" && arr($text,'/[^+]*A[+]['.pc('hl').'][^+]*$/') && !in_array($lakAra,array("ASIrliN")) && sub(array("A"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,0) && $abhyasta===1 && $ghu!==1 && $sarvadhatuka===1)
-{
-    $text=three(array("A"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("I"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,0);
-	storedata('6.4.113','sa',0);
-}
-/* I halyaghoH (6.4.113) */
-if (arr($text,'/[^+]*A\+/') && !in_array($lakAra,array("viDiliN","ASIrliN")) && pr2(array("A"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("I"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,$text)!==$text && (in_array("N",$it)||in_array("k",$it)) && $abhyasta===1 && $ghu!==1 && $sanAdi!=="yaN" && $sanAdi!=="yaNluk")
-{
-    $text=pr2(array("A"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("I"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,$text);
-	$text=change('/I[+]tu$/','A+tu'); // To overcome Gittva of tAtaG.
-	storedata('6.4.113','sa',0);
 }
 /* eranekAco'saMyogapUrvasya (6.4.82) */
 if ($sanAdi==="yaNluk" && arr($text,'/[^'.pc('hl').']['.pc('hl').'][iI][+]['.pc('ac').'][^+]*$/') )
