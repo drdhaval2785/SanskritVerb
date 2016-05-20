@@ -29478,3 +29478,4 @@ asvetsyAva,zvidA!,04.0085,lfN,vas
 asvetsyAma,zvidA!,04.0085,lfN,mas
 sasvarva,svf,01.1081,liw,vas
 sasvarma,svf,01.1081,liw,mas
+ahawatam,hawa!,01.0349,laN,Tas

@@ -6619,7 +6619,7 @@ if (arr($text,'/['.pc('hl').'][+]['.pc('Jl').']/') && sub(array("dah","dAh","dih
     $hodha1 = 1; // 0 - doesn't prevent ho DhaH. 1 - prevents ho DhaH.
 } else { $hodha1 = 0; } 
 /* anudAttopadezavanatitanotyAdInAmanunAsikalopo jhali kGiti (6.4.37) */
-if ( in_array($so,$tiG) && (in_array("N",$it)||in_array("k",$it)) && !arr($text,'/\+[hyvrYmNRn]/') && pr2(array("man","han","gam","ram","nam","yam","van","tan","san","kzaR","kziR","fR","tfR","GfR","man",),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("ma","ha","ga","ra","na","ya","va","ta","sa","kza","kzi","f","tf","Gf","ma",),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,$text)!==$text )
+if ( in_array($so,$tiG) && (in_array("N",$it)||in_array("k",$it)) && (!arr($text,'/\+[hyvrYmNRn]/')||arr($text,'/[+]hi$/')) && pr2(array("man","han","gam","ram","nam","yam","van","tan","san","kzaR","kziR","fR","tfR","GfR","man",),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("ma","ha","ga","ra","na","ya","va","ta","sa","kza","kzi","f","tf","Gf","ma",),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,$text)!==$text )
 {
     $text = pr2(array("man","han","gam","ram","nam","yam","van","tan","san","kzaR","kziR","fR","tfR","GfR","man",),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("ma","ha","ga","ra","na","ya","va","ta","sa","kza","kzi","f","tf","Gf","ma",),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,$text);
 	storedata('6.4.37','sa',0);
