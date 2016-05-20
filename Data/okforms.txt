@@ -30551,3 +30551,11 @@ ahvayaTAH,hveY,01.1163,laN,TAs
 hvayeyuH,hveY,01.1163,viDiliN,Ji
 hvayeH,hveY,01.1163,viDiliN,sip
 hvayeTAH,hveY,01.1163,viDiliN,TAs
+ahvAsyat,hveY,01.1163,lfN,tip
+ahvAsyatAm,hveY,01.1163,lfN,tas
+ahvAsyan,hveY,01.1163,lfN,Ji
+ahvAsyaH,hveY,01.1163,lfN,sip
+ahvAsyatam,hveY,01.1163,lfN,Tas
+ahvAsyam,hveY,01.1163,lfN,mip
+ahvAsyAva,hveY,01.1163,lfN,vas
+ahvAsyAma,hveY,01.1163,lfN,mas
