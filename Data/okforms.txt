@@ -30548,3 +30548,6 @@ hvayatAt,hveY,01.1163,low,tip
 hvayatAt,hveY,01.1163,low,sip
 ahvayaH,hveY,01.1163,laN,sip
 ahvayaTAH,hveY,01.1163,laN,TAs
+hvayeyuH,hveY,01.1163,viDiliN,Ji
+hvayeH,hveY,01.1163,viDiliN,sip
+hvayeTAH,hveY,01.1163,viDiliN,TAs

@@ -3467,7 +3467,7 @@ if (in_array($fo,array("vyeY")) && $lakAra==="liw")
 	storedata('6.1.46','sa',0);
 }
 /* Adeca upadeze'ziti (6.1.45) */ 
-elseif (in_array($lakAra,$ArdhadhAtuka_lakAra) && ends(array($verb_without_anubandha),array("e","o","E","O"),0) && !sub(array("e","o","E","O"),array("+"),$shitpratyaya,0)  && !(in_array($fo,array("hveY")) && in_array($so,$tis)) )
+elseif (in_array($lakAra,$ArdhadhAtuka_lakAra) && ends(array($verb_without_anubandha),array("e","o","E","O"),0) && !sub(array("e","o","E","O"),array("+"),$shitpratyaya,0)  && !(in_array($fo,array("hveY")) && in_array($so,$tis) && $lakAra==="ASIrliN") )
 {
     $text=two(array("e","o","E","O"),array("+"),array("A","A","A","A"),array("+"),0);
 	$text = two(array("e","o","E","O"),array("+Ri+"),array("A","A","A","A"),array("+Ri+"),0);
