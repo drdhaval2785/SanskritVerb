@@ -5729,6 +5729,8 @@ if ($sanAdi==="yaNluk" && arr($text,'/[^+]*A[+]['.pc('hl').'][^+]*$/') && !in_ar
     $text=three(array("A"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("I"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,0);
 	storedata('6.4.113','sa',0);
 }
+/* patch to join yAs */
+$text = change('/[+]yA[+]([^+]*)$/','+yA$1');		
 /* I halyaghoH (6.4.113) */
 if (arr($text,'/[^+]*A\+/') && !in_array($lakAra,array("viDiliN","ASIrliN")) && pr2(array("A"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("I"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,$text)!==$text && (in_array("N",$it)||in_array("k",$it)) && $abhyasta===1 && $ghu!==1 && $sanAdi!=="yaN" && $sanAdi!=="yaNluk")
 {
@@ -5736,6 +5738,7 @@ if (arr($text,'/[^+]*A\+/') && !in_array($lakAra,array("viDiliN","ASIrliN")) && 
 	$text=change('/I[+]tu$/','A+tu'); // To overcome Gittva of tAtaG.
 	storedata('6.4.113','sa',0);
 }
+print_r($text);
 /* znA'bhyastayorAtaH (6.4.112) */
 if (arr($text,'/^[^+]*A[+]/') && $abhyasta===1 && pr2(array("A"),array("+"),$apit_sArvadhAtuka_pratyayas,array(""),array("+"),$apit_sArvadhAtuka_pratyayas,$text)!==$text && !arr($text,'/[+]yA[+][mv]a/') && $sarvadhatuka===1)
 {
@@ -5756,8 +5759,6 @@ if (arr($text,'/A[+]/') && $abhyasta===1 && pr2(array("A"),array("+"),array("atu
     $text=pr2(array("A"),array("+"),array("atus","aTus","a","ire"),array(""),array("+"),array("atus","aTus","a","ire"),$text);
 	storedata('6.4.112','sa',0);
 }
-/* patch to join yAs */
-$text = change('/[+]yA[+]([^+]*)$/','+yA$1');		
 /* yaGo vA (7.3.94) */
 if ($sanAdi==="yaNluk" && pr2(array("+"),array("ti","si","mi","tu","t","s"),blank(0),array("+"),array("ti","si","mi","tu","t","s"),blank(0),$text)!==$text)
 {
