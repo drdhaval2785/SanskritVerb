@@ -4091,9 +4091,10 @@ if (in_array($so,$tiG) && (arr($text,'/['.pc('hl').'][+]/') || (arr($text,'/['.p
 	}
 }
 /* AtmanepadeSvanataH (7.1.5) */
-if ( in_array($so,array("Ja")) && arr($text,'/[^a][+]Ja$/'))
+if ( in_array($so,array("Ja")) && (arr($text,'/[^a][+]Ja$/')||arr($text,'/^gA[+]a[+]Ja$/') ))
 {
     $text=change('/([^a][+])Ja$/','$1ata');
+	$text=change('/^gA[+]a[+]Ja$/','gA+a+ata');
 	storedata('7.1.5','sa',0);
 }
 /* jho'ntaH (7.1.3) */
