@@ -1139,6 +1139,7 @@ if ( $_GET['cond47']==="1" || $number==="01.1148")
     $text=change('/(.+)$/','$1+san');
 	storedata('3.1.5','sa',0);
     $sanAdi="san"; $san=1;
+	$id_dhAtu="aniw";
 }
 /* mAnbadhadAnzAnbhyo dIrghazcAbhyAsasya (3.1.6) */
 elseif ( $_GET['cond48']==="1" )
