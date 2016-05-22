@@ -5496,10 +5496,10 @@ if ($lakAra==="viDiliN")
 if ($sarvadhatuka===1 && $jherjus!==1 && arr($text,'/u\+/') && sub($hl,array("+nu","+u",),array("+"),0) && sub(array("u+"),$ajAdi_apit_sArvadhAtuka_tiG_pratyayas,blank(0),0) )
 {
 }
-elseif ( $sarvadhatuka===1 && $jherjus!==1 && ((arr($text,'/['.pc('ac').'][+][n][u][+]/') &&sub(array("+nu"),array("+"),$ajAdi_apit_sArvadhAtuka_tiG_pratyayas,0) )|| (arr($text,'/ju[+]hu/') && sub(array("ju+hu+"),$ajAdi_apit_sArvadhAtuka_tiG_pratyayas,blank(0),0) )))
+elseif ( $sarvadhatuka===1 && $jherjus!==1 && ((arr($text,'/['.pc('ac').'][+][n][u][+]/') &&sub(array("+nu"),array("+"),$ajAdi_apit_sArvadhAtuka_tiG_pratyayas,0) )|| (arr($text,'/juhu/') && sub(array("juhu+"),$ajAdi_apit_sArvadhAtuka_tiG_pratyayas,blank(0),0) )))
 {
-    $text=three($ac,array("+nu+"),$ajAdi_apit_sArvadhAtuka_tiG_pratyayas,$ac,array("+nv+"),$ajAdi_apit_sArvadhAtuka_tiG_pratyayas,0);
-    $text=two(array("hu+"),$ajAdi_apit_sArvadhAtuka_tiG_pratyayas,array("hv+"),$ajAdi_apit_sArvadhAtuka_tiG_pratyayas,0);
+    $text=three($ac,array("+nu+"),$ajAdi_apit_sArvadhAtuka_tiG_pratyayas,$ac,array("+nv"),$ajAdi_apit_sArvadhAtuka_tiG_pratyayas,0);
+    $text=two(array("hu+"),$ajAdi_apit_sArvadhAtuka_tiG_pratyayas,array("hv"),$ajAdi_apit_sArvadhAtuka_tiG_pratyayas,0);
 	storedata('6.4.87','sa',0);
 }
 /* ayaG yi kGiti (7.4.22) */
