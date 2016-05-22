@@ -3923,10 +3923,11 @@ if ($lakAra==="liw" && $kaspratyaya===1 && sub(array("Am+"),$tiG1,blank(0),0) )
 	//$text=one(array("+Am+kf+"),array("+Am+BU+"),1); // Trying for kf only right now.
 	//$text=one(array("+Am+kf+"),array("+Am+as+"),1);
 	storedata('3.1.40','sa',0);
-	if (arr($text,'/[iIuU][+]Am[+]/') && !in_array($fo,array("dIDIN","vevIN")))
+	if (arr($text,'/[iIuUfF][+]Am[+]/') && !in_array($fo,array("dIDIN","vevIN")))
 	{
 		$text = change('/[iI][+]Am[+]/','e+Am+');
 		$text = change('/[uU][+]Am[+]/','o+Am+');
+		$text = change('/[fF][+]Am[+]/','arAm+');
 		storedata('7.3.84','sa',0);
 	}
 	// For dIDIN, vevIN.
