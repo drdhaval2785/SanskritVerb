@@ -30559,3 +30559,10 @@ ahvAsyatam,hveY,01.1163,lfN,Tas
 ahvAsyam,hveY,01.1163,lfN,mip
 ahvAsyAva,hveY,01.1163,lfN,vas
 ahvAsyAma,hveY,01.1163,lfN,mas
+aNktaH-(aYjU!,law,tas,ruDAdi,07.0316)
+aNkTaH-(aYjU!,law,Tas,ruDAdi,07.0316)
+aYjvaH-(aYjU!,law,vas,ruDAdi,07.0316)
+aYjmaH-(aYjU!,law,mas,ruDAdi,07.0316)
+AnaYjatuH-(aYjU!,liw,tas,ruDAdi,07.0316)
+AnaYjuH-(aYjU!,liw,Ji,ruDAdi,07.0316)
+AnaYjaTuH-(aYjU!,liw,Tas,ruDAdi,07.0316)

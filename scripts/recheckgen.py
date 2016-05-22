@@ -43,7 +43,8 @@ def createrecheck(suspectfile,recheckfile):
 			counter += 1
 	print "Total", len(output), "entries in recheck.sh.\nKindly run this script after corrections."
 	fout.write("echo \'</forms>\' >> generatedforms.xml\n")
-	fout.write('python comparedb.py generatedforms.xml suspectverbforms.txt\n')
+	fout.write('cd scripts\n')
+	fout.write('python comparedb.py ../generatedforms.xml ../suspectverbforms.txt\n')
 	fout.close()
 
 if __name__=="__main__":

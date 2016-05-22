@@ -4601,19 +4601,6 @@ if ( in_array($so,array("Ja")) && $set===2 && arr($text,'/([^a][+])Ja$/'))
     $text=change('/([^a][+])Ja$/','$1ata');
 	storedata('7.1.5','sa',0);
 }
-/* Ato lopa iTi ca (6.4.64) */
-if ( (in_array("N",$itpratyaya)||in_array("k",$itpratyaya) )  && $lakAra!=="" && ($caG===1||$aG===1) && arr($text,'/^[^+]+A[+]a[+]/') )
-{
-    $text=change('/^([^+]+)A([+]a[+])/','$1$2');
-	storedata('6.4.64','sa',0);
-}
-/* Ato lopa iTi ca (6.4.64) */
-elseif (arr($text,'/^[^+]+[+][^+]+[A][+]['.pc('ac').']/') && !arr($text,'/[+]yA[+]am$/') && (in_array("N",$itpratyaya)||in_array("k",$itpratyaya) ) && pr2(array("A"),array("+"),$tiG1,array("A"),array("+"),$tiG1,$text)!==$text && $lakAra!=="")
-{
-    $text=pr2(array("A"),array("+"),$tiG1,array(""),array("+"),$tiG1,$text);
-    $text=two($hl,array("+sic+"),$hl,array("A+sic+"),0);
-	storedata('6.4.64','sa',0);
-}
 /* Ato GitaH (7.2.81) */
 if ( arr($text,'/[a][+][A]/') && in_array($so,$tiG) ) // bad
 {
@@ -5713,31 +5700,8 @@ if (arr($text,'/jahA\+/') && sub(array("jahA"),array("+"),$halAdi_apit_sArvadhAt
 	$text=one(array("jahA+hi"),array("jahi+hi"),0);
 	storedata('6.4.116','sa',0);
 }
-/* I halyaghoH (6.4.113) */
-if (arr($text,'/\+nA\+/') && sub(array("+"),array("nA+"),$halAdi_apit_sArvadhAtuka_pratyayas,0) && (in_array("N",$it)||in_array("N",$it)) && $sanAdi!=="yaN")
-{
-    $text=two(array("+nA+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("+nI+"),$halAdi_apit_sArvadhAtuka_pratyayas,0);
-	storedata('6.4.113','sa',0);
-}
-if (arr($text,'/\+nA\+y[A+]/') && sub(array("+"),array("nA+yA","nA+y+am"),blank(0),0) && $sanAdi!=="yaN" ) # https://github.com/drdhaval2785/SanskritVerb/issues/335
-{
-    $text=one(array("+nA+yA","nA+y+am"),array("+nI+yA","nI+yam"),0);
-	storedata('6.4.113','sa',0);
-}
-if ($sanAdi==="yaNluk" && arr($text,'/[^+]*A[+]['.pc('hl').'][^+]*$/') && !in_array($lakAra,array("ASIrliN")) && sub(array("A"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,0) && $abhyasta===1 && $ghu!==1 && $sarvadhatuka===1)
-{
-    $text=three(array("A"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("I"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,0);
-	storedata('6.4.113','sa',0);
-}
 /* patch to join yAs */
 $text = change('/[+]yA[+]([^+]*)$/','+yA$1');		
-/* I halyaghoH (6.4.113) */
-if (arr($text,'/[^+]*A\+/') && !in_array($lakAra,array("viDiliN","ASIrliN")) && pr2(array("A"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("I"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,$text)!==$text && (in_array("N",$it)||in_array("k",$it)) && $abhyasta===1 && $ghu!==1 && $sanAdi!=="yaN" && $sanAdi!=="yaNluk")
-{
-    $text=pr2(array("A"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("I"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,$text);
-	$text=change('/I[+]tu$/','A+tu'); // To overcome Gittva of tAtaG.
-	storedata('6.4.113','sa',0);
-}
 /* znA'bhyastayorAtaH (6.4.112) */
 if (arr($text,'/^[^+]*A[+]/') && $abhyasta===1 && pr2(array("A"),array("+"),$apit_sArvadhAtuka_pratyayas,array(""),array("+"),$apit_sArvadhAtuka_pratyayas,$text)!==$text && !arr($text,'/[+]yA[+][mv]a/') && $sarvadhatuka===1)
 {
@@ -6391,6 +6355,55 @@ elseif (arr($text,'/^[^pPbBmv]F\+/') && in_array($so,$tiG)  && !in_array("Sap",$
 		storedata('8.2.77','sa',0);
 	}
 }
+/* Ato lopa iTi ca (6.4.64) */
+if ( (in_array("N",$itpratyaya)||in_array("k",$itpratyaya) )  && $lakAra!=="" && ($caG===1||$aG===1) && arr($text,'/^[^+]+A[+]a[+]/') )
+{
+    $text=change('/^([^+]+)A([+]a[+])/','$1$2');
+	storedata('6.4.64','sa',0);
+}
+/* Ato lopa iTi ca (6.4.64) */
+elseif (arr($text,'/^[^+]+[+][^+]+[A][+]['.pc('ac').']/') && !arr($text,'/[+]yA[+]am$/') && (in_array("N",$itpratyaya)||in_array("k",$itpratyaya) ) && pr2(array("A"),array("+"),$tiG1,array("A"),array("+"),$tiG1,$text)!==$text && $lakAra!=="")
+{
+    $text=pr2(array("A"),array("+"),$tiG1,array(""),array("+"),$tiG1,$text);
+    $text=two($hl,array("+sic+"),$hl,array("A+sic+"),0);
+	storedata('6.4.64','sa',0);
+}
+/* Ato lopa iTi ca (6.4.64) */
+if (arr($text,'/A\+i/') && sub(array("A+"),array("i"),$tiG1,0) && $lakAra!=="" && in_array("iw",$Agama) )
+{
+    $text=one(array("A+iTa","A+iva","A+ima","A+ise","A+iD"),array("+iTa","+iva","+ima","+ise","+iD"),0);
+	storedata('6.4.64','sa',0);
+}
+/* I halyaghoH (6.4.113) */
+if (arr($text,'/\+nA\+/') && sub(array("+"),array("nA+"),$halAdi_apit_sArvadhAtuka_pratyayas,0) && (in_array("N",$it)||in_array("N",$it)) && $sanAdi!=="yaN")
+{
+    $text=two(array("+nA+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("+nI+"),$halAdi_apit_sArvadhAtuka_pratyayas,0);
+	storedata('6.4.113','sa',0);
+}
+if (arr($text,'/\+nA\+y[A+]/') && sub(array("+"),array("nA+yA","nA+y+am"),blank(0),0) && $sanAdi!=="yaN" ) # https://github.com/drdhaval2785/SanskritVerb/issues/335
+{
+    $text=one(array("+nA+yA","nA+y+am"),array("+nI+yA","nI+yam"),0);
+	storedata('6.4.113','sa',0);
+}
+if ($sanAdi==="yaNluk" && arr($text,'/[^+]*A[+]['.pc('hl').'][^+]*$/') && !in_array($lakAra,array("ASIrliN")) && sub(array("A"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,0) && $abhyasta===1 && $ghu!==1 && $sarvadhatuka===1)
+{
+    $text=three(array("A"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("I"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,0);
+	storedata('6.4.113','sa',0);
+}
+/* I halyaghoH (6.4.113) */
+if (arr($text,'/[^+]*A\+/') && !in_array($lakAra,array("viDiliN","ASIrliN")) && pr2(array("A"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("I"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,$text)!==$text && (in_array("N",$it)||in_array("k",$it)) && $abhyasta===1 && $ghu!==1 && $sanAdi!=="yaN" && $sanAdi!=="yaNluk")
+{
+    $text=pr2(array("A"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("I"),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,$text);
+	$text=change('/I[+]tu$/','A+tu'); // To overcome Gittva of tAtaG.
+	storedata('6.4.113','sa',0);
+}
+/* ghumAsthAgApAjahAtisAM hali (6.4.66) */
+if ( (in_array($fo,array("do","deN","qudAY","dAR","Dew","quDAY","mA","zWA","pA","hA","sA","gAN","mAN","meN","gA","gE","o!hAk","zo")) || (in_array($fo,array("ik","iN"))&&arr($text,'/gA[+]['.pc('hl').']/'))) && ends($it,array("N","k"),2) && sub(array("A+"),$ArdhadhAtuka_pratyayas,blank(0),0) && $lakAra!=="ASIrliN"  && !in_array($number,array("02.0051","03.0008")) && !in_array("Sapluk",$vik))
+{
+    $text=two(array("A+"),$ArdhadhAtuka_pratyayas,array("I+"),$ArdhadhAtuka_pratyayas,0);
+	$text=change('/I[+]tu$/','A+tu'); // To overcome Gittva of tAtaG.
+	storedata('6.4.66','sa',0);
+}
 /* cCvoH zUDanunAsike (6.4.19) */ 
 // kvau pending.
 if (arr($text,'/cC[+][YmNRn]/') || (arr($text,'/cC[+]['.pc('Jl').']/') && $kGiti===1) )
@@ -6624,19 +6637,6 @@ if ( in_array($so,$tiG) && (in_array("N",$it)||in_array("k",$it)) && (!arr($text
 {
     $text = pr2(array("man","han","gam","ram","nam","yam","van","tan","san","kzaR","kziR","fR","tfR","GfR","man",),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,array("ma","ha","ga","ra","na","ya","va","ta","sa","kza","kzi","f","tf","Gf","ma",),array("+"),$halAdi_apit_sArvadhAtuka_pratyayas,$text);
 	storedata('6.4.37','sa',0);
-}
-/* Ato lopa iTi ca (6.4.64) */
-if (arr($text,'/A\+i/') && sub(array("A+"),array("i"),$tiG1,0) && $lakAra!=="" && in_array("iw",$Agama) )
-{
-    $text=one(array("A+iTa","A+iva","A+ima","A+ise","A+iD"),array("+iTa","+iva","+ima","+ise","+iD"),0);
-	storedata('6.4.64','sa',0);
-}
-/* ghumAsthAgApAjahAtisAM hali (6.4.66) */
-if ( (in_array($fo,array("do","deN","qudAY","dAR","Dew","quDAY","mA","zWA","iN","pA","hA","sA","gAN","mAN","meN","gA","gE","o!hAk","zo")) || (in_array($fo,array("ik","iN"))&&arr($text,'/gA[+]/'))) && ends($it,array("N","k"),2) && sub(array("A+"),$ArdhadhAtuka_pratyayas,blank(0),0) && $lakAra!=="ASIrliN"  && !in_array($number,array("02.0051","03.0008")) && !in_array("Sapluk",$vik))
-{
-    $text=two(array("A+"),$ArdhadhAtuka_pratyayas,array("I+"),$ArdhadhAtuka_pratyayas,0);
-	$text=change('/I[+]tu$/','A+tu'); // To overcome Gittva of tAtaG.
-	storedata('6.4.66','sa',0);
 }
 /* iDattyartivyayatInAm (7.2.66) */
 if (in_array($fo,array("adx!","ada!","f","vyeY")) && $lakAra==="liw" && $so==="sip" && !in_array("iw",$Agama) && sub(array("ad","f","vyay"),array("+"),$tiG1,0) )

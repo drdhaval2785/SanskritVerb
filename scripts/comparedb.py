@@ -55,7 +55,7 @@ def baseverbformlist(testdb,lstofbasedb):
 			data = fin.readlines()
 			data = triming(data)
 			for datum in data:
-				parts = re.split('-,',datum)
+				parts = re.split(r'[-,]',datum)
 				fetch.append(parts[0])
 			output += fetch
 	print "Total", len(output), "entries in base list"
@@ -63,7 +63,7 @@ def baseverbformlist(testdb,lstofbasedb):
 def gananame(number):
 	gana = ['BvAdi','adAdi','juhotyAdi','divAdi','svAdi','tudAdi','ruDAdi','tanAdi','kryAdi','curAdi']
 	gn = number.split('.')[0]
-	gn = int(gn)
+	gn = int(gn)-1
 	return gana[gn]
 
 if __name__=="__main__":
@@ -75,8 +75,9 @@ if __name__=="__main__":
 	print "Printing the following suspect entries to ../suspectforms/suspectverbforms.txt"
 	print 
 	for (member,verb,num,lakAra,tiG) in test:
-		if member.endswith('cakara') or member.endswith("iDve") or member.endswith("iDvam"):
+		print member
+		if member.endswith('cakara') or member.endswith("iDve") or member.endswith("iDvam") or member.endswith("zIQvam") or member.endswith("yAstAm"):
 			pass
 		elif not member in base:
 			print (member,verb,num,lakAra,tiG)
-			suspect.write(member+'-('+verb+','+lakAra+','+tiG+','+gananame(num)','+num+')\n')
+			suspect.write(member+'-('+verb+','+lakAra+','+tiG+','+gananame(num)+','+num+')\n')
