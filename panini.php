@@ -3508,6 +3508,7 @@ elseif ($lakAra==="liw" && (arr(array($verb_without_anubandha),'/^[IUFXeEoO]/') 
     $text=pr2(array("+"),$tiG,blank(0),array("+Am+"),$tiG,blank(0),$text);
     $text=pr2(array("+"),array("eS","e","irec","ire"),blank(0),array("+Am+"),array("eS","e","irec","ire"),blank(0),$text);
 	storedata('3.1.36','sa',0);
+	$kaspratyaya=1;
 }
 /* dayAyAysazca (3.1.37) */
 elseif ($lakAra==="liw" && in_array($fo,array("daya!","aya!","Asa!")) )
@@ -3516,6 +3517,7 @@ elseif ($lakAra==="liw" && in_array($fo,array("daya!","aya!","Asa!")) )
     $text=change('/[+]eS$/','+Am+eS');
     $text=change('/[+]irec$/','+Am+irec');
 	storedata('3.1.37','sa',0);
+	$kaspratyaya=1;
 }
 /* uSavidajAgRbhyo'nyatarasyAm (3.1.38) */
 elseif ($lakAra==="liw" && in_array($fo,array("uza!","vida!","jAgf")) )
@@ -3523,6 +3525,7 @@ elseif ($lakAra==="liw" && in_array($fo,array("uza!","vida!","jAgf")) )
 	// Pending to make this optional. See https://github.com/drdhaval2785/SanskritVerb/issues/384
 	$text=three(array("uz","vid","jAgf"),array("+"),$tiG,array("uz","vid","jAgf"),array("+Am+"),$tiG,0);
 	storedata('3.1.38','sa',0);
+	$kaspratyaya=1;
 }
 /* bhIhrIbhRhuvAM zluvacca (3.1.39) */
 elseif ($lakAra==="liw" && in_array($fo,array("YiBI","hrI","quBfY","hu")) && $zluvat!==1)
