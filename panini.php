@@ -7540,6 +7540,7 @@ if ( $lakAra!=="" && arr($text,'/Dv/') && sub(array("s"),array("Dv"),blank(0),0)
     $text = two(array("s"),array("Dv"),array(""),array("Dv"),0);
 	storedata('8.2.25','sa',0);
 }
+print_r($text);
 /* AdezapratyayayoH (8.3.59) */
 if( in_array($so,$tiG) && arr($text,'/([iIuUfFxXeEoOhyvrlkKgGN])([+]*[iI]*)s(['.pc('al').'])/') && !arr($text,'/[+][s]$/') && arr($text,'/s/') && ( $rudAdibhyaH===1 || arr($text,'/[iIuUfFxeEoOhyvrlkKgGN][+]si$/') || $SaHsaH===1 || $sic===1 || $sic===2 || $syatAsI===1 || ends(array($us),prat('ik'),1) || $sIyuT===1 || ($lakAra==="liw" && arr($text,'/[+]ise$/')) ) && !arr($text,'/\+yAs\+/') && !(arr(array($fo),'/^s/') && arr($text,'/^[^+]*[iIuUfFxeEoOhyvrlkKgGN][+]s/')) )
 {
@@ -7566,7 +7567,7 @@ if( in_array($so,$tiG) && arr($text,'/([iIuUfFxXeEoOhyvrlkKgGN])([+]*[iI]*)s(['.
 	{
 		$text = one(array("kuzm","DUz","kuz","tuz","piz","puzt","puzw","pez","pyuz","biz","buz","buzt","buzw","bez","byuz","brUz","muz","viz","vuz","vez","vyuz","vrUz","snuz","muzt"),array("kusm","DUs","kus","tus","pis","pust","pust","pes","pyus","bis","bus","bust","bust","bes","byus","brUs","mus","vis","vus","ves","vyus","vrUs","snus","must"),0);
 	}
-	$text = change('/zIs/','zIz');
+	$text = change('/zIs([^+]+)$/','zIz$1');
 	if ($in!==$text )
 	{
 		storedata('8.3.59','sa',0);
