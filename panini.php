@@ -3160,7 +3160,7 @@ if ( $abhyasta===1 && $so==="Ji" && $sanAdi!=="yaNluk" && in_array($lakAra,array
 	$sijabhyastavidibhyazca=1;
 }
 /* kRpo ro laH (8.2.18) */
-if (in_array($so,$tiG) && arr($text,'/kfp/') && $caG!==1 && $lakAra!=="liw" && $sanAdi!=="yaN" && $sanAdi!=="yaNluk")
+if (in_array($so,$tiG) && arr($text,'/kfp/') && $caG!==1 && ($lakAra!=="liw" || $number==="10.0278") && $sanAdi!=="yaN" && $sanAdi!=="yaNluk")
 {
     $text=one(array("kfp"),array("kxp"),0);
 	storedata('8.2.18','sa',0);
