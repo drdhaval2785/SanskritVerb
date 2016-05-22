@@ -787,7 +787,7 @@ elseif ($type==='tiGanta')
 			gui2('7.2.70');
 		}
 		/* se'sici kRtacRtacCRdatRdanRtaH (7.2.57) */
-		elseif (in_array($fo,array("kftI!","cfta!","Cfda!","tfda!","nfta!","nftI!")) && (in_array($lakAra,array("lfw","lfN")) || $san===1) )
+		elseif (in_array($fo,array("kftI!","cfta!","Cfda!","tfda!","nfta!","nftI!","u!Crdi!r")) && (in_array($lakAra,array("lfw","lfN")) || $san===1) )
 		{
 			$id_dhAtu="vew";
 			gui2('7.2.57');
@@ -1309,7 +1309,7 @@ if (in_array($so,$tiG) && arr($text,'/[+]Ric$/') && $sanAdi==="Ric" && $lakAra!=
 		storedata('7.3.43','sa',0);
 	}
 	/* radhijabhoraci (7.1.61) */
-	if ( in_array($fo,array("raDa!","jaBi!")) && sub(array("raD","jaB"),array("+"),array("Ri","i"),0) )
+	if ( in_array($fo,array("raDa!","jaBI!")) && sub(array("raD","jaB"),array("+"),array("Ri","i"),0) )
 	{
 		$text=three(array("raD","jaB"),array("+"),array("Ri","i"),array("ranD","janB"),array("+"),array("Ri","i"),0);    
 		storedata('7.1.61','sa',0);
@@ -3387,7 +3387,7 @@ if ( in_array($fo,array("ruha!")) && sub(array("ruh"),array("+"),array("Ri"),0) 
 	storedata('7.3.43','sa',0);
 }
 /* radhijabhoraci (7.1.61) */
-if ( in_array($fo,array("raDa!","jaBi!")) && sub(array("raD","jaB"),array("+"),array("Ri","i"),0) )
+if ( in_array($fo,array("raDa!","jaBI!")) && sub(array("raD","jaB"),array("+"),array("Ri","i"),0) )
 {
     $text=three(array("raD","jaB"),array("+"),array("Ri","i"),array("ranD","janB"),array("+"),array("Ri","i"),0);    
 	storedata('7.1.61','sa',0);
@@ -5262,7 +5262,6 @@ if (arr($text,'/s[+]s$/') && in_array($so,array("su!","sip")) )
 }
 /* eco'yavAyAvaH (6.1.78) */
 // For Ni.
-$ayavayavah = array("ay","av","Ay","Av");
 if (arr($text,'/['.pc('ec').'][+][i][+]/') )
 {
 	$text = two(prat('ec'),array("+i+",),$ayavayavah,array("+i+",),0);
@@ -5844,7 +5843,6 @@ if ( in_array($fo,array("ciY","sPura!")) && in_array($so,$tiG) && sub(array("ce"
 	storedata('6.1.54','sa',0);
 }
 /* eco'yavAyAvaH (6.1.78) */
-$ayavayavah = array("ay","av","Ay","Av");
 if ($caG===1 && arr($text,'/[eoEO][+]a[+][^+]*$/'))
 {
 $text = two(prat('ec'),array("+a+"),$ayavayavah,array("+a+"),0);
@@ -6579,7 +6577,7 @@ if (in_array($fo,array("raDa!")) && $lakAra!=="liw" && in_array("iw",$Agama) && 
 	storedata('7.1.62','sa',0);
 }
 /* radhijabhoraci (7.1.61) */
-elseif (in_array($fo,array("raDa!","jaBi!")) && sub(array("raD","jaB"),array("+"),$ac,0) )
+elseif (in_array($fo,array("raDa!","jaBI!")) && sub(array("raD","jaB"),array("+"),$ac,0) )
 {
     $text=three(array("raD","jaB"),array("+"),$ac,array("ranD","janB"),array("+"),$ac,0);
 	storedata('7.1.61','sa',0);
@@ -7291,7 +7289,6 @@ if ($lakAra!=="" && $type==="tiGanta")
 		storedata('6.4.81','sa',3);
     }
     /* eco'yavAyAvaH (6.1.78) */
-    $ayavayavah = array("ay","av","Ay","Av");
     if (arr($text,'/[eoEO]\+/') && sub(prat('ec'),array("+i+","+a+","+Aya+","+Ana+","+e+"),blank(0),0))
     {
     $text = two(prat('ec'),array("+i+","+a+","+Aya+","+Ana+","+e+"),$ayavayavah,array("i+","+a+","Aya+","Ana+","e+"),0);
@@ -9472,7 +9469,6 @@ if ($GIn===1 )
 		$samp=array_merge($samp,array(1));
     }
 /* eco'yavAyAvaH (6.1.78) */
-    $ayavayavah = array("ay","av","Ay","Av");
     if (sub(prat('ec'),prat('ac'),blank(0),0))
     {
     $text = two(prat('ec'),array("I"),$ayavayavah,array("I"),0);
@@ -9547,7 +9543,6 @@ if ($GIp===1 )
         $text = two(array("+"),array("I+"),array(""),array("I+"),0);
     }
 /* eco'yavAyAvaH (6.1.78) */
-    $ayavayavah = array("ay","av","Ay","Av");
     if (sub(prat('ec'),prat('ac'),blank(0),0))
     {
     $text = two(prat('ec'),array("I"),$ayavayavah,array("I"),0);
@@ -9629,7 +9624,6 @@ if ($GIS===1 )
 		$samp=array_merge($samp,array(1));
     }
 /* eco'yavAyAvaH (6.1.78) */
-    $ayavayavah = array("ay","av","Ay","Av");
     if (sub(prat('ec'),prat('ac'),blank(0),0))
     {
     $text = two(prat('ec'),array("I"),$ayavayavah,array("I"),0);
@@ -12225,7 +12219,6 @@ if (arr($text,'/[eo]([+]*)a/') && ( $pada==="pada" || sub(array("goanc"),blank(0
 	storedata('6.1.`09','sa',0);
 }
 /* eco'yavAyAvaH (6.1.78) */
-$ayavayavah = array("ay","av","Ay","Av");
 if (arr($text,'/[eoEO]/') && sub(prat('ec'),prat('ac'),blank(0),0))
 {
 $text = two(prat('ec'),prat('ac'),$ayavayavah,prat('ac'),0);
