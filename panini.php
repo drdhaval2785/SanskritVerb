@@ -6342,7 +6342,11 @@ elseif (arr($text,'/^[^pPbBmv]F\+/') && in_array($so,$tiG)  && !in_array("Sap",$
 	}
 }
 /* Ato lopa iTi ca (6.4.64) */
-if ( (in_array("N",$itpratyaya)||in_array("k",$itpratyaya) )  && $lakAra!=="" && ($caG===1||$aG===1) && arr($text,'/^[^+]+A[+]a[+]/') )
+if (arr($text,'/[+]nA[+]am$/') && $lakAra==="laN")
+{
+	
+}
+elseif ( (in_array("N",$itpratyaya)||in_array("k",$itpratyaya) )  && $lakAra!=="" && ($caG===1||$aG===1) && arr($text,'/^[^+]+A[+]a[+]/') )
 {
     $text=change('/^([^+]+)A([+]a[+])/','$1$2');
 	storedata('6.4.64','sa',0);
@@ -11445,7 +11449,6 @@ elseif ( !in_array("i",$it) && arr($text,'/[nM]['.pc('hl').'][+]/') && ( in_arra
 	storedata('6.4.24','sa',0);
     $aniditAm = 1; // 0 - this sUtra has not applied. 1 - this sUtra has applied.
 }
-print_r($text);
 /* samaH sami (6.3.93) */ 
 if (preg_match('/[s][a][m][a][n][c]/',$fo) && sub(array("anc","Anc"),array("+"),blank(0),0) && $ancu===1)
 {
