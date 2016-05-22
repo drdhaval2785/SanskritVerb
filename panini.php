@@ -4877,7 +4877,7 @@ elseif ( in_array($fo,array("jyA","graha!","vaya!","vyaDa!","vaSa!","vyaca!","o!
     $text=two(array("jyA","grah","vay","vyaD","vaS","vyac","vraSc","pracC","Brasj"),array("+"),array("jiA","gfh","uy","viD","uS","vic","vfSc","pfcC","Bfsj"),array("+"),0);
     $text=two(array("uS"),array("+tu"),array("vaS"),array("+tu"),0);
 	storedata('6.1.16','sa',0);
-    //$text = samprasarana(array("jyA","grah","vay","vyaD","vaS","vyac","vraSc","pracC","Brasj"),0);
+    $text = samprasarana(array("jyA","grah","vay","vyaD","vaS","vyac","vraSc","pracC","Brasj"),0);
 }
 if ($debug===1) {dibug("2600");}
 /* riG zayagliGkSu (7.4.28) */
@@ -6175,9 +6175,9 @@ if (in_array($fo,array("jyA")) && in_array("N",$it) && $so!=="mahiN" && $sanAdi!
 {
     $text=two(array("jyA"),array("+"),array("jiA"),array("+"),0);
     $text = samprasarana(array("jyA"),0);
-    $text=change('/^ji[+]/','jI');
+    $text=change('/^ji[+]/','jI+');
 	storedata('6.4.2','sa',0);
-    $text=change('/^jI[+]/','ji');
+    $text=change('/^jI[+]/','ji+');
 	storedata('7.3.80','sa',0);
 }
 /* znA'bhyastayorAtaH (6.4.112) */
