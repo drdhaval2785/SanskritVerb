@@ -4707,7 +4707,7 @@ elseif (arr(array($verb_without_anubandha),'/[aAiIuUFeEoO]$/') && $id_dhAtu==="a
 	storedata('7.2.63','sa',0);
 }
 /* kRsRbhRvRstudrusruzruvo liTi (7.2.13) */
-elseif (!in_array($fo,array("qukfY","sf","quBfY","BfY","vfN","vfY","zwuY","dru","sru","Sru")) && $lakAra==="liw" && in_array($so,array("sip","vas","mas","TAs","Dvam","vahi","mahiN")) && $id_dhAtu!=="vew")
+elseif (!in_array($fo,array("qukfY","sf","quBfY","BfY","vfN","vfY","zwuY","dru","sru","Sru")) && $lakAra==="liw" && in_array($so,array("sip","vas","mas","TAs","Dvam","vahi","mahiN")) )
 {
 	$id_dhAtu="sew";
 	storedata('7.2.13-krAdiniyamaH','sa',0);
@@ -7540,7 +7540,6 @@ if ( $lakAra!=="" && arr($text,'/Dv/') && sub(array("s"),array("Dv"),blank(0),0)
     $text = two(array("s"),array("Dv"),array(""),array("Dv"),0);
 	storedata('8.2.25','sa',0);
 }
-print_r($text);
 /* AdezapratyayayoH (8.3.59) */
 if( in_array($so,$tiG) && arr($text,'/([iIuUfFxXeEoOhyvrlkKgGN])([+]*[iI]*)s(['.pc('al').'])/') && !arr($text,'/[+][s]$/') && arr($text,'/s/') && ( $rudAdibhyaH===1 || arr($text,'/[iIuUfFxeEoOhyvrlkKgGN][+]si$/') || $SaHsaH===1 || $sic===1 || $sic===2 || $syatAsI===1 || ends(array($us),prat('ik'),1) || $sIyuT===1 || ($lakAra==="liw" && arr($text,'/[+]ise$/')) ) && !arr($text,'/\+yAs\+/') && !(arr(array($fo),'/^s/') && arr($text,'/^[^+]*[iIuUfFxeEoOhyvrlkKgGN][+]s/')) )
 {
