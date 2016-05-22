@@ -5672,12 +5672,6 @@ else
 		storedata('6.1.90','sa',0);
     }
 }
-/* hrasvAdaGgAt (8.2.27) */
-if ( $sic===1 && arr($text,'/[aiufx]\+s/') && sub(array("a","i","u","f","x"),array("+s"),prat("Jl"),0) && in_array($so,$tiG) && $sanAdi!=="Ric")
-{
-	$text = three(array("a","i","u","f","x"),array("+s"),prat("Jl"),array("a","i","u","f","x"),array("+"),prat("Jl"),0); 
-	storedata('8.2.27','sa',0);
-}
 /* sici vRddhiH parasmaipadeSu (7.2.1) */
 if ( $sic===1 && $kGiti!==1 && in_array($so,$tis) && sub($ik,array("+"),array("sI","isI","stAm","istAm","sus","isus","stam","istam","sta","ista","sam","isam","sva","isva","sma","isma"),0)  )
 {
@@ -6973,6 +6967,12 @@ if (in_array($fo,array("guhU!")) && sub(array("goh"),array("+"),$ac,0) )
 {
     $text = two(array("goh+"),$ac,array("gUh+"),$ac,0);
 	storedata('6.4.89','sa',0);
+}
+/* hrasvAdaGgAt (8.2.27) */
+if ( $sic===1 && arr($text,'/[aiufx]\+s/') && sub(array("a","i","u","f","x"),array("+s"),prat("Jl"),0) && in_array($so,$tiG) && $sanAdi!=="Ric")
+{
+	$text = three(array("a","i","u","f","x"),array("+s"),prat("Jl"),array("a","i","u","f","x"),array("+"),prat("Jl"),0); 
+	storedata('8.2.27','sa',0);
 }
 /* vrazcabhrasjamRjayajarAjabhrAjacChazAM ca (8.2.36) */
 // parau vrajeH SaH padAnte (u 217) pending. 
