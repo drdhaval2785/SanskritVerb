@@ -5214,6 +5214,11 @@ if (arr($text,'/iy/') && sub(array("+a+iy","+sa+iy","+sya+iy","ya+iy"),array("+"
     $text = one(array("a+i+"),array("e"),0);
 	storedata('6.1.87','sa',0);
 }
+elseif (arr($text,'/[+]a[+]iy[+]us$/')) // For gopAyeyuH.
+{
+    $text = one(array("a+iy+us"),array("ey+us"),0);
+	storedata('6.1.87','sa',0);
+}
 /* AdguNaH (6.1.87) patch for sya Agama */
 if (sub(array("sya+"),array("i+"),blank(0),0))
 {
