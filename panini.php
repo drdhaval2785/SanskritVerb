@@ -4540,9 +4540,9 @@ if (  in_array($lakAra,array("luw")) && pr2(array("+"),blank(0),$tiG1,array("+")
 	$syatAsI=1;
 } else { $tAs=0; }
 /* luTaH prathamasya DAraurasaH (2.4.85) */
-if ( in_array($lakAra,array("luw")) && $tAs===1 && pr2(array("+"),array("tAs+"),array("ti","tas","anti","te","Ate","ante"),array("+"),array("tAss+"),$tiG1,$text)!==$text )
+if ( in_array($lakAra,array("luw")) && $tAs===1 && pr2(array("+"),array("tAs+"),array("ti","tas","anti","te","Ate","ante","ate"),array("+"),array("tAss+"),$tiG1,$text)!==$text )
 {
-    $text=pr2(array("+"),array("tAs+"),array("ti","tas","anti","te","Ate","ante"),array("+"),array(""),array("tAs+qA","tAs+rO","tAs+ras","tAs+qA","tAs+rO","tAs+ras",),$text);
+    $text=pr2(array("+"),array("tAs+"),array("ti","tas","anti","te","Ate","ante","ate"),array("+"),array(""),array("tAs+qA","tAs+rO","tAs+ras","tAs+qA","tAs+rO","tAs+ras","tAs+ras"),$text);
 	storedata('2.4.85','sa',0);
 	if (arr($text,'/tAs\+qA/'))
 	{
