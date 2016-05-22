@@ -5928,7 +5928,7 @@ if (arr($text,'/[aA]([+]*)us/') )
 {
 	$text=one(array("+yAus"),array("+yus"),0); // See https://github.com/drdhaval2785/SanskritVerb/issues/215.
     $text=two(array("a","A"),array("+us"),array("",""),array("+us"),0);
-	$text=one(array("+s+us+","+us"),array("+sus","us"),0);
+	$text=one(array("+s+us+","+us"),array("+sus","+us"),0);
 	storedata('6.1.96','sa',0);
 }
 /* special treatment of qukfY */
