@@ -6525,6 +6525,14 @@ if (arr($text,'/[+]ya[+]/') && sub(array("+ya"),array("+is","+It","+Is","+it","+
 	storedata('6.4.48','sa',0);
     $atolopa=1;
 }
+/* ato lopaH (6.4.48) */
+// For gopAyitA etc
+elseif (arr($text,'/Aya[+]/') && sub(array("Aya"),array("+is","+It","+Is","+it","+yA"),blank(0),0) && $ardhadhatuka===1 )
+{ 	
+	$text = two(array("Aya"),array("+is","+It","+Is","+it","+yA"),array("Ay"),array("+is","+It","+Is","+it","+yA"),0);
+	storedata('6.4.48','sa',0);
+    $atolopa=1;
+}
 /* guNo'rtisaMyogAdyoH (7.4.29) */
 if ( ($vsuf==="yak" || $lakAra==="ASIrliN") && (arr($text,'/['.pc('hl').']['.pc('hl').']f[+]y/') || $fo==="f"))
 {
