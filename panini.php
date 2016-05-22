@@ -5843,6 +5843,13 @@ if ( in_array($fo,array("ciY","sPura!")) && in_array($so,$tiG) && sub(array("ce"
     $text=three(array("ce","sPor"),array("+"),array("i+"),array("cA","sPAr"),array("+"),array("i+"),1);
 	storedata('6.1.54','sa',0);
 }
+/* eco'yavAyAvaH (6.1.78) */
+$ayavayavah = array("ay","av","Ay","Av");
+if ($caG===1 && arr($text,'/[eoEO][+]a[+][^+]*$/'))
+{
+$text = two(prat('ec'),array("+a+"),$ayavayavah,array("+a+"),0);
+storedata('6.1.78','sa',0);
+}
 // caG for ajAdi
 /* bhrAjabhAsabhASadIpajIvamIlapIDamnyatarasyAm (7.4.3) */
 if ( in_array($so,$tiG) && $luGset===5 && sub(array("BrAj","BAs","BAS","dIp","jIv","mIl","pIq"),array("+"),array("i+a"),0))
@@ -7287,7 +7294,7 @@ if ($lakAra!=="" && $type==="tiGanta")
     $ayavayavah = array("ay","av","Ay","Av");
     if (arr($text,'/[eoEO]\+/') && sub(prat('ec'),array("+i+","+a+","+Aya+","+Ana+","+e+"),blank(0),0))
     {
-    $text = two(prat('ec'),array("+i+","+a+","+Aya+","+Ana+","+e+"),$ayavayavah,array("i+","a+","Aya+","Ana+","e+"),0);
+    $text = two(prat('ec'),array("+i+","+a+","+Aya+","+Ana+","+e+"),$ayavayavah,array("i+","+a+","Aya+","Ana+","e+"),0);
 	storedata('6.1.78','sa',0);
     }
     /* dRnkarapunaHpUrvasya bhuvo yaN vaktavyaH (vA 4118) */ 

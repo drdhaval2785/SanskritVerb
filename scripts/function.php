@@ -3191,7 +3191,7 @@ function yaG_abhyAsa_special()
 }
 function san()
 {
-	global $text, $atolopa; global $storedata, $us;
+	global $text, $atolopa; global $storedata, $us, $sanAdi;
 	foreach ($text as $value)
 	{
 		$parts=explode('+',$value);
@@ -3248,7 +3248,7 @@ function san()
 	{
 		$parts=explode('+',$value);
 		$val4[]=implode('+',$parts);
-		if (preg_match('/[u]$/',$parts[0]) && in_array($parts[1],array("srav","Srav","drav","prav","plav","cyav",)) )
+		if (in_array($sanAdi,array("Ric","san")) && preg_match('/[u]$/',$parts[0]) && in_array($parts[1],array("srav","Srav","drav","prav","plav","cyav",)) )
 		{
 			$parts[0]=preg_replace('/([u])$/','i',$parts[0]);
 			$sravati=1;
