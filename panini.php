@@ -1134,7 +1134,7 @@ if (in_array($fo,array("ada!")) && $san===1 )
 }
 /* defining the sUtras mandating sanAdis */
 /* guptijkidbhyaH san (3.1.5) */
-if ( $_GET['cond47']==="1" )
+if ( $_GET['cond47']==="1" || $number==="01.1148")
 {
     $text=change('/(.+)$/','$1+san');
 	storedata('3.1.5','sa',0);
