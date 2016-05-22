@@ -2948,6 +2948,7 @@ if ($lakAra==="luN")
 		$luGset=7;
 		$it = array_merge($it,array("k"));
 		$itpratyaya = array_merge($itpratyaya,array("k"));
+		if ($id_dhAtu==="vew") {$id_dhAtu="sew";}
 	}
 	/* asyativaktikhyAtibhyo'G (3.1.52) */
 	elseif (in_array($fo,array("asu!","vaca!","brUY","KyA","cakzi!N")) && $verbset!=="curAdi") // To prevent application to curAdi vaca!.
