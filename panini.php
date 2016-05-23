@@ -5394,7 +5394,7 @@ if ( in_array($fo,array("Gasa!","Basa!")) && pr2(array("Gas","Bas"),array("+"),$
 	storedata('6.4.100','sa',0);
 }
 /* sArvadhAtukamapit (1.2.4) */
-if (  !in_array("Sap",$vik) && !($verbset==="juhotyAdi" && in_array($so,array("tip","sip","mip")) && $lakAra!=="low") && !in_array("N",$itpratyaya) && $sarvadhatuka===1 && $kGiti!==1  && $znasorallopaH!==1 && !in_array('3.4.92',sutrasfromstoredata()))
+if (  !in_array("Sap",$vik) && !(in_array($verbset,array("juhotyAdi","adAdi")) && in_array($so,array("tip","sip","mip")) && $lakAra!=="low") && !in_array("N",$itpratyaya) && $sarvadhatuka===1 && $kGiti!==1  && $znasorallopaH!==1 && !in_array('3.4.92',sutrasfromstoredata()))
 {
     $it=array_merge($it,array("N"));
     $itpratyaya=array_merge($itpratyaya,array("N"));
@@ -5720,6 +5720,7 @@ if ( arr($text,'/[B][U][+]['.pc('ac').']/') && in_array($lakAra,array("luN","liw
     $text = two(array("BU+"),$ac,array("BUv+"),$ac,0);
 	storedata('6.4.88','sa',0);	
 }
+print_r($itpratyaya); print_r($text);
 /* jusi ca (7.3.83) */
 if ( ($jherjus===1 || $sijabhyastavidibhyazca===1) && arr($text,'/[iIuUfFxX]\+us/') && $lakAra!=="liw" ) // liT has 'us' which is not 'jus'
 {
@@ -5779,7 +5780,7 @@ elseif ( ($sarvadhatuka===1 || $ardhadhatuka===1) && (in_array($fo,array("Riji!r
 	}
 }
 /* pugantalaghUpadhasya ca (7.3.86) */
-elseif ($atolopa!==1 && $ardhadhatuka===1 && $kGiti!==1  && $didhI!==1 && $vijait!==1 && $sIyuT!==1 && $ksa!==1 && $vijait!==1&& !in_array("k",$itpratyaya) && !in_array("N",$itpratyaya) && arr($text,'/[iufx]([+]*)['.pc('hl').']\+/') && pr2(array("i","u","f","x"),$hlplus,$ArdhadhAtuka_tiG_pratyayas,array("e","o","ar","al"),$hlplus,$ArdhadhAtuka_tiG_pratyayas,$text)!==$text  && $caG!==1 && $aG!==1 && $kGiti!==1 && $vijait!==1)
+elseif ($atolopa!==1 && $ardhadhatuka===1 && $kGiti!==1  && $didhI!==1 && $vijait!==1 && $sIyuT!==1 && $ksa!==1 && !in_array("k",$itpratyaya) && !in_array("N",$itpratyaya) && arr($text,'/[iufx]([+]*)['.pc('hl').']\+/') && pr2(array("i","u","f","x"),$hlplus,$ArdhadhAtuka_tiG_pratyayas,array("e","o","ar","al"),$hlplus,$ArdhadhAtuka_tiG_pratyayas,$text)!==$text  && $caG!==1 && $aG!==1 && $kGiti!==1 && $vijait!==1)
 {
     $text=pr2(array("i","u","f","x"),$hlplus,$ArdhadhAtuka_tiG_pratyayas,array("e","o","ar","al"),$hlplus,$ArdhadhAtuka_tiG_pratyayas,$text);
 	$text = three(array("GarR","tarR","arR","kzeR"),array("+"),array("sta","sTAs"),array("GfR","tfR","fR","kziR"),array("+"),array("sta","sTAs"),1); // see sahajabodha part 2 page 250.
