@@ -3161,7 +3161,7 @@ if ( $abhyasta===1 && $so==="Ji" && $sanAdi!=="yaNluk" && in_array($lakAra,array
 	$sijabhyastavidibhyazca=1;
 }
 /* kRpo ro laH (8.2.18) */
-if (in_array($so,$tiG) && arr($text,'/kfp/') && $caG!==1 && ($lakAra!=="liw" || $number==="10.0278") && $sanAdi!=="yaN" && $sanAdi!=="yaNluk")
+if (in_array($so,$tiG) && arr($text,'/kfp/') && $caG!==1 && ($lakAra!=="liw" || $number==="10.0278") && $sanAdi!=="yaN" && $sanAdi!=="yaNluk" && $fo!=="kfpa")
 {
     $text=one(array("kfp"),array("kxp"),0);
 	storedata('8.2.18','sa',0);
@@ -5693,7 +5693,7 @@ if ($lakAra==="liw" && (in_array($fo,array("f","fCa!")) || ends(array($verb_with
 	storedata('7.4.11','sa',0);
 }
 /* kRpo ro laH (8.2.18) */
-if (arr($text,'/kfp/') && $sanAdi==="yaNluk")
+if (arr($text,'/kfp/') && $sanAdi==="yaNluk" && $fo!=="kfpa")
 {
     $text=one(array("carI+kfp","cari+kfp","car+kfp","kfp"),array("calI+kxp","cali+kxp","cal+kxp","kxp"),0);
 	storedata('8.2.18','sa',0);
@@ -5890,7 +5890,7 @@ if ($caG===1 && ($sanAdi==="Ric" || $verbset==="curAdi") && !in_array($fo,$curAd
 	san();
 }
 /* kRpo ro laH (8.2.18) */
-if (arr($text,'/karp/')||arr($text,'/kfp/') )
+if (arr($text,'/karp/')||arr($text,'/kfp/')  && $fo!=="kfpa")
 {
     $text=one(array("karp","kfp"),array("kalp","kxp"),0);
 	storedata('8.2.18','sa',0);
