@@ -6601,9 +6601,9 @@ if ( (in_array($fo,array("asa!")) && $verbset==="adAdi" ) && arr($text,'/as\+s/'
 }
 /* pugantalaghUpadhasya ca (7.3.86) */
 // For irito vA (aG/sic optional)
-if ( ($aG===1||$ksa===1) && $kGiti===1 && $lakAra==="luN" && $sic===1 && sub(array("i","u","f","x"),$hl,array("+sI","+isI","+sam","+isam"),0) )
+if ( ($aG===1||$ksa===1) && $kGiti===1 && $lakAra==="luN" && $sic===1 && sub(array("i","u","f","x"),$hl,array("+sI","+is","+sam"),0) )
 {
-	$text=three(array("i","u","f","x"),$hl,array("+sI","+isI","+sam","+isam"),array("e","o","ar","al"),$hl,array("+sI","+isI","+sam","+isam"),0);
+	$text=three(array("i","u","f","x"),$hl,array("+sI","+is","+sam"),array("e","o","ar","al"),$hl,array("+sI","+is","+sam"),0);
 	if ($id_dhAtu==="vew" && $sIyuT===1) // e.g. gfhU! - garhizIzwa ang GfzIzwa are expected outcome.
 	{
 		$text=three(array("e","o","ar","al"),$hl,array("+sI"),array("i","u","f","x"),$hl,array("+sI"),0);	
