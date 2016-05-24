@@ -2965,7 +2965,7 @@ function liT_halAdi()
 
 function abhyAsa_halAdi()
 {
-	global $text, $zlu;	global $caG; global $lakAra; global $fo; global $storedata, $us, $verbset, $sanAdi; global $liT_Adeza, $coku, $cu, $ku, $san, $id_dhAtu, $id_pratyaya;
+	global $text, $zlu; global $caG; global $lakAra; global $fo; global $storedata, $us, $verbset, $sanAdi; global $liT_Adeza, $coku, $cu, $ku, $san, $id_dhAtu, $id_pratyaya;
 	/* zlau (6.1.10) */
 	if($zlu===1 && arr($text,'/^(['.pc('al').'MH]+[^+]*)[+]/'))
 	{
@@ -3097,7 +3097,12 @@ function abhyAsa_halAdi()
 		}		
 		$text = change('/^([^+]*)[+]/','$1'); // Making it anekAc.
 	}
-	return $text;
+	/* Ato lopa iTi ca (6.4.64) */
+	if (arr($text,'/^[^+]+[+][^+]+A[+]a[+]/') && $caG===1)
+	{
+		$text = change('/^([^+]+[+][^+]+)A[+]a[+]/','$1+a+');
+		storedata('6.4.64','sa',0);
+	}
 }
 function yaG_abhyAsa_special()
 {
