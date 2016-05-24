@@ -5868,9 +5868,9 @@ if ( in_array($fo,array("ciY","sPura!")) && in_array($so,$tiG) && sub(array("ce"
 	storedata('6.1.54','sa',0);
 }
 /* eco'yavAyAvaH (6.1.78) */
-if ($caG===1 && arr($text,'/[eoEO][+]a[+][^+]*$/'))
+if ($caG===1 && (arr($text,'/[eoEO][+]a[+][^+]*$/')||arr($text,'/[eoEO][+]e[tT]Am$/')))
 {
-$text = two(prat('ec'),array("+a+"),$ayavayavah,array("+a+"),0);
+$text = two(prat('ec'),array("+a+","+et","+eT"),$ayavayavah,array("+a+","+et","+eT"),0);
 storedata('6.1.78','sa',0);
 }
 // caG for ajAdi
