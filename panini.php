@@ -6831,7 +6831,7 @@ elseif ( $lakAra==="luN" && $sic!==0 && $kGiti!==1 && in_array($so,$tis) && in_a
 	storedata('7.2.3','sa',0);
 }
 /* vadavrajahalantasya acaH (7.2.3) */ 
-if ( $lakAra==="luN"  && $sic!==0 && $kGiti!==1 && in_array($so,$tis) && $yamarama!==1 && $sicivRddhi!==1 && arr($text,'/['.pc('ac').'](['.pc('hl').'M]*)[+]s[^+]+$/') ) 
+if ( $lakAra==="luN"  && $sic!==0 && ($kGiti!==1||$aG===1) && in_array($so,$tis) && $yamarama!==1 && $sicivRddhi!==1 && arr($text,'/['.pc('ac').'](['.pc('hl').'M]*)[+]s[^+]+$/') ) 
 {
 	$text = change('/(['.pc('ac').'])(['.pc('hl').'M]*[+]s[^+]+$)/','$1%$2');
 	$text = two($ac,array("%"),vriddhi($ac),array(""),0);
