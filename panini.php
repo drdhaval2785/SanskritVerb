@@ -4816,7 +4816,6 @@ if ( $lakAra==="liw" && $fo==="zvaYja!")
 	$text = two(array("sa+svaYj"),array("+"),array("sa+svaj"),array("+"),0);
 	storedata('SranTi','sa',0);
 }
-print_r($text);
 /* aniditAM hala upadhAyAH kGiti (6.4.24) */ 
 if ( in_array($fo,$aniditverbs) && (in_array("N",$itpratyaya) || in_array("k",$itpratyaya)) && !in_array($sanAdi,array("Ric"))  && $so!=="mahiN" && !in_array("i",$it) && $lakAra!=="viDiliN" && $verbset!=="ruDAdi" && $aniditAm!==1 && !in_array("Sap",$vik) && $verbset!=="curAdi")
 {
@@ -4845,7 +4844,6 @@ elseif ($lakAra==="liw" && arr($text,'/^['.pc('ac').']/') && $abhyAsa!==1)
 	$abhyAsa=1;
 	$abhyasta=1;
 }
-print_r($text);
 /* liTi vayo yaH (6.1.38) and vazcAsyAnyatarasyAM kiti (6.1.39) */
 if (in_array($fo,array("veY")) && $lakAra==="liw" && in_array("k",$itpratyaya) && sub(array("vay"),array("+"),blank(0),0))
 {
