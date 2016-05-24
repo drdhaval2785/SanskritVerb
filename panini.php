@@ -4740,7 +4740,6 @@ elseif (arr(array($verb_without_anubandha),'/[a]/') && $id_dhAtu==="aniw" && $la
 	storedata('7.2.62','sa',0);
 	storedata('7.2.63','sa',0);
 }
-print_r($text);
 /* yamaramanamAtAM sakca (7.2.73) */ 
 if (in_array($so,$tis) && arr($text,'/[+][s][i][c][+]/') && sub(array("A","yam","ram","nam"),array("+sic+"),blank(0),0) && (in_array($fo,array("yama!","ramu!","Rama!")) || arr(array($verb_without_anubandha),'/[AeEoO]$/')  || $mInAti===1 ))
 {
