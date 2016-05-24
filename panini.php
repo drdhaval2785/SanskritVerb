@@ -4077,10 +4077,11 @@ if (in_array($so,$tiG) && (arr($text,'/['.pc('hl').'][+]/') || (arr($text,'/['.p
 			$text = change('/([+][^+]*)['.pc('hl').']([+]ran)$/','$1R2');
 		}
 		$text=one(array("+si+","sicmi"),array("+sic+","sic+mi"),0);
+		/*
 		if(preg_match('/['.pc('hl').']$/',$fo) && !arr(array($fo),'/i[!]r$/') && !arr(array($fo),'/a[!]z$/'))
 		{
 			$text=pr2($hl,array("+"),array("va","ma"),blank(count($hl)),array("+"),array("va","ma"),$text);		
-		}
+		}*/
 	if ($text!==$ininin)
 	{
 		$outoutout = $text;
