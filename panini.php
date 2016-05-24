@@ -3877,7 +3877,7 @@ if (arr($text,'/\+Ri[c]{0,1}\+/')||$ciN===1||$ciN===2)
 		storedata('6.4.51','sa',0);
 	}
 	/* sArvadhAtukArdhadhAtukayoH (7.3.84) */
-	if(arr($text,'/['.pc('hl').']([+]*)i\+/') && !(in_array($lakAra,array("ASIrliN"))&&in_array($so,$tis)) && $caG!==1 && $aG!==1 && $id_dhAtu!=="aniw")
+	if(arr($text,'/['.pc('hl').']([+]*)i\+/') && !(in_array($lakAra,array("ASIrliN"))&&in_array($so,$tis)) && $caG!==1 && $aG!==1 && $id_dhAtu!=="aniw" && !(in_array($so,$taG)&&$verbset==="curAdi"))
 	{
 		$text=two($hl,array("+i+"),$hl,array("e+"),0);
 		$text=two($hl,array("i+"),$hl,array("e+"),0);
@@ -5315,7 +5315,7 @@ if ( ((in_array($fo,$tudAdi_kuTAdi) && ($verbset==="tudAdi" || $verbset==="none"
 	storedata('1.1.5','pa',0);
 }
 /* uzca (1.2.12) */
-if ( in_array($so,$taG) && ($sic===1||$sIyuT===1) && ends(array($verb_without_anubandha),array("f","F"),1) )
+if ( in_array($so,$taG) && ($sic===1||$sIyuT===1) && ends(array($verb_without_anubandha),array("f","F"),1) && arr($text,'/[fF][+]*['.pc('Jl').']/'))
 {
 	storedata('1.2.12','pa',0);
 	$kGiti=1; $uzca=1;
@@ -5486,7 +5486,7 @@ elseif (  $sarvadhatuka===1 && pr2(array("i","I","u","U","f","F","x","X"),array(
     $kGiti=1;
 }
 /* uzca (1.2.12) */
-elseif ( in_array($so,$taG) && ($sic===1||$sIyuT===1) && ends(array($verb_without_anubandha),array("f","F"),1) )
+elseif ( in_array($so,$taG) && ($sic===1||$sIyuT===1) && ends(array($verb_without_anubandha),array("f","F"),1)  && arr($text,'/[fF][+]*['.pc('Jl').']/') && $uzca!==1)
 {
 	storedata('1.2.12','pa',0);
 	$kGiti=1; $uzca=1;
@@ -5607,6 +5607,12 @@ if ( in_array($so,$taG) && ($sic===1||$sIyuT===1) && (in_array($fo,array("vfN","
 	if (arr($text,'/[fF]\+is/') )
 	{
 		$text=two(array("f","F"),array("+is"),array("ar","ar"),array("+is"),0);
+		storedata('7.3.84','sa',0);
+	}
+	/* sArvadhAtukArdhadhAtukayoH (7.3.84) */
+	if (arr($text,'/[+]i[+]isI/') && ($sanAdi==="Ric"||$verbset==="curAdi"))
+	{
+		$text = change('/[+]i[+]isI/','e+isI');
 		storedata('7.3.84','sa',0);
 	}
 }
@@ -6234,7 +6240,7 @@ if ( (in_array($fo,array("asa!")) && $verbset==="adAdi" ) && (in_array("N",$it)|
 	storedata('6.4.111','sa',0);
 }
 /* uzca (1.2.12) */
-if ( in_array($so,$taG) && ($sic===1||$sIyuT===1) && ends(array($verb_without_anubandha),array("f","F"),1) && $uzca!==1)
+if ( in_array($so,$taG) && ($sic===1||$sIyuT===1) && ends(array($verb_without_anubandha),array("f","F"),1) && $uzca!==1 && arr($text,'/[fF][+]*['.pc('Jl').']/') && $uzca!==1)
 {
 	storedata('1.2.12','pa',0);
 	$kGiti=1;
