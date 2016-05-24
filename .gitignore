@@ -45,6 +45,7 @@ Temporary Items
 # Other files
 generatedforms.xml
 suspectverbforms.txt
+scripts/temp.txt
 wrongformfinder.sh
 verboutput/*.*
 Data/allsutrani/*.*
