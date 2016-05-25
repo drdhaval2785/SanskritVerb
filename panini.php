@@ -729,6 +729,7 @@ elseif ($type==='tiGanta')
 	/* idAgama decision */
 	$temp = scrape1($first,0,2,1); 
 	$verb_without_anubandha=$temp[0];
+	$original_verb = $verb_without_anubandha;
 	if (preg_match_all('/[aAiIuUfFxXeEoO]/',$verb_without_anubandha) > 1 && isset($argv[0])) 
 	{ echo "Verb has more than one vowel. Exiting.\n"; exit(0); }
 	if (in_array($lakAra,array("lfw","lfN","luw","ASIrliN","luN","liw","ArDaDAtukalew"))||$san===1) // checking whether ArdhadhAtuka lakAra or not.
@@ -2240,7 +2241,6 @@ if (in_array($lakAra,$ArdhadhAtuka_lakAra) || in_array($sanAdi,array("yaN","san"
 		$text=two(array("deY"),array("+"),array("digi"),array("+"),0);
 		storedata('7.4.9','sa',0);
 	}
-	print_r($text);
 	/* veJo vayiH (2.4.41) */ 
 	if (in_array($fo,array("veY")) && $lakAra==="liw")
 	{
@@ -13733,7 +13733,7 @@ if ( arr($text,'/[vy][+]*['.pc('vl').']/') && in_array($so,$tiG) && in_array("6.
 }
 /* lopo vyorvali (6.1.66) */
 // Not a very good solution. The second member is there to prevent application of this rule in 'vraj'
-elseif ( arr($text,'/[vy][+]*['.pc('vl').']/') && !(preg_match('/f$/',$verb_without_anubandha)&&arr($text,'/^[^+]*ri[+]/'))  && !(arr($text,'/[vy][+]n/')&&$verbset==="kryAdi") && !preg_match('/[vy]['.pc('vl').']/',$verb_without_anubandha) && in_array($so,$tiG) && !in_array("6.1.77",sutrasfromstoredata()))
+elseif ( arr($text,'/[vy][+]*['.pc('vl').']/') && !(preg_match('/f$/',$verb_without_anubandha)&&arr($text,'/^[^+]*ri[+]/'))  && !(arr($text,'/[vy][+]n/')&&$verbset==="kryAdi") && !preg_match('/[vy]['.pc('vl').']/',$verb_without_anubandha) && in_array($so,$tiG) && !in_array("6.1.77",sutrasfromstoredata()) && !preg_match('/[vy]['.pc('vl').']/',$original_verb))
 {
     $text=change('/([vy])([+]*['.pc('vl').'])/','$2');
 	storedata('6.1.66','sa',0);
