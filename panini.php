@@ -5409,9 +5409,15 @@ if (arr($text,'/[+][z]/') && $pada=== "pratyaya" && in_array($so,$tiG) && !preg_
 	storedata('1.3.9','sa',0);
 }
 /* ghasibhasorhali ca (6.4.100) */
-if ( in_array($fo,array("Gasa!","Basa!")) && pr2(array("Gas","Bas"),array("+"),$apit_sArvadhAtuka_pratyayas,array("Gs","Bs"),array("+"),$apit_sArvadhAtuka_pratyayas,$text)!==$text && $lakAra!=="" && $veda===1 )
+if ( in_array($fo,array("Basa!")) && pr2(array("Bas"),array("+"),$apit_sArvadhAtuka_pratyayas,array("Gs","Bs"),array("+"),$apit_sArvadhAtuka_pratyayas,$text)!==$text && $lakAra!=="" )
 {
-    $text=pr2(array("Gas","Bas"),array("+"),$apit_sArvadhAtuka_pratyayas,array("Gs","Bs"),array("+"),$apit_sArvadhAtuka_pratyayas,$text);
+    $text=pr2(array("Bas"),array("+"),$apit_sArvadhAtuka_pratyayas,array("Bs"),array("+"),$apit_sArvadhAtuka_pratyayas,$text);
+	storedata('6.4.100','sa',0);
+}
+/* ghasibhasorhali ca (6.4.100) */
+elseif ( in_array($fo,array("Gasa!")) && pr2(array("Gas"),array("+"),$apit_sArvadhAtuka_pratyayas,array("Gs"),array("+"),$apit_sArvadhAtuka_pratyayas,$text)!==$text && $lakAra!=="" && $veda===1 )
+{
+    $text=pr2(array("Gas"),array("+"),$apit_sArvadhAtuka_pratyayas,array("Gs"),array("+"),$apit_sArvadhAtuka_pratyayas,$text);
 	storedata('6.4.100','sa',0);
 }
 /* sArvadhAtukamapit (1.2.4) */
