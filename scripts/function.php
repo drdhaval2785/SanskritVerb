@@ -3913,9 +3913,10 @@ function timestamp()
 }
 function dibug($a)
 {
-	global $time;
+	global $time, $text;
 	echo "Hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii DEBUG ", $a, " at ";
 	timestamp();
+	print_r($text);
 }
 function verbformlist()
 {
