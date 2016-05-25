@@ -625,7 +625,7 @@ if ($type==='tiGanta')
 	}
 	/* vRdbhyaH syasanoH (1.3.92) */
 	// san is pending. lRluToH syAtAsI - got the lakAras from here.
-	elseif ( in_array($first,array("vftu!","vfDu!","SfDu!","syandU!","kfpU!","kxpU!")) && $vAcya==="kartR" && (in_array($lakAra,array("lfN","lfw"))||$san===1))
+	elseif ( in_array($first,array("vftu!","vfDu!","SfDu!","syandU!","kfpU!","kxpU!")) && $vAcya==="kartR" && (in_array($lakAra,array("lfN","lfw"))||$san===1) && $verbset==="BvAdi")
 	{
 		$verbpada=verb_pada('1.3.92');
 	}
