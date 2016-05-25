@@ -7259,13 +7259,15 @@ elseif ( (in_array($fo,array("vfN","vfY")) || ends(array($verb_without_anubandha
 	$text=two(array("ar",),array("+i"),array("ar"),array("+I"),1);
 	storedata('7.2.38','sa',0);
 }
+echo $ciN; print_r($text);
 /* udoSThyapUrvasya (7.1.102) */
-if (arr($text,'/^[pPbBmv]F[+]/')  && in_array($so,$tiG) && !in_array("Sap",$vik) && ($sarvadhatuka===1 || in_array("Sa",$vik) || arr($text,'/[+]yA/') || ($sIyuT===1&&$fo==="vFY")) && $ciN!==1 && $ciN!==2 )
+if (arr($text,'/^[a]*[pPbBmv]F[+]/')  && in_array($so,$tiG) && !in_array("Sap",$vik) && ($sarvadhatuka===1 || in_array("Sa",$vik) || arr($text,'/[+]yA/') || (($sIyuT===1||$sic!==0)&&$fo==="vFY")) && $ciN!==1 && $ciN!==2 )
 {
-	$text = change('/^([pPbBmv])F[+]/','$1ur+');
-	$text = change('/^([pPbBmv])ur[+]Itu/','$1f+Itu');
+	echo "yes";
+	$text = change('/^([a]*[pPbBmv])F[+]/','$1ur+');
+	$text = change('/^([a]*[pPbBmv])ur[+]Itu/','$1f+Itu');
 	storedata('7.1.102','sa',0);
-	$text = change('/^([pPbBmv])ur[+]/','$1Ur+');
+	$text = change('/^([a]*[pPbBmv])ur[+]/','$1Ur+');
 	storedata('8.2.77','sa',0);
 }
 /* RRta iddhAtoH (7.1.100) */
