@@ -7580,9 +7580,9 @@ if ( $lakAra!=="" && arr($text,'/Dv/') && sub(array("s"),array("Dv"),blank(0),0)
 if( in_array($so,$tiG) && arr($text,'/([iIuUfFxXeEoOhyvrlkKgGN])([+]*[iI]*)s(['.pc('al').'])/') && !arr($text,'/[+][s]$/') && arr($text,'/s/') && ( $rudAdibhyaH===1 || arr($text,'/[iIuUfFxeEoOhyvrlkKgGN][+]si$/') || $SaHsaH===1 || $sic===1 || $sic===2 || $syatAsI===1 || ends(array($us),prat('ik'),1) || $sIyuT===1 || ($lakAra==="liw" && arr($text,'/[+]ise$/')) ) && !arr($text,'/\+yAs\+/') && !(arr(array($fo),'/^s/') && arr($text,'/^[^+]*[iIuUfFxeEoOhyvrlkKgGN][+]s/')) )
 {
 	$in = $text;
-	while(arr($text,'/([iIuUfFxXeEoOhyvrlkKgGN])([+][i]*)s(['.pc('al').'])/'))
+	while(arr($text,'/([iIuUfFxXeEoOhyvrlkKgGN])([+][iI]*)s(['.pc('al').'])/'))
 	{
-		$text = change('/([iIuUfFxXeEoOhyvrlkKgGN])([+][i]*)s(['.pc('al').'])/','$1$2z$3');
+		$text = change('/([iIuUfFxXeEoOhyvrlkKgGN])([+][iI]*)s(['.pc('al').'])/','$1$2z$3');
 	}
 	$text = change('/([iIuUfFxXeEoOhyvrlkKgGN][+]*[iI]*)sI/','$1zI');
 	$text = change('/zIs([+a-zA-Z]+)$/','zIz$1');
