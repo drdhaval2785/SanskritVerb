@@ -6824,9 +6824,9 @@ if (in_array($fo,array("SAsu!")) && arr($text,'/SAs[+]['.pc('hl').']/') && ends(
 	storedata('6.4.34','sa',0);
 }
 /* zAsivasighasInAM ca (8.3.60) */
-if ( in_array($fo,array("SAsu!","vasa!")) && in_array($so,$tiG) && sub(array("Sis","us"),array("+"),blank(0),0) && !in_array($number,array("02.0111")))
+if ( in_array($fo,array("SAsu!","vasa!")) && in_array($so,$tiG) && sub(array("Sis","us","Us"),array("+"),blank(0),0) && !in_array($number,array("02.0111")))
 {
-    $text = two(array("Sis","us"),array("+"),array("Siz","uz"),array("+"),0);
+    $text = two(array("Sis","us","Us"),array("+"),array("Siz","uz","Uz"),array("+"),0);
 	storedata('8.3.60','sa',0);
 }
 /* zAsivasighasInAM ca (8.3.60) */
