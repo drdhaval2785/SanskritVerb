@@ -5408,6 +5408,7 @@ if (arr($text,'/[+][z]/') && $pada=== "pratyaya" && in_array($so,$tiG) && !preg_
     $text = two(array("+"),array("z"),array("+"),array(""),0);
 	storedata('1.3.9','sa',0);
 }
+print_r($text);
 /* ghasibhasorhali ca (6.4.100) */
 if ( in_array($fo,array("Basa!")) && pr2(array("Bas"),array("+"),$apit_sArvadhAtuka_pratyayas,array("Gs","Bs"),array("+"),$apit_sArvadhAtuka_pratyayas,$text)!==$text && $lakAra!=="" )
 {
