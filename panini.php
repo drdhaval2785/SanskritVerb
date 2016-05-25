@@ -5739,7 +5739,10 @@ if (arr($text,'/jahA\+/') && sub(array("jahA"),array("+"),$halAdi_apit_sArvadhAt
 	storedata('6.4.116','sa',0);
 }
 /* patch to join yAs */
-$text = change('/[+]yA[+](['.pc('hl').']*)$/','+yA$1');		
+if ($yAsuT===1)
+{
+	$text = change('/[+]yA[+]([^+]*)$/','+yA$1');
+}
 /* yaGo vA (7.3.94) */
 if ($sanAdi==="yaNluk" && pr2(array("+"),array("ti","si","mi","tu","t","s"),blank(0),array("+"),array("ti","si","mi","tu","t","s"),blank(0),$text)!==$text)
 {
