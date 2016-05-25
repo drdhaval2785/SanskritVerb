@@ -2234,6 +2234,20 @@ if (in_array($lakAra,$ArdhadhAtuka_lakAra) || in_array($sanAdi,array("yaN","san"
         $text=one(array("i+"),array("gA+"),0);
 		storedata('2.4.49','sa',0);
     }
+	/* dayaterdigi liTi (7.4.9) */ 
+	if (in_array($fo,array("deY")) && $lakAra==="liw")
+	{
+		$text=two(array("deY"),array("+"),array("digi"),array("+"),0);
+		storedata('7.4.9','sa',0);
+	}
+	print_r($text);
+	/* veJo vayiH (2.4.41) */ 
+	if (in_array($fo,array("veY")) && $lakAra==="liw")
+	{
+		$text=two(array("ve"),array("+"),array("vay"),array("+"),1);
+		storedata('2.4.41','sa',0);
+		if (in_array($so,array("TAs","Dvam","vahi","mahiN")) ) { $id_dhAtu="sew"; } // see p 335 sahajabodha part 2.
+	}
     /* liDyaGozca (6.1.29) */ 
     if (in_array($fo,array("o!pyAyI!")) && ($lakAra==="liw"||$sanAdi==="yaN"))
     {
@@ -2908,7 +2922,6 @@ if ($lakAra==="luN")
 	/* puSAdidyutAdilRditaH parasmaipadeSu (3.1.55) */
 	elseif ( ( (in_array($fo,$divAdi_puSAdi)&&$verbset==="divAdi")||(in_array($fo,$bhvAdi_dyutAdi)&&$verbset==="BvAdi")||in_array($fo,$lRdit)) && in_array($so,$tis) )
 	{
-		echo "yes";
 		$text = one(array("+cli+"),array("+aN+"),0);
 		storedata('3.1.55','sa',0);
 		$it = array_merge($it,array("N"));
@@ -4676,19 +4689,6 @@ if ( in_array($fo,array("daridrA")) && $ardhadhatuka===1 && $lakAra==="luN" && s
 {
     $text=one(array("daridrA+"),array("daridr+"),1);
 	storedata('6.4.114-1','sa',0);
-}
-/* dayaterdigi liTi (7.4.9) */ 
-if (in_array($fo,array("deY")) && $lakAra==="liw")
-{
-	$text=three(array("day"),array("+"),$tiG1,array("digi"),array("+"),$tiG1,0);
-	storedata('7.4.9','sa',0);
-}
-/* veJo vayiH (2.4.41) */ 
-if (in_array($fo,array("veY")) && $lakAra==="liw")
-{
-	$text=three(array("ve"),array("+"),$tiG1,array("vay"),array("+"),$tiG1,1);
-	storedata('2.4.41','sa',0);
-	if (in_array($so,array("TAs","Dvam","vahi","mahiN")) ) { $id_dhAtu="sew"; } // see p 335 sahajabodha part 2.
 }
 /* iDatyarttivyayatInAm (7.2.66) */ 
 if (in_array($fo,array("vyeY","f","iqa!")) && $lakAra==="liw" && $so==="sip")
@@ -7259,11 +7259,9 @@ elseif ( (in_array($fo,array("vfN","vfY")) || ends(array($verb_without_anubandha
 	$text=two(array("ar",),array("+i"),array("ar"),array("+I"),1);
 	storedata('7.2.38','sa',0);
 }
-echo $ciN; print_r($text);
 /* udoSThyapUrvasya (7.1.102) */
 if (arr($text,'/^[a]*[pPbBmv]F[+]/')  && in_array($so,$tiG) && !in_array("Sap",$vik) && ($sarvadhatuka===1 || in_array("Sa",$vik) || arr($text,'/[+]yA/') || (($sIyuT===1||$sic!==0)&&$fo==="vFY")) && $ciN!==1 && $ciN!==2 )
 {
-	echo "yes";
 	$text = change('/^([a]*[pPbBmv])F[+]/','$1ur+');
 	$text = change('/^([a]*[pPbBmv])ur[+]Itu/','$1f+Itu');
 	storedata('7.1.102','sa',0);
