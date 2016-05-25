@@ -2965,9 +2965,9 @@ function liT_halAdi()
 
 function abhyAsa_halAdi()
 {
-	global $text, $zlu; global $caG; global $lakAra; global $fo; global $storedata, $us, $verbset, $sanAdi; global $liT_Adeza, $coku, $cu, $ku, $san, $id_dhAtu, $id_pratyaya;
+	global $text, $zlu, $zluvat; global $caG; global $lakAra; global $fo; global $storedata, $us, $verbset, $sanAdi; global $liT_Adeza, $coku, $cu, $ku, $san, $id_dhAtu, $id_pratyaya;
 	/* zlau (6.1.10) */
-	if($zlu===1 && arr($text,'/^(['.pc('al').'MH]+[^+]*)[+]/'))
+	if( ($zlu===1||$zluvat===1) && arr($text,'/^(['.pc('al').'MH]+[^+]*)[+]/'))
 	{
 		$text=change('/^(['.pc('al').'MH]+[^+]*)[+]/','$1+$1+');
 		storedata('6.1.10','sa',0);
@@ -3069,7 +3069,7 @@ function abhyAsa_halAdi()
 		$text = one(array("s+s"),array("t+s",),0);
 		storedata('7.4.49','sa',0);
 	}
-	if ($zlu===1)
+	if ($zlu===1||$zluvat===1)
 	{
 		/* bhRJAmit (7.4.76) */
 		if(in_array($fo,array("quBfY","mAN","o!hAN")) && sub(array("ba+Bf","ma+mA","ja+hA"),array("+"),blank(0),0))

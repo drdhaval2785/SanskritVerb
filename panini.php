@@ -3532,10 +3532,11 @@ elseif ($lakAra==="liw" && in_array($fo,array("uza!","vida!","jAgf")) )
 /* bhIhrIbhRhuvAM zluvacca (3.1.39) */
 elseif ($lakAra==="liw" && in_array($fo,array("YiBI","hrI","quBfY","hu")) && $zluvat!==1)
 {
-    $text=pr2(array("hu","BI","BfY","hrI"),array("+"),$tiG,array("hu","BI","BfY","hrI"),array("+Am+"),$tiG,$text);
+    $text=two(array("hu","BI","Bf","hrI"),array("+"),array("hu","BI","Bf","hrI"),array("+Am+"),0);
 	storedata('3.1.39','sa',0);
 	$zluvat=1;
-	zlu();
+	abhyAsa_halAdi();
+	$zluvat=0;
 	$text=pr2(array("hu","BI","Bf","hrI"),array("+Am+"),$tiG,array("ho","Be","Bar","hre"),array("+Am+"),$tiG,$text);
 	storedata('7.3.84','sa',0);
 	$text=pr2(array("ho","Be","Bar","hre"),array("+Am+"),$tiG,array("hav","Bay","Bar","hray"),array("+Am+"),$tiG,$text);
@@ -5408,7 +5409,6 @@ if (arr($text,'/[+][z]/') && $pada=== "pratyaya" && in_array($so,$tiG) && !preg_
     $text = two(array("+"),array("z"),array("+"),array(""),0);
 	storedata('1.3.9','sa',0);
 }
-print_r($text);
 /* ghasibhasorhali ca (6.4.100) */
 if ( in_array($fo,array("Basa!")) && pr2(array("Bas"),array("+"),$apit_sArvadhAtuka_pratyayas,array("Gs","Bs"),array("+"),$apit_sArvadhAtuka_pratyayas,$text)!==$text && $lakAra!=="" )
 {
