@@ -6384,6 +6384,7 @@ elseif (arr($text,'/^[^pPbBmv]F\+/') && in_array($so,$tiG)  && !in_array("Sap",$
 		storedata('8.2.77','sa',0);
 	}
 }
+print_r($text);
 /* Ato lopa iTi ca (6.4.64) */
 if (arr($text,'/[+]nA[+]am$/') && $lakAra==="laN")
 {
@@ -6405,6 +6406,12 @@ elseif (arr($text,'/^[^+]+[+][^+]+[A][+]['.pc('ac').']/') && !arr($text,'/[+]yA[
 if (arr($text,'/A\+i/') && sub(array("A+"),array("i"),$tiG1,0) && $lakAra!=="" && in_array("iw",$Agama) )
 {
     $text=one(array("A+iTa","A+iva","A+ima","A+ise","A+iD"),array("+iTa","+iva","+ima","+ise","+iD"),0);
+	storedata('6.4.64','sa',0);
+}
+/* Ato lopa iTi ca (6.4.64) */
+if (arr($text,'/A\+a/') && $aG===1 )
+{
+    $text=one(array("A+a"),array("+a"),0);
 	storedata('6.4.64','sa',0);
 }
 /* I halyaghoH (6.4.113) */
