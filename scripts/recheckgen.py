@@ -34,8 +34,10 @@ def createrecheck(suspectfile,recheckfile):
 	fout.write("echo \'<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\' > generatedforms.xml\necho \'<forms>\' >> generatedforms.xml\n")
 	counter = 1
 	for datum in data:
-		#aMsayAYcakara,aMsa,10.0460,liw,mip
-		[form,verb,number,lakAra,suffix] = datum.split(',')
+		#aNktaH-(aYjU!,law,tas,ruDAdi,07.0316)
+		[form,rest]=datum.split('-')
+		rest = rest.strip('()')
+		[verb,lakAra,suffix,verbset,number] = rest.split(',')
 		if (number,lakAra) not in output:
 			output.append((number,lakAra))
 			fout.write('echo "'+str(counter)+' - Processing '+number+' '+lakAra+" analysis started at $(timestamp)\"\n")
