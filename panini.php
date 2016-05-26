@@ -5562,8 +5562,9 @@ if (arr($text,'/Se/') && sub(array("Se"),array("+"),array("ate","ata","atAm"),0)
     $text=three(array("Se"),array("+"),array("ate","ata","atAm"),array("Se"),array("+"),array("rate","rata","ratAm"),0);
 	storedata('7.1.6','sa',0);
 }
+print_r($text);
 /* sRjidRzorjhalyamakiti (6.1.58) */ 
-if (in_array($fo,array("sfja!","dfSi!r")) && $verbset!=="divAdi" && !in_array("k",$itpratyaya) && sub(array("sfj","dfS"),array("+"),prat('Jl'),0) && $ciN!==1)
+if (in_array($fo,array("sfja!","dfSi!r")) && !in_array("k",$itpratyaya) && sub(array("sfj","dfS"),array("+"),prat('Jl'),0) && $ciN!==1)
 { 
 	// Patch for optional iDAgama in thal pratyaya.
 	if (sub(array("sfj+Ta","dfS+Ta"),blank(0),blank(0),0))
