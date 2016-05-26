@@ -3970,9 +3970,10 @@ if ($lakAra==="liw" && $kaspratyaya===1 && sub(array("Am+"),$tiG1,blank(0),0) )
 	$text=$val;
 	$fo="qukfY";
 	$verb_without_anubandha="kf";
+	$kGiti=0;
 }
 /* asaMyogAlliT kit (1.2.5) */
-if (!arr(array($verb_without_anubandha),'/['.pc('hl').'M]['.pc('hl').']$/') && $lakAra==="liw" && !in_array($so,array("tip","sip","mip")) && !in_array($fo,array("raDa!")) )
+if (!arr(array($verb_without_anubandha),'/['.pc('hl').'M]['.pc('hl').']$/') && $lakAra==="liw" && !in_array($so,array("tip","sip","mip")) && !in_array($fo,array("raDa!")) && preg_match('/['.pc('hl').']$/',$verb_without_anubandha) )
 {
 	storedata('1.2.5','pa',0);
 	$it = array_merge($it,array("k"));
