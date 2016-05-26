@@ -5083,7 +5083,8 @@ if ($debug===1) {dibug("2900");}
 if ( ($verbset==="tudAdi" || ($verbset==="none" && in_array($fo,$tudAdi)) ) && $lakAra!=="" && (sub($tudAdi_mucAdi,array("+"),array("a+"),0) || sub($tudAdi_mucAdi,array("+"),array("e"),0))  )
 {
     $mucAdireplace=array("munc","lunp","vind","linp","zinc","Kind","kfnt","pinS","sinc");
-    $text = two($tudAdi_mucAdi,array("+a","+e"),$mucAdireplace,array("+a","+e"),0);
+    $text = two($tudAdi_mucAdi,array("+sic","+a","+e"),$mucAdireplace,array("+sic","+a","+e"),0);
+	$text = one(array("sinc+sinc"),array("sinc+sic"),0);
 	storedata('7.1.59','sa',0);
 }
 /* dhivikRNvyora ca (3.1.80) */
@@ -11480,9 +11481,9 @@ if (in_array($fo,$aniditverbs) && $lakAra==="luN" && arr($text,'/[NYRnmM]['.pc('
 {
 	
 }
-elseif ( !in_array("i",$it) && arr($text,'/[nM]['.pc('hl').'][+]/') && ( in_array("k",$itpratyaya)||in_array("N",$itpratyaya)|| $ancu===1 ) && !($kruJca===1 && sub(array("krunc","kruYc"),blank(0),blank(0),0) ) && $nance===0 && $so!=="mahiN" && !(arr($text,'/[NYRnmM]['.pc('hl').'][+]a[+]/') && in_array("Sap",$vik)) && $lakAra!=="viDiliN" && $verbset!=="ruDAdi" && $aniditAm!==1 && !in_array("Sap",$vik))
+elseif ( !in_array("i",$it) && arr($text,'/[nM]['.pc('hl').'][+]/') && ( in_array("k",$itpratyaya)||in_array("N",$itpratyaya)|| $ancu===1 ) && !($kruJca===1 && sub(array("krunc","kruYc"),blank(0),blank(0),0) ) && $nance===0 && $so!=="mahiN" && !(arr($text,'/[NYRnmM]['.pc('hl').'][+]a[+]/') && in_array("Sap",$vik)) && $lakAra!=="viDiliN" && $verbset!=="ruDAdi" && $aniditAm!==1 && !in_array("Sap",$vik) && !in_array('7.1.59',sutrasfromstoredata()))
 {
-    $text = three(array("n","M"),$hl,array("+"),array("",""),$hl,array("+"),0);        
+    $text = three(array("n","M"),$hl,array("+"),array("",""),$hl,array("+"),0);
 	storedata('6.4.24','sa',0);
     $aniditAm = 1; // 0 - this sUtra has not applied. 1 - this sUtra has applied.
 }
