@@ -7745,11 +7745,11 @@ if(arr($text,'/[iIuUfFxXeoEOhyvrlkKgGN][+][iI]*s['.pc('al').'MH+]+$/') && ($ksa=
 	$text = change('/[+]([iI])z$/','+$1s');
 	storedata('8.3.59','sa',0);
 }
-if($sIyuT===1 && arr($text,'/[+]sIs/'))
+if(($sIyuT===1 || $sic!==0) && arr($text,'/[+]s[Ii]s/'))
 {
 	storedata('8.3.55','pa',0);
 	storedata('8.3.57','pa',0);
-	$text = one(array("+sIs"),array("+sIz"),0);
+	$text = one(array("+sIs","+sis"),array("+sIz","+siz"),0);
 	storedata('8.3.59','sa',0);
 }
 /* For verbs - remove all + marks. */
