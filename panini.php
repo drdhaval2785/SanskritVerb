@@ -5081,7 +5081,7 @@ if ( arr($text,'/[aA][+]iy[+]['.pc('vl').']/') && in_array($so,$tiG) )
 }
 if ($debug===1) {dibug("2900");}
 /* ze mucAdInAm (7.1.59) */
-if ( ($verbset==="tudAdi" || ($verbset==="none" && in_array($fo,$tudAdi)) ) && $lakAra!=="" && (sub($tudAdi_mucAdi,array("+"),array("a+"),0) || sub($tudAdi_mucAdi,array("+"),array("e"),0))  )
+if ($sarvadhatuka===1 && ($verbset==="tudAdi" || ($verbset==="none" && in_array($fo,$tudAdi)) ) && $lakAra!=="" && (sub($tudAdi_mucAdi,array("+"),array("a+"),0) || sub($tudAdi_mucAdi,array("+"),array("e"),0))  )
 {
     $mucAdireplace=array("munc","lunp","vind","linp","zinc","Kind","kfnt","pinS","sinc");
     $text = two($tudAdi_mucAdi,array("+sic","+a","+e"),$mucAdireplace,array("+sic","+a","+e"),0);
