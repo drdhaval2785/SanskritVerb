@@ -4188,13 +4188,13 @@ if ($debug===1) {dibug("2000");}
 /* zvayateraH (7.4.18) */
 if (in_array($fo,array("wuo!Svi")) && $lakAra==="luN" && sub(array("Svi"),array("+a+"),blank(0),0) )
 {
-	$text = two(array("Svi"),array("+a+"),array("Sva"),array("+a+"),0); // 1 because of aG and caG both forms.
+	$text = two(array("Svi"),array("+a+"),array("Sva"),array("+a+"),1); // 1 because of aG and caG both forms.
 	storedata('7.4.18','sa',0);
 	foreach ($text as $value)
 	{
-		if (preg_match('/[+]caN[+]/',$value))
+		if (preg_match('/[+]a[+]/',$value))
 		{
-			$caGable[] = preg_replace('/[+]caN[+]/','+a+',$value);
+			$caGable[] = $value;
 		}
 		else
 		{
@@ -4879,9 +4879,12 @@ elseif ( in_array("k",$itpratyaya) && (in_array($fo,array("brUY","Yizvapa!"))||(
 {
     $text=two(array("vac","svap","yaj","vap","vah","ve","vye","hve","vad","Sv","vas","Svi"),array("+"),array("uac","suap","iaj","uap","uah","ue","vie","hie","uad","Su","us","Su"),array("+"),0);
 	storedata('6.1.15','sa',0);
-    $text = samprasarana(array("uac","suap","iaj","uap","ue","vie","hie","uad","Su"),0);
-	$text=change('/^([^+]*)u/','$1U');
-	$text=change('/^([^+]*)i/','$1I');
+    if ($lakAra!=="liw")
+	{
+		$text = samprasarana(array("uac","suap","iaj","uap","ue","vie","hie","uad","Su"),0);
+		$text=change('/^([^+]*)u/','$1U');
+		$text=change('/^([^+]*)i/','$1I');
+	}
 	storedata('6.4.2','sa',0);
 }
 /* na vazaH (6.1.20) */
@@ -5030,7 +5033,7 @@ if (in_array($fo,$pvAdi) && $shit===1 && ( $verbset==="kryAdi" || ($verbset==="n
 	storedata('7.3.80','sa',0);
 }
 /* Duplication because of caG */
-if ($caG===1 && arr($text,'/^['.pc('hl').']/') && $sanAdi!=="Ric" && $fo!=="Dew")
+if ($caG===1 && arr($text,'/^['.pc('hl').']/') && $sanAdi!=="Ric" && $fo!=="Dew" && $fo!=="wuo!Svi")
 {
 	caG_halAdi();	
 	abhyAsa_halAdi();
@@ -6297,8 +6300,6 @@ if ($lakAra==="liw" && $so==="sip" && arr($text,'/[iIuUfFxXeEoO]\+/') && sub(pra
 {
 	$id_dhAtu="vew";
 }
-/* patch for yAsuT Agama to combine it with the next pratyaya. because it would not be getting iDAgama. */
-//$text = one(array("+yA+"),array("+yA"),0);
 /* Adding iDAgama actually */
 if ($id_dhAtu==="sew" && $id_pratyaya==="sew" && !($yAsuT===1 && $lakAra==="ASIrliN")  && (!in_array("iw",$Agama)||$ciN===1) && $caG!==1 && $san!==1) // for seT dhAtus
 {
