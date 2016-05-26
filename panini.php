@@ -3528,7 +3528,7 @@ elseif ($lakAra==="liw" && (arr(array($verb_without_anubandha),'/^[IUFXeEoO]/') 
 /* dayAyAysazca (3.1.37) */
 elseif ($lakAra==="liw" && in_array($fo,array("daya!","aya!","Asa!")) )
 {
-    $text=two(array("+"),$tiG,array("+Am+"),$tiG,0);
+    $text=pr2(array("+"),$tiG,blank(0),array("+Am+"),$tiG,blank(0),$text);
     $text=change('/[+]eS$/','+Am+eS');
     $text=change('/[+]irec$/','+Am+irec');
 	storedata('3.1.37','sa',0);

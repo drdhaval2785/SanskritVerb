@@ -54,7 +54,9 @@ Caution - this code needs to be run only after all corrections have been made an
 
 # 3. Logic 
 
-This methodology exploits the fact that not two coders / data entry operators would do the same mistake. So we have taken UoHyd, Gerard and Our own OK list as three base data. Anything which is not found in any of these three databases if flagged as suspect and is manually examined.
+This methodology exploits the fact that not two coders / data entry operators would do the same mistake. 
+
+So we have taken UoHyd, Gerard and Our own OK list as three base data. Anything which is not found in any of these three databases if flagged as suspect and is manually examined.
 
 To keep track of various corrections, we use github issues.
 
