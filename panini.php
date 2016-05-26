@@ -6384,7 +6384,6 @@ elseif (arr($text,'/^[^pPbBmv]F\+/') && in_array($so,$tiG)  && !in_array("Sap",$
 		storedata('8.2.77','sa',0);
 	}
 }
-print_r($text);
 /* Ato lopa iTi ca (6.4.64) */
 if (arr($text,'/[+]nA[+]am$/') && $lakAra==="laN")
 {
