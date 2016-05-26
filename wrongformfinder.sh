@@ -45,5 +45,6 @@ do
 done
 echo '</forms>' >> generatedforms.xml
 php scripts/slp-dev.php suspectverbforms.txt suspecverbforms_deva.txt
-python scripts/comparedb.py generatedforms.xml suspectforms.txt
-python scripts/recheckgen.py suspectforms.txt recheck.sh
+cd scripts
+python comparedb.py ../generatedforms.xml ../suspectforms.txt
+python recheckgen.py suspectforms.txt recheck.sh
