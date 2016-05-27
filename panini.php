@@ -49,6 +49,7 @@ $header = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http:
 <body>
 ';
 $debug = 0; // 0 - no debugging. 1 - debugging on. It shows execution of some important time consuming scripts.
+$debugmode = 0; // 0 - No debugging, 1 - full debugging with function timestamp (for speed analysis and memory leaakage finding), 2 - Only $text display (no function start and ends).
 
 /* Reading from the HTML input. */
 $first = toslp($_GET["first"]); // to change the word input in devanagari / IAST to slp.
@@ -3891,7 +3892,7 @@ if (arr($text,'/\+Ri[c]{0,1}\+/')||$ciN===1||$ciN===2)
 		storedata('6.4.51','sa',0);
 	}
 	/* sArvadhAtukArdhadhAtukayoH (7.3.84) */
-	if(arr($text,'/['.pc('hl').']([+]*)i\+/') && !(in_array($lakAra,array("ASIrliN"))&&in_array($so,$tis)) && $caG!==1 && $aG!==1 && $id_dhAtu!=="aniw" && !(in_array($so,$taG)&&$verbset==="curAdi"))
+	if(arr($text,'/['.pc('hl').']([+]*)i\+/') && !(in_array($lakAra,array("ASIrliN"))&&in_array($so,$tis)) && $caG!==1 && $aG!==1 && $id_dhAtu!=="aniw" && !(in_array($so,$taG)&&$verbset==="curAdi"&&$lakAra!=="liw"))
 	{
 		$text=two($hl,array("+i+"),$hl,array("e+"),0);
 		$text=two($hl,array("i+"),$hl,array("e+"),0);
@@ -3970,10 +3971,9 @@ if ($lakAra==="liw" && $kaspratyaya===1 && sub(array("Am+"),$tiG1,blank(0),0) )
 	$text=$val;
 	$fo="qukfY";
 	$verb_without_anubandha="kf";
-	$kGiti=0;
 }
 /* asaMyogAlliT kit (1.2.5) */
-if (!arr(array($verb_without_anubandha),'/['.pc('hl').'M]['.pc('hl').']$/') && $lakAra==="liw" && !in_array($so,array("tip","sip","mip")) && !in_array($fo,array("raDa!")) && preg_match('/['.pc('hl').']$/',$verb_without_anubandha) )
+if (!arr(array($verb_without_anubandha),'/['.pc('hl').'M]['.pc('hl').']$/') && $lakAra==="liw" && !in_array($so,array("tip","sip","mip")) && !in_array($fo,array("raDa!")) && !in_array($fo,array("gf")) )
 {
 	storedata('1.2.5','pa',0);
 	$it = array_merge($it,array("k"));
@@ -7585,7 +7585,6 @@ if ( $lakAra!=="" && arr($text,'/Dv/') && sub(array("s"),array("Dv"),blank(0),0)
     $text = two(array("s"),array("Dv"),array(""),array("Dv"),0);
 	storedata('8.2.25','sa',0);
 }
-print_r($text);
 /* AdezapratyayayoH (8.3.59) */
 if( in_array($so,$tiG) && arr($text,'/([iIuUfFxXeEoOhyvrlkKgGN])([+]*[iI]*)s(['.pc('al').'])/') && (!arr($text,'/[+][s]$/')||($caG===1&&$so==="sip")) && arr($text,'/s/') && ( $rudAdibhyaH===1 || arr($text,'/[iIuUfFxeEoOhyvrlkKgGN][+]si$/') || $SaHsaH===1 || $sic===1 || $sic===2 || $syatAsI===1 || ends(array($us),prat('ik'),1) || $sIyuT===1 || ($lakAra==="liw" && arr($text,'/[+]ise$/')) ) && !arr($text,'/\+yAs\+/') && !(arr(array($fo),'/^s/') && arr($text,'/^[^+]*[iIuUfFxeEoOhyvrlkKgGN][+]s/')) )
 {
@@ -7594,7 +7593,6 @@ if( in_array($so,$tiG) && arr($text,'/([iIuUfFxXeEoOhyvrlkKgGN])([+]*[iI]*)s(['.
 	{
 		$text = change('/([iIuUfFxXeEoOhyvrlkKgGN])([+][iI]*)s(['.pc('al').'])/','$1$2z$3');
 	}
-	print_r($text);
 	$text = change('/([iIuUfFxXeEoOhyvrlkKgGN][+]*[iI]*)sI/','$1zI');
 	$text = change('/zIs([+a-zA-Z]+)$/','zIz$1');
 	$text = change('/[+]is(['.pc('al').'])/','+iz$1');
@@ -7634,7 +7632,6 @@ if (arr($text,'/[+]is[^+]+$/') )
 	storedata('8.3.59','sa',0);
 	$Adezapratyaya=1;
 }
-print_r($text);
 /* vibhASeTaH (8.3.79) */
 if( in_array($so,$tiG) && (arr($text,'/[iIuUfFxeoEOhyvrl]\+izIDv/') || (arr($text,'/[iIuUfFxeoEOhyvrl]\+iDv['.pc('al').']+$/') && in_array($lakAra,array("luN","liw")) ))  )
 {
@@ -14182,7 +14179,10 @@ if ($debug===1) {dibug('11700');}
 if ($frontend!=="0")
 {
 	if($debug===1) {dibug('DISPLAY_FROM_STOREDATA START');}
-	display_from_storedata();
+	if ($debugmode<2)
+	{
+		display_from_storedata();
+	}
 	if($debug===1) {dibug('DISPLAY_FROM_STOREDATA END');}
 	/*if($debug===1) {dibug('PRINT_FROM_STOREDATA START');}
 	print_from_storedata();

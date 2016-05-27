@@ -414,8 +414,8 @@ return $text; // returning the result to the user.
 // 1 will mean that $text will not be replaced, but the replaced values will be added to it. Used in case of optional Adezas.
 function one($a,$b,$merge)
 {
-    global $text, $debug; // taking $text from the subanta.php or sandhi.php and using it here.
-	if ($debug===1){
+    global $text, $debug, $debugmode; // taking $text from the subanta.php or sandhi.php and using it here.
+	if ($debug===1 && $debugmode<2){
 	echo "one started at ";
 	timestamp();}
     for($z=0;$z<count($text);$z++)
@@ -453,8 +453,8 @@ return $text;  // giving the result to the user.
 // 11 - change at the end of word only.
 function two($a,$b,$c,$d,$merge) // the comments are the same as one function.
 {
-    global $text, $debug;
-	if ($debug===1){
+    global $text, $debug, $debugmode;
+	if ($debug===1 && $debugmode<2){
 	echo "two started at ";
 	timestamp();}
     for ($z=0;$z<count($text);$z++)
@@ -502,8 +502,8 @@ if (($merge === 1) || ($merge === 3) ||($merge === 5) ) // optional Adezas.
 // 1 will mean that $text will not be replaced, but the replaced values will be added to it. Used in case of optional Adezas.
 function three($a,$b,$c,$d,$e,$f,$merge) // comments are the same as one function.
 {
-	global $text, $debug;
-	if ($debug===1){
+	global $text, $debug, $debugmode;
+	if ($debug===1 && $debugmode<2){
 	echo "three started at ";
 	timestamp();}
    for ($z=0;$z<count($text);$z++)
@@ -535,7 +535,7 @@ function three($a,$b,$c,$d,$e,$f,$merge) // comments are the same as one functio
         $text = array_unique($text);
         $text = array_values($text);
     }
-	if ($debug===1){
+	if ($debug===1 && $debugmode<2){
 	echo "three ended at ";
 	timestamp();}
     return $text;
@@ -774,7 +774,7 @@ function display($n)
 // new messages can be added if the message is of repeated nature.
 function display2($text,$n,$us='')
 {
-    global $upasarga_joined, $debug; // bringing $text from main php function.
+    global $upasarga_joined, $debug, $debugmode; // bringing $text from main php function.
 	foreach ($text as $val) { $out[] = str_replace("++","+",$val);}
 	$text = $out;
     if ($n === 1) // sending special messages.
@@ -816,12 +816,12 @@ function display2($text,$n,$us='')
         echo "<p class = pa>anupasarjanAt (".link_sutra("4.1.14").") :</p>\n";
         echo "<p class = pa>अनुपसर्जनात्‌ (४.१.१४) :</p>\n";
         }
-	if ($debug===1) {dibug('DISPLAY2 NOTES PRINT END');}
+	if ($debug===1 && $debugmode<2){ dibug('DISPLAY2 NOTES PRINT END');}
     for($i=1;$i<count($text)+1;$i++) // for all members of the $text array
     {
         echo "<p class = form>$i - ".convert(trim($us."+".$text[$i-1],'+'))."</p>\n"; // showing the output to the browser. e.g. 1. rAmaH. $i is for numbering. function convert converts the output into devanAgarI.
     }
-	if ($debug===1) {dibug('DISPLAY2 ACTUAL PRINT END');}
+	if ($debug===1 && $debugmode<2){ dibug('DISPLAY2 ACTUAL PRINT END');}
     if ($n === 2) { $text1 = $text; $text = $text2; } // not useful because the display(2) is not used in the code. If it is used, this will work.
 }
 /* function print2 is specially designed to try with gui function. */
@@ -1077,8 +1077,8 @@ return $output;
  */ 
 function sub($a,$b,$c,$repeat)
 {   
-     global $text, $debug;
-	if ($debug===1){
+     global $text, $debug, $debugmode;
+	if ($debug===1 && $debugmode<2){
 	echo "sub ", $repeat, " started at ";
 	timestamp();}
      $needle = array();
@@ -1131,7 +1131,7 @@ function sub($a,$b,$c,$repeat)
             $can = 0; // match not found
         }
     }
-	if ($debug===1){
+	if ($debug===1 && $debugmode<2){
 	echo "sub ", $repeat, " ended at ";
 	timestamp();}
 if ($can === 1)
@@ -1148,8 +1148,8 @@ else
 // $a - pattern in regular expression.
 function arr($text,$a)
 {
-	global $debug;
-	if ($debug===1){
+	global $debug, $debugmode;
+	if ($debug===1 && $debugmode<2){
 	echo "arr started at ";
 	timestamp();}
     foreach ($text as $value)
@@ -1164,7 +1164,7 @@ function arr($text,$a)
             $count[] = 0; // match not found
         }
     }
-	if ($debug===1){
+	if ($debug===1 && $debugmode<2){
 	echo "arr ended at ";
 	timestamp();}
     if (in_array(1,$count))
@@ -1307,8 +1307,8 @@ function anekAca($a)
 // 0 -> doesn't start with but ends with it. 1 -> ends with it or is equal to it. 2 -> is equal to it., 3 -> starts with it but doesn't end with it. 4 -> ends in verb (upasargas don't bother)
 function ends($a,$b,$n)
 {
-	global $debug;
-	if ($debug===1){
+	global $debug, $debugmode;
+	if ($debug===1 && $debugmode<2){
 	echo "ends ", $n, " started at ";
 	timestamp();}
     $upasarga = array("pra","prati","api","parA","apa","upa","pari","anu","ava","vi","saM","su","ati","ni","nir","ut","aDi","dur","aBi","A"); 
@@ -1390,7 +1390,7 @@ function ends($a,$b,$n)
 
         }
     }
-	if ($debug===1){
+	if ($debug===1 && $debugmode<2){
 	echo "ends ", $n, " ended at ";
 	timestamp();}
     if (isset($can) && in_array(1,$can))
@@ -1825,7 +1825,7 @@ function mit1($array,$b,$merge)
 // 0 to 12 are in the array. after that we process.
 function scrape($a,$a1,$b,$c,$d,$e,$e1)
 {
-    global $verbdata, $debug;
+    global $verbdata;
 	$verbdata1 = array_filter($verbdata, function($var) use ($a) { return preg_match("/$a/i", $var); });
 	$verbdata1 = array_unique($verbdata1);
 	$verbdata1 = array_values($verbdata1);
@@ -1873,10 +1873,10 @@ function scrape($a,$a1,$b,$c,$d,$e,$e1)
 // 0 to 12 are in the array. after that we process.
 function scrape1($a,$a1,$b,$c)
 {
-    global $verbdata, $debug;
- 	if ($debug===1) {dibug("scrape1 start");}
+    global $verbdata, $debug, $debugmode;
+	if ($debug===1 && $debugmode<2){ dibug("scrape1 start");}
 	$verbdata1 = array_filter($verbdata, function($var) use ($a) { return preg_match("/$a/i", $var); });
- 	if ($debug===1) {dibug("scrape1 middle");}
+	if ($debug===1 && $debugmode<2){ dibug("scrape1 middle");}
 	$verbdata1 = array_unique($verbdata1);
 	$verbdata1 = array_values($verbdata1);
     for($i=0;$i<count($verbdata1);$i++)
@@ -1890,7 +1890,7 @@ function scrape1($a,$a1,$b,$c)
 			}
     }
     if (isset($ret)) {$ret=array_map('trim',$ret);}
- 	if ($debug===1) {dibug("scrape1 end");}
+	if ($debug===1 && $debugmode<2){ dibug("scrape1 end");}
     return $ret;
 }
 // function ldc (link_dhatu_commentary)
@@ -1999,8 +1999,8 @@ function verb_meaning_gana_number1($text)
 function verb_meaning_gana_number2($text)
 {
    global $verbset, $frontend, $outfile;
-	global $debug;
-	if ($debug===1){
+	global $debug, $debugmode;
+	if ($debug===1 && $debugmode<2){
 	echo "verb_meaning_gana_number2 started at ";
 	timestamp();}
     $verbaccent=scrape($text,0,7,1,"",$verbset,14);
@@ -2022,7 +2022,7 @@ function verb_meaning_gana_number2($text)
 		fputs($outfile,"<p class = st >".$verbaccent[0].' - '.convert($meaning[0]).', '.convert($verbset[0]).' '.convert($number[0]).', '.ldc($madhav[0],'m').', '.ldc($kzir[0],'k').', '.ldc($dp[0],'d').', '.ldc($uohyd[0],'u').', '.ldc($jnu[0],'j').', '.inrialink($verbwithoutanubandha[0],$verbset[0])."</p>\n");
 		fputs($outfile,"<hr>\n");		
 	}
-	if ($debug===1){
+	if ($debug===1 && $debugmode<2){
 	echo "verb_meaning_gana_number2 ended at ";
 	timestamp();}
 }
@@ -2043,8 +2043,8 @@ function verb_meaning_gana_number3($text)
 // for display in tiGanta.php
 function verb_meaning_gana_number4($number)
 {
-	global $frontend, $outfile, $debug;
- 	if ($debug===1) {dibug("verb_meaning_gana_number4 start");}
+	global $frontend, $outfile, $debug, $debugmode;
+	if ($debug===1 && $debugmode<2){ dibug("verb_meaning_gana_number4 start");}
     $verbaccent=scrape1($number,13,7,1);
 	$verbwithoutanubandha=scrape1($number,13,2,1);
     $meaning=scrape1($number,13,1,1);
@@ -2055,7 +2055,7 @@ function verb_meaning_gana_number4($number)
 	$uohyd=scrape1($number,13,11,1);
 	$jnu=scrape1($number,13,12,1);
     $number=scrape1($number,13,13,1);
- 	if ($debug===1) {dibug("verb_meaning_gana_number4 middle");}
+	if ($debug===1 && $debugmode<2){ dibug("verb_meaning_gana_number4 middle");}
 	if ($frontend==='1')
 	{
 		echo "<p class = st >".toiast($verbaccent[0]).' - '.toiast($meaning[0]).', '.toiast($verbset[0]).' '.$number[0]."</p>\n";
@@ -2065,7 +2065,7 @@ function verb_meaning_gana_number4($number)
 		fputs($outfile,"<p class = st >".$verbaccent[0].' - '.convert($meaning[0]).', '.convert($verbset[0]).' '.convert($number[0]).', '.ldc($madhav[0],'m').', '.ldc($kzir[0],'k').', '.ldc($dp[0],'d').', '.ldc($uohyd[0],'u').', '.ldc($jnu[0],'j').', '.inrialink($verbwithoutanubandha[0],$verbset[0])."</p>\n");
 		fputs($outfile,"<hr>\n");*/
 	}
- 	if ($debug===1) {dibug("verb_meaning_gana_number4 end");}
+	if ($debug===1 && $debugmode<2){ dibug("verb_meaning_gana_number4 end");}
 }
 function verbset_from_number($number)
 {
@@ -2075,10 +2075,10 @@ function verbset_from_number($number)
 }
 function dhatu_from_number($number)
 {
-	global $frontend, $outfile, $debug;
- 	if ($debug===1) {dibug("dhatu_from_number start");}
+	global $frontend, $outfile, $debug, $debugmode;
+	if ($debug===1 && $debugmode<2){ dibug("dhatu_from_number start");}
    $first=scrape1($number,13,0,1);
- 	if ($debug===1) {dibug("dhatu_from_number end");}
+	if ($debug===1 && $debugmode<2){ dibug("dhatu_from_number end");}
 	return $first[0];
 }
 // for display of upasarga details.
@@ -2235,13 +2235,13 @@ function verb_itfinder($text)
 /* function change to change all members of $text based on a regular expression */
 function change($a,$b)
 {
-    global $text; global $debug;
-	if ($debug===1) {echo "change started at "; timestamp(); };
+    global $text; global $debug, $debugmode;
+	if ($debug===1 && $debugmode<2){ echo "change started at "; timestamp(); };
     foreach ($text as $value)
     {
         $val[]=preg_replace($a,$b,$value);
     }
-	if ($debug===1) {echo "change ended at "; timestamp(); };
+	if ($debug===1 && $debugmode<2){ echo "change ended at "; timestamp(); };
     return $val;
 } 
 /* function Adyanta */
@@ -2282,8 +2282,8 @@ function pratyayareplace($a,$b,$test)
 // sub is not specific. For pratyayas, we test whether it is at end or not.
 function pr2($a,$b,$c,$d,$e,$f,$test)
 {
-	global $debug;
-	if ($debug===1){
+	global $debug, $debugmode;
+	if ($debug===1 && $debugmode<2){
 	echo "pr2 started at ";
 	timestamp();}
 	$out=array();
@@ -2315,7 +2315,7 @@ function pr2($a,$b,$c,$d,$e,$f,$test)
         }
         $counter=1;
     }
-	if ($debug===1){
+	if ($debug===1 && $debugmode<2){
 	echo "pr2 ended at ";
 	timestamp();}
     return $out;
@@ -3366,7 +3366,7 @@ function zlu()
 /* function storedata to store necessary information for display later on. */
 function storedata($sutra_number,$style,$note)
 {
-	global $text, $storedata, $us, $removed_sutras;
+	global $text, $storedata, $us, $removed_sutras, $debugmode;
 	$text = one(array("++"),array("+"),0); // To remove double consecutive + signs before storing.
 	if (!in_array($style,array("pa","hn","st","red"))) { $style="sa"; }
 	if (!isset($note)) { $note=0; }
@@ -3379,6 +3379,11 @@ function storedata($sutra_number,$style,$note)
 		$prevdata = array_pop($storedata);
 		$text = $prevdata[0];
 		$storedata[]=array($text,$sutra_number,'drop',$note,$us);
+	}
+	// debug details
+	if ($debugmode===3)
+	{
+		echo 'sutra '.$sutra_number.' - '; print_r($text); echo "<br/>\n";
 	}
 }
 /* Read applied sUtras from storedata */
@@ -3395,7 +3400,7 @@ function sutrasfromstoredata()
 /* displaying from the storedata */
 function display_from_storedata()
 {
-	global $storedata, $debug;
+	global $storedata;
 	foreach ($storedata as $value)
 	{
 		gui($value[0],$value[1],$value[2],$value[3],$value[4]);
@@ -3414,11 +3419,11 @@ function print_from_storedata()
 // matches function makes the code fast. Earlier we were using a for loop over vdata / ASdata which was very costly. matches function is derived from the answer of Aleks G from http://stackoverflow.com/questions/12315536/search-for-php-array-element-containing-string
 function gui($text,$sutra_number,$style,$note,$us)
 {
-	global $frontend, $storedata, $debug;
+	global $frontend, $storedata, $debug, $debugmode;
 	global $ASdata, $vdata, $miscdata, $upasarga_joined, $otherdata, $paribhASAdata; // bringing $text from main php function.
 	if (!in_array($style,array("pa","hn","st","red","drop"))) { $style="sa"; }
 	if (!isset($note)) { $note=0; }
-	if ($debug===1) {dibug('GUI START');}
+	if ($debug===1 && $debugmode<2){ dibug('GUI START');}
 	if (strpos($sutra_number,'~')!==false && $frontend==='1')
 	{
 		$matches = array_filter($otherdata, function($var) use ($sutra_number) { return strpos($var,$sutra_number.":")!==false; });
@@ -3458,7 +3463,7 @@ function gui($text,$sutra_number,$style,$note,$us)
 		$sutra_no[$i] = $int[0];
 		$sutra_type[$i] = $int[1];
 		$sutra_dev[$i] = $int[2];
-		if ($debug===1) {dibug('GUI ASDATA ANALYSIS END');}
+		if ($debug===1 && $debugmode<2){ dibug('GUI ASDATA ANALYSIS END');}
 		if ($sutra_no[$i] === $sutra_number)
 		{	
 			echo "<p class = ".$style." >By ".toiast($sutra_dev[$i])." (".link_sutra($sutra_number).") :</p>\n";
@@ -3495,7 +3500,7 @@ function gui($text,$sutra_number,$style,$note,$us)
 			display2($text,$note,$us);
 		}				
 	}
-	if ($debug===1) {dibug('GUI END');}
+	if ($debug===1 && $debugmode<2){ dibug('GUI END');}
 }
 /* Function gui2 to use in case we don't want to display the word (e.g. before entering prakriyA e.g. dhAtu pada etc. */
 // matches function makes the code fast. Earlier we were using a for loop over vdata / ASdata which was very costly. matches function is derived from the answer of Aleks G from http://stackoverflow.com/questions/12315536/search-for-php-array-element-containing-string
@@ -3913,10 +3918,17 @@ function timestamp()
 }
 function dibug($a)
 {
-	global $time, $text;
-	echo "Hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii DEBUG ", $a, " at ";
-	timestamp();
-	print_r($text);
+	global $time, $text, $debugmode;
+	if ($debugmode>2)
+	{
+		echo $a.' - '; print_r($text); echo "<br/>\n";
+	}
+	else
+	{
+		echo "Hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii DEBUG ", $a, " at ";
+		timestamp();
+		print_r($text);
+	}
 }
 function verbformlist()
 {
