@@ -6414,7 +6414,6 @@ elseif (arr($text,'/^[^+]+[+][^+]+[A][+]['.pc('ac').']/') && !arr($text,'/[+]yA[
     $text=two($hl,array("+sic+"),$hl,array("A+sic+"),0);
 	storedata('6.4.64','sa',0);
 }
-print_r($text);
 /* Ato lopa iTi ca (6.4.64) */
 if (arr($text,'/A\+i/') && sub(array("A+"),array("i"),$tiG1,0) && $lakAra!=="" && in_array("iw",$Agama) )
 {
@@ -7751,11 +7750,12 @@ if(arr($text,'/[iIuUfFxXeoEOhyvrlkKgGN][+][iI]*s['.pc('al').'MH+]+$/') && ($ksa=
 	$text = change('/[+]([iI])z$/','+$1s');
 	storedata('8.3.59','sa',0);
 }
-if(($sIyuT===1 || $sic!==0) && arr($text,'/[+]s[Ii]s/'))
+if(($sIyuT===1 || $sic!==0) && arr($text,'/[+]s[Ii]s['.pc('al').']/'))
 {
 	storedata('8.3.55','pa',0);
 	storedata('8.3.57','pa',0);
 	$text = one(array("+sIs","+sis"),array("+sIz","+siz"),0);
+	$text = change('/sIz$/','sIs');
 	storedata('8.3.59','sa',0);
 }
 /* For verbs - remove all + marks. */

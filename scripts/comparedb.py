@@ -68,7 +68,7 @@ def gananame(number):
 
 if __name__=="__main__":
 	testfile = sys.argv[1]
-	base = baseverbformlist('',['../Data/verbforms_gerard.txt','../Data/verbforms_amba.txt','../Data/okforms.txt'])
+	base = baseverbformlist('',['../Data/verbforms_gerard.txt','../Data/verbforms_amba.txt','../Data/okforms.txt','../Data/notnow.txt'])
 	test = testverbformlist(testfile)
 	suspectfile = sys.argv[2]
 	suspect = codecs.open(suspectfile,'w','utf-8')
