@@ -4880,9 +4880,10 @@ elseif ( in_array("k",$itpratyaya) && (in_array($fo,array("brUY","Yizvapa!"))||(
 {
     $text=two(array("vac","svap","yaj","vap","vah","ve","vye","hve","vad","Sv","vas","Svi"),array("+"),array("uac","suap","iaj","uap","uah","ue","vie","hie","uad","Su","us","Su"),array("+"),0);
 	storedata('6.1.15','sa',0);
+	$text = samprasarana(array("uac","iaj","uap","ue","uad"),0);
     if ($lakAra!=="liw")
 	{
-		$text = samprasarana(array("uac","suap","iaj","uap","ue","vie","hie","uad","Su"),0);
+		$text = samprasarana(array("suap","vie","hie","Su"),0);
 		$text=change('/^([^+]*)u/','$1U');
 		$text=change('/^([^+]*)i/','$1I');
 	}
@@ -6735,6 +6736,8 @@ if (in_array($fo,array("wumasjo!","RaSa!")) && sub(array("masj","naS"),array("+"
 { 
     $text = three(array("masj","naS"),array("+"),prat('Jl'),array("mansj","nanS"),array("+"),prat('Jl'),0);
 	storedata('7.1.60','sa',0);
+	$text = three(array("mansj","nanS"),array("+"),prat('Jl'),array("manj","nanS"),array("+"),prat('Jl'),0);
+	storedata('8.2.29','sa',0);
 }
 // ata upadhAyAH patch for liT.
 if ( in_array($so,array("tip")) && $lakAra==="liw" && arr($text,'/a['.pc('hl').']\+/'))
@@ -6920,7 +6923,7 @@ if ( arr($text,'/vaDa\+i/') )
     $atolopa=1;
 }
 /* skoH saMyogAdyorante ca (8.2.29) */
-if ( (arr($text,'/[s]['.flat($hl).'][+]/') || arr($text,'/vrASc\+/') ) && in_array($so,$tiG) && $asyati!==1 && !preg_match('/s['.pc('hl').']/',$verb_without_anubandha) && !preg_match('/jj$/',$verb_without_anubandha) && $ardhadhatuka===1)
+if ( (arr($text,'/[s]['.flat($hl).'][+]/') || arr($text,'/vrASc\+/') ) && in_array($so,$tiG) && $asyati!==1 && (!preg_match('/s['.pc('hl').']/',$verb_without_anubandha)||$verbset==="ruDAdi") && !preg_match('/jj$/',$verb_without_anubandha) && $ardhadhatuka===1)
 {
 	foreach ($hl as $value) { $ska[] = "s".$value."+"; }
 	$text = one($ska,$hlplus,0);
