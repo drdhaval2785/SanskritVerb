@@ -5628,6 +5628,13 @@ if ( in_array($so,$taG) && ($sic===1||$sIyuT===1) && (in_array($fo,array("vfN","
 		storedata('7.3.84','sa',0);
 	}
 }
+/* dhi ca (8.2.25) */
+// only Dv is placed to make it specific to pratyayas. Others may be added. Pending.
+if ( $lakAra!=="" && arr($text,'/Dv/') && sub(array("s"),array("Dv"),blank(0),0) && in_array($so,$tiG))
+{
+    $text = two(array("s"),array("Dv"),array(""),array("Dv"),0);
+	storedata('8.2.25','sa',0);
+}
 /* Rtazca saMyogAdeH (7.2.43) */
 if (arr($text,'/['.pc('hl').']['.pc('hl').'][f][+]/') && in_array($so,$taG) && ($sic===1||$sIyuT===1) && $ardhadhatuka===1)
 {
@@ -7578,13 +7585,6 @@ if(arr($text,'/Iq\+/') && sub(array("Iq"),array("+si","+se","+sva","+Dve","+Dvam
 	storedata('7.2.78','sa',0);
 }
 if ($debug===1) {dibug("4800");}
-/* dhi ca (8.2.25) */
-// only Dv is placed to make it specific to pratyayas. Others may be added. Pending.
-if ( $lakAra!=="" && arr($text,'/Dv/') && sub(array("s"),array("Dv"),blank(0),0) && in_array($so,$tiG))
-{
-    $text = two(array("s"),array("Dv"),array(""),array("Dv"),0);
-	storedata('8.2.25','sa',0);
-}
 /* AdezapratyayayoH (8.3.59) */
 if( in_array($so,$tiG) && arr($text,'/([iIuUfFxXeEoOhyvrlkKgGN])([+]*[iI]*)s(['.pc('al').'])/') && (!arr($text,'/[+][s]$/')||($caG===1&&$so==="sip")) && arr($text,'/s/') && ( $rudAdibhyaH===1 || arr($text,'/[iIuUfFxeEoOhyvrlkKgGN][+]si$/') || $SaHsaH===1 || $sic===1 || $sic===2 || $syatAsI===1 || ends(array($us),prat('ik'),1) || $sIyuT===1 || ($lakAra==="liw" && arr($text,'/[+]ise$/')) ) && !arr($text,'/\+yAs\+/') && !(arr(array($fo),'/^s/') && arr($text,'/^[^+]*[iIuUfFxeEoOhyvrlkKgGN][+]s/')) )
 {
