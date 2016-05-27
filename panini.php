@@ -4193,7 +4193,7 @@ if (in_array($fo,array("wuo!Svi")) && $lakAra==="luN" && sub(array("Svi"),array(
 	storedata('7.4.18','sa',0);
 	foreach ($text as $value)
 	{
-		if (preg_match('/[+]a[+]/',$value))
+		if (preg_match('/Svi[+]a[+]/',$value))
 		{
 			$caGable[] = $value;
 		}
