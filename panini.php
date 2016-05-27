@@ -13817,7 +13817,7 @@ if (arr($text,'/[zwWqQR]([+]*)R/') && sub($shtu,array("Ravat","Ragar"),blank(0),
 $text = two($shtu,array("Ravat","Ragar"),array("R","R","R","R","R","R"),array("Ravat","Ragar"),0);
 storedata('8.4.41','sa',0);
 }
-if (arr($text,'/[zwWqQR]([+]*)RAm/') && $allopo!==1) // yaro'nunAsike'nunAsiko vA is mandatory in pratyayas. nAm being a pratyaya, we are displaying this message.
+if (arr($text,'/[zwWqQR]([+]*)RAm/') && $allopo!==1 && $type!=="tiGanta") // yaro'nunAsike'nunAsiko vA is mandatory in pratyayas. nAm being a pratyaya, we are displaying this message.
 {
 $text = two($shtu,array("RAm"),array("R","R","R","R","R","R"),array("RAm"),0);
 storedata('8.4.45','sa',0);
