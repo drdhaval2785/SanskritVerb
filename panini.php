@@ -1563,7 +1563,6 @@ if (in_array($so,$tiG) && arr($text,'/[+]Ric$/') && $sanAdi==="Ric" && $lakAra!=
 		foreach ($hl as $av) {$hlam[] = $av."+i";}
 		storedata('7.3.86','sa',0);
 	}
-	print_r($text);
 	/* sidhyaterapAralaukike (6.1.49) */
 	if ( $_GET['cond53']==='2' && sub(array("seDi"),array(""),blank(0),0) )
 	{
