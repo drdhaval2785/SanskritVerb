@@ -7,7 +7,7 @@
   * Acknowledgements: The base book for coding has been Astadhyayi sahajabodha of Dr. Pushpa Dikshit, published by Pratibha Prakashan, Delhi.
   * I extend my heartfelt thanks to Ananda Loponen for the code to convert devanagari and various sanskrit transliterations. That can be accessed at http://www.ingmardeboer.nl/php/diCrunch.php?act=help.
   * I also extend my gratitude to gloomy.penguin of stackoverflow.com, who helped me create dvitva and lopa functions, without which I would be handicapped.
-  * For setup, copy and paste tiGanta.php, tiGanta.html, and scripts folder to your localhost and server and run tiGanta.html.
+  * For setup, run install.sh. 
   * tiGanta.html is the frontend for the code.
   * scripts/ajax.php and scripts/script.js are codes which asks for user feedback for particular words. 
   * scripts/function.php stores the frequently used functions in this code (The description on how to use the code is there in function.php).
@@ -1563,10 +1563,11 @@ if (in_array($so,$tiG) && arr($text,'/[+]Ric$/') && $sanAdi==="Ric" && $lakAra!=
 		foreach ($hl as $av) {$hlam[] = $av."+i";}
 		storedata('7.3.86','sa',0);
 	}
+	print_r($text);
 	/* sidhyaterapAralaukike (6.1.49) */
-	if ( $_GET['cond53']==='2' && sub(array("seDi"),array("+"),blank(0),0) )
+	if ( $_GET['cond53']==='2' && sub(array("seDi"),array(""),blank(0),0) )
 	{
-		$text=one(array("seDi+"),array("sADi+"),0);    
+		$text=one(array("seDi"),array("sADi"),0);    
 		storedata('6.1.49','sa',0);
 	}
 	$text = change('/[+]i$/','i');
