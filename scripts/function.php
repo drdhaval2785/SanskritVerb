@@ -3092,6 +3092,13 @@ function abhyAsa_halAdi()
 		{
 			$text=two(array("a+f","pa+pF","pa+pf"),array("+"),array("i+f","pi+pF","pi+pf"),array("+"),0);
 			storedata('7.4.77','sa',0);
+			/* aci znudhAtubhruvAM yvoriyaGuvaGau (6.4.77) */
+			// patch for 'f' juhotyAdi.
+			if (arr($text,'/^i[+]f[+]/'))
+			{
+				$text = change('/^i[+]f[+]/','iy+f+');
+				storedata('6.4.77','sa',3);
+			}
 		}
 		/* nijAM trayANAM guNaH zlau (7.4.75) */
 		elseif(in_array($fo,array("Riji!r","viji!r","vizx!")) && sub(array("ni+nij","vi+vij","vi+viz"),array("+"),blank(0),0))
