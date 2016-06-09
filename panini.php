@@ -3811,15 +3811,15 @@ if (arr($text,'/\+Ri[c]{0,1}\+/')||$ciN===1||$ciN===2)
 	{
 		storedata('1.3.8','pa',0);
 	}
+	/* ato lopaH (6.4.48) */
+	if ( arr($text,'/a[+]Ri/') && in_array($fo,$curAdi_adanta) && ($verbset==="none"||$verbset==="curAdi"))
+	{
+		$text = change('/a[+]Ri/','+Ri');
+		storedata('6.4.48','sa',0);
+	}
 	/* NeraniTi (6.4.51) */
 	if (arr($text,'/^['.pc('hl').']/') && $caG===1 && $sanAdi!=="Ric" && $vsuf!=="yak")
 	{
-		/* ato lopaH (6.4.48) */
-		if ( arr($text,'/a[+]Ri/') && in_array($fo,$curAdi_adanta) && ($verbset==="none"||$verbset==="curAdi"))
-		{
-			$text = change('/a[+]Ri/','+Ri');
-			storedata('6.4.48','sa',0);
-		}
 		$text = one(array("+Ric+","+Ri+"),array("+","+"),0);
 		storedata('6.4.51','sa',0);
 	}

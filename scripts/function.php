@@ -2589,6 +2589,7 @@ function caG_ajAdi()
 		$text=change('/^([^+]*)T([^+]*[+])/','$1t$2');
 		storedata('8.4.54','sa',0);
 	}
+	$text = change('/[+]+/','+');
 	return $text;
 }
 function san_ajAdi()
