@@ -5628,13 +5628,6 @@ if ( in_array($so,$taG) && ($sic===1||$sIyuT===1) && (in_array($fo,array("vfN","
 		storedata('7.3.84','sa',0);
 	}
 }
-/* dhi ca (8.2.25) */
-// only Dv is placed to make it specific to pratyayas. Others may be added. Pending.
-if ( $lakAra!=="" && arr($text,'/Dv/') && sub(array("s"),array("Dv"),blank(0),0) && in_array($so,$tiG))
-{
-    $text = two(array("s"),array("Dv"),array(""),array("Dv"),0);
-	storedata('8.2.25','sa',0);
-}
 /* Rtazca saMyogAdeH (7.2.43) */
 if (arr($text,'/['.pc('hl').']['.pc('hl').'][f][+]/') && in_array($so,$taG) && ($sic===1||$sIyuT===1) && $ardhadhatuka===1)
 {
@@ -6377,6 +6370,14 @@ if (in_array($fo,array("wuo!Svi")) && sub(array("Svi"),array("+"),prat('vl'),0) 
 	$text = three(array("Svi","Su+Su"),array("+"),prat('vl'),array("Svi","Su+Su"),array("+i"),prat('vl'),0);
 	storedata('7.2.35','sa',0);
 }
+print_r($text);
+/* dhi ca (8.2.25) */
+// Only 'Dv' is added to make it specific to pratyayas. Others may be added.
+if ( $lakAra!=="" && arr($text,'/s\+Dv/') && in_array($so,$tiG))
+{
+    $text = one(array("s+Dv"),array("+Dv"),0);
+	storedata('8.2.25','sa',0);
+}
 /* udoSThyapUrvasya (7.1.102) */
 if (arr($text,'/^[pPbBmv]F[+]/')  && in_array($so,$tiG) && !in_array("Sap",$vik) && ($sarvadhatuka===1 || in_array("Sa",$vik) || arr($text,'/[+]yA/') ) && $ciN!==1 && $ciN!==2 )
 {
@@ -6622,12 +6623,6 @@ elseif (  in_array($so,$tiG) && ($sanAdi==="yaG"||$vsuf==="yak"||$lakAra==="ASIr
 {
     $text=three($ac,array("+"),array("y"),dirgha($ac),array("+"),array("y"),0);
 	storedata('7.4.25','sa',0);
-}
-/* dhi ca (8.2.25) */
-if ( $lakAra!=="" && arr($text,'/s\+D/') && in_array($so,$tiG))
-{
-    $text = one(array("s+D"),array("+D"),0);
-	storedata('8.2.25','sa',0);
 }
 /* neTyaliTi radheH (7.1.62) */
 if (in_array($fo,array("raDa!")) && $lakAra!=="liw" && in_array("iw",$Agama) && sub(array("raD"),array("+i"),blank(0),0) )
@@ -11499,7 +11494,6 @@ if (arr($text,'/hiMs\+/'))
     $it=array_merge($it,array("i"));
     $itprakriti=array_merge($it,array("i"));
 }
-print_r($text);
 /* aniditAM hala upadhAyAH kGiti (6.4.24) */ 
 // To prevent ajagranTan -> ajagraTan
 if ( (in_array($fo,$aniditverbs)) && $lakAra==="luN" && arr($text,'/[NYRnmM]['.pc('hl').'][+]['.pc('ac').'][^+]*$/'))
@@ -11511,7 +11505,7 @@ elseif ( !in_array("i",$it) && arr($text,'/[nM]['.pc('hl').'][+]/') && !($lakAra
     $text = three(array("n","M"),$hl,array("+"),array("",""),$hl,array("+"),0);
 	storedata('6.4.24','sa',0);
     $aniditAm = 1; // 0 - this sUtra has not applied. 1 - this sUtra has applied.
-}print_r($text);
+}
 /* samaH sami (6.3.93) */ 
 if (preg_match('/[s][a][m][a][n][c]/',$fo) && sub(array("anc","Anc"),array("+"),blank(0),0) && $ancu===1)
 {
