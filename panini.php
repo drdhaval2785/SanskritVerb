@@ -11504,10 +11504,10 @@ if (arr($text,'/hiMs\+/'))
 if ( (in_array($fo,$aniditverbs)) && $lakAra==="luN" && arr($text,'/[NYRnmM]['.pc('hl').'][+]['.pc('ac').'][^+]*$/'))
 {
 }
-elseif ( arr($text,'/janB/')||arr($text,'/ranB/') )
+elseif ( arr($text,'/janB/')||arr($text,'/ranB/'))
 {
 }
-elseif ( !in_array("i",$it) && arr($text,'/[nM]['.pc('hl').'][+]/') && !($lakAra==="luN"&&arr($text,'/[nM]['.pc('hl').'][+][st]/')&&in_array($fo,$irendiditverbs)&&$sic===1) && ( in_array("k",$itpratyaya)||in_array("N",$itpratyaya)|| $ancu===1 ) && !($kruJca===1 && sub(array("krunc","kruYc"),blank(0),blank(0),0) ) && $nance===0 && $so!=="mahiN" && !(arr($text,'/[NYRnmM]['.pc('hl').'][+]a[+]/') && in_array("Sap",$vik)) && $lakAra!=="viDiliN" && $verbset!=="ruDAdi" && $aniditAm!==1 && !in_array("Sap",$vik) && !in_array($fo,$curAdi_adanta) && !in_array('7.1.59',sutrasfromstoredata()))
+elseif ( !in_array("i",$it) && arr($text,'/['.pc('ac').'][nM]['.pc('hl').'][+]/') && !($lakAra==="luN"&&arr($text,'/[nM]['.pc('hl').'][+][st]/')&&in_array($fo,$irendiditverbs)&&$sic===1) && ( in_array("k",$itpratyaya)||in_array("N",$itpratyaya)|| $ancu===1 ) && !($kruJca===1 && sub(array("krunc","kruYc"),blank(0),blank(0),0) ) && $nance===0 && $so!=="mahiN" && !(arr($text,'/[NYRnmM]['.pc('hl').'][+]a[+]/') && in_array("Sap",$vik)) && $lakAra!=="viDiliN" && $verbset!=="ruDAdi" && $aniditAm!==1 && !in_array("Sap",$vik) && !in_array($fo,$curAdi_adanta) && !in_array('7.1.59',sutrasfromstoredata()))
 {
     $text = three(array("n","M"),$hl,array("+"),array("",""),$hl,array("+"),0);
 	storedata('6.4.24','sa',0);
@@ -11555,9 +11555,10 @@ if ($sarvanamasthana1===1 && ( ($ancu===0 && $dhatu===1)  ) && $kruJca===0 && ar
     {
 		storedata('DAtougit','pa',0);
     }
+print_r($text);
 if ($debug===1) {dibug("9000");}
 //if ($sarvanamasthana1===1 && $nAbhyasta===0 &&  (( $dhatu===0 && arr($text,'/[uUfFxX][!][+]/') ) ||  ($ancu===1 && $dhatu===1) ||  ( ($kvip===1 || $kvin===1)&& $dhatu===1 && arr(array($fo),'/[a][t]$/')) || $bhavat===1 ) && $kruJca===0 && $vAnapuMsaka===0)
-if ($sarvanamasthana1===1 && !in_array(1,$num) && (( $dhatu===0 && itcheck(array("u","U","f","F","x","X"),1))  ||  ($ancu===1 && $kvin===1) ||  ( ($kvip===1 || $kvin===1)&& $dhatu===1 && arr(array($fo),'/[a][t]$/')) || $bhavat===1 ) && $aniditAm===0 && $GIS!==1 && $GIn!==1 && $GIp!==1) // added aniditAM for prAcI.
+if (in_array($so,$sup) && $sarvanamasthana1===1 && !in_array(1,$num) && (( $dhatu===0 && itcheck(array("u","U","f","F","x","X"),1))  ||  ($ancu===1 && $kvin===1) ||  ( ($kvip===1 || $kvin===1)&& $dhatu===1 && arr(array($fo),'/[a][t]$/')) || $bhavat===1 ) && $aniditAm===0 && $GIS!==1 && $GIn!==1 && $GIp!==1) // added aniditAM for prAcI.
 {
     $text = one(array("ac+","Ac+"),array("anc+","Anc+"),0);
     $text = three(blank(1),$hl,array("u!+","U!+","f!+","F!+","x!+"),array("n"),$hl,array("u!+","U!+","f!+","F!+","x!+"),0); $num=array_merge($num,array(1));
