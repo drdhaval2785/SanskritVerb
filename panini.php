@@ -49,7 +49,7 @@ $header = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http:
 <body>
 ';
 $debug = 0; // 0 - no debugging. 1 - debugging on. It shows execution of some important time consuming scripts.
-$debugmode = 2; // 0 - No debugging, 1 - full debugging with function timestamp (for speed analysis and memory leaakage finding), 2 - Only $text display (no function start and ends).
+$debugmode = 0; // 0 - No debugging, 1 - full debugging with function timestamp (for speed analysis and memory leaakage finding), 2 - Only $text display (no function start and ends).
 
 /* Reading from the HTML input. */
 $first = toslp($_GET["first"]); // to change the word input in devanagari / IAST to slp.
@@ -2532,7 +2532,7 @@ elseif (in_array($so,$tiG) && in_array($fo,array("Divi!","kfvi!")) && $sarvadhat
     $text=three(array("Dinv","kfnv"),array("+"),$tiG,array("Dina","kfna"),array("+u+"),$tiG,0);
     $text=one(array("+u+u"),array("+u+"),0);
 	storedata('3.1.80','sa',0);
-    $text=three(array("Dina","kfna"),array("+u+"),$tiG,array("Din","kfn"),array("u+"),$tiG,0);
+    $text=three(array("Dina","kfna"),array("+u+"),$tiG,array("Din","kfn"),array("+u+"),$tiG,0);
 	storedata('6.4.48','sa',0);
     $vik=array_merge($vik,array("u"));
     $set=2;
@@ -5761,14 +5761,15 @@ if ( arr($text,'/[B][U][+]['.pc('ac').']/') && in_array($lakAra,array("luN","liw
     $text = two(array("BU+"),$ac,array("BUv+"),$ac,0);
 	storedata('6.4.88','sa',0);	
 }
+print_r($text);
 /* jusi ca (7.3.83) */
 if ( ($jherjus===1 || $sijabhyastavidibhyazca===1) && arr($text,'/[iIuUfFxX]\+us/') && $lakAra!=="liw" ) // liT has 'us' which is not 'jus'
 {
     $text=three(array("i","I","u","U","f","F","x","X"),array("+"),array("us"),array("e","e","o","o","ar","ar","al","al"),array("+"),array("us"),0);
 	storedata('7.3.83','sa',0);
 }
-// Patch for viDiliN to overcome application of udoSThyapUrvasya.
-elseif(arr($text,'/pipar[+]us/'))
+// Patch for viDiliN to overcome application of udoSThyapUrvasya, and prevente pugantalaghUpadhasya ca in dhivikRNvyora ca.
+elseif(arr($text,'/pipar[+]us/')||arr($text,'/^kfn[+]u[+]/')||arr($text,'/^Din[+]u[+]/'))
 {
 }
 /* udoSThyapUrvasya (7.1.102) */
@@ -6048,6 +6049,12 @@ elseif ( ($sarvadhatuka===1 || $gAtisthA===1 ) && in_array($fo,array("BU","zUN",
 if ( $didhI!==1 && $kGiti!==1 && $caG!==1 && !($lakAra==="liw" && in_array($fo,array("uN"))) && arr($text,'/[iIuUfFxX]\+[uiae]\+/') && ($sarvadhatuka===1 || $ardhadhatuka===1) && !($ad===1 && sub(array("i","I","u","U","f","F","x","X"),array("+"),$ajAdi_apit_sArvadhAtuka_pratyayas,0) ) )
 {
     $text=two(array("i","I","u","U","f","F","x","X",),array("+u+","+I+","+a+","+e"),array("e","e","o","o","ar","ar","al","al",),array("+u+","+I+","+a+","+e"),0);
+	storedata('7.3.84','sa',0);
+}
+/* sArvadhAtukArdhadhAtukayoH (7.3.84) */
+if ( arr($text,'/^kf[+]o[+]tu$/') )
+{
+    $text=change('/^kf[+]o[+]tu$/','karotu');
 	storedata('7.3.84','sa',0);
 }
 /* sArvadhAtukArdhadhAtukayoH (7.3.84) */
