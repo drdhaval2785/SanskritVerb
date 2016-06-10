@@ -49,7 +49,7 @@ $header = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http:
 <body>
 ';
 $debug = 0; // 0 - no debugging. 1 - debugging on. It shows execution of some important time consuming scripts.
-$debugmode = 0; // 0 - No debugging, 1 - full debugging with function timestamp (for speed analysis and memory leaakage finding), 2 - Only $text display (no function start and ends).
+$debugmode = 2; // 0 - No debugging, 1 - full debugging with function timestamp (for speed analysis and memory leaakage finding), 2 - Only $text display (no function start and ends).
 
 /* Reading from the HTML input. */
 $first = toslp($_GET["first"]); // to change the word input in devanagari / IAST to slp.
@@ -5903,7 +5903,7 @@ if ( in_array($so,$tiG) && $luGset===5 && sub(array("BrAj","BAs","BAS","dIp","jI
 	storedata('7.4.3','sa',0);
 }
 /* nAglopizAsvRditAm (7.4.2) */
-elseif ( in_array($so,$tiG) && (in_array($fo,$curAdi_adanta) || in_array($fo,array("SAsu!")) || in_array($fo,$Rditverbs)) && $luGset===5 && sub(array("A","I","U","F","X","e","E","o","O"),$hl,array("+i+a"),0) )
+elseif ( in_array($so,$tiG) && (in_array($fo,$curAdi_adanta) || in_array($fo,array("SAsu!")) || in_array($fo,$Rditverbs)) && $luGset===5 && sub(array("A","I","U","F","X","e","E","o","O"),$hl,array("+i+a","+a+"),0) && $caG===1)
 {
 	storedata('7.4.2','sa',0);
 }
@@ -6370,7 +6370,6 @@ if (in_array($fo,array("wuo!Svi")) && sub(array("Svi"),array("+"),prat('vl'),0) 
 	$text = three(array("Svi","Su+Su"),array("+"),prat('vl'),array("Svi","Su+Su"),array("+i"),prat('vl'),0);
 	storedata('7.2.35','sa',0);
 }
-print_r($text);
 /* dhi ca (8.2.25) */
 // Only 'Dv' is added to make it specific to pratyayas. Others may be added.
 if ( $lakAra!=="" && arr($text,'/s\+Dv/') && in_array($so,$tiG))
