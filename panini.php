@@ -13474,14 +13474,14 @@ $text = one ($kaska,$kaskareplace,0);
     $kaska = 1; // 0 - This sUtra has not applied. 1 - This sUtra has applied.
 } else { $kaska = 0; }
 /* isusoH sAmarthye (8.3.44) and nityaM samAse'nuttarapadasthasya (8.3.45) */ 
-if (arr($text,'/H/') && sub(array("iH","uH",),$ku,blank(0),0) && $dvi1===0 && $dvi2===0 && $muhu1 ===0 && $us!=="nis")
+if (arr($text,'/H/') && sub(array("iH","uH",),$ku,blank(0),0) && $dvi1===0 && $dvi2===0 && $muhu1 ===0 && $us!=="nis" && !in_array($so,$tiG))
 {
     $text = two (array("iH","uH"),$ku,array("iz","uz"),$ku,1);
 	storedata('8.3.44','sa',0);
 	storedata('8.3.45','sa',0);
     $isu1 = 1; // 0 - This sUtra has not applied. 1 - This sUtra has applied.
 } else { $isu1 = 0; }
-if (arr($text,'/H/') && sub(array("iH","uH"),$pu,blank(0),0)  && $us!=="nis")
+if (arr($text,'/H/') && sub(array("iH","uH"),$pu,blank(0),0)  && $us!=="nis" && !in_array($so,$tiG))
 {
  $text = two (array("iH","uH"),$pu,array("iz","uz"),$pu,1);
 	storedata('8.3.44','sa',0);
@@ -13489,12 +13489,12 @@ if (arr($text,'/H/') && sub(array("iH","uH"),$pu,blank(0),0)  && $us!=="nis")
     $isu2 = 1; // 0 - This sUtra has not applied. 1 - This sUtra has applied.
 } else { $isu2= 0; }
 /* idudupadhasya cApratyayasya (8.3.41) */
-if (arr($text,'/H/') && sub($iN,array("H"),$ku,0) && $dvi1===0 && $dvi2===0 && $isu1 ===0 && $isu2 ===0&& $muhu1 ===0 && ($pada !== "pratyaya" || $us==="nis"))
+if (arr($text,'/H/') && sub($iN,array("H"),$ku,0) && $dvi1===0 && $dvi2===0 && $isu1 ===0 && $isu2 ===0&& $muhu1 ===0 && ($pada !== "pratyaya" || $us==="nis") && !in_array($so,$tiG))
 {
     $text = three(array("i","u",),array("H"),$ku,array("i","u",),array("z"),$ku,1);
 	storedata('8.3.41','sa',0);
 }
-if (arr($text,'/H/') && sub($iN,array("H"),$pu,0) && $pada !== "pratyaya")
+if (arr($text,'/H/') && sub($iN,array("H"),$pu,0) && $pada !== "pratyaya" && !in_array($so,$tiG))
 {
     $text = three(array("i","u",),array("H"),$pu,array("i","u",),array("z"),$pu,1);
 	storedata('8.3.41','sa',0);
