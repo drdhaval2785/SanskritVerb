@@ -5761,7 +5761,6 @@ if ( arr($text,'/[B][U][+]['.pc('ac').']/') && in_array($lakAra,array("luN","liw
     $text = two(array("BU+"),$ac,array("BUv+"),$ac,0);
 	storedata('6.4.88','sa',0);	
 }
-print_r($text);
 /* jusi ca (7.3.83) */
 if ( ($jherjus===1 || $sijabhyastavidibhyazca===1) && arr($text,'/[iIuUfFxX]\+us/') && $lakAra!=="liw" ) // liT has 'us' which is not 'jus'
 {
@@ -11500,6 +11499,7 @@ if (arr($text,'/hiMs\+/'))
     $it=array_merge($it,array("i"));
     $itprakriti=array_merge($it,array("i"));
 }
+print_r($text);
 /* aniditAM hala upadhAyAH kGiti (6.4.24) */ 
 // To prevent ajagranTan -> ajagraTan
 if ( (in_array($fo,$aniditverbs)) && $lakAra==="luN" && arr($text,'/[NYRnmM]['.pc('hl').'][+]['.pc('ac').'][^+]*$/'))
@@ -11512,6 +11512,7 @@ elseif ( !in_array("i",$it) && arr($text,'/[nM]['.pc('hl').'][+]/') && !($lakAra
 	storedata('6.4.24','sa',0);
     $aniditAm = 1; // 0 - this sUtra has not applied. 1 - this sUtra has applied.
 }
+print_r($text);
 /* samaH sami (6.3.93) */ 
 if (preg_match('/[s][a][m][a][n][c]/',$fo) && sub(array("anc","Anc"),array("+"),blank(0),0) && $ancu===1)
 {
