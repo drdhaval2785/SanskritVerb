@@ -4876,7 +4876,7 @@ if (in_array($fo,array("veY")) && $lakAra==="liw" && in_array("k",$itpratyaya) &
 	storedata('6.1.39','sa',0);
 }
 /* vacisvapiyajAdInAM kiti (6.1.15) */
-elseif ( in_array("k",$itpratyaya) && (in_array($fo,array("brUY","Yizvapa!"))||(in_array($fo,array("yaja!","quvapa!","vaha!","veY","vyeY","hveY","vada!","wuo!Svi","vaca!","vasa!"))&&$verbset==="BvAdi")) && sub(array("vac","svap","yaj","vap","vah","ve","vye","hve","vad","Sv","vas","Svi"),array("+"),blank(0),0))
+elseif ( in_array("k",$itpratyaya) && (in_array($fo,array("brUY","Yizvapa!","vaca!"))||(in_array($fo,array("yaja!","quvapa!","vaha!","veY","vyeY","hveY","vada!","wuo!Svi","vaca!","vasa!"))&&$verbset==="BvAdi")) && sub(array("vac","svap","yaj","vap","vah","ve","vye","hve","vad","Sv","vas","Svi"),array("+"),blank(0),0))
 {
     $text=two(array("vac","svap","yaj","vap","vah","ve","vye","hve","vad","Sv","vas","Svi"),array("+"),array("uac","suap","iaj","uap","uah","ue","vie","hie","uad","Su","us","Su"),array("+"),0);
 	storedata('6.1.15','sa',0);
