@@ -4881,7 +4881,7 @@ elseif ( in_array("k",$itpratyaya) && (in_array($fo,array("brUY","Yizvapa!","vac
     $text=two(array("vac","svap","yaj","vap","vah","ve","vye","hve","vad","Sv","vas","Svi"),array("+"),array("uac","suap","iaj","uap","uah","ue","vie","hie","uad","Su","us","Su"),array("+"),0);
 	storedata('6.1.15','sa',0);
 	$text = samprasarana(array("uac","iaj","uap","ue","uad"),0);
-    if ($lakAra!=="liw")
+    if (!in_array($lakAra,array("liw","ASIrliN")))
 	{
 		$text = samprasarana(array("suap","vie","hie","Su"),0);
 		$text=change('/^([^+]*)u/','$1U');
