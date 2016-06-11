@@ -4903,8 +4903,10 @@ elseif ( in_array($fo,array("jyA","graha!","vaya!","vyaDa!","vaSa!","vyaca!","o!
 {
     $text=two(array("jyA","grah","vay","vyaD","vaS","vyac","vraSc","pracC","Brasj"),array("+"),array("jiA","gfh","uy","viD","uS","vic","vfSc","pfcC","Bfsj"),array("+"),0);
     $text=two(array("uS"),array("+tu"),array("vaS"),array("+tu"),0);
+    $text=two(array("uS"),array("+tu"),array("vaS"),array("+tu"),0);
 	storedata('6.1.16','sa',0);
     $text = samprasarana(array("jyA","grah","vay","vyaD","vaS","vyac","vraSc","pracC","Brasj"),0);
+    $text=two(array("uS"),array("+tu"),array("vaS"),array("+tu"),0);
 }
 if ($debug===1) {dibug("2600");}
 /* riG zayagliGkSu (7.4.28) */
