@@ -6786,11 +6786,6 @@ if ( $didhI!==1 && $kGiti!==1 && $vijait!==1 && $lakAra==="liw" && $ardhadhatuka
 	}
 	storedata('7.3.86','sa',0);
 }
-if ($lakAra==="liw" && arr($text,'/['.pc('hl').'][iI][+][aAiIuUfFxXeEoO]/') && !arr($text,'/['.pc('hl').']['.pc('hl').'][iI][+][aAiIuUfFxXeEoO]/') )
-{
-	$text=three($hl,array("i+","I+"),$ac,$hl,array("y+","y+"),$ac,0);
-	storedata('6.4.82','sa',0);
-}
 /* vA jRRbhramutrasAm (6.4.124) */
 if ($lakAra==="liw" && in_array($fo,array("jF","Bramu!","trasI!")) && !ends(array($so),array("tip","mip"),2) && sub(array("ja+jar","ba+Bram","ta+tras"),array("+"),blank(0),0) )
 {
@@ -6931,6 +6926,12 @@ if ( (arr($text,'/[s]['.flat($hl).'][+]/') || arr($text,'/vrASc\+/') ) && in_arr
 	$text = one($ska,$hlplus,0);
 	$text = one(array("vrASc"),array("vrAc"),0);
 	storedata('8.2.29','sa',0);
+}
+/* eranekAco'saMyogapUrvasya (6.4.82) */
+if ($lakAra==="liw" && arr($text,'/['.pc('hl').'][iI][+][aAiIuUfFxXeEoO]/') && !arr($text,'/['.pc('hl').']['.pc('hl').'][iI][+][aAiIuUfFxXeEoO]/') )
+{
+	$text=three($hl,array("i+","I+"),$ac,$hl,array("y+","y+"),$ac,0);
+	storedata('6.4.82','sa',0);
 }
 /* sArvadhAtukArdhadhAtukayoH (7.3.84) */
 // patch for zvi, jAgf etc.
