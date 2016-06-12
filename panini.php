@@ -48,8 +48,8 @@ $header = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http:
 </head>
 <body>
 ';
-$debug = 1; // 0 - no debugging. 1 - debugging on. It shows execution of some important time consuming scripts.
-$debugmode = 2; // 0 - No debugging, 1 - full debugging with function timestamp (for speed analysis and memory leaakage finding), 2 - Only $text display (no function start and ends).
+$debug = 0; // 0 - no debugging. 1 - debugging on. It shows execution of some important time consuming scripts.
+$debugmode = 0; // 0 - No debugging, 1 - full debugging with function timestamp (for speed analysis and memory leaakage finding), 2 - Only $text display (no function start and ends).
 
 /* Reading from the HTML input. */
 $first = toslp($_GET["first"]); // to change the word input in devanagari / IAST to slp.
@@ -6386,9 +6386,10 @@ if (in_array($fo,array("wuo!Svi")) && sub(array("Svi"),array("+"),prat('vl'),0) 
 }
 /* dhi ca (8.2.25) */
 // Only 'Dv' is added to make it specific to pratyayas. Others may be added.
-if ( $lakAra!=="" && arr($text,'/s\+Dv/') && in_array($so,$tiG))
+if ( $lakAra!=="" && (arr($text,'/s\+Dv/')||arr($text,'/[+]isDv/')) && in_array($so,$tiG))
 {
     $text = one(array("s+Dv"),array("+Dv"),0);
+    $text = one(array("+isDv"),array("+iDv"),0);
 	storedata('8.2.25','sa',0);
 }
 /* udoSThyapUrvasya (7.1.102) */
@@ -13639,7 +13640,7 @@ $pr3= '/(['.flat($iN1).'])([S+]*)([s])([uA])/'; // z
 $pr4= '/(['.flat($iN1).'])([z+]*)([s])([uA])/'; // S
 $pr5= '/(['.flat($iN1).'])([s+]*)([s])([uA])/'; // s
 $prr = '$1$2z$4'; // replacement
-if ( (arr($text,'/['.flat($iN1).']([HSzs+]*)[s][uA]/')|| (arr($text,'/['.flat($iN1).']([HSzs+]*)[s][uA]/') && $num===1 )) && sub(array("+su","+sAm"),blank(0),blank(0),0) )
+if ( in_array($so,$sup) && (arr($text,'/['.flat($iN1).']([HSzs+]*)[s][uA]/')|| (arr($text,'/['.flat($iN1).']([HSzs+]*)[s][uA]/') && $num===1 )) && sub(array("+su","+sAm"),blank(0),blank(0),0) )
 {
     foreach ($text as $value)
     {
