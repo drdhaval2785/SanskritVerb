@@ -48,8 +48,8 @@ $header = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http:
 </head>
 <body>
 ';
-$debug = 0; // 0 - no debugging. 1 - debugging on. It shows execution of some important time consuming scripts.
-$debugmode = 0; // 0 - No debugging, 1 - full debugging with function timestamp (for speed analysis and memory leaakage finding), 2 - Only $text display (no function start and ends).
+$debug = 1; // 0 - no debugging. 1 - debugging on. It shows execution of some important time consuming scripts.
+$debugmode = 2; // 0 - No debugging, 1 - full debugging with function timestamp (for speed analysis and memory leaakage finding), 2 - Only $text display (no function start and ends).
 
 /* Reading from the HTML input. */
 $first = toslp($_GET["first"]); // to change the word input in devanagari / IAST to slp.
@@ -5801,7 +5801,7 @@ elseif(arr($text,'/p\+i\+/') && sub(array("fp","hrIp","vlIp","rIp","knUp","kzmAp
 }
 /* pugantalaghUpadhasya ca (7.3.86) */
 // Patch for tanAdi
-elseif(arr($text,'/[iufx]['.pc('hl').'][+]u[+]/'))
+elseif(arr($text,'/[iufx]['.pc('hl').'][+]u[+]/') & !in_array($fo,array("kfvi!","Divi!")))
 {
     $text=three(array("i","u","f","x"),$hl,array("+u+"),array("e","o","ar","al"),$hl,array("+u+"),0);
 	storedata('7.3.86','sa',0);
