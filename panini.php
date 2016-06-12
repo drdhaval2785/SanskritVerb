@@ -5705,13 +5705,12 @@ else
 		$text=change('/^(['.pc('hl').'])/','a$1');
 		storedata('6.4.71','sa',0);
 	}
+	print_r($text);
 	/* aci znudhAtubhruvAM yvoriyaGuvaGau (6.4.77) */
-    if ($dhatu===1 && arr($text,'/[iuIU][+][aAiIuUfFxeEoO]/') && $pada==="pratyaya" && in_array($so,$tiG) && $dfmBU==0 && $didhI!==1 && $nabhusu!==1 && !sub(array("+"),array("I"),array("+"),0) && ($sIyuT!==1 || $verbset==="adAdi") && !in_array("u",$vik))
+    if ($dhatu===1 && $fo==="iN" && arr($text,'/^Ai[+]['.pc('ac').']/'))
     {
-        $text = two(array("i+","I+","u+","U+"),$ac,array("iy+","iy+","uv+","uv+"),$ac,0);
-		$text = one(array("uv+uv+"),array("u+uv+"),0);
+        $text = change('/^Ai[+](['.pc('ac').'])/','Aiy+$1');
 		storedata('6.4.77','sa',3);
-		storedata('gatik','pa',0);
 	}
     /* ATazca (6.1.90) */
     if (arr($text,'/^A['.pc('ac').']/') && in_array("Aw",$Agama) )
