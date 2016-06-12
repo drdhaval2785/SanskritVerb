@@ -5911,7 +5911,7 @@ if ( in_array($so,$tiG) && $luGset===5 && sub(array("BrAj","BAs","BAS","dIp","jI
 	storedata('7.4.3','sa',0);
 }
 /* nAglopizAsvRditAm (7.4.2) */
-elseif ( in_array($so,$tiG) && (in_array($fo,$curAdi_adanta) || in_array($fo,array("SAsu!")) || in_array($fo,$Rditverbs)) && $luGset===5 && sub(array("A","I","U","F","X","e","E","o","O"),$hl,array("+i+a","+a+"),0) && $caG===1)
+elseif ( in_array($so,$tiG) && (in_array($fo,$curAdi_adanta) || in_array($fo,array("SAsu!")) || in_array($fo,$Rditverbs)) && $luGset===5 && sub(array("A","I","U","F","X","e","E","o","O"),$hl,array("+i+a","+a+","+etAm","+eTAm"),0) && $caG===1)
 {
 	storedata('7.4.2','sa',0);
 }
