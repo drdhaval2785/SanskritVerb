@@ -6392,6 +6392,7 @@ if ( $lakAra!=="" && (arr($text,'/s\+Dv/')||arr($text,'/[+]isDv/')||arr($text,'/
     $text = one(array("+isDv","+sDv"),array("+iDv","+Dv"),0);
 	storedata('8.2.25','sa',0);
 }
+print_r($text);
 /* udoSThyapUrvasya (7.1.102) */
 if (arr($text,'/^[pPbBmv]F[+]/')  && in_array($so,$tiG) && !in_array("Sap",$vik) && ($sarvadhatuka===1 || in_array("Sa",$vik) || arr($text,'/[+]yA/') ) && $ciN!==1 && $ciN!==2 )
 {
@@ -6614,9 +6615,9 @@ if (arr($text,'/[+]ya[+]/') && sub(array("+ya"),array("+is","+It","+Is","+it","+
 }
 /* ato lopaH (6.4.48) */
 // For gopAyitA etc
-elseif (arr($text,'/Aya[+]/') && sub(array("Aya"),array("+is","+It","+Is","+it","+yA"),blank(0),0) && $ardhadhatuka===1 )
+elseif (arr($text,'/Aya[+]/') && sub(array("Aya"),array("+is","+It","+Is","+it","+yA","+iDv"),blank(0),0) && $ardhadhatuka===1 )
 { 	
-	$text = two(array("Aya"),array("+is","+It","+Is","+it","+yA"),array("Ay"),array("+is","+It","+Is","+it","+yA"),0);
+	$text = two(array("Aya"),array("+is","+It","+Is","+it","+yA","+iDv"),array("Ay"),array("+is","+It","+Is","+it","+yA","+iDv"),0);
 	storedata('6.4.48','sa',0);
     $atolopa=1;
 }
