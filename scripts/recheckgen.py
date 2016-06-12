@@ -3,7 +3,7 @@
 Usage:
 python recheckgen.py suspectfile recheckshellfile
 e.g.
-python recheckgen.py ../suspectforms/suspectverbforms29052016.txt ../recheck.sh
+python recheckgen.py ../suspectforms/suspectverbforms09062016.txt ../recheck.sh
 """
 import sys, re
 import codecs
