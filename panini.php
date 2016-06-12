@@ -5705,7 +5705,6 @@ else
 		$text=change('/^(['.pc('hl').'])/','a$1');
 		storedata('6.4.71','sa',0);
 	}
-	print_r($text);
 	/* aci znudhAtubhruvAM yvoriyaGuvaGau (6.4.77) */
     if ($dhatu===1 && $fo==="iN" && arr($text,'/^Ai[+]['.pc('ac').']/'))
     {
@@ -6486,7 +6485,7 @@ if (arr($text,'/A[+]/') && $abhyasta===1 && pr2(array("A"),array("+"),array("atu
 	storedata('6.4.112','sa',0);
 }
 /* ghumAsthAgApAjahAtisAM hali (6.4.66) */
-if ( (in_array($fo,array("do","deN","qudAY","dAR","Dew","quDAY","mA","zWA","pA","hA","sA","gAN","mAN","meN","gA","gE","o!hAk","zo")) || (in_array($fo,array("ik","iN"))&&arr($text,'/gA[+]['.pc('hl').']/'))) && ends($it,array("N","k"),2) && sub(array("A+"),$ArdhadhAtuka_pratyayas,blank(0),0) && $lakAra!=="ASIrliN"  && !in_array($number,array("02.0051","03.0008")) && !in_array("Sapluk",$vik) && (!$fo==="Dew"&&$lakAra==="luN")) // See #908
+if ( (in_array($fo,array("do","deN","qudAY","dAR","Dew","quDAY","mA","zWA","pA","hA","sA","gAN","mAN","meN","gA","gE","o!hAk","zo")) || (in_array($fo,array("ik","iN"))&&arr($text,'/gA[+]['.pc('hl').']/'))) && ends($it,array("N","k"),2) && sub(array("A+"),$ArdhadhAtuka_pratyayas,blank(0),0) && $lakAra!=="ASIrliN" && !in_array($number,array("02.0051","03.0008")) && !in_array("Sapluk",$vik) && !($fo==="Dew"&&$lakAra==="luN")) // See #908
 {
     $text=two(array("A+"),$ArdhadhAtuka_pratyayas,array("I+"),$ArdhadhAtuka_pratyayas,0);
 	$text=change('/I[+]tu$/','A+tu'); // To overcome Gittva of tAtaG.
