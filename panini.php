@@ -6386,10 +6386,10 @@ if (in_array($fo,array("wuo!Svi")) && sub(array("Svi"),array("+"),prat('vl'),0) 
 }
 /* dhi ca (8.2.25) */
 // Only 'Dv' is added to make it specific to pratyayas. Others may be added.
-if ( $lakAra!=="" && (arr($text,'/s\+Dv/')||arr($text,'/[+]isDv/')) && in_array($so,$tiG))
+if ( $lakAra!=="" && (arr($text,'/s\+Dv/')||arr($text,'/[+]isDv/')||arr($text,'/[+]sDv/')) && in_array($so,$tiG))
 {
     $text = one(array("s+Dv"),array("+Dv"),0);
-    $text = one(array("+isDv"),array("+iDv"),0);
+    $text = one(array("+isDv","+sDv"),array("+iDv","+Dv"),0);
 	storedata('8.2.25','sa',0);
 }
 /* udoSThyapUrvasya (7.1.102) */
