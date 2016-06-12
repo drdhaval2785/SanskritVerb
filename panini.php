@@ -6392,7 +6392,6 @@ if ( $lakAra!=="" && (arr($text,'/s\+Dv/')||arr($text,'/[+]isDv/')||arr($text,'/
     $text = one(array("+isDv","+sDv"),array("+iDv","+Dv"),0);
 	storedata('8.2.25','sa',0);
 }
-print_r($text);
 /* udoSThyapUrvasya (7.1.102) */
 if (arr($text,'/^[pPbBmv]F[+]/')  && in_array($so,$tiG) && !in_array("Sap",$vik) && ($sarvadhatuka===1 || in_array("Sa",$vik) || arr($text,'/[+]yA/') ) && $ciN!==1 && $ciN!==2 )
 {
