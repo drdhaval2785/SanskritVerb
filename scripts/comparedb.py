@@ -59,7 +59,7 @@ def baseverbformlist(testdb,lstofbasedb):
 				fetch.append(parts[0])
 			output += fetch
 	print "Total", len(output), "entries in base list"
-	return output
+	return set(output)
 def gananame(number):
 	gana = ['BvAdi','adAdi','juhotyAdi','divAdi','svAdi','tudAdi','ruDAdi','tanAdi','kryAdi','curAdi']
 	gn = number.split('.')[0]
@@ -75,7 +75,7 @@ if __name__=="__main__":
 	print "Printing the following suspect entries to ../suspectforms/suspectverbforms.txt"
 	print 
 	for (member,verb,num,lakAra,tiG) in test:
-		print member
+		#print member
 		if member.endswith('cakara') or member.endswith("iDve") or member.endswith("iDvam") or member.endswith("zIQvam") or member.endswith("yAstAm"):
 			pass
 		elif not member in base:

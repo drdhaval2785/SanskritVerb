@@ -3098,7 +3098,7 @@ if ($lakAra==="luN")
 		$luGset=9;
 	}
 	/* gAtisthAghupAbhUbhyaH sicaH parasmaipadeSu (2.4.77) */
-	if (ends(array($fo),array("iR","ik","zWA","do","deN","qudAY","dAR","quDAY","pA","BU","asa!"),4) && !(ends(array($fo),array("pA"),4) && $verbset==="adAdi") && !(ends(array($fo),array("asa!"),4) && $verbset==="BvAdi") && $sic===1 && in_array($so,$tis))
+	if (in_array($fo,array("iR","ik","zWA","do","deN","qudAY","dAR","quDAY","pA","BU","asa!")) && !(in_array($fo,array("pA")) && $verbset==="adAdi") && !(in_array($fo,array("asa!")) && $verbset==="BvAdi") && $sic===1 && in_array($so,$tis))
 	{
 		$text = one(array("+sic+"),array("+"),0);
 		storedata('2.4.77','sa',0);
@@ -4106,11 +4106,15 @@ if (in_array($so,$tiG) && (arr($text,'/['.pc('hl').'][+]/') || (arr($text,'/['.p
 		storedata('1.3.9','sa',0);
 	}
 }
+print_r($text);
 /* AtmanepadeSvanataH (7.1.5) */
-if ( in_array($so,array("Ja")) && (arr($text,'/[^a][+]Ja$/')||arr($text,'/^gA[+]a[+]Ja$/') ))
+#if (in_array($so,array("Ja")) && (arr($text,'/[^a][+]Ja$/')||arr($text,'/^gA[+]a[+]Ja$/') ))
+if (in_array($so,array("Ja")) && (arr($text,'/^gA[+]a[+]Ja$/')||arr($text,'/[+]n*u[+]Ja$/')||arr($text,'/[+]nA[+]Ja$/')||arr($text,'/[+]sic[+]Ja$/')))
 {
-    $text=change('/([^a][+])Ja$/','$1ata');
 	$text=change('/^gA[+]a[+]Ja$/','gA+a+ata');
+	$text=change('/[+](n*u)[+]Ja/','+$1+ata');
+	$text=change('/[+]nA[+]Ja$/','+nA+ata');
+	$text=change('/[+]sic[+]Ja$/','+sic+ata');
 	storedata('7.1.5','sa',0);
 }
 /* jho'ntaH (7.1.3) */
@@ -5031,7 +5035,7 @@ if (arr($text,'/daridrA[+]/') && sub(array("daridrA"),array("+"),$halAdi_apit_sA
 }
 /* pvAdInAM hrasvaH (7.3.80) */
 $shitpratyayareplace=array("a","ya","nu","na","nA","Aya","Ana");
-if (in_array($fo,$pvAdi) && $shit===1 && ( $verbset==="kryAdi" || ($verbset==="none" && ends(array($fo),$kryAdi,4) ) ))
+if (in_array($fo,$pvAdi) && $shit===1 && ( $verbset==="kryAdi" || ($verbset==="none" && in_array($fo,$kryAdi) ) ))
 {
     $text=three(array("A","I","U","F",),$shitpratyayareplace,array("+"),array("a","i","u","f",),$shitpratyayareplace,array("+"),0);
 	storedata('7.3.80','sa',0);
@@ -6206,7 +6210,7 @@ if ($fo==="yama!" && in_array($so,$taG) && ($sic===1||$sIyuT===1) && $_GET['cond
 }
 if ($debug===1) {dibug("3700");}
 /* ghvasoreddhAvabhyAsalopazca (6.4.119) */
-if (arr($text,'/as\+Di/') && in_array($so,$tiG) && ends(array($fo),array("asa!",),4) && $verbset==="adAdi") 
+if (arr($text,'/as\+Di/') && in_array($so,$tiG) && in_array($fo,array("asa!")) && $verbset==="adAdi") 
 {
     $text=two(array("as"),array("+Di"),array("e"),array("+Di"),0);
 	storedata('6.4.119','sa',0);
@@ -6858,7 +6862,7 @@ if ( in_array($fo,array("SAsu!","vasa!")) && in_array($so,$tiG) && sub(array("Si
 	storedata('8.3.60','sa',0);
 }
 /* zAsivasighasInAM ca (8.3.60) */
-if ( arr($text,'/[G][s][+]/') && ends(array($fo),array("ada!","Gasx!"),4) && in_array($so,$tiG) )
+if ( arr($text,'/[G][s][+]/') && in_array($fo,array("ada!","Gasx!")) && in_array($so,$tiG) )
 {
     $text = two(array("Gs"),array("+"),array("Gz"),array("+"),0);
 	storedata('8.3.60','sa',0);
@@ -7141,7 +7145,7 @@ if (arr($text,'/akz\+/') && sub(array("vivakz","diDakz","pipakz"),array("+"),bla
 	storedata('skoHc','sa',0);
     $pipakS=1; // 0 - doesn't prevent skoH saMyogAdyorante ca. 1 - prevents skoH saMyogAdyorante ca.
 } else { $pipakS=0; }
-if (in_array($fo,array("rudi!r","Yizvapa!","zvapa!","Svasa!","prARa!","ana!","jakza!")) && (pr2(array("rod","svap","Svas","prAR","an","jakz","rud"),array("+"),array("t","s"),array("rod","svap","Svas","prAR","an","jakz","rud"),array("+"),array("at","as"),$text)!==$text || ends(array($fo),array("jakza!"),4) ) && in_array($so,$tiG) )
+if (in_array($fo,array("rudi!r","Yizvapa!","zvapa!","Svasa!","prARa!","ana!","jakza!")) && (pr2(array("rod","svap","Svas","prAR","an","jakz","rud"),array("+"),array("t","s"),array("rod","svap","Svas","prAR","an","jakz","rud"),array("+"),array("at","as"),$text)!==$text || in_array($fo,array("jakza!")) ) && in_array($so,$tiG) )
 {
     $rudAdibhyaH = 1;
 }
@@ -13324,7 +13328,7 @@ if (($ro ===1 || $dho===1) && arr($text,'/[aAiIuU]([+]*)[#][rQ]/'))
 $text = two($ana,array('#r','#Q'),$anna,array(' r',' Q'),0);
 	storedata('6.3.111','sa',0);
 	/* sahivahorodavarNasya (6.3.111) */
-	if (sub(array("va","sa","vA","sA"),array("Q"),blank(0),0) && ends(array($fo),array("vaha!","zaha!"),4))
+	if (sub(array("va","sa","vA","sA"),array("Q"),blank(0),0) && in_array($fo,array("vaha!","zaha!")))
 	{
 		$text = two(array("va","sa","vA","sA"),array("Q"),array("vo","so","vo","so",),array("Q"),0);
 		storedata('6.3.111','sa',0);
@@ -14255,6 +14259,7 @@ if ($debug===1) {dibug('11740');}
 /* Post Generation processes e.g. CLI application, testing etc. */
 if ((isset($argv[0])|| $test ===1) )
 { 
+	dibug('aftermath');
 	//$suspectentryfile = fopen('suspectverbforms.txt','a+');
 	$generatedformfile = fopen('generatedforms.xml','a+');
 	//$verblist = verbformlist();
@@ -14306,6 +14311,7 @@ if ((isset($argv[0])|| $test ===1) )
 		fputs($difflog,$printstatement);
 		fclose($difflog);
 	}
+	dibug('aftermath2');
 }
 elseif ($type==="tiGanta")
 {

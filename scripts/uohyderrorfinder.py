@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Usage:
-python comparedb.py testfile suspectfile
-e.g.
-python comparedb.py ../generatedforms/generatedforms30042016.xml ../suspectforms/suspectverbforms30042016.txt
+python uohyderrorfinder.py
 """
 import sys, re
 import codecs
@@ -24,7 +22,7 @@ def triming(lst):
 		output.append(member)
 	return output
 
-suffixlist = [('parasmEpadI','pra','1','tip'),('parasmEpadI','pra','2','tas'),('parasmEpadI','pra','3','Ji'),('parasmEpadI','ma','1','sip'),('parasmEpadI','ma','2','Tas'),('parasmEpadI','ma','3','Ta'),('parasmEpadI','u','1','mip'),('parasmEpadI','u','2','vas'),('parasmEpadI','u','3','mas'),('AtmanepadI','pra','1','ta'),('AtmanepadI','pra','2','AtAm'),('AtmanepadI','pra','3','Ja'),('AtmanepadI','ma','1','TAs'),('AtmanepadI','ma','2','ATAm'),('AtmanepadI','ma','3','Dvam'),('AtmanepadI','u','1','iw'),('AtmanepadI','u','2','vahi'),('AtmanepadI','pra','3','mahiN')]
+suffixlist = [('parasmEpadI','pra','1','tip'),('parasmEpadI','pra','2','tas'),('parasmEpadI','pra','3','Ji'),('parasmEpadI','ma','1','sip'),('parasmEpadI','ma','2','Tas'),('parasmEpadI','ma','3','Ta'),('parasmEpadI','u','1','mip'),('parasmEpadI','u','2','vas'),('parasmEpadI','u','3','mas'),('AtmanepadI','pra','1','ta'),('AtmanepadI','pra','2','AtAm'),('AtmanepadI','pra','3','Ja'),('AtmanepadI','ma','1','TAs'),('AtmanepadI','ma','2','ATAm'),('AtmanepadI','ma','3','Dvam'),('AtmanepadI','u','1','iw'),('AtmanepadI','u','2','vahi'),('AtmanepadI','u','3','mahiN')]
 def returnsuffix(pada,puruza,vacana):
 	global suffixlist
 	for (p,p1,v,f) in suffixlist:
@@ -74,8 +72,10 @@ def okverbformlist(testxml):
 	# Typical line in XML file is in `<forms><f form="aMsayati"><root name="aMsa" num="10.0460"/><law/><tip/></f></forms>` format.
 	# Therefore, the data which we want e.g. 'aMSayati' is in /forms/f-get('form') location. Fetching it below.
 	roo = roots.xpath('/forms/f') # Returns a list of all /forms/f in the database.
-	verbformlist = [(member.get('form'),member.find('root').get('name'),member.find('root').get('num'),member.getchildren()[-2].tag,member.getchildren()[-1].tag) for member in roo] # For all /forms/f in database, we get its attribute 'forms' e.g. 'aMSayati'.
+	verbdetails = [(member.get('form'),member.find('root').get('name'),member.find('root').get('num'),member.getchildren()[-2].tag,member.getchildren()[-1].tag) for member in roo] # For all /forms/f in database, we get its attribute 'forms' e.g. 'aMSayati'.
+	verbformlist = [member.get('form') for member in roo]
 	print "Total", len(verbformlist), "entries in base list"
+	#return [verbformlist,verbformdetails]
 	return verbformlist
 
 
@@ -83,11 +83,22 @@ if __name__=="__main__":
 	testfile = codecs.open('../Data/UoHyd_all_forms.txt','r','utf-8')
 	data = testfile.readlines()
 	testfile.close()
-	okformlist = okverbformlist('../generatedforms/generatedforms30042016.xml')
+	#[okformlist,okdetailist] = okverbformlist('../generatedforms/generatedforms28052016.xml')
+	okformlist = okverbformlist('../generatedforms/generatedforms28052016.xml')
+	okformlist = set(okformlist)
+	outfile = codecs.open('../Data/uohyderrors.txt','w','utf-8')
+	counter = 0
+	counter2 = 0
 	for datum in data:
+		counter += 1
 		[form,prayoga,lakAra,puruza,vacana,padI,dhAtu,gaNa,suffix,sanAdi] = readuohyd(datum.encode('utf-8'))
 		if not prayoga=="kartari":
 			pass
-		elif not form in okformlist and not sanAdi=="Ric":
-			print form+','+dhAtu+','+gaNa+','+lakAra+','+suffix
-	
+		elif not sanAdi=="":
+			pass
+		elif "AmAs" in form or "AmbaBU" in form or "AYcak" in form:
+			pass
+		elif not form in okformlist:
+			counter2 += 1
+			print counter2, '/', counter 
+			outfile.write(form+','+dhAtu+','+gaNa+','+lakAra+','+suffix+'\n')
