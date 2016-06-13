@@ -1875,6 +1875,13 @@ function scrape($a,$a1,$b,$c,$d,$e,$e1)
     $ret=array_map('trim',$ret);
     return $ret;
 }
+/* verbdata1 creates one variable for the given verb number */
+function verbdata1($number)
+{
+	global $verbdata;
+	$verbdata1 = array_filter($verbdata, function($var) use ($number) { 	list($gana,$id) = explode('.',$number); return preg_match("/$gana:$id/i", $var); });
+	return $verbdata1;
+}
 /* Creating a function to fetch data from the verbdata variable */
 // The function is almost ready. Now rename the variables so that it can be used.
 // $a = the input to take as base, $a1 = ref number of $a, $b = the thing to search. $c 1=whole list, 2=corresponding list. $d=additional field to be displayed, $e=additional condition, $e1= its ref no.
@@ -1882,9 +1889,9 @@ function scrape($a,$a1,$b,$c,$d,$e,$e1)
 // 0 to 12 are in the array. after that we process.
 function scrape1($a,$a1,$b,$c)
 {
-    global $verbdata, $debug, $debugmode;
+    global $verbdata1, $debug, $debugmode;
 	if ($debug===1 && $debugmode<2){ dibug("scrape1 start");}
-	$verbdata1 = array_filter($verbdata, function($var) use ($a) { return preg_match("/$a/i", $var); });
+	#$verbdata1 = array_filter($verbdata, function($var) use ($a) { return preg_match("/$a/i", $var); });
 	if ($debug===1 && $debugmode<2){ dibug("scrape1 middle");}
 	$verbdata1 = array_unique($verbdata1);
 	$verbdata1 = array_values($verbdata1);
