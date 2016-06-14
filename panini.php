@@ -48,8 +48,8 @@ $header = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http:
 </head>
 <body>
 ';
-$debug = 0; // 0 - no debugging. 1 - debugging on. It shows execution of some important time consuming scripts.
-$debugmode = 0; // 0 - No debugging, 1 - full debugging with function timestamp (for speed analysis and memory leaakage finding), 2 - Only $text display (no function start and ends).
+$debug = 1; // 0 - no debugging. 1 - debugging on. It shows execution of some important time consuming scripts.
+$debugmode = 1; // 0 - No debugging, 1 - full debugging with function timestamp (for speed analysis and memory leaakage finding), 2 - Only $text display (no function start and ends).
 
 /* Reading from the HTML input. */
 $first = toslp($_GET["first"]); // to change the word input in devanagari / IAST to slp.
@@ -71,7 +71,8 @@ $drop = $_GET['drop'];
 $letter = $_GET['letter'];
 $pr = $_GET['pratya'];
 $inprat = $_GET['pratyahara'];
-$verbdata1 = verbdata1($number);
+if(!isset($verbdata1)) { $verbdata1 = verbdata1($number); }
+if(!isset($verbdata2)) { $verbdata2 = verbdata2($first); }
 $vsuf = '';
 $removed_sutras = explode(',',$_GET['removed_sutras']);
 $removed_sutras = array_map('trim',$removed_sutras);
@@ -729,7 +730,7 @@ elseif ($type==='tiGanta')
 {
 	$suffix=verb_suffixes($verbpada);
 	/* idAgama decision */
-	$temp = scrape1($first,0,2,1); 
+	$temp = scrape2($first,0,2,1);
 	$verb_without_anubandha=$temp[0];
 	$original_verb = $verb_without_anubandha;
 	/*if (preg_match_all('/[aAiIuUfFxXeEoO]/',$verb_without_anubandha) > 1 && isset($argv[0])) 
@@ -4107,10 +4108,9 @@ if (in_array($so,$tiG) && (arr($text,'/['.pc('hl').'][+]/') || (arr($text,'/['.p
 		storedata('1.3.9','sa',0);
 	}
 }
-print_r($text);
 /* AtmanepadeSvanataH (7.1.5) */
 #if (in_array($so,array("Ja")) && (arr($text,'/[^a][+]Ja$/')||arr($text,'/^gA[+]a[+]Ja$/') ))
-if (in_array($so,array("Ja")) && (arr($text,'/^gA[+]a[+]Ja$/')||arr($text,'/[+]n*u[+]Ja$/')||arr($text,'/[+]nA[+]Ja$/')||arr($text,'/[+]sic[+]Ja$/')))
+if (in_array($so,array("Ja")) && (arr($text,'/^gA[+]a[+]Ja$/')||arr($text,'/[+]n*u[+]Ja$/')||arr($text,'/[+]nA[+]Ja$/')||arr($text,'/[+]sic[+]Ja$/')||(arr($text,'/[^a][+]Ja/')&&(in_array($verbset,array("adAdi","juhotyAdi","ruDAdi","kryAdi"))))))
 {
 	$text=change('/^gA[+]a[+]Ja$/','gA+a+ata');
 	$text=change('/[+](n*u)[+]Ja/','+$1+ata');

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
  /* This code is developed by Dr. Dhaval Patel (drdhaval2785@gmail.com) of www.sanskritworld.in and Ms. Sivakumari Katuri.
   * Layout assistance by Mr Marcis Gasuns.
   * Available under GNU licence.
@@ -326,6 +326,10 @@ $sutraenglish=array("nerviSaH (1.3.17)","parivyavebhyaH kriyaH (1.3.18)","parivy
 $sutradeva=array("नेर्विशः (१.३.१७)","परिव्यवेभ्यः क्रियः (१.३.१८)","परिव्यवेभ्यः क्रियः (१.३.१८)","परिव्यवेभ्यः क्रियः (१.३.१८)","विपराभ्यां जेः (१.३.१९)","विपराभ्यां जेः (१.३.१९)","क्रीडोऽनुसंपरिभ्यश्च (१.३.२०)","क्रीडोऽनुसंपरिभ्यश्च (१.३.२०)","क्रीडोऽनुसंपरिभ्यश्च (१.३.२०)","क्रीडोऽनुसंपरिभ्यश्च (१.३.२०)","समवप्रविभ्यः स्थः (१.३.२२)","समवप्रविभ्यः स्थः (१.३.२२)","समवप्रविभ्यः स्थः (१.३.२२)","समवप्रविभ्यः स्थः (१.३.२२)","उद्विभ्यां तपः (१.३.२७)","उद्विभ्यां तपः (१.३.२७)","आङो यमहनः (१.३.२८)","आङो यमहनः (१.३.२८)","समो गम्यृच्छिप्रच्छिस्वरत्यर्तिश्रुविदिभ्यः (१.३.२९)","समो गम्यृच्छिप्रच्छिस्वरत्यर्तिश्रुविदिभ्यः (१.३.२९)","समो गम्यृच्छिप्रच्छिस्वरत्यर्तिश्रुविदिभ्यः (१.३.२९)","समो गम्यृच्छिप्रच्छिस्वरत्यर्तिश्रुविदिभ्यः (१.३.२९)","समो गम्यृच्छिप्रच्छिस्वरत्यर्तिश्रुविदिभ्यः (१.३.२९)","समो गम्यृच्छिप्रच्छिस्वरत्यर्तिश्रुविदिभ्यः (१.३.२९)","समो गम्यृच्छिप्रच्छिस्वरत्यर्तिश्रुविदिभ्यः (१.३.२९)","निसमुपविभ्यो ह्वः (१.३.३०)","निसमुपविभ्यो ह्वः (१.३.३०)","निसमुपविभ्यो ह्वः (१.३.३०)","निसमुपविभ्यो ह्वः (१.३.३०)","अवाद्ग्रः (१.३.५१)","ज्ञाश्रुस्मृदृशां सनः (१.३.५७)","ज्ञाश्रुस्मृदृशां सनः (१.३.५७)","ज्ञाश्रुस्मृदृशां सनः (१.३.५७)","ज्ञाश्रुस्मृदृशां सनः (१.३.५७)",);
 $lakAralist=array("la!w","li!w","lu!w","lf!w","le!w","lo!w","la!N","li!N","lu!N","lf!N");
 $ayavayavah = array("ay","av","Ay","Av");
+// defining IAST letters.
+$iast = array("a","ā","i","ī","u","ū","ṛ","ṝ","ḷ","ḹ","e","ai","o","au","ṃ","ḥ","kh","ch","ṭh","th","ph","gh","jh","ḍh","dh","bh","ṅ","ñ","ṇ","k","c","ṭ","t","p","g","j","ḍ","d","b","n","m","y","r","l","v","s","h","ś","ṣ","ṃ");
+// defining SLP1 letters.
+$slp = array("a","A","i","I","u","U","f","F","x","X","e","E", "o","O", "M","H","K", "C",  "W", "T", "P","G", "J",  "Q", "D","B", "N","Y","R","k","c","w","t","p","g","j","q","d","b","n","m","y","r","l","v","s","h","S","z","!");
 /* Function to find Asya and prayatna of a given letter */
 // asyaprayatna.php removed and subsumed in this function.
 function asyaprayatna($text)
@@ -1882,6 +1886,13 @@ function verbdata1($number)
 	$verbdata1 = array_filter($verbdata, function($var) use ($number) { 	list($gana,$id) = explode('.',$number); return preg_match("/$gana:$id/i", $var); });
 	return $verbdata1;
 }
+/* verbdata2 creates one variable for the given verb text */
+function verbdata2($text)
+{
+	global $verbdata;
+	$verbdata1 = array_filter($verbdata, function($var) use ($text) { 	list($gana,$id) = explode('.',$number); return preg_match("/$text/i", $var); });
+	return $verbdata2;
+}
 /* Creating a function to fetch data from the verbdata variable */
 // The function is almost ready. Now rename the variables so that it can be used.
 // $a = the input to take as base, $a1 = ref number of $a, $b = the thing to search. $c 1=whole list, 2=corresponding list. $d=additional field to be displayed, $e=additional condition, $e1= its ref no.
@@ -1889,10 +1900,38 @@ function verbdata1($number)
 // 0 to 12 are in the array. after that we process.
 function scrape1($a,$a1,$b,$c)
 {
-    global $verbdata1, $debug, $debugmode;
+    global $debug, $debugmode, $verbdata, $verbdata2;
 	if ($debug===1 && $debugmode<2){ dibug("scrape1 start");}
-	#$verbdata1 = array_filter($verbdata, function($var) use ($a) { return preg_match("/$a/i", $var); });
+	if (!isset($verbdata2))
+	{
+		$verbdata2 = array_filter($verbdata, function($var) use ($a) { return preg_match("/$a/i", $var); });
+	}
 	if ($debug===1 && $debugmode<2){ dibug("scrape1 middle");}
+	$verbdata2 = array_unique($verbdata2);
+	$verbdata2 = array_values($verbdata2);
+    for($i=0;$i<count($verbdata2);$i++)
+    {
+		$bomb=explode(':',$verbdata2[$i]);
+		$bomb[13]=$bomb[3].".".$bomb[4];
+		$bomb[14]=str_replace(array("01","02","03","04","05","06","07","08","09","10",),array("BvAdi","adAdi","juhotyAdi","divAdi","svAdi","tudAdi","ruDAdi","tanAdi","kryAdi","curAdi",),$bomb[3]);
+			if($a===$bomb[$a1] )
+			{
+				$ret[]=$bomb[$b];
+			}
+    }
+    if (isset($ret)) {$ret=array_map('trim',$ret);}
+	if ($debug===1 && $debugmode<2){ dibug("scrape1 end");}
+    return $ret;
+}
+/* Creating a function to fetch data from the verbdata variable */
+// The function is almost ready. Now rename the variables so that it can be used.
+// $a = the input to take as base, $a1 = ref number of $a, $b = the thing to search. $c 1=whole list, 2=corresponding list. $d=additional field to be displayed, $e=additional condition, $e1= its ref no.
+// Ref nos. 0=upadeza, 1=Meaning, 2=verb without anubandhas, 3=verbset, 4=number in dhatupatha, 5=Atmane/parasmai/ubhaya, 6=seT/aniT. 7. verb with accent  8. mAdhavIyadhAtuvRtti. 9. kSIrataraGgiNI. 10. dhAtupradIpa. 11.UoHyd. 12.JNU. 13.Set+number. 14. Set name.
+// 0 to 12 are in the array. after that we process.
+function scrape2($a,$a1,$b,$c)
+{
+    global $verbdata1, $debug, $debugmode;
+	if ($debug===1 && $debugmode<2){ dibug("scrape2 start");}
 	$verbdata1 = array_unique($verbdata1);
 	$verbdata1 = array_values($verbdata1);
     for($i=0;$i<count($verbdata1);$i++)
@@ -1906,7 +1945,7 @@ function scrape1($a,$a1,$b,$c)
 			}
     }
     if (isset($ret)) {$ret=array_map('trim',$ret);}
-	if ($debug===1 && $debugmode<2){ dibug("scrape1 end");}
+	if ($debug===1 && $debugmode<2){ dibug("scrape2 end");}
     return $ret;
 }
 // function ldc (link_dhatu_commentary)
@@ -2061,24 +2100,25 @@ function verb_meaning_gana_number4($number)
 {
 	global $frontend, $outfile, $debug, $debugmode;
 	if ($debug===1 && $debugmode<2){ dibug("verb_meaning_gana_number4 start");}
-    $verbaccent=scrape1($number,13,7,1);
-	$verbwithoutanubandha=scrape1($number,13,2,1);
-    $meaning=scrape1($number,13,1,1);
-    $verbset=scrape1($number,13,14,1);
-    $madhav=scrape1($number,13,8,1);
-    $kzir=scrape1($number,13,9,1);
-    $dp=scrape1($number,13,10,1);
-	$uohyd=scrape1($number,13,11,1);
-	$jnu=scrape1($number,13,12,1);
-    $number=scrape1($number,13,13,1);
+    $verbaccent=scrape2($number,13,7,1);
+	$upadeza=scrape2($number,13,0,1);
+	$verbwithoutanubandha=scrape2($number,13,2,1);
+    $meaning=scrape2($number,13,1,1);
+    $verbset=scrape2($number,13,14,1);
+    $madhav=scrape2($number,13,8,1);
+    $kzir=scrape2($number,13,9,1);
+    $dp=scrape2($number,13,10,1);
+	$uohyd=scrape2($number,13,11,1);
+	$jnu=scrape2($number,13,12,1);
+    $number=scrape2($number,13,13,1);
 	if ($debug===1 && $debugmode<2){ dibug("verb_meaning_gana_number4 middle");}
 	if ($frontend==='1')
 	{
-		echo "<p class = st >".toiast($verbaccent[0]).' - '.toiast($meaning[0]).', '.toiast($verbset[0]).' '.$number[0]."</p>\n";
-		echo "<p class = st >".$verbaccent[0].' - '.convert($meaning[0]).', '.convert($verbset[0]).' '.convert($number[0]).', '.ldc($madhav[0],'m').', '.ldc($kzir[0],'k').', '.ldc($dp[0],'d').', '.ldc($uohyd[0],'u').', '.ldc($jnu[0],'j').', '.inrialink($verbwithoutanubandha[0],$verbset[0])."</p>\n";
+		echo "<p class = st >".toiast($upadeza[0].' - '.$meaning[0].', '.$verbset[0].' '.$number[0])."</p>\n";
+		echo "<p class = st >".$verbaccent[0].' - '.convert($meaning[0].', '.$verbset[0].' '.$number[0]).', '.ldc($madhav[0],'m').', '.ldc($kzir[0],'k').', '.ldc($dp[0],'d').', '.ldc($uohyd[0],'u').', '.ldc($jnu[0],'j').', '.inrialink($verbwithoutanubandha[0],$verbset[0])."</p>\n";
 		echo "<hr>\n";		
-		/*fputs($outfile,"<p class = st >".toiast($verbaccent[0]).' - '.toiast($meaning[0]).', '.toiast($verbset[0]).' '.$number[0]."</p>\n");
-		fputs($outfile,"<p class = st >".$verbaccent[0].' - '.convert($meaning[0]).', '.convert($verbset[0]).' '.convert($number[0]).', '.ldc($madhav[0],'m').', '.ldc($kzir[0],'k').', '.ldc($dp[0],'d').', '.ldc($uohyd[0],'u').', '.ldc($jnu[0],'j').', '.inrialink($verbwithoutanubandha[0],$verbset[0])."</p>\n");
+		/*fputs($outfile,"<p class = st >".toiast($upadeza[0].' - '.$meaning[0].', '.$verbset[0].' '.$number[0])."</p>\n");
+		fputs($outfile,"<p class = st >".$verbaccent[0].' - '.convert($meaning[0].', '.$verbset[0].' '.$number[0]).', '.ldc($madhav[0],'m').', '.ldc($kzir[0],'k').', '.ldc($dp[0],'d').', '.ldc($uohyd[0],'u').', '.ldc($jnu[0],'j').', '.inrialink($verbwithoutanubandha[0],$verbset[0])."</p>\n");
 		fputs($outfile,"<hr>\n");*/
 	}
 	if ($debug===1 && $debugmode<2){ dibug("verb_meaning_gana_number4 end");}
@@ -2093,7 +2133,7 @@ function dhatu_from_number($number)
 {
 	global $frontend, $outfile, $debug, $debugmode;
 	if ($debug===1 && $debugmode<2){ dibug("dhatu_from_number start");}
-   $first=scrape1($number,13,0,1);
+   $first=scrape2($number,13,0,1);
 	if ($debug===1 && $debugmode<2){ dibug("dhatu_from_number end");}
 	return $first[0];
 }
@@ -2233,7 +2273,7 @@ function verb_padafinder($text)
     /*global $verbset;
     $verbpada=scrape($text,0,5,1,"",$verbset,12);*/
 	global $number;
-	$verbpada = scrape1($number,13,5,1);
+	$verbpada = scrape2($number,13,5,1);
 	$verbpada=array_unique($verbpada);
 	$verbpada=array_values($verbpada);
     return $verbpada;
@@ -2243,7 +2283,7 @@ function verb_itfinder($text)
 {
     global $verbset;
 	global $fo; global $number;
-    $verb_it=scrape1($number,13,6,1);
+    $verb_it=scrape2($number,13,6,1);
 	$verb_it=array_unique($verb_it);
 	$verb_it=array_values($verb_it);
 	return $verb_it;
@@ -2364,17 +2404,17 @@ function toslp($text)
 }
 function toiast($text)
 {
+	global $tran, $iast, $slp;
     /* Code for converting from devanagari - SLP1 */ 
     //This is innocuous. Therefore even running without the selection in dropdown menu. 
     $text = json_encode($text);
     $text = str_replace("\u200d","",$text); // removing whitespace
     $text = str_replace("\u200c","",$text); // removing whitespace
     $text = json_decode($text);
-    $text = convert1($text); // converting to SLP1
-    // defining IAST letters.
-    $iast = array("a","ā","i","ī","u","ū","ṛ","ṝ","ḷ","ḹ","e","ai","o","au","ṃ","ḥ","kh","ch","ṭh","th","ph","gh","jh","ḍh","dh","bh","ṅ","ñ","ṇ","k","c","ṭ","t","p","g","j","ḍ","d","b","n","m","y","r","l","v","s","h","ś","ṣ","ṃ");
-    // defining SLP1 letters.
-    $slp = array("a","A","i","I","u","U","f","F","x","X","e","E", "o","O", "M","H","K", "C",  "W", "T", "P","G", "J",  "Q", "D","B", "N","Y","R","k","c","w","t","p","g","j","q","d","b","n","m","y","r","l","v","s","h","S","z","!");
+	if ($tran==="Devanagari")
+	{
+		$text = convert1($text); // converting to SLP1
+	}
 
 	$text = str_replace($slp,$iast,$text);    
     return $text;
