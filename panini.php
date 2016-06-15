@@ -49,7 +49,7 @@ $header = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http:
 <body>
 ';
 $debug = 1; // 0 - no debugging. 1 - debugging on. It shows execution of some important time consuming scripts.
-$debugmode = 1; // 0 - No debugging, 1 - full debugging with function timestamp (for speed analysis and memory leaakage finding), 2 - Only $text display (no function start and ends).
+$debugmode = 2; // 0 - No debugging, 1 - full debugging with function timestamp (for speed analysis and memory leaakage finding), 2 - Only $text display (no function start and ends).
 
 /* Reading from the HTML input. */
 $first = toslp($_GET["first"]); // to change the word input in devanagari / IAST to slp.
@@ -4110,7 +4110,6 @@ if (in_array($so,$tiG) && (arr($text,'/['.pc('hl').'][+]/') || (arr($text,'/['.p
 		storedata('1.3.9','sa',0);
 	}
 }
-timestamp();
 /* AtmanepadeSvanataH (7.1.5) */
 #if (in_array($so,array("Ja")) && (arr($text,'/[^a][+]Ja$/')||arr($text,'/^gA[+]a[+]Ja$/') ))
 if (in_array($so,array("Ja")) && (arr($text,'/^gA[+]a[+]Ja$/')||arr($text,'/[+]n*u[+]Ja$/')||arr($text,'/[+]nA[+]Ja$/')||arr($text,'/[+]sic[+]Ja$/')||(arr($text,'/[^a][+]Ja/')&&(in_array($verbset,array("adAdi","juhotyAdi","ruDAdi","kryAdi"))))))
@@ -5527,13 +5526,13 @@ elseif (in_array($so,$taG) && $sic===1 && ends(array($verb_without_anubandha),ar
 	$it = array_merge($it,array("k"));
 }
 /* kGiti ca (1.1.5) */
-elseif ($ardhadhatuka===1 && (in_array("N",$itpratyaya)||in_array("k",$itpratyaya)) && !in_array($sanAdi,array("Ric")) && pr2(array("i","I","u","U","f","F","x","X"),array("+"),$ArdhadhAtuka_tiG_pratyayas,array("i","I","u","U","f","F","x","X"),array("+i"),$ArdhadhAtuka_tiG_pratyayas,$text)!==$text && $kGiti!==1)
+elseif ($ardhadhatuka===1 && $kGiti!==1 && (in_array("N",$itpratyaya)||in_array("k",$itpratyaya)) && !in_array($sanAdi,array("Ric")) && pr2(array("i","I","u","U","f","F","x","X"),array("+"),$ArdhadhAtuka_tiG_pratyayas,array("i","I","u","U","f","F","x","X"),array("+i"),$ArdhadhAtuka_tiG_pratyayas,$text)!==$text)
 {
 	storedata('1.1.5','pa',0);
     $kGiti=1;
 }
 /* kGiti ca (1.1.5) */
-elseif ($ardhadhatuka===1 && (in_array("N",$itpratyaya)||in_array("k",$itpratyaya)) && pr2(array("i","I","u","U","f","F","x","X"),$hlplus,$ArdhadhAtuka_tiG_pratyayas,array("e","e","o","o","ar","ar","al","al"),$hlplus,$ArdhadhAtuka_tiG_pratyayas,$text)!==$text && $kGiti!==1)
+elseif ($ardhadhatuka===1 && $kGiti!==1 && (in_array("N",$itpratyaya)||in_array("k",$itpratyaya)) && pr2(array("i","I","u","U","f","F","x","X"),$hlplus,$ArdhadhAtuka_tiG_pratyayas,array("e","e","o","o","ar","ar","al","al"),$hlplus,$ArdhadhAtuka_tiG_pratyayas,$text)!==$text)
 {
 	storedata('1.1.5','pa',0);
     $kGiti=1;
@@ -11971,7 +11970,7 @@ if ($Ne===1 && $start === 1)
 /* iko'savarNe zAkalyasya hrasvazca (6.1.127) */ // Right now coded for only dIrgha. Clarify wheter the hrasva preceding also included?
 $ik = array("i","I","u","U","f","F","x","X");
 $nonik = array("a","A","e","E","o","O");
-if (arr($text,'/[iIuUfFxX]\+[aAeEoO]/') && $pada==="pada" && !in_array($so,$tiG) )
+if ( $pada==="pada" && !in_array($so,$tiG) && arr($text,'/[iIuUfFxX]\+[aAeEoO]/') )
 {
 // for pragRhya, it is difficult to tell the machine that it is not to be combined. So we have added one additional space. e.g. "a" -> "a ".
 $text = two(array("i+","I+"),array("a","A","u","U","f","F","x","X","e","o","E","O"),array("i +","i +"),array("a","A","u","U","f","F","x","X","e","o","E","O"),1);
