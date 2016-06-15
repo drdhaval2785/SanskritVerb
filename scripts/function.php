@@ -2133,7 +2133,9 @@ function dhatu_from_number($number)
 {
 	global $frontend, $outfile, $debug, $debugmode;
 	if ($debug===1 && $debugmode<2){ dibug("dhatu_from_number start");}
-   $first=scrape2($number,13,0,1);
+	timestamp();
+	$first = scrape1($number,13,0,1);
+	timestamp();
 	if ($debug===1 && $debugmode<2){ dibug("dhatu_from_number end");}
 	return $first[0];
 }
@@ -2161,33 +2163,90 @@ function droppedsutra($removed_sutras)
 	}
 }
 // for display of lakAra and suffix details.
-function suffix_display()
+function suffix_display($fo,$so)
 {
-	global $frontend, $outfile, $sanAdi, $lakAra, $fo, $so, $type, $removed_sutras;
+	global $frontend, $outfile, $lakAra, $type, $removed_sutras;
+	$sanAdi = $_GET['sanAdi'];
 	if ($type==="tiGanta")
 	{
 		if ($frontend!=="0")
 		{
 			if ($sanAdi!=="")
 			{
-			echo "<p class = red >".convert($lakAra) ." लकार<br>".convert($fo)." + ".convert($sanAdi)." + ".convert($so)." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n";
-			//fputs($outfile,"<p class = red >".convert($lakAra) ." लकार<br>".convert($fo)." + ".convert($sanAdi)." + ".convert($so)." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n<hr>\n");    
+			echo "<p class = red >".convert($fo." + ".$sanAdi." + ".$so." - ".$lakAra." lakAraH ")." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n";
+			//fputs($outfile,"<p class = red >".convert($fo." + ".$sanAdi." + ".$so." - ".$lakAra." lakAraH ")." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n");    
 			}
 			else
 			{
-			echo "<p class = red >".convert($lakAra) ." लकार<br>".convert($fo)." + ".convert($so)." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n";    
-			//fputs($outfile,"<p class = red >".convert($lakAra) ." लकार<br>".convert($fo)." + ".convert($so)." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n");    
+			echo "<p class = red >".convert($fo." + ".$so." - ".$lakAra." lakAraH ")." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n";
+			//fputs($outfile,"<p class = red >".convert($fo." + ".$so." - ".$lakAra." lakAraH ")." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n");    
 			}		
 		}		
 		else
 		{
 			if ($sanAdi!=="")
 			{
-			//fputs($outfile,"<p class = red >".convert($lakAra) ." लकार<br>".convert($fo)." + ".convert($sanAdi)." + ".convert($so)." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n<hr>\n");    
+			//fputs($outfile,"<p class = red >".convert($fo." + ".$sanAdi." + ".$so." - ".$lakAra." lakAraH ")." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n");    
 			}
 			else
 			{
-			//fputs($outfile,"<p class = red >".convert($lakAra) ." लकार<br>".convert($fo)." + ".convert($so)." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n");    
+			//fputs($outfile,"<p class = red >".convert($fo." + ".$so." - ".$lakAra." lakAraH ")." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n");    
+			}		
+		}		
+	}
+	elseif ($type==="subanta")
+	{
+		if ($frontend!=="0")
+		{
+			echo "<p class = red >".convert($fo)." + ".convert($so)." <a href = subanta.html>Go Back</a></p>\n<hr>\n";    
+			//fputs($outfile,"<p class = red >".convert($fo)." + ".convert($so)." <a href = subanta.html>Go Back</a></p>\n<hr>\n");    
+		}		
+		else
+		{
+			//fputs($outfile,"<p class = red >".convert($fo)." + ".convert($so)." <a href = subanta.html>Go Back</a></p>\n<hr>\n");    
+		}				
+	}
+	elseif ($type==="sandhi")
+	{
+		if ($frontend!=="0")
+		{
+			echo "<p class = red >".convert($fo)." + ".convert($so)." <a href = sandhi.html>Go Back</a></p>\n<hr>\n";    
+			//fputs($outfile,"<p class = red >".convert($fo)." + ".convert($so)." <a href = sandhi.html>Go Back</a></p>\n<hr>\n");    
+		}		
+		else
+		{
+			//fputs($outfile,"<p class = red >".convert($fo)." + ".convert($so)." <a href = sandhi.html>Go Back</a></p>\n<hr>\n");    
+		}				
+	}
+}
+// for display of lakAra and suffix details.
+function suffix_storage()
+{
+	global $storedata, $frontend, $outfile, $sanAdi, $lakAra, $fo, $so, $type;
+	if ($type==="tiGanta")
+	{
+		if ($frontend!=="0")
+		{
+			if ($sanAdi!=="")
+			{
+			echo "<p class = red >".convert($fo." + ".$sanAdi." + ".$so." - ".$lakAra." lakAraH ")." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n";
+			//fputs($outfile,"<p class = red >".convert($fo." + ".$sanAdi." + ".$so." - ".$lakAra." lakAraH ")." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n");    
+			}
+			else
+			{
+			echo "<p class = red >".convert($fo." + ".$so." - ".$lakAra." lakAraH ")." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n";
+			//fputs($outfile,"<p class = red >".convert($fo." + ".$so." - ".$lakAra." lakAraH ")." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n");    
+			}		
+		}		
+		else
+		{
+			if ($sanAdi!=="")
+			{
+			//fputs($outfile,"<p class = red >".convert($fo." + ".$sanAdi." + ".$so." - ".$lakAra." lakAraH ")." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n");    
+			}
+			else
+			{
+			//fputs($outfile,"<p class = red >".convert($fo." + ".$so." - ".$lakAra." lakAraH ")." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n");    
 			}		
 		}		
 	}
@@ -3430,13 +3489,13 @@ function zlu()
 /* function storedata to store necessary information for display later on. */
 function storedata($sutra_number,$style,$note)
 {
-	global $text, $storedata, $us, $removed_sutras, $debugmode;
+	global $text, $storedata, $us, $removed_sutras, $debugmode, $first, $so;
 	$text = one(array("++"),array("+"),0); // To remove double consecutive + signs before storing.
 	if (!in_array($style,array("pa","hn","st","red"))) { $style="sa"; }
 	if (!isset($note)) { $note=0; }
 	if (!in_array($sutra_number,$removed_sutras))
 	{
-		$storedata[]=array($text,$sutra_number,$style,$note,$us);		
+		$storedata[]=array($text,$sutra_number,$style,$note,$us,$first,$so);
 	}
 	elseif (in_array($sutra_number,$removed_sutras))
 	{
@@ -3464,10 +3523,11 @@ function sutrasfromstoredata()
 /* displaying from the storedata */
 function display_from_storedata()
 {
-	global $storedata;
+	global $storedata, $text, $us;
 	foreach ($storedata as $value)
 	{
-		gui($value[0],$value[1],$value[2],$value[3],$value[4]);
+		gui3($value[0],$value[1],$value[2],$value[3],$value[4]);
+		$laststoredata = $value[-1];
 	}
 }
 /* printing from the storedata to HTML file */
@@ -3479,6 +3539,114 @@ function print_from_storedata()
 		fputs($outfile,print_to_file($value[0],$value[1],$value[2],$value[3]));
 	}
 }
+//$text,$sutra_number,$style,$note,$us
+function shortendisplaydata($storestore)
+{
+	global $frontend, $storedata, $debug, $debugmode;
+	global $ASdata, $vdata, $miscdata, $upasarga_joined, $otherdata, $paribhASAdata; // bringing $text from main php function.
+	$totaldata = array_merge($ASdata, $vdata, $miscdata, $otherdata, $paribhASAdata);
+	foreach($storestore as $val)
+	{
+		$storedata = $val;
+		foreach($storedata as $value)
+		{
+			$sutralist[] = $value[1];
+		}
+	}
+	$sutralist = array_unique($sutralist);
+	$matches = array();
+	foreach ($sutralist as $sutra_number)
+	{
+			$output = array_filter($totaldata, function($var) use ($sutra_number) { return strpos($var,$sutra_number.":")!==false; });
+			$matches = array_merge($output,$matches);	
+	}
+	$matches = array_unique($matches);
+	$matches = array_values($matches);
+	return $matches;
+}
+function gui3($text,$sutra_number,$style,$note,$us)
+{
+	global $shortdata;
+	global $frontend, $storedata, $debug, $debugmode;
+	global $ASdata, $vdata, $miscdata, $upasarga_joined, $otherdata, $paribhASAdata; // bringing $text from main php function.
+	if (strpos($sutra_number,'~')!==false && $frontend==='1')
+	{
+		$matches = array_filter($shortdata, function($var) use ($sutra_number) { return strpos($var,$sutra_number.":")!==false; });
+		$matches=array_values($matches);
+		$int = explode(':',$matches[0]); // We presume that there would be only one match.
+		$msg_no[$i] = $int[0];
+		$msg_eng[$i] = $int[1]; 
+		$msg_dev[$i] = $int[2];
+		if ($msg_no[$i] === $sutra_number)
+		{
+		echo "<p class = ".$style." >$msg_eng[$i]</p>\n";
+		echo "<p class = ".$style." >$msg_dev[$i]</p>\n";
+		display2($text,$note,$us);
+		}
+	}
+	elseif (strpos($sutra_number,'@')!==false && $frontend==='1')
+	{
+		$matches = array_filter($short, function($var) use ($sutra_number) { return strpos($var,$sutra_number.":")!==false; });
+		$matches=array_values($matches);
+		$int = explode(':',$matches[0]); // We presume that there would be only one match.
+		$msg_no[$i] = $int[0];
+		$msg_eng[$i] = $int[1]; 
+		$msg_dev[$i] = $int[2];
+		if ($msg_no[$i] === $sutra_number)
+		{
+		echo "<p class = ".$style." >$msg_eng[$i]</p>\n";
+		echo "<p class = ".$style." >$msg_dev[$i]</p>\n";
+		display2($text,$note,$us);
+		}
+	}
+	elseif (strpos($sutra_number,'-')===false && arr(array($sutra_number),'/\./') && $frontend==='1') // AS numbers are 1.1.1 format. Vartikas are in 1.1.1-1 format. So, - is the delimiter which is differentiating point.
+	{
+		$matches = array_filter($shortdata, function($var) use ($sutra_number) { return strpos($var,$sutra_number.":")!==false; });
+		$matches=array_values($matches);
+		$int = explode(':',$matches[0]); // We presume that there would be only one such match.
+		// The data in $ASdata is in "sutra_no:sutra_type:sutra_dev" format.
+		$sutra_no[$i] = $int[0];
+		$sutra_type[$i] = $int[1];
+		$sutra_dev[$i] = $int[2];
+		if ($debug===1 && $debugmode<2){ dibug('GUI ASDATA ANALYSIS END');}
+		if ($sutra_no[$i] === $sutra_number)
+		{	
+			echo "<p class = ".$style." >By ".toiast($sutra_dev[$i])." (".link_sutra($sutra_number).") :</p>\n";
+			echo "<p class = ".$style." >".$sutra_dev[$i]." (".convert($sutra_number).") :</p>\n";
+			display2($text,$note,$us);
+		}		
+	}
+	elseif (strpos($sutra_number,'-')!==false && $frontend==='1')
+	{
+		$matches = array_filter($shortdata, function($var) use ($sutra_number) { return strpos($var,$sutra_number.":")!==false; });
+		$matches=array_values($matches);
+		$int = explode(':',$matches[0]); // We presume that there would be only one match.
+		// Data in $vdata is in "$vartika_no:$vartika" format.
+		$vartika_no[$i] = $int[0]; 
+		$sutra_dev[$i] = $int[1];
+		if ($vartika_no[$i] === $sutra_number)
+		{	
+			echo "<p class = ".$style." >By ".toiast($sutra_dev[$i])." (vA ".link_vartika($sutra_number).") :</p>\n";
+			echo "<p class = ".$style." >".convert($sutra_dev[$i])." (वा ".convert($sutra_number).") :</p>\n";
+			display2($text,$note,$us);
+		}				
+	}
+	elseif ($frontend==='1') // For $miscdata for displaying miscellaneous information.
+	{
+		$matches = array_filter($shortdata, function($var) use ($sutra_number) { return strpos($var,$sutra_number.":")!==false; });
+		$matches=array_values($matches);
+		$int = explode(':',$matches[0]);
+		$vartika_no[$i] = $int[0];
+		$sutra_dev[$i] = $int[1];
+		if ($vartika_no[$i] === $sutra_number)
+		{	
+			echo "<p class = ".$style." >By ".toiast($sutra_dev[$i])." :</p>\n";
+			echo "<p class = ".$style." >".convert($sutra_dev[$i])." :</p>\n";
+			display2($text,$note,$us);
+		}				
+	}
+}
+
 /* Function gui to overcome issues pointed out in https://github.com/drdhaval2785/SanskritVerb/issues/125 */
 // matches function makes the code fast. Earlier we were using a for loop over vdata / ASdata which was very costly. matches function is derived from the answer of Aleks G from http://stackoverflow.com/questions/12315536/search-for-php-array-element-containing-string
 function gui($text,$sutra_number,$style,$note,$us)
@@ -3991,7 +4159,6 @@ function dibug($a)
 	{
 		echo "Hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii DEBUG ", $a, " at ";
 		timestamp();
-		print_r($text);
 	}
 }
 function verbformlist()

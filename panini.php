@@ -49,7 +49,7 @@ $header = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http:
 <body>
 ';
 $debug = 1; // 0 - no debugging. 1 - debugging on. It shows execution of some important time consuming scripts.
-$debugmode = 1; // 0 - No debugging, 1 - full debugging with function timestamp (for speed analysis and memory leaakage finding), 2 - Only $text display (no function start and ends).
+$debugmode = 2; // 0 - No debugging, 1 - full debugging with function timestamp (for speed analysis and memory leaakage finding), 2 - Only $text display (no function start and ends).
 
 /* Reading from the HTML input. */
 $first = toslp($_GET["first"]); // to change the word input in devanagari / IAST to slp.
@@ -861,8 +861,6 @@ $upasarga_joined=0;
 /* Remembering the SLP1 input words and pratyaya. */
 $fo = $first; // remembering the original prakRti. Sometimes we need to know what was the original prakRti.
 $so = $second; ; // remembering the original pratyayas. Sometimes we need to know what was the original pratyaya.
-/* displaying the data back to the user */
-suffix_display();	
 
 /* for sambodhana, sambuddhi decision */
 if ($w>20)
@@ -14200,28 +14198,11 @@ if( $veda===1 && sub(array("apasparDeTAm","AnarcuH","AnarhuH","cucyuvize","tatyA
 	storedata('6.1.35','sa',0);
 }
 if ($debug===1) {dibug('11700');}
-//$us='';
-/* Displaying the sUtras and sequential changes of $frontend is not set to 0. */
-if ($frontend!=="0")
-{
-	if($debug===1) {dibug('DISPLAY_FROM_STOREDATA START');}
-	if ($debugmode<2)
-	{
-		display_from_storedata();
-	}
-	if($debug===1) {dibug('DISPLAY_FROM_STOREDATA END');}
-	/*if($debug===1) {dibug('PRINT_FROM_STOREDATA START');}
-	print_from_storedata();
-	if($debug===1) {dibug('PRINT_FROM_STOREDATA END');}*/
-}
+$storestore[] = $storedata;
 if ($debug===1) {dibug('11710');}
 /* Final Display */
 if ($frontend!=="0")
 {
-	echo "<p class = sa >Final forms are :</p>\n";
-	echo "<p class = sa >आखिरी रूप हैं :</p>\n";
-	display(0);
-	echo "<hr>\n";
 	$ou[] = implode(', ',$text);
 }
 else
@@ -14250,17 +14231,41 @@ $sanAdi="";
 $sanAdi=$_GET['sanAdi'];
 $TAp=0; $DAp=0; $cAp=0; $GIp=0; $GIn=0; $GIS=0; $kGiti=0; $abhyasta=0; $ajAdyataSTAp=0; $tusma=0; $upasarga_joined=0; $sicivRddhi=0; $atolopa=0; $caG=0; $aG=0; $zluvat=0; $aniditAm=0; $kGiti=0; $uzca=0; $abhyAsa=0; $Adezapratyaya=0; $jherjus=0; $sijabhyastavidibhyazca=0; $ciN=0; $Nit=0;
 $us = $_GET['upasarga']; 
-$temp = scrape1($first,0,2,1); 
+$temp = scrape2($first,0,2,1); 
 $verb_without_anubandha=$temp[0];
 $storedata=array();
 $text=array();
 if ($debug===1) {dibug('11740');}
 }
 
+
+/* Displaying the sUtras and sequential changes of $frontend is not set to 0. */
+if ($frontend!=="0")
+{
+	$shortdata = shortendisplaydata($storestore);
+	foreach($storestore as $storedata)
+	{
+		if($debug===1) {dibug('DISPLAY_FROM_STOREDATA START');}
+		$firstentry = $storedata[0];
+		$inword = $firstentry[5];
+		$suf = $firstentry[6];
+		/* displaying the data back to the user */
+		suffix_display($inword,$suf);	
+		if ($debugmode<2)
+		{
+			display_from_storedata();
+		}
+		if($debug===1) {dibug('DISPLAY_FROM_STOREDATA END');}
+		/*if($debug===1) {dibug('PRINT_FROM_STOREDATA START');}
+		print_from_storedata();
+		if($debug===1) {dibug('PRINT_FROM_STOREDATA END');}*/
+		echo "<hr>\n";
+
+	}
+}
 /* Post Generation processes e.g. CLI application, testing etc. */
 if ((isset($argv[0])|| $test ===1) )
 { 
-	dibug('aftermath');
 	//$suspectentryfile = fopen('suspectverbforms.txt','a+');
 	$generatedformfile = fopen('generatedforms.xml','a+');
 	//$verblist = verbformlist();
@@ -14312,7 +14317,6 @@ if ((isset($argv[0])|| $test ===1) )
 		fputs($difflog,$printstatement);
 		fclose($difflog);
 	}
-	dibug('aftermath2');
 }
 elseif ($type==="tiGanta")
 {
@@ -14374,7 +14378,7 @@ fputs($logfile,"Request completed on :".date('D, d M Y H:i:s')."\n");
 fputs($logfile,"------------------------------\n");
 fclose($logfile);
 if ($debug===1) {dibug('11760');}
-//echo "Total time taken for execution of code is ";
-//timestamp();
+echo "Total time taken for execution of code is ";
+timestamp();
 /* End of Code */
 ?>
