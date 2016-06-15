@@ -49,7 +49,7 @@ $header = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http:
 <body>
 ';
 $debug = 1; // 0 - no debugging. 1 - debugging on. It shows execution of some important time consuming scripts.
-$debugmode = 1; // 0 - No debugging, 1 - full debugging with function timestamp (for speed analysis and memory leaakage finding), 2 - Only $text display (no function start and ends).
+$debugmode = 2; // 0 - No debugging, 1 - full debugging with function timestamp (for speed analysis and memory leaakage finding), 2 - Only $text display (no function start and ends).
 
 /* Reading from the HTML input. */
 $first = toslp($_GET["first"]); // to change the word input in devanagari / IAST to slp.
@@ -12530,7 +12530,7 @@ storedata('8.3.2','sa',0);
 storedata('8.3.4','sa',0);
 } 
 /* nazChavyaprazAn (8.3.7) */
-if (arr($text,'/n([+]*)['.pc('Cv').']/') && sub(array("n"),prat('Cv'),$am,0) && arr($text,'/[n][+]['.pc('Cv').']/') && $pada ==="pada")
+if (in_array($so,$sup) && arr($text,'/n([+]*)['.pc('Cv').']/') && sub(array("n"),prat('Cv'),$am,0) && arr($text,'/[n][+]['.pc('Cv').']/') && $pada ==="pada")
 {
 $text = three(array("n"),prat('Cv'),$am,array("Mr@"),prat('Cv'),$am,0); $R=array_merge($R,array(1));
 $text = one(array("praSAMr@"),array("praSAn"),0);
@@ -14243,7 +14243,7 @@ $temp = scrape2($first,0,2,1);
 $verb_without_anubandha=$temp[0];
 $storedata=array();
 $text=array();
-if ($debug===1) {dibug('11740');}
+if ($debug===1) {dibug('11740');dibug('------------------------');}
 }
 
 
@@ -14385,8 +14385,6 @@ elseif ($type==="subanta")
 fputs($logfile,"Request completed on :".date('D, d M Y H:i:s')."\n");
 fputs($logfile,"------------------------------\n");
 fclose($logfile);
-if ($debug===1) {dibug('11760');}
-echo "Total time taken for execution of code is ";
-timestamp();
+if ($debug===1) {dibug('End_of_code');}
 /* End of Code */
 ?>

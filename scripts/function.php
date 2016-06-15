@@ -4154,26 +4154,27 @@ function tablemaker1($ou)
 }
 function timestamp()
 {
-	global $start_time, $argv;
-	if(isset($argv[0]))
-	{
-		echo (microtime(true) - $start_time)."\n";
-	}
-	else
-	{
-		echo (microtime(true) - $start_time)."<br/>";
-	}
+	global $start_time;
+	echo (microtime(true) - $start_time);
 }
 function dibug($a)
 {
-	global $time, $text, $debugmode, $argv;
+	global $time, $text, $debugmode, $argv, $first, $second;
 	if ($debugmode>2)
 	{
-		echo $a.','; print_r($text); echo "<br/>\n";
+		echo $a.','; print_r($text);
 	}
 	else
 	{
-		echo $a.','; timestamp();
+		echo $a.','; timestamp(); echo ','.$first.','.$second;
+	}
+	if (isset($argv[0]))
+	{
+		echo "\n";
+	}
+	else
+	{
+		echo '<br/>';
 	}
 }
 function verbformlist()
