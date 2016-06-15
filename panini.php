@@ -49,7 +49,7 @@ $header = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http:
 <body>
 ';
 $debug = 1; // 0 - no debugging. 1 - debugging on. It shows execution of some important time consuming scripts.
-$debugmode = 2; // 0 - No debugging, 1 - full debugging with function timestamp (for speed analysis and memory leaakage finding), 2 - Only $text display (no function start and ends).
+$debugmode = 1; // 0 - No debugging, 1 - full debugging with function timestamp (for speed analysis and memory leaakage finding), 2 - Only $text display (no function start and ends).
 
 /* Reading from the HTML input. */
 $first = toslp($_GET["first"]); // to change the word input in devanagari / IAST to slp.
@@ -5918,7 +5918,7 @@ if ( in_array($so,$tiG) && $luGset===5 && sub(array("BrAj","BAs","BAS","dIp","jI
 	storedata('7.4.3','sa',0);
 }
 /* nAglopizAsvRditAm (7.4.2) */
-elseif ( in_array($so,$tiG) && (in_array($fo,$curAdi_adanta) || in_array($fo,array("SAsu!")) || in_array($fo,$Rditverbs)) && $luGset===5 && sub(array("A","I","U","F","X","e","E","o","O"),$hl,array("+i+a","+a+","+etAm","+eTAm"),0) && $caG===1)
+elseif ( in_array($so,$tiG) && (in_array($fo,$curAdi_adanta) || in_array($fo,array("SAsu!")) || in_array($fo,$Rditverbs)) && $luGset===5  && $caG===1 && (arr($text,'/[AIUFXeEoO]['.pc('hl').'][+]e[tT]Am$/')||arr($text,'/[AIUFXeEoO]['.pc('hl').'][+](i[+])*a[+]/')))//sub(array("A","I","U","F","X","e","E","o","O"),$hl,array("+i+a","+a+","+etAm","+eTAm"),0))
 {
 	storedata('7.4.2','sa',0);
 }
@@ -6723,7 +6723,7 @@ if ( in_array($so,array("mip")) && $lakAra==="liw" && arr($text,'/['.pc('ac').']
 	storedata('7.2.115','sa',0);
 }
 /* dAderdhAtorghaH (8.2.32) */
-if (arr($text,'/['.pc('hl').'][+]['.pc('Jl').']/') && sub(array("dah","dAh","dih","duh","dfh","drAh","druh","deh"),array("+"),prat('Jl'),0) )
+if (arr($text,'/^d.*[h][+]['.pc('Jl').']/') && sub(array("dah","dAh","dih","duh","dfh","drAh","druh","deh"),array("+"),prat('Jl'),0) )
 {
     $text = three(array("dah","dAh","dih","duh","dfh","drAh","druh","deh"),array("+"),prat('Jl'),array("daG","dAG","diG","duG","dfG","drAG","druG","deG"),array("+"),prat('Jl'),0);
 	storedata('8.2.32','sa',0);
@@ -6985,7 +6985,7 @@ elseif ( arr($text,'/j\+/') && pr2(array("mfj","marj"),array("+","+i"),$ArdhadhA
 	storedata('7.2.114','sa',0);
 }
 /* tanAdibhyastathAsoH (2.4.79) */
-if ( in_array($fo,$tanAdi) && sub($hl,array("+"),array("ista","isTAs"),0) && in_array($so,$taG) )
+if ( in_array($fo,$tanAdi)  && in_array($so,$taG) && (arr($text,'/['.pc('hl').'][+]ista$/')||arr($text,'/['.pc('hl').'][+]isTAs$/')))
 {
 	$text = two(array("ArR","kziR","tfR","GfR"),array("+ista","+isTAs"),array("ArR","kziR","tfR","GfR"),array("+ta","+TAs"),0);
 	$text = three($hl,array("+"),array("ista","isTAs"),$hl,array("+"),array("ista","isTAs"),0);
@@ -7207,9 +7207,9 @@ if (in_array($first,array("Ah")) && (arr($text,'/[+]['.pc("Jl").']/')) )
 } else { $hodha3 = 0; } 
 if ($debug===1) {dibug("4400");}
 /* jhalo jhali (8.2.26) */
-if (arr($text,'/['.pc('Jl').']([+]*)s([+]*)['.pc('Jl').']/') && sub(prat("Jl"),array("s"),prat("Jl"),0) && in_array($so,$tiG))
+if (arr($text,'/['.pc('Jl').']([+]*)s([+]*)['.pc('Jl').']/') && in_array($so,$tiG))
 {
-	$text = three(prat("Jl"),array("s"),prat("Jl"),prat("Jl"),array(""),prat("Jl"),0); 
+	$text = change('/(['.pc('Jl').'][+]*)s([+]*['.pc('Jl').'])/','$1$2');
 	storedata('8.2.26','sa',0);
 }
 /* ho DhaH (8.2.31) */ 
