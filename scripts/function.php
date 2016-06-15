@@ -1883,8 +1883,19 @@ function scrape($a,$a1,$b,$c,$d,$e,$e1)
 function verbdata1($number)
 {
 	global $verbdata;
-	$verbdata1 = array_filter($verbdata, function($var) use ($number) { 	list($gana,$id) = explode('.',$number); return preg_match("/$gana:$id/i", $var); });
-	return $verbdata1;
+	$parts = explode('.',$number);
+	$gana = $parts[0];
+	$id = $parts[1];
+	$output = array();
+	foreach($verbdata as $value)
+	{
+		if (strpos($value,$gana.":".$id)>0)
+		{
+			$output[] = $value;
+		}
+	}
+	#$verbdata1 = array_filter($verbdata, function($var) use ($number) { 	list($gana,$id) = explode('.',$number); return preg_match("/$gana:$id/i", $var); });
+	return $output;
 }
 /* verbdata2 creates one variable for the given verb text */
 function verbdata2($text)
@@ -2133,9 +2144,7 @@ function dhatu_from_number($number)
 {
 	global $frontend, $outfile, $debug, $debugmode;
 	if ($debug===1 && $debugmode<2){ dibug("dhatu_from_number start");}
-	timestamp();
 	$first = scrape1($number,13,0,1);
-	timestamp();
 	if ($debug===1 && $debugmode<2){ dibug("dhatu_from_number end");}
 	return $first[0];
 }
@@ -4145,20 +4154,26 @@ function tablemaker1($ou)
 }
 function timestamp()
 {
-	global $start_time;
-	echo "<b>".(microtime(true) - $start_time)."</b>", "<br/>\n";
-}
-function dibug($a)
-{
-	global $time, $text, $debugmode;
-	if ($debugmode>2)
+	global $start_time, $argv;
+	if(isset($argv[0]))
 	{
-		echo $a.' - '; print_r($text); echo "<br/>\n";
+		echo (microtime(true) - $start_time)."\n";
 	}
 	else
 	{
-		echo "Hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii DEBUG ", $a, " at ";
-		timestamp();
+		echo (microtime(true) - $start_time)."<br/>";
+	}
+}
+function dibug($a)
+{
+	global $time, $text, $debugmode, $argv;
+	if ($debugmode>2)
+	{
+		echo $a.','; print_r($text); echo "<br/>\n";
+	}
+	else
+	{
+		echo $a.','; timestamp();
 	}
 }
 function verbformlist()

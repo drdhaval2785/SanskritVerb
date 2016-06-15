@@ -49,7 +49,7 @@ $header = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http:
 <body>
 ';
 $debug = 1; // 0 - no debugging. 1 - debugging on. It shows execution of some important time consuming scripts.
-$debugmode = 2; // 0 - No debugging, 1 - full debugging with function timestamp (for speed analysis and memory leaakage finding), 2 - Only $text display (no function start and ends).
+$debugmode = 1; // 0 - No debugging, 1 - full debugging with function timestamp (for speed analysis and memory leaakage finding), 2 - Only $text display (no function start and ends).
 
 /* Reading from the HTML input. */
 $first = toslp($_GET["first"]); // to change the word input in devanagari / IAST to slp.
@@ -71,8 +71,11 @@ $drop = $_GET['drop'];
 $letter = $_GET['letter'];
 $pr = $_GET['pratya'];
 $inprat = $_GET['pratyahara'];
-if(!isset($verbdata1)) { $verbdata1 = verbdata1($number); }
-if(!isset($verbdata2)) { $verbdata2 = verbdata2($first); }
+if(!isset($argv[0]))
+{
+	if(!isset($verbdata1)) { $verbdata1 = verbdata1($number); }
+	if(!isset($verbdata2)) { $verbdata2 = verbdata2($first); }
+}
 $vsuf = '';
 $removed_sutras = explode(',',$_GET['removed_sutras']);
 $removed_sutras = array_map('trim',$removed_sutras);
@@ -110,6 +113,8 @@ elseif (in_array($argv[2],array("law","liw","luw","lfw","sArvaDAtukalew","ArDaDA
 	$number = $argv[1];
 	$first = dhatu_from_number($number);
 	$verbset = verbset_from_number($number);
+	if(!isset($verbdata1)) { $verbdata1 = verbdata1($number); }
+	if(!isset($verbdata2)) { $verbdata2 = verbdata2($first); }
 	$lakAra = $argv[2];
 	$removed_sutras = explode(',',$argv[3]);
 	$removed_sutras = array_map('trim',$removed_sutras);
@@ -247,6 +252,7 @@ $itprakriti = array(); // creating an array where we can store it markers of pra
 $itpratyaya = array(); // creating an array where we can store it markers of pratyayas.
 $samp = array(); // creating an array where we can store whethere samprasAraNa has happened or not.
 $Agama = array(); // storing Agamas.
+
 
 // rest of the variables will be defined at their particular occurence in the code.
 /* Displaying information about the verb to the user */
@@ -4083,9 +4089,8 @@ if (in_array($so,$tiG) && (arr($text,'/['.pc('hl').'][+]/') || (arr($text,'/['.p
 	$text=three(array("+"),$inbetweenpratyaya,array("+"),array("+"),$inbetweeenreplace,array("+"),0);
 		if ($tusma!==1)
 		{
-			$text = last($hl,blank(count($hl)),0);
+			$text = change('/[kKgGNcCjJYwWqQRtTdDnpPbBmyrlvSzsh]$/','');
 			if ( $so!=="mahiN") {itprat('/(['.flat($hl).']$)/');}
-			$text = last($hl,blank(count($hl)),0);   
 		}
 		if ($nomidelision!==1 && !arr(array($fo),'/i[!]r$/') && $sarvadhatuka===1 ) // Addition of ends function is to prevent application to kF -> kir converted halanta, which are not there in upadeza.
 		{
@@ -5205,7 +5210,7 @@ if (arr($text,'/[+][cjYwWqQR]/') && in_array($so,$tiG))
 {
     it('/([+][cjYwWqQR])/');
 	storedata('1.3.7','sa',0);
-	$text = last(array("jas"),array("as"),0);
+	$text = change('/jas$/','as');
     $text = one(array("+wA","+jus","+Ri","+Ra"),array("+A","+us","+i","+a"),0);
 	storedata('1.3.9','sa',0);
 }
@@ -6230,7 +6235,7 @@ if ( (arr($text,'/^['.pc('hl').']['.pc('hl').'][A][+][y]/')) && in_array($so,$ti
 if ( (arr($text,'/[s]['.flat($hl).']$/') || arr($text,'/vr[aA]Sc\+/')) && in_array($so,$tiG) && in_array($lakAra,array("ASIrliN")) && $asyati!==1) // for ASIrliN
 {
 	foreach ($hl as $value) { $ska[] = "s".$value; }
-	$text = last($ska,$hl,0);
+	$text = change('/s(['.pc(hl).'])$/','$1');
 	$text = one(array("+yAs+","vraSc","vrASc"),array("+yA+","vrac","vrAc"),0);
 	storedata('8.2.29','sa',0);
 }
@@ -7221,7 +7226,7 @@ if (arr($text,'/[h][+]$/') && $pada ==="pada" && $hodha1===0 && $hodha2 === 0 &&
 }
 if (arr($text,'/[h]$/')  && $hodha1===0 && $hodha2 === 0 && $hodha3 === 0 )
 {
-    $text = last(array("h"),array("Q"),0);
+    $text = change('/h$/','Q');
 	storedata('8.2.31','sa',0);
 }
 /* ekAco bazo bhaS jhaSantasya sdhvoH (8.2.37) */  
@@ -8617,7 +8622,8 @@ elseif ( (in_array($fo,$ajAdi) || $ajAdyataSTAp===1) && $kevala!==1)
     {
 		storedata('jAtiaja','pa',0);
     }    
-    $text = last(array($so),array("+wAp+".$so),0);
+    #$text = last(array($so),array("+wAp+".$so),0);
+	$text = change("/($so)$/","+wAp+$1");
     $TAp = 1;
 }
 /* na SaTsvasrAdibhyaH (4.1.10) */
@@ -9449,7 +9455,8 @@ if (arr($text,'/[a][+]/') && $gender==="f" && $_GET['cond2_7']!=="2" && $ajAdyat
     {
 		storedata('kanyA','pa',0);
     }
-    $text = last(array($so),array("+wAp+".$so),0);
+    #$text = last(array($so),array("+wAp+".$so),0);
+	$text = change("/($so)$/","+wAp+$1");
     $text = two(array("NIp","NIz","NIn"),array("+wAp"),array("NIp","NIz","NIn"),array(""),0);
 	storedata('4.1.4','st',8);
     $TAp=1;
@@ -10339,7 +10346,8 @@ if ($debug===1) {dibug("7700");}
 /* jazzasoH ziH (7.1.20) */
 if ($gender === "n" && $pada=== "pratyaya" && in_array($so,array("jas","Sas")) && $luk===0)
 {
-    $text = last(array("jas","Sas"),array("Si","Si"),0);
+    $text = change('/jas$/','Si');
+	$text = change('/Sas$/','Si');
 	storedata('7.1.20','sa',3);
     $shi = 1; // 0 - zi Adeza has not happened. 1 - zi Adeza has happened.
 } else { $shi = 0; }
@@ -11044,7 +11052,7 @@ if (arr($text,'/[a][+][N]/') && $pada=== "pratyaya" && in_array($so,array("Nasi!
     }
     else
     {
-    $text = last(array("Ni","Nasi!"),array("smin","smAt"),0);        
+    $text = last(array("Ni","Nasi!"),array("smin","smAt"),0);
     }
 	storedata('7.1.15','sa',3);
     $sarva1 =1; // 0 - GasiGyoH smAtsminau has not applied. 1 - GasiGyoH smAtsminau has applied.
