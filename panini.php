@@ -49,7 +49,7 @@ $header = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http:
 <body>
 ';
 $debug = 1; // 0 - no debugging. 1 - debugging on. It shows execution of some important time consuming scripts.
-$debugmode = 2; // 0 - No debugging, 1 - full debugging with function timestamp (for speed analysis and memory leaakage finding), 2 - Only $text display (no function start and ends).
+$debugmode = 1; // 0 - No debugging, 1 - full debugging with function timestamp (for speed analysis and memory leaakage finding), 2 - Only $text display (no function start and ends).
 
 /* Reading from the HTML input. */
 $first = toslp($_GET["first"]); // to change the word input in devanagari / IAST to slp.
@@ -3566,8 +3566,10 @@ elseif ($lakAra==="liw" && in_array($fo,array("YiBI","hrI","quBfY","hu")) && $zl
 /* kAspratyayAdAmamantre liTi (3.1.35) */
 elseif ($lakAra==="liw" && $veda===0 && (anekAca($verb_without_anubandha) ||  $verbset==="curAdi" || $fo==="kAsf!") )
 {
-    $text=two(array("+"),$tiG1,array("+Am+"),$tiG1,0);
-    $text=two(array("+Am+Am+"),$tiG1,array("+Am+"),$tiG1,0);
+    $text=change('/[+]([^+]*)$/','+Am+$1');
+	//$text=two(array("+"),$tiG1,array("+Am+"),$tiG1,0);
+	$text=change('/[+]Am[+]Am[+]/','+Am+');
+    //$text=two(array("+Am+Am+"),$tiG1,array("+Am+"),$tiG1,0);
 	storedata('3.1.35','sa',0);
 	if(arr($text,'/[a][+]Am/')) // For gopAya+Am
 	{
@@ -3936,13 +3938,15 @@ elseif (arr($text,'/^[^pPbBmv]F\+/') && in_array($so,$tiG)  && !in_array("Sap",$
 	}
 }
 /* AmaH (2.4.81) and kRJcAnuprayujyate liTi (3.1.40) */
-if ($lakAra==="liw" && $kaspratyaya===1 && sub(array("Am+"),$tiG1,blank(0),0) )
+if ($lakAra==="liw" && $kaspratyaya===1 && arr($text,'/Am[+][^+]*$/'))// && sub(array("Am+"),$tiG1,blank(0),0) )
 {
 	$beforeampratyaya = $text;
-	$text = two(array("Am+"),$tiG,array("Am+"),blank(count($tiG)),0);
+	$text = change('/Am[+]([^+]*)$/','Am+'); 
+	//$text=two(array("Am+"),$tiG,array("Am+"),blank(count($tiG)),0);
 	storedata('2.4.81','sa',0);
 	$text = $beforeampratyaya;
-	$text=one(array("Am+"),array("Am+kf+"),0);
+	$text=change('/[+]Am[+]/','+Am+kf+');
+	//$text=one(array("Am+"),array("Am+kf+"),0);
 	//$text=one(array("+Am+kf+"),array("+Am+BU+"),1); // Trying for kf only right now.
 	//$text=one(array("+Am+kf+"),array("+Am+as+"),1);
 	storedata('3.1.40','sa',0);
@@ -3966,7 +3970,7 @@ if ($lakAra==="liw" && $kaspratyaya===1 && sub(array("Am+"),$tiG1,blank(0),0) )
 		storedata('6.1.78','sa',0);
 	}
 	$kaspratyaya=1;
-	$text = one(array("+Am+"),array("Am+"),0);
+	$text = change('/[+]Am[+]/','Am+'); //one(array("+Am+"),array("Am+"),0);
 	$val=array();
 	foreach ($text as $mem)
 	{
@@ -3979,7 +3983,7 @@ if ($lakAra==="liw" && $kaspratyaya===1 && sub(array("Am+"),$tiG1,blank(0),0) )
 	$verb_without_anubandha="kf";
 }
 /* asaMyogAlliT kit (1.2.5) */
-if (!arr(array($verb_without_anubandha),'/['.pc('hl').'M]['.pc('hl').']$/') && $lakAra==="liw" && !in_array($so,array("tip","sip","mip")) && !in_array($fo,array("raDa!")) && !in_array($fo,array("gf")) )
+if ($lakAra==="liw" && !in_array($so,array("tip","sip","mip")) && !in_array($fo,array("raDa!")) && !in_array($fo,array("gf")) && !arr(array($verb_without_anubandha),'/['.pc('hl').'M]['.pc('hl').']$/'))
 {
 	storedata('1.2.5','pa',0);
 	$it = array_merge($it,array("k"));
@@ -4083,7 +4087,7 @@ if (in_array($so,$tiG) && arr(array($fo),'/['.pc('hl').']$/') && !arr(array($fo)
 }
 if ($debug===1) {dibug("1900");}
 /* halantyam (1.3.3) and tasya lopaH (1.3.9) */
-if (in_array($so,$tiG) && (arr($text,'/['.pc('hl').'][+]/') || (arr($text,'/['.pc('hl').']$/') && $tusma!==1) ||sub(array("+"),$inbetweenpratyaya,array("+"),0) || sub($hl,array("+"),$vikaraNa,0) || $rudhAdibhyaH===1 || pr2($hl,array("+"),array("va","ma"),blank(count($hl)),array("+"),array("va","ma"),$text)!==$text) ) # $ad === 1 removed because of https://github.com/drdhaval2785/SanskritVerb/issues/318
+if (in_array($so,$tiG) && (arr($text,'/['.pc('hl').'][+]/') || (arr($text,'/['.pc('hl').']$/') && $tusma!==1) ||sub(array("+"),$inbetweenpratyaya,array("+"),0) || $rudhAdibhyaH===1 || arr($text,'/['.pc('hl').'][+][vm]a/')) ) # $ad === 1 removed because of https://github.com/drdhaval2785/SanskritVerb/issues/318
 {
 	$ininin = $text;
 	$text=three(array("+"),$inbetweenpratyaya,array("+"),array("+"),$inbetweeenreplace,array("+"),0);
@@ -4094,14 +4098,9 @@ if (in_array($so,$tiG) && (arr($text,'/['.pc('hl').'][+]/') || (arr($text,'/['.p
 		}
 		if ($nomidelision!==1 && !arr(array($fo),'/i[!]r$/') && $sarvadhatuka===1 ) // Addition of ends function is to prevent application to kF -> kir converted halanta, which are not there in upadeza.
 		{
-			$text = change('/([+][^+]*)['.pc('hl').']([+]ran)$/','$1R2');
+			$text = change('/([+][^+]*)['.pc('hl').']([+]ran)$/','$1$2');
 		}
 		$text=one(array("+si+","sicmi"),array("+sic+","sic+mi"),0);
-		/*
-		if(preg_match('/['.pc('hl').']$/',$fo) && !arr(array($fo),'/i[!]r$/') && !arr(array($fo),'/a[!]z$/'))
-		{
-			$text=pr2($hl,array("+"),array("va","ma"),blank(count($hl)),array("+"),array("va","ma"),$text);		
-		}*/
 	if ($text!==$ininin)
 	{
 		$outoutout = $text;
@@ -4111,6 +4110,7 @@ if (in_array($so,$tiG) && (arr($text,'/['.pc('hl').'][+]/') || (arr($text,'/['.p
 		storedata('1.3.9','sa',0);
 	}
 }
+timestamp();
 /* AtmanepadeSvanataH (7.1.5) */
 #if (in_array($so,array("Ja")) && (arr($text,'/[^a][+]Ja$/')||arr($text,'/^gA[+]a[+]Ja$/') ))
 if (in_array($so,array("Ja")) && (arr($text,'/^gA[+]a[+]Ja$/')||arr($text,'/[+]n*u[+]Ja$/')||arr($text,'/[+]nA[+]Ja$/')||arr($text,'/[+]sic[+]Ja$/')||(arr($text,'/[^a][+]Ja/')&&(in_array($verbset,array("adAdi","juhotyAdi","ruDAdi","kryAdi"))))))
@@ -13290,7 +13290,7 @@ if (arr($text,'/[r][+][s][u]$/') && $so==="sup" && !in_array(1,$R))
 } else { $roHsupi=0; }
 if ($debug===1) {dibug("10800");}
 /* kharavasAnayorvisarjanIyaH (8.3.15) */
-if (arr($text,'/[+]['.pc('Kr').']/') && $roHsupi===0 && sub(array("r","r@"),array("+"),prat('Kr'),0) && $pada === "pada" && in_array($so,$sup))
+if (in_array($so,$sup) && arr($text,'/[+]['.pc('Kr').']/') && $roHsupi===0 && sub(array("r","r@"),array("+"),prat('Kr'),0) && $pada === "pada" )
 {
 	$text = two(array("r@","r"),prat("Kr"),array("H","H"),prat("Kr"),0);
 	storedata('8.3.15','sa',0);
@@ -13367,13 +13367,13 @@ if (arr($text,'/[o][y][+]/') && $bho ===1 && $pada === "pada")
 	storedata('8.3.20','sa',0);
 }
 /* uJi ca pade (8.3.21) */
-if ((sub(array("ay","av"),array("u "),blank(0),0)|| (sub(array("ay","av"),blank(0),blank(0),0) && $second === "u")) && $bho ===1 && $pada === "pada")
+if (in_array($so,$sup) && (arr($text,'/a[yv][+]*u /')|| (arr($text,'/a[yv]/') && $second === "u")) && $bho ===1 && $pada === "pada")
 {
     $text = two(array("ay","av"),array("u"),array("a","a"),array("u"),0);
 	storedata('8.3.21','sa',0);
 }
 /* mo rAji samaH kvau (8.3.25) */
-if (sub(array("sam"),array("rA"),blank(0),0))
+if (arr($text,'/sam[+]*rA/'))
 {
     $text = two(array("sam"),array("rA"),array("sam"),array("rA"),0);
 	storedata('8.3.25','sa',0);
@@ -13382,7 +13382,7 @@ if (sub(array("sam"),array("rA"),blank(0),0))
 /* mo'nusvAraH (8.3.23) */
 if (arr($text,'/[m][+]['.pc('hl').']/') && $pada ==="pada" && $mo === 0)
 {
-$text = two(array('m'),prat('hl'),array('M'),prat('hl'),0);
+	$text = two(array('m'),prat('hl'),array('M'),prat('hl'),0);
 	storedata('8.3.23','sa',0);
 }
 if ($debug===1) {dibug("10900");}
@@ -14386,5 +14386,6 @@ fputs($logfile,"Request completed on :".date('D, d M Y H:i:s')."\n");
 fputs($logfile,"------------------------------\n");
 fclose($logfile);
 if ($debug===1) {dibug('End_of_code');}
+//echo "$first $lakAra completed in "; timestamp(); echo "\n";
 /* End of Code */
 ?>
