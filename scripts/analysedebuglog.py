@@ -10,7 +10,7 @@ if __name__=="__main__":
 	prevlog = 0
 	for line in logfile:
 		line = line.strip()
-		[string,logtime,first,second] = line.split(',')
+		[string,first,second,logtime] = line.split(',')
 		logtime = float(logtime)
 		diff = logtime - prevlog
 		if diff > 0.001:

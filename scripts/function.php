@@ -3499,7 +3499,7 @@ function zlu()
 function storedata($sutra_number,$style,$note)
 {
 	global $text, $storedata, $us, $removed_sutras, $debugmode, $first, $so;
-	$text = one(array("++"),array("+"),0); // To remove double consecutive + signs before storing.
+	$text = change('/[+]+/','+'); // To remove double consecutive + signs before storing.
 	if (!in_array($style,array("pa","hn","st","red"))) { $style="sa"; }
 	if (!isset($note)) { $note=0; }
 	if (!in_array($sutra_number,$removed_sutras))
@@ -4154,8 +4154,16 @@ function tablemaker1($ou)
 }
 function timestamp()
 {
-	global $start_time;
+	global $start_time, $argv;
 	echo (microtime(true) - $start_time);
+	if (isset($argv[0]))
+	{
+		echo "\n";
+	}
+	else
+	{
+		echo "<br/>";
+	}
 }
 function dibug($a)
 {
@@ -4166,15 +4174,7 @@ function dibug($a)
 	}
 	else
 	{
-		echo $a.','; timestamp(); echo ','.$first.','.$second;
-	}
-	if (isset($argv[0]))
-	{
-		echo "\n";
-	}
-	else
-	{
-		echo '<br/>';
+		echo $a.','.$first.','.$second.','; timestamp();
 	}
 }
 function verbformlist()
