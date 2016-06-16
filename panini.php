@@ -1,7 +1,7 @@
 ﻿<?php
 $start_time = microtime(true);
-$debug = 0; // 0 - no debugging. 1 - debugging on. It shows execution of some important time consuming scripts.
-$debugmode = 0; // 0 - No debugging, 1 - full debugging with function timestamp (for speed analysis and memory leaakage finding), 2 - Only $text display (no function start and ends).
+$debug = 1; // 0 - no debugging. 1 - debugging on. It shows execution of some important time consuming scripts.
+$debugmode = 1; // 0 - No debugging, 1 - full debugging with function timestamp (for speed analysis and memory leaakage finding), 2 - Only $text display (no function start and ends).
  /* This code is developed by Dr. Dhaval Patel (drdhaval2785@gmail.com) of www.sanskritworld.in and Ms. Sivakumari Katuri.
   * Layout assistance by Mr Marcis Gasuns.
   * Available under GNU licence.
@@ -4392,7 +4392,6 @@ if ( in_array($lakAra,array("viDiliN","ASIrliN")) && arr($text,'/[+][A]*[tT]/') 
 		storedata('7.2.79','sa',0);
 	}
 }
-timestamp();
 /* lopo vyorvali (6.1.66) */
 if ( $lakAra==="ASIrliN" && arr($text,'/sIy[+]['.pc('vl').']/'))
 {
@@ -5243,7 +5242,6 @@ if ( !in_array($sanAdi,array("Ric")) && arr($text,'/Iy/') && sub(array("+Iy","+s
 		storedata('6.1.87','sa',0);
 	}
 }
-timestamp();
 /* lopo vyorvali (6.1.66) */
 // patch for Nijanta and ksa luG
 if (arr($text,'/a[+]iy[+]['.pc('vl').']/') && sub(array("+a+iy","+sa+iy","+sya+iy","ya+iy"),array("+"),prat("vl"),0) )
@@ -14387,6 +14385,9 @@ fputs($logfile,"Request completed on :".date('D, d M Y H:i:s')."\n");
 fputs($logfile,"------------------------------\n");
 fclose($logfile);
 if ($debug===1) {dibug('End_of_code');}
-//echo "$first $lakAra completed in "; timestamp(); echo "\n";
+if ($debugmode===0)
+{
+	echo "$first $lakAra completed in "; timestamp();
+}
 /* End of Code */
 ?>

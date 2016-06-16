@@ -1123,10 +1123,22 @@ function sub($a,$b,$c,$repeat)
             $needle[] = $a[$i]."+".$b[$i]."+".$c[$i];
         }
     }
+	$output = array();
+	foreach($text as $value)
+	{
+		foreach($needle as $need)
+		{
+			if (strpos($value,$need)!==false)
+			{
+				$can=1;
+				break;
+			}
+		}
+	}
     /*** map with preg_quote ***/
-    $needle = array_map('preg_quote', $needle); 
+    //$needle = array_map('preg_quote', $needle); 
     /*** loop of the array to get the search pattern ***/
-    global $first;
+    /*global $first;
     foreach ($needle as $pattern)
     {
         if ( $repeat<2 && count(preg_grep("/$pattern/", $text)) >0)
@@ -1143,18 +1155,18 @@ function sub($a,$b,$c,$repeat)
         {
             $can = 0; // match not found
         }
-    }
+    }*/
 	if ($debug===1 && $debugmode<2){
 	echo "sub ", $repeat, " ended at ";
 	timestamp();}
-if ($can === 1)
-{
-    return true;
-}
-else
-{
-    return false;
-}
+	if ($can === 1)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }
 /* function to search the occurence of a pattern in any of the member of an array */
 // $text - the array to search for the occurence of pattern
@@ -2410,7 +2422,6 @@ function pr2($a,$b,$c,$d,$e,$f,$test)
 	if ($debug===1 && $debugmode<2){
 	echo "pr2 started at ";
 	timestamp();}
-	$out=array();
     foreach($test as $value)
     {
         $counter=1;
