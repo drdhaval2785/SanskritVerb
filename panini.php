@@ -1,4 +1,7 @@
 ﻿<?php
+$start_time = microtime(true);
+$debug = 0; // 0 - no debugging. 1 - debugging on. It shows execution of some important time consuming scripts.
+$debugmode = 0; // 0 - No debugging, 1 - full debugging with function timestamp (for speed analysis and memory leaakage finding), 2 - Only $text display (no function start and ends).
  /* This code is developed by Dr. Dhaval Patel (drdhaval2785@gmail.com) of www.sanskritworld.in and Ms. Sivakumari Katuri.
   * Layout assistance by Mr Marcis Gasuns.
   * Available under GNU licence.
@@ -19,7 +22,6 @@
   * The description part uses Howard Kyoto protocol.
   * The coding uses SLP1 transliteration.
   */
-$start_time = microtime(true);
 
 /* Including arrays and functions */
 include "scripts/function.php"; // includes the file function.php which is collection of functions used in this code.
@@ -48,8 +50,6 @@ $header = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http:
 </head>
 <body>
 ';
-$debug = 1; // 0 - no debugging. 1 - debugging on. It shows execution of some important time consuming scripts.
-$debugmode = 1; // 0 - No debugging, 1 - full debugging with function timestamp (for speed analysis and memory leaakage finding), 2 - Only $text display (no function start and ends).
 
 /* Reading from the HTML input. */
 $first = toslp($_GET["first"]); // to change the word input in devanagari / IAST to slp.
@@ -1215,7 +1215,7 @@ if (in_array($so,$tiG) && arr($text,'/[+]Ric$/') && $sanAdi==="Ric" && $lakAra!=
 		$hohante=1; // 0 - this sUtra has not applied. 1 - this sUtra has applied.
 	}	
 	/* lIlornuglukAvanyatarsyAM snehanipAtane (7.3.39) */
-	if (in_array($fo,array("lI","lIN")) && in_array($so,$tiG) && sub(array("lI"),array("+"),array("Ric"),0) )
+	if (in_array($fo,array("lI","lIN")) && in_array($so,$tiG) && arr($text,'/lI[+]Ric/'))
 	{
 		$text=three(array("lI"),array("+"),array("Ric"),array("lIn"),array("+"),array("Ric"),1);
 		storedata('7.3.39','sa',0);
@@ -4375,12 +4375,12 @@ if ( in_array($lakAra,array("viDiliN","ASIrliN")) && in_array($so,$tis) )
 	}
 } else {$yAsuT=0;}
 /* suT tithoH (3.4.107) */
-if ( in_array($lakAra,array("viDiliN","ASIrliN")) && sub(array("+"),array("t","T","At","AT"),blank(0),0)  )
+if ( in_array($lakAra,array("viDiliN","ASIrliN")) && arr($text,'/[+][A]*[tT]/')  )
 {
     $text=change('/[+]([A]*)([tT][^+]*)$/','+$1s$2');
 	storedata('3.4.107','sa',0);
     /* liGaH salopo'nantyasya (7.2.79) */
-    if ( in_array($lakAra,array("viDiliN")) && sub(array("+yAs+"),array("s"),$al,0))
+    if ( in_array($lakAra,array("viDiliN")) && arr($text,'/[+]yAs[+]['.pc('al').']/'))
     {
         $text=three(array("+yAs+"),array("s"),$al,array("+yA+"),array(""),$al,0);
         $text=change('/yA[+]i$/','yAs');
@@ -4392,6 +4392,7 @@ if ( in_array($lakAra,array("viDiliN","ASIrliN")) && sub(array("+"),array("t","T
 		storedata('7.2.79','sa',0);
 	}
 }
+timestamp();
 /* lopo vyorvali (6.1.66) */
 if ( $lakAra==="ASIrliN" && arr($text,'/sIy[+]['.pc('vl').']/'))
 {
@@ -4399,24 +4400,24 @@ if ( $lakAra==="ASIrliN" && arr($text,'/sIy[+]['.pc('vl').']/'))
 	storedata('6.1.66','sa',0);
 }
 /* liGaH salopo'nantyasya (7.2.79) */
-if ( in_array($lakAra,array("viDiliN")) && sub(array("+yAs+"),blank(0),blank(0),0))
+if ( in_array($lakAra,array("viDiliN")) && arr($text,'/[+]yAs[+]/'))
 {
 	$text=one(array("+yAs+"),array("+yA+"),0);
 	storedata('7.2.79','sa',0);
 }
-if ( in_array($lakAra,array("viDiliN")) && sub(array("sIy+As","sIy+"),blank(0),blank(0),0) )
+if ( in_array($lakAra,array("viDiliN")) && arr($text,'/sIy[+]/') )
 {
 	$text=one(array("sIy+As","sIy+"),array("Iy+A","Iy+"),0);
 	storedata('7.2.79','sa',0);
 }
 /* iTo't (3.4.106) */
-if ( in_array($lakAra,array("viDiliN","ASIrliN")) && sub(array("+Iy+i","+sIy+i"),array(""),blank(0),0))
+if ( in_array($lakAra,array("viDiliN","ASIrliN")) && arr($text,'/[+]s*Iy[+]i/'))
 {
     $text=two(array("+Iy","+sIy"),array("+i"),array("+Iy","+sIy"),array("+a"),0);
 	storedata('3.4.106','sa',0);
 }
 /* ato yeyaH (7.2.80) */
-if ( in_array($lakAra,array("viDiliN")) && sub(array("a+yA"),array("+"),blank(0),0))
+if ( in_array($lakAra,array("viDiliN")) && arr($text,'/a[+]yA[+]/'))
 {
     $text=three(array("a+yA"),array("+"),blank(0),array("a+iy"),array("+"),blank(0),0);
 	storedata('7.2.80','sa',0);
@@ -5242,9 +5243,10 @@ if ( !in_array($sanAdi,array("Ric")) && arr($text,'/Iy/') && sub(array("+Iy","+s
 		storedata('6.1.87','sa',0);
 	}
 }
+timestamp();
 /* lopo vyorvali (6.1.66) */
 // patch for Nijanta and ksa luG
-if (arr($text,'/iy/') && sub(array("+a+iy","+sa+iy","+sya+iy","ya+iy"),array("+"),prat("vl"),0) )
+if (arr($text,'/a[+]iy[+]['.pc('vl').']/') && sub(array("+a+iy","+sa+iy","+sya+iy","ya+iy"),array("+"),prat("vl"),0) )
 {
     $text = three(array("a+iy","+sa+iy"),array("+"),prat("vl"),array("a+i","+sa+i"),array("+"),prat("vl"),0);
 	storedata('6.1.66','sa',0);
@@ -7718,7 +7720,7 @@ elseif ( (arr($text,'/s\+/') && sub(array("M"),array("s"),array("+"),0)  && in_a
 	storedata('8.2.23','sa',0);	
 	storedata('par@56-1','sa',0);
 }
-elseif ( (arr($text,'/M/') && sub(array("M"),$hl,array("+"),0) && in_array($so,$tiG)) && $pada==="pada" )
+elseif ( (arr($text,'/M['.pc('hl').'][+]/') && in_array($so,$tiG)) && $pada==="pada" )
 {
     $text = three(array("M"),$hl,array("+"),array("M"),blank(count($hl)),array("+"),0);
 	storedata('8.2.23','sa',0);	
@@ -13193,7 +13195,7 @@ if (arr($text,'/viSva/') && sub(array("viSva"),array("vasu","rAq"),blank(0),0))
 }
 /* bhobhagoaghoapUrvasya yo'zi (8.3.17) : */
 $ash = array("a","A","i","I","u","U","f","F","x","X","e","o","E","O","h","y","v","r","l","Y","m","N","R","n","J","B","G","Q","D","j","b","g","q","d");
-if (arr($text,'/r@/') && sub(array("Bo","Bago","aGo","a","A"),array("r@"),$ash,0)) 
+if (arr($text,'/r@[+]*['.pc('aS').']/') && sub(array("Bo","Bago","aGo","a","A"),array("r@"),$ash,0)) 
 {
     $text = three(array("Bo","Bago","aGo","a","A"),array("r@"),$ash,array("Bo","Bago","aGo","a","A"),array("y"),$ash,0);
 	storedata('8.3.17','sa',0);

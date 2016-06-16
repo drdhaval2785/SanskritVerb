@@ -4167,14 +4167,14 @@ function timestamp()
 }
 function dibug($a)
 {
-	global $time, $text, $debugmode, $argv, $first, $second;
+	global $time, $text, $debugmode, $argv, $first, $second, $lakAra;
 	if ($debugmode>2)
 	{
 		echo $a.','; print_r($text);
 	}
 	else
 	{
-		echo $a.','.$first.','.$second.','; timestamp();
+		echo $a.','.$first.','.$second.','.$lakAra.','; timestamp();
 	}
 }
 function verbformlist()

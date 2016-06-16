@@ -11,11 +11,11 @@ if __name__=="__main__":
 	prevlog = 0
 	for line in logfile:
 		line = line.strip()
-		[string,first,second,logtime] = line.split(',')
+		[string,first,second,lakAra,logtime] = line.split(',')
 		logtime = float(logtime)
 		diff = logtime - prevlog
 		if diff > threshold:
-			outputfile.write(first+' , '+second+' , '+string+' , '+str(diff)+'\n')
+			outputfile.write(first+' , '+second+' , '+lakAra+' , '+string+' , '+str(diff)+'\n')
 		prevlog = logtime
 	logfile.close()
 	outputfile.close()
