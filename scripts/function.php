@@ -2425,19 +2425,26 @@ function pr2($a,$b,$c,$d,$e,$f,$test)
     foreach($test as $value)
     {
         $counter=1;
+		$out = array();
         for($i=0;$i<count($a);$i++)
         {
-            for($j=0;$j<count($b);$j++)
-            {
-                for($k=0;$k<count($c);$k++)
-                {
-                    if(substr($value,(-strlen($a[$i].$b[$j].$c[$k])))===$a[$i].$b[$j].$c[$k])
-                    {
-                        $out[]=substr($value,0,-strlen($a[$i].$b[$j].$c[$k])).$d[$i].$e[$j].$f[$k];
-                        $counter=2;
-                    }
-                }
-            }            
+			if(strpos($value,$a[$i])!==false)
+			{
+				for($j=0;$j<count($b);$j++)
+				{
+					if(strpos($value,$a[$i].$b[$j])!==false)
+					{
+						for($k=0;$k<count($c);$k++)
+						{
+							if(substr($value,(-strlen($a[$i].$b[$j].$c[$k])))===$a[$i].$b[$j].$c[$k])
+							{
+								$out[]=substr($value,0,-strlen($a[$i].$b[$j].$c[$k])).$d[$i].$e[$j].$f[$k];
+								$counter=2;
+							}
+						}
+					}
+				}            
+			}
         }
         if(in_array($value,$out))
         {
