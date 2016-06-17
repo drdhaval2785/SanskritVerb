@@ -3849,7 +3849,7 @@ if (arr($text,'/\+Ri[c]{0,1}\+/')||$ciN===1||$ciN===2)
 		storedata('6.4.92','sa',0);
 	}
 	/* pugantalaghUpadhasya ca (7.3.86) */
-	if (arr($text,'/^[^+]*[iufx](['.pc('hl').']{1})\+i/' ) && $caG!==1 && $aG!==1 && $vijait!==1 )
+	if (arr($text,'/^[^+]*[iufx](['.pc('hl').']{1})\+i/' ) && $caG!==1 && $aG!==1 && $vijait!==1 && !in_array($fo,$curAdi_adanta))
 	{
 		$hlam=array();
 		foreach ($hl as $av) {$hlam[] = $av."+i";}
@@ -5377,7 +5377,7 @@ if (($syatAsI===1||$sic===1||$sIyuT===1) && arr($text,'/[+][st]([^+]+)$/') && (p
 		storedata('7.2.116','sa',0);
 	}
 	/* pugantalaghUpadhasya ca (7.3.86) */
-	if (arr($text,'/[iufx]['.pc('hl').'][+]i/') && $kGiti!==1)
+	if (arr($text,'/[iufx]['.pc('hl').'][+]i/') && $kGiti!==1 && !in_array($fo,$curAdi_adanta))
 	{
 		$text = three(array("i","u","f","x"),$hl,array("+i"),array("e","o","ar","al"),$hl,array("+i"),0);
 		storedata('7.3.86','sa',0);
@@ -5814,7 +5814,7 @@ elseif(arr($text,'/[iufx]['.pc('hl').'][+]u[+]/') & !in_array($fo,array("kfvi!",
 	storedata('7.3.86','sa',0);
 }
 /* pugantalaghUpadhasya ca (7.3.86) */
-elseif ($atolopa!==1 && !($verbset==="tudAdi" && $sarvadhatuka===1) && ($sarvadhatuka===1 || $ardhadhatuka===1) && arr($text,'/[iufx]['.pc('hl').'][+]/')  && $didhI!==1 && $vijait!==1 && sub(array("i","u","f","x"),$hl,array("+u+","+i+","+a+","+et","+eT","+isy","+syeT","+sya"),0) && !in_array("N",$itpratyaya) && !in_array("k",$itpratyaya) && $caG!==1 && $aG!==1 && $kGiti!==1 && $vijait!==1)
+elseif ($atolopa!==1 && !($verbset==="tudAdi" && $sarvadhatuka===1) && ($sarvadhatuka===1 || $ardhadhatuka===1) && arr($text,'/[iufx]['.pc('hl').'][+]/')  && $didhI!==1 && $vijait!==1 && sub(array("i","u","f","x"),$hl,array("+u+","+i+","+a+","+et","+eT","+isy","+syeT","+sya"),0) && !in_array("N",$itpratyaya) && !in_array("k",$itpratyaya) && $caG!==1 && $aG!==1 && $kGiti!==1 && $vijait!==1 && !in_array($fo,$curAdi_adanta))
 {
     $text=three(array("i","u","f","x"),$hl,array("+u+","+i+","+a+"),array("e","o","ar","al"),$hl,array("+u+","+i+","+a+"),0);
 	$text=three(array("i","u","f","x"),$hl,array("+et","+eT","+isy","+syeT","+sya"),array("e","o","ar","al"),$hl,array("+et","+eT","+isy","+syeT","+sya"),0);
