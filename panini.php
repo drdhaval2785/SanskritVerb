@@ -4585,7 +4585,7 @@ if (  in_array($lakAra,array("luw")) && pr2(array("+"),blank(0),$tiG1,array("+")
 	$syatAsI=1;
 } else { $tAs=0; }
 /* luTaH prathamasya DAraurasaH (2.4.85) */
-if ( in_array($lakAra,array("luw")) && $tAs===1 && pr2(array("+"),array("tAs+"),array("ti","tas","anti","te","Ate","ante","ate"),array("+"),array("tAss+"),$tiG1,$text)!==$text )
+if ( in_array($lakAra,array("luw")) && $tAs===1 && pr2(array("+"),array("tAs+"),array("ti","tas","anti","te","Ate","ante","ate"),array("+"),array("tAss+"),array("ti","tas","anti","te","Ate","ante","ate"),$text)!==$text )
 {
     $text=pr2(array("+"),array("tAs+"),array("ti","tas","anti","te","Ate","ante","ate"),array("+"),array(""),array("tAs+qA","tAs+rO","tAs+ras","tAs+qA","tAs+rO","tAs+ras","tAs+ras"),$text);
 	storedata('2.4.85','sa',0);
@@ -14204,6 +14204,7 @@ if( $veda===1 && sub(array("apasparDeTAm","AnarcuH","AnarhuH","cucyuvize","tatyA
 	$text = one(array("apasparDeTAm","AnarcuH","AnarhuH","cucyuvize","tatyAja"),array("apaspfDeTAm","AnfcuH","AnfhuH","cicyuze","tityAja"),0);
 	storedata('6.1.35','sa',0);
 }
+storedata('~2','sa',0);
 if ($debug===1) {dibug('11700');}
 $storestore[] = $storedata;
 if ($debug===1) {dibug('11710');}
@@ -14385,7 +14386,7 @@ fputs($logfile,"Request completed on :".date('D, d M Y H:i:s')."\n");
 fputs($logfile,"------------------------------\n");
 fclose($logfile);
 if ($debug===1) {dibug('End_of_code');}
-if ($debugmode===0)
+if ($debugmode===0 && !isset($argv[0]))
 {
 	echo "$first $lakAra completed in "; timestamp();
 }
