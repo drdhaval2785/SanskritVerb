@@ -2422,10 +2422,10 @@ function pr2($a,$b,$c,$d,$e,$f,$test)
 	if ($debug===1 && $debugmode<2){
 	echo "pr2 started at ";
 	timestamp();}
+	$out = array();
     foreach($test as $value)
     {
         $counter=1;
-		$out = array();
         for($i=0;$i<count($a);$i++)
         {
 			if(strpos($value,$a[$i])!==false)

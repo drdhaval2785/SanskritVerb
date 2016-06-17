@@ -4111,13 +4111,13 @@ if (in_array($so,$tiG) && (arr($text,'/['.pc('hl').'][+]/') || (arr($text,'/['.p
 	}
 }
 /* AtmanepadeSvanataH (7.1.5) */
-#if (in_array($so,array("Ja")) && (arr($text,'/[^a][+]Ja$/')||arr($text,'/^gA[+]a[+]Ja$/') ))
-if (in_array($so,array("Ja")) && (arr($text,'/^gA[+]a[+]Ja$/')||arr($text,'/[+]n*u[+]Ja$/')||arr($text,'/[+]nA[+]Ja$/')||arr($text,'/[+]sic[+]Ja$/')||(arr($text,'/[^a][+]Ja/')&&(in_array($verbset,array("adAdi","juhotyAdi","ruDAdi","kryAdi"))))))
+if (in_array($so,array("Ja")) && (arr($text,'/^gA[+]a[+]Ja$/')||arr($text,'/[+]n*u[+]Ja$/')||arr($text,'/[+]nA[+]Ja$/')||arr($text,'/[+]sic[+]Ja$/')||(arr($text,'/[^a][+]Ja$/')&&in_array($verbset,array("adAdi","juhotyAdi","ruDAdi","kryAdi")))))
 {
 	$text=change('/^gA[+]a[+]Ja$/','gA+a+ata');
 	$text=change('/[+](n*u)[+]Ja/','+$1+ata');
 	$text=change('/[+]nA[+]Ja$/','+nA+ata');
 	$text=change('/[+]sic[+]Ja$/','+sic+ata');
+	$text=change('/([^a])[+]Ja$/','$1+ata');
 	storedata('7.1.5','sa',0);
 }
 /* jho'ntaH (7.1.3) */
