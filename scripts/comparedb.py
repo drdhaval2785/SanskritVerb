@@ -44,7 +44,7 @@ def baseverbformlist(testdb,lstofbasedb):
 	output = []
 	for basedb in lstofbasedb:
 		counter = 0
-		if not basedb == "../Data/okforms.txt":
+		if not basedb in ["../Data/okforms.txt","../Data/notnow.txt"]:
 			fin = codecs.open(basedb,'r','utf-8')
 			data = fin.read()
 			fetch = data.split(',')
