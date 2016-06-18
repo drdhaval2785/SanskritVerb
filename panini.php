@@ -6456,6 +6456,12 @@ if ($aG===1 && sub(array("A+a","A+etA","A+eTA"),blank(0),blank(0),0))
     $text=one(array("A+a","A+etA","A+eTA"),array("a+","+etA","+eTA"),0);
 	storedata('6.4.64','sa',0);
 }
+/* Ato lopa iTi ca (6.4.64) */
+if ($lakAra==="liw" && in_array($so,array("ta","iw")) && arr($text,'/A[+]e$/'))
+{
+    $text=change('/A[+]e$/','+e');
+	storedata('6.4.64','sa',0);
+}
 /* I halyaghoH (6.4.113) */
 if (arr($text,'/\+nA\+/') && sub(array("+"),array("nA+"),$halAdi_apit_sArvadhAtuka_pratyayas,0) && (in_array("N",$it)||in_array("N",$it)) && $sanAdi!=="yaN")
 {
