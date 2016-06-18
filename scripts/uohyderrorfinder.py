@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 """
 Usage:
-python uohyderrorfinder.py
+python uohyderrorfinder.py basexmlfile
+e.g.
+python uohyderrorfinder.py ../generatedforms/generatedforms18062016.xml
 """
 import sys, re
 import codecs
@@ -67,26 +69,44 @@ def readuohyd(line):
 			gaNa = two
 	suffix = returnsuffix(padI,puruza,vacana)
 	return [form,prayoga,lakAra,puruza,vacana,padI,dhAtu,gaNa,suffix,sanAdi]
-def okverbformlist(testxml):
+def getroo(testxml):
 	roots = etree.parse(testxml)
+	roo = roots.xpath('/forms/f') # Returns a list of all /forms/f in the database.
+	return roots, roo
+def okverbformlist():
+	global roots, roo
 	# Typical line in XML file is in `<forms><f form="aMsayati"><root name="aMsa" num="10.0460"/><law/><tip/></f></forms>` format.
 	# Therefore, the data which we want e.g. 'aMSayati' is in /forms/f-get('form') location. Fetching it below.
-	roo = roots.xpath('/forms/f') # Returns a list of all /forms/f in the database.
 	verbdetails = [(member.get('form'),member.find('root').get('name'),member.find('root').get('num'),member.getchildren()[-2].tag,member.getchildren()[-1].tag) for member in roo] # For all /forms/f in database, we get its attribute 'forms' e.g. 'aMSayati'.
 	verbformlist = [member.get('form') for member in roo]
 	print "Total", len(verbformlist), "entries in base list"
-	#return [verbformlist,verbformdetails]
-	return verbformlist
-
-
+	return [verbformlist,verbdetails]
+	#return verbformlist
+ganalist = ['BvAdiH','adAdiH','juhotyAdiH','divAdiH','svAdiH','tudAdiH','ruDAdiH','tanAdiH','kryAdiH','curAdiH']
+def ganacorres(number):
+	global ganalist
+	gananum = number.split('.')[0]
+	gananum = int(gananum)-1
+	return ganalist[gananum]
+def getcorrectform(verb,lakAra,suffix,gaNa):
+	global okdetaillist
+	# <f form="akzati"><root name="akzU!" num="01.0742"/><law/><tip/></f>
+	output = [form1 for (form1,verb1,number1,lakAra1,suffix1) in okdetaillist if verb==verb1 and lakAra==lakAra1 and suffix==suffix1 and ganacorres(number1)==gaNa]
+	if len(output) > 0:
+		return ':'.join(output)
+	else:
+		return 'NONE'
 if __name__=="__main__":
 	testfile = codecs.open('../Data/UoHyd_all_forms.txt','r','utf-8')
 	data = testfile.readlines()
 	testfile.close()
-	#[okformlist,okdetailist] = okverbformlist('../generatedforms/generatedforms28052016.xml')
-	okformlist = okverbformlist('../generatedforms/generatedforms28052016.xml')
+	basexml = sys.argv[1]
+	roots, roo = getroo(basexml)
+	[okformlist,okdetaillist] = okverbformlist()
+	#okformlist = okverbformlist()
 	okformlist = set(okformlist)
-	outfile = codecs.open('../Data/uohyderrors.txt','w','utf-8')
+	outfile = codecs.open('../Data/uohydstudy/uohyderrors.txt','w','utf-8')
+	nomatchfile = codecs.open('../Data/uohydstudy/uohydnomatch.txt','w','utf-8')
 	counter = 0
 	counter2 = 0
 	for datum in data:
@@ -100,5 +120,16 @@ if __name__=="__main__":
 			pass
 		elif not form in okformlist:
 			counter2 += 1
-			print counter2, '/', counter 
-			outfile.write(form+','+dhAtu+','+gaNa+','+lakAra+','+suffix+'\n')
+			correctform = getcorrectform(dhAtu,lakAra,suffix,gaNa)
+			if not correctform == 'NONE':
+				print counter2, '/', counter 
+				print form+','+dhAtu+','+gaNa+','+lakAra+','+suffix
+				print ';'+correctform+','+dhAtu+','+gaNa+','+lakAra+','+suffix
+				print
+				outfile.write(form+','+dhAtu+','+gaNa+','+lakAra+','+suffix+'\n')
+				outfile.write(';'+correctform+','+dhAtu+','+gaNa+','+lakAra+','+suffix+'\n')
+			else:
+				nomatchfile.write(form+','+dhAtu+','+gaNa+','+lakAra+','+suffix+'\n')
+				nomatchfile.write(';'+correctform+','+dhAtu+','+gaNa+','+lakAra+','+suffix+'\n')
+	outfile.close()
+	nomatchfile.close()

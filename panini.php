@@ -14406,5 +14406,6 @@ if ($debugmode===0 && !isset($argv[0]))
 {
 	echo "$first $lakAra completed in "; timestamp();
 }
+//echo "$first $lakAra completed in "; timestamp();
 /* End of Code */
 ?>

@@ -74,10 +74,14 @@ if __name__=="__main__":
 	suspect = codecs.open(suspectfile,'w','utf-8')
 	print "Printing the following suspect entries to ../suspectforms/suspectverbforms.txt"
 	print 
+	counter = 0
 	for (member,verb,num,lakAra,tiG) in test:
 		#print member
 		if member.endswith('cakara') or member.endswith("iDve") or member.endswith("iDvam") or member.endswith("zIQvam") or member.endswith("yAstAm"):
 			pass
 		elif not member in base:
+			counter += 1
 			print (member,verb,num,lakAra,tiG)
 			suspect.write(member+'-('+verb+','+lakAra+','+tiG+','+gananame(num)+','+num+')\n')
+	print counter, '/', len(test), ' forms found suspect'
+	print 'i.e.', (counter*100)/len(test), '%'

@@ -46,4 +46,4 @@ done
 echo '</forms>' >> generatedforms.xml
 cd scripts
 python comparedb.py ../generatedforms.xml ../suspectverbforms.txt
-python recheckgen.py suspectverbforms.txt recheck.sh
+python recheckgen.py ../suspectverbforms.txt recheck.sh
