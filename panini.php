@@ -2242,7 +2242,6 @@ if (in_array($lakAra,$ArdhadhAtuka_lakAra) || in_array($sanAdi,array("yaN","san"
         $text=one(array("i+"),array("gA+"),0);
 		storedata('2.4.49','sa',0);
     }
-	print_r($text);
 	/* dayaterdigi liTi (7.4.9) */ 
 	if (in_array($fo,array("deN")) && $lakAra==="liw")
 	{
@@ -6344,6 +6343,10 @@ if ($id_dhAtu==="sew" && $id_pratyaya==="sew" && !($yAsuT===1 && $lakAra==="ASIr
 	// Removing unwanted iDAgama which happenned accidentally
 	$text = one(array("+iyAs+","Ay+t","+a+i","+sa+i"),array("+yAs+","Ay+it","+a+","+sa+"),0);
 	$text = two(array("sfap","spfaS","mfaS","kfaz","tfap","dfap"),array("+i"),array("sarp","sparS","marS","karz","tarp","darp"),array("+i"),0); // not before iDAgama.
+	if ($lakAra==="luN")
+	{
+		$text = one(array("daridrA+is"),array("daridrA+s"),0);
+	}
 	storedata('7.2.35','sa',0);
 	$Agama=array_merge($Agama,array("iw"));
 }
