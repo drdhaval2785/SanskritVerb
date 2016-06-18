@@ -2242,11 +2242,13 @@ if (in_array($lakAra,$ArdhadhAtuka_lakAra) || in_array($sanAdi,array("yaN","san"
         $text=one(array("i+"),array("gA+"),0);
 		storedata('2.4.49','sa',0);
     }
+	print_r($text);
 	/* dayaterdigi liTi (7.4.9) */ 
-	if (in_array($fo,array("deY")) && $lakAra==="liw")
+	if (in_array($fo,array("deN")) && $lakAra==="liw")
 	{
-		$text=two(array("deY"),array("+"),array("digi"),array("+"),0);
+		$text=two(array("de"),array("+"),array("digi"),array("+"),0);
 		storedata('7.4.9','sa',0);
+		$nodvirvacana = 1;
 	}
 	/* veJo vayiH (2.4.41) */ 
 	if (in_array($fo,array("veY")) && $lakAra==="liw")
@@ -4820,8 +4822,13 @@ if ( arr($text,'/[B][U][+][R'.pc('ac').'Tvm]/') && in_array($lakAra,array("luN",
     $text = two(array("BU+"),array("R","T","v","m"),array("BUv+"),array("R","T","v","m"),0);
 	storedata('6.4.88','sa',0);	
 }
+/* digyAdeSena dvirvacanasya bADanamizyata iti vfttiH */
+if ($lakAra==="liw" && $nodvirvacana===1)
+{
+	storedata('digy','sa',0);
+}
 /* liTi dhAtoranabhyAsasya (6.1.8) */
-if ($lakAra==="liw" && arr($text,'/^['.pc('hl').']/'))
+elseif ($lakAra==="liw" && arr($text,'/^['.pc('hl').']/') && $nodvirvacana!==1)
 {
 	liT_halAdi();
 	abhyAsa_halAdi();
