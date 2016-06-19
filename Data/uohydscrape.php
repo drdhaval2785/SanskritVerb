@@ -1,4 +1,9 @@
 <?php
+/* 
+	Script to keep only verb forms from uohyd_all_forms.txt and store it in verbforms_amba.txt.
+	Usage - `php uohydscrape.php > verbforms_amba_orig.txt`
+	Conversion from verbforms_amba_orig.txt to verbforms_amba.txt was on sanscript site I guess (WX to SLP1).
+*/
 /* set execution time to an hour */
 ini_set('max_execution_time', 36000);
 /* set memory limit to 100000 MB */

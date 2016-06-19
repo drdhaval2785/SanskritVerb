@@ -1,9 +1,16 @@
 # -*- coding: utf-8 -*-
 """
+Use:
+	This code regenerates the verb forms and suspect forms after corrections to a specific suspectverbforms.txt file has been made (to double check).
 Usage:
-python recheckgen.py suspectfile recheckshellfile
-e.g.
-python recheckgen.py ../suspectforms/suspectverbforms09062016.txt ../recheck.sh
+	python recheckgen.py suspectfile recheckshellfile
+	e.g.
+	python recheckgen.py ../suspectforms/suspectverbforms09062016.txt ../recheck.sh
+Input:
+	suspectverbforms.txt file
+Output:
+	Only the verb and lakAras which are there in suspectverbforms.txt file would be placed in the shell file for recheck. 
+	This will reduce the run time (running the whole wrongformfinder.sh would take around 4-5 hours).
 """
 import sys, re
 import codecs

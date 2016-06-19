@@ -1,4 +1,11 @@
 <?php
+/* Script to regenerate various variables of function.php e.g. $bhvAdi, $adAdi etc, based on $verbdata.
+	Usage: php listgen.php
+	Manually copy paste and replace the variables to function.php.
+	If any change is made to the $verbdata variable, its effect will have to be carried into all derived variables.
+	This script does exactly the same.
+	Also generates a log file with summary - '../Data/verbdatasummary.txt'
+*/
 include 'function.php';
 include 'slp-dev.php';
 function arraydisplayer($inputarray,$arrayname)

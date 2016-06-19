@@ -1,5 +1,8 @@
 ﻿<?php
-/* This code is borrowed and modified from Dicrunch code of Ananda Loponen. That can be accessed at http://www.ingmardeboer.nl/php/diCrunch.php?act=help.*/
+/* 
+	Code to convert Devanagari to SLP1.
+	This code is borrowed and modified from Dicrunch code of Ananda Loponen. That can be accessed at http://www.ingmardeboer.nl/php/diCrunch.php?act=help.
+*/
 function convert1($text)
 {
 $text = str_replace("\r\n","\r\n ",$text);

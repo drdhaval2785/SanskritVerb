@@ -1,17 +1,17 @@
 ﻿<?php
-$start_time = microtime(true);
-$debug = 0; // 0 - no debugging. 1 - debugging on. It shows execution of some important time consuming scripts.
-$debugmode = 0; // 0 - No debugging, 1 - full debugging with function timestamp (for speed analysis and memory leaakage finding), 2 - Only $text display (no function start and ends).
- /* This code is developed by Dr. Dhaval Patel (drdhaval2785@gmail.com) of www.sanskritworld.in and Ms. Sivakumari Katuri.
+$start_time = microtime(true); // To track time spent in execution of script.
+$debug = 1; // 0 - no debugging. 1 - debugging on. It shows execution of some important time consuming scripts.
+$debugmode = 2; // 0 - No debugging, 1 - full debugging with function timestamp (for speed analysis and memory leaakage finding), 2 - Only $text display (no function start and ends).
+ /* This code is developed by Dr. Dhaval Patel (drdhaval2785@gmail.com) of www.sanskritworld.in and Dr. Sivakumari Katuri.
   * Layout assistance by Mr Marcis Gasuns.
   * Available under GNU licence.
-  * Version 1.10.0 date 27 May 2016
+  * Version 1.10.0 date 19 June 2016
   * The latest source code is available at https://github.com/drdhaval2785/SanskritVerb .
   * Acknowledgements: The base book for coding has been Astadhyayi sahajabodha of Dr. Pushpa Dikshit, published by Pratibha Prakashan, Delhi.
   * I extend my heartfelt thanks to Ananda Loponen for the code to convert devanagari and various sanskrit transliterations. That can be accessed at http://www.ingmardeboer.nl/php/diCrunch.php?act=help.
-  * I also extend my gratitude to gloomy.penguin of stackoverflow.com, who helped me create dvitva and lopa functions, without which I would be handicapped.
-  * For setup, run install.sh. 
-  * tiGanta.html is the frontend for the code.
+  * I also extend my gratitude to gloomy.penguin of stackoverflow.com, who helped me create dvitva function, without which I would be handicapped.
+  * For setup, put `install.sh` in your localhost directory and run `sh install.sh`. 
+  * For frontend, use `tiGanta.html` for verb declension. Use `subanta.html` for subanta conjugation. Use `sandhi.html` for sandhi creation.
   * scripts/ajax.php and scripts/script.js are codes which asks for user feedback for particular words. 
   * scripts/function.php stores the frequently used functions in this code (The description on how to use the code is there in function.php).
   * tiGanta.php is the code which actually gives the output of the word derivation.

@@ -1,4 +1,8 @@
 <?php 
+/*
+A code to seek user input in case of some ambiguous cases, where derivation depends on user's input.
+Documentation of where we take these input is placed in `Documentations/ajax requirements.docx`.
+*/
 // including function.php for arrays and functions.
 include "function.php";
 // including slp-dev.php for SLP1->devanAgarI conversion for display on front end.

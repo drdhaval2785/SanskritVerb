@@ -1,11 +1,30 @@
-# This code tests the output of tiGanta.php for various lakAras against the database of Gerard Huet (see verbforms_gerard.txt).
+# This code tests the output of tiGanta.php for various lakAras against the database of INRIA (see Data/verbforms_gerard.txt), UoHyd (see Data/verbforms_amba.txt), Visually tested OK forms (see Data/okforms.txt) and some known issues we decided to ignore as of now (see Data/notnow.txt).
+# Note - This code doesn't do individual form comparision. It searches whether the generated form is present in the cumulative database of the above four databases.
+# Note - This would mean that this script misses the error in case (1) some other lakAra or some verb has the same form as the test form or (2) any intermediate rule is wrongly applied, but the ultimate output is the same.
+# See Documentations/testing_instructions.md for some further details.
+
+# The code takes a single verb and stores its output as an XML file (generatedforms.xml).
 # Currently sArvaDAtukalew and ArDaDAtukalew are not included, because they are least used and give the maximum false positives, becaue Gerard doesn't deal with them.
+
 # LIST1 is the array of verb numbers from our database $verbdata in function.php
 # LIST2 is the array of lakAras to be tested. 
 # LIST3 is the abridge list having verbs falling in Gerard's database only. If you want to use it, rename it as LIST1 and code would work for you.
 # LIST4 is the list of representative verbs (verbs dealt with in SK)
+
 # The suspect forms are stored in suspectverbforms.txt.
-# Be aware. The program overwrites previous suspectverbfomrs.txt file if any.
+# Be aware. The program overwrites previous suspectverbforms.txt file if any.
+# As the code takes considerable time to run (around 3-4 hours), it is wise to store the output files as `generatedforms/generateformsDDMMYYYY.xml` and `suspectforms/suspectverbformsDDMMYYYY.txt`, so that they are not accidentally overwritten.
+# Above step has to be done manually.
+# Then the file suspectverbforms.txt file needs to be examined and errors need to be corrected.
+# If the form is OK, add the form to Data/okforms.txt
+# If you decide not to handle the erroneous form as of now, add it to Data/notnow.txt file.
+
+# The script also creates a recheck shell file `recheck.sh` for rechecking after correction. Rerunning wrongformfinder.sh would take a lot of time, whereas the file recheck.sh is very abridged version having only the verbs and lakAras which were there in suspectverbforms.txt file.
+# So, after correction of `panin.php` or `function.php` based on errors found in `suspectverbforms.txt`, we can run `recheck.sh` file to find out whether our corrections had the desired effect or not.
+# Repeat the procedure till there are no entries left in `suspectverbforms.txt` file.
+# At last, before releasing a new release, do a whole check with `wrongformfinder.sh` to see that all forms are accounted for.
+# Note - in version 1.10.0, there were no entries in suspectverbforms.txt file.
+
 # Define a timestamp function
 timestamp() {
   date +"%d-%m-%Y %H:%M:%S"
