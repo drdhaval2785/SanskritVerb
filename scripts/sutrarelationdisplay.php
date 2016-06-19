@@ -114,8 +114,10 @@ function sutradisplay($sutra_number)
 }
 
 $counter = 1;
+// For each entry in difflog file
 foreach($data as $datum)
 {
+	// Write appropriate messages in HTML
 	$parts = explode(':',$datum);
 	echo $counter." - ".convert($parts[1])." - ".convert($parts[2])."<br/>\n";
 	echo "If rule <b>".sutradisplay($parts[0])." didn't exist</b>, the following rules would <b>not have applied</b>.<br/>\n";
