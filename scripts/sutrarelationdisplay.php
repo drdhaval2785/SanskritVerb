@@ -4,10 +4,20 @@
 		Display the sUtra numbers which would have applied and sUtra numbers which would not have applied, if a given sUtra didn't exist in Paninian grammar.
 		By this code, we would be able to understand the interrelations between sUtras.
 		e.g. apavAda, pratiSedha, paryudAsa etc may be unearthed.
-	
+	Usage:
+		CLI - `php sutrarelationdisplay.php >> ../sutrarelations/sutrarelations.html`
+		Frontend - `localhost/SanskritVerb/scripts/sutrarelationdisplay.php`
+	Input:
+		../sutrarelations/difflog1.txt in case of commandline usage
+		../sutrarelations/difflog2.txt in case of HTML frontend usage.
+	Output:
+		By default it echos the output, which can be stored to an HTML if needed.
+		If X didn't exist, Y which applied would not have applied.
+		If X didn't exist, Y which didn't apply, would have applied.
 */
 include 'function.php';
 include 'slp-dev.php';
+// Select and read appropriate difflog file based on CLI or frontend usage.
 if (isset($argv[0]))
 {
 	$data = file('../sutrarelations/difflog1.txt');
@@ -16,12 +26,18 @@ else
 {
 	$data = file('../sutrarelations/difflog2.txt');
 }
+// Trim the data
 $data = array_map('trim',$data);
 
+// function to display the output based on the ignored sUtra number.
 function sutradisplay($sutra_number)
 {
-	global $ASdata, $vdata, $miscdata, $paribhASAdata; global $upasarga_joined; global $us, $outfile, $otherdata; // bringing $text from main php function.
+	// Bringing data from function.php
+	global $ASdata, $vdata, $miscdata, $paribhASAdata, $otherdata; global $upasarga_joined; global $us, $outfile, $otherdata;
+	// Initialized the output
 	$output = '';
+	$misc=0;
+	// find necessary $output, based on structure of the input number e.g. sUtra, vArtika, paribhASa, miscellaneous data etc.
 	if (strpos($sutra_number,'~')!==false)
 	{
 		$matches = array_filter($otherdata, function($var) use ($sutra_number) { return strpos($var,$sutra_number.":")!==false; });
@@ -81,8 +97,13 @@ function sutradisplay($sutra_number)
 		{	
 			$output = convert($sutra_dev);
 		}				
+		$misc = 1;
 	}
-	if (isset($output) && $output!=='')
+	if (isset($output) && (strpos($sutra_number,'~')!==false||$misc!==0))
+	{
+		return $output;
+	}
+	elseif (isset($output) && $output!=='')
 	{
 		return $output."(".link_sutra($sutra_number,'..').")";
 	}

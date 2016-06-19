@@ -36,7 +36,7 @@ do
 done
 #php scripts/slp-dev.php suspectverbforms.txt suspecverbforms_deva.txt
 #python comparewithdb.py
-rm -rf scripts/sutrarelations.html
+rm -rf sutrarelations/sutrarelations.html
 cd scripts
 echo '<html><body>' >> ../sutrarelations/sutrarelations.html
 php sutrarelationdisplay.php >> ../sutrarelations/sutrarelations.html
