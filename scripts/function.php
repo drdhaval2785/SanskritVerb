@@ -2592,21 +2592,29 @@ function link_sutra($s,$relativepath="") {
   e.g., if s = "3.4.113", returns
    <a href="Data/allsutrani/3.4.113.htm">3.4.113</a>
  */
+ global $dropping;
  $parts = preg_split('/[.]/',$s);
  if (count($parts) != 3) {  // error checking
-  echo "<p>link_sutra error: input = $s</p>\n";
-  exit(1);
- }
- $X=$parts[0];
- $Y=$parts[1];
- $Z=$parts[2];
- if ($relativepath!=="")
- {
-	$ans = "<a href=\"$relativepath/Data/allsutrani/$X.$Y.$Z.htm\" target='_blank'>$X.$Y.$Z</a>";
+	$ans = $s;
+	if(!isset($argv[0])||$dropping!==0)
+	{
+	  echo "<p>link_sutra error: input = $s</p>\n";
+	  exit(1);
+	}
  }
  else
  {
-	$ans = "<a href=\"Data/allsutrani/$X.$Y.$Z.htm\" target='_blank'>$X.$Y.$Z</a>";
+	 $X=$parts[0];
+	 $Y=$parts[1];
+	 $Z=$parts[2];
+	 if ($relativepath!=="")
+	 {
+		$ans = "<a href=\"$relativepath/Data/allsutrani/$X.$Y.$Z.htm\" target='_blank'>$X.$Y.$Z</a>";
+	 }
+	 else
+	 {
+		$ans = "<a href=\"Data/allsutrani/$X.$Y.$Z.htm\" target='_blank'>$X.$Y.$Z</a>";
+	 }
  }
  return $ans;
 }

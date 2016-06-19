@@ -1,7 +1,7 @@
 ﻿<?php
 $start_time = microtime(true); // To track time spent in execution of script.
-$debug = 1; // 0 - no debugging. 1 - debugging on. It shows execution of some important time consuming scripts.
-$debugmode = 2; // 0 - No debugging, 1 - full debugging with function timestamp (for speed analysis and memory leaakage finding), 2 - Only $text display (no function start and ends).
+$debug = 0; // 0 - no debugging. 1 - debugging on. It shows execution of some important time consuming scripts.
+$debugmode = 0; // 0 - No debugging, 1 - full debugging with function timestamp (for speed analysis and memory leaakage finding), 2 - Only $text display (no function start and ends).
  /* This code is developed by Dr. Dhaval Patel (drdhaval2785@gmail.com) of www.sanskritworld.in and Dr. Sivakumari Katuri.
   * Layout assistance by Mr Marcis Gasuns.
   * Available under GNU licence.
@@ -136,7 +136,7 @@ elseif (in_array($argv[2],array("law","liw","luw","lfw","sArvaDAtukalew","ArDaDA
 if ($type==='tiGanta') {
 	if (!is_dir('verboutput'))
 	{
-	mkdir ('verboutput');
+		mkdir ('verboutput');
 	}
 	$logfile = fopen('verboutput//log.txt','a+'); 
 	fputs($logfile,date('D, d M Y H:i:s')."\n");
@@ -14290,18 +14290,9 @@ if ($frontend!=="0")
 /* Post Generation processes e.g. CLI application, testing etc. */
 if ((isset($argv[0])|| $test ===1) )
 { 
-	//$suspectentryfile = fopen('suspectverbforms.txt','a+');
 	$generatedformfile = fopen('generatedforms.xml','a+');
-	//$verblist = verbformlist();
-	//$verbsingerard = verblist();
-	//wrongformlist($ou,$verblist,"fast"); // Uncomment this if you want only the list of suspect verbs for which Gerard has database.
-	//wrongformlist($ou,$verblist); // Uncomment this if you want to get the list of all suspect verbs for irrespecitve of Gerard's database.
 	generatedforms($ou,$generatedformfile);
-	//fclose($suspectentryfile);
 	fclose($generatedformfile);
-	/*$susinput = file_get_contents('suspectverbforms.txt');
-	$susoutput = convert($susinput);
-	file_put_contents('suspectverbforms_deva.txt',$susoutput);*/
 	if ($dropping===1||$dropping===3)
 	{
 		$uniquevidhisutras = array();

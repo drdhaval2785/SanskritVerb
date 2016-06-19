@@ -1,4 +1,11 @@
 <?php
+/*
+	Expected job:
+		Display the sUtra numbers which would have applied and sUtra numbers which would not have applied, if a given sUtra didn't exist in Paninian grammar.
+		By this code, we would be able to understand the interrelations between sUtras.
+		e.g. apavAda, pratiSedha, paryudAsa etc may be unearthed.
+	
+*/
 include 'function.php';
 include 'slp-dev.php';
 if (isset($argv[0]))

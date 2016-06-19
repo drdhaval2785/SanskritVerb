@@ -1,4 +1,8 @@
 ﻿<?php
+/* 
+	Code to convert text from SLP1 -> Devanagari 
+*/
+
 /* This code is borrowed most probably from php.net examples site. But I am unable to trace it now. */
 function html2txt($document){ 
 $search = array('@<script[^>]*?>.*?</script>@si',  // Strip out javascript 
