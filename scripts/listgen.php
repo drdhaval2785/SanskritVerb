@@ -8,22 +8,29 @@
 */
 include 'function.php';
 include 'slp-dev.php';
+
+// Function to display the data in $array=array("...","...",......); format
 function arraydisplayer($inputarray,$arrayname)
 {
 	echo $arrayname.'=array("'.implode('","',$inputarray).'");'."\n";
 }
+// Function to generate list based on $verbdata
 function listgenerator($debug)
 {
 	global $verbdata;
+	// for each entry in $verbdata
 	foreach ($verbdata as $verbdatum)
 	{
+		// Typical line separated by a colon
+		// "aMsa:samAGAte:aMsa:10:0460:u:sew:अं॑स॑:1420::1475:aMsa1_aMsa_curAxiH+samAGAwe:"
 		list($verb[],$meaning[],$verb1[],$verbset[],$verbnumber[],$verbpada[],$verbit[],$deva[],$ma[],$ks[],$dh[],$uohyd[],$jnu[]) = explode(':',$verbdatum);
 	}
+	// for every entry in $verbdata
 	for($i=0;$i<count($verbdata);$i++)
 	{
 		$allverbs[] = $verb[$i];
 		$allverbs1[] = $deva[$i];
-		// parasmai / Atmane / ubhaya
+		// parasmai / Atmane / ubhaya decision
 		if ($verbpada[$i]==="pa")
 		{
 			$parasmai[] = $verb[$i];
@@ -109,19 +116,22 @@ function listgenerator($debug)
 			$udAttetverbs[] = $verb[$i];
 		}
 	}
-	// Nonuniqueverbs, Gitverbs, Jitverbs
+	// Nonuniqueverbs, Gitverbs, Jitverbs separation
+	// Create a $key=>count array by using PHP function array_count_values
 	$arrayvalues = array_count_values($allverbs);
-	//print_r($arrayvalues);
 	foreach ($arrayvalues as $key=>$value)
 	{
+		// If the verb occurs more than one times, it is added to $nonuniquverbs
 		if ($value>1)
 		{
 			$nonuniqueverbs[] = $key;
 		}
+		// If verb ends with 'N', it is added to $Gitverbs
 		if (preg_match('/N$/',$key))
 		{
 			$Gitverbs[] = $key;
 		}
+		// If verb ends with 'Y', it is added to $Jitverbs
 		if (preg_match('/Y$/',$key))
 		{
 			$Jitverbs[] = $key;
@@ -129,15 +139,22 @@ function listgenerator($debug)
 	}
 	// Devanagariallverbs
 	$devanagariallverbs = array_map('convert',$allverbs);
+	// An array of the arrays to be printed to file.
 	$basearray = array($bhvAdi,$adAdi,$juhotyAdi,$divAdi,$svAdi,$tudAdi,$ruDAdi,$tanAdi,$kryAdi,$curAdi,$bhvAdi1,$adAdi1,$juhotyAdi1,$divAdi1,$svAdi1,$tudAdi1,$ruDAdi1,$tanAdi1,$kryAdi1,$curAdi1,$allverbs,$allverbs1,$parasmai,$Atmane,$ubhaya,$svaritetverbs,$anudAttetverbs,$udAttetverbs,$nonuniqueverbs,$Gitverbs,$Jitverbs,$devanagariallverbs);
+	// Their names, as they are in function.php
 	$basearraynames = array('$bhvAdi','$adAdi','$juhotyAdi','$divAdi','$svAdi','$tudAdi','$ruDAdi','$tanAdi','$kryAdi','$curAdi','$bhvAdi1','$adAdi1','$juhotyAdi1','$divAdi1','$svAdi1','$tudAdi1','$ruDAdi1','$tanAdi1','$kryAdi1','$curAdi1','$allverbs','$allverbs1','$parasmai','$Atmane','$ubhaya','$svaritetverbs','$anudAttetverbs','$udAttetverbs','$nonuniqueverbs','$Gitverbs','$Jitverbs','$devanagariallverbs');
+	// Create a summary log file (to keep track of changes)
 	$logfile = fopen('../Data/verbdatasummary.txt','w');
+	// For each entry in $basearray
 	for($i=0;$i<count($basearray);$i++)
 	{
+		// Display it
 		arraydisplayer($basearray[$i],$basearraynames[$i]);
+		// Write summary to log file.
 		fputs($logfile,$basearraynames[$i].":".count($basearray[$i])."\n");
 	}
 	fclose($logfile);
+	// If the user wants to see it on terminal, show it.
 	if($debug==='1')
 	{
 		echo "bhvAdi ".count($bhvAdi)."<br/>\n";

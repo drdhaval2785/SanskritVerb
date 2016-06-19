@@ -1,4 +1,9 @@
 Documentation of commandline 
+
+# NOTE
+
+This is not functional as of now. Only documented right now, so that in future, we can write code to fulfil it.
+
 # Asya-prayatna
 
 Syntax:
