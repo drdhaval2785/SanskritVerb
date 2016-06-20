@@ -4293,13 +4293,14 @@ function generatedforms($list,$outputfile)
 	{
 		$startup = 0;
 	}
-	for($i=$startup;$i<count($list);$i++)
+	for($i=0;$i<count($list);$i++)
 	{
 		$split=explode(',',$list[$i]);
 		foreach($split as $member)
 		{
-			fputs($outputfile,'<f form="'.$member.'"><root name="'.$first.'" num="'.$number.'"/><'.$lakAra.'/>'.$tiplist[$i]."</f>\n");
+			fputs($outputfile,'<f form="'.$member.'"><root name="'.$first.'" num="'.$number.'"/><'.$lakAra.'/>'.$tiplist[$startup]."</f>\n");
 		}
+		$startup = $startup+1;
 	}
 }
 function vidhisutraseparator($storedata)
