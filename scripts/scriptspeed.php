@@ -5,9 +5,14 @@ $text = array("Davalasya");
 $debug = 0;
 $debugmode = 0;
 timestamp();
-if (pr2(array("i","I","u","U","f","F","x","X"),$hlplus,$ArdhadhAtuka_tiG_pratyayas,array("e","e","o","o","ar","ar","al","al"),$hlplus,$ArdhadhAtuka_tiG_pratyayas,$text)!==$text)
+$fin = fopen('trial.txt','w');
+$output = '';
+for($i=0;$i<500;$i++)
 {
-
+	$output = $output.$i."\n";
+	//fputs($fin,$i."\n");
 }
+fputs($fin,$output);
+fclose($fin);
 timestamp();
 ?>

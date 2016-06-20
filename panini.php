@@ -14262,7 +14262,7 @@ $text=array();
 if ($debug===1) {dibug('11740');dibug('------------------------');}
 }
 
-
+//timestamp();
 /* Displaying the sUtras and sequential changes of $frontend is not set to 0. */
 if ($frontend!=="0")
 {
