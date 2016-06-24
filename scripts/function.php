@@ -837,6 +837,71 @@ function display2($text,$n,$us='')
 	if ($debug===1 && $debugmode<2){ dibug('DISPLAY2 ACTUAL PRINT END');}
     if ($n === 2) { $text1 = $text; $text = $text2; } // not useful because the display(2) is not used in the code. If it is used, this will work.
 }
+/* function display3 is specially designed to try with gui function. */
+// There are three arguments. 0 will simply display the message. 
+// 1 will show an additional message in dvitva. 
+// 2 is not used in the code. Useful where there were two optional forms.
+// 3 is for aGgAdhikAra.
+// 4 is for yaNaH pratiSedho vAcyaH in case of yaN.
+// 5 is for sarvAdeza.
+// 6 is for bhasya adhikAra.
+// 7 is for padasya, padAt, anudAttaM sarvamapAdAdau adhikAra.
+// 8 is for anupasarjanAt adhikAra.
+// new messages can be added if the message is of repeated nature.
+function display3($text,$n,$us='')
+{
+    global $upasarga_joined, $debug, $debugmode; // bringing $text from main php function.
+	$htmloutput = '';
+	foreach ($text as $val) { $out[] = str_replace("++","+",$val);}
+	$text = $out;
+    if ($n === 1) // sending special messages.
+        {
+        $htmloutput=$htmloutput."<p class = hn>Please note: Wherever there is dvitva, it is optionally negated by sarvatra zAkalyasya. (".link_sutra("8.4.51").")</p>\n";
+        $htmloutput=$htmloutput."<p class = hn>द्वित्व का सर्वत्र सर्वत्र शाकल्यस्य (८.४.५१) से पाक्षिक निषेध होता है ।</p>\n";
+        }
+    if ($n === 2) 
+        { 
+        global $text1; $text2 = $text; $text = $text1; 
+        }
+    if ($n === 3) 
+        {
+        $htmloutput=$htmloutput."<p class = pa>yasmAtpratyayavidhistadAdi pratyaye'Ggam (".link_sutra("2.4.13").") and aGgasya (".link_sutra("6.4.1").") </p>\n";
+        $htmloutput=$htmloutput."<p class = pa>यस्मात्प्रत्ययविधिस्तदादि प्रत्ययेऽङ्गम्‌ (२.४.१३) तथा अङ्गस्य (६.४.१) </p>\n";
+        }
+    if ($n === 4) 
+        {
+        $htmloutput=$htmloutput."<p class = hn>N.B.: yaNaH pratiSedho vAcyaH (vA 4806) prevents application of saMyogAntasya lopaH (".link_sutra("8.2.23").") </p>\n";
+        $htmloutput=$htmloutput."<p class = hn>यणः प्रतिषेधो वाच्यः (वा ४८०६) से संयोगान्तस्य लोपः (८.२.२३) का निषेध होता है ।</p>\n";
+        }
+    if ($n === 5) 
+        {
+        $htmloutput=$htmloutput."<p class = hn>N.B.: anekAlzitsarvasya (".link_sutra("1.1.55").") mandates sarvAdeza.  </p>\n";
+        $htmloutput=$htmloutput."<p class = hn>अनेकाल्शित्सर्वस्य (१.१.५५) से सर्वादेश होता है ।</p>\n";
+        }
+    if ($n === 6) 
+        {
+        $htmloutput=$htmloutput."<p class = pa>yasmAtpratyayavidhistadAdi pratyaye'Ggam (".link_sutra("2.4.13").") aGgasya (".link_sutra("6.4.1").") and bhasya (".link_sutra("6.4.129").") :</p>\n";
+        $htmloutput=$htmloutput."<p class = pa>यस्मात्प्रत्ययविधिस्तदादि प्रत्ययेऽङ्गम्‌ (२.४.१३), अङ्गस्य (६.४.१) तथा भस्य (६.४.१२९) :</p>\n";
+        }
+    if ($n === 7) 
+        {
+        $htmloutput=$htmloutput."<p class = pa>padasya (".link_sutra("8.1.16")."), padAt (".link_sutra("8.1.17").") and anudAttaM sarvamapAdAdau (".link_sutra("8.1.18").") :</p>\n";
+        $htmloutput=$htmloutput."<p class = pa>पदस्य (८.१.१६), पदात्‌ (८.१.१७) तथा अनुदात्तं सर्वमपादादौ (८.१.१८) :</p>\n";
+        }
+    if ($n === 8) 
+        {
+        $htmloutput=$htmloutput."<p class = pa>anupasarjanAt (".link_sutra("4.1.14").") :</p>\n";
+        $htmloutput=$htmloutput."<p class = pa>अनुपसर्जनात्‌ (४.१.१४) :</p>\n";
+        }
+	if ($debug===1 && $debugmode<2){ dibug('DISPLAY3 NOTES PRINT END');}
+    for($i=1;$i<count($text)+1;$i++) // for all members of the $text array
+    {
+        $htmloutput=$htmloutput."<p class = form>$i - ".convert(trim($us."+".$text[$i-1],'+'))."</p>\n"; // showing the output to the browser. e.g. 1. rAmaH. $i is for numbering. function convert converts the output into devanAgarI.
+    }
+	if ($debug===1 && $debugmode<2){ dibug('DISPLAY3 ACTUAL PRINT END');}
+    if ($n === 2) { $text1 = $text; $text = $text2; } // not useful because the display(2) is not used in the code. If it is used, this will work.
+	return $htmloutput;
+}
 /* function print2 is specially designed to try with gui function. */
 // There are three arguments. 0 will simply display the message. 
 // 1 will show an additional message in dvitva. 
@@ -3561,9 +3626,10 @@ function sutrasfromstoredata()
 function display_from_storedata()
 {
 	global $storedata, $text, $us;
+	$htmloutput = '';
 	foreach ($storedata as $value)
 	{
-		gui3($value[0],$value[1],$value[2],$value[3],$value[4]);
+		gui3($value[0],$value[1],$value[2],$value[3],$value[4],$htmloutput);
 		$laststoredata = $value[-1];
 	}
 }
@@ -3601,7 +3667,7 @@ function shortendisplaydata($storestore)
 	$matches = array_values($matches);
 	return $matches;
 }
-function gui3($text,$sutra_number,$style,$note,$us)
+function gui3($text,$sutra_number,$style,$note,$us,$htmloutput)
 {
 	global $shortdata;
 	global $frontend, $storedata, $debug, $debugmode;
@@ -3616,9 +3682,9 @@ function gui3($text,$sutra_number,$style,$note,$us)
 		$msg_dev[$i] = $int[2];
 		if ($msg_no[$i] === $sutra_number)
 		{
-		echo "<p class = ".$style." >$msg_eng[$i]</p>\n";
-		echo "<p class = ".$style." >$msg_dev[$i]</p>\n";
-		display2($text,$note,$us);
+		$htmloutput = $htmloutput."<p class = ".$style." >$msg_eng[$i]</p>\n";
+		$htmloutput = $htmloutput."<p class = ".$style." >$msg_dev[$i]</p>\n";
+		$htmloutput=$htmloutput.display3($text,$note,$us);
 		}
 	}
 	elseif (strpos($sutra_number,'@')!==false && $frontend==='1')
@@ -3631,9 +3697,9 @@ function gui3($text,$sutra_number,$style,$note,$us)
 		$msg_dev[$i] = $int[2];
 		if ($msg_no[$i] === $sutra_number)
 		{
-		echo "<p class = ".$style." >$msg_eng[$i]</p>\n";
-		echo "<p class = ".$style." >$msg_dev[$i]</p>\n";
-		display2($text,$note,$us);
+		$htmloutput=$htmloutput."<p class = ".$style." >$msg_eng[$i]</p>\n";
+		$htmloutput=$htmloutput."<p class = ".$style." >$msg_dev[$i]</p>\n";
+		$htmloutput=$htmloutput.display3($text,$note,$us);
 		}
 	}
 	elseif (strpos($sutra_number,'-')===false && arr(array($sutra_number),'/\./') && $frontend==='1') // AS numbers are 1.1.1 format. Vartikas are in 1.1.1-1 format. So, - is the delimiter which is differentiating point.
@@ -3648,9 +3714,9 @@ function gui3($text,$sutra_number,$style,$note,$us)
 		if ($debug===1 && $debugmode<2){ dibug('GUI ASDATA ANALYSIS END');}
 		if ($sutra_no[$i] === $sutra_number)
 		{	
-			echo "<p class = ".$style." >By ".toiast($sutra_dev[$i])." (".link_sutra($sutra_number).") :</p>\n";
-			echo "<p class = ".$style." >".$sutra_dev[$i]." (".convert($sutra_number).") :</p>\n";
-			display2($text,$note,$us);
+			$htmloutput=$htmloutput."<p class = ".$style." >By ".toiast($sutra_dev[$i])." (".link_sutra($sutra_number).") :</p>\n";
+			$htmloutput=$htmloutput."<p class = ".$style." >".$sutra_dev[$i]." (".convert($sutra_number).") :</p>\n";
+			$htmloutput=$htmloutput.display3($text,$note,$us);
 		}		
 	}
 	elseif (strpos($sutra_number,'-')!==false && $frontend==='1')
@@ -3663,9 +3729,9 @@ function gui3($text,$sutra_number,$style,$note,$us)
 		$sutra_dev[$i] = $int[1];
 		if ($vartika_no[$i] === $sutra_number)
 		{	
-			echo "<p class = ".$style." >By ".toiast($sutra_dev[$i])." (vA ".link_vartika($sutra_number).") :</p>\n";
-			echo "<p class = ".$style." >".convert($sutra_dev[$i])." (वा ".convert($sutra_number).") :</p>\n";
-			display2($text,$note,$us);
+			$htmloutput=$htmloutput."<p class = ".$style." >By ".toiast($sutra_dev[$i])." (vA ".link_vartika($sutra_number).") :</p>\n";
+			$htmloutput=$htmloutput."<p class = ".$style." >".convert($sutra_dev[$i])." (वा ".convert($sutra_number).") :</p>\n";
+			$htmloutput=$htmloutput.display3($text,$note,$us);
 		}				
 	}
 	elseif ($frontend==='1') // For $miscdata for displaying miscellaneous information.
@@ -3677,11 +3743,12 @@ function gui3($text,$sutra_number,$style,$note,$us)
 		$sutra_dev[$i] = $int[1];
 		if ($vartika_no[$i] === $sutra_number)
 		{	
-			echo "<p class = ".$style." >By ".toiast($sutra_dev[$i])." :</p>\n";
-			echo "<p class = ".$style." >".convert($sutra_dev[$i])." :</p>\n";
-			display2($text,$note,$us);
+			$htmloutput=$htmloutput."<p class = ".$style." >By ".toiast($sutra_dev[$i])." :</p>\n";
+			$htmloutput=$htmloutput."<p class = ".$style." >".convert($sutra_dev[$i])." :</p>\n";
+			$htmloutput=$htmloutput.display3($text,$note,$us);
 		}				
 	}
+	echo $htmloutput;
 }
 
 /* Function gui to overcome issues pointed out in https://github.com/drdhaval2785/SanskritVerb/issues/125 */

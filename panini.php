@@ -27,7 +27,6 @@ $debugmode = 0; // 0 - No debugging, 1 - full debugging with function timestamp 
 include "scripts/function.php"; // includes the file function.php which is collection of functions used in this code.
 include "scripts/slp-dev.php"; // includes code for conversion from SLP to devanagari,
 include "scripts/dev-slp.php"; // includes code for devanagari to SLP.
-
 /* hides error reports. */
 // If the warning is shown with line number of function.php and you are not able to trace the line which called it, turn the all error reporting on. It will help you locate the wrong entries in a reasonably narrow space, because there are so many notices around.
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
@@ -374,7 +373,7 @@ if ($type==='tiGanta')
 		$verbpada=verb_pada('1.3.31');
 	}
 	/* anuparAbhyAM kruJaH (1.3.79) */
-	elseif ( ends(array($first),array("qukfY"),2) && in_array($us,array("anu","parA")) )
+	elseif ( in_array($first,array("qukfY")) && in_array($us,array("anu","parA")) )
 	{
 		$verbpada=verb_pada('1.3.79');
 	}
@@ -573,7 +572,7 @@ if ($type==='tiGanta')
 		$verbpada="A";
 	}
 	/* vyAGparibhyo ramaH (1.3.83) */
-	elseif ( ends(array($first),array("ramu!"),2) && in_array($us,array("vi","A","pari",)) && $vAcya==="kartR")
+	elseif ( in_array($first,array("ramu!")) && in_array($us,array("vi","A","pari",)) && $vAcya==="kartR")
 	{
 		$verbpada=verb_pada('1.3.83');
 	}
@@ -649,7 +648,7 @@ if ($type==='tiGanta')
 		$verbpada=verb_pada('1.3.21-7');
 	}
 	/* anudAttaGita Atmanepadam (1.3.12) */
-	elseif ( (in_array($first,$anudAttetverbs) || in_array($first,$Gitverbs) || in_array($first,array("fta!")) ) && $pada==="pratyaya" && $lakAra!=="" && $_GET['cond49']!=="1" && scrape1($number,8,5,1)===array("A")) // the exclusion is useful for the sanAdi pratyayas e.g. paRAya has parasmai, paRa! has Atmanepadatva. See http://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.1.28.htm for clarification. Second addition is for RterIyaG, Atmanepada because of IyaG pratyaya.
+	elseif ( (in_array($first,$anudAttetverbs) || in_array($first,$Gitverbs) || in_array($first,array("fta!")) ) && $pada==="pratyaya" && $lakAra!=="" && $_GET['cond49']!=="1" && scrape2($number,13,5,1)===array("A") ) // the exclusion is useful for the sanAdi pratyayas e.g. paRAya has parasmai, paRa! has Atmanepadatva. See http://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.1.28.htm for clarification. Second addition is for RterIyaG, Atmanepada because of IyaG pratyaya.
 	{
 		$verbpada=verb_pada('1.3.12');
 	}
@@ -666,22 +665,22 @@ if ($type==='tiGanta')
 		$verbpada=verb_pada('1.3.75');
 	}
 	/* anupasargAjjJaH (1.3.76) */
-	elseif ( ends(array($first),array("jYA"),2) && $pada==="pratyaya" && $lakAra!=="")
+	elseif ( in_array($first,array("jYA")) && $pada==="pratyaya" && $lakAra!=="")
 	{
 		$verbpada=verb_pada('1.3.76');
 	}
 	/* abhipratyatibhyaH kSipaH (1.3.80) */
-	elseif ( ends(array($first),array("kzipa!"),2) && in_array($us,array("aBi","prati","ati")) && $vAcya==="kartR")
+	elseif ( in_array($first,array("kzipa!")) && in_array($us,array("aBi","prati","ati")) && $vAcya==="kartR")
 	{
 		$verbpada=verb_pada('1.3.80');
 	}
 	/* prAdvahaH (1.3.81) */
-	elseif ( ends(array($first),array("vaha!"),2) && $us==="pra" && $vAcya==="kartR")
+	elseif ( in_array($first,array("vaha!")) && $us==="pra" && $vAcya==="kartR")
 	{
 		$verbpada=verb_pada('1.3.81');
 	}
 	/* parermRSaH (1.3.82) */
-	elseif ( ends(array($first),array("mfza!"),2) && $us==="pari" && $vAcya==="kartR")
+	elseif ( in_array($first,array("mfza!")) && $us==="pari" && $vAcya==="kartR")
 	{
 		$verbpada=verb_pada('1.3.82');
 	}
@@ -723,7 +722,6 @@ if ($type==='tiGanta')
 	}
 }
 if ($debug===1) {dibug("600");}
-
 if ($type==='subanta') { $suffix = $sup1; }
 elseif ($type==='stri') { $suffix = array("su!"); }
 elseif ($type==="sandhi")
@@ -5764,6 +5762,7 @@ if (arr($text,'/jahA\+/') && sub(array("jahA"),array("+"),$halAdi_apit_sArvadhAt
 	$text=one(array("jahA+hi"),array("jahi+hi"),0);
 	storedata('6.4.116','sa',0);
 }
+print_r($text);
 /* patch to join yAs */
 if ($yAsuT===1)
 {
@@ -14262,7 +14261,6 @@ $text=array();
 if ($debug===1) {dibug('11740');dibug('------------------------');}
 }
 
-//timestamp();
 /* Displaying the sUtras and sequential changes of $frontend is not set to 0. */
 if ($frontend!=="0")
 {

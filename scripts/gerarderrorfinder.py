@@ -5,7 +5,7 @@ Expected outcome:
 Usage:
 	python gerarderrorfinder.py basexmlfile
 	e.g.
-	python gerarderrorfinder.py ../generatedforms/generatedforms18062016.xml
+	python gerarderrorfinder.py ../generatedforms/generatedforms20062016.xml
 """
 import sys, re
 import codecs
@@ -62,11 +62,13 @@ def readinria(xmlfile):
 			attrstring = '-'.join(output)
 			attrstring = devatotag(attrstring)
 			attribs = attrstring.split('-')
-			if not ('karma' in attribs or 'Ric' in attribs or 'san' in attribs or 'yaN' in attribs or 'yaNluk' in attribs):
-				if not verbform in okformlist:
-					if not re.sub('[rs]$','H',verbform) in okformlist:
-						print verbform, verb, attribs
-					output1.append((verbform,verb,attribs))
+			if len(re.findall(r'[aAiIuUfFxXeEoO]',verb)) == 1:
+				if not ('karma' in attribs or 'Ric' in attribs or 'san' in attribs or 'yaN' in attribs or 'yaNluk' in attribs):
+					if not verbform in okformlist:
+						if not re.sub('[rs]$','H',verbform) in okformlist:
+							attribs.remove('prim')
+							#print verbform, verb, attribs
+							output1.append((verbform,verb,attribs))
 	#print len(output1), 'entries in SL_roots.xml file and not of karmaNi, Nijanta, yaGanta, yaGluganta forms.'
 	return output1
 			
@@ -218,66 +220,13 @@ if __name__=="__main__":
 	[okformlist,okdetaillist] = okverbformlist()
 	# Converting okformlist to a set. Testing for occurrence of a member in set is much faster as compared to a list.
 	okformlist = set(okformlist)
-	readinria('../../inriaxmlwrapper/SL_roots.xml')		
+	suspectforms = readinria('../../inriaxmlwrapper/SL_roots.xml')
 	# Opening error file to store erroneous entries.
 	outfile = codecs.open('../Data/inriastudy/inriasuspects.txt','w','utf-8')
 	# Opening a nomatch file to store unmatched entries.
 	nomatchfile = codecs.open('../Data/inriastudy/inrianomatch.txt','w','utf-8')
 	# Opening a forcematch file to store forcematched entries.
 	forcematchfile = codecs.open('../Data/inriastudy/inriaforcematch.txt','w','utf-8')
-	# Counter initialization
-	counter = 0
-	counter2 = 0
-	"""
-	# For each entry in UoHyd file
-	for datum in data:
-		# Increment the counter
-		counter += 1
-		# Fetch necessary data from line
-		[form,prayoga,lakAra,puruza,vacana,padI,dhAtu,gaNa,suffix,sanAdi] = readuohyd(datum.encode('utf-8'))
-		# Ignoring certain known cases, and storing them in uohydforcematch.txt file
-		if not prayoga=="kartari":
-			forcematchfile.write(form+','+dhAtu+','+gaNa+','+lakAra+','+suffix+'\n')
-		elif not sanAdi=="":
-			forcematchfile.write(form+','+dhAtu+','+gaNa+','+lakAra+','+suffix+'\n')
-		elif "AmAs" in form or "AmbaBU" in form or "AYcak" in form:
-			forcematchfile.write(form+','+dhAtu+','+gaNa+','+lakAra+','+suffix+'\n')
-		elif form.endswith("iQvam") or form.endswith("iDvam"):
-			forcematchfile.write(form+','+dhAtu+','+gaNa+','+lakAra+','+suffix+'\n')
-		# If not in the base list
-		elif not form in okformlist:
-			# Find the correct/corresponding form from base list
-			correctform = getcorrectform(dhAtu,lakAra,suffix,gaNa)
-			# If the form exists, write to the uohyderrors.txt file
-			if ':' in correctform:
-				individualparts = correctform.split(':')
-				if form.replace('cC','C') in individualparts:
-					forcematchfile.write(form+','+dhAtu+','+gaNa+','+lakAra+','+suffix+'\n')
-				elif re.sub('M([kKgGN])','N\g<1>',form) in individualparts or re.sub('M([cCjJY])','Y\g<1>',form) in individualparts or re.sub('M([wWqQR])','R\g<1>',form) in individualparts or re.sub('M([tTdDn])','n\g<1>',form) in individualparts or re.sub('M([pPbBm])','m\g<1>',form) in individualparts:
-					forcematchfile.write(form+','+dhAtu+','+gaNa+','+lakAra+','+suffix+'\n')
-				elif form not in individualparts:
-					counter2 += 1
-					print form+','+dhAtu+','+gaNa+','+lakAra+','+suffix
-					print correctform
-					print
-					outfile.write(form+','+dhAtu+','+gaNa+','+lakAra+','+suffix+','+correctform+'\n')
-			# In case the matching can be achieved by minor tweaks, it is added to forcematch list.
-			elif form.replace('cC','C')== correctform:
-				forcematchfile.write(form+','+dhAtu+','+gaNa+','+lakAra+','+suffix+'\n')
-			elif re.sub('M([kKgGN])','N\g<1>',form)==correctform or re.sub('M([cCjJY])','Y\g<1>',form)==correctform or re.sub('M([wWqQR])','R\g<1>',form)==correctform or re.sub('M([tTdDn])','n\g<1>',form)==correctform or re.sub('M([pPbBm])','m\g<1>',form)==correctform:
-				forcematchfile.write(form+','+dhAtu+','+gaNa+','+lakAra+','+suffix+'\n')
-			# If the form exists, write to the uohyderrors.txt file
-			elif not correctform == 'NONE':
-				counter2 += 1
-				print counter2, '/', counter # To display to the terminal, so that the user knows that script is running.
-				print form+','+dhAtu+','+gaNa+','+lakAra+','+suffix
-				print correctform
-				print
-				outfile.write(form+','+dhAtu+','+gaNa+','+lakAra+','+suffix+','+correctform+'\n')
-			# If the form doesn't exist, write to uohydnomatch.txt file
-			else:
-				nomatchfile.write(form+','+dhAtu+','+gaNa+','+lakAra+','+suffix+','+correctform+'\n')
+	for (a,b,lst) in suspectforms:
+		outfile.write(a+','+b+','+','.join(lst)+'\n')
 	outfile.close()
-	nomatchfile.close()
-	forcematchfile.close()
-	"""
