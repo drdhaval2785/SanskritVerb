@@ -74,5 +74,4 @@ This will give you frontend to interact with the machine.
 
 **v1.9.0** - 26 March 2016 - Added **yaGluganta** and **sannanta** forms.
 
-**v1.10.0** - 19 June 2016 - Tested the output against UoHyd and INRIA databases. All differences accounted for.
-
+**v1.10.0** - 19 June 2016 - Tested the output against [UoHyd](http://sanskrit.uohyd.ac.in/scl/) and [INRIA](http://sanskrit.inria.fr/DATA/XML/SL_morph.tar.gz) databases. All differences accounted for.

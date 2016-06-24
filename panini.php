@@ -5762,7 +5762,6 @@ if (arr($text,'/jahA\+/') && sub(array("jahA"),array("+"),$halAdi_apit_sArvadhAt
 	$text=one(array("jahA+hi"),array("jahi+hi"),0);
 	storedata('6.4.116','sa',0);
 }
-print_r($text);
 /* patch to join yAs */
 if ($yAsuT===1)
 {
