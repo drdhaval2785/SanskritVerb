@@ -1,0 +1,41 @@
+<fsm start='INIT' inputDecoding='UTF-8' outputEncoding='UTF-8'>
+ <!-- Nov 23, 2013 
+  Dec 18, 2013. Add coding 'au0' for HK to transcode to 'au' for slp1,
+    to handle words like 'titau0'
+-->
+<e> <s>INIT</s> <in>R</in> <out>f</out></e>
+<e> <s>INIT</s> <in>RR</in> <out>F</out></e>
+
+<e> <s>INIT</s> <in>ai</in> <out>E</out></e>
+<e> <s>INIT</s> <in>au</in> <out>O</out></e>
+<e> <s>INIT</s> <in>au0</in> <out>au</out></e>
+<e> <s>INIT</s> <in>kh</in> <out>K</out></e>
+<e> <s>INIT</s> <in>gh</in> <out>G</out></e>
+<e> <s>INIT</s> <in>G</in> <out>N</out></e>
+<e> <s>INIT</s> <in>ch</in> <out>C</out></e>
+<e> <s>INIT</s> <in>jh</in> <out>J</out></e>
+<e> <s>INIT</s> <in>J</in> <out>Y</out></e>
+<e> <s>INIT</s> <in>T</in> <out>w</out></e>
+<e> <s>INIT</s> <in>Th</in> <out>W</out></e>
+<e> <s>INIT</s> <in>D</in> <out>q</out></e>
+<e> <s>INIT</s> <in>Dh</in> <out>Q</out></e>
+<e> <s>INIT</s> <in>N</in> <out>R</out></e>
+<e> <s>INIT</s> <in>th</in> <out>T</out></e>
+<e> <s>INIT</s> <in>dh</in> <out>D</out></e>
+<e> <s>INIT</s> <in>ph</in> <out>P</out></e>
+<e> <s>INIT</s> <in>bh</in> <out>B</out></e>
+<e> <s>INIT</s> <in>z</in> <out>S</out></e>
+<e> <s>INIT</s> <in>S</in> <out>z</out></e>
+<!-- <e> <s>INIT</s> <in>R/</in> <out>f</out></e> 20131115 changed -->
+<!-- <e> <s>INIT</s> <in>RR/</in> <out>F</out></e> 20131115 changed -->
+<!-- <e> <s>INIT</s> <in>L/</in> <out>x</out></e>  20131115 changed -->
+
+<e> <s>INIT</s> <in>R</in> <out>f</out></e>
+<e> <s>INIT</s> <in>RR</in> <out>F</out></e>
+<e> <s>INIT</s> <in>L</in> <out>L</out></e> <!-- 20131115 -->
+<e> <s>INIT</s> <in>Lh</in> <out>|</out></e> <!-- 20131123 -->
+<e> <s>INIT</s> <in>lR</in> <out>x</out></e> <!-- 20131115 -->
+<e> <s>INIT</s> <in>lRR</in> <out>X</out></e> <!-- 20131115 -->
+<e> <s>INIT</s> <in>|</in> <out>.</out></e> <!-- 20131123 -->
+<!--<e> <s>INIT</s> <in>a0u</in> <out>au</out></e>  20110425 -->
+</fsm>

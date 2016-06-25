@@ -1,0 +1,84 @@
+<fsm inputType='slp1' outputType='UTF-8' version='2' testBlanks='n' start='INIT'>
+<!-- ejf: Oct  10, 2012
+ modifies bunker's coding  to be consistent with ejf's older form of transcoder.
+ 1 - put start='INIT' attrib on 'fsm' element above
+ 2 - insert the '<s>INIT</s>' element before 'in'
+ 3 - remove the 'edges' and 'buffers' elements
+ 4 - remove the <cl>atom</cl> 
+ 5 - leave the 'n' attribute on 'e'. Probably ok.
+Note: Possibly, changes '2-5' are not essential for ejf code to work.
+-->
+<e n='0'>  <s>INIT</s><in>a</in> <out>a</out>  </e>
+<e n='1'>  <s>INIT</s><in>A</in> <out>A</out>  </e>
+<e n='2'>  <s>INIT</s><in>i</in> <out>i</out>  </e>
+<e n='3'>  <s>INIT</s><in>I</in> <out>I</out>  </e>
+<e n='4'>  <s>INIT</s><in>u</in> <out>u</out>  </e>
+<e n='5'>  <s>INIT</s><in>U</in> <out>U</out>  </e>
+<e n='6'> <s>INIT</s><in>f</in> <out>q</out> </e>
+<e n='7'> <s>INIT</s><in>F</in> <out>Q</out> </e>
+<e n='8'> <s>INIT</s><in>x</in> <out>L</out> </e>
+<e n='8a'> <s>INIT</s><in>X</in> <out>LY</out> </e>
+<e n='9'>  <s>INIT</s><in>e</in> <out>e</out>  </e>
+<e n='10'> <s>INIT</s><in>E</in> <out>E</out> </e>
+<e n='11'>  <s>INIT</s><in>o</in> <out>o</out>  </e>
+<e n='12'> <s>INIT</s><in>O</in> <out>O</out> </e>
+<e n='13'> <s>INIT</s><in>M</in> <out>M</out>  </e>
+<e n='13a'> <s>INIT</s><in>~</in> <out>z</out> </e>
+<e n='14'> <s>INIT</s><in>H</in> <out>H</out>  </e>
+<e n='15'> <s>INIT</s><in>k</in> <out>k</out> </e>
+<e n='16'> <s>INIT</s><in>K</in> <out>K</out> </e>
+<e n='17'> <s>INIT</s><in>g</in> <out>g</out> </e>
+<e n='18'> <s>INIT</s><in>G</in> <out>G</out> </e>
+<e n='19'> <s>INIT</s><in>N</in> <out>f</out> </e>
+<e n='20'> <s>INIT</s><in>c</in> <out>c</out> </e>
+<e n='21'> <s>INIT</s><in>C</in> <out>C</out> </e>
+<e n='22'> <s>INIT</s><in>j</in> <out>j</out> </e>
+<e n='23'> <s>INIT</s><in>J</in> <out>J</out> </e>
+<e n='24'> <s>INIT</s><in>Y</in> <out>F</out> </e>
+<e n='25'> <s>INIT</s><in>w</in> <out>t</out> </e>
+<e n='26'> <s>INIT</s><in>W</in> <out>T</out> </e>
+<e n='27'> <s>INIT</s><in>q</in> <out>d</out> </e>
+<e n='28'> <s>INIT</s><in>Q</in> <out>D</out> </e>
+<e n='29'> <s>INIT</s><in>R</in> <out>N</out> </e>
+<e n='29a'> <s>INIT</s><in>L</in> <out>lY</out> </e>
+<e n='29b'> <s>INIT</s><in>|</in> <out>lYh</out> </e>
+<e n='30'> <s>INIT</s><in>t</in> <out>w</out> </e>
+<e n='31'> <s>INIT</s><in>T</in> <out>W</out> </e>
+<e n='32'> <s>INIT</s><in>d</in> <out>x</out> </e>
+<e n='33'> <s>INIT</s><in>D</in> <out>X</out> </e>
+<e n='34'> <s>INIT</s><in>n</in> <out>n</out> </e>
+<e n='35'> <s>INIT</s><in>p</in> <out>p</out> </e>
+<e n='36'> <s>INIT</s><in>P</in> <out>P</out> </e>
+<e n='37'> <s>INIT</s><in>b</in> <out>b</out> </e>
+<e n='38'> <s>INIT</s><in>B</in> <out>B</out> </e>
+<e n='39'> <s>INIT</s><in>m</in> <out>m</out> </e>
+<e n='40'> <s>INIT</s><in>y</in> <out>y</out>  </e>
+<e n='41'> <s>INIT</s><in>r</in> <out>r</out>  </e>
+<e n='42'> <s>INIT</s><in>l</in> <out>l</out>  </e>
+<e n='43'> <s>INIT</s><in>v</in> <out>v</out>  </e>
+<e n='44'> <s>INIT</s><in>S</in> <out>S</out> </e>
+<e n='45'> <s>INIT</s><in>z</in> <out>R</out> </e>
+<e n='46'> <s>INIT</s><in>s</in> <out>s</out> </e>
+<e n='47'> <s>INIT</s><in>h</in> <out>h</out> </e>
+
+<e n='48'> <s>INIT</s><in>\u0009</in> <out>\u0009</out>  </e>
+<e n='49'> <s>INIT</s><in>\u000a</in> <out>\u000a</out>  </e>
+<e n='50'> <s>INIT</s><in>\u000d</in> <out>\u000d</out>  </e>
+<e n='51'> <s>INIT</s><in>\u0020</in> <out>\u0020</out>  </e>
+
+<e n='60'> <s>INIT</s><in>0</in> <out>0</out>  </e>
+<e n='61'> <s>INIT</s><in>1</in> <out>1</out>  </e>
+<e n='62'> <s>INIT</s><in>2</in> <out>2</out>  </e>
+<e n='63'> <s>INIT</s><in>3</in> <out>3</out>  </e>
+<e n='64'> <s>INIT</s><in>4</in> <out>4</out>  </e>
+<e n='65'> <s>INIT</s><in>5</in> <out>5</out>  </e>
+<e n='66'> <s>INIT</s><in>6</in> <out>6</out>  </e>
+<e n='67'> <s>INIT</s><in>7</in> <out>7</out>  </e>
+<e n='68'> <s>INIT</s><in>8</in> <out>8</out>  </e>
+<e n='69'> <s>INIT</s><in>9</in> <out>9</out>  </e>
+
+<e n='70'> <s>INIT</s><in>'</in> <out>Z</out>  </e>
+<e n='71'> <s>INIT</s><in>;</in> <out>;</out>  </e>
+<e n='72'> <s>INIT</s><in>.</in> <out>.</out>  </e>
+
+</fsm>

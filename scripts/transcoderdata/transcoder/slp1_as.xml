@@ -1,0 +1,40 @@
+<fsm start='SKT' inputDecoding='UTF-8' outputEncoding='UTF-8'>
+<!-- slp1 to as.  ejf May 25, 2011 -->
+<e> <s>SKT</s> <in>E</in> <out>ai</out> </e>
+<e> <s>SKT</s> <in>O</in> <out>au</out> </e>
+<e> <s>SKT</s> <in>K</in> <out>kh</out> </e>
+<e> <s>SKT</s> <in>G</in> <out>gh</out> </e>
+<e> <s>SKT</s> <in>C</in> <out>ch</out> </e>
+<e> <s>SKT</s> <in>J</in> <out>jh</out> </e>
+<e> <s>SKT</s> <in>T</in> <out>th</out> </e>
+<e> <s>SKT</s> <in>D</in> <out>dh</out> </e>
+<e> <s>SKT</s> <in>P</in> <out>ph</out> </e>
+<e> <s>SKT</s> <in>B</in> <out>bh</out> </e>
+<e> <s>SKT</s> <in>W</in> <out>t2h</out> </e>
+<e> <s>SKT</s> <in>Q</in> <out>d2h</out> </e>
+
+<e> <s>SKT</s> <in>f</in> <out>r2</out> </e>
+<e> <s>SKT</s> <in>x</in> <out>x</out> </e> <!-- ? -->
+<e> <s>SKT</s> <in>A</in> <out>a1</out> </e>
+<e> <s>SKT</s> <in>I</in> <out>i1</out> </e>
+<e> <s>SKT</s> <in>U</in> <out>u1</out> </e>
+<e> <s>SKT</s> <in>F</in> <out>F</out> </e> <!-- ? -->
+<e> <s>SKT</s> <in>X</in> <out>X</out> </e> <!-- ? -->
+
+<!-- small letter n with dot below ;  dot above is 1e45 -->
+<!-- change N => n5  to N => n3 Nov 28, 2011-->
+<e> <s>SKT</s> <in>N</in> <out>n3</out> </e> 
+<!-- change Y => n4 to Y => n5 Nov 28, 2011 -->
+<e> <s>SKT</s> <in>Y</in> <out>n5</out> </e>
+<e> <s>SKT</s> <in>w</in> <out>t2</out> </e>
+<e> <s>SKT</s> <in>q</in> <out>d2</out> </e>
+<e> <s>SKT</s> <in>R</in> <out>n2</out> </e>
+<e> <s>SKT</s> <in>S</in> <out>s4</out> </e>
+<e> <s>SKT</s> <in>z</in> <out>s2</out><next>SKT</next> </e>
+
+<e> <s>SKT</s> <in>H</in> <out>h2</out> </e>
+<e> <s>SKT</s> <in>M</in> <out>m2</out> </e> <!-- dot below -->
+<e> <s>SKT</s> <in>'</in> <out>'</out> </e>
+
+
+</fsm>
