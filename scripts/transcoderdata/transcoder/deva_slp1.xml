@@ -174,7 +174,7 @@
 <e> <s>INIT</s> <in>\u096d</in> <out>7</out></e>
 <e> <s>INIT</s> <in>\u096e</in> <out>8</out></e>
 <e> <s>INIT</s> <in>\u096f</in> <out>9</out></e>
-<e> <s>INIT</s> <in>\u0901</in> <out>~</out></e>
-<e> <s>INIT</s> <in>\u0950</in> <out>o~</out></e>
+<e> <s>INIT</s> <in>\u0901</in> <out>!</out></e>
+<e> <s>INIT</s> <in>\u0950</in> <out>o!</out></e>
 
 </fsm>

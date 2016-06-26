@@ -226,8 +226,8 @@
 <e n='124a'> <s>INIT,SKT</s> <in>^H</in> <out>\u0903\u1ce0</out> <cl>atom</cl> </e> 
 <e n='124b'> <s>INIT,SKT</s> <in>^M</in> <out>\u0902\u1ce0</out> <cl>atom</cl> </e> 
 
-<e n='125'> <s>INIT,SKT</s> <in>~</in> <out>\u0901</out> <cl>atom</cl> </e>  <!-- candrabindu, anunasika -->
-<e n='126'> <s>INIT,SKT</s> <in>o~</in> <out>\u0950</out> <cl>atom</cl> </e>  <!-- OM -->
+<e n='125'> <s>INIT,SKT</s> <in>!</in> <out>\u0901</out> <cl>atom</cl> </e>  <!-- candrabindu, anunasika -->
+<e n='126'> <s>INIT,SKT</s> <in>o!</in> <out>\u0950</out> <cl>atom</cl> </e>  <!-- OM -->
 <!-- Oct 20, 2014 -->
 <e> <s>INIT,SKT</s> <in>Z</in> <out>\u1cf2</out> <next>INIT</next></e>
 <e> <s>INIT,SKT</s> <in>V</in> <out>\u1cf2</out> <next>INIT</next></e>
