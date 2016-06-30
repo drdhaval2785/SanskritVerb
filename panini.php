@@ -1826,6 +1826,12 @@ if ($sanAdi==="san" && arr($text,'/^['.pc('ac').']/'))
 		$text = change('/^([^+]*)a[+]/','$1i+');
 		storedata('7.4.79','sa',0);
 	}
+	/* saH syArdhadhAtuke (7.4.49) */
+	if (arr($text,'/s\+s/') && $ardhadhatuka===1)
+	{
+		$text = one(array("s+s"),array("t+s",),0);
+		storedata('7.4.49','sa',0);
+	}
 	/* atra lopo'bhyAsasya (7.4.58) */
 	if ( sub(array("Ipsi+sa","Irdsi+sa","di+dit+sa","di+Dit+sa","mi+mit+sa","Si+Sik+sa","ri+riB+sa","li+liB+sa","pi+pit+sa","pi+pid+sa","mu+mokza","di+dIB+sa","di+diB+sa"),blank(0),blank(0),0) && $san===1)
 	{
@@ -2009,6 +2015,12 @@ elseif ($sanAdi==="san" && arr($text,'/^['.pc('hl').']/'))
 	{
 		$text = change('/[uU]([+]*[pPbBmyrlvh][a])/','i$1');
 		storedata('7.4.80','sa',0);
+	}
+	/* saH syArdhadhAtuke (7.4.49) */
+	if (arr($text,'/s\+s/') && $ardhadhatuka===1)
+	{
+		$text = one(array("s+s"),array("t+s",),0);
+		storedata('7.4.49','sa',0);
 	}
 	/* atra lopo'bhyAsasya (7.4.58) */
 	if ( sub(array("Ipsi+sa","Irdsi+sa","di+dit+sa","di+Dit+sa","mi+mit+sa","Si+Sik+sa","ri+rip+sa","li+lip+sa","pi+pit+sa","pi+pit+sa","mu+mok+sa","di+DIp+sa","di+Dip+sa","ri+rit+sa"),blank(0),blank(0),0) && $san===1)
