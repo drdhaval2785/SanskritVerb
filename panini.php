@@ -1875,6 +1875,12 @@ elseif ($sanAdi==="san" && arr($text,'/^['.pc('hl').']/'))
 		$text = array_merge($text,$text1);
 		storedata('7.2.35','sa',0);
 	}
+    /* abhyastasya ca (6.1.33) */ 
+    if (in_array($fo,array("hveY")) )
+    {
+        $text=one(array("hve+sa"),array("hu+sa"),0);
+		storedata('6.1.33','sa',0);
+    }
 	/* rudavidamuSagrahisvapipracCaH saMzca (1.2.8) */
 	if ( in_array($fo,array("rudi!r","vida!","muza!","graha!","Yizvapa!","praCa!")) && $san===1)
 	{
