@@ -519,10 +519,6 @@ if ($type==='tiGanta')
 	{
 		$verbpada=verb_pada('1.3.61');
 	}
-	/* pUrvavatsanaH (1.3.62) */
-	// Pending. san is not taught yet. So difficult to code right now. san will be treated later on.
-	/* Ampratyayavat kRJo'nuprayogasya (1.3.63) */
-	// Pending. Right now focus is on bare verbs. Am etc will be dealt with later.
 	/* NeraNau yatkarma Nau cetsa kartA'nAdhyAne (1.3.67) */
 	// This will need not less than a PhD. Nagesha bhatta seems to have written a book on this subject (NeraNivAdArthaH). So leaving it right now.
 	/* samaH kSNuvaH (1.3.65) */
@@ -1849,7 +1845,10 @@ if ($sanAdi==="san" && arr($text,'/^['.pc('ac').']/'))
 elseif ($sanAdi==="san" && arr($text,'/^['.pc('hl').']/'))
 {
 	/* pUrvavat sanaH (1.3.62) */
-	storedata('1.3.62','pa',0);
+	if ($verbpada==="A" && !in_array($fo,array("jYA","Sru","smf","dfSi!r")))
+	{
+		storedata('1.3.62','pa',0);
+	}
 	/* curAdi adanta */
 	if (arr($text,'/a[+]san$/'))
 	{
