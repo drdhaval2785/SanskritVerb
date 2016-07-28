@@ -3689,7 +3689,7 @@ function gui3($text,$sutra_number,$style,$note,$us,$htmloutput)
 	}
 	elseif (strpos($sutra_number,'@')!==false && $frontend==='1')
 	{
-		$matches = array_filter($short, function($var) use ($sutra_number) { return strpos($var,$sutra_number.":")!==false; });
+		$matches = array_filter($shortdata, function($var) use ($sutra_number) { return strpos($var,$sutra_number.":")!==false; });
 		$matches=array_values($matches);
 		$int = explode(':',$matches[0]); // We presume that there would be only one match.
 		$msg_no[$i] = $int[0];

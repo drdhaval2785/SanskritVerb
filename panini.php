@@ -1740,6 +1740,13 @@ if ($sanAdi==="yaN" && $lakAra!=="")
 		$abhyAsa=1;
 		$abhyasta=1;
 	}
+	/* AdezapratyayayoH (8.3.59) */
+	if (arr($text,'/^[^+]*[iIuUfFxXeEoOhyvrlkKgGN][+]s/'))
+	{
+		$text = change('/^([^+]*[iIuUfFxXeEoOhyvrlkKgGN])[+]s/','$1+z');
+		storedata('8.3.59','sa',0);
+		$Adezapratyaya=1;		
+	}
 	$text = change('/[+]/','');
 	$verb_without_anubandha = $text[0];
 }
