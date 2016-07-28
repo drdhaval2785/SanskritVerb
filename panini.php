@@ -2051,14 +2051,14 @@ elseif ($sanAdi==="san" && arr($text,'/^['.pc('hl').']/'))
 		storedata('8.3.59','sa',0);
 		$Adezapratyaya=1;		
 	}
-	if (arr($text,'/[iIuUfFxXeEoOhyvrlkKgGN][+]sa$/'))
+	elseif (arr($text,'/[iIuUfFxXeEoOhyvrlkKgGN][+]sa$/'))
 	{
 		$text = change('/([iIuUfFxXeEoOhyvrlkKgGN][+])sa$/','$1za');
 		$in = $text;
 		storedata('8.3.59','sa',0);
 		$Adezapratyaya=1;		
 	}
-	if (arr($text,'/[iIuUfFxXeEoOhyvrlkKgGN][+]*[sz]/'))
+	elseif (arr($text,'/[iIuUfFxXeEoOhyvrlkKgGN][+]*[sz]/'))
 	{
 		/* stautiNyoreva SaNyabhyAsAt (8.3.61) */	
 		if (arr($text,'/^[^+]*[iIuU][+]s[^+]*[+]za/') || ($fo==='zmiN'&&$san===1))
