@@ -1897,6 +1897,8 @@ elseif ($sanAdi==="san" && arr($text,'/^['.pc('hl').']/'))
 		$itpratyaya=array_merge($itpratyaya,array("N"));
 		$it=array_merge($it,array("N"));
 		storedata('1.2.9','sa',0);
+		$kGiti=1;
+		storedata('1.1.5','sa',0);
 	}
 	/* gAGkuTAdibhyo'JNinGit (1.2.1) */ 
 	elseif ( ((in_array($fo,$tudAdi_kuTAdi) && ($verbset==="tudAdi" || $verbset==="none" )) ) && $san===1 && !in_array($number,array("06.0051")))
