@@ -2408,8 +2408,8 @@ function verb_suffixes($pada)
 	}
 	else
 	{
-		echo "Error - verb pada is not decided properly. Check";
-		exit;
+		echo "Error - verb pada may not have been decided properly. Check";
+		return $tiG;
 	}		
 }
 // for display in tiGanta.php in case the user has chosen the gaNa.
