@@ -3670,7 +3670,7 @@ function shortendisplaydata($storestore)
 function gui3($text,$sutra_number,$style,$note,$us,$htmloutput)
 {
 	global $shortdata;
-	global $frontend, $storedata, $debug, $debugmode;
+	global $frontend, $storedata, $debug, $debugmode, $tran;
 	global $ASdata, $vdata, $miscdata, $upasarga_joined, $otherdata, $paribhASAdata; // bringing $text from main php function.
 	if (strpos($sutra_number,'~')!==false && $frontend==='1')
 	{
@@ -3682,7 +3682,7 @@ function gui3($text,$sutra_number,$style,$note,$us,$htmloutput)
 		$msg_dev[$i] = $int[2];
 		if ($msg_no[$i] === $sutra_number)
 		{
-		$htmloutput = $htmloutput."<p class = ".$style." >$msg_eng[$i]</p>\n";
+		//$htmloutput = $htmloutput."<p class = ".$style." >$msg_eng[$i]</p>\n";
 		$htmloutput = $htmloutput."<p class = ".$style." >$msg_dev[$i]</p>\n";
 		$htmloutput=$htmloutput.display3($text,$note,$us);
 		}
@@ -3697,7 +3697,7 @@ function gui3($text,$sutra_number,$style,$note,$us,$htmloutput)
 		$msg_dev[$i] = $int[2];
 		if ($msg_no[$i] === $sutra_number)
 		{
-		$htmloutput=$htmloutput."<p class = ".$style." >$msg_eng[$i]</p>\n";
+		//$htmloutput=$htmloutput."<p class = ".$style." >$msg_eng[$i]</p>\n";
 		$htmloutput=$htmloutput."<p class = ".$style." >$msg_dev[$i]</p>\n";
 		$htmloutput=$htmloutput.display3($text,$note,$us);
 		}
@@ -3714,8 +3714,9 @@ function gui3($text,$sutra_number,$style,$note,$us,$htmloutput)
 		if ($debug===1 && $debugmode<2){ dibug('GUI ASDATA ANALYSIS END');}
 		if ($sutra_no[$i] === $sutra_number)
 		{	
-			$htmloutput=$htmloutput."<p class = ".$style." >By ".toiast($sutra_dev[$i])." (".link_sutra($sutra_number).") :</p>\n";
-			$htmloutput=$htmloutput."<p class = ".$style." >".$sutra_dev[$i]." (".convert($sutra_number).") :</p>\n";
+		//	$htmloutput=$htmloutput."<p class = ".$style." >By ".toiast($sutra_dev[$i])." (".link_sutra($sutra_number).") :</p>\n";
+		//	$htmloutput=$htmloutput."<p class = ".$style." >".$sutra_dev[$i]." (".convert($sutra_number).") :</p>\n";
+			$htmloutput=$htmloutput."<p class = ".$style." >".$sutra_dev[$i]." (".link_sutra($sutra_number).") :</p>\n";
 			$htmloutput=$htmloutput.display3($text,$note,$us);
 		}		
 	}
@@ -3729,9 +3730,10 @@ function gui3($text,$sutra_number,$style,$note,$us,$htmloutput)
 		$sutra_dev[$i] = $int[1];
 		if ($vartika_no[$i] === $sutra_number)
 		{	
-			$htmloutput=$htmloutput."<p class = ".$style." >By ".toiast($sutra_dev[$i])." (vA ".link_vartika($sutra_number).") :</p>\n";
-			$htmloutput=$htmloutput."<p class = ".$style." >".convert($sutra_dev[$i])." (वा ".convert($sutra_number).") :</p>\n";
-			$htmloutput=$htmloutput.display3($text,$note,$us);
+		//	$htmloutput=$htmloutput."<p class = ".$style." >By ".toiast($sutra_dev[$i])." (vA ".link_vartika($sutra_number).") :</p>\n";
+		//	$htmloutput=$htmloutput."<p class = ".$style." >".convert($sutra_dev[$i])." (वा ".convert($sutra_number).") :</p>\n";
+		$htmloutput=$htmloutput."<p class = ".$style." >".convert($sutra_dev[$i])." (वा ".link_vartika($sutra_number).") :</p>\n";
+		$htmloutput=$htmloutput.display3($text,$note,$us);
 		}				
 	}
 	elseif ($frontend==='1') // For $miscdata for displaying miscellaneous information.
@@ -3743,8 +3745,9 @@ function gui3($text,$sutra_number,$style,$note,$us,$htmloutput)
 		$sutra_dev[$i] = $int[1];
 		if ($vartika_no[$i] === $sutra_number)
 		{	
-			$htmloutput=$htmloutput."<p class = ".$style." >By ".toiast($sutra_dev[$i])." :</p>\n";
-			$htmloutput=$htmloutput."<p class = ".$style." >".convert($sutra_dev[$i])." :</p>\n";
+		//	$htmloutput=$htmloutput."<p class = ".$style." >By ".toiast($sutra_dev[$i])." :</p>\n";
+		//	$htmloutput=$htmloutput."<p class = ".$style." >".convert($sutra_dev[$i])." :</p>\n";
+			$htmloutput=$htmloutput."<p class = ".$style." >".toiast($sutra_dev[$i])." :</p>\n";
 			$htmloutput=$htmloutput.display3($text,$note,$us);
 		}				
 	}
