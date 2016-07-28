@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('Asia/Kolkata');
 $start_time = microtime(true); // To track time spent in execution of script.
 $debug = 0; // 0 - no debugging. 1 - debugging on. It shows execution of some important time consuming scripts.
 $debugmode = 0; // 0 - No debugging, 1 - full debugging with function timestamp (for speed analysis and memory leaakage finding), 2 - Only $text display (no function start and ends).
@@ -2058,7 +2059,7 @@ elseif ($sanAdi==="san" && arr($text,'/^['.pc('hl').']/'))
 	if (arr($text,'/[iIuUfFxXeEoOhyvrlkKgGN][+]*[sz]/'))
 	{
 		/* stautiNyoreva SaNyabhyAsAt (8.3.61) */	
-		if (arr($text,'/^[^+]*[iIuU][+]s[^+]*[+]za/'))
+		if (arr($text,'/^[^+]*[iIuU][+]s[^+]*[+]za/') || ($fo==='zmiN'&&$san===1))
 		{
 			storedata('8.3.61','sa',0);
 			$stauti=1;
