@@ -1612,7 +1612,7 @@ if ($sanAdi==="yaN" && $lakAra!=="")
 		$text=two(array("svap","syam","vyA"),array("+ya"),array("suap","siam","viA"),array("+ya"),0);
 		storedata('6.1.19','sa',0);
 		$text=two(array("suap","siam","viA"),array("+ya"),array("sup","sim","vi"),array("+ya"),0);
-		storedata('6.4.108','sa',0);
+		storedata('6.1.108','sa',0);
 	}
 	/* I ghrAdhmoH (7.4.31) */
 	if (arr($text,'/^DmA[+]/')||arr($text,'/^GrA[+]/'))
@@ -10928,7 +10928,7 @@ if ($bham===1 && arr($text,'/vasu!\+/') && sub(array("sedivasu!","vasu!"),array(
 if ( in_array(1,$samp) && sub(array("+i+","+u+","U+"),$ac,blank(0),0) )
 {   
     $text = two(array("+i+","+u+","U+"),$ac,array("+i+","+u+","U"),blank(count($ac)),0);
-	storedata('6.4.108','sa',0);
+	storedata('6.1.108','sa',0);
 } 
 /* na samprasAraNe samprasAraNam (6.2.37) */
 if ( in_array(1,$samp) && arr($text,'/[yv][uU][+]/') )
