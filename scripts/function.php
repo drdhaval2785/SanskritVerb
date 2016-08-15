@@ -3404,7 +3404,6 @@ function yaG_abhyAsa_special()
 		$text=change('/^([^+]*)a([+][^+]*)/','$1A$2');
 		storedata('7.4.83','sa',0);
 	}
-	print_r($text);
 	/* dIrgho'kitaH (7.4.83) */
 	// Patch because of optional forms in these three by ye vibhASA.
 	if (sub(array("ja+jAn","sa+sAn","ca+KAn"),blank(0),blank(0),0) && in_array($fo,array("janI!","zana!","Kanu!")))
