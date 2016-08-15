@@ -5795,11 +5795,17 @@ if ($yAsuT===1)
 	$text = change('/[+]yA[+]([^+]*)$/','+yA$1');
 }
 /* yaGo vA (7.3.94) */
-if ($sanAdi==="yaNluk" && pr2(array("+"),array("ti","si","mi","tu","t","s"),blank(0),array("+"),array("ti","si","mi","tu","t","s"),blank(0),$text)!==$text)
+if ($sanAdi==="yaNluk" && pr2(array("+"),array("ti","si","mi","tu","t","s"),blank(0),array("+I"),array("ti","si","mi","tu","t","s"),blank(0),$text)!==$text)
 {
 	$text1 = pr2(array("+"),array("ti","si","mi","tu","t","s"),blank(0),array("+I"),array("ti","si","mi","tu","t","s"),blank(0),$text);
 	$text = array_merge($text,$text1);
 	storedata('7.3.94','sa',0);
+	/* sArvadhAtukArdhadhAtukayoH (7.3.84) */
+	if ( $sanAdi==="yaNluk" && arr($text,'/\+I[+]*['.pc('hl').']/') && pr2(array("i","I","u","U","f","F","x","X",),array("+"),$halAdi_pit_sArvadhAtuka_pratyayas,array("e","e","o","o","ar","ar","al","al",),array("+"),$halAdi_pit_sArvadhAtuka_pratyayas,$text)!==$text )
+	{
+		$text=pr2(array("i","I","u","U","f","F","x","X",),array("+"),$halAdi_pit_sArvadhAtuka_pratyayas,array("e","e","o","o","ar","ar","al","al",),array("+"),$halAdi_pit_sArvadhAtuka_pratyayas,$text);
+		storedata('7.3.84','sa',0);
+	}
 }
 /* bhuvo vugluGliToH (6.4.88) */
 if ( arr($text,'/[B][U][+]['.pc('ac').']/') && in_array($lakAra,array("luN","liw")) && !($sanAdi==="Ric" && $lakAra==="luN"))

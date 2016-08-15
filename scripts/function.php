@@ -3335,7 +3335,7 @@ function yaG_abhyAsa_special()
 	/* nugato'nunAsikasya (7.4.85) */
 	if (arr($text,'/^([^+]*)a[+]([^+]*[YmNRn])$/'))
 	{
-		$text=change('/^([^+]*)a[+]([^+]*[YmNRn])$/','$1an$2');
+		$text=change('/^([^+]*)a[+]([^+]*[YmNRn])$/','$1aM$2');
 		storedata('7.4.85','sa',0);
 	}
 	/* japajabhadahadazabhaJjapazAM ca (7.4.86) */
