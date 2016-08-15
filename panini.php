@@ -2075,7 +2075,7 @@ elseif ($sanAdi==="san" && arr($text,'/^['.pc('hl').']/'))
 		}
 		else
 		{
-			$text = change('/^([^+]*[iIuUfFxXeEoOhyvrlkKgGN])[+]s/','$1+z');
+			$text = change('/^([^+]*[iIuUfFxXeEoOhyvrlkKgGN])[+]s([^+]*[+][sz]a)$/','$1+z$2');
 			storedata('8.3.59','sa',0);
 			$Adezapratyaya=1;		
 		}
@@ -7664,10 +7664,10 @@ if( in_array($so,$tiG) && arr($text,'/([iIuUfFxXeEoOhyvrlkKgGN])([+]*[iI]*)s(['.
 	$text = change('/[+]is(['.pc('al').'])/','+iz$1');
 	$text = change('/^([^+]*[iIuUfFeEoOhyvrl][+])z([^+]*iz[^+]*[+])/','$1s$2');
 	/* stautiNyoreva SaNyabhyAsAt (8.3.61) */
-	if (arr($text,'/^[^iIuUfFxeEoOhyvrl]*[iIuUfFxeEoOhyvrl]z/') && $san===1)
+	/*if (arr($text,'/^[^iIuUfFxeEoOhyvrl]*[iIuUfFxeEoOhyvrl]z/') && $san===1)
 	{
 		$text= change('/^([^iIuUfFxeEoOhyvrl]*[iIuUfFxeEoOhyvrl])z/','$1s');
-	}
+	}*/
 	if ($sanAdi==="yaNluk")
 	{
 		$text = change('/rI[+]z/','rI+s');
