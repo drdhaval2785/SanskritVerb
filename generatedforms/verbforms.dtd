@@ -1,0 +1,56 @@
+<!--DTD for Sanskrit Verb Forms
+    Author - Dr. Dhaval Patel
+	email - 	drdhaval2785@gmail.com -->
+<!-- Free format for XML linguistic data interchange, no copyright -->
+<!-- Version history
+		Version 1.0 Date: 21 Aug 2016 - Only active voice, non-sanAdi forms
+-->
+<!-- Transliteration of forms according to Sanskrit Library scheme SL1:
+a A i I u U f F x e E o O M ! H
+k K g G N c C j J Y w W q Q R t T d D n p P b B m y r l v S z s h
+-->
+
+<!ELEMENT forms f*> <!-- list of all inflected forms -->
+
+<!ELEMENT f (root+,(law|liw|luw|lfw|low|laN|ASIrlN|viDiliN|luN|lfN)+,(tip|tas|Ji|sip|Tas|Ta|mip|vas|mas|ta|AtAm|Ja|TAs|ATAm|Dvam|iw|vahi|mahiN)+)> <!-- inflected form entry -->
+<!ATTLIST f form CDATA #REQUIRED>
+
+<!-- Root details -->
+<!ELEMENT root EMPTY> <!-- Details about the root -->
+<!ATTLIST root name CDATA #REQUIRED>
+<!ATTLIST root num CDATA #REQUIRED>
+
+<!-- Tenses -->
+<!ELEMENT law EMPTY> <!-- लट्‌ -->
+<!ELEMENT liw EMPTY> <!-- लिट्‌ -->
+<!ELEMENT luw EMPTY> <!-- लुट्‌‌ -->
+<!ELEMENT lfw EMPTY> <!-- लृट्‌ -->
+<!ELEMENT low EMPTY> <!-- लोट्‌ -->
+<!ELEMENT laN EMPTY> <!-- लङ्‌ -->
+<!ELEMENT ASIrliN EMPTY> <!-- आशीर्लिङ्‌ -->
+<!ELEMENT viDiliN EMPTY> <!-- विधिलिङ्‌ -->
+<!ELEMENT luN EMPTY> <!-- लुङ्‌ -->
+<!ELEMENT lfN EMPTY> <!-- लृङ्‌ -->
+
+<!-- Suffix details -->
+<!-- parasmaipadI suffixes -->
+<!ELEMENT tip EMPTY> <!-- तिप्‌ -->
+<!ELEMENT tas EMPTY> <!-- तस्‌ -->
+<!ELEMENT Ji EMPTY> <!-- झि -->
+<!ELEMENT sip EMPTY> <!-- सिप्‌ -->
+<!ELEMENT Tas EMPTY> <!-- थस्‌ -->
+<!ELEMENT Ta EMPTY> <!-- थ -->
+<!ELEMENT mip EMPTY> <!-- मिप्‌ -->
+<!ELEMENT vas EMPTY> <!-- वस्‌ -->
+<!ELEMENT mas EMPTY> <!-- मस्‌ -->
+<!-- AtmanepadI suffixes -->
+<!ELEMENT ta EMPTY> <!-- त -->
+<!ELEMENT AtAm EMPTY> <!-- आताम्‌ -->
+<!ELEMENT Ja EMPTY> <!-- झ -->
+<!ELEMENT TAs EMPTY> <!-- थास्‌ -->
+<!ELEMENT ATAm EMPTY> <!-- आथाम्‌ -->
+<!ELEMENT Dvam EMPTY> <!-- ध्वम्‌ -->
+<!ELEMENT iw EMPTY> <!-- इट्‌ -->
+<!ELEMENT vahi EMPTY> <!-- वहि -->
+<!ELEMENT mahiN EMPTY> <!-- महिङ्‌ -->
+

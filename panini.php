@@ -14180,8 +14180,8 @@ elseif (arr($text,'/['.pc('cr').']([+]*)['.pc('Kr').']/') || $dhut === 1) // par
 	storedata('8.4.57','sa',0);
 }*/
 /* anusvArasya yayi parasavarNaH (8.4.58) */
-$mm = array("My","Mv","Mr","Ml","MY","Mm","MN","MR","Mn","MJ","MB","MG","MQ","MD","Mj","Mb","Mg","Mq","Md","MK","MP","MC","MW","MT","Mc","Mw","Mt","Mk","Mp"); // anusvAra+yay.
-$pa = array("!yy","!vv","!rr","!ll","YY","mm","NN","RR","nn","YJ","mB","NG","RQ","nD","Yj","mb","Ng","Rq","nd","NK","mP","YC","RW","nT","Yc","Rw","nt","Nk","mp"); // its replacement.
+$mm = array("MY","Mm","MN","MR","Mn","MJ","MB","MG","MQ","MD","Mj","Mb","Mg","Mq","Md","MK","MP","MC","MW","MT","Mc","Mw","Mt","Mk","Mp"); // anusvAra+yay.
+$pa = array("YY","mm","NN","RR","nn","YJ","mB","NG","RQ","nD","Yj","mb","Ng","Rq","nd","NK","mP","YC","RW","nT","Yc","Rw","nt","Nk","mp"); // its replacement.
 if (arr($text,'/M([+]*)['.pc('yy').']/') && (in_array(1,$num) || in_array($so,$tiG) ))
 {
 $text = one($mm,$pa,0);
