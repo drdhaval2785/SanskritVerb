@@ -12,7 +12,7 @@ k K g G N c C j J Y w W q Q R t T d D n p P b B m y r l v S z s h
 
 <!ELEMENT forms (f)*> <!-- list of all inflected forms -->
 
-<!ELEMENT f (root+,(law|liw|luw|lfw|low|laN|ASIrlN|viDiliN|luN|lfN)+,(tip|tas|Ji|sip|Tas|Ta|mip|vas|mas|ta|AtAm|Ja|TAs|ATAm|Dvam|iw|vahi|mahiN)+)> <!-- inflected form entry -->
+<!ELEMENT f (root+,(law|liw|luw|lfw|low|laN|ASIrliN|viDiliN|luN|lfN)+,(tip|tas|Ji|sip|Tas|Ta|mip|vas|mas|ta|AtAm|Ja|TAs|ATAm|Dvam|iw|vahi|mahiN)+)> <!-- inflected form entry -->
 <!ATTLIST f form CDATA #REQUIRED>
 
 <!-- Root details -->
