@@ -5,9 +5,10 @@
 <!-- Version history
 		Version 1.0 Date: 21 Aug 2016 - Only active voice, non-sanAdi forms
 -->
-<!-- Transliteration of forms according to Sanskrit Library scheme SL1:
+<!-- Transliteration of forms according to Sanskrit Library scheme SLP1:
 a A i I u U f F x e E o O M ! H
 k K g G N c C j J Y w W q Q R t T d D n p P b B m y r l v S z s h
+There is only one deviation from standard SLP1 i.e. ! instead of ~ for ँ.
 -->
 
 <!ELEMENT forms (f)*> <!-- list of all inflected forms -->
