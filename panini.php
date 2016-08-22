@@ -5166,11 +5166,15 @@ if ($lakAra==='luN' && $aG===1)
 	/* ato guNe (6.1.97) */ // patch for aG+Ji.
 	if ($caG!==1 && sub(array("a"),array("+a"),blank(0),0)   && $aG!==1)
 	{
+		$text1 = $text;
 		while(sub(array("a"),array("+a"),blank(0),0) !== false)
 		{
 				 $text = two(array("a"),array("+a"),blank(1),array("+a"),0);   
 		}      
-		storedata('6.1.97','sa',0);
+		if($text1!==$text)
+		{
+			storedata('6.1.97','sa',0);
+		}
 	}
 	$text = one(array("+a+"),array("+a"),0);
 }
@@ -7638,11 +7642,15 @@ if (arr($text,'/\+a[vm]a/') && in_array($so,$tiG) )
 /* ato guNe (6.1.97) */
 if (arr($text,'/a\+[aeo]/') && $pada === "pratyaya" && in_array($so,$tiG) )
 {
+	$text1 = $text;
     while(sub(array("a"),array("+a","+e","+o"),blank(0),0) !== false)
     {
 		$text = two(array("a"),array("+a","+e","+o"),blank(1),array("+a","+e","+o"),0);   
     }      
-	storedata('6.1.97','sa',0);
+	if ($text1!==$text)
+	{
+		storedata('6.1.97','sa',0);
+	}
 }
 /* bahulaM Candasi (2.4.73) */
 if (in_array($fo,array("Samu!","ama!")) && in_array($so,$tiG) && $veda===1 && sub(array("SAm","ama"),array("+"),blank(0),0) )
@@ -14115,13 +14123,20 @@ if ($dvitva===1)
 // Not coded separately, because we did dvitva only for $hrasva, and not for 'ac'. So this is already taken care of.
 if ($debug===1) {dibug("11550");}
 /* jhalAM jaz jhazi (8.4.53) */
-while(arr($text,'/[JBGQDKPCWTcwtkpSzsh]([+]*)[JBGQDjbgqd]/')) // check whether we should remove jaz from jhal?
+if (arr($text,'/[JBGQDKPCWTcwtkpSzsh]([+]*)[JBGQDjbgqd]/'))
 {
-    if(arr($text,'/[JBGQDKPCWTcwtkpSzshjbgqd]([+]*)[JBGQDjbgqd]/'))
-    {
-    $text = two(prat('Jl'),prat('JS'),savarna(prat('Jl'),prat('jS')),prat('JS'),0);
-	storedata('8.4.53','sa',0);
-    }
+	$text1 = $text;
+	while(arr($text,'/[JBGQDKPCWTcwtkpSzsh]([+]*)[JBGQDjbgqd]/')) // check whether we should remove jaz from jhal?
+	{
+		if(arr($text,'/[JBGQDKPCWTcwtkpSzshjbgqd]([+]*)[JBGQDjbgqd]/'))
+		{
+		$text = two(prat('Jl'),prat('JS'),savarna(prat('Jl'),prat('jS')),prat('JS'),0);
+		}
+	}
+	if($text1!==$text)
+	{
+		storedata('8.4.53','sa',0);
+	}
 }
 /* yaNo mayo dve vAcye (vA 5018) yaN in paJcamI and may in SaSThI)*/
 if ($dvitva===1)
@@ -14160,14 +14175,18 @@ $Jl1 = array("J","B","G","Q","D","j","b","g","q","d","K","P","C","W","T","c","w"
 $Jl2 = array("J","B","G","Q","D","j","b","g","q","d","K","P","C","W","T","h"); // jhal without car.
 if ($cayo!==1)
 {
+	$text1 = $text;
     while(arr($text,'/[JBGQDjbgqdKPCWTh]([+]*)['.pc('Kr').']/')) // this rule can apply add infinitum.
     {
         if ( (arr($text,'/[JBGQDjbgqdKPCWTcwtkpSzsh]([+]*)['.pc('Kr').']/') || $dhut === 1))
         {
         $text = two($Jl1,prat('Kr'),savarna(prat('Jl'),prat('cr')),prat('Kr'),0);
-		storedata('8.4.55','sa',0);
         }
     }
+	if($text1!==$text)
+	{
+		storedata('8.4.55','sa',0);
+	}
 }
 elseif (arr($text,'/['.pc('cr').']([+]*)['.pc('Kr').']/') || $dhut === 1) // parjanyavallakSaNapravRttiH.
 {
@@ -14190,20 +14209,27 @@ storedata('8.4.58','sa',0);
 /* anusvArasya yayi parasavarNaH (8.4.58) and vA padAntasya (8.4.59) */
 elseif (arr($text,'/M([+]*)['.pc('yy').']/'))
 {
-$text = one($mm,$pa,1);
-storedata('8.4.58','sa',0);
-storedata('8.4.59','sa',0);
+	$text = one($mm,$pa,1);
+	storedata('8.4.58','sa',0);
+	storedata('8.4.59','sa',0);
 }
 /* torli (8.4.60) */
 $to = array("tl","Tl","dl","Dl","nl"); // combinations satisfying rule conditions.
 $lirep = array("ll","ll","ll","ll","l!l",); // its replacement.
-while(arr($text,'/[tTdDn]l/') !== false)
-{
 if (arr($text,'/[tTdDn]l/'))
 {
-$text = one($to,$lirep,0);
-storedata('8.4.60','sa',0);
-}
+	$text1 = $text;
+	while(arr($text,'/[tTdDn]l/') !== false)
+	{
+		if (arr($text,'/[tTdDn]l/'))
+		{
+		$text = one($to,$lirep,0);
+		}
+	}
+	if ($text1!==$text)
+	{
+		storedata('8.4.60','sa',0);
+	}
 }
 /* jhayo ho'nyatarasyAm (8.4.62) */ 
 $Jy = array("Jh","Bh","Gh","Qh","Dh","jh","bh","gh","qh","dh","Kh","Ph","Ch","Wh","Th","ch","wh","th","kh","ph",); // combination satisfying condition.
