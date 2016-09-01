@@ -163,7 +163,10 @@ if ($type==='tiGanta') {
 	}
 }
 elseif ($type==='subanta') {
-	mkdir ('nounoutput');
+	if (!is_dir('nounoutput'))
+	{
+		mkdir ('nounoutput');
+	}
 	$logfile = fopen('nounoutput//log.txt','a+'); 
 	fputs($logfile,date('D, d M Y H:i:s')."\n");
 	fputs($logfile,"verb = $first, transliteration = $tran\n");
