@@ -20,7 +20,7 @@ $debugmode = 0; // 0 - No debugging, 1 - full debugging with function timestamp 
   * scripts/dev-slp.php is for converting Devanagari data to SLP1.
   * scripts/mystyle.css is stylesheet where you can change your preferences.
   * The code uses jquery.
-  * The description part uses Howard Kyoto protocol.
+  * The description part uses Harvard Kyoto protocol.
   * The coding uses SLP1 transliteration.
   */
 
