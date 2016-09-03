@@ -1990,10 +1990,10 @@ function scrape1($a,$a1,$b,$c)
 {
     global $debug, $debugmode, $verbdata, $verbdata2;
 	if ($debug===1 && $debugmode<2){ dibug("scrape1 start");}
-	if (!isset($verbdata2))
-	{
+	//if (!isset($verbdata2))
+	//{
 		$verbdata2 = array_filter($verbdata, function($var) use ($a) { return preg_match("/$a/i", $var); });
-	}
+	//}
 	if ($debug===1 && $debugmode<2){ dibug("scrape1 middle");}
 	$verbdata2 = array_unique($verbdata2);
 	$verbdata2 = array_values($verbdata2);
