@@ -882,10 +882,14 @@ else
 {
     $sambuddhi=0;
 }
+if ($type==="subanta")
+{
+	$text = array($first."+".$second); // Displaying only the verb in the initial phase
+}
 /* for sambodhana, sambuddhi display */
 if ($sambuddhi===1)
 {
-	gui($text,'sambuddhi','red',0);
+	gui($text,'sambuddhi','red',0,'');
 }
 /* main coding part starts from here. Based on Siddhantakaumudi text. */
 /* Defining an array $text. */
@@ -2229,12 +2233,14 @@ if ($so==="Ji" && $verbset==="adAdi" && in_array($fo,array("vaca!"))  )
 if ($second === "") // if there is no pratyaya. This doesn't happen in subanta / tiGanta generation. But kept it for other uses.
 {
     $input = ltrim(chop($text[count($text)-1]));
+	$text = $input;
 }
 elseif ($first === "") // if there is no prakRti. This doesn't happen in subanta / tiGanta generation. But kept it for other uses, like sandhi etc.
 {
     $input = ltrim(chop($second));
+	$text = $input;
 }
-elseif ($type==="tiGanta") // this option is used for subanta / tiGanta generation. $input is 'prakRti'+'pratyaya'.
+elseif ($type==="tiGanta") // this option is used for tiGanta generation. $input is 'prakRti'+'pratyaya'.
 {
 	$nonpurelakara = str_replace(array("viDiliN","ASIrliN","sArvaDAtukalew","ArDaDAtukalew","law","liw","luw","lfw","low","laN","luN","lfN"),array("li!N","li!N","le!w","le!w","la!w","li!w","lu!w","lf!w","lo!w","la!N","lu!N","lf!N"),$lakAra);
 	$input = array();
@@ -2243,12 +2249,13 @@ elseif ($type==="tiGanta") // this option is used for subanta / tiGanta generati
 		$stat = ltrim(chop($text[$i]."+".$nonpurelakara));
 		$input[$i] = str_replace("++","+",$stat); // If $sanAdi is "", there would be two +s consecutively. To overcome this hurdle, this patch is created.
 	}
+	$text = $input;
 }
-elseif ($type==="sandhi") 
+elseif ($type==="sandhi")
 {
 	$input = array(ltrim(chop($first."+".$sec)));
+	$text = $input;
 }
-$text = $input;
 /* dhAtvAdeza before ArdhadhAtuka pratyayas as per sahajabodha 2 p. 62 */
 if (in_array($lakAra,$ArdhadhAtuka_lakAra) || in_array($sanAdi,array("yaN","san","yaNluk")) || $vsuf==="yak")
 {
@@ -3226,7 +3233,7 @@ if (in_array($so,$tiG) && arr($text,'/[aiufx][+]*C/') && $sanAdi!=="san")
 	$verb_without_anubandha = $faltu[0];
 }
 /* dIrghAt (6.1.75) and padAntAdvA (6.1.76) */
-if (arr($text,'/C/') && sub($dirgha,array("C"),blank(0),0)) // for $dirgha see function.php
+if (arr($text,'/[C]/') && sub($dirgha,array("C"),blank(0),0)) // for $dirgha see function.php
 {
 	$text = two($dirgha,array("C"),array("At","It","Ut","Ft","Xt","et","Et","ot","Ot"),array("C"),0);
 	storedata('6.1.75','sa',0);
@@ -14440,6 +14447,7 @@ elseif ($type==="tiGanta")
 }
 elseif ($type==="subanta")
 {
+	$ou = array_map('convert',$ou);
 	tablemaker1($ou);
 	/* Closing the HTML */
 	echo "</body></html>";
