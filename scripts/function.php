@@ -4389,15 +4389,22 @@ function vidhisutraseparator($storedata)
 }
 function allsutras($storedata)
 {
-	foreach ($storedata as $value)
+	if (count($storedata)>0)
 	{
-		if ($value[2] !== "drop")
+		foreach ($storedata as $value)
 		{
-			$allsutra[] = $value[1];
+			if ($value[2] !== "drop")
+			{
+				$allsutra[] = $value[1];
+			}
 		}
+		$allsutra = array_unique($allsutra);
+		$allsutra = array_values($allsutra);
 	}
-	$allsutra = array_unique($allsutra);
-	$allsutra = array_values($allsutra);
+	else
+	{
+		$allsutra = array();
+	}
 	return $allsutra;
 }
 function difflister($firstfile,$secondfile)
