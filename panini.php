@@ -6,7 +6,7 @@ $debugmode = 0; // 0 - No debugging, 1 - full debugging with function timestamp 
  /* This code is developed by Dr. Dhaval Patel (drdhaval2785@gmail.com) of www.sanskritworld.in and Dr. Sivakumari Katuri.
   * Layout assistance by Mr Marcis Gasuns.
   * Available under GNU licence.
-  * Version 1.10.0 date 19 June 2016
+  * Version 1.10.1 date 6 September 2016
   * The latest source code is available at https://github.com/drdhaval2785/SanskritVerb .
   * Acknowledgements: The base book for coding has been Astadhyayi sahajabodha of Dr. Pushpa Dikshit, published by Pratibha Prakashan, Delhi.
   * I extend my heartfelt thanks to Ananda Loponen for the code to convert devanagari and various sanskrit transliterations. That can be accessed at http://www.ingmardeboer.nl/php/diCrunch.php?act=help.
@@ -20,7 +20,7 @@ $debugmode = 0; // 0 - No debugging, 1 - full debugging with function timestamp 
   * scripts/dev-slp.php is for converting Devanagari data to SLP1.
   * scripts/mystyle.css is stylesheet where you can change your preferences.
   * The code uses jquery.
-  * The description part uses Howard Kyoto protocol.
+  * The description part uses Harvard Kyoto protocol.
   * The coding uses SLP1 transliteration.
   */
 
@@ -163,7 +163,10 @@ if ($type==='tiGanta') {
 	}
 }
 elseif ($type==='subanta') {
-	mkdir ('nounoutput');
+	if (!is_dir('nounoutput'))
+	{
+		mkdir ('nounoutput');
+	}
 	$logfile = fopen('nounoutput//log.txt','a+'); 
 	fputs($logfile,date('D, d M Y H:i:s')."\n");
 	fputs($logfile,"verb = $first, transliteration = $tran\n");
@@ -730,12 +733,12 @@ elseif ($type==="sandhi")
 elseif ($type==='tiGanta') 
 {
 	$suffix=verb_suffixes($verbpada);
-	/* idAgama decision */
 	$temp = scrape2($first,0,2,1);
 	$verb_without_anubandha=$temp[0];
 	$original_verb = $verb_without_anubandha;
 	/*if (preg_match_all('/[aAiIuUfFxXeEoO]/',$verb_without_anubandha) > 1 && isset($argv[0])) 
 	{ echo "Verb has more than one vowel. Exiting.\n"; exit(0); }*/
+	/* idAgama decision */
 	if (in_array($lakAra,array("lfw","lfN","luw","ASIrliN","luN","liw","ArDaDAtukalew"))||$san===1) // checking whether ArdhadhAtuka lakAra or not.
 	{
 		/* smipUGraJjavazAM sani (7.2.74) */
@@ -879,10 +882,14 @@ else
 {
     $sambuddhi=0;
 }
+if ($type==="subanta")
+{
+	$text = array($first."+".$second); // Displaying only the verb in the initial phase
+}
 /* for sambodhana, sambuddhi display */
 if ($sambuddhi===1)
 {
-	gui($text,'sambuddhi','red',0);
+	gui($text,'sambuddhi','red',0,'');
 }
 /* main coding part starts from here. Based on Siddhantakaumudi text. */
 /* Defining an array $text. */
@@ -2226,12 +2233,14 @@ if ($so==="Ji" && $verbset==="adAdi" && in_array($fo,array("vaca!"))  )
 if ($second === "") // if there is no pratyaya. This doesn't happen in subanta / tiGanta generation. But kept it for other uses.
 {
     $input = ltrim(chop($text[count($text)-1]));
+	$text = $input;
 }
 elseif ($first === "") // if there is no prakRti. This doesn't happen in subanta / tiGanta generation. But kept it for other uses, like sandhi etc.
 {
     $input = ltrim(chop($second));
+	$text = $input;
 }
-elseif ($type==="tiGanta") // this option is used for subanta / tiGanta generation. $input is 'prakRti'+'pratyaya'.
+elseif ($type==="tiGanta") // this option is used for tiGanta generation. $input is 'prakRti'+'pratyaya'.
 {
 	$nonpurelakara = str_replace(array("viDiliN","ASIrliN","sArvaDAtukalew","ArDaDAtukalew","law","liw","luw","lfw","low","laN","luN","lfN"),array("li!N","li!N","le!w","le!w","la!w","li!w","lu!w","lf!w","lo!w","la!N","lu!N","lf!N"),$lakAra);
 	$input = array();
@@ -2240,12 +2249,13 @@ elseif ($type==="tiGanta") // this option is used for subanta / tiGanta generati
 		$stat = ltrim(chop($text[$i]."+".$nonpurelakara));
 		$input[$i] = str_replace("++","+",$stat); // If $sanAdi is "", there would be two +s consecutively. To overcome this hurdle, this patch is created.
 	}
+	$text = $input;
 }
-elseif ($type==="sandhi") 
+elseif ($type==="sandhi")
 {
 	$input = array(ltrim(chop($first."+".$sec)));
+	$text = $input;
 }
-$text = $input;
 /* dhAtvAdeza before ArdhadhAtuka pratyayas as per sahajabodha 2 p. 62 */
 if (in_array($lakAra,$ArdhadhAtuka_lakAra) || in_array($sanAdi,array("yaN","san","yaNluk")) || $vsuf==="yak")
 {
@@ -3223,7 +3233,7 @@ if (in_array($so,$tiG) && arr($text,'/[aiufx][+]*C/') && $sanAdi!=="san")
 	$verb_without_anubandha = $faltu[0];
 }
 /* dIrghAt (6.1.75) and padAntAdvA (6.1.76) */
-if (arr($text,'/C/') && sub($dirgha,array("C"),blank(0),0)) // for $dirgha see function.php
+if (arr($text,'/[C]/') && sub($dirgha,array("C"),blank(0),0)) // for $dirgha see function.php
 {
 	$text = two($dirgha,array("C"),array("At","It","Ut","Ft","Xt","et","Et","ot","Ot"),array("C"),0);
 	storedata('6.1.75','sa',0);
@@ -5166,11 +5176,15 @@ if ($lakAra==='luN' && $aG===1)
 	/* ato guNe (6.1.97) */ // patch for aG+Ji.
 	if ($caG!==1 && sub(array("a"),array("+a"),blank(0),0)   && $aG!==1)
 	{
+		$text1 = $text;
 		while(sub(array("a"),array("+a"),blank(0),0) !== false)
 		{
 				 $text = two(array("a"),array("+a"),blank(1),array("+a"),0);   
 		}      
-		storedata('6.1.97','sa',0);
+		if($text1!==$text)
+		{
+			storedata('6.1.97','sa',0);
+		}
 	}
 	$text = one(array("+a+"),array("+a"),0);
 }
@@ -7638,11 +7652,15 @@ if (arr($text,'/\+a[vm]a/') && in_array($so,$tiG) )
 /* ato guNe (6.1.97) */
 if (arr($text,'/a\+[aeo]/') && $pada === "pratyaya" && in_array($so,$tiG) )
 {
+	$text1 = $text;
     while(sub(array("a"),array("+a","+e","+o"),blank(0),0) !== false)
     {
 		$text = two(array("a"),array("+a","+e","+o"),blank(1),array("+a","+e","+o"),0);   
     }      
-	storedata('6.1.97','sa',0);
+	if ($text1!==$text)
+	{
+		storedata('6.1.97','sa',0);
+	}
 }
 /* bahulaM Candasi (2.4.73) */
 if (in_array($fo,array("Samu!","ama!")) && in_array($so,$tiG) && $veda===1 && sub(array("SAm","ama"),array("+"),blank(0),0) )
@@ -14115,13 +14133,20 @@ if ($dvitva===1)
 // Not coded separately, because we did dvitva only for $hrasva, and not for 'ac'. So this is already taken care of.
 if ($debug===1) {dibug("11550");}
 /* jhalAM jaz jhazi (8.4.53) */
-while(arr($text,'/[JBGQDKPCWTcwtkpSzsh]([+]*)[JBGQDjbgqd]/')) // check whether we should remove jaz from jhal?
+if (arr($text,'/[JBGQDKPCWTcwtkpSzsh]([+]*)[JBGQDjbgqd]/'))
 {
-    if(arr($text,'/[JBGQDKPCWTcwtkpSzshjbgqd]([+]*)[JBGQDjbgqd]/'))
-    {
-    $text = two(prat('Jl'),prat('JS'),savarna(prat('Jl'),prat('jS')),prat('JS'),0);
-	storedata('8.4.53','sa',0);
-    }
+	$text1 = $text;
+	while(arr($text,'/[JBGQDKPCWTcwtkpSzsh]([+]*)[JBGQDjbgqd]/')) // check whether we should remove jaz from jhal?
+	{
+		if(arr($text,'/[JBGQDKPCWTcwtkpSzshjbgqd]([+]*)[JBGQDjbgqd]/'))
+		{
+		$text = two(prat('Jl'),prat('JS'),savarna(prat('Jl'),prat('jS')),prat('JS'),0);
+		}
+	}
+	if($text1!==$text)
+	{
+		storedata('8.4.53','sa',0);
+	}
 }
 /* yaNo mayo dve vAcye (vA 5018) yaN in paJcamI and may in SaSThI)*/
 if ($dvitva===1)
@@ -14160,14 +14185,18 @@ $Jl1 = array("J","B","G","Q","D","j","b","g","q","d","K","P","C","W","T","c","w"
 $Jl2 = array("J","B","G","Q","D","j","b","g","q","d","K","P","C","W","T","h"); // jhal without car.
 if ($cayo!==1)
 {
+	$text1 = $text;
     while(arr($text,'/[JBGQDjbgqdKPCWTh]([+]*)['.pc('Kr').']/')) // this rule can apply add infinitum.
     {
         if ( (arr($text,'/[JBGQDjbgqdKPCWTcwtkpSzsh]([+]*)['.pc('Kr').']/') || $dhut === 1))
         {
         $text = two($Jl1,prat('Kr'),savarna(prat('Jl'),prat('cr')),prat('Kr'),0);
-		storedata('8.4.55','sa',0);
         }
     }
+	if($text1!==$text)
+	{
+		storedata('8.4.55','sa',0);
+	}
 }
 elseif (arr($text,'/['.pc('cr').']([+]*)['.pc('Kr').']/') || $dhut === 1) // parjanyavallakSaNapravRttiH.
 {
@@ -14190,20 +14219,27 @@ storedata('8.4.58','sa',0);
 /* anusvArasya yayi parasavarNaH (8.4.58) and vA padAntasya (8.4.59) */
 elseif (arr($text,'/M([+]*)['.pc('yy').']/'))
 {
-$text = one($mm,$pa,1);
-storedata('8.4.58','sa',0);
-storedata('8.4.59','sa',0);
+	$text = one($mm,$pa,1);
+	storedata('8.4.58','sa',0);
+	storedata('8.4.59','sa',0);
 }
 /* torli (8.4.60) */
 $to = array("tl","Tl","dl","Dl","nl"); // combinations satisfying rule conditions.
 $lirep = array("ll","ll","ll","ll","l!l",); // its replacement.
-while(arr($text,'/[tTdDn]l/') !== false)
-{
 if (arr($text,'/[tTdDn]l/'))
 {
-$text = one($to,$lirep,0);
-storedata('8.4.60','sa',0);
-}
+	$text1 = $text;
+	while(arr($text,'/[tTdDn]l/') !== false)
+	{
+		if (arr($text,'/[tTdDn]l/'))
+		{
+		$text = one($to,$lirep,0);
+		}
+	}
+	if ($text1!==$text)
+	{
+		storedata('8.4.60','sa',0);
+	}
 }
 /* jhayo ho'nyatarasyAm (8.4.62) */ 
 $Jy = array("Jh","Bh","Gh","Qh","Dh","jh","bh","gh","qh","dh","Kh","Ph","Ch","Wh","Th","ch","wh","th","kh","ph",); // combination satisfying condition.
@@ -14411,6 +14447,7 @@ elseif ($type==="tiGanta")
 }
 elseif ($type==="subanta")
 {
+	$ou = array_map('convert',$ou);
 	tablemaker1($ou);
 	/* Closing the HTML */
 	echo "</body></html>";

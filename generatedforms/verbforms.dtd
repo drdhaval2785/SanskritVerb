@@ -5,52 +5,53 @@
 <!-- Version history
 		Version 1.0 Date: 21 Aug 2016 - Only active voice, non-sanAdi forms
 -->
-<!-- Transliteration of forms according to Sanskrit Library scheme SL1:
+<!-- Transliteration of forms according to Sanskrit Library scheme SLP1:
 a A i I u U f F x e E o O M ! H
 k K g G N c C j J Y w W q Q R t T d D n p P b B m y r l v S z s h
+There is only one deviation from standard SLP1 i.e. ! instead of ~ for ँ.
 -->
 
 <!ELEMENT forms (f)*> <!-- list of all inflected forms -->
 
-<!ELEMENT f (root+,(law|liw|luw|lfw|low|laN|ASIrliN|viDiliN|luN|lfN)+,(tip|tas|Ji|sip|Tas|Ta|mip|vas|mas|ta|AtAm|Ja|TAs|ATAm|Dvam|iw|vahi|mahiN)+)> <!-- inflected form entry -->
-<!ATTLIST f form CDATA #REQUIRED>
+<!ELEMENT f (root,(law|liw|luw|lfw|low|laN|ASIrliN|viDiliN|luN|lfN),(tip|tas|Ji|sip|Tas|Ta|mip|vas|mas|ta|AtAm|Ja|TAs|ATAm|Dvam|iw|vahi|mahiN))> <!-- inflected form entry -->
+<!ATTLIST f form CDATA #REQUIRED> <!-- e.g. "Bavati" -->
 
 <!-- Root details -->
 <!ELEMENT root EMPTY> <!-- Details about the root -->
-<!ATTLIST root name CDATA #REQUIRED>
-<!ATTLIST root num CDATA #REQUIRED>
+<!ATTLIST root name CDATA #REQUIRED> <!-- e.g. "BU" -->
+<!ATTLIST root num CDATA #REQUIRED> <!-- e.g. "01.0001" -->
 
-<!-- Tenses -->
-<!ELEMENT law EMPTY> <!-- लट्‌ -->
-<!ELEMENT liw EMPTY> <!-- लिट्‌ -->
-<!ELEMENT luw EMPTY> <!-- लुट्‌‌ -->
-<!ELEMENT lfw EMPTY> <!-- लृट्‌ -->
-<!ELEMENT low EMPTY> <!-- लोट्‌ -->
-<!ELEMENT laN EMPTY> <!-- लङ्‌ -->
-<!ELEMENT ASIrliN EMPTY> <!-- आशीर्लिङ्‌ -->
-<!ELEMENT viDiliN EMPTY> <!-- विधिलिङ्‌ -->
-<!ELEMENT luN EMPTY> <!-- लुङ्‌ -->
-<!ELEMENT lfN EMPTY> <!-- लृङ्‌ -->
+<!-- Tenses / Moods -->
+<!ELEMENT law EMPTY> <!-- लट्‌ (Present) -->
+<!ELEMENT liw EMPTY> <!-- लिट्‌ (Perfect) -->
+<!ELEMENT luw EMPTY> <!-- लुट्‌‌ (1st Future) -->
+<!ELEMENT lfw EMPTY> <!-- लृट्‌ (2nd Future) -->
+<!ELEMENT low EMPTY> <!-- लोट्‌ (Imperative) -->
+<!ELEMENT laN EMPTY> <!-- लङ्‌ (Imperfect) -->
+<!ELEMENT ASIrliN EMPTY> <!-- आशीर्लिङ्‌ (Benedictive) -->
+<!ELEMENT viDiliN EMPTY> <!-- विधिलिङ्‌ (Potential) -->
+<!ELEMENT luN EMPTY> <!-- लुङ्‌ (Aorist) -->
+<!ELEMENT lfN EMPTY> <!-- लृङ्‌ (Conditional) -->
 
 <!-- Suffix details -->
 <!-- parasmaipadI suffixes -->
-<!ELEMENT tip EMPTY> <!-- तिप्‌ -->
-<!ELEMENT tas EMPTY> <!-- तस्‌ -->
-<!ELEMENT Ji EMPTY> <!-- झि -->
-<!ELEMENT sip EMPTY> <!-- सिप्‌ -->
-<!ELEMENT Tas EMPTY> <!-- थस्‌ -->
-<!ELEMENT Ta EMPTY> <!-- थ -->
-<!ELEMENT mip EMPTY> <!-- मिप्‌ -->
-<!ELEMENT vas EMPTY> <!-- वस्‌ -->
-<!ELEMENT mas EMPTY> <!-- मस्‌ -->
+<!ELEMENT tip EMPTY> <!-- तिप्‌ (Third person, Singular) -->
+<!ELEMENT tas EMPTY> <!-- तस्‌ (Third person, Dual) -->
+<!ELEMENT Ji EMPTY> <!-- झि (Third person, Plural) -->
+<!ELEMENT sip EMPTY> <!-- सिप्‌ (Second person, Singular) -->
+<!ELEMENT Tas EMPTY> <!-- थस्‌ (Second person, Dual) -->
+<!ELEMENT Ta EMPTY> <!-- थ (Second person, Plural) -->
+<!ELEMENT mip EMPTY> <!-- मिप्‌ (First person, Singular) -->
+<!ELEMENT vas EMPTY> <!-- वस्‌ (First person, Dual) -->
+<!ELEMENT mas EMPTY> <!-- मस्‌ (First person, Plural) -->
 <!-- AtmanepadI suffixes -->
-<!ELEMENT ta EMPTY> <!-- त -->
-<!ELEMENT AtAm EMPTY> <!-- आताम्‌ -->
-<!ELEMENT Ja EMPTY> <!-- झ -->
-<!ELEMENT TAs EMPTY> <!-- थास्‌ -->
-<!ELEMENT ATAm EMPTY> <!-- आथाम्‌ -->
-<!ELEMENT Dvam EMPTY> <!-- ध्वम्‌ -->
-<!ELEMENT iw EMPTY> <!-- इट्‌ -->
-<!ELEMENT vahi EMPTY> <!-- वहि -->
-<!ELEMENT mahiN EMPTY> <!-- महिङ्‌ -->
+<!ELEMENT ta EMPTY> <!-- त (Third person, Singular) -->
+<!ELEMENT AtAm EMPTY> <!-- आताम्‌ (Third person, Dual) -->
+<!ELEMENT Ja EMPTY> <!-- झ (Third person, Plural) -->
+<!ELEMENT TAs EMPTY> <!-- थास्‌ (Second person, Singular) -->
+<!ELEMENT ATAm EMPTY> <!-- आथाम्‌ (Second person, Dual) -->
+<!ELEMENT Dvam EMPTY> <!-- ध्वम्‌ (Second person, Plural) -->
+<!ELEMENT iw EMPTY> <!-- इट्‌ (First person, Singular) -->
+<!ELEMENT vahi EMPTY> <!-- वहि (First person, Dual) -->
+<!ELEMENT mahiN EMPTY> <!-- महिङ्‌ (First person, Plural) -->
 

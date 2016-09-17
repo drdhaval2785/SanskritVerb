@@ -12,7 +12,7 @@ include 'slp-dev.php';
 // Function to display the data in $array=array("...","...",......); format
 function arraydisplayer($inputarray,$arrayname)
 {
-	echo $arrayname.'=array("'.implode('","',$inputarray).'");'."\n";
+	echo $arrayname.'=array("'.implode('","',$inputarray).'");'."<br/>\n";
 }
 // Function to generate list based on $verbdata
 function listgenerator($debug)
