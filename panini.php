@@ -3578,7 +3578,7 @@ elseif ($lakAra==="liw" && in_array($fo,array("daya!","aya!","Asa!")) )
 	$kaspratyaya=1;
 }
 /* uSavidajAgRbhyo'nyatarasyAm (3.1.38) */
-elseif ($lakAra==="liw" && in_array($fo,array("uza!","vida!","jAgf")) )
+elseif ($lakAra==="liw" && in_array($fo,array("uza!","vida!","jAgf")) && $number!=="10.0059" )
 {
 	// Pending to make this optional. See https://github.com/drdhaval2785/SanskritVerb/issues/384
 	$text=three(array("uz","vid","jAgf"),array("+"),$tiG,array("uz","vid","jAgf"),array("+Am+"),$tiG,0);
