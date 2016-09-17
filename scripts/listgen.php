@@ -30,6 +30,8 @@ function listgenerator($debug)
 	{
 		$allverbs[] = $verb[$i];
 		$allverbs1[] = $deva[$i];
+		// Verb number list to be fed to the wrongformfinder.sh file 
+		$list1[] = $verbset[$i].".".$verbnumber[$i];
 		// parasmai / Atmane / ubhaya decision
 		if ($verbpada[$i]==="pa")
 		{
@@ -153,6 +155,9 @@ function listgenerator($debug)
 		// Write summary to log file.
 		fputs($logfile,$basearraynames[$i].":".count($basearray[$i])."\n");
 	}
+	// Ignoring the verbs which have been cautiously removed from $verbdata (mostly multi-vowel / sopasarga verbs)
+	$list1 = array_diff($list1,array("04.0070","10.0252","01.0716","02.0012","10.0368","10.0418","10.0425","10.0423"));
+	echo "LIST1=(".implode(" ",$list1).")";
 	fclose($logfile);
 	// If the user wants to see it on terminal, show it.
 	if($debug==='1')
@@ -184,5 +189,7 @@ function listgenerator($debug)
 		echo "<br/>\n";
 	}
 }
+
+// Call the function.
 listgenerator('');
 ?>
