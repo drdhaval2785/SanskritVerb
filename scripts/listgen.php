@@ -156,7 +156,7 @@ function listgenerator($debug)
 		fputs($logfile,$basearraynames[$i].":".count($basearray[$i])."\n");
 	}
 	// Ignoring the verbs which have been cautiously removed from $verbdata (mostly multi-vowel / sopasarga verbs)
-	$list1 = array_diff($list1,array("04.0070","10.0252","01.0716","02.0012","10.0368","10.0418","10.0425","10.0423"));
+	$list1 = array_diff($list1,array("04.0070","10.0252","01.0716","02.0012","10.0368","10.0418","10.0425","10.0423","10.0271"));
 	echo "LIST1=(".implode(" ",$list1).")";
 	fclose($logfile);
 	// If the user wants to see it on terminal, show it.
