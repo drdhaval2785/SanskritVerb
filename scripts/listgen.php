@@ -21,6 +21,7 @@ function listgenerator($debug)
 	// for each entry in $verbdata
 	foreach ($verbdata as $verbdatum)
 	{
+		//echo $verbdatum."\n";
 		// Typical line separated by a colon
 		// "aMsa:samAGAte:aMsa:10:0460:u:sew:अं॑स॑:1420::1475:aMsa1_aMsa_curAxiH+samAGAwe:"
 		list($verb[],$meaning[],$verb1[],$verbset[],$verbnumber[],$verbpada[],$verbit[],$deva[],$ma[],$ks[],$dh[],$uohyd[],$jnu[]) = explode(':',$verbdatum);
