@@ -9,7 +9,6 @@ $fp = fopen($filename,"w");
 
 foreach($verbdata as $verbdatum)
 {
-	echo $verbdatum."\n";
 	list($verb[],$meaning[],$verb1[],$verbset[],$verbnumber[],$verbpada[],$verbit[],$deva[],$ma[],$ks[],$dh[],$uohyd[],$jnu[]) = explode(':',$verbdatum);
 }
 for($i=0;$i<count($verbdata);$i++)
