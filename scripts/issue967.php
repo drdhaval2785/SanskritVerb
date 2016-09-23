@@ -5,6 +5,8 @@ foreach($verbdata as $verbdatum)
 {
 	list($verb[],$meaning[],$verb1[],$verbset[],$verbnumber[],$verbpada[],$verbit[],$deva[],$ma[],$ks[],$dh[],$uohyd[],$jnu[]) = explode(':',$verbdatum);
 }
+// In AkusmIya or AgarvIya, but not AtmanepadI.
+// Only one entry found - divu! parikUjane
 for($i=0;$i<count($verbdata);$i++)
 {
 	$verbnum = intval($verbnumber[$i]);
@@ -13,6 +15,7 @@ for($i=0;$i<count($verbdata);$i++)
 		echo $verb[$i].":".$verbset[$i].":".$verbnumber[$i].":".$verbpada[$i]."\n";
 	}
 }
+// In the adanta range, but not shown as adanta.
 for($i=0;$i<count($verbdata);$i++)
 {
 	$verbnum = intval($verbnumber[$i]);
