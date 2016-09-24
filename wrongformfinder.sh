@@ -45,6 +45,7 @@ number=1
 rm -f "suspectverbforms.txt"
 rm -f "generatedforms.xml"
 rm -f "suspectverbforms_deva.txt"
+mkdir sutrarelations
 echo '<?xml version="1.0" encoding="iso-8859-1"?>' > generatedforms.xml
 echo '<!DOCTYPE forms SYSTEM "verbforms.dtd">' > generatedforms.xml
 echo '<forms>' >> generatedforms.xml
