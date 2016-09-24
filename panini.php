@@ -989,7 +989,7 @@ elseif (in_array($so,$tiG) &&  in_array("i",$it) && $lakAra!=="" && !in_array($f
 if ($type==="tiGanta")
 {
 	/* subdhAtuSThivuSvakAdInAM satvapratiSedho vaktavyaH (vA 3499) */
-	if (in_array($fo,array("zWivu!","zvazk")))
+	if (in_array($fo,array("zWivu!","zvazka!","zvaska!")))
 	{
 		storedata('6.1.64-1','sa',0);
 	}
