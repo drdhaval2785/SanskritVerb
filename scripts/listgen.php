@@ -1,18 +1,18 @@
 <?php
 /* Script to regenerate various variables of function.php e.g. $bhvAdi, $adAdi etc, based on $verbdata.
 	Usage: php listgen.php
-	Manually copy paste and replace the variables to function.php.
+	Writes regenerated new data in verbdata.php file
 	If any change is made to the $verbdata variable, its effect will have to be carried into all derived variables.
 	This script does exactly the same.
 	Also generates a log file with summary - '../Data/verbdatasummary.txt'
 */
-include 'function.php';
+include 'verbdata.php';
 include 'slp-dev.php';
 
 // Function to display the data in $array=array("...","...",......); format
-function arraydisplayer($inputarray,$arrayname)
+function arraydisplayer($fout,$inputarray,$arrayname)
 {
-	echo $arrayname.'=array("'.implode('","',$inputarray).'");'."<br/>\n";
+	fputs($fout,$arrayname.'=array("'.implode('","',$inputarray).'");'."\n");
 }
 // Function to generate list based on $verbdata
 function listgenerator($debug)
@@ -143,22 +143,26 @@ function listgenerator($debug)
 	// Devanagariallverbs
 	$devanagariallverbs = array_map('convert',$allverbs);
 	// An array of the arrays to be printed to file.
-	$basearray = array($bhvAdi,$adAdi,$juhotyAdi,$divAdi,$svAdi,$tudAdi,$ruDAdi,$tanAdi,$kryAdi,$curAdi,$bhvAdi1,$adAdi1,$juhotyAdi1,$divAdi1,$svAdi1,$tudAdi1,$ruDAdi1,$tanAdi1,$kryAdi1,$curAdi1,$allverbs,$allverbs1,$parasmai,$Atmane,$ubhaya,$svaritetverbs,$anudAttetverbs,$udAttetverbs,$nonuniqueverbs,$Gitverbs,$Jitverbs,$devanagariallverbs);
+	$basearray = array($verbdata,$bhvAdi,$adAdi,$juhotyAdi,$divAdi,$svAdi,$tudAdi,$ruDAdi,$tanAdi,$kryAdi,$curAdi,$bhvAdi1,$adAdi1,$juhotyAdi1,$divAdi1,$svAdi1,$tudAdi1,$ruDAdi1,$tanAdi1,$kryAdi1,$curAdi1,$allverbs,$allverbs1,$parasmai,$Atmane,$ubhaya,$svaritetverbs,$anudAttetverbs,$udAttetverbs,$nonuniqueverbs,$Gitverbs,$Jitverbs,$devanagariallverbs);
 	// Their names, as they are in function.php
-	$basearraynames = array('$bhvAdi','$adAdi','$juhotyAdi','$divAdi','$svAdi','$tudAdi','$ruDAdi','$tanAdi','$kryAdi','$curAdi','$bhvAdi1','$adAdi1','$juhotyAdi1','$divAdi1','$svAdi1','$tudAdi1','$ruDAdi1','$tanAdi1','$kryAdi1','$curAdi1','$allverbs','$allverbs1','$parasmai','$Atmane','$ubhaya','$svaritetverbs','$anudAttetverbs','$udAttetverbs','$nonuniqueverbs','$Gitverbs','$Jitverbs','$devanagariallverbs');
+	$basearraynames = array('$verbdata','$bhvAdi','$adAdi','$juhotyAdi','$divAdi','$svAdi','$tudAdi','$ruDAdi','$tanAdi','$kryAdi','$curAdi','$bhvAdi1','$adAdi1','$juhotyAdi1','$divAdi1','$svAdi1','$tudAdi1','$ruDAdi1','$tanAdi1','$kryAdi1','$curAdi1','$allverbs','$allverbs1','$parasmai','$Atmane','$ubhaya','$svaritetverbs','$anudAttetverbs','$udAttetverbs','$nonuniqueverbs','$Gitverbs','$Jitverbs','$devanagariallverbs');
 	// Create a summary log file (to keep track of changes)
 	$logfile = fopen('../Data/verbdatasummary.txt','w');
+	$fout = fopen('verbdata.php','w','utf-8');
+	fputs($fout,"<?php\n");
 	// For each entry in $basearray
 	for($i=0;$i<count($basearray);$i++)
 	{
 		// Display it
-		arraydisplayer($basearray[$i],$basearraynames[$i]);
+		arraydisplayer($fout,$basearray[$i],$basearraynames[$i]);
 		// Write summary to log file.
 		fputs($logfile,$basearraynames[$i].":".count($basearray[$i])."\n");
 	}
 	// Ignoring the verbs which have been cautiously removed from $verbdata (mostly multi-vowel / sopasarga verbs)
 	$list1 = array_diff($list1,array("04.0070","10.0252","01.0716","02.0012","10.0368","10.0418","10.0425","10.0423","10.0271"));
-	echo "LIST1=(".implode(" ",$list1).")";
+	fputs($fout,"#LIST1=(".implode(" ",$list1).")\n");
+	fputs($fout,"?>");
+	fclose($fout);
 	fclose($logfile);
 	// If the user wants to see it on terminal, show it.
 	if($debug==='1')

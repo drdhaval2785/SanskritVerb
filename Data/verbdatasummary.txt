@@ -1,3 +1,4 @@
+$verbdata:2209
 $bhvAdi:1138
 $adAdi:76
 $juhotyAdi:26
