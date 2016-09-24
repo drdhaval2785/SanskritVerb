@@ -989,7 +989,7 @@ elseif (in_array($so,$tiG) &&  in_array("i",$it) && $lakAra!=="" && !in_array($f
 if ($type==="tiGanta")
 {
 	/* subdhAtuSThivuSvakAdInAM satvapratiSedho vaktavyaH (vA 3499) */
-	if (in_array($fo,array("zWivu!","zvazk")))
+	if (in_array($fo,array("zWivu!","zvazka!","zvaska!")))
 	{
 		storedata('6.1.64-1','sa',0);
 	}
@@ -3276,7 +3276,15 @@ if ( !in_array($fo,$allverbs) && sub(array("+Ric+Sap+","+RiN+Sap+"),$tiG,blank(0
     }
 }
 /* pAghrAdhmAsthAmnAdANdRzyartizadasadAM pibajighradhamatiSThamanayacCapazyarcCadhaushIyasIdAH (7.3.78) */
-if (in_array($so,$tiG) && $lakAra!=="" && in_array($fo,array("pA","GrA","DmA","zWA","mnA","dAR","dfSi!r","f","sf","Sadx!","zadx!","zWA")) && sub(array("pA","GrA","DmA","zWA","mnA","dA","dfS","f","sf","Sad","zad","sad","sTA"),array("+"),$shitpratyaya,0) && !($fo==="f" && $verbset==="svAdi") )
+if (in_array($so,$tiG) && $lakAra!=="" && in_array($fo,array("sf")) && sub(array("sf"),array("+"),$shitpratyaya,0) )
+{
+    $text=three(array("sf"),array("+"),$shitpratyaya,array("DO"),array("+"),$shitpratyaya,1);
+	storedata('sarti','sa',0);
+    $nomidelision=1; // We will remember this while doing halantyam and prevent halantyam application, because these are not upadeza
+	$vijait=1; // to prevent application of pugantalaghUpadhasya ca.
+}
+/* pAghrAdhmAsthAmnAdANdRzyartizadasadAM pibajighradhamatiSThamanayacCapazyarcCadhaushIyasIdAH (7.3.78) */
+elseif (in_array($so,$tiG) && $lakAra!=="" && in_array($fo,array("pA","GrA","DmA","zWA","mnA","dAR","dfSi!r","f","sf","Sadx!","zadx!","zWA")) && sub(array("pA","GrA","DmA","zWA","mnA","dA","dfS","f","sf","Sad","zad","sad","sTA"),array("+"),$shitpratyaya,0) && !($fo==="f" && $verbset==="svAdi") )
 {
     $text=three(array("pA","GrA","DmA","zWA","mnA","dA","dfS","sf","f","Sad","zad","sad","sTA"),array("+"),$shitpratyaya,array("piba","jiGra","Dama","tizWa","mana","yacCa","paSya","DO","fcCa","SIya","sIda","sIda","tizWa"),array("+"),$shitpratyaya,0);
 	storedata('7.3.78','sa',0);
@@ -3578,7 +3586,7 @@ elseif ($lakAra==="liw" && in_array($fo,array("daya!","aya!","Asa!")) )
 	$kaspratyaya=1;
 }
 /* uSavidajAgRbhyo'nyatarasyAm (3.1.38) */
-elseif ($lakAra==="liw" && in_array($fo,array("uza!","vida!","jAgf")) )
+elseif ($lakAra==="liw" && in_array($fo,array("uza!","vida!","jAgf")) && $number!=="10.0059" )
 {
 	// Pending to make this optional. See https://github.com/drdhaval2785/SanskritVerb/issues/384
 	$text=three(array("uz","vid","jAgf"),array("+"),$tiG,array("uz","vid","jAgf"),array("+Am+"),$tiG,0);
@@ -4065,9 +4073,9 @@ if ( in_array($fo,$aniditverbs) && sub(array("+"),array("Syan","Sna","SnA","Snu"
     $aniditAm = 1; // 0 - this sUtra has not applied. 1 - this sUtra has applied.
 }
 /* ze tRmphAdInAM numvAcyaH (vA) */ 
-if ( in_array($fo,array("tfmPa!","dfmPa!","gumPa!","umBa!","SumBa!","tfmpa!")) && sub(array("tfP","tuP","dfP","fP","guP","uB","SuB","tup","tfh","tfp"),array("+Sa+"),blank(0),0) )
+if ( in_array($fo,array("tumpa!","tumPa!","tfmPa!","dfmPa!","gumPa!","umBa!","SumBa!","tfmpa!","fmPa!")) && sub(array("tup","tuP","tfP","tuP","dfP","fP","guP","uB","SuB","tup","tfh","tfp","fP"),array("+Sa+"),blank(0),0) )
 {
-    $text = two(array("tfP","tuP","dfP","fP","guP","uB","SuB","tup","tfh","tfp"),array("+Sa+"),array("tfmP","tumP","dfmP","fmP","gumP","umB","SumB","tump","tfnh","tfmp"),array("+Sa+"),0);
+    $text = two(array("tup","tuP","tfP","tuP","dfP","fP","guP","uB","SuB","tup","tfh","tfp","fP"),array("+Sa+"),array("tump","tumP","tfmP","tumP","dfmP","fmP","gumP","umB","SumB","tump","tfnh","tfmp","fmP"),array("+Sa+"),0);
 	storedata('7.1.59-1','sa',0);
 }
 /* mInAternigame (7.3.81) */
@@ -5663,7 +5671,7 @@ if (arr($text,'/sic/') && $sic!==0 && sub(array("+sic+",),blank(0),blank(0),0) &
 	storedata('1.3.9','sa',0);
 }
 /* liGsicorAtmanepadeSu (7.2.42) */
-if ( in_array($so,$taG) && ($sic===1||$sIyuT===1) && (in_array($fo,array("vfN","vfY")) || ends(array($verb_without_anubandha),array("F"),1)) && $ardhadhatuka===1 && !in_array($number,array("10.0837")))
+if ( in_array($so,$taG) && ($sic===1||$sIyuT===1) && (in_array($fo,array("vfN","vfY")) || ends(array($verb_without_anubandha),array("F"),1)) && $ardhadhatuka===1 && !in_array($number,array("10.0837","10.0231")))
 {
     $text=one(array("+s"),array("+is"),1);
 	storedata('7.2.42','sa',0);

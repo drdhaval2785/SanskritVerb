@@ -17,3 +17,6 @@ cd SanskritVerb/Data
 mkdir allsutrani
 tar -zxvf allsutrani.tar.gz -C allsutrani
 tar zxvf dhaatupatha.tgz
+
+echo "Installing lxml, in case you want to use XML handling codes."
+pip install lxml

@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 """
 Usage:
 	python linkgen789.py
@@ -16,6 +16,7 @@ import codecs
 import string
 import datetime
 from lxml import etree
+import transcoder
 
 # Function to return timestamp
 def timestamp():
@@ -87,14 +88,13 @@ def jnu(testxml):
 
 # Function to scrape links from JNU website.
 # Input tuple -> (45,अकि#(लक्षणे,आत्मने,भ्वादिगण,सेट्,सकर्मक))
-# Expected output -> `अकि:01:45`
+# Expected output -> `aki:01:45`
 def jnutrimline(a,b):
 	parts = b.split('#')
 	gana1 = parts[1].split(',')[2]
-	print gana1.encode('utf-8')
 	# Convert from gana name to gana number.
 	gana = gananametonumber(gana1)
-	return parts[0]+':'+gana+':'+a
+	return transcoder.transcoder_processString(parts[0],'deva','slp1')+':'+gana+':'+a
 
 # Main coding execution part
 if __name__=="__main__":
