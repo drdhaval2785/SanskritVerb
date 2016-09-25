@@ -1,4 +1,4 @@
-$verbdata:2209
+$verbdata:2208
 $bhvAdi:1138
 $adAdi:76
 $juhotyAdi:26
@@ -8,7 +8,7 @@ $tudAdi:173
 $ruDAdi:25
 $tanAdi:10
 $kryAdi:71
-$curAdi:491
+$curAdi:490
 $bhvAdi1:1138
 $adAdi1:76
 $juhotyAdi1:26
@@ -18,16 +18,16 @@ $tudAdi1:173
 $ruDAdi1:25
 $tanAdi1:10
 $kryAdi1:71
-$curAdi1:491
-$allverbs:2209
-$allverbs1:2209
-$parasmai:1113
+$curAdi1:490
+$allverbs:2208
+$allverbs1:2208
+$parasmai:1112
 $Atmane:512
 $ubhaya:584
 $svaritetverbs:104
 $anudAttetverbs:700
-$udAttetverbs:1405
+$udAttetverbs:1404
 $nonuniqueverbs:311
 $Gitverbs:48
 $Jitverbs:39
-$devanagariallverbs:2209
+$devanagariallverbs:2208
