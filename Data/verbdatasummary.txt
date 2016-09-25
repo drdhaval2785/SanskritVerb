@@ -2,9 +2,9 @@ $verbdata:2208
 $bhvAdi:1138
 $adAdi:76
 $juhotyAdi:26
-$divAdi:160
+$divAdi:161
 $svAdi:39
-$tudAdi:173
+$tudAdi:172
 $ruDAdi:25
 $tanAdi:10
 $kryAdi:71
@@ -12,9 +12,9 @@ $curAdi:490
 $bhvAdi1:1138
 $adAdi1:76
 $juhotyAdi1:26
-$divAdi1:160
+$divAdi1:161
 $svAdi1:39
-$tudAdi1:173
+$tudAdi1:172
 $ruDAdi1:25
 $tanAdi1:10
 $kryAdi1:71
