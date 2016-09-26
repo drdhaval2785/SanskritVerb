@@ -5005,9 +5005,14 @@ if ( in_array($fo,array("ada!")) && in_array($so,$tiG) && $sarvadhatuka===1 &&pr
 if ( in_array($fo,array("vida!")) && in_array($so,$tiG) && $verbset==="adAdi" && pr2(array("vid"),array("+"),array("ti","tas","anti","si","Tas","Ta","mi","vas","mas"),array("vid"),array("+"),array("a","atus","us","Ta","aTus","a","a","va","ma"),$text)!==$text )
 {
     $text1 = pr2(array("vid"),array("+"),array("tas","anti","Tas","Ta","vas","mas"),array("vid"),array("+"),array("atus","us","aTus","a","va","ma"),$text);
-    $text1 = pr2(array("vid"),array("+"),array("ti","si","mi",),array("ved"),array("+"),array("a","Ta","a"),$text1);
+    $text1 = pr2(array("vid"),array("+"),array("ti","si","mi",),array("vid"),array("+"),array("a","Ta","a"),$text1);
     $text = array_merge ($text,$text1);
 	storedata('3.4.83','sa',0);
+	if(arr($text,'/vid[+][tsm]i$/'))
+	{
+		$text = change('/vid[+]/','ved+');
+		storedata('7.3.86','sa',0);
+	}
 }
 /* sijabhyastavidibhyazca (3.4.109) */ // for vid
 if ( in_array($fo,array("vida!")) && in_array($so,$tiG) && $verbset==="adAdi" && $lakAra==="laN" && pr2(array("vid"),array("+"),array("an"),array("vid"),array("+"),array("us"),$text)!==$text)
