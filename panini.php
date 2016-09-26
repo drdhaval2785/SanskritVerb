@@ -7148,7 +7148,6 @@ if ( $sic===1 && arr($text,'/[aiufx]\+s/') && sub(array("a","i","u","f","x"),arr
 	$text = three(array("a","i","u","f","x"),array("+s"),prat("Jl"),array("a","i","u","f","x"),array("+"),prat("Jl"),0); 
 	storedata('8.2.27','sa',0);
 }
-print_r($text);
 /* IDajanordhve ca (7.2.78) */
 if(arr($text,'/I[qS]\+/') && sub(array("Iq","IS"),array("+si","+se","+sva","+Dve","+Dvam"),blank(0),0) && in_array($so,$tiG))
 {
