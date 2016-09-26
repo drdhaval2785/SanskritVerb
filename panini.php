@@ -6616,13 +6616,13 @@ elseif ( arr($text,'/j\+/') && pr2(array("mfj","marj"),array("+","+i"),$ArdhadhA
 	storedata('7.2.114','sa',0);
 }
 /* gamahanajanakhanaghasAM lopaH kGiti (6.4.98) */
-if (in_array($fo,array("gamx!","hana!","jana!","Gasa!","Kanu!","janI!","ada!")) && ends($itpratyaya,array("k","N"),2) && sub(array("gam","Gan","jan","Gas","Kan","han"),array("+"),$ac,0) && in_array($so,$tiG) && $aG!==1 && !in_array($lakAra,array("viDiliN")))
+if (in_array($fo,array("gamx!","hana!","jana!","Gasa!","Kanu!","janI!","ada!")) && ends($itpratyaya,array("k","N"),2) && sub(array("gam","Gan","jan","Gas","Kan","han"),array("+"),$ac,0) && in_array($so,$tiG) && $aG!==1 && !in_array($lakAra,array("viDiliN")) && $lakAra!=="law")
 {
     $text=three(array("gam","Gan","jan","Gas","Kan","han"),array("+"),$ac,array("gm","Gn","jn","Gs","Kn","hn"),array("+"),$ac,0);
 	storedata('6.4.98','sa',0);
 }
 /* gamahanajanakhanaghasAM kGityanaGi (6.4.98) */
-if (in_array($fo,array("hana!","gamx!","jana!","Kanu!","Gasa!","ada!")) && (pr2(array("han","gam","jan","Kan","Gas"),array("+"),$ajAdi_apit_sArvadhAtuka_pratyayas,array("hn","gm","jn","Kn","Gs"),array("+"),$ajAdi_apit_sArvadhAtuka_pratyayas,$text)!==$text || arr($text,'/[+]i[vm]a$/')) && in_array($so,$tiG)  && $aG!==1)
+if (in_array($fo,array("hana!","gamx!","jana!","Kanu!","Gasa!","ada!")) && (pr2(array("han","gam","jan","Kan","Gas"),array("+"),$ajAdi_apit_sArvadhAtuka_pratyayas,array("hn","gm","jn","Kn","Gs"),array("+"),$ajAdi_apit_sArvadhAtuka_pratyayas,$text)!==$text || arr($text,'/[+]i[vm]a$/')) && in_array($so,$tiG)  && $aG!==1 && $lakAra!=="law")
 {
     $text = pr2(array("han","gam","jan","Kan","Gas"),array("+"),$ajAdi_apit_sArvadhAtuka_pratyayas,array("hn","gm","jn","Kn","Gs"),array("+"),$ajAdi_apit_sArvadhAtuka_pratyayas,$text);
     $text = pr2(array("han","gam","jan","Kan","Gas"),array("+"),array("iva","ima","iTa"),array("hn","gm","jn","Kn","Gs"),array("+"),array("iva","ima","iTa"),$text);
