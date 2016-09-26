@@ -7143,6 +7143,13 @@ if ( $sic===1 && arr($text,'/[aiufx]\+s/') && sub(array("a","i","u","f","x"),arr
 	$text = three(array("a","i","u","f","x"),array("+s"),prat("Jl"),array("a","i","u","f","x"),array("+"),prat("Jl"),0); 
 	storedata('8.2.27','sa',0);
 }
+print_r($text);
+/* IDajanordhve ca (7.2.78) */
+if(arr($text,'/I[qS]\+/') && sub(array("Iq","IS"),array("+si","+se","+sva","+Dve","+Dvam"),blank(0),0) && in_array($so,$tiG))
+{
+	$text = two(array("Iq","IS"),array("+si","+se","+sva","+Dve","+Dvam"),array("Iqi","ISi"),array("+si","+se","+sva","+Dve","+Dvam"),0);
+	storedata('7.2.78','sa',0);
+}
 /* vrazcabhrasjamRjayajarAjabhrAjacChazAM ca (8.2.36) */
 // parau vrajeH SaH padAnte (u 217) pending. 
 $vrasca = array("vfSc","sfj","mfj","yaj","rAj","BrAj","devej","parivrAj","Bfj","ftvij","mArj","vraSc","Brasj","sraj","sfaj","Barj","vrASc","vrAc","vrac","BrAj","BArj","BrAsj");
@@ -7675,12 +7682,6 @@ if (in_array($fo,array("Samu!","ama!")) && in_array($so,$tiG) && $veda===1 && su
 {
     $text=two(array("SAm+ya","ama"),array("+"),array("Sam","am"),array("+"),1);
 	storedata('2.4.73','sa',0);
-}
-/* IDajanordhve ca (7.2.78) */
-if(arr($text,'/Iq\+/') && sub(array("Iq"),array("+si","+se","+sva","+Dve","+Dvam"),blank(0),0) && in_array($so,$tiG))
-{
-	$text = two(array("Iq"),array("+si","+se","+sva","+Dve","+Dvam"),array("Iqi"),array("+si","+se","+sva","+Dve","+Dvam"),0);
-	storedata('7.2.78','sa',0);
 }
 if ($debug===1) {dibug("4800");}
 /* AdezapratyayayoH (8.3.59) */
