@@ -5130,6 +5130,12 @@ if ( $didhI!==1 && $kGiti!==1 && $caG!==1 && !($lakAra==="liw" && in_array($fo,a
 		storedata('6.1.78','sa',0);
 	}
 }
+/* jJAjanorjA (7.3.79) */
+if ( in_array($fo,array("janI!","jYA")) && in_array($so,$tiG) && sub(array("jan","jYA"),array("+"),$shitpratyayareplace,0) && $vsuf!=="yak")
+{
+    $text=three(array("jan","jYA"),array("+"),$shitpratyayareplace,array("jA","jA"),array("+"),$shitpratyayareplace,0);
+	storedata('7.3.79','sa',0);
+}
 /* lopo vyorvali (6.1.66) */
 if ( arr($text,'/[aA][+]iy[+]['.pc('vl').']/') && in_array($so,$tiG) ) 
 {
@@ -5527,12 +5533,6 @@ if (arr($text,'/[iufx]['.pc('hl').'][+]tu$/'))
 {
 	$text = three($ik,$hl,array("+tu"),guna($ik),$hl,array("+tu"),0);
 	storedata('7.3.86','sa',0);
-}
-/* jJAjanorjA (7.3.79) */
-if ( in_array($fo,array("janI!","jYA")) && in_array($so,$tiG) && sub(array("jan","jYA"),array("+"),$shitpratyayareplace,0) && $vsuf!=="yak")
-{
-    $text=three(array("jan","jYA"),array("+"),$shitpratyayareplace,array("jA","jA"),array("+"),$shitpratyayareplace,0);
-	storedata('7.3.79','sa',0);
 }
 /* vyaceH kuTAditvamanasIti vaktavyam (vA) */
 if ( in_array($fo,array("vyaca!")) && !sub(array("vyaca!"),array("+"),array("as"),0) && in_array($lakAra,$ArdhadhAtuka_lakAra) && $Nit===0 && $Jit===0 && !in_array("R",$it) && !in_array("Y",$it))
