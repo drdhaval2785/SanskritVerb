@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /* 
 	Code to convert text from SLP1 -> Devanagari 
 */
