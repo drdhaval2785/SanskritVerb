@@ -4470,6 +4470,12 @@ if ( in_array($lakAra,array("viDiliN")) && arr($text,'/a[+]yA[+]/'))
 		$text=one(array('+jus'),array('+us'),0);
 		storedata('1.3.9','sa',0);
 	}
+	/* AdguNaH (6.1.87) patch for sya Agama */
+	if (arr($text,'/a[+]iy[+]am$/'))
+	{
+		$text = change('/a[+]iy[+]am$/','+ey+am');
+		storedata('6.1.87','sa',0);
+	}
 }
 $bhUsuvo=0;
 /* itazca (3.4.100) */
