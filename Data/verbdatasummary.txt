@@ -21,9 +21,9 @@ $kryAdi1:71
 $curAdi1:490
 $allverbs:2208
 $allverbs1:2208
-$parasmai:1114
+$parasmai:1116
 $Atmane:512
-$ubhaya:582
+$ubhaya:580
 $svaritetverbs:104
 $anudAttetverbs:700
 $udAttetverbs:1404

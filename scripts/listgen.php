@@ -6,7 +6,7 @@
 	This script does exactly the same.
 	Also generates a log file with summary - '../Data/verbdatasummary.txt'
 */
-include 'verbdata.php';
+include '../Data/dhaatuganascrapetrial.php';
 include 'slp-dev.php';
 
 // Function to display the data in $array=array("...","...",......); format

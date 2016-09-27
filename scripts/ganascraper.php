@@ -1,8 +1,8 @@
 <?php
 /*	Script to create the $verbdata in function.php.
-	Usage - `php ganascraper.php 1 > ../Data/dhaatuganascrapertrial.txt`
+	Usage - `php ganascraper.php 1`
 */
-include('function.php');
+include('verbdata.php');
 include('dev-slp.php');
 include('slp-dev.php');
 // 1 for $verbdata, 2 for one entry in each line
@@ -143,9 +143,7 @@ list($uohyddhatuwithanubandha,$uohyddhatuwithoutanubandha,$uohydgana,$uohydlink)
 list($jnudhatu,$jnugana,$jnulink) = jnu('../Data/issue789/jnu_array.txt');
 
 
-// Open a file to store the generated data
-$fin = fopen('../Data/dhaatuganascrapertrial.txt','w+');
-fputs($fin,'"');
+$outlist = array();
 // Foreach verb in $verbdata
 for($i=0;$i<count($pureverb);$i++)
 {
@@ -209,22 +207,25 @@ for($i=0;$i<count($pureverb);$i++)
 			$jnuoutput[] = $jnulink[$k];
 		}
 	}
-
-	// Write in the file as shown below.
-	// "BU:sattAyAm:BU:01:0001:pa:sew:भू॑:1:1:1:BU1_BU_BvAxiH+sawwAyAm:1"
-	if ($mode==="1")
-	{
-		fputs($fin,$verbwithanubandha[$i].":".$meaning[$i].":".$verbwithoutanubandha[$i].":".$verbset[$i].":".$verbnumber[$i].":".$verbpada[$i].":".$verbiDAgama[$i].":".$pureverb[$i].":".implode(',',$mdv).":".implode(',',$kzr).":".implode(',',$dp).":".implode(',',$uohydoutput).":".implode(',',$jnuoutput).'","');
-	}
-	elseif ($mode==="2")
-	{
-		fputs($fin,$verbwithanubandha[$i].":".$meaning[$i].":".$verbwithoutanubandha[$i].":".$verbset[$i].":".$verbnumber[$i].":".$verbpada[$i].":".$verbiDAgama[$i].":".$pureverb[$i].":".implode(',',$mdv).":".implode(',',$kzr).":".implode(',',$dp).":".implode(',',$uohydoutput).":".implode(',',$jnuoutput)."\n");
-	}
+	$outlist[] = $verbwithanubandha[$i].":".$meaning[$i].":".$verbwithoutanubandha[$i].":".$verbset[$i].":".$verbnumber[$i].":".$verbpada[$i].":".$verbiDAgama[$i].":".$pureverb[$i].":".implode(',',$mdv).":".implode(',',$kzr).":".implode(',',$dp).":".implode(',',$uohydoutput).":".implode(',',$jnuoutput);
 	// Reset the arrays.
 	$mdv = array(); $kzr=array(); $dp=array();
 	$jnuoutput = array(); $uohydoutput = array();
 }
+// Open a file to store the generated data
+$fin = fopen('../Data/dhaatuganascrapetrial.php','w+','utf-8');
+fputs($fin,'<?php'."\n".'$verbdata=array("');
+// Write in the file as shown below.
+// "BU:sattAyAm:BU:01:0001:pa:sew:भू॑:1:1:1:BU1_BU_BvAxiH+sawwAyAm:1"
+if ($mode==="1")
+{
+	fputs($fin,implode('","',$outlist));
+}
+elseif ($mode==="2")
+{
+	fputs($fin,implode("\n",$outlist));
+}
 // Close the file.
-fputs($fin,'"');
+fputs($fin,'");'."\n".'?>');
 fclose($fin);
 ?>
