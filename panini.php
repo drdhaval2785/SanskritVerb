@@ -1159,7 +1159,7 @@ elseif ( $_GET['cond48']==="1" )
     $sanAdi="san"; $san=1; $manbadha=1;
 }
 /* gupUdhUpavicCipaNipanibhya AyaH (3.1.28) */
-elseif (in_array($so,$tiG) && arr($text,'/[pCnR]$/') && in_array($number,array("01.0461","01.0462","10.0204","01.0507","01.0508")) && (sub(array("gup","DUp","viC","pan","paR"),array(""),blank(0),0) || ($fo==="DUpa!" && sub(array("DUpa!"),array("+"),$sArvadhAtuka_pratyayas,0) && $verbset==="BvAdi") || $_GET['cond49']==="1" ) )
+elseif (in_array($so,$tiG) && arr($text,'/[pCnR]$/') && in_array($number,array("01.0461","01.0462","10.0204","01.0507","01.0508","06.0159")) && (sub(array("gup","DUp","viC","pan","paR"),array(""),blank(0),0) || ($fo==="DUpa!" && sub(array("DUpa!"),array("+"),$sArvadhAtuka_pratyayas,0) && $verbset==="BvAdi") || $_GET['cond49']==="1" ) )
 {
     $text=change('/(.+)$/','$1+Aya');
 	storedata('3.1.28','sa',0);
