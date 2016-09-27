@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /* 
 	Code to convert Devanagari to SLP1.
 	This code is borrowed and modified from Dicrunch code of Ananda Loponen. That can be accessed at http://www.ingmardeboer.nl/php/diCrunch.php?act=help.

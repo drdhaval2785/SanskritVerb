@@ -160,7 +160,9 @@ function listgenerator($debug)
 	}
 	// Ignoring the verbs which have been cautiously removed from $verbdata (mostly multi-vowel / sopasarga verbs)
 	$list1 = array_diff($list1,array("04.0070","10.0252","01.0716","02.0012","10.0368","10.0418","10.0425","10.0423","10.0271"));
-	fputs($fout,"#Copy this to wrongformfinder.sh\n#LIST1=(".implode(" ",$list1).")\n");
+	$ls1file = fopen('../Data/list1.txt','w','utf-8');
+	fputs($ls1file,"LIST1=(".implode(" ",$list1).")\n");
+	fclose($ls1file);
 	fputs($fout,"#Copy this to tiGanta.html\n#var availableTags = ['".implode("','",array_unique(array_merge($allverbs,$devanagariallverbs)))."'];\n");
 	fputs($fout,"?>");
 	fclose($fout);
