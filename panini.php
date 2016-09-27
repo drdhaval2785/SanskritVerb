@@ -7375,7 +7375,7 @@ if ( (in_array($fo,array("vfN","vfY")) || ends(array($verb_without_anubandha),ar
 	storedata('7.2.39','pa',0);
 }
 /* vRRto vA (7.2.38) */ 
-elseif ( (in_array($fo,array("vfN","vfY")) || ends(array($verb_without_anubandha),array("F",),1)) && sub(array("ar"),array("+"),blank(0),0) && in_array($lakAra,$ArdhadhAtuka_lakAra) && in_array("iw",$Agama))
+elseif ( (in_array($fo,array("vfN","vfY")) || ends(array($verb_without_anubandha),array("F",),1)) && sub(array("ar"),array("+"),blank(0),0) && in_array($lakAra,$ArdhadhAtuka_lakAra) && in_array("iw",$Agama) && $lakAra!=="liw")
 {
 	$text=two(array("ar",),array("+i"),array("ar"),array("+I"),1);
 	storedata('7.2.38','sa',0);
