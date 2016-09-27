@@ -1217,7 +1217,7 @@ if (in_array($so,$tiG) && arr($text,'/[+]Ric$/') && $sanAdi==="Ric" && $lakAra!=
 		$hohante=1; // 0 - this sUtra has not applied. 1 - this sUtra has applied.
 	}	
 	/* lIlornuglukAvanyatarsyAM snehanipAtane (7.3.39) */
-	if (in_array($fo,array("lI","lIN")) && in_array($so,$tiG) && arr($text,'/lI[+]Ric/'))
+	if (in_array($fo,array("lI","lIN")) && in_array($so,$tiG) && arr($text,'/lI[+]Ric/') && $verbset!=="curAdi")
 	{
 		$text=three(array("lI"),array("+"),array("Ric"),array("lIn"),array("+"),array("Ric"),1);
 		storedata('7.3.39','sa',0);
@@ -3681,7 +3681,7 @@ if (arr($text,'/\+Ri[c]{0,1}\+/')||$ciN===1||$ciN===2)
 		$hohante=1; // 0 - this sUtra has not applied. 1 - this sUtra has applied.
 	}	
 	/* lIlornuglukAvanyatarsyAM snehanipAtane (7.3.39) */
-	if (in_array($fo,array("lI","lIN")) && in_array($so,$tiG) && sub(array("lI"),array("+"),array("Ri"),0) )
+	if (in_array($fo,array("lI","lIN")) && in_array($so,$tiG) && sub(array("lI"),array("+"),array("Ri"),0) && $verbset!=="curAdi")
 	{
 		$text=three(array("lI"),array("+"),array("Ri"),array("lIn"),array("+"),array("Ri"),1);
 		storedata('7.3.39','sa',0);
