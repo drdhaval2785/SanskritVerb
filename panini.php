@@ -6076,7 +6076,7 @@ if ($fo==="qukfY")
 	}
 	else
 	{
-		$text = one(array("kf+u"),array("kar+u"),0);
+		$text = one(array("kf+u","kf+o+"),array("kar+u","kar+o"),0);
 		storedata('7.3.84','sa',0);		
 	}
 	/* ata ut sArvadhAtuke (6.4.110) */
