@@ -4470,18 +4470,6 @@ if ( in_array($lakAra,array("viDiliN")) && arr($text,'/a[+]yA[+]/'))
 		$text=one(array('+jus'),array('+us'),0);
 		storedata('1.3.9','sa',0);
 	}
-	/* AdguNaH (6.1.87) patch for iy */
-	if (arr($text,'/a[+]iy[+]am$/'))
-	{
-		$text = change('/a[+]iy[+]am$/','+ey+am');
-		storedata('6.1.87','sa',0);
-	}
-	/* sArvadhAtukArdhadhAtukayoH (6.1.78) patch for Rdanta verbs */
-	if (arr($text,'/f[+]ey[+]am$/'))
-	{
-		$text = change('/f[+]ey[+]am$/','ar+ey+am');
-		storedata('6.1.78','sa',0);
-	}
 }
 $bhUsuvo=0;
 /* itazca (3.4.100) */
@@ -6408,10 +6396,13 @@ if ($lakAra==="liw" && $so==="sip" && arr($text,'/[iIuUfFxXeEoO]\+/') && sub(pra
 /* Adding iDAgama actually */
 if ($id_dhAtu==="sew" && $id_pratyaya==="sew" && !($yAsuT===1 && $lakAra==="ASIrliN")  && (!in_array("iw",$Agama)||$ciN===1) && $caG!==1 && $san!==1) // for seT dhAtus
 {
+	print_r($text);
 	$text = change('/[+](['.pc('vl').'][^+]*)$/','+i$1');
 	$text = change('/[+]ii/','+i');
 	// Removing unwanted iDAgama which happenned accidentally
-	$text = one(array("+iyAs+","Ay+t","+a+i","+sa+i"),array("+yAs+","Ay+it","+a+","+sa+"),0);
+	$text = one(array("+iyAs+","Ay+t"),array("+yAs+","Ay+it"),0);
+	$text = change('/([+][s]*a[+])i(['.pc('vl').'])/','$1$2');
+	print_r($text);
 	$text = two(array("sfap","spfaS","mfaS","kfaz","tfap","dfap"),array("+i"),array("sarp","sparS","marS","karz","tarp","darp"),array("+i"),0); // not before iDAgama.
 	if ($lakAra==="luN")
 	{
