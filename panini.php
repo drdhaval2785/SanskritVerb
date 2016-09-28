@@ -4470,7 +4470,7 @@ if ( in_array($lakAra,array("viDiliN")) && arr($text,'/a[+]yA[+]/'))
 		$text=one(array('+jus'),array('+us'),0);
 		storedata('1.3.9','sa',0);
 	}
-	/* AdguNaH (6.1.87) patch for sya Agama */
+	/* AdguNaH (6.1.87) patch for iy */
 	if (arr($text,'/a[+]iy[+]am$/'))
 	{
 		$text = change('/a[+]iy[+]am$/','+ey+am');
