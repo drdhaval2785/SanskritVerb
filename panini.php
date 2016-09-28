@@ -5676,7 +5676,7 @@ if (arr($text,'/sic/') && $sic!==0 && sub(array("+sic+",),blank(0),blank(0),0) &
 	storedata('1.3.9','sa',0);
 }
 /* liGsicorAtmanepadeSu (7.2.42) */
-if ( in_array($so,$taG) && ($sic===1||$sIyuT===1) && (in_array($fo,array("vfN","vfY")) || ends(array($verb_without_anubandha),array("F"),1)) && $ardhadhatuka===1 && !in_array($number,array("10.0837","10.0231","10.0345")))
+if ( in_array($so,$taG) && ($sic===1||$sIyuT===1) && (in_array($fo,array("vfN","vfY")) || ends(array($verb_without_anubandha),array("F"),1)) && $ardhadhatuka===1 && $verbset!=="curAdi" && $sanAdi!=="Ric")
 {
     $text=one(array("+s"),array("+is"),1);
 	storedata('7.2.42','sa',0);
