@@ -4476,6 +4476,12 @@ if ( in_array($lakAra,array("viDiliN")) && arr($text,'/a[+]yA[+]/'))
 		$text = change('/a[+]iy[+]am$/','+ey+am');
 		storedata('6.1.87','sa',0);
 	}
+	/* sArvadhAtukArdhadhAtukayoH (6.1.78) patch for Rdanta verbs */
+	if (arr($text,'/f[+]ey[+]am$/'))
+	{
+		$text = change('/f[+]ey[+]am$/','ar+ey+am');
+		storedata('6.1.78','sa',0);
+	}
 }
 $bhUsuvo=0;
 /* itazca (3.4.100) */
