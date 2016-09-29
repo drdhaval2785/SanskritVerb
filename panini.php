@@ -6396,13 +6396,11 @@ if ($lakAra==="liw" && $so==="sip" && arr($text,'/[iIuUfFxXeEoO]\+/') && sub(pra
 /* Adding iDAgama actually */
 if ($id_dhAtu==="sew" && $id_pratyaya==="sew" && !($yAsuT===1 && $lakAra==="ASIrliN")  && (!in_array("iw",$Agama)||$ciN===1) && $caG!==1 && $san!==1) // for seT dhAtus
 {
-	print_r($text);
 	$text = change('/[+](['.pc('vl').'][^+]*)$/','+i$1');
 	$text = change('/[+]ii/','+i');
 	// Removing unwanted iDAgama which happenned accidentally
 	$text = one(array("+iyAs+","Ay+t"),array("+yAs+","Ay+it"),0);
 	$text = change('/([+][s]*a[+])i(['.pc('vl').'])/','$1$2');
-	print_r($text);
 	$text = two(array("sfap","spfaS","mfaS","kfaz","tfap","dfap"),array("+i"),array("sarp","sparS","marS","karz","tarp","darp"),array("+i"),0); // not before iDAgama.
 	if ($lakAra==="luN")
 	{
