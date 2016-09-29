@@ -4470,12 +4470,6 @@ if ( in_array($lakAra,array("viDiliN")) && arr($text,'/a[+]yA[+]/'))
 		$text=one(array('+jus'),array('+us'),0);
 		storedata('1.3.9','sa',0);
 	}
-	/* AdguNaH (6.1.87) patch for sya Agama */
-	if (arr($text,'/a[+]iy[+]am$/'))
-	{
-		$text = change('/a[+]iy[+]am$/','+ey+am');
-		storedata('6.1.87','sa',0);
-	}
 }
 $bhUsuvo=0;
 /* itazca (3.4.100) */
@@ -5682,7 +5676,7 @@ if (arr($text,'/sic/') && $sic!==0 && sub(array("+sic+",),blank(0),blank(0),0) &
 	storedata('1.3.9','sa',0);
 }
 /* liGsicorAtmanepadeSu (7.2.42) */
-if ( in_array($so,$taG) && ($sic===1||$sIyuT===1) && (in_array($fo,array("vfN","vfY")) || ends(array($verb_without_anubandha),array("F"),1)) && $ardhadhatuka===1 && !in_array($number,array("10.0837","10.0231","10.0345")))
+if ( in_array($so,$taG) && ($sic===1||$sIyuT===1) && (in_array($fo,array("vfN","vfY")) || ends(array($verb_without_anubandha),array("F"),1)) && $ardhadhatuka===1 && $verbset!=="curAdi" && $sanAdi!=="Ric")
 {
     $text=one(array("+s"),array("+is"),1);
 	storedata('7.2.42','sa',0);
@@ -6405,7 +6399,8 @@ if ($id_dhAtu==="sew" && $id_pratyaya==="sew" && !($yAsuT===1 && $lakAra==="ASIr
 	$text = change('/[+](['.pc('vl').'][^+]*)$/','+i$1');
 	$text = change('/[+]ii/','+i');
 	// Removing unwanted iDAgama which happenned accidentally
-	$text = one(array("+iyAs+","Ay+t","+a+i","+sa+i"),array("+yAs+","Ay+it","+a+","+sa+"),0);
+	$text = one(array("+iyAs+","Ay+t"),array("+yAs+","Ay+it"),0);
+	$text = change('/([+][s]*a[+])i(['.pc('vl').'])/','$1$2');
 	$text = two(array("sfap","spfaS","mfaS","kfaz","tfap","dfap"),array("+i"),array("sarp","sparS","marS","karz","tarp","darp"),array("+i"),0); // not before iDAgama.
 	if ($lakAra==="luN")
 	{
@@ -6627,7 +6622,7 @@ elseif ( arr($text,'/j\+/') && pr2(array("mfj","marj"),array("+","+i"),$ArdhadhA
 	storedata('7.2.114','sa',0);
 }
 /* gamahanajanakhanaghasAM lopaH kGiti (6.4.98) */
-if (in_array($fo,array("gamx!","hana!","jana!","Gasa!","Kanu!","janI!","ada!")) && ends($itpratyaya,array("k","N"),2) && sub(array("gam","Gan","jan","Gas","Kan","han"),array("+"),$ac,0) && in_array($so,$tiG) && $aG!==1 && !in_array($lakAra,array("viDiliN")) && $lakAra!=="law")
+if (in_array($fo,array("gamx!","hana!","jana!","Gasa!","Kanu!","janI!","ada!")) && ends($itpratyaya,array("k","N"),2) && sub(array("gam","Gan","jan","Gas","Kan","han"),array("+"),$ac,0) && in_array($so,$tiG) && $aG!==1 && !in_array($lakAra,array("viDiliN")) && !($lakAra==="law"&&$fo==="jana!"))
 {
     $text=three(array("gam","Gan","jan","Gas","Kan","han"),array("+"),$ac,array("gm","Gn","jn","Gs","Kn","hn"),array("+"),$ac,0);
 	storedata('6.4.98','sa',0);
