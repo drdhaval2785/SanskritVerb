@@ -6622,7 +6622,7 @@ elseif ( arr($text,'/j\+/') && pr2(array("mfj","marj"),array("+","+i"),$ArdhadhA
 	storedata('7.2.114','sa',0);
 }
 /* gamahanajanakhanaghasAM lopaH kGiti (6.4.98) */
-if (in_array($fo,array("gamx!","hana!","jana!","Gasa!","Kanu!","janI!","ada!")) && ends($itpratyaya,array("k","N"),2) && sub(array("gam","Gan","jan","Gas","Kan","han"),array("+"),$ac,0) && in_array($so,$tiG) && $aG!==1 && !in_array($lakAra,array("viDiliN")) && $lakAra!=="law")
+if (in_array($fo,array("gamx!","hana!","jana!","Gasa!","Kanu!","janI!","ada!")) && ends($itpratyaya,array("k","N"),2) && sub(array("gam","Gan","jan","Gas","Kan","han"),array("+"),$ac,0) && in_array($so,$tiG) && $aG!==1 && !in_array($lakAra,array("viDiliN")) && !($lakAra==="law"&&$fo==="jana!"))
 {
     $text=three(array("gam","Gan","jan","Gas","Kan","han"),array("+"),$ac,array("gm","Gn","jn","Gs","Kn","hn"),array("+"),$ac,0);
 	storedata('6.4.98','sa',0);
