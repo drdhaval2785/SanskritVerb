@@ -13806,7 +13806,7 @@ if (arr($text,'/AcAryAnI/'))
 	storedata('4.1.49-6','sa',0);
 }
 /* kSubhnAdiSu ca (8.4.39) */
-elseif (in_array($number,array("09.0055","05.0351")) && arr($text,'/[Bp][+]*n/') )
+elseif (in_array($number,array("09.0055","05.0028")) && arr($text,'/[Bp][+]*n/') )
 {
 	storedata('8.4.39','sa',0);
 }
