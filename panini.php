@@ -3586,7 +3586,7 @@ elseif ($lakAra==="liw" && in_array($fo,array("daya!","aya!","Asa!")) )
 	$kaspratyaya=1;
 }
 /* uSavidajAgRbhyo'nyatarasyAm (3.1.38) */
-elseif ($lakAra==="liw" && in_array($fo,array("uza!","vida!","jAgf")) && $number!=="10.0059" )
+elseif ($lakAra==="liw" && in_array($fo,array("uza!","vida!","jAgf")) && $number!=="10.0232" )
 {
 	// Pending to make this optional. See https://github.com/drdhaval2785/SanskritVerb/issues/384
 	$text=three(array("uz","vid","jAgf"),array("+"),$tiG,array("uz","vid","jAgf"),array("+Am+"),$tiG,0);
@@ -3680,6 +3680,12 @@ if (arr($text,'/\+Ri[c]{0,1}\+/')||$ciN===1||$ciN===2)
 		storedata('7.3.54','sa',0);
 		$hohante=1; // 0 - this sUtra has not applied. 1 - this sUtra has applied.
 	}	
+	/* mRjervRddhiH (7.2.114) */
+	if (  in_array($so,$tiG)&& $fo==="mfjU!" && arr($text,'/mfj[+]Ri/') )
+	{
+		$text=two(array("mfj"),array("+Ri"),array("mArj"),array("+Ri"),0);
+		storedata('7.2.114','sa',0);
+	}
 	/* lIlornuglukAvanyatarsyAM snehanipAtane (7.3.39) */
 	if (in_array($fo,array("lI","lIN")) && in_array($so,$tiG) && sub(array("lI"),array("+"),array("Ri"),0) && $verbset!=="curAdi")
 	{
@@ -13806,7 +13812,7 @@ if (arr($text,'/AcAryAnI/'))
 	storedata('4.1.49-6','sa',0);
 }
 /* kSubhnAdiSu ca (8.4.39) */
-elseif (in_array($number,array("09.0055","05.0351")) && arr($text,'/[Bp][+]*n/') )
+elseif (in_array($number,array("09.0055","05.0028")) && arr($text,'/[Bp][+]*n/') )
 {
 	storedata('8.4.39','sa',0);
 }
@@ -14324,6 +14330,11 @@ elseif (in_array($vAcya,array("bhAva","karmakartR")) )
 {
 	break;
 }
+for($i=0;$i<count($storedata);$i++)
+{
+	$derivation[$i] = array('rule' => $storedata[$i][1], 'intermediateform' => $storedata[$i][0]);
+}
+$dataformorpheus[] = array('finalform' => $text, 'verb' => $first, 'suffix' => $so, 'verbnumber' => $number, 'verbpada' => $verbpada, 'lakAra' => $lakAra, 'derivationsteps' => $derivation);
 /* setting the $pada back to pratyaya for next use */
 $pada="pratyaya";
 $id_dhAtu=$id_original;
@@ -14332,6 +14343,7 @@ $it = array();
 $itprakriti = array();
 $itpratyaya = array();
 $Agama=array();
+$derivation = array();
 $sanAdi="";
 $sanAdi=$_GET['sanAdi'];
 $TAp=0; $DAp=0; $cAp=0; $GIp=0; $GIn=0; $GIS=0; $kGiti=0; $abhyasta=0; $ajAdyataSTAp=0; $tusma=0; $upasarga_joined=0; $sicivRddhi=0; $atolopa=0; $caG=0; $aG=0; $zluvat=0; $aniditAm=0; $kGiti=0; $uzca=0; $abhyAsa=0; $Adezapratyaya=0; $jherjus=0; $sijabhyastavidibhyazca=0; $ciN=0; $Nit=0;
@@ -14364,7 +14376,6 @@ if ($frontend!=="0")
 		print_from_storedata();
 		if($debug===1) {dibug('PRINT_FROM_STOREDATA END');}*/
 		echo "<hr>\n";
-
 	}
 }
 /* Post Generation processes e.g. CLI application, testing etc. */
@@ -14412,6 +14423,10 @@ if ((isset($argv[0])|| $test ===1) )
 		fputs($difflog,$printstatement);
 		fclose($difflog);
 	}
+	$jsonfile = fopen('json/trial.json','a','utf-8');
+	#fputs($jsonfile,json_encode($dataformorpheus,JSON_PRETTY_PRINT).",\n");
+	fputs($jsonfile,json_encode($dataformorpheus).",\n");
+	fclose($jsonfile);
 }
 elseif ($type==="tiGanta")
 {
