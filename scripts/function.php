@@ -3392,7 +3392,7 @@ function yaG_abhyAsa_special()
 }
 function san()
 {
-	global $text, $atolopa; global $storedata, $us, $sanAdi;
+	global $text, $atolopa; global $storedata, $us, $sanAdi, $fo;
 	foreach ($text as $value)
 	{
 		$parts=explode('+',$value);
@@ -3483,7 +3483,7 @@ function san()
 		storedata('7.4.94','sa',0);
 	}
 	/* AdezapratyayayoH (8.3.59) */
-	if (arr($text,'/^[^+]*[iIuUfFxXeEoOhyvrlkKgGN][+]s/'))
+	if (arr($text,'/^[^+]*[iIuUfFxXeEoOhyvrlkKgGN][+]s/') && preg_match('/^z/',$fo))
 	{
 		$text = change('/^([^+]*[iIuUfFxXeEoOhyvrlkKgGN][+])s/','$1z');
 		storedata('8.3.59','sa',0);
