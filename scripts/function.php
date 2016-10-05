@@ -3482,6 +3482,14 @@ function san()
 	{
 		storedata('7.4.94','sa',0);
 	}
+	/* AdezapratyayayoH (8.3.59) */
+	if (arr($text,'/^[^+]*[iIuUfFxXeEoOhyvrlkKgGN][+]s/'))
+	{
+		$text = change('/^([^+]*[iIuUfFxXeEoOhyvrlkKgGN][+])s/','$1z');
+		storedata('8.3.59','sa',0);
+		$Adezapratyaya=1;		
+	}
+
 }
 
 function firstmember($a,$b)
