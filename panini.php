@@ -14332,9 +14332,12 @@ elseif (in_array($vAcya,array("bhAva","karmakartR")) )
 }
 for($i=0;$i<count($storedata);$i++)
 {
-	$derivation[$i] = array('rule' => $storedata[$i][1], 'intermediateform' => $storedata[$i][0]);
+	#$derivation[$i] = array('rule' => $storedata[$i][1], 'intermediateform' => $storedata[$i][0]);
+	$derivation[$i] = array('r' => $storedata[$i][1], 'i' => $storedata[$i][0]);
 }
-$dataformorpheus[] = array('finalform' => $text, 'verb' => $first, 'suffix' => $so, 'verbnumber' => $number, 'verbpada' => $verbpada, 'lakAra' => $lakAra, 'derivationsteps' => $derivation);
+# index keys are shortened to reduce the size of json.
+#$dataformorpheus[] = array('finalform' => $text, 'verb' => $first, 'suffix' => $so, 'verbnumber' => $number, 'verbpada' => $verbpada, 'lakAra' => $lakAra, 'derivationsteps' => $derivation);
+$dataformorpheus[] = array('f' => $text, 'v' => $first, 's' => $so, 'n' => $number, 'p' => $verbpada, 'l' => $lakAra, 'd' => $derivation);
 /* setting the $pada back to pratyaya for next use */
 $pada="pratyaya";
 $id_dhAtu=$id_original;
