@@ -300,6 +300,12 @@ if ($type==='tiGanta')
 		$verbpada=verb_pada('1.3.13'); // See function.php for details of function.
 		$vsuf = "yak"; // vAcya suffix
 	}
+	/* gupUdhUpavicCipaNipanibhya AyaH (3.1.28) */
+	// kAzikA - पणायति। पनायति। स्तुत्यर्थेन पनिना साहचर्यात् तदर्थः पणिः प्रत्ययम् उत्पादयति न व्यवहारार्थः। शतस्य पणते। सहस्रसय पणते। अनुबन्धश्च केवले चरितार्थः, तेन आयप्रत्ययान्तान्नात्मनेपदं भवति।
+	elseif (in_array($number,array("01.0461","01.0462","10.0204","01.0507","01.0508","06.0159")) )
+	{
+		$verbpada=verb_pada('Aya');
+	}
 	/* anudAttaGitaH Atmanepadam (1.3.12) */
 	elseif ( $pada==="pratyaya" && $lakAra!=="" && $sanAdi==="yaN")
 	{
