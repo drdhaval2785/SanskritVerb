@@ -52,7 +52,11 @@ def createrecheck(suspectfile,recheckfile):
 	fout.write('number=1\n')
 	fout.write('rm -f "suspectverbforms.txt"\nrm -f "generatedforms.xml"\nrm -f "suspectverbforms_deva.txt"\n')
 	fout.write("echo \'<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\' > generatedforms.xml\necho \'<forms>\' >> generatedforms.xml\n")
-	# Start a counter
+	fout.write("echo '<!DOCTYPE forms SYSTEM \"verbforms.dtd\">' > generatedforms.xml\n")
+	fout.write("echo '<forms>' >> generatedforms.xml\n")
+	fout.write("echo '[' > json/trial.json\n")
+
+# Start a counter
 	counter = 1
 	# For each entry
 	for datum in data:
@@ -78,7 +82,8 @@ def createrecheck(suspectfile,recheckfile):
 	print "Total", len(output), "entries in recheck.sh.\nKindly run this script after corrections."
 	# Write closing shell lines (c.f. wrongformfinder.sh)
 	fout.write("echo \'</forms>\' >> generatedforms.xml\n")
-	fout.write('cd scripts\n')
+	fout.write("echo ']' >> json/trial.json\n")
+	fout.write("cd scripts\n")
 	fout.write('python comparedb.py ../generatedforms.xml ../suspectverbforms.txt\n')
 	fout.close()
 
