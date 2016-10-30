@@ -2196,12 +2196,18 @@ if ($vsuf==="yak")
 		storedata('6.4.24','sa',0);
 		$aniditAm = 1;
 	}
-	print_r($text);
 	/* ghumAsthAgApAjahAtisAM hali (6.4.66) */
 	if ( in_array($fo,array("do","deN","qudAY","dAR","Dew","quDAY","mA","zWA","iN","pA","hA","sA","gAN","mAN","meN","gA","iN","ik","gE","o!hAk","zo")) && arr($text,'/A[+]ya$/') && !in_array($number,array("02.0051","03.0008")) )
 	{
 		$text=change('/A[+]ya$/','I+ya');
 		storedata('6.4.66','sa',0);
+	}
+	print_r($text);
+	/* Adeca upadeze'ziti (6.1.45) */ 
+	if ( arr($text,'/[eoEO][+]ya$/') )
+	{
+		$text=change('/[eoEO][+]ya$/','A+ya');
+		storedata('6.1.45','sa',0);
 	}
 	/* yasya halaH (6.4.49) */
 	if (arr($text,'/(['.pc('hl').'])ya[+]ya$/'))
