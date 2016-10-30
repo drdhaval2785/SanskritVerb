@@ -2209,8 +2209,14 @@ if ($vsuf==="yak")
 		$text=change('/[eoEO][+]ya$/','A+ya');
 		storedata('6.1.45','sa',0);
 	}
+	/* ayaG yi kGiti (7.4.22) */
+	elseif (arr($text,'/^SI[+]ya$/'))
+	{
+		$text=change('/SI[+]ya$/','Say+ya');
+		storedata('7.4.22','sa',0);
+	}
 	/* akRtsArvadhAtukayordIrghaH (7.4.25) */
-	if ( arr($text,'/[iIuU][+]ya$/')  )
+	elseif ( arr($text,'/[iIuU][+]ya$/')  )
 	{
 		$text=change('/[iI][+]ya$/','I+ya');
 		$text=change('/[uU][+]ya$/','U+ya');
