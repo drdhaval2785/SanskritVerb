@@ -2202,7 +2202,6 @@ if ($vsuf==="yak")
 		$text=change('/A[+]ya$/','I+ya');
 		storedata('6.4.66','sa',0);
 	}
-	print_r($text);
 	/* Adeca upadeze'ziti (6.1.45) */ 
 	if ( arr($text,'/[eoEO][+]ya$/') )
 	{
@@ -2210,18 +2209,18 @@ if ($vsuf==="yak")
 		storedata('6.1.45','sa',0);
 	}
 	/* ayaG yi kGiti (7.4.22) */
-	elseif (arr($text,'/^SI[+]ya$/'))
+	/*elseif (arr($text,'/^SI[+]ya$/'))
 	{
 		$text=change('/SI[+]ya$/','Say+ya');
 		storedata('7.4.22','sa',0);
-	}
+	}*/
 	/* akRtsArvadhAtukayordIrghaH (7.4.25) */
-	elseif ( arr($text,'/[iIuU][+]ya$/')  )
+	/*elseif ( arr($text,'/[iIuU][+]ya$/')  )
 	{
 		$text=change('/[iI][+]ya$/','I+ya');
 		$text=change('/[uU][+]ya$/','U+ya');
 		storedata('7.4.25','sa',0);
-	}
+	}*/
 	/* yasya halaH (6.4.49) */
 	if (arr($text,'/(['.pc('hl').'])ya[+]ya$/'))
 	{
@@ -2234,9 +2233,21 @@ if ($vsuf==="yak")
 		$text=change('/a[+]ya$/','+ya');
 		storedata('6.4.48','sa',0);
 	}
-	$text = change('/[+]/','');
-	$verb_without_anubandha = $text[0];
-	$fo = $text[0];
+    /* asterbhUH (2.4.52) */ 
+    if (in_array($fo,array("asa!")) && $verbset==="adAdi" )
+    {
+        $text=one(array("as+"),array("BU+"),0);
+		storedata('2.4.52','sa',0);
+    }
+    /* bruvo vaciH (2.4.53) */ 
+    if (in_array($fo,array("brUY")))
+    {
+        $text=one(array("brU+"),array("vac+"),0);
+		storedata('2.4.53','sa',0);
+    }
+	$text1 = change('/[+]/','');
+	$verb_without_anubandha = $text1[0];
+	$fo = $text1[0];
 }
 /* sanAdyantA dhAtavaH (3.1.32) */
 if (in_array($so,$tiG) && $pada==="pratyaya" && $lakAra!=="" && $sanAdi!=="")
@@ -3986,7 +3997,6 @@ if (arr($text,'/\+Ri[c]{0,1}\+/')||$ciN===1||$ciN===2)
 		$text = one(array("mArje+i+"),array("mArjayi+"),0);
 		storedata('6.1.78','sa',0);
 		$id_dhAtu="aniw";
-		print_r($text);
 	}
 	/* sArvadhAtukArdhadhAtukayoH (7.3.84) */
 	if(arr($text,'/['.pc('hl').']([+]*)i\+/') && !(in_array($lakAra,array("ASIrliN"))&&in_array($so,$tis)) && $caG!==1 && $aG!==1 && $id_dhAtu!=="aniw" && !(in_array($so,$taG)&&$verbset==="curAdi"&&$lakAra!=="liw"))
