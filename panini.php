@@ -2203,7 +2203,7 @@ if ($vsuf==="yak")
 		storedata('6.4.66','sa',0);
 	}
 	/* Adeca upadeze'ziti (6.1.45) */ 
-	if ( arr($text,'/[eoEO][+]ya$/') )
+	if ( arr($text,'/[eoEO][+]ya$/') && !in_array($fo,array("veY","vyeY"))) # These two have specific rules applicable to them.
 	{
 		$text=change('/[eoEO][+]ya$/','A+ya');
 		storedata('6.1.45','sa',0);
@@ -2247,7 +2247,7 @@ if ($vsuf==="yak")
     }
 	$text1 = change('/[+]/','');
 	$verb_without_anubandha = $text1[0];
-	$fo = $text1[0];
+	//$fo = $text1[0];
 }
 /* sanAdyantA dhAtavaH (3.1.32) */
 if (in_array($so,$tiG) && $pada==="pratyaya" && $lakAra!=="" && $sanAdi!=="")
@@ -4997,7 +4997,7 @@ elseif ( in_array("k",$itpratyaya) && (in_array($fo,array("brUY","Yizvapa!","vac
     $text=two(array("vac","svap","yaj","vap","vah","ve","vye","hve","vad","Sv","vas","Svi"),array("+"),array("uac","suap","iaj","uap","uah","ue","vie","hie","uad","Su","us","Su"),array("+"),0);
 	storedata('6.1.15','sa',0);
 	$text = samprasarana(array("uac","iaj","uap","ue","uad"),0);
-    if (!in_array($lakAra,array("liw","ASIrliN")))
+    if (!in_array($lakAra,array("liw","ASIrliN")) && sub(array("suap","vie","hie","Su"),blank(0),blank(0),0))
 	{
 		$text = samprasarana(array("suap","vie","hie","Su"),0);
 		$text=change('/^([^+]*)u/','$1U');

@@ -1541,10 +1541,10 @@ function samprasarana($input,$merge)
 	storedata('1.1.45','sa',0);
 	if (arr($text,'/[iufx][aAiIuUfFxXeEoO]/'))
 	{
-		$text = two(array("i","u","f","x"),$ac,array("i","u","f","x"),blank(count($ac)),2);
+		$text = change('/([iufx])([aAiIuUfFxXeEoO])/','$1');
 		storedata('6.1.108','sa',0);
 	}
-	if ( (arr($text,'/^i[+]i/')||arr($text,'/^u[+]u/')) && sub(array("u+uc","i+ij","u+up","u+ud","u+uh","u+uS","u+us"),blank(0),blank(0),0))
+	if ( (arr($text,'/^i[+]ij/')||arr($text,'/^u[+]u[cpdhSs]/')) )
 	{
 		$text = one(array("u+uc","i+ij","u+up","u+ud","u+uh","u+uS","u+us"),array("Uc","Ij","Up","Ud","Uh","US","Us"),0);
 		storedata('6.1.101','sa',0);
