@@ -2203,7 +2203,7 @@ if ($vsuf==="yak")
 		storedata('6.4.66','sa',0);
 	}
 	/* Adeca upadeze'ziti (6.1.45) */ 
-	if ( arr($text,'/[eoEO][+]ya$/') && !in_array($fo,array("veY","vyeY"))) # These two have specific rules applicable to them.
+	if ( arr($text,'/[eoEO][+]ya$/') && !in_array($fo,array("veY","vyeY","hveY"))) # These two have specific rules applicable to them.
 	{
 		$text=change('/[eoEO][+]ya$/','A+ya');
 		storedata('6.1.45','sa',0);
