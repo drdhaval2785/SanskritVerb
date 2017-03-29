@@ -2,7 +2,7 @@
 date_default_timezone_set('Asia/Kolkata');
 $start_time = microtime(true); // To track time spent in execution of script.
 $debug = 0; // 0 - no debugging. 1 - debugging on. It shows execution of some important time consuming scripts.
-$debugmode = 0; // 0 - No debugging, 1 - full debugging with function timestamp (for speed analysis and memory leaakage finding), 2 - Only $text display (no function start and ends).
+$debugmode = 0; // 0 - No debugging, 1 - full debugging with function timestamp (for speed analysis and memory leakage finding), 2 - Only $text display (no function start and ends).
  /* This code is developed by Dr. Dhaval Patel (drdhaval2785@gmail.com) of www.sanskritworld.in and Dr. Sivakumari Katuri.
   * Layout assistance by Mr Marcis Gasuns.
   * Available under GNU licence.
@@ -2992,12 +2992,16 @@ if ($lakAra==="luN")
 	/* zala igupadhAdaniTaH ksaH (3.1.45) */
 	elseif (in_array($fo,array("kruSa!","diSa!","riSa!","ruSa!","liSa!","tviza!","dviza!","miha!","ruha!","liha!","duha!","vizu!")) )
 	{
-		$text = one(array("+cli+"),array("+sa+"),0);
+		$text = one(array("+cli+"),array("+ksa+"),0);
 		storedata('3.1.45','sa',0);
 		$ksa=1;
 		$luGset=7;
 		$it = array_merge($it,array("k"));
 		$itpratyaya = array_merge($itpratyaya,array("k"));
+		$text = one(array("+cli+"),array("+ksa+"),0);
+		storedata('1.3.8','pa',0);
+		$text = one(array("+ksa+"),array("+sa+"),0);
+		storedata('1.3.9','sa',0);
 	}
 	/* puSAdidyutAdilRditaH parasmaipadeSu (3.1.55) */
 	elseif ( ( (in_array($fo,$divAdi_puSAdi)&&$verbset==="divAdi")||(in_array($fo,$bhvAdi_dyutAdi)&&$verbset==="BvAdi")||in_array($fo,$lRdit)) && in_array($so,$tis) )
@@ -3917,12 +3921,15 @@ if (arr($text,'/\+Ri[c]{0,1}\+/')||$ciN===1||$ciN===2)
 		$text = one(array("+Ric+","+Ri+"),array("+","+"),0);
 		storedata('6.4.51','sa',0);
 	}
-	storedata('1.3.3','pa',0);
-	storedata('1.3.7','pa',0);
-	$text=one(array('+Ric+Sap','+Ric+caN+','+Ri+caN+',),array('+i+a','+i+a+','+i+a+'),0);
-	$text = one(array("+Ric+","+Ri+"),array("+i+","+i+"),0);
-	$text = one(array("+caN+"),array("+a+"),0);
-	storedata('1.3.9','sa',0);
+	if (arr($text,'/[+]Ri/'))
+	{
+		storedata('1.3.3','pa',0);
+		storedata('1.3.7','pa',0);
+		$text=one(array('+Ric+Sap','+Ric+caN+','+Ri+caN+',),array('+i+a','+i+a+','+i+a+'),0);
+		$text = one(array("+Ric+","+Ri+"),array("+i+","+i+"),0);
+		$text = one(array("+caN+"),array("+a+"),0);
+		storedata('1.3.9','sa',0);
+	}
 	if (arr($text,'/[eoEO][+]i[+]/'))
 	{
 		$text = two(array("e","o","E","O"),array("+i+"),array("ay","av","Ay","Av"),array("i+"),0);
@@ -3980,7 +3987,7 @@ if (arr($text,'/\+Ri[c]{0,1}\+/')||$ciN===1||$ciN===2)
 		storedata('6.1.49','sa',0);
 	}
 	/* NeraniTi (6.4.51) */
-	if (arr($text,'/^['.pc('hl').']/') && $vsuf==="yak")
+	if (arr($text,'/^['.pc('hl').']/') && $vsuf==="yak" && arr($text,'/[+]ya[+]/'))
 	{
 		$text = one(array("i+ya+","+i+"),array("+ya+","+"),0);
 		storedata('6.4.51','sa',0);
