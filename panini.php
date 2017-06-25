@@ -7940,6 +7940,7 @@ if(($sIyuT===1 || $sic!==0) && arr($text,'/[+]s[Ii]s['.pc('al').']/'))
 {
     $text=one(array("+"),array(""),0);
 }*/
+$text = change('/[+]$/','');
 /* tipyanasteH (8.2.73) */
 if ( arr($text,'/[s]$/') && $so==='tip' && $lakAra==="laN")
 {
