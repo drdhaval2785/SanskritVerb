@@ -5344,7 +5344,7 @@ elseif ( in_array($fo,$ghaTAdi_mit) && ($verbset === "BvAdi" || $verbset === "no
 	storedata('6.4.92','sa',0);
 } 
 /* cuTU (1.3.7) */
-if (arr($text,'/[+][cjYwWqQR]/') && in_array($so,$tiG))
+if (in_array($so,$tiG) && sub(array("+"),array("wA","jas","jus","Ri","Ra"),array(""),0))
 {
     it('/([+][cjYwWqQR])/');
 	storedata('1.3.7','sa',0);
@@ -11591,7 +11591,7 @@ if ((substr($first,0,2) === "Yi" || substr($first,0,2) === "wu" || substr($first
 	storedata('1.3.9','sa',0);
 }
 /* cuTU (1.3.7) */
-if (arr($text,'/[+][cjYwWqQR]/') && $wa1 === 0 && ($sarva2 ===0 || $purva=1))
+if ($type==="subanta" && arr($text,'/[+][cjYwWqQR]/') && $wa1 === 0 && ($sarva2 ===0 || $purva=1))
 {
     it('/([+][cjYwWqQR])/');
 	storedata('1.3.7','pa',0);
