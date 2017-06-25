@@ -14423,29 +14423,6 @@ $text=array();
 if ($debug===1) {dibug('11740');dibug('------------------------');}
 }
 
-/* Displaying the sUtras and sequential changes of $frontend is not set to 0. */
-if ($frontend!=="0")
-{
-	$shortdata = shortendisplaydata($storestore);
-	foreach($storestore as $storedata)
-	{
-		if($debug===1) {dibug('DISPLAY_FROM_STOREDATA START');}
-		$firstentry = $storedata[0];
-		$inword = $firstentry[5];
-		$suf = $firstentry[6];
-		/* displaying the data back to the user */
-		suffix_display($inword,$suf);	
-		if ($debugmode<2)
-		{
-			display_from_storedata();
-		}
-		if($debug===1) {dibug('DISPLAY_FROM_STOREDATA END');}
-		/*if($debug===1) {dibug('PRINT_FROM_STOREDATA START');}
-		print_from_storedata();
-		if($debug===1) {dibug('PRINT_FROM_STOREDATA END');}*/
-		echo "<hr>\n";
-	}
-}
 /* Post Generation processes e.g. CLI application, testing etc. */
 if ((isset($argv[0])|| $test ===1) )
 { 
@@ -14550,6 +14527,30 @@ elseif ($type==="subanta")
 	echo "</body></html>";
 	//fputs($outfile,"</body></html>");
 	//fclose($outfile);
+}
+
+/* Displaying the sUtras and sequential changes of $frontend is not set to 0. */
+if ($frontend!=="0")
+{
+	$shortdata = shortendisplaydata($storestore);
+	foreach($storestore as $storedata)
+	{
+		if($debug===1) {dibug('DISPLAY_FROM_STOREDATA START');}
+		$firstentry = $storedata[0];
+		$inword = $firstentry[5];
+		$suf = $firstentry[6];
+		/* displaying the data back to the user */
+		suffix_display($inword,$suf);	
+		if ($debugmode<2)
+		{
+			display_from_storedata();
+		}
+		if($debug===1) {dibug('DISPLAY_FROM_STOREDATA END');}
+		/*if($debug===1) {dibug('PRINT_FROM_STOREDATA START');}
+		print_from_storedata();
+		if($debug===1) {dibug('PRINT_FROM_STOREDATA END');}*/
+		echo "<hr>\n";
+	}
 }
 
 /* Logging the end of execution in logfile */
