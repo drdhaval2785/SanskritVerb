@@ -503,6 +503,12 @@ if ($type==='tiGanta')
 	{
 		$verbpada=verb_pada('1.3.56');
 	}
+    /* vA liTi (2.4.55) */ 
+	// See https://github.com/drdhaval2785/SanskritVerb/issues/1046.
+    elseif (in_array($first,array("cakzi!N")) && $lakAra==="liw")
+    {
+		$verbpada = 'u';
+    }
 	/* nAnorjJaH (1.3.58) */
 	elseif ( $first==="jYA" && $us==="anu" && $sanAdi==="san")
 	{
@@ -2381,10 +2387,11 @@ if (in_array($lakAra,$ArdhadhAtuka_lakAra) || in_array($sanAdi,array("yaN","san"
 		$it = array_merge($it,array("x"));
     }
     /* vA liTi (2.4.55) */ 
-    if (in_array($fo,array("cakzi!N")) && $lakAra==="liw")
+    if (in_array($fo,array("cakzi!N")) && $lakAra==="liw" && in_array($so,$taG))
     {
         $text=one(array("cakz+"),array("KyA+"),1);
 		storedata('2.4.55','sa',0);
+		$verbpada = 'u';
     }
     /* cakSiGaH khyAG (2.4.54) */ 
     elseif (in_array($fo,array("cakzi!N")))
