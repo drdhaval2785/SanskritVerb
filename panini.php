@@ -4758,10 +4758,11 @@ if ( in_array($so,$tiG) && $ksa===1 && sub(array("+sa+"),$ac,blank(0),0) )
 	storedata('7.3.72','sa',0);
 }
 /* lugvA duhadihalihaguhAmAtmanepade dantye (7.3.73) */
-if ( $ksa===1 && $luGset===7 && in_array($so,$taG)  && in_array($fo,array("duha!","diha!","liha!","guhU!")) && sub(array("duh","dih","lih","guh",),array("+sa+"),array("t","T","d","D","n","v",),0) )
+if ( $ksa===1 && in_array($so,$taG)  && in_array($fo,array("duha!","diha!","liha!","guhU!")) && sub(array("duh","dih","lih","guh",),array("+sa+"),array("t","T","d","D","n","v",),0) )
 {
     $text = three(array("duh","dih","lih","guh",),array("+sa+"),array("t","T","d","D","n","v",),array("duh","dih","lih","guh",),array("+"),array("t","T","d","D","n","v",),1);
 	storedata('7.3.73','sa',0);
+	$lugvA = 1;
 }
 /* AtmanepadeSvanataH (7.1.5) */
 if ( in_array($so,array("Ja")) && $set===2 && arr($text,'/([^a][+])Ja$/'))
@@ -6480,6 +6481,10 @@ if ($id_dhAtu==="sew" && $id_pratyaya==="sew" && !($yAsuT===1 && $lakAra==="ASIr
 	{
 		$text = one(array("daridrA+is"),array("daridrA+s"),0);
 	}
+	if ($lugvA===1)
+	{
+		$text = two(array("h+"),array("iTAs","iDvam","ivahi"),array("h+"),array("TAs","Dvam","vahi"),0);
+	}
 	storedata('7.2.35','sa',0);
 	$Agama=array_merge($Agama,array("iw"));
 }
@@ -6494,6 +6499,7 @@ if ($id_dhAtu==="vew" && $id_pratyaya==="sew" && !($yAsuT===1 && $lakAra==="ASIr
 	storedata('7.2.35','sa',0);
 	$Agama=array_merge($Agama,array("iw"));
 }
+
 // Patch for yaN, san
 if (in_array($sanAdi,array("yaN","san")) && arr($text,'/([ysz]a)[+](['.pc('vl').'][^+]*)$/') && in_array($lakAra,array("luw","lfw","lfN","ASIrliN","sArvaDAtukalew","ArDaDAtukalew","luN")))
 {
