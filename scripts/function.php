@@ -3325,7 +3325,7 @@ function yaG_abhyAsa_special()
 		storedata('7.4.86','sa',0);
 	}
 	/* nIgvaJcusraMsudhvaMsubhraMsukasapatapadaskandAm (7.4.84) */
-	elseif (sub(array("va+vac","sa+sras","da+Dvas","ba+Bras","ca+kas","pa+pat","pa+pad","ca+skad"),blank(0),blank(0),0))
+	elseif (sub(array("va+vac","sa+sras","da+Dvas","ba+Bras","ca+kas","pa+pat","pa+pad","ca+skad"),blank(0),blank(0),0) && !in_array($fo,array("vaca!")))
 	{
 		$text=one(array("va+vac","sa+sras","da+Dvas","ba+Bras","ca+kas","pa+pat","pa+pad","ca+skad"),array("vanI+vac","sanI+sras","danI+Dvas","banI+Bras","canI+kas","panI+pat","panI+pad","canI+skad"),0);
 		storedata('7.4.84','sa',0);
