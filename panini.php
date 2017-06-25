@@ -2202,17 +2202,17 @@ if ($vsuf==="yak")
 		storedata('6.4.24','sa',0);
 		$aniditAm = 1;
 	}
-	/* ghumAsthAgApAjahAtisAM hali (6.4.66) */
-	if ( in_array($fo,array("do","deN","qudAY","dAR","Dew","quDAY","mA","zWA","iN","pA","hA","sA","gAN","mAN","meN","gA","iN","ik","gE","o!hAk","zo")) && arr($text,'/A[+]ya$/') && !in_array($number,array("02.0051","03.0008")) )
-	{
-		$text=change('/A[+]ya$/','I+ya');
-		storedata('6.4.66','sa',0);
-	}
 	/* Adeca upadeze'ziti (6.1.45) */ 
 	if ( arr($text,'/[eoEO][+]ya$/') && !in_array($fo,array("veY","vyeY","hveY"))) # These two have specific rules applicable to them.
 	{
 		$text=change('/[eoEO][+]ya$/','A+ya');
 		storedata('6.1.45','sa',0);
+	}
+	/* ghumAsthAgApAjahAtisAM hali (6.4.66) */
+	if ( in_array($fo,array("do","deN","qudAY","dAR","Dew","quDAY","mA","zWA","iN","pA","hA","sA","gAN","mAN","meN","gA","iN","ik","gE","o!hAk","zo")) && arr($text,'/A[+]ya$/') && !in_array($number,array("02.0051","03.0008")) )
+	{
+		$text=change('/A[+]ya$/','I+ya');
+		storedata('6.4.66','sa',0);
 	}
 	/* ayaG yi kGiti (7.4.22) */
 	/*elseif (arr($text,'/^SI[+]ya$/'))
