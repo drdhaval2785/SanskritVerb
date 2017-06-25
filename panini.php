@@ -6855,6 +6855,7 @@ if ( in_array($so,array("tip")) && $lakAra==="liw" && arr($text,'/['.pc('ac').']
     $text = pr2($ac,array("+"),$iDtiG,vriddhi($ac),array("+"),$iDtiG,$text);
 	storedata('7.2.115','sa',0);
 }
+
 /* aco JNiti patch for liT mip. */
 if ( in_array($so,array("mip")) && $lakAra==="liw" && arr($text,'/['.pc('ac').']\+([^+]*)$/') ) # See https://github.com/drdhaval2785/SanskritVerb/issues/305
 {
@@ -6862,6 +6863,8 @@ if ( in_array($so,array("mip")) && $lakAra==="liw" && arr($text,'/['.pc('ac').']
     $text1 = pr2($ac,array("+"),$tiG1,vriddhi($ac),array("+"),$tiG1,$text);
     $text2 = pr2($ac,array("+"),$iDtiG,vriddhi($ac),array("+"),$iDtiG,$text);
 	$text = array_merge($text,$text1,$text2);
+	$text = array_unique($text);
+	$text = array_values($text);
 	storedata('7.2.115','sa',0);
 }
 /* dAderdhAtorghaH (8.2.32) */
@@ -6907,6 +6910,7 @@ if ( in_array($so,array("tip")) && $lakAra==="liw" && arr($text,'/a['.pc('hl').'
 // ata upadhAyAH patch for liT.
 if ( in_array($so,array("mip")) && $lakAra==="liw" && arr($text,'/a['.pc('hl').']\+/') )
 {
+	storedata('7.1.91','pa',0);
     $text = three(array("a"),$hl,array("+"),array("A"),$hl,array("+"),1);
 	storedata('7.2.116','sa',0);
 	$nomidelision=1;
