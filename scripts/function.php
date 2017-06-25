@@ -1523,7 +1523,7 @@ function mit($pattern,$b,$merge)
 /* function samprasarana */
 function samprasarana($input,$merge)
 {
-    global $text; global $ac; global $storedata, $lakAra;
+    global $text; global $ac; global $storedata, $lakAra, $sanAdi;
     $yan = array("ya","va","ra","la");
     $yanik = array("ia","ua","fa","xa"); // list of samprasAraNa for yaN.
     foreach ($input as $value)
@@ -1552,6 +1552,15 @@ function samprasarana($input,$merge)
 	if(arr($text,'/^ji[+]['.pc(hl).']/') && $lakAra!=="liw")
 	{
 		$text=change('/^ji[+]/','jI+');
+		storedata('6.4.2','sa',0);
+	}		
+	/* halaH (6.4.2) */
+	if(arr($text,'/['.pc(hl).'][iufx][+]/') && $sanAdi==="yaNluk")
+	{
+		$text=change('/(['.pc(hl).'])[i][+]/','$1I+');
+		$text=change('/(['.pc(hl).'])[u][+]/','$1U+');
+		$text=change('/(['.pc(hl).'])[f][+]/','$1ar+');
+		$text=change('/(['.pc(hl).'])[x][+]/','$1al+');
 		storedata('6.4.2','sa',0);
 	}		
 	return $text;
