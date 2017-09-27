@@ -1,4 +1,4 @@
-#SanskritVerb
+# SanskritVerb
 
 Verb declension for Sanskrit
 
@@ -8,13 +8,13 @@ Please note that as of v1.2.0, the code from [`drdhaval2785/SanskritSubanta`](ht
 
 Research paper on subanta generator presented at 16th World Sanskrit Conference - [Here](http://www.sanskritworld.in/index/detailview/book_id/prakriyapradarshini).
 
-##For using the code online:
+## Using the Code Online
 
 * Use http://www.sanskritworld.in/sanskrittool/SanskritVerb/tiGanta.html for tiGanta generation (Verb conjugation.)
 * Use http://www.sanskritworld.in/sanskrittool/subanta.html for subanta generation.
 * Use http://www.sanskritworld.in/sanskrittool/sandhi.html for sandhi generation.
 
-##For using the code offline on your computer:
+## Using the Code on a Local Machine
 
 1. Download the latest version of XAMPP from https://www.apachefriends.org/index.html
 
@@ -44,7 +44,7 @@ This is a one time exercise. Once you have installed the code, you should only o
 
 This will give you frontend to interact with the machine.
 
-##Changelog
+## Changelog
 
 **v1.0.0** - 2 August 2015 - Initial release
 
