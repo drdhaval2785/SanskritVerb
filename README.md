@@ -5,6 +5,19 @@ Verb declension for Sanskrit
 
 **As of *v1.2.0*, the code from [`drdhaval2785/SanskritSubanta`](https://github.com/drdhaval2785/SanskritSubanta) for *subanta* generation is now actively maintained here.**
 
+---
+
+### Table of Contents
+
+- [Online Demos](#online-demos)
+- [Code Structure](#code-structure)
+- [Running the Code Locally with XAMPP (Windows)](#running-the-code-locally-with-xampp-windows)
+- [Running the Code Locally with Docker (MacOS / Linux)](#running-the-code-locally-with-docker-macos--linux)
+- [Notes](#notes)
+- [Changelog](#changelog)
+
+---
+
 ### Online Demos
 
 * [*tiGanta* generation (verb conjugation)](http://www.sanskritworld.in/sanskrittool/SanskritVerb/tiGanta.html)
@@ -15,7 +28,7 @@ Verb declension for Sanskrit
 
 To understand how the code is organized, please read [this](https://github.com/drdhaval2785/SanskritVerb/blob/master/Documentations/understandcode.md).
 
-### Running the Code with XAMPP (Windows)
+### Running the Code Locally with XAMPP (Windows)
 
 This is a one time exercise. Once you have completed the steps below, you should only open your browser (Firefox, Chrome, Internet Explorer, etc.) and browse to `localhost/SanskritVerb/tiGanta.html` to access a frontend that will allow you to interact with the machine.
 
