@@ -5,26 +5,17 @@ Verb declension for Sanskrit
 
 **As of *v1.2.0*, the code from [`drdhaval2785/SanskritSubanta`](https://github.com/drdhaval2785/SanskritSubanta) for *subanta* generation is now actively maintained here.**
 
+### Online Demos
+
+* [*tiGanta* generation (verb conjugation)](http://www.sanskritworld.in/sanskrittool/SanskritVerb/tiGanta.html)
+* [*subanta* generation (noun declension)](http://www.sanskritworld.in/sanskrittool/subanta.html)
+* [*sandhi* generation](http://www.sanskritworld.in/sanskrittool/sandhi.html)
+
 ### Code Structure
+
 To understand how the code is organized, please read [this](https://github.com/drdhaval2785/SanskritVerb/blob/master/Documentations/understandcode.md).
 
-A research paper on the *subanta* generator which was presented at 16th World Sanskrit Conference can be found [here](http://www.sanskritworld.in/index/detailview/book_id/prakriyapradarshini).
-
-### Online Demo
-
-* Use http://www.sanskritworld.in/sanskrittool/SanskritVerb/tiGanta.html for *tiGanta* generation (verb conjugation)
-* Use http://www.sanskritworld.in/sanskrittool/subanta.html for *subanta* generation
-* Use http://www.sanskritworld.in/sanskrittool/sandhi.html for *sandhi* generation.
-
-### Running the Code Locally with Docker
-
-1. Install [Docker](https://www.docker.com/) (can be done through Homebrew)
-2. Clone this repo and `cd` into it
-3. `docker build -t sanskrit-verb .`
-4. `docker run -p 3333:80 sanskrit-verb`
-5. Go to `localhost:3333/SanskritVerb`
-
-### Running the Code with XAMPP
+### Running the Code with XAMPP (Windows)
 
 This is a one time exercise. Once you have completed the steps below, you should only open your browser (Firefox, Chrome, Internet Explorer, etc.) and browse to `localhost/SanskritVerb/tiGanta.html` to access a frontend that will allow you to interact with the machine.
 
@@ -40,6 +31,18 @@ This is a one time exercise. Once you have completed the steps below, you should
 10. go to `xampp/htdocs` directory
 11. Copy [`install.sh`](https://github.com/drdhaval2785/SanskritVerb/blob/master/install.sh) in that directory
 12. Click on `install.sh` (this will fetch the latest code and data for local usage)
+
+### Running the Code Locally with Docker (MacOS / Linux)
+
+1. Install [Docker](https://www.docker.com/) (can be done through Homebrew)
+2. Clone this repo and `cd` into it
+3. `docker build -t sanskrit-verb .`
+4. `docker run -p 3333:80 sanskrit-verb`
+5. Go to `localhost:3333/SanskritVerb`
+
+### Notes
+
+A research paper on the *subanta* generator which was presented at 16th World Sanskrit Conference can be found [here](http://www.sanskritworld.in/index/detailview/book_id/prakriyapradarshini).
 
 ### Changelog
 
