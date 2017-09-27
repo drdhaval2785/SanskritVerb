@@ -4,15 +4,15 @@ Verb declension for Sanskrit
 
 To understand how the code is organized, please read [this](https://github.com/drdhaval2785/SanskritVerb/blob/master/Documentations/understandcode.md).
 
-Please note that as of v1.2.0, the code from [`drdhaval2785/SanskritSubanta`](https://github.com/drdhaval2785/SanskritSubanta) for subanta generation is now actively maintained here.
+Please note that as of v1.2.0, the code from [`drdhaval2785/SanskritSubanta`](https://github.com/drdhaval2785/SanskritSubanta) for *subanta* generation is now actively maintained here.
 
-Research paper on subanta generator presented at 16th World Sanskrit Conference - [Here](http://www.sanskritworld.in/index/detailview/book_id/prakriyapradarshini).
+A research paper on the subanta generator which was presented at 16th World Sanskrit Conference can be found [here](http://www.sanskritworld.in/index/detailview/book_id/prakriyapradarshini).
 
 ## Using the Code Online
 
-* Use http://www.sanskritworld.in/sanskrittool/SanskritVerb/tiGanta.html for tiGanta generation (Verb conjugation.)
-* Use http://www.sanskritworld.in/sanskrittool/subanta.html for subanta generation.
-* Use http://www.sanskritworld.in/sanskrittool/sandhi.html for sandhi generation.
+* Use http://www.sanskritworld.in/sanskrittool/SanskritVerb/tiGanta.html for *tiGanta* generation (verb conjugation)
+* Use http://www.sanskritworld.in/sanskrittool/subanta.html for *subanta* generation
+* Use http://www.sanskritworld.in/sanskrittool/sandhi.html for *sandhi* generation.
 
 ## Using the Code on a Local Machine
 
@@ -40,7 +40,7 @@ Research paper on subanta generator presented at 16th World Sanskrit Conference 
 
 12. Click on `install.sh`. This will fetch the latest code and data for local usage.
 
-This is a one time exercise. Once you have installed the code, you should only open your browser (Firefox, Chrome, Internet Explorer, etc.) and type `localhost/Sanskrit/tiGanta.html`.
+This is a one time exercise. Once you have installed the code, you should only open your browser (Firefox, Chrome, Internet Explorer, etc.) and type `localhost/SanskritVerb/tiGanta.html`.
 
 This will give you frontend to interact with the machine.
 
