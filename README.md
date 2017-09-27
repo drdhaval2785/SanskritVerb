@@ -27,18 +27,18 @@ A research paper on the *subanta* generator which was presented at 16th World Sa
 
 This is a one time exercise. Once you have completed the steps below, you should only open your browser (Firefox, Chrome, Internet Explorer, etc.) and browse to `localhost/SanskritVerb/tiGanta.html` to access a frontend that will allow you to interact with the machine.
 
-1. Download the latest version of XAMPP from https://www.apachefriends.org/index.html
-2. Install XAMPP.
-3. Install Git from https://git-scm.com/downloads.
-4. Locate XAMPP directory. Usually it is `c://xampp`.
+1. Download the latest version of [XAMPP](https://www.apachefriends.org/index.html)
+2. Install XAMPP
+3. Install Git from https://git-scm.com/downloads
+4. Locate XAMPP directory. Usually it is `c://xampp`
 5. Right-click on `xampp-control.exe` and select 'Run As Administrator'. (For steps 5-8, if in doubt, please see [this](http://stackoverflow.com/questions/20960296/how-to-start-apache-and-mysql-automatically-when-windows-8-comes-up))
-6. In the right-top corner, click on '**Config**'.
-7. Tick **Apache**, **FileZilla**, **Tomcat**, **MySQL** and **Mercury** in '**Autostart of modules**' section.
-8. Click '**Save**'.
-9. Close '**XAMPP Control Panel**'.
-10. go to `xampp/htdocs` directory.
-11. Copy [`install.sh`](https://github.com/drdhaval2785/SanskritVerb/blob/master/install.sh) in that directory.
-12. Click on `install.sh`. This will fetch the latest code and data for local usage.
+6. In the right-top corner, click on '**Config**'
+7. Tick **Apache**, **FileZilla**, **Tomcat**, **MySQL** and **Mercury** in '**Autostart of modules**' section
+8. Click '**Save**'
+9. Close '**XAMPP Control Panel**'
+10. go to `xampp/htdocs` directory
+11. Copy [`install.sh`](https://github.com/drdhaval2785/SanskritVerb/blob/master/install.sh) in that directory
+12. Click on `install.sh` (this will fetch the latest code and data for local usage)
 
 ## Changelog
 
