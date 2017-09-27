@@ -26,7 +26,7 @@ Verb declension for Sanskrit
 
 ### Code Structure
 
-To understand how the code is organized, please read [this](https://github.com/drdhaval2785/SanskritVerb/blob/master/Documentations/understandcode.md).
+To understand how the code is organized, please read [`understandcode.md`](https://github.com/drdhaval2785/SanskritVerb/blob/master/Documentations/understandcode.md).
 
 ### Running the Code Locally with XAMPP (Windows)
 
@@ -51,7 +51,7 @@ This is a one time exercise. Once you have completed the steps below, you should
 2. Clone this repo and `cd` into it
 3. `docker build -t sanskrit-verb .`
 4. `docker run -p 3333:80 sanskrit-verb`
-5. Go to `localhost:3333/SanskritVerb`
+5. Open the browser to `localhost:3333/SanskritVerb`
 
 ### Notes
 
