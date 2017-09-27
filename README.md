@@ -59,48 +59,48 @@ A research paper on the *subanta* generator which was presented at 16th World Sa
 
 ### Changelog
 
-#### **v1.0.0** (2 August 2015)
+##### **v1.0.0** (2 August 2015)
 * Initial release
 
-#### **v1.0.1** (5 October 2015)
+##### **v1.0.1** (5 October 2015)
 * Major bug fixes
 
-#### **v1.1.0** (17 October 2015)
+##### **v1.1.0** (17 October 2015)
 * Time optimization
 
-#### **v1.1.1** (26 October 2015)
+##### **v1.1.1** (26 October 2015)
 * Noted all inline issues from `tiGanta.php` and `function.php` as Github issues for easier tracking
 
-#### **v1.1.2** (7 November 2015)
+##### **v1.1.2** (7 November 2015)
 * Separated code into `Data`, `Documentations`, `scripts`, `testing` and `output` folders
 * Made necessary corrections to the code
 
-#### **v1.2.0** (12 January 2016)
+##### **v1.2.0** (12 January 2016)
 * Merged **SanskritSubanta** code into **SanskritVerb**
 * There is now only one file `panini.php` which gives *subanta* / *tiGanta* / *sandhi* etc depending on the input HTML file
 
-#### **v1.3.0** (22 January 2016)
+##### **v1.3.0** (22 January 2016)
 * Added commentaries available for local viewing
 
-#### **v1.4.0** (3 February 2016)
+##### **v1.4.0** (3 February 2016)
 * Added the option to deactivate some *sUtras* of Paninian grammar (to understand its importance in the structure of **aSTAdhyAyI**)
 
-#### **v1.5.0** (21 February 2016)
+##### **v1.5.0** (21 February 2016)
 * Tested the code for representative verbs and corrected suspect verb forms
 
-#### **v1.6.0** (21 February 2016)
+##### **v1.6.0** (21 February 2016)
 * Made three commentaries available for offline viewing:
     * **mAdhavIyadhAtuvRtti**
     * **kSIrataraGgiNI**
     * **dhAtupradIpa**
 
-#### **v1.6.1** (12 March 2016)
+##### **v1.6.1** (12 March 2016)
 * Tested the code for representative verbs from **siddhAntakaumudI** (round 2) and corrected suspect verb forms
 
-#### **v1.7.0** (13 March 2016)
+##### **v1.7.0** (13 March 2016)
 * Defined which *sUtra* bars which *sUtras*
 
-#### **v1.8.0** (20 March 2016)
+##### **v1.8.0** (20 March 2016)
 * Added the following forms:
     * **bhAvavAcya**
     * **karmavAcya**
@@ -108,13 +108,13 @@ A research paper on the *subanta* generator which was presented at 16th World Sa
     * **Nijanta**
     * **yaGanta**
 
-#### **v1.9.0** (26 March 2016)
+##### **v1.9.0** (26 March 2016)
 * Added the following forms:
     * **yaGluganta**
     * **sannanta**
 
-#### **v1.10.0** (19 June 2016)
+##### **v1.10.0** (19 June 2016)
 * Tested the output against [UoHyd](http://sanskrit.uohyd.ac.in/scl/) and [INRIA](http://sanskrit.inria.fr/DATA/XML/SL_morph.tar.gz) databases and accounted for all differences
 
-#### **v1.10.1** (06 September 2016)
+##### **v1.10.1** (06 September 2016)
 * Readjusted the `sandhi.html` and `subanta.html` frontends with `panini.php` (After changes for optimization in *tiGanta* generation, it stopped working)
