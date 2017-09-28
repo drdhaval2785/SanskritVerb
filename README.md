@@ -33,8 +33,8 @@ This is a one time exercise. Once you have completed the steps below, you should
 1. Download the latest version of [XAMPP](https://www.apachefriends.org/index.html)
 2. Install XAMPP
 3. Install Git from https://git-scm.com/downloads
-4. Locate XAMPP directory. Usually it is `c://xampp`
-5. Right-click on `xampp-control.exe` and select 'Run As Administrator'. (For steps 5-8, if in doubt, please see [this](http://stackoverflow.com/questions/20960296/how-to-start-apache-and-mysql-automatically-when-windows-8-comes-up))
+4. Locate XAMPP directory (usually `c://xampp`)
+5. Right-click on `xampp-control.exe` and select 'Run As Administrator' (For steps 5-8, if in doubt, please see [this](http://stackoverflow.com/questions/20960296/how-to-start-apache-and-mysql-automatically-when-windows-8-comes-up))
 6. In the right-top corner, click on '**Config**'
 7. Tick **Apache**, **FileZilla**, **Tomcat**, **MySQL** and **Mercury** in '**Autostart of modules**' section
 8. Click '**Save**'
