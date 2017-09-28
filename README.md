@@ -47,7 +47,7 @@ This is a one time exercise. Once you have completed the steps below, you should
 
 ### Running the Code Locally with Docker (MacOS / Linux)
 
-1. Install [Docker](https://www.docker.com/) (can be done through Homebrew)
+1. Install [Docker](https://www.docker.com/) (can also be done through Homebrew)
 2. Clone this repo and `cd` into it
 3. `docker build -t sanskrit-verb .`
 4. `docker run -p 3333:80 sanskrit-verb`
