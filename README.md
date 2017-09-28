@@ -3,8 +3,6 @@ SanskritVerb
 
 Verb declension for Sanskrit
 
-**As of *v1.2.0*, the code from [`drdhaval2785/SanskritSubanta`](https://github.com/drdhaval2785/SanskritSubanta) for *subanta* generation is now actively maintained here.**
-
 ---
 
 ### Table of Contents
@@ -76,7 +74,7 @@ A research paper on the *subanta* generator which was presented at 16th World Sa
 * Made necessary corrections to the code
 
 ##### **v1.2.0** (12 January 2016)
-* Merged **SanskritSubanta** code into **SanskritVerb**
+* Merged the code from [`drdhaval2785/SanskritSubanta`](https://github.com/drdhaval2785/SanskritSubanta) (for *subanta* generation) into **SanskritVerb**
 * There is now only one file `panini.php` which gives *subanta* / *tiṅanta* / *sandhi* etc depending on the input HTML file
 
 ##### **v1.3.0** (22 January 2016)
