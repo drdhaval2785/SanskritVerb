@@ -39,7 +39,7 @@ This is a one time exercise. Once you have completed the steps below, you should
 7. Tick **Apache**, **FileZilla**, **Tomcat**, **MySQL** and **Mercury** in '**Autostart of modules**' section
 8. Click '**Save**'
 9. Close '**XAMPP Control Panel**'
-10. go to `xampp/htdocs` directory
+10. Go to `xampp/htdocs` directory
 11. Copy [`install.sh`](https://github.com/drdhaval2785/SanskritVerb/blob/master/install.sh) in that directory
 12. Click on `install.sh` (this will fetch the latest code and data for local usage)
 
