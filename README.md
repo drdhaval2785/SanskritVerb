@@ -20,7 +20,7 @@ Verb declension for Sanskrit
 
 ### Online Demos
 
-* [*tiGanta* generation (verb conjugation)](http://www.sanskritworld.in/sanskrittool/SanskritVerb/tiGanta.html)
+* [*tiṅanta* generation (verb conjugation)](http://www.sanskritworld.in/sanskrittool/SanskritVerb/tiGanta.html)
 * [*subanta* generation (noun declension)](http://www.sanskritworld.in/sanskrittool/subanta.html)
 * [*sandhi* generation](http://www.sanskritworld.in/sanskrittool/sandhi.html)
 
@@ -77,44 +77,44 @@ A research paper on the *subanta* generator which was presented at 16th World Sa
 
 ##### **v1.2.0** (12 January 2016)
 * Merged **SanskritSubanta** code into **SanskritVerb**
-* There is now only one file `panini.php` which gives *subanta* / *tiGanta* / *sandhi* etc depending on the input HTML file
+* There is now only one file `panini.php` which gives *subanta* / *tiṅanta* / *sandhi* etc depending on the input HTML file
 
 ##### **v1.3.0** (22 January 2016)
 * Added commentaries available for local viewing
 
 ##### **v1.4.0** (3 February 2016)
-* Added the option to deactivate some *sUtras* of Paninian grammar (to understand its importance in the structure of **aSTAdhyAyI**)
+* Added the option to deactivate some *sūtra*s of Paninian grammar (to understand its importance in the structure of **Aṣṭādhyāyī**)
 
 ##### **v1.5.0** (21 February 2016)
 * Tested the code for representative verbs and corrected suspect verb forms
 
 ##### **v1.6.0** (21 February 2016)
 * Made three commentaries available for offline viewing:
-    * **mAdhavIyadhAtuvRtti**
-    * **kSIrataraGgiNI**
-    * **dhAtupradIpa**
+    * **Mādhavīyadhātuvtti**
+    * **Kṣīrataraṅgiṇī**
+    * **Dhātupradīpa**
 
 ##### **v1.6.1** (12 March 2016)
-* Tested the code for representative verbs from **siddhAntakaumudI** (round 2) and corrected suspect verb forms
+* Tested the code for representative verbs from **Siddhāntakaumudī** (round 2) and corrected suspect verb forms
 
 ##### **v1.7.0** (13 March 2016)
-* Defined which *sUtra* bars which *sUtras*
+* Defined which *sūtra*s bars which *sūtra*s
 
 ##### **v1.8.0** (20 March 2016)
 * Added the following forms:
-    * **bhAvavAcya**
-    * **karmavAcya**
-    * **karmakartRvAcya**
-    * **Nijanta**
-    * **yaGanta**
+    * **bhāvavācya**
+    * **karmavācya**
+    * **karmakartvācya**
+    * **ṇijanta**
+    * **yaṅanta**
 
 ##### **v1.9.0** (26 March 2016)
 * Added the following forms:
-    * **yaGluganta**
+    * **yaṅluganta**
     * **sannanta**
 
 ##### **v1.10.0** (19 June 2016)
 * Tested the output against [UoHyd](http://sanskrit.uohyd.ac.in/scl/) and [INRIA](http://sanskrit.inria.fr/DATA/XML/SL_morph.tar.gz) databases and accounted for all differences
 
 ##### **v1.10.1** (06 September 2016)
-* Readjusted the `sandhi.html` and `subanta.html` frontends with `panini.php` (After changes for optimization in *tiGanta* generation, it stopped working)
+* Readjusted the `sandhi.html` and `subanta.html` frontends with `panini.php` (After changes for optimization in *tiṅanta* generation, it stopped working)
