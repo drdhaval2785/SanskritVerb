@@ -1,79 +1,118 @@
-#SanskritVerb
+SanskritVerb
+==============
 
 Verb declension for Sanskrit
 
-To understand how the code is organized, please read [this](https://github.com/drdhaval2785/SanskritVerb/blob/master/Documentations/understandcode.md).
+---
 
-Please note that as of v1.2.0, the code from [`drdhaval2785/SanskritSubanta`](https://github.com/drdhaval2785/SanskritSubanta) for subanta generation is now actively maintained here.
+### Table of Contents
 
-Research paper on subanta generator presented at 16th World Sanskrit Conference - [Here](http://www.sanskritworld.in/index/detailview/book_id/prakriyapradarshini).
+- [Online Demos](#online-demos)
+- [Code Structure](#code-structure)
+- [Running the Code Locally with XAMPP (Windows)](#running-the-code-locally-with-xampp-windows)
+- [Running the Code Locally with Docker (MacOS / Linux)](#running-the-code-locally-with-docker-macos--linux)
+- [Notes](#notes)
+- [Changelog](#changelog)
 
-##For using the code online:
+---
 
-* Use http://www.sanskritworld.in/sanskrittool/SanskritVerb/tiGanta.html for tiGanta generation (Verb conjugation.)
-* Use http://www.sanskritworld.in/sanskrittool/subanta.html for subanta generation.
-* Use http://www.sanskritworld.in/sanskrittool/sandhi.html for sandhi generation.
+### Online Demos
 
-##For using the code offline on your computer:
+* [*tiṅanta* generation (verb conjugation)](http://www.sanskritworld.in/sanskrittool/SanskritVerb/tiGanta.html)
+* [*subanta* generation (noun declension)](http://www.sanskritworld.in/sanskrittool/subanta.html)
+* [*sandhi* generation](http://www.sanskritworld.in/sanskrittool/sandhi.html)
 
-1. Download the latest version of XAMPP from https://www.apachefriends.org/index.html
+### Code Structure
 
-2. Install XAMPP.
+To understand how the code is organized, please read [`understandcode.md`](https://github.com/drdhaval2785/SanskritVerb/blob/master/Documentations/understandcode.md).
 
-3. Install Git from https://git-scm.com/downloads.
+### Running the Code Locally with XAMPP (Windows)
 
-4. Locate XAMPP directory. Usually it is `c://xampp`.
+This is a one time exercise. Once you have completed the steps below, you should only open your browser (Firefox, Chrome, Internet Explorer, etc.) and browse to `localhost/SanskritVerb/tiGanta.html` to access a frontend that will allow you to interact with the machine.
 
-5. Right-click on `xampp-control.exe` and select 'Run As Administrator'. (For steps 5-8, if in doubt, please see [this](http://stackoverflow.com/questions/20960296/how-to-start-apache-and-mysql-automatically-when-windows-8-comes-up))
+1. Download the latest version of [XAMPP](https://www.apachefriends.org/index.html)
+2. Install XAMPP
+3. Install Git from https://git-scm.com/downloads
+4. Locate XAMPP directory (usually `c://xampp`)
+5. Right-click on `xampp-control.exe` and select 'Run As Administrator' (For steps 5-8, if in doubt, please see [this](http://stackoverflow.com/questions/20960296/how-to-start-apache-and-mysql-automatically-when-windows-8-comes-up))
+6. In the right-top corner, click on '**Config**'
+7. Tick **Apache**, **FileZilla**, **Tomcat**, **MySQL** and **Mercury** in '**Autostart of modules**' section
+8. Click '**Save**'
+9. Close '**XAMPP Control Panel**'
+10. Go to `xampp/htdocs` directory
+11. Copy [`install.sh`](https://github.com/drdhaval2785/SanskritVerb/blob/master/install.sh) in that directory
+12. Click on `install.sh` (this will fetch the latest code and data for local usage)
 
-6. In the right-top corner, click on '**Config**'.
+### Running the Code Locally with Docker (MacOS / Linux)
 
-7. Tick **Apache**, **FileZilla**, **Tomcat**, **MySQL** and **Mercury** in '**Autostart of modules**' section.
+1. Install [Docker](https://www.docker.com/) (can also be done through Homebrew)
+2. Clone this repo and `cd` into it
+3. `docker build -t sanskrit-verb .`
+4. ``docker run -p 3333:80 -v `pwd`/:/var/www/html/ sanskrit-verb``
+5. Open the browser to `http://localhost:3333`
 
-8. Click '**Save**'.
+### Notes
 
-9. Close '**XAMPP Control Panel**'.
+A research paper on the *subanta* generator which was presented at 16th World Sanskrit Conference can be found [here](http://www.sanskritworld.in/index/detailview/book_id/prakriyapradarshini).
 
-10. go to `xampp/htdocs` directory.
+### Changelog
 
-11. Copy [`install.sh`](https://github.com/drdhaval2785/SanskritVerb/blob/master/install.sh) in that directory.
+##### **v1.0.0** (2 August 2015)
+* Initial release
 
-12. Click on `install.sh`. This will fetch the latest code and data for local usage.
+##### **v1.0.1** (5 October 2015)
+* Major bug fixes
 
-This is a one time exercise. Once you have installed the code, you should only open your browser (Firefox, Chrome, Internet Explorer, etc.) and type `localhost/Sanskrit/tiGanta.html`.
+##### **v1.1.0** (17 October 2015)
+* Time optimization
 
-This will give you frontend to interact with the machine.
+##### **v1.1.1** (26 October 2015)
+* Noted all inline issues from `tiGanta.php` and `function.php` as Github issues for easier tracking
 
-##Changelog
+##### **v1.1.2** (7 November 2015)
+* Separated code into `Data`, `Documentations`, `scripts`, `testing` and `output` folders
+* Made necessary corrections to the code
 
-**v1.0.0** - 2 August 2015 - Initial release
+##### **v1.2.0** (12 January 2016)
+* Merged the code from [`drdhaval2785/SanskritSubanta`](https://github.com/drdhaval2785/SanskritSubanta) (for *subanta* generation) into **SanskritVerb**
+* There is now only one file `panini.php` which gives *subanta* / *tiṅanta* / *sandhi* etc depending on the input HTML file
 
-**v1.0.1** - 5 October 2015 - Major Bug Fixes
+##### **v1.3.0** (22 January 2016)
+* Added commentaries available for local viewing
 
-**v1.1.0** - 17 October 2015 - Time Optimization
+##### **v1.4.0** (3 February 2016)
+* Added the option to deactivate some *sūtra*s of Paninian grammar (to understand its importance in the structure of **Aṣṭādhyāyī**)
 
-**v1.1.1** - 26 October 2015 - All inline issues from `tiGanta.php` and `function.php` noted as Github issues for easier tracking.
+##### **v1.5.0** (21 February 2016)
+* Tested the code for representative verbs and corrected suspect verb forms
 
-**v1.1.2** - 7 November 2015 - Code separated into Data, Documentations, scripts, testing and output folders and necessary corrections made in the code.
+##### **v1.6.0** (21 February 2016)
+* Made three commentaries available for offline viewing:
+    * **Mādhavīyadhātuvtti**
+    * **Kṣīrataraṅgiṇī**
+    * **Dhātupradīpa**
 
-**v1.2.0** - 12 January 2016 - Merged SanskritSubanta code into SanskritVerb. Now there is only one code `panini.php` which gives subanta / tiGanta / sandhi etc depending on the input HTML file.
+##### **v1.6.1** (12 March 2016)
+* Tested the code for representative verbs from **Siddhāntakaumudī** (round 2) and corrected suspect verb forms
 
-**v1.3.0** - 22 January 2016 - Commentaries available for local viewing.
+##### **v1.7.0** (13 March 2016)
+* Defined which *sūtra*s bars which *sūtra*s
 
-**v1.4.0** - 3 February 2016 - Option to deactivate some sUtras of Paninian grammar, to understand its importance in the structure of **aSTAdhyAyI**.
+##### **v1.8.0** (20 March 2016)
+* Added the following forms:
+    * **bhāvavācya**
+    * **karmavācya**
+    * **karmakartvācya**
+    * **ṇijanta**
+    * **yaṅanta**
 
-**v1.5.0** - 21 February 2016 - The code is tested for representative verbs and suspect verb forms are corrected.
+##### **v1.9.0** (26 March 2016)
+* Added the following forms:
+    * **yaṅluganta**
+    * **sannanta**
 
-**v1.6.0** - 21 February 2016 - The code now has three commentaries — **mAdhavIyadhAtuvRtti**, **kSIrataraGgiNI** and **dhAtupradIpa** — for offline viewing.
+##### **v1.10.0** (19 June 2016)
+* Tested the output against [UoHyd](http://sanskrit.uohyd.ac.in/scl/) and [INRIA](http://sanskrit.inria.fr/DATA/XML/SL_morph.tar.gz) databases and accounted for all differences
 
-**v1.6.1** - 12 March 2016 - The code is tested for representative verbs from **siddhAntakaumudI** (round 2) and suspect verb forms are corrected.
-
-**v1.7.0** - 13 March 2016 - Decide which sUtra bars which sUtras.
-
-**v1.8.0** - 20 March 2016 - Added **bhAvavAcya**, **karmavAcya**, **karmakartRvAcya**, **Nijanta** and **yaGanta** forms.
-
-**v1.9.0** - 26 March 2016 - Added **yaGluganta** and **sannanta** forms.
-
-**v1.10.0** - 19 June 2016 - Tested the output against [UoHyd](http://sanskrit.uohyd.ac.in/scl/) and [INRIA](http://sanskrit.inria.fr/DATA/XML/SL_morph.tar.gz) databases. All differences accounted for.
-
-**v1.10.1** - 06 September 2016 - sandhi.html, subanta.html frontends readjusted with panini.php (After changes for optimization in tiGanta generation, it stopped working)
+##### **v1.10.1** (06 September 2016)
+* Readjusted the `sandhi.html` and `subanta.html` frontends with `panini.php` (After changes for optimization in *tiṅanta* generation, it stopped working)
