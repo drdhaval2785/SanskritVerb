@@ -2151,7 +2151,7 @@ function verb_meaning_gana_number($text)
 // for display in tiGanta.php
 function verb_meaning_gana_number1($text)
 {
-	global $frontend, $outfile;
+	global $frontend, $outfile, $jsonmode;
     $verbaccent=scrape1($text,0,7,1);
     $meaning=scrape1($text,0,1,1);
 	$verbwithoutanubandha=scrape1($text,0,2,1);
@@ -2162,7 +2162,7 @@ function verb_meaning_gana_number1($text)
 	$uohyd=scrape1($text,0,11,1);
 	$jnu=scrape1($text,0,12,1);
     $number=scrape1($text,0,13,1);
-	if ($frontend==='1')
+	if ($frontend==='1' && $jsonmode!==1)
 	{
 		echo "<p class = st >".toiast($verbaccent[0]).' - '.toiast($meaning[0]).', '.toiast($verbset[0]).' '.$number[0]."</p>\n";
 		echo "<p class = st >".$verbaccent[0].' - '.convert($meaning[0]).', '.convert($verbset[0]).' '.convert($number[0]).', '.ldc($madhav[0],'m').', '.ldc($kzir[0],'k').', '.ldc($dp[0],'d').', '.ldc($uohyd[0],'u').', '.ldc($jnu[0],'j').', '.inrialink($verbwithoutanubandha[0],$verbset[0])."</p>\n";
@@ -2176,7 +2176,7 @@ function verb_meaning_gana_number1($text)
 // for display in tiGanta.php in case the user has chosen the gaNa.
 function verb_meaning_gana_number2($text)
 {
-   global $verbset, $frontend, $outfile;
+   global $verbset, $frontend, $outfile, $jsonmode;
 	global $debug, $debugmode;
 	if ($debug===1 && $debugmode<2){
 	echo "verb_meaning_gana_number2 started at ";
@@ -2191,7 +2191,7 @@ function verb_meaning_gana_number2($text)
 	$uohyd=scrape($text,0,11,1,"",$verbset,14);
 	$jnu=scrape($text,0,12,1,"",$verbset,14);
     $number=scrape($text,0,13,1,"",$verbset,14);
-	if ($frontend==='1')
+	if ($frontend==='1' && $jsonmode!==1)
 	{
 		echo "<p class = st >".toiast($verbaccent[0]).' - '.toiast($meaning[0]).', '.toiast($verbset[0]).' '.$number[0]."</p>\n";
 		echo "<p class = st >".$verbaccent[0].' - '.convert($meaning[0]).', '.convert($verbset[0]).' '.convert($number[0]).', '.ldc($madhav[0],'m').', '.ldc($kzir[0],'k').', '.ldc($dp[0],'d').', '.ldc($uohyd[0],'u').', '.ldc($jnu[0],'j').', '.inrialink($verbwithoutanubandha[0],$verbset[0])."</p>\n";
@@ -2208,8 +2208,8 @@ function verb_meaning_gana_number2($text)
 // for display in tiGanta.php in case the verb is not in our database.
 function verb_meaning_gana_number3($text)
 {
-	global $frontend, $outfile;
-	if ($frontend==='1')
+	global $frontend, $outfile, $jsonmode;
+	if ($frontend==='1' && $jsonmode!==1)
 	{
 		echo "<p class = st >dhAtuH - ".$text."</p>\n";
 		echo "<p class = st >धातुः - ".convert($text)."</p>\n";
@@ -2222,7 +2222,7 @@ function verb_meaning_gana_number3($text)
 // for display in tiGanta.php
 function verb_meaning_gana_number4($number)
 {
-	global $frontend, $outfile, $debug, $debugmode;
+	global $frontend, $outfile, $debug, $debugmode, $jsonmode;
 	if ($debug===1 && $debugmode<2){ dibug("verb_meaning_gana_number4 start");}
     $verbaccent=scrape2($number,13,7,1);
 	$upadeza=scrape2($number,13,0,1);
@@ -2236,7 +2236,7 @@ function verb_meaning_gana_number4($number)
 	$jnu=scrape2($number,13,12,1);
     $number=scrape2($number,13,13,1);
 	if ($debug===1 && $debugmode<2){ dibug("verb_meaning_gana_number4 middle");}
-	if ($frontend==='1')
+	if ($frontend==='1' && $jsonmode!==1)
 	{
 		echo "<p class = st >".toiast($upadeza[0].' - '.$meaning[0].', '.$verbset[0].' '.$number[0])."</p>\n";
 		echo "<p class = st >".$verbaccent[0].' - '.convert($meaning[0].', '.$verbset[0].' '.$number[0]).', '.ldc($madhav[0],'m').', '.ldc($kzir[0],'k').', '.ldc($dp[0],'d').', '.ldc($uohyd[0],'u').', '.ldc($jnu[0],'j').', '.inrialink($verbwithoutanubandha[0],$verbset[0])."</p>\n";
@@ -2265,8 +2265,8 @@ function dhatu_from_number($number)
 // for display of upasarga details.
 function upasarga_display($text)
 {
-	global $frontend, $outfile;
-	if ($frontend==='1')
+	global $frontend, $outfile, $jsonmode;
+	if ($frontend==='1' && $jsonmode!==1)
 	{
 		echo "<p class = st >upasarga - ".toiast($text)."</p>\n";
 		echo "<p class = st >उपसर्गः - ".convert($text)."</p>\n";
@@ -2401,25 +2401,26 @@ function suffix_storage()
 // for deciding verb padas.
 function verb_pada($sutra)
 {
-	gui2($sutra);
+	global $padadecider_id, $padadecider_sutra;
+	$padadecider_sutra = gui2($sutra);
 	global $verb_sutra_pada; // This variable has two components e.g. "1.3.13:A" where the first part is sUtra number and the second part is the pada. We are trying to glean the second part from first part as input.
 	$matches = array_filter($verb_sutra_pada, function($var) use ($sutra) { return strpos($var,$sutra.":")!==false; }); // This function is taken from some Stackoverflow suggestion.
 	$matches=array_values($matches);
 	$int = explode(':',$matches[0]); // We presume that there would be only one such match.
 	$verbpada = $int[1];
+	$padadecider_id = $int[0];
 	return $verbpada;
 }
 // for deciding verb padas.
 function verb_pada1()
 {
-	global $toatmane, $us, $first, $sutraenglish, $sutradeva, $outfile, $frontend;
+	global $toatmane, $us, $first, $sutraenglish, $sutradeva, $outfile, $frontend, $padadecider_id;
 	  $temp = array();
     for($i=0;$i<count($toatmane);$i++)
     {
         if($us.$first===$toatmane[$i] && $frontend!=="0")
         {
-						$temp[] = $sutraenglish[$i];
-						$temp[] = $sutradeva[$i];
+						$temp = $sutradeva[$i];
             echo "<p class = st >By ".toiast($sutraenglish[$i])." :</p>\n";
             echo "<p class = st >".$sutradeva[$i]." :</p>\n";
             echo "<hr>\n";
@@ -3641,19 +3642,29 @@ function zlu()
 /* function storedata to store necessary information for display later on. */
 function storedata($sutra_number,$style,$note)
 {
-	global $text, $storedata, $us, $removed_sutras, $debugmode, $first, $so;
+	global $text, $storedata, $us, $removed_sutras, $debugmode, $first, $so, $jsonmode;
 	$text = change('/[+]+/','+'); // To remove double consecutive + signs before storing.
 	if (!in_array($style,array("pa","hn","st","red"))) { $style="sa"; }
 	if (!isset($note)) { $note=0; }
-	if (!in_array($sutra_number,$removed_sutras))
+	if (!in_array($sutra_number,$removed_sutras) && $jsonmode!==1)
 	{
 		$storedata[]=array($text,$sutra_number,$style,$note,$us,$first,$so);
 	}
-	elseif (in_array($sutra_number,$removed_sutras))
+	elseif (in_array($sutra_number,$removed_sutras) && $jsonmode!==1)
 	{
 		$prevdata = array_pop($storedata);
 		$text = $prevdata[0];
-		$storedata[]=array($text,$sutra_number,'drop',$note,$us);
+		$storedata[]=array($text,$sutra_number,'drop',$note,$us,$first,$so);
+	}
+	elseif (!in_array($sutra_number,$removed_sutras) && $jsonmode===1)
+	{
+		$storedata[]=array('text' => $text, 'sutra_num' => $sutra_number, 'style' => $style, 'note' => $note, 'upasarga' => $us, 'input' => $first, 'suffix' => $so);
+	}
+	elseif (in_array($sutra_number,$removed_sutras) && $jsonmode===1)
+	{
+		$prevdata = array_pop($storedata);
+		$text = $prevdata[0];
+		$storedata[]=array('text' => $text, 'sutra_num' => $sutra_number, 'style' => 'drop', 'note' => $note, 'upasarga' => $us, 'input' => $first, 'suffix' => $so);
 	}
 	// debug details
 	if ($debugmode===3)
@@ -3896,7 +3907,8 @@ function gui($text,$sutra_number,$style,$note,$us)
 function gui2($sutra_number)
 {
 	$style="st";
-	global $ASdata, $vdata, $miscdata, $frontend, $paribhASAdata; global $upasarga_joined; global $us, $outfile, $otherdata; // bringing $text from main php function.
+	$response = '';
+	global $ASdata, $vdata, $miscdata, $frontend, $paribhASAdata, $jsonmode; global $upasarga_joined; global $us, $outfile, $otherdata; // bringing $text from main php function.
 	if (strpos($sutra_number,'~')!==false && $frontend==='1')
 	{
 		$matches = array_filter($otherdata, function($var) use ($sutra_number) { return strpos($var,$sutra_number.":")!==false; });
@@ -3907,12 +3919,15 @@ function gui2($sutra_number)
 		$msg_dev[$i] = $int[2];
 		if ($msg_no[$i] === $sutra_number)
 		{
-			echo "<p class = ".$style." >$msg_eng[$i]</p>\n";
-			echo "<p class = ".$style." >$msg_dev[$i]</p>\n";
-			echo "<hr/>";
-			fputs($outfile,"<p class = ".$style." >$msg_eng[$i]</p>\n");
-			fputs($outfile,"<p class = ".$style." >$msg_dev[$i]</p>\n");
-			fputs($outfile,"<hr/>");
+			if ($jsonmode!==1){
+				echo "<p class = ".$style." >$msg_eng[$i]</p>\n";
+				echo "<p class = ".$style." >$msg_dev[$i]</p>\n";
+				echo "<hr/>";
+				fputs($outfile,"<p class = ".$style." >$msg_eng[$i]</p>\n");
+				fputs($outfile,"<p class = ".$style." >$msg_dev[$i]</p>\n");
+				fputs($outfile,"<hr/>");
+				}
+			$response = $msg_eng[$i];
 		}
 	}
 	elseif (strpos($sutra_number,'@')!==false && $frontend==='1')
@@ -3925,12 +3940,15 @@ function gui2($sutra_number)
 		$msg_dev[$i] = $int[2];
 		if ($msg_no[$i] === $sutra_number)
 		{
-			echo "<p class = ".$style." >$msg_eng[$i]</p>\n";
-			echo "<p class = ".$style." >$msg_dev[$i]</p>\n";
-			echo "<hr/>";
-			fputs($outfile,"<p class = ".$style." >$msg_eng[$i]</p>\n");
-			fputs($outfile,"<p class = ".$style." >$msg_dev[$i]</p>\n");
-			fputs($outfile,"<hr/>");
+			if ($jsonmode!==1){
+				echo "<p class = ".$style." >$msg_eng[$i]</p>\n";
+				echo "<p class = ".$style." >$msg_dev[$i]</p>\n";
+				echo "<hr/>";
+				fputs($outfile,"<p class = ".$style." >$msg_eng[$i]</p>\n");
+				fputs($outfile,"<p class = ".$style." >$msg_dev[$i]</p>\n");
+				fputs($outfile,"<hr/>");
+				}
+			$response = $msg_eng[$i];
 		}
 	}
 	elseif (strpos($sutra_number,'-')===false && strpos($sutra_number,'.')!==false && $frontend==='1')
@@ -3943,12 +3961,15 @@ function gui2($sutra_number)
 		$sutra_dev[$i] = $int[2];
 		if ($sutra_no[$i] === $sutra_number)
 		{
-			echo "<p class = ".$style." >By ".toiast($sutra_dev[$i])." (".link_sutra($sutra_number).") :</p>\n";
-			echo "<p class = ".$style." >".$sutra_dev[$i]." (".convert($sutra_number).") :</p>\n";
-			echo "<hr/>";
-			/*fputs($outfile,"<p class = ".$style." >By ".toiast($sutra_dev[$i])." (".link_sutra($sutra_number).") :</p>\n");
-			fputs($outfile,"<p class = ".$style." >".$sutra_dev[$i]." (".convert($sutra_number).") :</p>\n");
-			fputs($outfile,"<hr/>");*/
+			if ($jsonmode!==1){
+				echo "<p class = ".$style." >By ".toiast($sutra_dev[$i])." (".link_sutra($sutra_number).") :</p>\n";
+				echo "<p class = ".$style." >".$sutra_dev[$i]." (".convert($sutra_number).") :</p>\n";
+				echo "<hr/>";
+				/*fputs($outfile,"<p class = ".$style." >By ".toiast($sutra_dev[$i])." (".link_sutra($sutra_number).") :</p>\n");
+				fputs($outfile,"<p class = ".$style." >".$sutra_dev[$i]." (".convert($sutra_number).") :</p>\n");
+				fputs($outfile,"<hr/>");*/
+				}
+			$response = toiast($sutra_dev[$i]);
 		}
 	}
 	elseif (strpos($sutra_number,'-')!==false && strpos($sutra_number,'.')!==false && $frontend==='1')
@@ -3960,12 +3981,15 @@ function gui2($sutra_number)
 		$sutra_dev[$i] = $int[1];
 		if ($vartika_no[$i] === $sutra_number)
 		{
-			echo "<p class = ".$style." >By ".toiast($sutra_dev[$i])." (vA ".link_vartika($sutra_number).") :</p>\n";
-			echo "<p class = ".$style." >".convert($sutra_dev[$i])." (वा ".convert($sutra_number).") :</p>\n";
-			echo "<hr/>";
-			fputs($outfile,"<p class = ".$style." >By ".toiast($sutra_dev[$i])." (vA ".link_vartika($sutra_number).") :</p>\n");
-			fputs($outfile,"<p class = ".$style." >".convert($sutra_dev[$i])." (वा ".convert($sutra_number).") :</p>\n");
-			fputs($outfile,"<hr/>");
+			if ($jsonmode!==1){
+				echo "<p class = ".$style." >By ".toiast($sutra_dev[$i])." (vA ".link_vartika($sutra_number).") :</p>\n";
+				echo "<p class = ".$style." >".convert($sutra_dev[$i])." (वा ".convert($sutra_number).") :</p>\n";
+				echo "<hr/>";
+				fputs($outfile,"<p class = ".$style." >By ".toiast($sutra_dev[$i])." (vA ".link_vartika($sutra_number).") :</p>\n");
+				fputs($outfile,"<p class = ".$style." >".convert($sutra_dev[$i])." (वा ".convert($sutra_number).") :</p>\n");
+				fputs($outfile,"<hr/>");
+				}
+			$response = toiast($sutra_dev[$i]);
 		}
 	}
 	elseif ( $frontend==='1') // For $miscdata for displaying miscellaneous information.
@@ -3977,14 +4001,18 @@ function gui2($sutra_number)
 		$sutra_dev[$i] = $int[1];
 		if ($vartika_no[$i] === $sutra_number)
 		{
-			echo "<p class = ".$style." >By ".toiast($sutra_dev[$i])." :</p>\n";
-			echo "<p class = ".$style." >".convert($sutra_dev[$i])." :</p>\n";
-			echo "<hr/>";
-			/*fputs($outfile,"<p class = ".$style." >By ".toiast($sutra_dev[$i])." :</p>\n");
-			fputs($outfile,"<p class = ".$style." >".convert($sutra_dev[$i])." :</p>\n");
-			fputs($outfile,"<hr/>");*/
+			if ($jsonmode!==1){
+				echo "<p class = ".$style." >By ".toiast($sutra_dev[$i])." :</p>\n";
+				echo "<p class = ".$style." >".convert($sutra_dev[$i])." :</p>\n";
+				echo "<hr/>";
+				/*fputs($outfile,"<p class = ".$style." >By ".toiast($sutra_dev[$i])." :</p>\n");
+				fputs($outfile,"<p class = ".$style." >".convert($sutra_dev[$i])." :</p>\n");
+				fputs($outfile,"<hr/>");*/
+				}
+			$response = toiast($sutra_dev[$i]);
 		}
 	}
+	return $response;
 }
 /* Function print_to_file prints the output from storedata to the local HTML file for viewing later. */
 function print_to_file($text,$sutra_number,$style,$note)

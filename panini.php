@@ -256,7 +256,10 @@ $itprakriti = array(); // creating an array where we can store it markers of pra
 $itpratyaya = array(); // creating an array where we can store it markers of pratyayas.
 $samp = array(); // creating an array where we can store whethere samprasAraNa has happened or not.
 $Agama = array(); // storing Agamas.
-
+$padadecider_id = '';
+$padadecider_sutra = '';
+$it_id = '';
+$it_sutra = '';
 
 // rest of the variables will be defined at their particular occurence in the code.
 /* Displaying information about the verb to the user */
@@ -581,7 +584,7 @@ if ($type==='tiGanta')
 	/* nervizaH (1.3.47), parivyavebhyaH kriyaH (1.3.18), viparAbhyAM jeH (1.3.19), krIDo'nusaMparibhyazca (1.3.21), samavaparivibhyaH sthaH (1.3.22), udvibhyAM tapaH (1.3.27), AGo yamahanaH (1.3.28), samo gamyRcCipracCisvarAyartishruvidibhyaH (1.3.29), nisamupavibhyo hvaH (1.3.30), avAdgraH (1.3.51), jJAzRsmRdRzAM sanaH (1.3.57) */
 	elseif ( in_array($us.$first,$toatmane) )
 	{
-		verb_pada1(); // Displaying the sUtra applicable.
+		$atm = verb_pada1(); // Displaying the sUtra applicable.
 		$verbpada="A";
 	}
 	/* vyAGparibhyo ramaH (1.3.83) */
@@ -758,66 +761,77 @@ elseif ($type==='tiGanta')
 		if ( in_array($fo,array("zmiN","f","pUN","aYjU!","aSU!")) && $san===1)
 		{
 			$id_dhAtu="sew";
-			gui2('7.2.74');
+			$it_id = '7.2.74';
+			$it_sutra = gui2('7.2.74');
 		}
 		/* kirazca paJcabhyaH (7.2.75) */
 		elseif ( in_array($fo,array("kF","gF","DfN","dfN","praCa!")) && $san===1)
 		{
 			$id_dhAtu="sew";
-			gui2('7.2.75');
+			$it_id = '7.2.75';
+			$it_sutra = gui2('7.2.75');
 		}
 		/* iT sani vA (7.2.41) */
 		elseif ( (in_array($fo,array("vfN","vfY")) || preg_match('/F$/',$verb_without_anubandha) ) && $san===1)
 		{
 			$id_dhAtu="vew";
-			gui2('7.2.41');
+			$it_id = '7.2.41';
+			$it_sutra = gui2('7.2.41');
 		}
 		/* sanIvantardhabhrasjadambhuzrisvRyUrNubharajJapisanAm (7.2.49) */
 		elseif ( (in_array($fo,array("fDu!","Brasja!","damBu!","SriY","svf","yu","UrRuY","quBfY","jYapa!","zana!")) || preg_match('/iv$/',$verb_without_anubandha) ) && $san===1)
 		{
 			$id_dhAtu="vew";
-			gui2('7.2.49');
+			$it_id = '7.2.49';
+			$it_sutra = gui2('7.2.49');
 		}
 		/* tanipatidaridrANAmupasaGkhyAnam (vA) */
 		elseif ( in_array($fo,array("tanu!","patx!","daridrA"))  && $san===1)
 		{
 			$id_dhAtu="vew";
-			gui2('7.2.49');
+			$it_id = '7.2.49';
+			$it_sutra = gui2('7.2.49');
 		}
 		/* sani grahaguhozca (7.2.12) */
 		elseif ($san===1 && (preg_match('/[uUfFx]$/',$verb_without_anubandha)||$fo==="graha!"||$fo==="guhU!") && $fo!=="UrRuY")
 		{
 			$id_dhAtu="aniw";
-			gui2('7.2.12');
+			$it_id = '7.2.12';
+			$it_sutra = gui2('7.2.12');
 	   }
 		elseif (anekAca($verb_without_anubandha) || $yaG===1 || $sanAdi==="Ric" )
 		{
 			$id_dhAtu="sew";
-			gui2('seTverb');
+			$it_id = 'seT verb';
+			$it_sutra = gui2('seTverb');
 	   }
 		 /* svaratisUtisUyatidhUJUdito vA (7.2.44) */
 		elseif (in_array($fo,array("svf","zUN","DUY")) || in_array($fo,$Uditverbs))
 		{
 			$id_dhAtu="vew";
-			gui2('7.2.44');
+			$it_id = '7.2.44';
+			$it_sutra = gui2('7.2.44');
 	   }
 	   /* RddhanoH sye (7.2.70) */
 		elseif ( (ends(array($verb_without_anubandha),array("f",),1) || $fo==="hana!") && in_array($lakAra,array("lfw","lfN")) )
 		{
 			$id_dhAtu="sew";
-			gui2('7.2.70');
+			$it_id = '7.2.70';
+			$it_sutra = gui2('7.2.70');
 		}
 		/* se'sici kRtacRtacCRdatRdanRtaH (7.2.57) */
 		elseif (in_array($fo,array("kftI!","cfta!","Cfda!","tfda!","nfta!","nftI!","u!Crdi!r")) && (in_array($lakAra,array("lfw","lfN")) || $san===1) )
 		{
 			$id_dhAtu="vew";
-			gui2('7.2.57');
+			$it_id = '7.2.57';
+			$it_sutra = gui2('7.2.57');
 		}
 		/* gameriT parasmaipadeSu (7.2.58) */
 		elseif ( in_array($fo,array("gamx!",))  && (in_array($lakAra,array("lfw","lfN")) || $san===1 ) && ($verbpada==="p"||$vsuf==="yak"))
 		{
 			$id_dhAtu="sew";
-			gui2('7.2.58');
+			$it_id = '7.2.58';
+			$it_sutra = gui2('7.2.58');
 		}
 		/* na vRdbhyazcaturbhyaH (7.2.59) */
 		elseif ( $verbset==="BvAdi" && in_array($fo,array("vftu!","vfDu!","SfDu!","syandU!",)) && (in_array($lakAra,array("lfw","lfN")) || $san===1 ) )
@@ -825,36 +839,42 @@ elseif ($type==='tiGanta')
 			$verbpada="u";
 			$id_dhAtu="aniw";
 			$suffix = $tiG;
-			gui2('7.2.59');
+			$it_id = '7.2.59';
+			$it_sutra = gui2('7.2.59');
 		}
 		/* tAsi ca klRpaH (7.2.60) */
 		// sakArAdi. tAsi done elsewhere.
 		elseif ( in_array($fo,array("kxpa!",)) && (in_array($lakAra,array("lfw","lfN")) || $san===1 ) && $verbpada==="p")
 		{
 			$id_dhAtu="aniw";
-			gui2('7.2.60');
+			$it_id = '7.2.60';
+			$it_sutra = gui2('7.2.60');
 		}
 		/* radhAdibhyazca (7.2.45) */
 		elseif (in_array($fo,array("raDa!","RaSa!","tfpa!","dfpa!","druha!","muha!","zRuha!","zRiha!")) && $verbset==="divAdi")
 		{
 			$id_dhAtu="vew";
-			gui2('7.2.45');
+			$it_id = '7.2.45';
+			$it_sutra = gui2('7.2.45');
 		}
 		/* niraH kuSaH (7.2.46) */
 		elseif (in_array($fo,array("kuza!")) && $us==="nis" )
 		{
 			$id_dhAtu="vew";
-			gui2('7.2.46');
+			$it_id = '7.2.46';
+			$it_sutra = gui2('7.2.46');
 		}
 		elseif (verb_itfinder($first)===array("sew"))
 		{
 			$id_dhAtu="sew";
-			gui2('seTverb');
+			$it_id = 'seT verb';
+			$it_sutra = gui2('seTverb');
 		}
 		elseif (verb_itfinder($first)===array("aniw"))
 		{
 			$id_dhAtu="aniw";
-			gui2('7.2.10');
+			$it_id = '7.2.10';
+			$it_sutra = gui2('7.2.10');
 		}
 	}
 	else
@@ -14488,7 +14508,7 @@ if ((isset($argv[0])|| $test ===1) )
 	fputs($jsonfile,json_encode($dataformorpheus).",\n");
 	fclose($jsonfile);
 }
-elseif ($type==="tiGanta")
+elseif ($type==="tiGanta" && $jsonmode!==1)
 {
 	$ou = array_map('convert',$ou);
 	tablemaker($ou);
@@ -14547,11 +14567,23 @@ elseif ($type==="subanta")
 if ($frontend!=="0" && $jsonmode===1)
 {
 	echo '<pre>';
-	print_r($storestore);
 	$fullformofverbtypes = array('pa' => 'parasmEpaxI', 'A' => 'AwmanepaxI', 'u' => 'uBayapaxI');
 	$verbpadaforUohyd = $fullformofverbtypes[$verbpada];
+	// Create a JSON readable derivation steps from $storestore.
+	$derivation = array();
+	foreach($storestore as $storedata){
+		$suffx = $storedata[0]['suffix'];
+		$derivation[$suffx] = $storedata;
+		}
 	$vmgn['UoHyd'] = $vmgn['UoHyd'].$verbpadaforUohyd;
-	print_r($vmgn);
+	$vmgn['upasarga'] = $us;
+	$vmgn['padadecider_id'] = $padadecider_id;
+	$vmgn['padadecider_sutra'] = $padadecider_sutra;
+	$vmgn['it_sutra'] = $it_sutra;
+	$vmgn['it_id'] = $it_id;
+	$vmgn['it_status'] = $id_dhAtu;
+	$vmgn['derivation'] = $derivation;
+	print_r(json_encode($vmgn, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES));
 	echo '</pre>';
 	}
 /* Displaying the sUtras and sequential changes of $frontend is not set to 0. */
@@ -14583,7 +14615,7 @@ fputs($logfile,"Request completed on :".date('D, d M Y H:i:s')."\n");
 fputs($logfile,"------------------------------\n");
 fclose($logfile);
 if ($debug===1) {dibug('End_of_code');}
-if ($debugmode===0 && !isset($argv[0]))
+if ($debugmode===0 && !isset($argv[0]) && $jsonmode!==1)
 {
 	echo "$first $lakAra completed in "; timestamp();
 }
