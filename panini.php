@@ -14548,6 +14548,9 @@ if ($frontend!=="0" && $jsonmode===1)
 {
 	echo '<pre>';
 	print_r($storestore);
+	$fullformofverbtypes = array('pa' => 'parasmEpaxI', 'A' => 'AwmanepaxI', 'u' => 'uBayapaxI');
+	$verbpadaforUohyd = $fullformofverbtypes[$verbpada];
+	$vmgn['UoHyd'] = $vmgn['UoHyd'].$verbpadaforUohyd;
 	print_r($vmgn);
 	echo '</pre>';
 	}

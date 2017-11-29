@@ -2102,8 +2102,7 @@ function ldc_abs($numberstring,$commentary)
 			foreach($numberlist as $number)
 			{
 				$number = str_replace('+','_',$number);
-				//http://sanskrit.uohyd.ac.in/cgi-bin/scl/skt_gen/verb/verb_gen.cgi?vb=ak1_akaz_BvAxiH+kutilAyAM_gawO&prayoga=karwari&encoding=WX
-				$output[] = 'http://sanskrit.uohyd.ac.in/cgi-bin/scl/skt_gen/verb/verb_gen.cgi?vb='.$number.'&prayoga=karwari&encoding=WX';
+				$output[] = 'http://sanskrit.uohyd.ac.in/cgi-bin/scl/skt_gen/verb/verb_gen.cgi?vb='.$number.'&prayoga=karwari&encoding=WX&upasarga=-&paxI='.$verbpadaforUohyd;
 			}
 		}
 		else
