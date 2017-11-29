@@ -7,12 +7,12 @@
   * Acknowledgements: The base book for coding has been Astadhyayi sahajabodha of Dr. Pushpa Dikshit, published by Pratibha Prakashan, Delhi.
   * I extend my heartfelt thanks to Ananda Loponen for the code to convert devanagari and various sanskrit transliterations. That can be accessed at http://www.ingmardeboer.nl/php/diCrunch.php?act=help.
   * I also extend my gratitude to gloomy.penguin of stackoverflow.com, who helped me create dvitva and lopa functions, without which I would be handicapped.
-  * For setup, run install.sh. 
+  * For setup, run install.sh.
   * tiGanta.html is the frontend for the code.
-  * scripts/ajax.php and scripts/script.js are codes which asks for user feedback for particular words. 
+  * scripts/ajax.php and scripts/script.js are codes which asks for user feedback for particular words.
   * scripts/function.php stores the frequently used functions in this code (The description on how to use the code is there in function.php).
   * tiGanta.php is the code which actually gives the output of the word derivation.
-  * scripts/slp-dev.php is for converting SLP1 data to Devanagari. 
+  * scripts/slp-dev.php is for converting SLP1 data to Devanagari.
   * scripts/dev-slp.php is for converting Devanagari data to SLP1.
   * scripts/mystyle.css is stylesheet where you can change your preferences.
   * The code uses jquery.
@@ -60,9 +60,9 @@ $verbs_ru = array("fkz","fc","fC","fj","fYj","fR","ft","fd","fD","fn","fP","fBuk
 $verbs_changed = array("kz","c","C","j","Yj","R","t","d","D","n","P","Bukz","mP","S","z","h"); // verbs with removal of R.
 $ku = array("k","K","g","G","N"); // kavarga letters
 $cu = array("c","C","j","J","Y"); // cavarga letters
-$Tu = array("w","W","q","Q","R"); // Tavarga letters 
+$Tu = array("w","W","q","Q","R"); // Tavarga letters
 $tu = array("t","T","d","D","n"); // tavarga letters
-$pu = array("p","P","b","B","m"); // pavarga letters 
+$pu = array("p","P","b","B","m"); // pavarga letters
 $noco = array("ac","ic","ec","Ec"); // array where coH kuH won't apply.
 $antastha = array("y","r","l","v"); // antaHstha letters
 $ushma = array("S","z","s","h"); // uSma letters
@@ -72,7 +72,7 @@ $iN1 = array("i","I","u","U","f","F","x","X","e","o","E","O","h","y","v","r","l"
 $iN2 = array("i","I","u","U","f","F","x","X","e","o","E","O","h","y","v","r","l",); // iN
 $pratya =  array("aR","ak","ik","uk","eN","ac","ic","ec","Ec","aw","aR","iR","yaR","am","yam","Yam","Nam","yaY","Jaz","Baz","aS","haS","vaS","JaS","jaS","vaS","Cav","yay","may","Jay","Kay","cay","yar","Jar","Kar","car","Sar","al","hal","val","ral","Jal","Sal"); // valid pratyAhAras according to pANinIya vyAkaraNa
 $sup = array("su!","O","jas","am","O","Sas","wA","ByAm","Bis","Ne","ByAm","Byas","Nasi!","ByAm","Byas","Nas","os","Am","Ni","os","sup"); // sup pratyayas
-$sup1 = array("su!","O","jas","am","Ow","Sas","wA","ByAm","Bis","Ne","ByAm","Byas","Nasi!","ByAm","Byas","Nas","os","Am","Ni","os","sup","su!","O","jas"); // sup pratyayas + sambodhana 
+$sup1 = array("su!","O","jas","am","Ow","Sas","wA","ByAm","Bis","Ne","ByAm","Byas","Nasi!","ByAm","Byas","Nas","os","Am","Ni","os","sup","su!","O","jas"); // sup pratyayas + sambodhana
 $acsup = array("O","jas","am","Ow","Sas","wA","Ne","Nasi!","Nas","os","Am","Ni","os"); // sup pratyayas which start with a vowel
 $hlsup = array("su!","ByAm","Bis","Byas","sup"); // sup pratyayas which start with a consonant
 $prathama = array("su!","O","jas","am","Ow","Sas"); // sup pratyayas of first two vibhaktis
@@ -104,7 +104,7 @@ $aNwords=array("lAva","dAya","kAra","Aya","pAra","ASvapata","SAtapata","DAnapata
 $dade = array("dah","dAh","dih","duh","dfh","drAh","doh");
 $ekaco = array("gaD","gaB","gaQ","gAQ","gAD","gAQ","guD","guQ","gUQ","gfD","gfQ","graB","graQ","griQ","glaQ","qaQ","qiQ","quQ","daG","daG","daG","daG","diG","duG","duG","dfG","dfG","dfG","drAG","drAG","druG","druh","baD","baQ","bAQ","bAD","bAQ","bIB","buD","bfQ","beQ","braQ","druQ","gardaB"); // list of verbs satisfying the conditions.
 $ekaco1 = array("GaD","GaB","GaQ","GAQ","GAD","GAQ","GuD","GuQ","GUQ","GfD","GfQ","GraB","GraQ","GriQ","GlaQ","QaQ","QiQ","QuQ","DaG","DaG","DaG","DaG","DiG","DuG","DuG","DfG","DfG","DfG","DrAG","DrAG","DruG","DruQ","BaD","BaQ","BAQ","BAD","BAQ","BIB","BuD","BfQ","BeQ","BraQ","DruQ","garDaB"); // list of verbs after application of this sUtra.
-// karmaNyaN is difficult to do. 
+// karmaNyaN is difficult to do.
 $Titpratyaya = array("lyuw",); // Only lyuw is pending for scrutiny. Rest all are included in TiDDhA.
 $ajAdi = array("aja","eqaka","aSva","cawaka","mUzika","bAla","vatsa","hoQa","manda","bilAta","uzRih","devaviS","jyezWa","kanizWa","maDyama","kokila","pUrvApahARa","aparAhARa","triPala","tryanIka","paraBfta","bAla","amba","hoqa","mugDa","daMzwra","saMprahARa","pUrvApahAyaRa","aparApahAyaRa","samprahAyaRa","saMprahAyaRa","diS","dfS","kzuD","vAc","gir","balAka","vaqava");
 $bahvAdi=array("bahu","padDati","aNkati","aYcati","aMhati","vaMhati","Sakawi","Sakti","SAri","vAri","gati","ahi","kapi","muni","yazwi","caRqa","arAla","kamala","kfpARa","vikawa","viSAla","viSaNkawa","Baruja","Dvaja","kalyARa","udAra","purARa","ahan","cAndraBAga","candraBAga",);
@@ -233,7 +233,7 @@ $ajAdi_apit_sArvadhAtuka_kRt_pratyayas=array("Satf!","SAnac","SAnan","cAnaS","Ka
 $ajAdi_pit_sArvadhAtuka_vikaraNa_pratyayas=array("Sap","a");
 $halAdi_apit_sArvadhAtuka_vikaraNa_pratyayas=array("Syan","Snu","Snam","SnA","SAyac","SAnac","ya"); // watch out for the 'ya' entry. It was made to make application of hali ca possible after robbing the vikaraNa zyan of it markers.
 $ajAdi_apit_sArvadhAtuka_vikaraNa_pratyayas=array("Sa","SAyac","SAnac");
-// ajAdi and halAdi pit total pratyayas 
+// ajAdi and halAdi pit total pratyayas
 $ajAdi_pit_sArvadhAtuka_pratyayas=array("Ani","Ava","Ama","E","AvahE","AmahE","am","Sap","a","AE","Iti","Isi","Izi","Imi","Itu","It","Is",);
 $halAdi_pit_sArvadhAtuka_pratyayas=array("ti","si","mi","tu","t","s",);
 // ajAdi and halAdi apit total pratyayas
@@ -259,7 +259,7 @@ $ArdhadhAtuka_tiG_lRG_Atmane=array("syata","syetAm","syanta","syaTAs","syaeTAm",
 $ArdhadhAtuka_tiG_luT_Atmane=array("tA","tArO","tAras","tAse","tAsATe","tADve","tAhe","tAsvahe","tAsmahe",);
 $ArdhadhAtuka_tiG_ASIrliN_Atmane=array("sIzwa","sIyAstAm","sIran","sIzWAs","sIyAsTAm","sIDvam","sIya","sIvahi","sImahi");
 $ArdhadhAtuka_tiG_liT_Atmane=array("e","Ate","ire","se","ATe","Dve","e","vahe","mahe",);
-$ArdhadhAtuka_tiG_luG_Atmane=array("ata","etAm","anta","aTAs","eTAm","aDvam","e","Avahi","Amahi","ata","etAm","anta","aTAs","eTAm","aDvam","e","Avahi","Amahi","sata","sAtAm","santa","saTAs","sATAm","saDvam","si","sAvahi","sAmahi","sta","sAtAm","sata","sTAs","sATAm","Dvam","si","svahi","smahi","izwa","izAtAm","izata","izWAs","izATAm","iQvam","izi","izvahi","izmahi",); 
+$ArdhadhAtuka_tiG_luG_Atmane=array("ata","etAm","anta","aTAs","eTAm","aDvam","e","Avahi","Amahi","ata","etAm","anta","aTAs","eTAm","aDvam","e","Avahi","Amahi","sata","sAtAm","santa","saTAs","sATAm","saDvam","si","sAvahi","sAmahi","sta","sAtAm","sata","sTAs","sATAm","Dvam","si","svahi","smahi","izwa","izAtAm","izata","izWAs","izATAm","iQvam","izi","izvahi","izmahi",);
 $ArdhadhAtuka_tiG_ArDaDAtukalew_Atmane=array("sate","satE","sEte","sante","santE","sase","sasE","sETe","saDve","saDvE","se","sE","savahe","savahE","samahe","samahE","sAte","sAtE","sEte","sAnte","sAntE","sAse","sAsE","sETe","sADve","sADvE","se","sE","sAvahe","sAvahE","sAmahe","sAmahE",);
 // ArdhadhAtuka tiG pratyayas
 $ArdhadhAtuka_tiG_pratyayas=array("syati","syatas","syanti","syasi","syaTas","syaTa","syAmi","syAvas","syAmas","syat","syatAm","syan","syas","syatam","syata","syam","syAva","syAma","tA","tArO","tAras","tAsi","tAsTas","tAsTa","tAsmi","tAsvas","tAsmas","yAt","yAstAm","yAsus","yAs","yAstam","yAsta","yAsam","yAsva","yAsma","Ral","atus","us","Tal","aTus","a","Ral","va","ma","t","tAm","an","s","tam","ta","am","va","ma","sIt","sizwAm","sizus","sIs","sizwam","sizwa","sizam","sizva","sizma","at","atAm","an","as","atam","ata","am","Ava","Ama","at","atAm","an","as","atam","ata","am","Ava","Ama","sat","satAm","san","sas","satam","sata","sam","sAva","sAma","sIt","stAm","sus","sIs","stam","sta","sam","sva","sma","It","izwAm","izus","Is","izwam","izwa","izam","izva","izma","sati","satas","santi","sat","sad","san","sasi","sas","saTas","saTa","sami","sam","savas","sava","samas","sama","sAti","sAt","sAd","sAtas","sAnti","sAn","sAsi","sAs","sATas","sATa","sAmi","sAm","sAvas","sAva","sAmas","sAma","syate","syete","syante","syase","syeTe","syaDve","sye","syAvahe","syAmahe","syata","syetAm","syanta","syaTAs","syeTAm","syaDvam","sye","syAvahi","syAmahi","tA","tArO","tAras","tAse","tAsATe","tADve","tAhe","tAsvahe","tAsmahe","sIzwa","sIyAstAm","sIran","sIzWAs","sIyAsTAm","sIDvam","sIya","sIvahi","sImahi","e","Ate","ire","se","ATe","Dve","e","vahe","mahe","ata","etAm","anta","aTAs","eTAm","aDvam","e","Avahi","Amahi","ata","etAm","anta","aTAs","eTAm","aDvam","e","Avahi","Amahi","sata","sAtAm","santa","saTAs","sATAm","saDvam","si","sAvahi","sAmahi","sta","sAtAm","sata","sTAs","sATAm","Dvam","si","svahi","smahi","izwa","izAtAm","izata","izWAs","izATAm","iQvam","izi","izvahi","izmahi","sate","satE","sEte","sante","santE","sase","sasE","sETe","saDve","saDvE","se","sE","savahe","savahE","samahe","samahE","sAte","sAtE","sEte","sAnte","sAntE","sAse","sAsE","sETe","sADve","sADvE","se","sE","sAvahe","sAvahE","sAmahe","sAmahE","ista","isAtAm","isata","isTAs","isATAm","iDvam","isDvam","isi","isvahi","ismahi","sDvam","Ji","a","Ta","syant","isyeTAm","isye","isyai","sye","syai");
@@ -335,17 +335,17 @@ function asyaprayatna($text)
 	if (in_array($text,$ac)) { $bahya[$k] = "svarita"; $k++; }
 	$output = array($sthana,$abhyantara,$bahya);
 	$a = "The sthana is: ".implode(",",$sthana).".</br>\n"."The abhyantara prayatna is: ".implode(",",$abhyantara).".</br>\n"."The bahya prayatna is: ".implode(",",$bahya);
-	echo $a;	
+	echo $a;
 }
-/* Function to find pratyAhAra from given two letters */ 
+/* Function to find pratyAhAra from given two letters */
 // Enter your letters in the arguments like prat('Jl') will mean pratyAhAra jhal.
 function prat($text)  // prat for pratyAhAra
 {
 global $shiv; // incorporating $shiv from arrays.
 if ($text === "ra") // for circumventing the imaginary ra pratyAhAra
 {
-$text = array("r","l"); 
-} 
+$text = array("r","l");
+}
 elseif ($text === "yR") // for circumventing the yaN pratyAhAra because of problem of double N
 {
 $text = array("y","y","v","v","r","r","l","l");
@@ -382,8 +382,8 @@ $text = explode(" ",$b); // creating the array of pratyAhAra back.
 }
 return $text; // returning the result of function to user.
 }
-/* function pratyAhAra check is for checking in regular expressions. 
- * In regular expressions we don't treat arrays. usually it is 'aAiIuU'. 
+/* function pratyAhAra check is for checking in regular expressions.
+ * In regular expressions we don't treat arrays. usually it is 'aAiIuU'.
  * so this function converts the pratyAhAra to this flat format. */
 function pc($text) // pratyAhAra check
 {
@@ -392,7 +392,7 @@ return $text; // returning the result to the user.
 }
 /* Function one is for replacing one letter in the whole array of $text with another letter */
 // There are three arguments.
-// $a is the array which you want to change. 
+// $a is the array which you want to change.
 // $b is the array which will be put in place of the replaced one.
 // $merge can take two values. 0 will mean that the whole $text will be replaced with the new replaced values. Used in case of mandatory Adezas.
 // 1 will mean that $text will not be replaced, but the replaced values will be added to it. Used in case of optional Adezas.
@@ -427,7 +427,7 @@ return $text;  // giving the result to the user.
 }
 /* Function two is for replacing one letter in the whole array of $text with another letter */
 // There are five arguments, $a,$b are the arrays which you want to change, $c,$d are the arrays which will be put in place of the replaced one.
-// $merge can take five values. 
+// $merge can take five values.
 // 0 will mean that the whole $text will be replaced with the new replaced values. Used in case of mandatory Adezas.
 // 1 will mean that $text will not be replaced, but the replaced values will be added to it. Used in case of optional Adezas.
 // 2 = without + sign, mandatory (apadAnta etc)
@@ -454,15 +454,15 @@ function two($a,$b,$c,$d,$merge) // the comments are the same as one function.
                     }
                     elseif ($merge<4)
                     {
-                    $p =  str_replace($a[$i].$b[$j],$c[$i].$d[$j],$p);  // replacement without "+" sign.                     
+                    $p =  str_replace($a[$i].$b[$j],$c[$i].$d[$j],$p);  // replacement without "+" sign.
                     }
                     else
                     {
-                    $p =  str_replace($a[$i]."+".$b[$j],$c[$i]."+".$d[$j],$p); // replacement with "+" sign.                                          
+                    $p =  str_replace($a[$i]."+".$b[$j],$c[$i]."+".$d[$j],$p); // replacement with "+" sign.
                     }
                 }
           }
-     $text1[$z]  = $p;      
+     $text1[$z]  = $p;
     }
 if (($merge === 0) || ($merge === 2) ||($merge === 4) ) // mandatory Adezas
     {
@@ -481,7 +481,7 @@ if (($merge === 1) || ($merge === 3) ||($merge === 5) ) // optional Adezas.
 
 /* Function three is for replacing one letter in the whole array of $text with another letter */
 // There are seven arguments, $a,$b,$c are the arrays which you want to change, $d,$e,$f are the arrays which will be put in place of the replaced one.
-// $merge can take two values. 
+// $merge can take two values.
 // 0 will mean that the whole $text will be replaced with the new replaced values. Used in case of mandatory Adezas.
 // 1 will mean that $text will not be replaced, but the replaced values will be added to it. Used in case of optional Adezas.
 function three($a,$b,$c,$d,$e,$f,$merge) // comments are the same as one function.
@@ -491,7 +491,7 @@ function three($a,$b,$c,$d,$e,$f,$merge) // comments are the same as one functio
 	echo "three started at ";
 	timestamp();}
    for ($z=0;$z<count($text);$z++)
-    {$p = $text[$z]; 
+    {$p = $text[$z];
      for($i=0;$i<count($a);$i++)
     {
     for($j=0;$j<count($b);$j++)
@@ -499,9 +499,9 @@ function three($a,$b,$c,$d,$e,$f,$merge) // comments are the same as one functio
         for($k=0;$k<count($c);$k++)
             {
             $p =  str_replace($a[$i].$b[$j].$c[$k],$d[$i].$e[$j].$f[$k],$p);
-           $p =  str_replace($a[$i]."+".$b[$j].$c[$k],$d[$i]."+".$e[$j].$f[$k],$p);       
-           $p =  str_replace($a[$i].$b[$j]."+".$c[$k],$d[$i].$e[$j]."+".$f[$k],$p);       
-           $p =  str_replace($a[$i]."+".$b[$j]."+".$c[$k],$d[$i]."+".$e[$j]."+".$f[$k],$p);       
+           $p =  str_replace($a[$i]."+".$b[$j].$c[$k],$d[$i]."+".$e[$j].$f[$k],$p);
+           $p =  str_replace($a[$i].$b[$j]."+".$c[$k],$d[$i].$e[$j]."+".$f[$k],$p);
+           $p =  str_replace($a[$i]."+".$b[$j]."+".$c[$k],$d[$i]."+".$e[$j]."+".$f[$k],$p);
             }
         }
     }
@@ -556,11 +556,11 @@ function savarna($inarray,$array)
 {
 for($z=0;$z<count($inarray);$z++)
 {
-$text = $inarray[$z];    
+$text = $inarray[$z];
     global $kantha,$talu,$murdha,$danta,$oshtha,$nasika,$kanthatalu,$kanthoshtha,$dantoshtha,$sprushta,$ishatsprushta,$vivruta,$samvruta,$aghosha,$alpaprana,$ghosha,$mahaprana,$ac,$udatta,$anudatta,$svarita,$shvasa,$nada,$vivara,$samvara,$hl,$ru,$e; // bringing the arrays in function
     // defining an array for sthAna
 $i=0;
-if (in_array($text,$kantha)) { $sthana[$i] = $kantha; $i++; } 
+if (in_array($text,$kantha)) { $sthana[$i] = $kantha; $i++; }
 if (in_array($text,$talu)) { $sthana[$i] =  $talu; $i++; }
 if (in_array($text,$murdha)) { $sthana[$i] = $murdha; $i++; }
 if (in_array($text,$danta)) { $sthana[$i] = $danta; $i++; }
@@ -584,7 +584,7 @@ if (in_array($text,$mahaprana)) { $prana[$k] = $mahaprana; $k++; }
 // defining an array for bAhya prayatna of vowels
 $u=0;
 if (in_array($text,$ac)) { $svar[$u] = $udatta; $u++; }
-// Finding out intersections of sthAna, Abhyantara prayatna and bAhya prayatnas of the given letter and the given array. 
+// Finding out intersections of sthAna, Abhyantara prayatna and bAhya prayatnas of the given letter and the given array.
 if(empty($sthana)===FALSE)
 {
 $sthanasamya = array_intersect(flatten($sthana),$array);  // finding the intersection of sthAna
@@ -604,7 +604,7 @@ $pranasamya = array_intersect(flatten($prana),$array); // finding the intersecti
 if(empty($svar)===false)
 {
 if(in_array($text,$ac)) { $svarasamya = array_intersect(flatten($svar),$array,$ac); // finding the svarasAmya
-}    
+}
 }
 $l = array_intersect($sthanasamya,$abhyantarasamya,$ghoshasamya,$pranasamya); // $l is the case in which sthAna, Abhyantaraprayatna, ghoSa and prANa all are matching. The best match.
 $m = array_intersect($sthanasamya,$abhyantarasamya,$ghoshasamya); // $m is the case in which sthAna, Abhyantaraprayatna and ghoSa are matching. The second best match.
@@ -617,35 +617,35 @@ if(in_array($text,$hl))
 {
     if(empty($sthanasamya)===false&&empty($abhyantarasamya)===false&&empty($ghoshasamya)===false&&empty($pranasamya)===FALSE&&empty($l)===false)  // four match
     {
-            $savarna = implode(", ",$l);     
+            $savarna = implode(", ",$l);
     }
     elseif (empty($sthanasamya)===false&&empty($abhyantarasamya)===false&&empty($ghoshasamya)===false&&empty($m)===false) // three match
     {
-            $savarna = implode(", ",$m);     
+            $savarna = implode(", ",$m);
     }
     elseif (empty($sthanasamya)===false&&empty($abhyantarasamya)===false&&empty($pranasamya)===false&&empty($o)===false) // three match
     {
-            $savarna = implode(", ",$o);     
+            $savarna = implode(", ",$o);
     }
     elseif (empty($sthanasamya)===false&&empty($abhyantarasamya)===false&&empty($n)===false) // two match
     {
-            $savarna = implode(", ",$n);     
+            $savarna = implode(", ",$n);
     }
      elseif (empty($sthanasamya)===false&&empty($ghoshasamya)===false&&empty($p)===false) // two match
     {
-            $savarna = implode(", ",$p);     
+            $savarna = implode(", ",$p);
     } elseif (empty($sthanasamya)===false&&empty($pranasamya)===false&&empty($q)===false) // two match
     {
-            $savarna = implode(", ",$q);     
+            $savarna = implode(", ",$q);
     }
     else // no match
     {
-    $savarna = implode(", ",$sthanasamya);    
+    $savarna = implode(", ",$sthanasamya);
     }
-} 
+}
 // defining savarNas for vowels
 else
-{  
+{
     if (in_array($text,$ru)||in_array($text,$e))
     {// patch for $ru
         for($i=0;$i<4;$i++)
@@ -667,7 +667,7 @@ else
         }
         }
     }
-  else 
+  else
     {// In case of other vowels.
         $savarna = implode(", ",$sthanasamya);
     }
@@ -678,8 +678,8 @@ $arr[$z] =  $savarna; // We got the savarNa for the first letter of the array. T
 return $arr; // returning the desired savarNa array.
 }
 /* function display will show the text on screen. */
-// There are three arguments. 0 will simply display the message. 
-// 1 will show an additional message in dvitva. 
+// There are three arguments. 0 will simply display the message.
+// 1 will show an additional message in dvitva.
 // 2 is not used in the code. Useful where there were two optional forms.
 // 3 is for aGgAdhikAra.
 // 4 is for yaNaH pratiSedho vAcyaH in case of yaN.
@@ -698,36 +698,36 @@ function display($n)
         echo "<p class = hn>Please note: Wherever there is dvitva, it is optionally negated by sarvatra zAkalyasya. (".link_sutra("8.4.51").")</p>\n";
         echo "<p class = hn>द्वित्व का सर्वत्र सर्वत्र शाकल्यस्य (८.४.५१) से पाक्षिक निषेध होता है ।</p>\n";
         }
-    if ($n === 2) 
-        { 
-        global $text1; $text2 = $text; $text = $text1; 
+    if ($n === 2)
+        {
+        global $text1; $text2 = $text; $text = $text1;
         }
-    if ($n === 3) 
+    if ($n === 3)
         {
         echo "<p class = pa>yasmAtpratyayavidhistadAdi pratyaye'Ggam (".link_sutra("2.4.13").") and aGgasya (".link_sutra("6.4.1").") </p>\n";
         echo "<p class = pa>यस्मात्प्रत्ययविधिस्तदादि प्रत्ययेऽङ्गम्‌ (२.४.१३) तथा अङ्गस्य (६.४.१) </p>\n";
         }
-    if ($n === 4) 
+    if ($n === 4)
         {
         echo "<p class = hn>N.B.: yaNaH pratiSedho vAcyaH (vA 4806) prevents application of saMyogAntasya lopaH (".link_sutra("8.2.23").") </p>\n";
         echo "<p class = hn>यणः प्रतिषेधो वाच्यः (वा ४८०६) से संयोगान्तस्य लोपः (८.२.२३) का निषेध होता है ।</p>\n";
         }
-    if ($n === 5) 
+    if ($n === 5)
         {
         echo "<p class = hn>N.B.: anekAlzitsarvasya (".link_sutra("1.1.55").") mandates sarvAdeza.  </p>\n";
         echo "<p class = hn>अनेकाल्शित्सर्वस्य (१.१.५५) से सर्वादेश होता है ।</p>\n";
         }
-    if ($n === 6) 
+    if ($n === 6)
         {
         echo "<p class = pa>yasmAtpratyayavidhistadAdi pratyaye'Ggam (".link_sutra("2.4.13").") aGgasya (".link_sutra("6.4.1").") and bhasya (".link_sutra("6.4.129").") :</p>\n";
         echo "<p class = pa>यस्मात्प्रत्ययविधिस्तदादि प्रत्ययेऽङ्गम्‌ (२.४.१३), अङ्गस्य (६.४.१) तथा भस्य (६.४.१२९) :</p>\n";
         }
-    if ($n === 7) 
+    if ($n === 7)
         {
         echo "<p class = pa>padasya (".link_sutra("8.1.16")."), padAt (".link_sutra("8.1.17").") and anudAttaM sarvamapAdAdau (".link_sutra("8.1.18").") :</p>\n";
         echo "<p class = pa>पदस्य (८.१.१६), पदात्‌ (८.१.१७) तथा अनुदात्तं सर्वमपादादौ (८.१.१८) :</p>\n";
         }
-    if ($n === 8) 
+    if ($n === 8)
         {
         echo "<p class = pa>anupasarjanAt (".link_sutra("4.1.14").") :</p>\n";
         echo "<p class = pa>अनुपसर्जनात्‌ (४.१.१४) :</p>\n";
@@ -746,8 +746,8 @@ function display($n)
     if ($n === 2) { $text1 = $text; $text = $text2; } // not useful because the display(2) is not used in the code. If it is used, this will work.
 }
 /* function display2 is specially designed to try with gui function. */
-// There are three arguments. 0 will simply display the message. 
-// 1 will show an additional message in dvitva. 
+// There are three arguments. 0 will simply display the message.
+// 1 will show an additional message in dvitva.
 // 2 is not used in the code. Useful where there were two optional forms.
 // 3 is for aGgAdhikAra.
 // 4 is for yaNaH pratiSedho vAcyaH in case of yaN.
@@ -766,36 +766,36 @@ function display2($text,$n,$us='')
         echo "<p class = hn>Please note: Wherever there is dvitva, it is optionally negated by sarvatra zAkalyasya. (".link_sutra("8.4.51").")</p>\n";
         echo "<p class = hn>द्वित्व का सर्वत्र सर्वत्र शाकल्यस्य (८.४.५१) से पाक्षिक निषेध होता है ।</p>\n";
         }
-    if ($n === 2) 
-        { 
-        global $text1; $text2 = $text; $text = $text1; 
+    if ($n === 2)
+        {
+        global $text1; $text2 = $text; $text = $text1;
         }
-    if ($n === 3) 
+    if ($n === 3)
         {
         echo "<p class = pa>yasmAtpratyayavidhistadAdi pratyaye'Ggam (".link_sutra("2.4.13").") and aGgasya (".link_sutra("6.4.1").") </p>\n";
         echo "<p class = pa>यस्मात्प्रत्ययविधिस्तदादि प्रत्ययेऽङ्गम्‌ (२.४.१३) तथा अङ्गस्य (६.४.१) </p>\n";
         }
-    if ($n === 4) 
+    if ($n === 4)
         {
         echo "<p class = hn>N.B.: yaNaH pratiSedho vAcyaH (vA 4806) prevents application of saMyogAntasya lopaH (".link_sutra("8.2.23").") </p>\n";
         echo "<p class = hn>यणः प्रतिषेधो वाच्यः (वा ४८०६) से संयोगान्तस्य लोपः (८.२.२३) का निषेध होता है ।</p>\n";
         }
-    if ($n === 5) 
+    if ($n === 5)
         {
         echo "<p class = hn>N.B.: anekAlzitsarvasya (".link_sutra("1.1.55").") mandates sarvAdeza.  </p>\n";
         echo "<p class = hn>अनेकाल्शित्सर्वस्य (१.१.५५) से सर्वादेश होता है ।</p>\n";
         }
-    if ($n === 6) 
+    if ($n === 6)
         {
         echo "<p class = pa>yasmAtpratyayavidhistadAdi pratyaye'Ggam (".link_sutra("2.4.13").") aGgasya (".link_sutra("6.4.1").") and bhasya (".link_sutra("6.4.129").") :</p>\n";
         echo "<p class = pa>यस्मात्प्रत्ययविधिस्तदादि प्रत्ययेऽङ्गम्‌ (२.४.१३), अङ्गस्य (६.४.१) तथा भस्य (६.४.१२९) :</p>\n";
         }
-    if ($n === 7) 
+    if ($n === 7)
         {
         echo "<p class = pa>padasya (".link_sutra("8.1.16")."), padAt (".link_sutra("8.1.17").") and anudAttaM sarvamapAdAdau (".link_sutra("8.1.18").") :</p>\n";
         echo "<p class = pa>पदस्य (८.१.१६), पदात्‌ (८.१.१७) तथा अनुदात्तं सर्वमपादादौ (८.१.१८) :</p>\n";
         }
-    if ($n === 8) 
+    if ($n === 8)
         {
         echo "<p class = pa>anupasarjanAt (".link_sutra("4.1.14").") :</p>\n";
         echo "<p class = pa>अनुपसर्जनात्‌ (४.१.१४) :</p>\n";
@@ -809,8 +809,8 @@ function display2($text,$n,$us='')
     if ($n === 2) { $text1 = $text; $text = $text2; } // not useful because the display(2) is not used in the code. If it is used, this will work.
 }
 /* function display3 is specially designed to try with gui function. */
-// There are three arguments. 0 will simply display the message. 
-// 1 will show an additional message in dvitva. 
+// There are three arguments. 0 will simply display the message.
+// 1 will show an additional message in dvitva.
 // 2 is not used in the code. Useful where there were two optional forms.
 // 3 is for aGgAdhikAra.
 // 4 is for yaNaH pratiSedho vAcyaH in case of yaN.
@@ -830,36 +830,36 @@ function display3($text,$n,$us='')
         $htmloutput=$htmloutput."<p class = hn>Please note: Wherever there is dvitva, it is optionally negated by sarvatra zAkalyasya. (".link_sutra("8.4.51").")</p>\n";
         $htmloutput=$htmloutput."<p class = hn>द्वित्व का सर्वत्र सर्वत्र शाकल्यस्य (८.४.५१) से पाक्षिक निषेध होता है ।</p>\n";
         }
-    if ($n === 2) 
-        { 
-        global $text1; $text2 = $text; $text = $text1; 
+    if ($n === 2)
+        {
+        global $text1; $text2 = $text; $text = $text1;
         }
-    if ($n === 3) 
+    if ($n === 3)
         {
         $htmloutput=$htmloutput."<p class = pa>yasmAtpratyayavidhistadAdi pratyaye'Ggam (".link_sutra("2.4.13").") and aGgasya (".link_sutra("6.4.1").") </p>\n";
         $htmloutput=$htmloutput."<p class = pa>यस्मात्प्रत्ययविधिस्तदादि प्रत्ययेऽङ्गम्‌ (२.४.१३) तथा अङ्गस्य (६.४.१) </p>\n";
         }
-    if ($n === 4) 
+    if ($n === 4)
         {
         $htmloutput=$htmloutput."<p class = hn>N.B.: yaNaH pratiSedho vAcyaH (vA 4806) prevents application of saMyogAntasya lopaH (".link_sutra("8.2.23").") </p>\n";
         $htmloutput=$htmloutput."<p class = hn>यणः प्रतिषेधो वाच्यः (वा ४८०६) से संयोगान्तस्य लोपः (८.२.२३) का निषेध होता है ।</p>\n";
         }
-    if ($n === 5) 
+    if ($n === 5)
         {
         $htmloutput=$htmloutput."<p class = hn>N.B.: anekAlzitsarvasya (".link_sutra("1.1.55").") mandates sarvAdeza.  </p>\n";
         $htmloutput=$htmloutput."<p class = hn>अनेकाल्शित्सर्वस्य (१.१.५५) से सर्वादेश होता है ।</p>\n";
         }
-    if ($n === 6) 
+    if ($n === 6)
         {
         $htmloutput=$htmloutput."<p class = pa>yasmAtpratyayavidhistadAdi pratyaye'Ggam (".link_sutra("2.4.13").") aGgasya (".link_sutra("6.4.1").") and bhasya (".link_sutra("6.4.129").") :</p>\n";
         $htmloutput=$htmloutput."<p class = pa>यस्मात्प्रत्ययविधिस्तदादि प्रत्ययेऽङ्गम्‌ (२.४.१३), अङ्गस्य (६.४.१) तथा भस्य (६.४.१२९) :</p>\n";
         }
-    if ($n === 7) 
+    if ($n === 7)
         {
         $htmloutput=$htmloutput."<p class = pa>padasya (".link_sutra("8.1.16")."), padAt (".link_sutra("8.1.17").") and anudAttaM sarvamapAdAdau (".link_sutra("8.1.18").") :</p>\n";
         $htmloutput=$htmloutput."<p class = pa>पदस्य (८.१.१६), पदात्‌ (८.१.१७) तथा अनुदात्तं सर्वमपादादौ (८.१.१८) :</p>\n";
         }
-    if ($n === 8) 
+    if ($n === 8)
         {
         $htmloutput=$htmloutput."<p class = pa>anupasarjanAt (".link_sutra("4.1.14").") :</p>\n";
         $htmloutput=$htmloutput."<p class = pa>अनुपसर्जनात्‌ (४.१.१४) :</p>\n";
@@ -874,8 +874,8 @@ function display3($text,$n,$us='')
 	return $htmloutput;
 }
 /* function print2 is specially designed to try with gui function. */
-// There are three arguments. 0 will simply display the message. 
-// 1 will show an additional message in dvitva. 
+// There are three arguments. 0 will simply display the message.
+// 1 will show an additional message in dvitva.
 // 2 is not used in the code. Useful where there were two optional forms.
 // 3 is for aGgAdhikAra.
 // 4 is for yaNaH pratiSedho vAcyaH in case of yaN.
@@ -894,36 +894,36 @@ function print2($text,$n)
         fputs($outfile,"<p class = hn>Please note: Wherever there is dvitva, it is optionally negated by sarvatra zAkalyasya. (".link_sutra("8.4.51").")</p>\n");
         fputs($outfile,"<p class = hn>द्वित्व का सर्वत्र सर्वत्र शाकल्यस्य (८.४.५१) से पाक्षिक निषेध होता है ।</p>\n");
         }
-    if ($n === 2) 
-        { 
-        global $text1; $text2 = $text; $text = $text1; 
+    if ($n === 2)
+        {
+        global $text1; $text2 = $text; $text = $text1;
         }
-    if ($n === 3) 
+    if ($n === 3)
         {
         fputs($outfile,"<p class = pa>yasmAtpratyayavidhistadAdi pratyaye'Ggam (".link_sutra("2.4.13").") and aGgasya (".link_sutra("6.4.1").") </p>\n");
         fputs($outfile,"<p class = pa>यस्मात्प्रत्ययविधिस्तदादि प्रत्ययेऽङ्गम्‌ (२.४.१३) तथा अङ्गस्य (६.४.१) </p>\n");
         }
-    if ($n === 4) 
+    if ($n === 4)
         {
         fputs($outfile,"<p class = hn>N.B.: yaNaH pratiSedho vAcyaH (vA 4806) prevents application of saMyogAntasya lopaH (".link_sutra("8.2.23").") </p>\n");
         fputs($outfile,"<p class = hn>यणः प्रतिषेधो वाच्यः (वा ४८०६) से संयोगान्तस्य लोपः (८.२.२३) का निषेध होता है ।</p>\n");
         }
-    if ($n === 5) 
+    if ($n === 5)
         {
         fputs($outfile,"<p class = hn>N.B.: anekAlzitsarvasya (".link_sutra("1.1.55").") mandates sarvAdeza.  </p>\n");
         fputs($outfile,"<p class = hn>अनेकाल्शित्सर्वस्य (१.१.५५) से सर्वादेश होता है ।</p>\n");
         }
-    if ($n === 6) 
+    if ($n === 6)
         {
         fputs($outfile,"<p class = pa>yasmAtpratyayavidhistadAdi pratyaye'Ggam (".link_sutra("2.4.13").") aGgasya (".link_sutra("6.4.1").") and bhasya (".link_sutra("6.4.129").") :</p>\n");
         fputs($outfile,"<p class = pa>यस्मात्प्रत्ययविधिस्तदादि प्रत्ययेऽङ्गम्‌ (२.४.१३), अङ्गस्य (६.४.१) तथा भस्य (६.४.१२९) :</p>\n");
         }
-    if ($n === 7) 
+    if ($n === 7)
         {
         fputs($outfile,"<p class = pa>padasya (".link_sutra("8.1.16")."), padAt (".link_sutra("8.1.17").") and anudAttaM sarvamapAdAdau (".link_sutra("8.1.18").") :</p>\n");
         fputs($outfile,"<p class = pa>पदस्य (८.१.१६), पदात्‌ (८.१.१७) तथा अनुदात्तं सर्वमपादादौ (८.१.१८) :</p>\n");
         }
-    if ($n === 8) 
+    if ($n === 8)
         {
         fputs($outfile,"<p class = pa>anupasarjanAt (".link_sutra("4.1.14").") :</p>\n");
         fputs($outfile,"<p class = pa>अनुपसर्जनात्‌ (४.१.१४) :</p>\n");
@@ -943,42 +943,42 @@ function print2($text,$n)
 }
 
 /* function dvitva will be used to duplicate a letter */
-// It has six arguments, first four arguments are the arrays which need to be replaced. 
+// It has six arguments, first four arguments are the arrays which need to be replaced.
 // $location is to specify which of these 4 consecutive arrays is to be duplicated. e.g. 2 will mean that the second member will be duplicated.
 // $merge is to specify whether to replace (0) or add (1) to the existing array. 0 is used for mandatory dvitva and 1 is used for optional dvitva.
 // I am not able to elucidate this code much, because it is a borrowed code. I have kept it as the lender gave.
 function dvitva ($kantha,$talu,$murdha,$oshtha,$location,$merge)
-{ 
- global $text;   
-// this is an array of the input values to use below 
+{
+ global $text;
+// this is an array of the input values to use below
  // get all possible combianations of $kantha+$talu+$murdha
-   $combinations = array(); 
+   $combinations = array();
      foreach($kantha as $k) // "a","k","g","n","h"
-     { 
+     {
         foreach($talu as $t) // "i","c","j","y","s"
-        { 
+        {
             foreach($murdha as $m) // "f","w","q","r","z"
             {
                 foreach ($oshtha as $o)
                 {
-                 $combinations[] = $k.$t.$m.$o;    
+                 $combinations[] = $k.$t.$m.$o;
                 }
-            } 
-        } 
-     } 
+            }
+        }
+     }
 
 $values1 = array();
 foreach ($text as $stti => $string)  // 'aifkcwh', 'aifkcwhsz', 'kim', 'aif'
 {
-    $values = array($string);  
-       reset($values); 
-  // loop through $values using an array pointer 
+    $values = array($string);
+       reset($values);
+  // loop through $values using an array pointer
     // while the current array pointer position is not null/false
     while(current($values)!==false)
     {
-        // on the first iteration, $values will be the inputted string 
+        // on the first iteration, $values will be the inputted string
         // from $strings_to_test... our example is "aifkcwh"
-        $value = current($values); 
+        $value = current($values);
         if ($merge === 1)
         {
         $values1[] = current($values);
@@ -986,61 +986,61 @@ foreach ($text as $stti => $string)  // 'aifkcwh', 'aifkcwhsz', 'kim', 'aif'
         // for each possible combination of $kantha.$talu.$murdha
         // let's say our first combination is "aif"
         foreach($combinations as $ci => $combination)
-        {  
+        {
             // look and see if the current value we are looking
-            // at ("aifkcwh") contains this combination string  
+            // at ("aifkcwh") contains this combination string
             if (strpos($value,$combination)!==false)
-            { 
+            {
                 // if it does... we perform the string mutation
                 // "aif" does exist in the string "aifkcwh"
 
                 // get the second letter in the combination string
                // echo $combination. "These are combinations </br>";
-                $single = $combination[$location-1];   // i 
+                $single = $combination[$location-1];   // i
 
                 // double that second letter
                 $post = substr($combination,$location-1);
                 // echo $post. "These are posts </br>";
                 $pre = chop($combination,$post);
                 // echo $pre. "These are pres </br>";
-                // create a new string that is the combination with the 
-                // second letter doubled... 
+                // create a new string that is the combination with the
+                // second letter doubled...
                 $newcom = $pre.$combination[$location-1].$post;
                // echo $newcom."These are newcoms </br> ";
                 // replace that string in $values so that
                 // aifkcwh becomes aiifkcwh
                 $newval = str_replace($combination, $newcom, $value); // aiifkcwh
 
-                // does the new value ("aiifkcwh") exist in $values?  
-                // have we already recorded this mutation?  
-                if (!in_array($newval,$values1)) 
-                { 
+                // does the new value ("aiifkcwh") exist in $values?
+                // have we already recorded this mutation?
+                if (!in_array($newval,$values1))
+                {
                     // if not... append it to the array $values
-                    $values1[] = $newval; 
-                    // now, values would go from being = array([0]=>'aifkcwh'); 
-                    // to array ([ 0] => 'aifkcwh', [1] => 'aiifkcwh' ); 
+                    $values1[] = $newval;
+                    // now, values would go from being = array([0]=>'aifkcwh');
+                    // to array ([ 0] => 'aifkcwh', [1] => 'aiifkcwh' );
                 }
-                else 
+                else
                 {
                 }
-            } 
-        } // <-- end of the foreach statement, this will go through all combinations 
+            }
+        } // <-- end of the foreach statement, this will go through all combinations
           //     in our combinations array for this particular value which is currently aifkcwh
 
 
         // next($values) increments the array pointer so that we move to the next
-        // value in the $values array.  since we just added a value, 
-        // $values now contains array ([ 0] => 'aifkcwh', [1] => 'aiifkcwh' ); 
+        // value in the $values array.  since we just added a value,
+        // $values now contains array ([ 0] => 'aifkcwh', [1] => 'aiifkcwh' );
 
         // before this statement index 0, current($values) == 'aifkcwh'
-        next($values);  
+        next($values);
         // after this statement index 1, current($values) == 'aiifkcwh'
         // for the next loop, we will test this string for all the combinations
-        // if there is no next value, the `while` loop will end 
-    }  
+        // if there is no next value, the `while` loop will end
+    }
 
     // after we have gone through every possible combination for "aifkcwh",
-    // we will have something like this: 
+    // we will have something like this:
     /*
         Array
           (
@@ -1050,9 +1050,9 @@ foreach ($text as $stti => $string)  // 'aifkcwh', 'aifkcwhsz', 'kim', 'aif'
                 [3] => aiifkccwh
           )
     */
-    // and we add that to the $output array that contains an index for 
-    // each input string, which contains all possible mutations of that string 
-    $output[$string] = $values1; 
+    // and we add that to the $output array that contains an index for
+    // each input string, which contains all possible mutations of that string
+    $output[$string] = $values1;
 }
 $output = flatten($output);
 $output = array_unique($output);
@@ -1075,7 +1075,7 @@ return $output;
      }
      return $array;
  }
-/* function checkarray is used to see whether the sequence of $a,$b,$c,$d is found in any of the members of $text */ 
+/* function checkarray is used to see whether the sequence of $a,$b,$c,$d is found in any of the members of $text */
  function checkarray($a,$b,$c,$d) // usually sub function serves the purpose. Only once or twice this function is used where we have to test 4 consecutive letters to satisfy the demand of the rule.
  {
      global $text;
@@ -1107,25 +1107,25 @@ return $output;
              else
              {
                  $counter = 0;
-             }  
+             }
          }
            if ($counter === 1)
            {
                break;
            }
-           else 
+           else
            {
                $counter = 0;
            }
-        
+
      }
      return $counter; // returns 1 for match found. 0 for no match found.
  }
-/* function sub is a modified version of checkarray. It searches for the consecutive occurences of $a,$b,$c in the members of array $text. 
+/* function sub is a modified version of checkarray. It searches for the consecutive occurences of $a,$b,$c in the members of array $text.
  * $repeat 0 will mean that the sequence doesnt matter. 1 will mean that the sequence has to be the same.
- */ 
+ */
 function sub($a,$b,$c,$repeat)
-{   
+{
      global $text, $debug, $debugmode;
 	if ($debug===1 && $debugmode<2){
 	echo "sub ", $repeat, " started at ";
@@ -1172,7 +1172,7 @@ function sub($a,$b,$c,$repeat)
 		}
 	}
     /*** map with preg_quote ***/
-    //$needle = array_map('preg_quote', $needle); 
+    //$needle = array_map('preg_quote', $needle);
     /*** loop of the array to get the search pattern ***/
     /*global $first;
     foreach ($needle as $pattern)
@@ -1181,12 +1181,12 @@ function sub($a,$b,$c,$repeat)
         {
         $can = 1; // match found
         break;
-        }  
+        }
         elseif ( $repeat===2 && ends($text,$needle,0))
         {
         $can = 1; // match found
         break;
-        }  
+        }
         else
         {
             $can = 0; // match not found
@@ -1220,7 +1220,7 @@ function arr($text,$a)
             $count[] = 1; // match found
             break;
         }
-        else 
+        else
         {
             $count[] = 0; // match not found
         }
@@ -1372,14 +1372,14 @@ function ends($a,$b,$n)
 	if ($debug===1 && $debugmode<2){
 	echo "ends ", $n, " started at ";
 	timestamp();}
-    $upasarga = array("pra","prati","api","parA","apa","upa","pari","anu","ava","vi","saM","su","ati","ni","nir","ut","aDi","dur","aBi","A"); 
+    $upasarga = array("pra","prati","api","parA","apa","upa","pari","anu","ava","vi","saM","su","ati","ni","nir","ut","aDi","dur","aBi","A");
     $pattern=array("pari","pary","pra","prA","pro","prati","praty","api","apy","parA","paro","apa","apA","apo","upa","upA","upo","anu","anU","anv","ava","avA","avo","vi","vy","saM","sam","san","su","sU","sv","ati","aty","ni","ny","nir","niH","nis","niz","ut","ud","uc","ul","aDi","aDy","dur","duH","dus","duz","aBi","aBy","A",);
-    
+
     foreach ($a as $aa)
     {
         foreach ($b as $bb)
         {
-            if ($n===0) 
+            if ($n===0)
             {
                 if (strpos($aa,$bb)>0 && strpos(strrev($aa),strrev($bb)) ===0) // strpos($aa,$bb)>0 means that it doesn't start with it. the next means that it ends with it.
                 {
@@ -1388,44 +1388,44 @@ function ends($a,$b,$n)
                 else
                 {
                     $can[] = 0;
-                }                
+                }
             }
             if ($n===1)
             {
                 if (strpos($aa,$bb) >= 0 && strpos(strrev($aa),strrev($bb)) ===0) // strpos($aa,$bb) >= 0 means that it starts with it or is included in it. the next means that it ends with it.
                 {
-                    
+
 		    $can[] = 1;
                 }
                 else
                 {
                     $can[] = 0;
-                }                
+                }
             }
             if ($n===2)
             {
                 if ($aa===$bb) // they are the same.
                 {
-                    
+
 		    $can[] = 1;
                 }
                 else
                 {
                     $can[] = 0;
-                }                
+                }
             }
-            if ($n===3) 
+            if ($n===3)
             {
-                if (strpos($aa,$bb)===0 && strpos(strrev($aa),strrev($bb)) !==0) 
+                if (strpos($aa,$bb)===0 && strpos(strrev($aa),strrev($bb)) !==0)
                 {
                     $can[] = 1;
                 }
                 else
                 {
                     $can[] = 0;
-                }                
+                }
             }
-            if ($n===4) 
+            if ($n===4)
             {
 					$prat=array(0);
                     foreach ($pattern as $one)
@@ -1439,14 +1439,14 @@ function ends($a,$b,$n)
                             }
                         }
                     }
-                if ( (strpos($aa,$bb)>0 && in_array(1,$prat) ) || $aa===$bb) 
+                if ( (strpos($aa,$bb)>0 && in_array(1,$prat) ) || $aa===$bb)
                 {
                     $can[] = 1;
                 }
                 else
                 {
                     $can[] = 0;
-                }                
+                }
             }
 
         }
@@ -1466,7 +1466,7 @@ function ends($a,$b,$n)
 /* function Ti to remove the Ti */
 // $merge 0 - mandatory Adezas, 1 - optional Adezas.
 function Ti($merge)
-{   
+{
     global $text;
     $te1 = '/(['.pc('ac').'])(['.pc('hl').']*)([+])/'; // vowel - unlimited combinations of consonants - '+' combination.
     $te2 = '$3'; // keep only "+" and remove the first two members.
@@ -1481,7 +1481,7 @@ function Ti($merge)
         if ($merge === 1) // optional Adezas
         {
             $text = array_merge($text,$val);
-        }        
+        }
     $val=array();
     $text = array_unique($text);
     $text = array_values($text);
@@ -1506,7 +1506,7 @@ function mit($pattern,$b,$merge)
             {
                 $val[] = $value;
             }
-        }        
+        }
         if ($merge===0)
         {
             $text = $val;
@@ -1514,7 +1514,7 @@ function mit($pattern,$b,$merge)
         if ($merge === 1)
         {
             $text = array_merge($text,$val);
-        }        
+        }
     $val=array();
     $text = array_unique($text);
     $text = array_values($text);
@@ -1532,11 +1532,11 @@ function samprasarana($input,$merge)
     }
 	if ($merge===0)
 	{
-		$text = one($input,$val1,0);        // doing samprasARaNa.            
+		$text = one($input,$val1,0);        // doing samprasARaNa.
 	}
 	if ($merge===1)
 	{
-		$text = one($input,$val1,1);        // doing samprasARaNa.            
+		$text = one($input,$val1,1);        // doing samprasARaNa.
 	}
 	storedata('1.1.45','sa',0);
 	if (arr($text,'/[iufx][aAiIuUfFxXeEoO]/'))
@@ -1553,7 +1553,7 @@ function samprasarana($input,$merge)
 	{
 		$text=change('/^ji[+]/','jI+');
 		storedata('6.4.2','sa',0);
-	}		
+	}
 	/* halaH (6.4.2) */
 	if(arr($text,'/['.pc(hl).'][iufx][+]/') && $sanAdi==="yaNluk")
 	{
@@ -1562,7 +1562,7 @@ function samprasarana($input,$merge)
 		$text=change('/(['.pc(hl).'])[f][+]/','$1ar+');
 		$text=change('/(['.pc(hl).'])[x][+]/','$1al+');
 		storedata('6.4.2','sa',0);
-	}		
+	}
 	return $text;
 }
 /* function itcheck */
@@ -1620,8 +1620,8 @@ function it($pattern)
                 $b[$i*2-1]= str_replace("+","",$b[$i*2-1]); // removing +
                 $it = array_merge($it,array($b[$i*2-1])); // adding the it marker to the array $it.
                 $it = array_unique($it);
-                $it = array_values($it);                
-            }                   
+                $it = array_values($it);
+            }
         }
        foreach ($text as $value)
         {
@@ -1633,28 +1633,28 @@ function it($pattern)
                 $b[$i*2-1]= str_replace("+","",$b[$i*2-1]);
                 $itprakriti = array_merge($itprakriti,array($b[$i*2-1])); // adding it to array $itprakriti
                 $itprakriti = array_unique($itprakriti);
-                $itprakriti = array_values($itprakriti);         
-            }                   
+                $itprakriti = array_values($itprakriti);
+            }
         }
        foreach ($text as $value)
         {
             $c = explode("+",$value);
-            $pattern = str_replace("[+]","^",$pattern); 
-            $b = preg_split($pattern,$c[1],null,PREG_SPLIT_DELIM_CAPTURE); 
+            $pattern = str_replace("[+]","^",$pattern);
+            $b = preg_split($pattern,$c[1],null,PREG_SPLIT_DELIM_CAPTURE);
             for($i=1;$i<((count($b)+1)/2);$i++)
             {
                 $b[$i*2-1]= str_replace("!","",$b[$i*2-1]);
                 $b[$i*2-1]= str_replace("+","",$b[$i*2-1]);
                 $itpratyaya = array_merge($itpratyaya,array($b[$i*2-1])); // adding it to array $itpratyaya
                 $itpratyaya = array_unique($itpratyaya);
-                $itpratyaya = array_values($itpratyaya);         
-            }                   
+                $itpratyaya = array_values($itpratyaya);
+            }
         }
 }
 /* function to find out it markers when they can occur only in the pratayayas. */
 function itprat($pattern)
 {
-    global $text; global $it; global $itprakriti; global $itpratyaya; 
+    global $text; global $it; global $itprakriti; global $itpratyaya;
        foreach ($text as $value)
         {
             $c = explode("+",$value);
@@ -1665,8 +1665,8 @@ function itprat($pattern)
                 $b[$i*2-1]= str_replace("+","",$b[$i*2-1]);
                 $itpratyaya = array_merge($itpratyaya,array($b[$i*2-1])); // adding it to array $itpratyaya
                 $itpratyaya = array_unique($itpratyaya);
-                $itpratyaya = array_values($itpratyaya);         
-            }                   
+                $itpratyaya = array_values($itpratyaya);
+            }
         }
 }
 /* function antya to do antyAdeza */
@@ -1697,11 +1697,11 @@ function addlast($a,$b,$merge)
     $output = flatten($text);
     $output = array_unique($output);
     $output = array_values($output);
-return $output;    
+return $output;
 }
 /* function anubandha to remove it markers */
 function anubandha()
-{ 
+{
     global $text; global $first; global $pada; global $itprakriti; global $wa1; global $sarva2; global $purva; global $taddhita; global $sarva; global $sup; global $so; global $al; global $hl; global $storedata;
     /* AdirGiTuDavaH (1.3.5) */
     if ((substr($first,0,2) === "Yi" || substr($first,0,2) === "wu" || substr($first,0,2) === "qu") && $pada=== "pratyaya")
@@ -1713,7 +1713,7 @@ function anubandha()
         $text = first(array("Yi","wu","qu"),array("","",""),0); // function first removes and replaces specific strings from the words. For details see function.php.
 		storedata('1.3.9','sa',0);
     }
-    /* cuTU (1.3.7) */ 
+    /* cuTU (1.3.7) */
     if (arr($text,'/[+][cCjJYwWqQR]/') )
     {
 		storedata('1.3.7','pa',0);
@@ -1816,7 +1816,7 @@ function verbprocess($text)
     }
     if(arr(array($text),'/[iu][r]['.pc('hl').']/') )
     {
-        $text=str_replace(array("ir","ur"),array("Ir","Ur"),$text);              
+        $text=str_replace(array("ir","ur"),array("Ir","Ur"),$text);
     }
     return $text;
 }
@@ -1844,18 +1844,18 @@ foreach ($a as $value)
     $value=preg_replace('/(^[Ywq][iu])/','',$value);
     if ($num===2)
     {
-        $value=preg_replace('/([n])([kKgGN])/','N$2',$value);        
-        $value=preg_replace('/([n])([cCjJY])/','Y$2',$value);        
-        $value=preg_replace('/([n])([wWqQR])/','R$2',$value);        
-        $value=preg_replace('/([n])([pPbBm])/','m$2',$value);        
+        $value=preg_replace('/([n])([kKgGN])/','N$2',$value);
+        $value=preg_replace('/([n])([cCjJY])/','Y$2',$value);
+        $value=preg_replace('/([n])([wWqQR])/','R$2',$value);
+        $value=preg_replace('/([n])([pPbBm])/','m$2',$value);
     }
     $val1[]=$value;
 }
-return $val1;    
+return $val1;
 }
 /* function Ti1 to remove the Ti for words and not for whole array $text. */
 function Ti1($a)
-{   
+{
     $te1 = '/(['.pc('ac').'])(['.pc('hl').']*)$/'; // vowel - unlimited combinations of consonants - '+' combination.
     $te2 = ''; // keep only "+" and remove the first two members.
     $val = preg_replace($te1,$te2,$a); // removing the first two members.
@@ -1867,13 +1867,13 @@ function Ti1($a)
 // $b is the addition to upadha
 // $merge 0 is replacement, 1 is optional.
 function mit1($array,$b,$merge)
-{   
+{
     $te1 = '/(['.pc('ac').'])(['.pc('hl').']*)([+])/';
     $te2 = '$1'.$b.'$2$3'; // Adding the mit Agama after the last vowel. 'midaco'ntyAtparaH'.
         foreach ($array as $value)
         {
                   $val[] = preg_replace($te1,$te2,$value); // executing mit Agama.
-        }        
+        }
         if ($merge===0)
         {
             $text = $val;
@@ -1881,7 +1881,7 @@ function mit1($array,$b,$merge)
         if ($merge === 1)
         {
             $text = array_merge($text,$val);
-        }        
+        }
     $val=array();
     $text = array_unique($text);
     $text = array_values($text);
@@ -2057,13 +2057,68 @@ function ldc($numberstring,$commentary)
 		}
 	}
 	elseif ($commentary==="j")
-	{ 
+	{
 		if ($numberlist[0]!=="")
 		{
 			foreach($numberlist as $number)
 			{
 				//http://sanskrit.jnu.ac.in/tinanta/tinanta.jsp?t=77
 				$output[] = '<a href="http://sanskrit.jnu.ac.in/tinanta/tinanta.jsp?t='.$number.'" target="_blank">'.$commname.'</a>';
+			}
+		}
+		else
+		{
+			$output[] = $errorname;
+		}
+	}
+	return implode(' , ',$output);
+}
+// function ldc_abs (link_dhatu_commentary)
+// $commentary = "m"/"k"/"d"/"u"/"j"/"i"
+function ldc_abs($numberstring,$commentary)
+{
+	$expansion = str_replace(array("m","k","d"),array("mA","kRi","XA"),$commentary);
+	$commname = str_replace(array("m","k","d","u","j","i"),array("मा.धा.","क्षी.त.","धा.प्र.","UoHyd","JNU","INRIA"),$commentary);
+	$errorname = str_replace(array("m","k","d","u","j","i"),array("मा.धा.-X","क्षी.त.-X","धा.प्र.-X","UoHyd-X","JNU-X","INRIA-X"),$commentary);
+	$numberlist = explode(',',$numberstring);
+	if (in_array($commentary,array("m","k","d")))
+	{
+		if ($numberlist[0]!=="")
+		{
+			foreach($numberlist as $number)
+			{
+				$output[] = 'http://sanskrit.uohyd.ac.in/scl/dhaatupaatha/files-15-03-2017//'.$expansion.$number.'.html';
+			}
+		}
+		else
+		{
+			$output[] = $errorname;
+		}
+	}
+	elseif ($commentary==="u")
+	{
+		if ($numberlist[0]!=="")
+		{
+			foreach($numberlist as $number)
+			{
+				$number = str_replace('+','_',$number);
+				//http://sanskrit.uohyd.ac.in/cgi-bin/scl/skt_gen/verb/verb_gen.cgi?vb=ak1_akaz_BvAxiH+kutilAyAM_gawO&prayoga=karwari&encoding=WX
+				$output[] = 'http://sanskrit.uohyd.ac.in/cgi-bin/scl/skt_gen/verb/verb_gen.cgi?vb='.$number.'&prayoga=karwari&encoding=WX';
+			}
+		}
+		else
+		{
+			$output[] = $errorname;
+		}
+	}
+	elseif ($commentary==="j")
+	{
+		if ($numberlist[0]!=="")
+		{
+			foreach($numberlist as $number)
+			{
+				//http://sanskrit.jnu.ac.in/tinanta/tinanta.jsp?t=77
+				$output[] = 'http://sanskrit.jnu.ac.in/tinanta/tinanta.jsp?t='.$number;
 			}
 		}
 		else
@@ -2089,9 +2144,9 @@ function verb_meaning_gana_number($text)
     $html .= '<div id="step22">';
     for($i=0;$i<count($verbaccent);$i++)
     {
-            $html .= '<input required autocomplete="off" type="radio" value="'.trim($number[$i]).'" name="number" > '.$verbaccent[$i].' - '.convert($meaning[$i]).', '.convert($verbset[$i]).' '.$number[$i]; 
+            $html .= '<input required autocomplete="off" type="radio" value="'.trim($number[$i]).'" name="number" > '.$verbaccent[$i].' - '.convert($meaning[$i]).', '.convert($verbset[$i]).' '.$number[$i];
     }
-            $html .= '</div>';            
+            $html .= '</div>';
 	return $html;
 }
 // for display in tiGanta.php
@@ -2112,11 +2167,12 @@ function verb_meaning_gana_number1($text)
 	{
 		echo "<p class = st >".toiast($verbaccent[0]).' - '.toiast($meaning[0]).', '.toiast($verbset[0]).' '.$number[0]."</p>\n";
 		echo "<p class = st >".$verbaccent[0].' - '.convert($meaning[0]).', '.convert($verbset[0]).' '.convert($number[0]).', '.ldc($madhav[0],'m').', '.ldc($kzir[0],'k').', '.ldc($dp[0],'d').', '.ldc($uohyd[0],'u').', '.ldc($jnu[0],'j').', '.inrialink($verbwithoutanubandha[0],$verbset[0])."</p>\n";
-		echo "<hr>\n";		
+		echo "<hr>\n";
 		fputs($outfile,"<p class = st >".toiast($verbaccent[0]).' - '.toiast($meaning[0]).', '.toiast($verbset[0]).' '.$number[0]."</p>\n");
 		fputs($outfile,"<p class = st >".$verbaccent[0].' - '.convert($meaning[0]).', '.convert($verbset[0]).' '.convert($number[0]).', '.ldc($madhav[0],'m').', '.ldc($kzir[0],'k').', '.ldc($dp[0],'d').', '.ldc($uohyd[0],'u').', '.ldc($jnu[0],'j').', '.inrialink($verbwithoutanubandha[0],$verbset[0])."</p>\n");
-		fputs($outfile,"<hr>\n");		
+		fputs($outfile,"<hr>\n");
 	}
+	return array('verb' => $verbaccent[0], 'meaning' => $meaning[0], 'gana' => $verbset[0], 'number' => $number[0], 'mAdhavIya' => ldc_abs($madhav[0],'m'), 'kzIratarangiNI' => ldc_abs($kzir[0],'k'), 'dhAtupradIpa' => ldc_abs($dp[0],'d'), 'UoHyd' => ldc_abs($uohyd[0],'u'), 'jnu' => ldc_abs($jnu[0],'j'));
 }
 // for display in tiGanta.php in case the user has chosen the gaNa.
 function verb_meaning_gana_number2($text)
@@ -2140,14 +2196,15 @@ function verb_meaning_gana_number2($text)
 	{
 		echo "<p class = st >".toiast($verbaccent[0]).' - '.toiast($meaning[0]).', '.toiast($verbset[0]).' '.$number[0]."</p>\n";
 		echo "<p class = st >".$verbaccent[0].' - '.convert($meaning[0]).', '.convert($verbset[0]).' '.convert($number[0]).', '.ldc($madhav[0],'m').', '.ldc($kzir[0],'k').', '.ldc($dp[0],'d').', '.ldc($uohyd[0],'u').', '.ldc($jnu[0],'j').', '.inrialink($verbwithoutanubandha[0],$verbset[0])."</p>\n";
-		echo "<hr>\n";		
+		echo "<hr>\n";
 		fputs($outfile,"<p class = st >".toiast($verbaccent[0]).' - '.toiast($meaning[0]).', '.toiast($verbset[0]).' '.$number[0]."</p>\n");
 		fputs($outfile,"<p class = st >".$verbaccent[0].' - '.convert($meaning[0]).', '.convert($verbset[0]).' '.convert($number[0]).', '.ldc($madhav[0],'m').', '.ldc($kzir[0],'k').', '.ldc($dp[0],'d').', '.ldc($uohyd[0],'u').', '.ldc($jnu[0],'j').', '.inrialink($verbwithoutanubandha[0],$verbset[0])."</p>\n");
-		fputs($outfile,"<hr>\n");		
+		fputs($outfile,"<hr>\n");
 	}
 	if ($debug===1 && $debugmode<2){
 	echo "verb_meaning_gana_number2 ended at ";
 	timestamp();}
+	return array('verb' => $verbaccent[0], 'meaning' => $meaning[0], 'gana' => $verbset[0], 'number' => $number[0], 'mAdhavIya' => ldc_abs($madhav[0],'m'), 'kzIratarangiNI' => ldc_abs($kzir[0],'k'), 'dhAtupradIpa' => ldc_abs($dp[0],'d'), 'UoHyd' => ldc_abs($uohyd[0],'u'), 'jnu' => ldc_abs($jnu[0],'j'));
 }
 // for display in tiGanta.php in case the verb is not in our database.
 function verb_meaning_gana_number3($text)
@@ -2157,10 +2214,10 @@ function verb_meaning_gana_number3($text)
 	{
 		echo "<p class = st >dhAtuH - ".$text."</p>\n";
 		echo "<p class = st >धातुः - ".convert($text)."</p>\n";
-		echo "<hr>\n";		
+		echo "<hr>\n";
 		fputs($outfile,"<p class = st >dhAtuH - ".$text."</p>\n");
 		fputs($outfile,"<p class = st >धातुः - ".convert($text)."</p>\n");
-		fputs($outfile,"<hr>\n");		
+		fputs($outfile,"<hr>\n");
 	}
 }
 // for display in tiGanta.php
@@ -2184,12 +2241,13 @@ function verb_meaning_gana_number4($number)
 	{
 		echo "<p class = st >".toiast($upadeza[0].' - '.$meaning[0].', '.$verbset[0].' '.$number[0])."</p>\n";
 		echo "<p class = st >".$verbaccent[0].' - '.convert($meaning[0].', '.$verbset[0].' '.$number[0]).', '.ldc($madhav[0],'m').', '.ldc($kzir[0],'k').', '.ldc($dp[0],'d').', '.ldc($uohyd[0],'u').', '.ldc($jnu[0],'j').', '.inrialink($verbwithoutanubandha[0],$verbset[0])."</p>\n";
-		echo "<hr>\n";		
+		echo "<hr>\n";
 		/*fputs($outfile,"<p class = st >".toiast($upadeza[0].' - '.$meaning[0].', '.$verbset[0].' '.$number[0])."</p>\n");
 		fputs($outfile,"<p class = st >".$verbaccent[0].' - '.convert($meaning[0].', '.$verbset[0].' '.$number[0]).', '.ldc($madhav[0],'m').', '.ldc($kzir[0],'k').', '.ldc($dp[0],'d').', '.ldc($uohyd[0],'u').', '.ldc($jnu[0],'j').', '.inrialink($verbwithoutanubandha[0],$verbset[0])."</p>\n");
 		fputs($outfile,"<hr>\n");*/
 	}
 	if ($debug===1 && $debugmode<2){ dibug("verb_meaning_gana_number4 end");}
+	return array('verb' => $verbaccent[0], 'meaning' => $meaning[0], 'gana' => $verbset[0], 'number' => $number[0], 'mAdhavIya' => ldc_abs($madhav[0],'m'), 'kzIratarangiNI' => ldc_abs($kzir[0],'k'), 'dhAtupradIpa' => ldc_abs($dp[0],'d'), 'UoHyd' => ldc_abs($uohyd[0],'u'), 'jnu' => ldc_abs($jnu[0],'j'));
 }
 function verbset_from_number($number)
 {
@@ -2211,10 +2269,10 @@ function upasarga_display($text)
 	global $frontend, $outfile;
 	if ($frontend==='1')
 	{
-		echo "<p class = st >upasarga - ".toiast($text)."</p>\n"; 
+		echo "<p class = st >upasarga - ".toiast($text)."</p>\n";
 		echo "<p class = st >उपसर्गः - ".convert($text)."</p>\n";
 		echo "<hr>\n";
-		//fputs($outfile,"<p class = st >upasarga - ".toiast($text)."</p>\n"); 
+		//fputs($outfile,"<p class = st >upasarga - ".toiast($text)."</p>\n");
 		//fputs($outfile,"<p class = st >उपसर्गः - ".convert($text)."</p>\n");
 		//fputs($outfile,"<hr>\n");
 	}
@@ -2240,49 +2298,49 @@ function suffix_display($fo,$so)
 			if ($sanAdi!=="")
 			{
 			echo "<p class = red >".convert($fo." + ".$sanAdi." + ".$so." - ".$lakAra." lakAraH ")." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n";
-			//fputs($outfile,"<p class = red >".convert($fo." + ".$sanAdi." + ".$so." - ".$lakAra." lakAraH ")." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n");    
+			//fputs($outfile,"<p class = red >".convert($fo." + ".$sanAdi." + ".$so." - ".$lakAra." lakAraH ")." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n");
 			}
 			else
 			{
 			echo "<p class = red >".convert($fo." + ".$so." - ".$lakAra." lakAraH ")." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n";
-			//fputs($outfile,"<p class = red >".convert($fo." + ".$so." - ".$lakAra." lakAraH ")." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n");    
-			}		
-		}		
+			//fputs($outfile,"<p class = red >".convert($fo." + ".$so." - ".$lakAra." lakAraH ")." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n");
+			}
+		}
 		else
 		{
 			if ($sanAdi!=="")
 			{
-			//fputs($outfile,"<p class = red >".convert($fo." + ".$sanAdi." + ".$so." - ".$lakAra." lakAraH ")." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n");    
+			//fputs($outfile,"<p class = red >".convert($fo." + ".$sanAdi." + ".$so." - ".$lakAra." lakAraH ")." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n");
 			}
 			else
 			{
-			//fputs($outfile,"<p class = red >".convert($fo." + ".$so." - ".$lakAra." lakAraH ")." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n");    
-			}		
-		}		
+			//fputs($outfile,"<p class = red >".convert($fo." + ".$so." - ".$lakAra." lakAraH ")." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n");
+			}
+		}
 	}
 	elseif ($type==="subanta")
 	{
 		if ($frontend!=="0")
 		{
-			echo "<p class = red >".convert($fo)." + ".convert($so)." <a href = subanta.html>Go Back</a></p>\n<hr>\n";    
-			//fputs($outfile,"<p class = red >".convert($fo)." + ".convert($so)." <a href = subanta.html>Go Back</a></p>\n<hr>\n");    
-		}		
+			echo "<p class = red >".convert($fo)." + ".convert($so)." <a href = subanta.html>Go Back</a></p>\n<hr>\n";
+			//fputs($outfile,"<p class = red >".convert($fo)." + ".convert($so)." <a href = subanta.html>Go Back</a></p>\n<hr>\n");
+		}
 		else
 		{
-			//fputs($outfile,"<p class = red >".convert($fo)." + ".convert($so)." <a href = subanta.html>Go Back</a></p>\n<hr>\n");    
-		}				
+			//fputs($outfile,"<p class = red >".convert($fo)." + ".convert($so)." <a href = subanta.html>Go Back</a></p>\n<hr>\n");
+		}
 	}
 	elseif ($type==="sandhi")
 	{
 		if ($frontend!=="0")
 		{
-			echo "<p class = red >".convert($fo)." + ".convert($so)." <a href = sandhi.html>Go Back</a></p>\n<hr>\n";    
-			//fputs($outfile,"<p class = red >".convert($fo)." + ".convert($so)." <a href = sandhi.html>Go Back</a></p>\n<hr>\n");    
-		}		
+			echo "<p class = red >".convert($fo)." + ".convert($so)." <a href = sandhi.html>Go Back</a></p>\n<hr>\n";
+			//fputs($outfile,"<p class = red >".convert($fo)." + ".convert($so)." <a href = sandhi.html>Go Back</a></p>\n<hr>\n");
+		}
 		else
 		{
-			//fputs($outfile,"<p class = red >".convert($fo)." + ".convert($so)." <a href = sandhi.html>Go Back</a></p>\n<hr>\n");    
-		}				
+			//fputs($outfile,"<p class = red >".convert($fo)." + ".convert($so)." <a href = sandhi.html>Go Back</a></p>\n<hr>\n");
+		}
 	}
 }
 // for display of lakAra and suffix details.
@@ -2296,49 +2354,49 @@ function suffix_storage()
 			if ($sanAdi!=="")
 			{
 			echo "<p class = red >".convert($fo." + ".$sanAdi." + ".$so." - ".$lakAra." lakAraH ")." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n";
-			//fputs($outfile,"<p class = red >".convert($fo." + ".$sanAdi." + ".$so." - ".$lakAra." lakAraH ")." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n");    
+			//fputs($outfile,"<p class = red >".convert($fo." + ".$sanAdi." + ".$so." - ".$lakAra." lakAraH ")." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n");
 			}
 			else
 			{
 			echo "<p class = red >".convert($fo." + ".$so." - ".$lakAra." lakAraH ")." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n";
-			//fputs($outfile,"<p class = red >".convert($fo." + ".$so." - ".$lakAra." lakAraH ")." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n");    
-			}		
-		}		
+			//fputs($outfile,"<p class = red >".convert($fo." + ".$so." - ".$lakAra." lakAraH ")." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n");
+			}
+		}
 		else
 		{
 			if ($sanAdi!=="")
 			{
-			//fputs($outfile,"<p class = red >".convert($fo." + ".$sanAdi." + ".$so." - ".$lakAra." lakAraH ")." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n");    
+			//fputs($outfile,"<p class = red >".convert($fo." + ".$sanAdi." + ".$so." - ".$lakAra." lakAraH ")." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n");
 			}
 			else
 			{
-			//fputs($outfile,"<p class = red >".convert($fo." + ".$so." - ".$lakAra." lakAraH ")." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n");    
-			}		
-		}		
+			//fputs($outfile,"<p class = red >".convert($fo." + ".$so." - ".$lakAra." lakAraH ")." <a href = tiGanta.html>Go Back</a></p>\n<hr>\n");
+			}
+		}
 	}
 	elseif ($type==="subanta")
 	{
 		if ($frontend!=="0")
 		{
-			echo "<p class = red >".convert($fo)." + ".convert($so)." <a href = subanta.html>Go Back</a></p>\n<hr>\n";    
-			//fputs($outfile,"<p class = red >".convert($fo)." + ".convert($so)." <a href = subanta.html>Go Back</a></p>\n<hr>\n");    
-		}		
+			echo "<p class = red >".convert($fo)." + ".convert($so)." <a href = subanta.html>Go Back</a></p>\n<hr>\n";
+			//fputs($outfile,"<p class = red >".convert($fo)." + ".convert($so)." <a href = subanta.html>Go Back</a></p>\n<hr>\n");
+		}
 		else
 		{
-			//fputs($outfile,"<p class = red >".convert($fo)." + ".convert($so)." <a href = subanta.html>Go Back</a></p>\n<hr>\n");    
-		}				
+			//fputs($outfile,"<p class = red >".convert($fo)." + ".convert($so)." <a href = subanta.html>Go Back</a></p>\n<hr>\n");
+		}
 	}
 	elseif ($type==="sandhi")
 	{
 		if ($frontend!=="0")
 		{
-			echo "<p class = red >".convert($fo)." + ".convert($so)." <a href = sandhi.html>Go Back</a></p>\n<hr>\n";    
-			//fputs($outfile,"<p class = red >".convert($fo)." + ".convert($so)." <a href = sandhi.html>Go Back</a></p>\n<hr>\n");    
-		}		
+			echo "<p class = red >".convert($fo)." + ".convert($so)." <a href = sandhi.html>Go Back</a></p>\n<hr>\n";
+			//fputs($outfile,"<p class = red >".convert($fo)." + ".convert($so)." <a href = sandhi.html>Go Back</a></p>\n<hr>\n");
+		}
 		else
 		{
-			//fputs($outfile,"<p class = red >".convert($fo)." + ".convert($so)." <a href = sandhi.html>Go Back</a></p>\n<hr>\n");    
-		}				
+			//fputs($outfile,"<p class = red >".convert($fo)." + ".convert($so)." <a href = sandhi.html>Go Back</a></p>\n<hr>\n");
+		}
 	}
 }
 // for deciding verb padas.
@@ -2356,22 +2414,27 @@ function verb_pada($sutra)
 function verb_pada1()
 {
 	global $toatmane, $us, $first, $sutraenglish, $sutradeva, $outfile, $frontend;
+	  $temp = array();
     for($i=0;$i<count($toatmane);$i++)
     {
         if($us.$first===$toatmane[$i] && $frontend!=="0")
         {
-            echo "<p class = st >By ".toiast($sutraenglish[$i])." :</p>\n"; 
+						$temp[] = $sutraenglish[$i];
+						$temp[] = $sutradeva[$i];
+            echo "<p class = st >By ".toiast($sutraenglish[$i])." :</p>\n";
             echo "<p class = st >".$sutradeva[$i]." :</p>\n";
-            echo "<hr>\n";                    
-            fputs($outfile,"<p class = st >By ".toiast($sutraenglish[$i])." :</p>\n"); 
+            echo "<hr>\n";
+            fputs($outfile,"<p class = st >By ".toiast($sutraenglish[$i])." :</p>\n");
             fputs($outfile,"<p class = st >".$sutradeva[$i]." :</p>\n");
-            fputs($outfile,"<hr>\n");                    
+            fputs($outfile,"<hr>\n");
+						break;
         }
     }
+		return $temp;
 }
 // for deciding suffixes as per the verb padas.
 function verb_suffixes($pada)
-{	
+{
 	global $taG, $tis, $tiG;
 	global $suffix;
 	if ($pada==="A")
@@ -2390,7 +2453,7 @@ function verb_suffixes($pada)
 	{
 		echo "Error - verb pada may not have been decided properly. Check";
 		return $tiG;
-	}		
+	}
 }
 // for display in tiGanta.php in case the user has chosen the gaNa.
 function verb_padafinder($text)
@@ -2424,7 +2487,7 @@ function change($a,$b)
     }
 	if ($debug===1 && $debugmode<2){ echo "change ended at "; timestamp(); };
     return $val;
-} 
+}
 /* function Adyanta */
 // $text - input array, $a - string to be added. $b - 1 for Adi, 2 for anta.
 function Adyanta($text,$a,$b)
@@ -2488,7 +2551,7 @@ function pr2($a,$b,$c,$d,$e,$f,$test)
 							}
 						}
 					}
-				}            
+				}
 			}
         }
         if(in_array($value,$out))
@@ -2526,20 +2589,20 @@ function toslp($text)
     {
          $text = str_replace($iast,$slp,$text);
     }
-    /* Code for converting from devanagari - SLP1 */ 
-    //This is innocuous. Therefore even running without the selection in dropdown menu. 
+    /* Code for converting from devanagari - SLP1 */
+    //This is innocuous. Therefore even running without the selection in dropdown menu.
     $text = json_encode($text);
     $text = str_replace("\u200d","",$text); // removing whitespace
     $text = str_replace("\u200c","",$text); // removing whitespace
     $text = json_decode($text);
-    $text = convert1($text); // converting to SLP1    
+    $text = convert1($text); // converting to SLP1
     return $text;
 }
 function toiast($text)
 {
 	global $tran, $iast, $slp;
-    /* Code for converting from devanagari - SLP1 */ 
-    //This is innocuous. Therefore even running without the selection in dropdown menu. 
+    /* Code for converting from devanagari - SLP1 */
+    //This is innocuous. Therefore even running without the selection in dropdown menu.
     $text = json_encode($text);
     $text = str_replace("\u200d","",$text); // removing whitespace
     $text = str_replace("\u200c","",$text); // removing whitespace
@@ -2549,7 +2612,7 @@ function toiast($text)
 		$text = convert1($text); // converting to SLP1
 	}
 
-	$text = str_replace($slp,$iast,$text);    
+	$text = str_replace($slp,$iast,$text);
     return $text;
 }
 
@@ -2568,7 +2631,7 @@ function Adezapratyaya($text)
 		}
 		elseif (preg_match('/^[s]/',$value) && ends(array($us),prat('ik'),1))
 		{
-			$val[]=preg_replace('/^([s])/',"z",$value);			
+			$val[]=preg_replace('/^([s])/',"z",$value);
 		}
 		else
 		{
@@ -2581,7 +2644,7 @@ function Adezapratyaya($text)
 					$parts[count($parts)-1]=preg_replace('/([z])$/','s',$parts[count($parts)-1]);
 				}
 			}
-			$val[] = implode('+',$parts);			
+			$val[] = implode('+',$parts);
 		}
 	}
 	if ($val!==$text)
@@ -2603,7 +2666,7 @@ function ekAcobazo()
 {
     global $text; global $verb_without_anubandha; global $storedata, $sanAdi;
 	foreach ($text as $value)
-	{	
+	{
 		if ( (!anekAca($verb_without_anubandha||$sanAdi==="yaNluk")) && ( preg_match('/[bgqd](['.pc('al').']*)[JBGQD][+][sDz]/',$value) || preg_match('/[JBGQD][+]$/',$value) ) )
 		{
 			$value = preg_replace('/([b])(['.pc('al').']*)([JBGQD][+])/',"B$2$3",$value);
@@ -2632,7 +2695,7 @@ function ekAcobazo()
 /* link_sutra function is courtesy of Funderburk Jim of sanskrit-lexicon. */
 function link_sutra($s,$relativepath="") {
  /* $s is a string of form X.Y.Z where X,Y,Z are digits
-   Returns a string   
+   Returns a string
    <a href="Data/allsutrani/X.Y.Z.htm">X.Y.Z</a>
   e.g., if s = "3.4.113", returns
    <a href="Data/allsutrani/3.4.113.htm">3.4.113</a>
@@ -2667,7 +2730,7 @@ function link_sutra($s,$relativepath="") {
 /* link_vartika function is modification of link_sutra for vArtikas. */
 function link_vartika($s) {
  /* $s is a string of form X.Y.Z where X,Y,Z are digits
-   Returns a string   
+   Returns a string
    <a href="Data/allsutrani/X.Y.Z.htm">X.Y.Z</a>
   e.g., if s = "3.4.113", returns
    <a href="Data/allsutrani/3.4.113.htm">3.4.113</a>
@@ -2691,15 +2754,15 @@ function caG_halAdi()
 	if (arr($text,'/^(['.pc('hl').']*['.pc('ac').']{1}['.pc('hl').'MH]*)[+]a[+]/'))
 	{
 		$text = change('/^(['.pc('hl').']*['.pc('ac').']{1}['.pc('hl').'MH]*)[+]a[+]/','$1+$1+a+');
-	}	
+	}
 	elseif (arr($text,'/^(['.pc('hl').']*['.pc('ac').']{1})['.pc('hl').'MH]*['.pc('ac').']['.pc('al').'MH]*[+]a[+]/'))
 	{
 		$text = change('/^(['.pc('hl').']*['.pc('ac').']{1})(['.pc('hl').'MH]*['.pc('ac').']['.pc('al').'MH]*[+]a[+])/','$1+$1$2');
-	}	
+	}
 	elseif ($sanAdi==="Ric" && arr($text,'/^(['.pc('hl').']+['.pc('al').']*)[+]Ric[+]a[+]/'))
 	{
 		$text = change('/^(['.pc('hl').']+['.pc('al').']*)[+]Ric[+]a[+]/','$1+$1+Ric+a+');
-	}	
+	}
 	/* caGi (6.1.11) */
 	storedata('6.1.1','pa',0);
 	storedata('6.1.11','sa',0);
@@ -2884,7 +2947,7 @@ function san_aGgAdikArya()
 		storedata('6.1.33','sa',0);
 	}
 	/* janasanakhanAM saJjhaloH (6.4.42) */
-	if (arr($text,'/[jsK]an[+]sa$/') ) 
+	if (arr($text,'/[jsK]an[+]sa$/') )
 	{
 		$text=change('/([jsK])an([+]sa)$/','$1A$2');
 		storedata('6.4.42','sa',0);
@@ -2945,7 +3008,7 @@ function san_aGgAdikArya()
 		$text = two(array("han"),array("+sa"),array("hAn"),array("+sa"),0);
 		storedata('6.4.16','sa',0);
 	}
-	/* cCvoH zUDanunAsike (6.4.19) */ 
+	/* cCvoH zUDanunAsike (6.4.19) */
 	if (arr($text,'/v[+]sa$/') )
 	{
 		$text = change('/v[+]sa$/','U+sa');
@@ -2983,15 +3046,15 @@ function san_aGgAdikArya()
 		$text=change('/F([+]sa)$/','ir$1');
 		storedata('7.1.100','sa',0);
 	}
-	/* masjinazorjhali (7.1.60) */ 
+	/* masjinazorjhali (7.1.60) */
 	if (in_array($fo,array("wumasjo!","RaSa!")) && sub(array("masj","naS"),array("+"),array("sa"),0) )
-	{ 
+	{
 		$text = three(array("masj","naS"),array("+"),array("sa"),array("mansj","nanS"),array("+"),array("sa"),0);
 		storedata('7.1.60','sa',0);
 	}
-	/* bhrasjo ropadhayoH ramanyatarasyAm (6.4.47) */ 
+	/* bhrasjo ropadhayoH ramanyatarasyAm (6.4.47) */
 	if (in_array($fo,array("Brasja!")) && sub(array("Brasj"),array("+sa"),blank(0),0) )
-	{ 
+	{
 		$text = two(array("Brasj"),array("+sa"),array("Barj"),array("+sa"),1);
 		storedata('6.4.47','sa',0);
 	}
@@ -3018,7 +3081,7 @@ function san_aGgAdikArya()
 		storedata('8.2.36','sa',0);
 		$vras=1;
 	}
-	/* nimittApAye naimittikasyApyapAyaH (paribhASA) */ 
+	/* nimittApAye naimittikasyApyapAyaH (paribhASA) */
 	if (( arr($text,'/Sz/') && sub(array("vfSz","vraSz"),blank(0),blank(0),0))  || arr($text,'/cz/'))
 	{
 		$text = one(array("vfSz","vraSz"),array("vfsz","vrasz"),0);
@@ -3035,7 +3098,7 @@ function san_aGgAdikArya()
 	$coku=0; global $cu, $ku;
 	if (arr($text,'/['.flat($cu).'][+]*[sz]a$/'))
 	{
-		$text = two($cu,array("+sa","+za"),$ku,array("+sa","+za"),0); 
+		$text = two($cu,array("+sa","+za"),$ku,array("+sa","+za"),0);
 		storedata('8.2.30','sa',0);
 		$coku=1; // 0 - doesn't prevent kvinpratyayasya kuH. 1 - prevents kvinpratyayasya kuH.
 	}
@@ -3051,13 +3114,13 @@ function san_aGgAdikArya()
 		$text = one(array("nah+sa","nAh+sa"),array("naD+sa","nAD+sa"),0);
 		storedata('8.2.34','sa',0);
 	}
-	/* ho DhaH (8.2.31) */ 
+	/* ho DhaH (8.2.31) */
 	elseif (arr($text,'/[h][+][sz]a$/') )
 	{
 		$text = change('/[h]([+][sz]a)$/','Q$1');
 		storedata('8.2.31','sa',0);
-	} 
-	/* ekAco bazo bhaS jhaSantasya sdhvoH (8.2.37) */  
+	}
+	/* ekAco bazo bhaS jhaSantasya sdhvoH (8.2.37) */
 	if ( arr($text,'/[bgqd](['.pc('al').']*)[JBGQD][+][sz]a$/')  )
 	{
 		ekAcobazo(); // created a new function 19/12/2014.
@@ -3080,7 +3143,7 @@ function san_aGgAdikArya()
 		$text = change('/^([+]*[iu][+])s/','$1z');
 		storedata('8.3.59','sa',0);
 	}
-	/* khari ca (8.4.55) */ 
+	/* khari ca (8.4.55) */
 	$Jl1 = array("J","B","G","Q","D","j","b","g","q","d","K","P","C","W","T","c","w","t","k","p","S","z","s","h"); // complete jhal.
 	$Jl2 = array("J","B","G","Q","D","j","b","g","q","d","K","P","C","W","T","h"); // jhal without car.
     while(arr($text,'/[JBGQDjbgqdKPCWTh]([+]*)['.pc('Kr').']/')) // this rule can apply add infinitum.
@@ -3095,7 +3158,7 @@ function san_aGgAdikArya()
 }
 function liT_ajAdi()
 {
-	global $text, $caG, $lakAra, $verb_without_anubandha, $storedata, $us, $verbset; 
+	global $text, $caG, $lakAra, $verb_without_anubandha, $storedata, $us, $verbset;
 	/* ajAderdvitIyasya (6.1.2) */
 	if (anekAca($verb_without_anubandha) )
 	{
@@ -3293,13 +3356,13 @@ function abhyAsa_halAdi()
 		{
 			$text=two(array("ni+nij","vi+vij","vi+viz"),array("+"),array("ne+nij","ve+vij","ve+viz"),array("+"),0);
 			storedata('7.4.75','sa',0);
-		}		
+		}
 		/* bahulaM Chandasi (7.4.78) */
 		elseif(in_array($fo,array("Gf","hf","f","sf","gA")) && sub(array("ja+Gf","ja+hf","a+f","sa+sf","ja+gA"),array("+"),blank(0),0))
 		{
 			$text=two(array("ja+Gf","ja+hf","a+f","sa+sf","ja+gA"),array("+"),array("ji+Gf","ji+hf","i+f","si+sf","ji+gA"),array("+"),0);
 			storedata('7.4.78','sa',0);
-		}		
+		}
 		$text = change('/^([^+]*)[+]/','$1'); // Making it anekAc.
 	}
 	/* Ato lopa iTi ca (6.4.64) */
@@ -3413,19 +3476,19 @@ function san()
 		$val1[]=implode('+',$parts);
 	}
 	$text = $val1;
-	/* atsmRdRtvaraprathamradastRRspazAm (7.4.95) */	
+	/* atsmRdRtvaraprathamradastRRspazAm (7.4.95) */
 	if (in_array($parts[1],array("smar","dar","tvar","praT","mrad","star","spaS","smari","dari","tvari","praTi","mradi","stari","spaSi")))
 	{
 		$text = one(array("si+smar","di+dar","ti+tvar","pi+praT","mi+mrad","ti+star","pi+spaS","si+smari","di+dari","ti+tvari","pi+praTi","mi+mradi","ti+stari","pi+spaSi"),array("sa+smar","da+dar","ta+tvar","pa+praT","ma+mrad","ta+star","pa+spaS","sa+smari","da+dari","ta+tvari","pa+praTi","ma+mradi","ta+stari","pa+spaSi"),0);
 		storedata('7.4.95','sa',0);
 	}
-	/* vibhASA veSTiceSTyoH (7.4.96) */	
+	/* vibhASA veSTiceSTyoH (7.4.96) */
 	elseif (in_array($parts[1],array("vezw","cezw","vezwi","cezwi")))
 	{
 		$text = one(array("vi+vezw","ci+cezw"),array("va+vezw","ca+cezw"),1);
 		storedata('7.4.96','sa',0);
-	}	
-	/* I ca gaNaH (7.4.97) */	
+	}
+	/* I ca gaNaH (7.4.97) */
 	elseif (in_array($parts[1],array("gaR","gaRi")))
 	{
 		$text = one(array("ja+gaR"),array("jI+gaR"),0);
@@ -3496,7 +3559,7 @@ function san()
 	{
 		$text = change('/^([^+]*[iIuUfFxXeEoOhyvrlkKgGN][+])s/','$1z');
 		storedata('8.3.59','sa',0);
-		$Adezapratyaya=1;		
+		$Adezapratyaya=1;
 	}
 
 }
@@ -3559,7 +3622,7 @@ function zlu()
 		storedata('6.1.10','sa',0);
 		$text=two($juhotyAdireplace1,array("+"),$juhotyAdireplace2,array("+"),0);
 		storedata('7.4.59','sa',0);
-	}	
+	}
 	if (sub(array("kiki","kikit","gagA","GiGf","hahA","huhu","hihf","hihrI","gigA"),array("+"),array_merge($tiG,array("Am")),0))
 	{
 		$text=three(array("kiki","kikit","gagA","GiGf","hahA","huhu","hihf","hihrI","gigA"),array("+"),array_merge($tiG,array("Am")),array("ciki","cikit","jagA","JiGf","JahA","Juhu","Jihf","JihrI","jigA"),array("+"),array_merge($tiG,array("Am")),0);
@@ -3649,7 +3712,7 @@ function shortendisplaydata($storestore)
 	foreach ($sutralist as $sutra_number)
 	{
 			$output = array_filter($totaldata, function($var) use ($sutra_number) { return strpos($var,$sutra_number.":")!==false; });
-			$matches = array_merge($output,$matches);	
+			$matches = array_merge($output,$matches);
 	}
 	$matches = array_unique($matches);
 	$matches = array_values($matches);
@@ -3666,7 +3729,7 @@ function gui3($text,$sutra_number,$style,$note,$us,$htmloutput)
 		$matches=array_values($matches);
 		$int = explode(':',$matches[0]); // We presume that there would be only one match.
 		$msg_no[$i] = $int[0];
-		$msg_eng[$i] = $int[1]; 
+		$msg_eng[$i] = $int[1];
 		$msg_dev[$i] = $int[2];
 		if ($msg_no[$i] === $sutra_number)
 		{
@@ -3681,7 +3744,7 @@ function gui3($text,$sutra_number,$style,$note,$us,$htmloutput)
 		$matches=array_values($matches);
 		$int = explode(':',$matches[0]); // We presume that there would be only one match.
 		$msg_no[$i] = $int[0];
-		$msg_eng[$i] = $int[1]; 
+		$msg_eng[$i] = $int[1];
 		$msg_dev[$i] = $int[2];
 		if ($msg_no[$i] === $sutra_number)
 		{
@@ -3701,12 +3764,12 @@ function gui3($text,$sutra_number,$style,$note,$us,$htmloutput)
 		$sutra_dev[$i] = $int[2];
 		if ($debug===1 && $debugmode<2){ dibug('GUI ASDATA ANALYSIS END');}
 		if ($sutra_no[$i] === $sutra_number)
-		{	
+		{
 		//	$htmloutput=$htmloutput."<p class = ".$style." >By ".toiast($sutra_dev[$i])." (".link_sutra($sutra_number).") :</p>\n";
 		//	$htmloutput=$htmloutput."<p class = ".$style." >".$sutra_dev[$i]." (".convert($sutra_number).") :</p>\n";
 			$htmloutput=$htmloutput."<p class = ".$style." >".$sutra_dev[$i]." (".link_sutra($sutra_number).") :</p>\n";
 			$htmloutput=$htmloutput.display3($text,$note,$us);
-		}		
+		}
 	}
 	elseif (strpos($sutra_number,'-')!==false && $frontend==='1')
 	{
@@ -3714,15 +3777,15 @@ function gui3($text,$sutra_number,$style,$note,$us,$htmloutput)
 		$matches=array_values($matches);
 		$int = explode(':',$matches[0]); // We presume that there would be only one match.
 		// Data in $vdata is in "$vartika_no:$vartika" format.
-		$vartika_no[$i] = $int[0]; 
+		$vartika_no[$i] = $int[0];
 		$sutra_dev[$i] = $int[1];
 		if ($vartika_no[$i] === $sutra_number)
-		{	
+		{
 		//	$htmloutput=$htmloutput."<p class = ".$style." >By ".toiast($sutra_dev[$i])." (vA ".link_vartika($sutra_number).") :</p>\n";
 		//	$htmloutput=$htmloutput."<p class = ".$style." >".convert($sutra_dev[$i])." (वा ".convert($sutra_number).") :</p>\n";
 		$htmloutput=$htmloutput."<p class = ".$style." >".convert($sutra_dev[$i])." (वा ".link_vartika($sutra_number).") :</p>\n";
 		$htmloutput=$htmloutput.display3($text,$note,$us);
-		}				
+		}
 	}
 	elseif ($frontend==='1') // For $miscdata for displaying miscellaneous information.
 	{
@@ -3732,12 +3795,12 @@ function gui3($text,$sutra_number,$style,$note,$us,$htmloutput)
 		$vartika_no[$i] = $int[0];
 		$sutra_dev[$i] = $int[1];
 		if ($vartika_no[$i] === $sutra_number)
-		{	
+		{
 		//	$htmloutput=$htmloutput."<p class = ".$style." >By ".toiast($sutra_dev[$i])." :</p>\n";
 			$htmloutput=$htmloutput."<p class = ".$style." >".convert($sutra_dev[$i])." :</p>\n";
 		//	$htmloutput=$htmloutput."<p class = ".$style." >".toiast($sutra_dev[$i])." :</p>\n";
 			$htmloutput=$htmloutput.display3($text,$note,$us);
-		}				
+		}
 	}
 	echo $htmloutput;
 }
@@ -3757,7 +3820,7 @@ function gui($text,$sutra_number,$style,$note,$us)
 		$matches=array_values($matches);
 		$int = explode(':',$matches[0]); // We presume that there would be only one match.
 		$msg_no[$i] = $int[0];
-		$msg_eng[$i] = $int[1]; 
+		$msg_eng[$i] = $int[1];
 		$msg_dev[$i] = $int[2];
 		if ($msg_no[$i] === $sutra_number)
 		{
@@ -3772,7 +3835,7 @@ function gui($text,$sutra_number,$style,$note,$us)
 		$matches=array_values($matches);
 		$int = explode(':',$matches[0]); // We presume that there would be only one match.
 		$msg_no[$i] = $int[0];
-		$msg_eng[$i] = $int[1]; 
+		$msg_eng[$i] = $int[1];
 		$msg_dev[$i] = $int[2];
 		if ($msg_no[$i] === $sutra_number)
 		{
@@ -3792,11 +3855,11 @@ function gui($text,$sutra_number,$style,$note,$us)
 		$sutra_dev[$i] = $int[2];
 		if ($debug===1 && $debugmode<2){ dibug('GUI ASDATA ANALYSIS END');}
 		if ($sutra_no[$i] === $sutra_number)
-		{	
+		{
 			echo "<p class = ".$style." >By ".toiast($sutra_dev[$i])." (".link_sutra($sutra_number).") :</p>\n";
 			echo "<p class = ".$style." >".$sutra_dev[$i]." (".convert($sutra_number).") :</p>\n";
 			display2($text,$note,$us);
-		}		
+		}
 	}
 	elseif (strpos($sutra_number,'-')!==false && $frontend==='1')
 	{
@@ -3804,14 +3867,14 @@ function gui($text,$sutra_number,$style,$note,$us)
 		$matches=array_values($matches);
 		$int = explode(':',$matches[0]); // We presume that there would be only one match.
 		// Data in $vdata is in "$vartika_no:$vartika" format.
-		$vartika_no[$i] = $int[0]; 
+		$vartika_no[$i] = $int[0];
 		$sutra_dev[$i] = $int[1];
 		if ($vartika_no[$i] === $sutra_number)
-		{	
+		{
 			echo "<p class = ".$style." >By ".toiast($sutra_dev[$i])." (vA ".link_vartika($sutra_number).") :</p>\n";
 			echo "<p class = ".$style." >".convert($sutra_dev[$i])." (वा ".convert($sutra_number).") :</p>\n";
 			display2($text,$note,$us);
-		}				
+		}
 	}
 	elseif ($frontend==='1') // For $miscdata for displaying miscellaneous information.
 	{
@@ -3821,11 +3884,11 @@ function gui($text,$sutra_number,$style,$note,$us)
 		$vartika_no[$i] = $int[0];
 		$sutra_dev[$i] = $int[1];
 		if ($vartika_no[$i] === $sutra_number)
-		{	
+		{
 			echo "<p class = ".$style." >By ".toiast($sutra_dev[$i])." :</p>\n";
 			echo "<p class = ".$style." >".convert($sutra_dev[$i])." :</p>\n";
 			display2($text,$note,$us);
-		}				
+		}
 	}
 	if ($debug===1 && $debugmode<2){ dibug('GUI END');}
 }
@@ -3840,8 +3903,8 @@ function gui2($sutra_number)
 		$matches = array_filter($otherdata, function($var) use ($sutra_number) { return strpos($var,$sutra_number.":")!==false; });
 		$matches=array_values($matches);
 		$int = explode(':',$matches[0]); // We presume that there would be only one match.
-		$msg_no[$i] = $int[0]; 
-		$msg_eng[$i] = $int[1]; 
+		$msg_no[$i] = $int[0];
+		$msg_eng[$i] = $int[1];
 		$msg_dev[$i] = $int[2];
 		if ($msg_no[$i] === $sutra_number)
 		{
@@ -3858,8 +3921,8 @@ function gui2($sutra_number)
 		$matches = array_filter($paribhASAdata, function($var) use ($sutra_number) { return strpos($var,$sutra_number.":")!==false; });
 		$matches=array_values($matches);
 		$int = explode(':',$matches[0]); // We presume that there would be only one match.
-		$msg_no[$i] = $int[0]; 
-		$msg_eng[$i] = $int[1]; 
+		$msg_no[$i] = $int[0];
+		$msg_eng[$i] = $int[1];
 		$msg_dev[$i] = $int[2];
 		if ($msg_no[$i] === $sutra_number)
 		{
@@ -3880,14 +3943,14 @@ function gui2($sutra_number)
 		$sutra_type[$i] = $int[1];
 		$sutra_dev[$i] = $int[2];
 		if ($sutra_no[$i] === $sutra_number)
-		{	
+		{
 			echo "<p class = ".$style." >By ".toiast($sutra_dev[$i])." (".link_sutra($sutra_number).") :</p>\n";
 			echo "<p class = ".$style." >".$sutra_dev[$i]." (".convert($sutra_number).") :</p>\n";
 			echo "<hr/>";
 			/*fputs($outfile,"<p class = ".$style." >By ".toiast($sutra_dev[$i])." (".link_sutra($sutra_number).") :</p>\n");
 			fputs($outfile,"<p class = ".$style." >".$sutra_dev[$i]." (".convert($sutra_number).") :</p>\n");
 			fputs($outfile,"<hr/>");*/
-		}		
+		}
 	}
 	elseif (strpos($sutra_number,'-')!==false && strpos($sutra_number,'.')!==false && $frontend==='1')
 	{
@@ -3897,14 +3960,14 @@ function gui2($sutra_number)
 		$vartika_no[$i] = $int[0];
 		$sutra_dev[$i] = $int[1];
 		if ($vartika_no[$i] === $sutra_number)
-		{	
+		{
 			echo "<p class = ".$style." >By ".toiast($sutra_dev[$i])." (vA ".link_vartika($sutra_number).") :</p>\n";
 			echo "<p class = ".$style." >".convert($sutra_dev[$i])." (वा ".convert($sutra_number).") :</p>\n";
 			echo "<hr/>";
 			fputs($outfile,"<p class = ".$style." >By ".toiast($sutra_dev[$i])." (vA ".link_vartika($sutra_number).") :</p>\n");
 			fputs($outfile,"<p class = ".$style." >".convert($sutra_dev[$i])." (वा ".convert($sutra_number).") :</p>\n");
 			fputs($outfile,"<hr/>");
-		}				
+		}
 	}
 	elseif ( $frontend==='1') // For $miscdata for displaying miscellaneous information.
 	{
@@ -3914,14 +3977,14 @@ function gui2($sutra_number)
 		$vartika_no[$i] = $int[0];
 		$sutra_dev[$i] = $int[1];
 		if ($vartika_no[$i] === $sutra_number)
-		{	
+		{
 			echo "<p class = ".$style." >By ".toiast($sutra_dev[$i])." :</p>\n";
 			echo "<p class = ".$style." >".convert($sutra_dev[$i])." :</p>\n";
 			echo "<hr/>";
 			/*fputs($outfile,"<p class = ".$style." >By ".toiast($sutra_dev[$i])." :</p>\n");
 			fputs($outfile,"<p class = ".$style." >".convert($sutra_dev[$i])." :</p>\n");
 			fputs($outfile,"<hr/>");*/
-		}				
+		}
 	}
 }
 /* Function print_to_file prints the output from storedata to the local HTML file for viewing later. */
@@ -3936,8 +3999,8 @@ function print_to_file($text,$sutra_number,$style,$note)
 		$matches = array_filter($otherdata, function($var) use ($sutra_number) { return strpos($var,$sutra_number.":")!==false; });
 		$matches=array_values($matches);
 		$int = explode(':',$matches[0]); // We presume that there would be only one match.
-		$msg_no[$i] = $int[0]; 
-		$msg_eng[$i] = $int[1]; 
+		$msg_no[$i] = $int[0];
+		$msg_eng[$i] = $int[1];
 		$msg_dev[$i] = $int[2];
 		if ($msg_no[$i] === $sutra_number)
 		{
@@ -3959,11 +4022,11 @@ function print_to_file($text,$sutra_number,$style,$note)
 		$sutra_type[$i] = $int[1];
 		$sutra_dev[$i] = $int[2];
 		if ($sutra_no[$i] === $sutra_number)
-		{	
+		{
 			fputs($outfile,"<p class = ".$style." >By ".toiast($sutra_dev[$i])." (".link_sutra($sutra_number).") :</p>\n");
 			fputs($outfile,"<p class = ".$style." >".$sutra_dev[$i]." (".convert($sutra_number).") :</p>\n");
 			print2($text,$note);
-		}		
+		}
 	}
 	elseif (strpos($sutra_number,'-')!==false && $frontend==='1')
 	{
@@ -3971,14 +4034,14 @@ function print_to_file($text,$sutra_number,$style,$note)
 		$matches=array_values($matches);
 		$int = explode(':',$matches[0]); // We presume that there would be only one match.
 		// Data in $vdata is in "$vartika_no:$vartika" format.
-		$vartika_no[$i] = $int[0]; 
+		$vartika_no[$i] = $int[0];
 		$sutra_dev[$i] = $int[1];
 		if ($vartika_no[$i] === $sutra_number)
-		{	
+		{
 			fputs($outfile,"<p class = ".$style." >By ".toiast($sutra_dev[$i])." (vA ".link_vartika($sutra_number).") :</p>\n");
 			fputs($outfile,"<p class = ".$style." >".convert($sutra_dev[$i])." (वा ".convert($sutra_number).") :</p>\n");
 			print2($text,$note);
-		}				
+		}
 	}
 	elseif ($frontend==='1') // For $miscdata for displaying miscellaneous information.
 	{
@@ -3988,11 +4051,11 @@ function print_to_file($text,$sutra_number,$style,$note)
 		$vartika_no[$i] = $int[0];
 		$sutra_dev[$i] = $int[1];
 		if ($vartika_no[$i] === $sutra_number)
-		{	
+		{
 			fputs($outfile,"<p class = ".$style." >By ".toiast($sutra_dev[$i])." :</p>\n");
 			fputs($outfile,"<p class = ".$style." >".convert($sutra_dev[$i])." :</p>\n");
 			print2($text,$note);
-		}				
+		}
 	}
 }
 /* function tablemaker */
@@ -4479,7 +4542,7 @@ function multivowelverbs()
 			$i++;
 		}
 	}
-	
+
 }
 //multivowelverbs();
 /* See issue https://github.com/drdhaval2785/SanskritVerb/issues/798 */
@@ -4547,7 +4610,7 @@ return $text; // returning the result to the user.
 /* find string after removing 'n' letters from beginning of the word (sa for string after) */
 function sa($text,$n)        // Not used in code.
 {
-$p = str_split($text); 
+$p = str_split($text);
 $a = "";
 for ($q=0;$q<$n;$q++)
 { $text = ltrim($text,$p[$q]); }
@@ -4566,80 +4629,80 @@ function sb($text, $n)        // Not used in code.
 $p = str_split($text);
 $a= "";
 for ($q=0;$q<$n;$q++)
-{$text = chop($text,$p[count($p)-$q-1]);} 
+{$text = chop($text,$p[count($p)-$q-1]);}
 return $text;
 }
 /* function lopa is not used in the code because it is not stable */
 function lopa ($kantha,$talu,$murdha,$oshtha,$location,$merge)
-{ 
- global $text;   
-// this is an array of the input values to use below 
+{
+ global $text;
+// this is an array of the input values to use below
  // get all possible combianations of $kantha+$talu+$murdha
-//$combinations = get_string_combinations(); 
-   $combinations = array(); 
+//$combinations = get_string_combinations();
+   $combinations = array();
 
      foreach($kantha as $k) // "a","k","g","n","h"
-     { 
+     {
         foreach($talu as $t) // "i","c","j","y","s"
-        { 
+        {
             foreach($murdha as $m) // "f","w","q","r","z"
             {
                 foreach ($oshtha as $o)
                 {
-                 $combinations[] = $k.$t.$m.$o;    
+                 $combinations[] = $k.$t.$m.$o;
                 }
-            } 
-        } 
-     } 
+            }
+        }
+     }
 $values1 = array();
 foreach ($text as $stti => $string)  // 'aifkcwh', 'aifkcwhsz', 'kim', 'aif'
 {
 
-    $values = array($string);  
-    
-    reset($values); 
+    $values = array($string);
+
+    reset($values);
 
 
-    // loop through $values using an array pointer 
+    // loop through $values using an array pointer
     // while the current array pointer position is not null/false
     while(current($values)!==false)
     {
-        // on the first iteration, $values will be the inputted string 
+        // on the first iteration, $values will be the inputted string
         // from $strings_to_test... our example is "aifkcwh"
-        $value = current($values); 
-        
+        $value = current($values);
+
        if ($merge === 1)
         {
         $values1[] = current($values);
-        } 
+        }
         // for each possible combination of $kantha.$talu.$murdha
         // let's say our first combination is "aif"
         foreach($combinations as $ci => $combination)
-        {  
+        {
             // look and see if the current value we are looking
-            // at ("aifkcwh") contains this combination string  
+            // at ("aifkcwh") contains this combination string
             if (strpos($value,$combination)!==false)
             {   $posterior = substr($value,strpos($value,$combination)+$location+2);
                 $previous = chop($value,$posterior);
-                $previous = substr($previous,0,strlen($previous)); 
-                $newval = $previous.$posterior; 
+                $previous = substr($previous,0,strlen($previous));
+                $newval = $previous.$posterior;
                // echo $value."<br>".$combination."</br>".$previous."</br>".$posterior."</br>";
-                // have we already recorded this mutation?  
-                if (!in_array($newval,$values1)) 
-                { 
+                // have we already recorded this mutation?
+                if (!in_array($newval,$values1))
+                {
                     // if not... append it to the array $values
-                    $values1[] = $newval; 
-                    // now, values would go from being = array([0]=>'aifkcwh'); 
-                    // to array ([ 0] => 'aifkcwh', [1] => 'aiifkcwh' ); 
+                    $values1[] = $newval;
+                    // now, values would go from being = array([0]=>'aifkcwh');
+                    // to array ([ 0] => 'aifkcwh', [1] => 'aiifkcwh' );
                 }
-                else 
+                else
                 {
                 }
-            } 
-        } // <-- end of the foreach statement, this will go through all combinations 
+            }
+        } // <-- end of the foreach statement, this will go through all combinations
           //     in our combinations array for this particular value which is currently aifkcwh
-        next($values);  
-    }  
+        next($values);
+    }
 
     $output[$string] = $values1;
 }
@@ -4654,7 +4717,7 @@ function nosavarna($c)
 {
     global $ac;
      $i = array("i","I");$u = array("u","U");$f = array("f","F","x","X");
-    
+
     if ( $c === $i[0] ) {$non = array_diff($ac, $i);}
     if ( $c === $i[1] ) {$non = array_diff($ac, $i);}
     if ( $c === $u[0] ) {$non = array_diff($ac, $u);}
@@ -4672,21 +4735,21 @@ function nosavarna($c)
      $talu   = array("i","c","j","y","s");
      $murdha = array("f","w","q","r","z");
 
-     $combinations = array(); 
+     $combinations = array();
 
      foreach($kantha as $k) // "a","k","g","n","h"
-     { 
+     {
         foreach($talu as $t) // "i","c","j","y","s"
-        { 
+        {
             foreach($murdha as $m) // "f","w","q","r","z"
             {
-                $combinations[] = $k.$t.$m; 
-            } 
-        } 
-     } 
-     // this gives us an array if 125 items 
+                $combinations[] = $k.$t.$m;
+            }
+        }
+     }
+     // this gives us an array if 125 items
      /*
-     $combinations = 
+     $combinations =
         Array
         (
              [0] => aif
@@ -4694,12 +4757,12 @@ function nosavarna($c)
              [2] => aiq
              [3] => air
              [4] => aiz
-             .... 
+             ....
              [121] => hsw
              [122] => hsq
              [123] => hsr
              [124] => hsz
-        ) 
+        )
      */
      return $combinations;
  }
@@ -4752,10 +4815,10 @@ if (in_array($text,$mahaprana)) { $prana[$k] = $mahaprana; $k++; }
 $u=0;
 if (in_array($text,$ac)) { $svar[$u] = $udatta; $u++; }
 
-// Finding out intersections of sthAna, Abhyantara prayatna and bAhya prayatnas of the given letter and the given array. 
+// Finding out intersections of sthAna, Abhyantara prayatna and bAhya prayatnas of the given letter and the given array.
 if(empty($sthana)===FALSE)
 {
-$sthanasamya = array_intersect(flatten($sthana),$array); 
+$sthanasamya = array_intersect(flatten($sthana),$array);
 	if ($type==="savarna") {echo "The letters in the pratyAhAra with same sthAna (Asya) as the letter input are: ".implode(",",$sthanasamya)."</br>"; }
 }
 if(empty($abhyantara)===false)
@@ -4775,10 +4838,10 @@ $pranasamya = array_intersect(flatten($prana),$array);
 }
 if(empty($svar)===false)
 {
-if(in_array($text,$ac)) 
-        { $svarasamya = array_intersect(flatten($svar),$array,$ac); 
+if(in_array($text,$ac))
+        { $svarasamya = array_intersect(flatten($svar),$array,$ac);
 			if ($type==="savarna") {echo "The letters in the pratyAhAra with the same udAtta/anudAtta/svarita as the letter input are: ".implode(",",$svarasamya)."</br>"; }
-        } 
+        }
 }
 if(empty($sthanasamya)===false && empty($abhyantarasamya)===false && empty($ghoshasamya)===false && empty($pranasamya)===false)
 { $l = array_intersect($sthanasamya,$abhyantarasamya,$ghoshasamya,$pranasamya); }
@@ -4795,37 +4858,37 @@ if(empty($sthanasamya)===false && empty($pranasamya)===false)
 // Defining savarNas for consonants
 if(in_array($text,$hl))
 {
-    if(empty($sthanasamya)===false&&empty($abhyantarasamya)===false&&empty($ghoshasamya)===false&&empty($pranasamya)===FALSE&&empty($l)===false) 
+    if(empty($sthanasamya)===false&&empty($abhyantarasamya)===false&&empty($ghoshasamya)===false&&empty($pranasamya)===FALSE&&empty($l)===false)
     {//echo "four match";
-           $savarna = implode(", ",$l);     
+           $savarna = implode(", ",$l);
     }
     elseif (empty($sthanasamya)===false&&empty($abhyantarasamya)===false&&empty($ghoshasamya)===false&&empty($m)===false)
     {//echo "three match";
-            $savarna = implode(", ",$m);     
+            $savarna = implode(", ",$m);
     }
     elseif (empty($sthanasamya)===false&&empty($abhyantarasamya)===false&&empty($pranasamya)===false&&empty($o)===false)
     {//echo "three match";
-            $savarna = implode(", ",$o);     
+            $savarna = implode(", ",$o);
     }
     elseif (empty($sthanasamya)===false&&empty($abhyantarasamya)===false&&empty($n)===false)
     {//echo "Two match";
-            $savarna = implode(", ",$n);     
+            $savarna = implode(", ",$n);
     }
      elseif (empty($sthanasamya)===false&&empty($ghoshasamya)===false&&empty($p)===false)
     {//echo "Two match";
-            $savarna = implode(", ",$p);     
+            $savarna = implode(", ",$p);
     } elseif (empty($sthanasamya)===false&&empty($pranasamya)===false&&empty($q)===false)
     {//echo "Two match";
-            $savarna = implode(", ",$q);     
+            $savarna = implode(", ",$q);
     }
     else
     {//echo "no match";
-    $savarna = implode(", ",$sthanasamya);    
+    $savarna = implode(", ",$sthanasamya);
     }
-} 
+}
 // defining savarNas for vowels
 else
-{  
+{
     if (in_array($text,$ru)||in_array($text,$e))
     {// patch for $ru
         for($i=0;$i<4;$i++)
@@ -4847,20 +4910,20 @@ else
         }
         }
     }
-    
-    
-    else 
+
+
+    else
     {// In case of other vowels.
         $savarna = implode(", ",$sthanasamya);
     }
-    
+
     if (in_array($text,$array))
     {
         $savarna = $text;
     }
 }
 // giving output to the browser for savarNa letter
-//echo "The savarna letter of '".$text."' among the given pratyAhAra is: ".$savarna;    
+//echo "The savarna letter of '".$text."' among the given pratyAhAra is: ".$savarna;
 // stores that savarNa letter in memory.
 return $savarna;
 }
@@ -4872,9 +4935,9 @@ function one1($text,$a,$b,$merge)
 {
         for($i=0;$i<count($a);$i++)
         {
-            $text =  str_replace($a[$i],$b[$i],$text);    
+            $text =  str_replace($a[$i],$b[$i],$text);
         }
-return $text;  
+return $text;
 }
 /* Function two is for replacing one letter in the whole array of $text with another letter. Not used in code */
 // There are five arguments, $a,$b are the arrays which you want to change, $c,$d are the arrays which will be put in place of the replaced one.
@@ -4886,7 +4949,7 @@ function two1($text,$a,$b,$c,$d,$merge)
           {
     for($j=0;$j<count($b);$j++)
             {
-      $text =  str_replace($a[$i].$b[$j],$c[$i].$d[$j],$text);   
+      $text =  str_replace($a[$i].$b[$j],$c[$i].$d[$j],$text);
             }
           }
     return $text;
@@ -4904,7 +4967,7 @@ function three1($text,$a,$b,$c,$d,$e,$f,$merge)
         {
         for($k=0;$k<count($c);$k++)
             {
-         $text =  str_replace($a[$i].$b[$j].$c[$k],$d[$i].$e[$j].$f[$k],$text);       
+         $text =  str_replace($a[$i].$b[$j].$c[$k],$d[$i].$e[$j].$f[$k],$text);
             }
         }
     }
@@ -4918,7 +4981,7 @@ function tiGreplace()
     global $lakAra;
     global $set;
     global $taG; global $tis; global $tiG; global $so;
-    $default_Atmane_1=array("ta","AtAm","anta","TAs","ATAm","Dvam","i","vahi","mahi");  
+    $default_Atmane_1=array("ta","AtAm","anta","TAs","ATAm","Dvam","i","vahi","mahi");
     $tiG_law_Atmane_1=array("te","Ate","ante","se","ATe","Dve","i","vahe","mahe");
     $tiG_law_parasmai_1=array("ti","tas","anti","si","Tas","Ta","mi","vas","mas");
     $tiG_law_Atmane_1=array("te","ite","ante","se","iTe","Dve","e","vahe","mahe");
@@ -4931,7 +4994,7 @@ function tiGreplace()
     $tiG_sArvaDAtukalew_parasmai_1=array("ati","atas","anti","asi","aTas","aTa","ami","avas","amas");
     $tiG_sArvaDAtukalew_Atmane_1=array("ate","Ete","ante","ase","ETe","aDve","e","avahe","amahe");
 // second set pratyayas
-    $default_Atmane_2=array("ta","AtAm","anta","TAs","ATAm","Dvam","i","vahi","mahi");  
+    $default_Atmane_2=array("ta","AtAm","anta","TAs","ATAm","Dvam","i","vahi","mahi");
     $tiG_law_Atmane_2=array("te","Ate","ante","se","ATe","Dve","i","vahe","mahe");
     $tiG_law_parasmai_2=array("ti","tas","anti","si","Tas","Ta","mi","vas","mas");
     $tiG_law_Atmane_2=array("te","Ate","ate","se","ATe","Dve","e","vahe","mahe");
@@ -4948,81 +5011,81 @@ function tiGreplace()
         if ($lakAra==="low" && in_array($so,$tis))
         {
             $text=pratyayareplace($tiG_law_parasmai_1,$tiG_low_parasmai_1,$text);
-        }        
+        }
         if ($lakAra==="laN" && in_array($so,$tis))
         {
             $text=pratyayareplace($tiG_law_parasmai_1,$tiG_laN_parasmai_1,$text);
-        }        
+        }
         if ($lakAra==="viDiliN" && in_array($so,$tis))
         {
             $text=pratyayareplace($tiG_law_parasmai_1,$tiG_viDiliN_parasmai_1,$text);
-        }        
+        }
         if ($lakAra==="sArvadhAtukalew" && in_array($so,$tis))
         {
             $text=pratyayareplace($tiG_law_parasmai_1,$tiG_sArvaDAtukalew_parasmai_1,$text);
-        }        
+        }
         if ($lakAra==="law" && in_array($so,$taG))
         {
             $text=pratyayareplace($default_Atmane_1,$tiG_law_Atmane_1,$text);
-        }        
+        }
         if ($lakAra==="low" && in_array($so,$taG))
         {
             $text=pratyayareplace($default_Atmane_1,$tiG_low_Atmane_1,$text);
-        }        
+        }
         if ($lakAra==="laN" && in_array($so,$taG))
         {
             $text=pratyayareplace($default_Atmane_1,$tiG_laN_Atmane_1,$text);
-        }        
+        }
         if ($lakAra==="viDiliN" && in_array($so,$taG))
         {
             $text=pratyayareplace($default_Atmane_1,$tiG_viDiliN_Atmane_1,$text);
-        }               
+        }
         if ($lakAra==="sArvadhAtukalew" && in_array($so,$taG))
         {
             $text=pratyayareplace($default_Atmane_1,$tiG_sArvaDAtukalew_Atmane_1,$text);
-        }               
+        }
    }
    if($set===2)
    {
         if ($lakAra==="low" && in_array($so,$tis))
         {
             $text=pratyayareplace($tiG_law_parasmai_2,$tiG_low_parasmai_2,$text);
-        }        
+        }
         if ($lakAra==="laN" && in_array($so,$tis))
         {
             $text=pratyayareplace($tiG_law_parasmai_2,$tiG_laN_parasmai_2,$text);
-        }        
+        }
         if ($lakAra==="viDiliN" && in_array($so,$tis))
         {
             $text=pratyayareplace($tiG_law_parasmai_2,$tiG_viDiliN_parasmai_2,$text);
-        }        
+        }
         if ($lakAra==="sArvadhAtukalew" && in_array($so,$tis))
         {
             $text=pratyayareplace($tiG_law_parasmai_2,$tiG_sArvaDAtukalew_parasmai_2,$text);
-        }        
+        }
         if ($lakAra==="law" && in_array($so,$taG))
         {
             $text=pratyayareplace($default_Atmane_2,$tiG_law_Atmane_2,$text);
-        }        
+        }
         if ($lakAra==="low" && in_array($so,$taG))
         {
             $text=pratyayareplace($default_Atmane_2,$tiG_low_Atmane_2,$text);
-        }        
+        }
         if ($lakAra==="laN" && in_array($so,$taG))
         {
             $text=pratyayareplace($default_Atmane_2,$tiG_laN_Atmane_2,$text);
-        }        
+        }
         if ($lakAra==="viDiliN" && in_array($so,$taG))
         {
             $text=pratyayareplace($default_Atmane_2,$tiG_viDiliN_Atmane_2,$text);
-        }               
+        }
         if ($lakAra==="sArvadhAtukalew" && in_array($so,$taG))
         {
             $text=pratyayareplace($default_Atmane_2,$tiG_sArvaDAtukalew_Atmane_2,$text);
-        }               
+        }
    }
     // patch for optional forms.
-   // Patch for sArvadhAtuka leT forms is pending. 
+   // Patch for sArvadhAtuka leT forms is pending.
     foreach ($text as $val1)
     {
         if (strpos($val1,"+tAt")!==false && $set===1)
@@ -5039,29 +5102,29 @@ function tiGreplace()
         {
             $val2[]=$val1;
             $val2[]=str_replace("+tu","+tAt",$val1);
-        }        
+        }
         else
         {
             $val2[]=$val1;
         }
     }
-    
+
     return $val2;
 }
 
-/* An attempt to create an all encompassing function 
+/* An attempt to create an all encompassing function
  * name is panini
  * three arrays for checking,
  * one for adding additional checking in addition to sub function
  * one for adding whether pratyaya / pada
- *  one for the 0/1/2/3/4 etc of sub function, 
- * three for the substituted, 
- * three for substitution, 
+ *  one for the 0/1/2/3/4 etc of sub function,
+ * three for the substituted,
+ * three for substitution,
  * one for 0/1 of one/two/three function,
  * one for english sutra name,
  * one for english sutra number
  * one for hindi sutra name,
  * one for hindi sutra number
- * 
+ *
  */
 ?>
