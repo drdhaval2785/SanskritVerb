@@ -163,7 +163,7 @@ if ($type==='tiGanta') {
 		$sutrarelationfile = fopen('sutrarelations/temp4.txt','w');
 	}
 }
-elseif ($type==='subanta') {
+elseif ($type==='subanta' && $jsonmode!==1) {
 	if (!is_dir('nounoutput'))
 	{
 		mkdir ('nounoutput');
@@ -173,7 +173,7 @@ elseif ($type==='subanta') {
 	fputs($logfile,"verb = $first, transliteration = $tran\n");
 	echo $header; // creating header. This will ensure that the HTML is shown with UTF-8 encoding with necessary stylesheet.
 }
-elseif ($type==='sandhi') {
+elseif ($type==='sandhi' && $jsonmode!==1) {
 	if (!is_dir('sandhioutput')) {mkdir ('sandhioutput');}
 	$logfile = fopen('sandhioutput//log.txt','a+');
 	fputs($logfile,date('D, d M Y H:i:s')."\n");
@@ -182,7 +182,7 @@ elseif ($type==='sandhi') {
 }
 if ($debug===1) {dibug("100");}
 
-if (!isset($argv[0]) and $type==='tiGanta')
+if (!isset($argv[0]) and $type==='tiGanta' && $jsonmode!==1)
 {
 	//$outfile = fopen("verboutput//".$first."_".$verbset."_".$lakAra.".html", "wb");
 	//fputs($outfile,$header);
@@ -14573,7 +14573,15 @@ if ($frontend!=="0" && $jsonmode===1)
 	$derivation = array();
 	foreach($storestore as $storedata){
 		$suffx = $storedata[0]['suffix'];
-		$derivation[$suffx] = $storedata;
+		$ups = $storedata[0]['upasarga'];
+		$stor = array();
+		foreach($storedata as $step){
+			unset($step['suffix']);
+			unset($step['upasarga']);
+			unset($step['input']);
+			$stor[] = $step;
+			}
+		$derivation[$suffx] = $stor;
 		}
 	$vmgn['UoHyd'] = $vmgn['UoHyd'].$verbpadaforUohyd;
 	$vmgn['upasarga'] = $us;
@@ -14583,6 +14591,7 @@ if ($frontend!=="0" && $jsonmode===1)
 	$vmgn['it_id'] = $it_id;
 	$vmgn['it_status'] = $id_dhAtu;
 	$vmgn['derivation'] = $derivation;
+	$vmgn['upasarga'] = $ups;
 	print_r(json_encode($vmgn, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES));
 	//echo '</pre>';
 	}
