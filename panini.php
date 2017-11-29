@@ -14566,7 +14566,7 @@ elseif ($type==="subanta")
 /* Displaying back the JSON with all information. */
 if ($frontend!=="0" && $jsonmode===1)
 {
-	echo '<pre>';
+	//echo '<pre>';
 	$fullformofverbtypes = array('pa' => 'parasmEpaxI', 'A' => 'AwmanepaxI', 'u' => 'uBayapaxI');
 	$verbpadaforUohyd = $fullformofverbtypes[$verbpada];
 	// Create a JSON readable derivation steps from $storestore.
@@ -14584,7 +14584,7 @@ if ($frontend!=="0" && $jsonmode===1)
 	$vmgn['it_status'] = $id_dhAtu;
 	$vmgn['derivation'] = $derivation;
 	print_r(json_encode($vmgn, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES));
-	echo '</pre>';
+	//echo '</pre>';
 	}
 /* Displaying the sUtras and sequential changes of $frontend is not set to 0. */
 elseif ($frontend!=="0")
