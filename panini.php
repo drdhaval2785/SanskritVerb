@@ -3,7 +3,7 @@ date_default_timezone_set('Asia/Kolkata');
 $start_time = microtime(true); // To track time spent in execution of script.
 $debug = 0; // 0 - no debugging. 1 - debugging on. It shows execution of some important time consuming scripts.
 $debugmode = 0; // 0 - No debugging, 1 - full debugging with function timestamp (for speed analysis and memory leakage finding), 2 - Only $text display (no function start and ends).
-$jsonmode = 1; // 0 - Not JSON mode. 1 - JSON mode. Currently in testing version.
+$jsonmode = 0; // 0 - Not JSON mode. 1 - JSON mode. Currently in testing version.
  /* This code is developed by Dr. Dhaval Patel (drdhaval2785@gmail.com) of www.sanskritworld.in and Dr. Sivakumari Katuri.
   * Layout assistance by Mr Marcis Gasuns.
   * Available under GNU licence.
@@ -72,6 +72,7 @@ $drop = $_GET['drop'];
 $letter = $_GET['letter'];
 $pr = $_GET['pratya'];
 $inprat = $_GET['pratyahara'];
+$jsonmode = $_GET['jsonmode'];
 if(!isset($argv[0]))
 {
 	if(!isset($verbdata1)) { $verbdata1 = verbdata1($number); }
@@ -117,15 +118,16 @@ elseif (in_array($argv[2],array("law","liw","luw","lfw","sArvaDAtukalew","ArDaDA
 	if(!isset($verbdata1)) { $verbdata1 = verbdata1($number); }
 	if(!isset($verbdata2)) { $verbdata2 = verbdata2($first); }
 	$lakAra = $argv[2];
-	$removed_sutras = explode(',',$argv[3]);
-	$removed_sutras = array_map('trim',$removed_sutras);
+	//$removed_sutras = explode(',',$argv[3]);
+	//$removed_sutras = array_map('trim',$removed_sutras);
 	$tran = $argv[4];
 	$us = $argv[5];
 	$vAcya = $argv[6];
 	$sanAdi = $argv[7];
 	if (!isset($argv[1])) { echo "Verb number is not entered"; exit; }
 	if (!isset($argv[2])) { $lakAra = 'law'; }
-	if (!isset($argv[3])) { $removed_sutras = array(); }
+	if (!isset($argv[3]) || $argv[3] !== 'json') { $removed_sutras = array(); }
+	elseif (isset($argv[3]) && $argv[3] === 'json') { $removed_sutras = array(); $jsonmode=1;}
 	if (!isset($argv[4])) { $tran = 'SLP1'; }
 	if (!isset($argv[5])) { $us = ''; }
 	if (!isset($argv[6])) { $vAcya = 'kartR'; }
@@ -14503,10 +14505,6 @@ if ((isset($argv[0])|| $test ===1) )
 		fputs($difflog,$printstatement);
 		fclose($difflog);
 	}
-	$jsonfile = fopen('json/trial.json','a','utf-8');
-	#fputs($jsonfile,json_encode($dataformorpheus,JSON_PRETTY_PRINT).",\n");
-	fputs($jsonfile,json_encode($dataformorpheus).",\n");
-	fclose($jsonfile);
 }
 elseif ($type==="tiGanta" && $jsonmode!==1)
 {
@@ -14564,25 +14562,15 @@ elseif ($type==="subanta")
 	//fclose($outfile);
 }
 /* Displaying back the JSON with all information. */
-if ($frontend!=="0" && $jsonmode===1)
+if ($jsonmode===1)
 {
-	//echo '<pre>';
-	$fullformofverbtypes = array('pa' => 'parasmEpaxI', 'A' => 'AwmanepaxI', 'u' => 'uBayapaxI');
+	$lastforms = array();
+	$result = array();
+	$fullformofverbtypes = array('p' => 'parasmEpaxI', 'A' => 'AwmanepaxI', 'u' => 'uBayapaxI');
 	$verbpadaforUohyd = $fullformofverbtypes[$verbpada];
 	// Create a JSON readable derivation steps from $storestore.
-	$derivation = array();
-	foreach($storestore as $storedata){
-		$suffx = $storedata[0]['suffix'];
-		$ups = $storedata[0]['upasarga'];
-		$stor = array();
-		foreach($storedata as $step){
-			unset($step['suffix']);
-			unset($step['upasarga']);
-			unset($step['input']);
-			$stor[] = $step;
-			}
-		$derivation[$suffx] = $stor;
-		}
+	$vmgn['input'] = $fo;
+	$vmgn['lakAra'] = $lakAra;
 	$vmgn['UoHyd'] = $vmgn['UoHyd'].$verbpadaforUohyd;
 	$vmgn['upasarga'] = $us;
 	$vmgn['padadecider_id'] = $padadecider_id;
@@ -14592,8 +14580,34 @@ if ($frontend!=="0" && $jsonmode===1)
 	$vmgn['it_status'] = $id_dhAtu;
 	$vmgn['derivation'] = $derivation;
 	$vmgn['upasarga'] = $ups;
-	print_r(json_encode($vmgn, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES));
-	//echo '</pre>';
+	foreach($storestore as $storedata){
+		$suffx = $storedata[0]['suffix'];
+		$ups = $storedata[0]['upasarga'];
+		$stor = array();
+		foreach($storedata as $step){
+			unset($step['suffix']);
+			unset($step['upasarga']);
+			unset($step['input']);
+			$stor[] = $step;
+			$lastforms = $step['text'];
+			}
+		$vmgn['derivation'] = $stor;
+		foreach($lastforms as $lastform){
+			$jsondata = json_encode($vmgn, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES);
+			$result[$lastform] = $vmgn;
+			// If called via CLI, write to file
+			if (isset($argv[0])){
+				file_put_contents('json/'.$lastform.'.json', $jsondata);
+				}
+			}
+		}
+	// else print to screen.
+	if(!isset($argv[0])){
+		$resultjson = json_encode($result, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES);
+		echo '<pre>';
+		print_r($resultjson);
+		echo '</pre>';
+		}
 	}
 /* Displaying the sUtras and sequential changes of $frontend is not set to 0. */
 elseif ($frontend!=="0")
