@@ -5154,4 +5154,32 @@ function tiGreplace()
  * one for hindi sutra number
  *
  */
+function generatesutrainfo()
+{
+	include 'dev-slp.php';
+	global $ASdata, $vdata, $miscdata, $paribhASAdata, $otherdata;
+	$result = array();
+	foreach($ASdata as $asd){
+		$split = explode(':', $asd);
+		$result[$split[0]] = convert1($split[2]);
+	}
+	foreach($vdata as $asd){
+		$split = explode(':', $asd);
+		$result[$split[0]] = $split[1];
+	}
+	foreach($paribhASAdata as $asd){
+		$split = explode(':', $asd);
+		$result[$split[0]] = $split[1];
+	}
+	foreach($miscdata as $asd){
+		$split = explode(':', $asd);
+		$result[$split[0]] = $split[1];
+	}
+	foreach($otherdata as $asd){
+		$split = explode(':', $asd);
+		$result[$split[0]] = $split[1];
+	}
+	file_put_contents('../data/sutrainfo.json', json_encode($result));
+}
+generatesutrainfo();
 ?>
