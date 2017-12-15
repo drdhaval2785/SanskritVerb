@@ -72,7 +72,8 @@ $drop = $_GET['drop'];
 $letter = $_GET['letter'];
 $pr = $_GET['pratya'];
 $inprat = $_GET['pratyahara'];
-$jsonmode = $_GET['jsonmode'];
+$jsonmode = (int)$_GET['jsonmode'];
+
 if(!isset($argv[0]))
 {
 	if(!isset($verbdata1)) { $verbdata1 = verbdata1($number); }
@@ -14561,8 +14562,9 @@ elseif ($type==="subanta")
 	//fputs($outfile,"</body></html>");
 	//fclose($outfile);
 }
+
 /* Displaying back the JSON with all information. */
-if ($jsonmode===1)
+if ($jsonmode==1)
 {
 	$lastforms = array();
 	$result = array();
@@ -14594,7 +14596,7 @@ if ($jsonmode===1)
 		$vmgn['derivation'] = $stor;
 		foreach($lastforms as $lastform){
 			$resultfilename = 'json/'.$lastform.'.json';
-			if(file_exists($resultfilename)){
+			if(file_exists($resultfilename) && isset($argv[0])){
 				$readdata = file_get_contents($resultfilename);
 				$existingdata = json_decode($readdata);
 				$resultdata = $existingdata;
@@ -14602,9 +14604,8 @@ if ($jsonmode===1)
 				$jsondata = json_encode($resultdata, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES);
 				}
 			else{
-				$jsondata = json_encode(array($vmgn), JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES);
+				$result[$lastform] = $vmgn;
 				}
-			$result[$lastform] = $jsondata;
 			// If called via CLI, write to file
 			if (isset($argv[0])){
 				file_put_contents('json/'.$lastform.'.json', $jsondata);
@@ -14613,10 +14614,9 @@ if ($jsonmode===1)
 		}
 	// else print to screen.
 	if(!isset($argv[0])){
-		$resultjson = json_encode($result, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES);
-		echo '<pre>';
-		print_r($resultjson);
-		echo '</pre>';
+		echo "<pre>";
+		echo json_encode($result, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES);
+		echo "</pre>";
 		}
 	}
 /* Displaying the sUtras and sequential changes of $frontend is not set to 0. */
