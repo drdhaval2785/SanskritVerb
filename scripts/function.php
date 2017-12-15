@@ -5181,5 +5181,5 @@ function generatesutrainfo()
 	}
 	file_put_contents('../data/sutrainfo.json', json_encode($result));
 }
-generatesutrainfo();
+//generatesutrainfo();
 ?>
