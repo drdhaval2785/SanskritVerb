@@ -118,8 +118,8 @@ elseif (in_array($argv[2],array("law","liw","luw","lfw","sArvaDAtukalew","ArDaDA
 	if(!isset($verbdata1)) { $verbdata1 = verbdata1($number); }
 	if(!isset($verbdata2)) { $verbdata2 = verbdata2($first); }
 	$lakAra = $argv[2];
-	//$removed_sutras = explode(',',$argv[3]);
-	//$removed_sutras = array_map('trim',$removed_sutras);
+	$removed_sutras = explode(',',$argv[3]);
+	$removed_sutras = array_map('trim',$removed_sutras);
 	$tran = $argv[4];
 	$us = $argv[5];
 	$vAcya = $argv[6];
@@ -14593,8 +14593,18 @@ if ($jsonmode===1)
 			}
 		$vmgn['derivation'] = $stor;
 		foreach($lastforms as $lastform){
-			$jsondata = json_encode($vmgn, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES);
-			$result[$lastform] = $vmgn;
+			$resultfilename = 'json/'.$lastform.'.json';
+			if(file_exists($resultfilename)){
+				$readdata = file_get_contents($resultfilename);
+				$existingdata = json_decode($readdata);
+				$resultdata = $existingdata;
+				$resultdata[] = $vmgn;
+				$jsondata = json_encode($resultdata, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES);
+				}
+			else{
+				$jsondata = json_encode(array($vmgn), JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES);
+				}
+			$result[$lastform] = $jsondata;
 			// If called via CLI, write to file
 			if (isset($argv[0])){
 				file_put_contents('json/'.$lastform.'.json', $jsondata);
