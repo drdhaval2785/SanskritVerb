@@ -2520,7 +2520,7 @@ if (in_array($so,$tiG) && $pada==="pratyaya" && in_array($lakAra,array("low")))
 /* AziSi liGlowau (3.3.173) */
 if (in_array($so,$tiG) && $pada==="pratyaya" && $lakAra==="ASIrliN")
 {
-	storedata('3.1.173','sa',0);
+	storedata('3.3.173','sa',0);
 }
 /* luG (3.2.110) */
 if (in_array($so,$tiG) && $pada==="pratyaya" && $lakAra==="luN")
@@ -14453,7 +14453,12 @@ $derivation = array();
 $sanAdi="";
 $sanAdi=$_GET['sanAdi'];
 $TAp=0; $DAp=0; $cAp=0; $GIp=0; $GIn=0; $GIS=0; $kGiti=0; $abhyasta=0; $ajAdyataSTAp=0; $tusma=0; $upasarga_joined=0; $sicivRddhi=0; $atolopa=0; $caG=0; $aG=0; $zluvat=0; $aniditAm=0; $kGiti=0; $uzca=0; $abhyAsa=0; $Adezapratyaya=0; $jherjus=0; $sijabhyastavidibhyazca=0; $ciN=0; $Nit=0;
+if($frontend===1){
 $us = $_GET['upasarga'];
+}
+else{
+$us = '';
+}
 $temp = scrape2($first,0,2,1);
 $verb_without_anubandha=$temp[0];
 $storedata=array();
@@ -14574,24 +14579,35 @@ if ($jsonmode==1)
 	$vmgn['input'] = $fo;
 	$vmgn['lakAra'] = $lakAra;
 	$vmgn['UoHyd'] = $vmgn['UoHyd'].$verbpadaforUohyd;
-	$vmgn['upasarga'] = $us;
 	$vmgn['padadecider_id'] = $padadecider_id;
 	$vmgn['padadecider_sutra'] = $padadecider_sutra;
 	$vmgn['it_sutra'] = $it_sutra;
 	$vmgn['it_id'] = $it_id;
 	$vmgn['it_status'] = $id_dhAtu;
-	$vmgn['derivation'] = $derivation;
-	$vmgn['upasarga'] = $ups;
+	//$vmgn['derivation'] = $derivation;
 	foreach($storestore as $storedata){
-		$suffx = $storedata[0]['suffix'];
+		$vmgn['suffix'] = $storedata[0]['suffix'];
+		$vmgn['upasarga'] = $storedata[0]['upasarga'];
+		$purushavacana = decidepurushavachana($vmgn['suffix']);
+		$vmgn['purusha'] = $purushavacana['purusha'];
+		$vmgn['vachana'] = $purushavacana['vachana'];
 		$ups = $storedata[0]['upasarga'];
 		$stor = array();
 		foreach($storedata as $step){
+			$stp = array();
 			unset($step['suffix']);
 			unset($step['upasarga']);
 			unset($step['input']);
-			$stor[] = $step;
+			unset($step['note']);
+			unset($step['style']);
+			$candrabinducorrectedforms = array();
+			foreach($step['text'] as $individualform){
+				$individualform = str_replace('!', '~', $individualform);
+				$candrabinducorrectedforms[] = $individualform;
+				}
 			$lastforms = $step['text'];
+			$step['text'] = implode(',', $candrabinducorrectedforms);
+			$stor[] = $step;
 			}
 		$vmgn['derivation'] = $stor;
 		foreach($lastforms as $lastform){
@@ -14605,6 +14621,7 @@ if ($jsonmode==1)
 				}
 			else{
 				$result[$lastform] = $vmgn;
+				$jsondata = json_encode(array($vmgn), JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES);
 				}
 			// If called via CLI, write to file
 			if (isset($argv[0])){
