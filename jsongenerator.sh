@@ -17,3 +17,8 @@ do
 	((number++))
 	echo
 done
+echo "Create sutrainfo.json."
+cd scripts
+php -r "require function.php; generatesutrainfo();"
+echo "Test for missing items in sutrainfo.json."
+python test_sutrainfo.py

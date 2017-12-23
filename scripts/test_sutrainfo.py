@@ -22,6 +22,7 @@ def findUsedSutras():
     # print len(usedSutras)
     return usedSutras
 
+
 def sutraInfo():
     """Return keys of sutrainfo.json."""
     data = json.load(open('../Data/sutrainfo.json', 'r'))
