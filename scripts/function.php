@@ -3086,7 +3086,7 @@ function san_aGgAdikArya()
 	{
 		$text = one(array("vfSz","vraSz"),array("vfsz","vrasz"),0);
 		$text = one(array("cz"),array("z"),0);
-		storedata('par@56-1','sa',0);
+		storedata('par@56.1','sa',0);
 	}
 	/* skoH saMyogAdyorante ca (8.2.29) */
 	if (arr($text,'/s['.pc('hl').'][+]sa/'))
