@@ -14572,26 +14572,34 @@ elseif ($type==="subanta")
 if ($jsonmode==1)
 {
 	$lastforms = array();
-	$result = array();
+	$resulttoprint = array();
 	$fullformofverbtypes = array('p' => 'parasmEpaxI', 'A' => 'AwmanepaxI', 'u' => 'uBayapaxI');
 	$verbpadaforUohyd = $fullformofverbtypes[$verbpada];
+	$result = array();
 	// Create a JSON readable derivation steps from $storestore.
-	$vmgn['input'] = $fo;
-	$vmgn['lakAra'] = $lakAra;
-	$vmgn['UoHyd'] = $vmgn['UoHyd'].$verbpadaforUohyd;
-	$vmgn['padadecider_id'] = $padadecider_id;
-	$vmgn['padadecider_sutra'] = $padadecider_sutra;
-	$vmgn['it_sutra'] = $it_sutra;
-	$vmgn['it_id'] = $it_id;
-	$vmgn['it_status'] = $id_dhAtu;
+	$result['verbaccent'] = $vmgn['verb'];
+	$result['meaning'] = $vmgn['meaning'];
+	$result['gana'] = $vmgn['gana'];
+	$result['number'] = $vmgn['number'];
+	$result['madhaviya'] = $vmgn['mAdhavIya'];
+	$result['kshiratarangini'] = $vmgn['kzIratarangiNI'];
+	$result['dhatupradipa'] = $vmgn['dhAtupradIpa'];
+	$result['uohyd'] = $vmgn['UoHyd'].$verbpadaforUohyd;
+	$result['jnu'] = $vmgn['jnu'];
+	$result['verb'] = str_replace('!', '~', $first);
+	$result['lakara'] = $lakAra;
+	$result['padadecider_id'] = $padadecider_id;
+	$result['padadecider_sutra'] = $padadecider_sutra;
+	$result['it_sutra'] = $it_sutra;
+	$result['it_id'] = $it_id;
+	$result['it_status'] = $id_dhAtu;
 	//$vmgn['derivation'] = $derivation;
 	foreach($storestore as $storedata){
-		$vmgn['suffix'] = $storedata[0]['suffix'];
-		$vmgn['upasarga'] = $storedata[0]['upasarga'];
-		$purushavacana = decidepurushavachana($vmgn['suffix']);
-		$vmgn['purusha'] = $purushavacana['purusha'];
-		$vmgn['vachana'] = $purushavacana['vachana'];
-		$ups = $storedata[0]['upasarga'];
+		$result['suffix'] = $storedata[0]['suffix'];
+		$purushavacana = decidepurushavachana($result['suffix']);
+		$result['purusha'] = $purushavacana['purusha'];
+		$result['vachana'] = $purushavacana['vachana'];
+		$result['upasarga'] = $storedata[0]['upasarga'];
 		$stor = array();
 		foreach($storedata as $step){
 			$stp = array();
@@ -14605,23 +14613,24 @@ if ($jsonmode==1)
 				$individualform = str_replace('!', '~', $individualform);
 				$candrabinducorrectedforms[] = $individualform;
 				}
-			$lastforms = $step['text'];
-			$step['text'] = implode(',', $candrabinducorrectedforms);
+			$lastforms = $candrabinducorrectedforms;
+			$step['form'] = implode(',', $candrabinducorrectedforms);
+			unset($step['text']);
 			$stor[] = $step;
 			}
-		$vmgn['derivation'] = $stor;
+		$result['derivation'] = $stor;
 		foreach($lastforms as $lastform){
 			$resultfilename = 'json/'.$lastform.'.json';
 			if(file_exists($resultfilename) && isset($argv[0])){
 				$readdata = file_get_contents($resultfilename);
 				$existingdata = json_decode($readdata);
 				$resultdata = $existingdata;
-				$resultdata[] = $vmgn;
+				$resultdata[] = $result;
 				$jsondata = json_encode($resultdata, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES);
 				}
 			else{
-				$result[$lastform] = $vmgn;
-				$jsondata = json_encode(array($vmgn), JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES);
+				$resulttoprint[$lastform] = $result;
+				$jsondata = json_encode(array($result), JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES);
 				}
 			// If called via CLI, write to file
 			if (isset($argv[0])){
@@ -14632,7 +14641,7 @@ if ($jsonmode==1)
 	// else print to screen.
 	if(!isset($argv[0])){
 		echo "<pre>";
-		echo json_encode($result, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES);
+		echo json_encode($resulttoprint, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES);
 		echo "</pre>";
 		}
 	}

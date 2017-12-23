@@ -67,5 +67,5 @@ scripts/transcoder.pyc
 Data/halanta.xls
 Data/rkvacation.ppk
 json
-Data/derivation.tar.gz
+Data/derivation*.tar.gz
 

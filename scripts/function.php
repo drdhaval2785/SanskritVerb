@@ -5139,21 +5139,7 @@ function tiGreplace()
     return $val2;
 }
 
-/* An attempt to create an all encompassing function
- * name is panini
- * three arrays for checking,
- * one for adding additional checking in addition to sub function
- * one for adding whether pratyaya / pada
- *  one for the 0/1/2/3/4 etc of sub function,
- * three for the substituted,
- * three for substitution,
- * one for 0/1 of one/two/three function,
- * one for english sutra name,
- * one for english sutra number
- * one for hindi sutra name,
- * one for hindi sutra number
- *
- */
+
 function generatesutrainfo()
 {
 	include 'dev-slp.php';
