@@ -59,9 +59,19 @@ if __name__=="__main__":
 	outputfile = sys.argv[2]
 	# Open output file
 	fout = codecs.open(outputfile,'w','utf-8')
-	for (verbform,verb,verbnumber,lakAra,suffix) in test:
-		verbform1 = transcoder.transcoder_processString(verbform,'slp1','deva')
-		verb1 = transcoder.transcoder_processString(verb,'slp1','deva')
-		lakAra1 = transcoder.transcoder_processString(lakAra,'slp1','deva')
-		suffix1 = transcoder.transcoder_processString(suffix,'slp1','deva')
-		fout.write(verbform1+','+verb1+','+lakAra1+','+suffix1+','+verbnumber+'\n')
+	deva = False
+	if deva:
+		for (verbform,verb,verbnumber,lakAra,suffix) in test:
+			verbform1 = transcoder.transcoder_processString(verbform,'slp1','deva')
+			verb1 = transcoder.transcoder_processString(verb,'slp1','deva')
+			lakAra1 = transcoder.transcoder_processString(lakAra,'slp1','deva')
+			suffix1 = transcoder.transcoder_processString(suffix,'slp1','deva')
+			fout.write(verbform1+','+verb1+','+lakAra1+','+suffix1+','+verbnumber+'\n')
+	else:
+		for (verbform,verb,verbnumber,lakAra,suffix) in test:
+			verbform1 = verbform.replace('!', '~')
+			verb1 = verb.replace('!', '~')
+			lakAra1 = lakAra
+			suffix1 = suffix
+			fout.write(verbform1+','+verb1+','+lakAra1+','+suffix1+','+verbnumber+'\n')
+	
