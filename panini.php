@@ -72,7 +72,8 @@ $drop = $_GET['drop'];
 $letter = $_GET['letter'];
 $pr = $_GET['pratya'];
 $inprat = $_GET['pratyahara'];
-$jsonmode = $_GET['jsonmode'];
+$jsonmode = (int)$_GET['jsonmode'];
+
 if(!isset($argv[0]))
 {
 	if(!isset($verbdata1)) { $verbdata1 = verbdata1($number); }
@@ -118,8 +119,8 @@ elseif (in_array($argv[2],array("law","liw","luw","lfw","sArvaDAtukalew","ArDaDA
 	if(!isset($verbdata1)) { $verbdata1 = verbdata1($number); }
 	if(!isset($verbdata2)) { $verbdata2 = verbdata2($first); }
 	$lakAra = $argv[2];
-	//$removed_sutras = explode(',',$argv[3]);
-	//$removed_sutras = array_map('trim',$removed_sutras);
+	$removed_sutras = explode(',',$argv[3]);
+	$removed_sutras = array_map('trim',$removed_sutras);
 	$tran = $argv[4];
 	$us = $argv[5];
 	$vAcya = $argv[6];
@@ -1039,7 +1040,7 @@ if ($type==="tiGanta")
 			if (arr($text,'/^[s][wWqQR]/'))
 			{
 				$text=two(array("s"),$Tu,array("s"),$tu,0);
-				storedata('par@56-1','sa',0);
+				storedata('par@56.1','sa',0);
 			}
 	   }
 	   if (arr($text,'/^[R]/'))
@@ -1049,7 +1050,7 @@ if ($type==="tiGanta")
 			if (arr($text,'/^[n][wWqQR]/'))
 			{
 				$text=two(array("n"),$Tu,array("n"),$tu,0);
-				storedata('par@56-1','sa',0);
+				storedata('par@56.1','sa',0);
 			}
 	   }
 	   if (arr($text,'/[iu][r][d]/'))
@@ -2519,7 +2520,7 @@ if (in_array($so,$tiG) && $pada==="pratyaya" && in_array($lakAra,array("low")))
 /* AziSi liGlowau (3.3.173) */
 if (in_array($so,$tiG) && $pada==="pratyaya" && $lakAra==="ASIrliN")
 {
-	storedata('3.1.173','sa',0);
+	storedata('3.3.173','sa',0);
 }
 /* luG (3.2.110) */
 if (in_array($so,$tiG) && $pada==="pratyaya" && $lakAra==="luN")
@@ -7291,7 +7292,7 @@ if (($vras===1 && arr($text,'/Sz/') && sub(array("vfSz","vraSz"),blank(0),blank(
 {
     $text = one(array("vfSz","vraSz"),array("vfsz","vrasz"),0);
     $text = one(array("cz"),array("z"),0);
-	storedata('par@56-1','sa',0);
+	storedata('par@56.1','sa',0);
 }
 /* cCvoH zUDanunAsike (6.4.19) */
 // kvau pending.
@@ -7475,7 +7476,7 @@ elseif (!in_array($so,$noco) && arr($text,'/['.flat($cu).'][+]$/') && in_array($
 if ($coku === 1 && sub(array("Y"),$ku,blank(0),0))
 {
 	$text = two(array("Y"),$ku,array("n"),$ku,0);
-	storedata('par@56-1','sa',0);
+	storedata('par@56.1','sa',0);
 }
 /* na liGi (7.2.39) */
 if ( (in_array($fo,array("vfN","vfY")) || ends(array($verb_without_anubandha),array("F",),1)) && sub(array("ar"),array("+"),blank(0),0) && in_array($lakAra,array("viDiliN","ASIrliN")) && in_array("iw",$Agama))
@@ -7627,7 +7628,6 @@ if ($lakAra!=="" && $type==="tiGanta")
     // This is attached with eranekAco... So, trying to put a note and making the iyaG and yaN optional.
     if ($dhatu===1 && arr($text,'/[iI][+]['.pc('ac').']/') && in_array($fo,array("unnI")) && $pada==="pratyaya" && (anekAca($fo) || $abhyasta===1 ) && $nabhusu===0)
     {
-		storedata('eranekAc','sa',0);
         $unni=1; // 0 - the word is not unnI. 1 - the word is unnI
     } else { $unni=0; }
     if ($dhatu===1 && (arr($text,'/['.flat($ac).']['.flat($hl).'][iI][+]['.flat($ac).']/')||$unni===1) && $pada==="pratyaya" && (anekAca($fo) || $abhyasta===1 )&& $nabhusu===0 )
@@ -7881,7 +7881,7 @@ if (arr($text,'/['.pc('Jy').']\+/') && ( sub(array("N"),$ku,array("+"),0) || sub
     $text = three(array("R"),$Tu,array("+"),array("n"),blank(count($Tu)),array("+"),0);
     $text = three(array("m"),$pu,array("+"),array("n"),blank(count($pu)),array("+"),0);
 	storedata('8.2.23','sa',0);
-	storedata('par@56-1','sa',0);
+	storedata('par@56.1','sa',0);
 }
 elseif (arr($text,'/['.pc('hl').']['.pc('hl').']$/') && in_array($so,$tiG) && $ratsasya===0)
 {
@@ -7902,7 +7902,7 @@ elseif ( (arr($text,'/s\+/') && sub(array("M"),array("s"),array("+"),0)  && in_a
     $text = three(array("M"),array("s+"),$pu,array("m+"),blank(count($hl)),$pu,0);
     $text = three(array("M"),array("s"),array("+"),array("m"),blank(count($hl)),array("+"),0);
 	storedata('8.2.23','sa',0);
-	storedata('par@56-1','sa',0);
+	storedata('par@56.1','sa',0);
 }
 elseif ( (arr($text,'/M['.pc('hl').'][+]/') && in_array($so,$tiG)) && $pada==="pada" )
 {
@@ -7916,7 +7916,7 @@ elseif ( (arr($text,'/M['.pc('hl').'][+]/') && in_array($so,$tiG)) && $pada==="p
     $text = two(array("M+"),$tu,array("n+"),$tu,0);
     $text = two(array("M+"),$pu,array("m+"),$pu,0);
     $text = two(array("M"),array("+"),array("m"),array("+"),0);
-	storedata('par@56-1','sa',0);
+	storedata('par@56.1','sa',0);
     }
 }
 if ($debug===1) {dibug("4900");}
@@ -11936,7 +11936,7 @@ if ($dhatu===1 && in_array($fo,array("dfnBU","karaBU","kAraBU","punarBU"))  && i
 {
     $text = three(array("dfnBU","punarBU"),array("+"),$ac,array("dfnBv","punarBv"),array("+"),$ac,0);
     $text = three(array("karaBU","kAraBU"),array("+"),$ac,array("karaBv","kAraBv",),array("+"),$ac,1);
-	storedata('dfn','sa',0);
+	storedata('6.4.84-2','sa',0);
     if (in_array($fo,array("karaBU","kAraBU")))
     {
     $text=one(array("karaBv+e","karaBU+A+e","karaBv+as","karaBU+A+as","karaBv+i","karaBU+Am","kAraBv+e","kAraBU+A+e","kAraBv+as","kAraBU+A+as","kAraBv+i","kAraBU+Am"),array("karaBU+e","karaBv+A+e","karaBU+as","karaBv+A+as","karaBU+i","karaBv+Am","kAraBU+e","kAraBv+A+e","kAraBU+as","kAraBv+A+as","kAraBU+i","kAraBv+Am",),0);
@@ -12053,7 +12053,7 @@ if ( (arr($text,'/[fx][+][a]/')) && in_array($so,array("Nasi!","Nas")) && $pada=
 if (arr($text,'/o\+a/') && in_array($so,array("am","Sas")))
 {
     $text = two(array("o"),array("+a"),array(""),array("+A"),0);
-	storedata('6.1,93','sa',0);
+	storedata('6.1.93','sa',0);
 }
 /* ato bhisa ais (7.1.9) */
 if (arr($text,'/[a][+]/') && $so === "Bis" && $nedamadas===0 && $fo!=="adas" )
@@ -12486,7 +12486,7 @@ storedata('6.1.124','sa',0);
 if (arr($text,'/[eo]([+]*)a/') && ( $pada==="pada" || sub(array("goanc"),blank(0),blank(0),0)))
 {
     $text = two(prat('eN'),array("a"),prat('eN'),array("'"),0);
-	storedata('6.1.`09','sa',0);
+	storedata('6.1.109','sa',0);
 }
 /* eco'yavAyAvaH (6.1.78) */
 if (arr($text,'/[eoEO]/') && sub(prat('ec'),prat('ac'),blank(0),0))
@@ -13137,7 +13137,7 @@ if (($vras1===1 && sub(array("vfSz"),blank(0),blank(0),0)) || (($vras3 ===1 || $
 {
     $text = one(array("vfSz"),array("vfsz"),0);
     $text = one(array("cz"),array("z"),0);
-	storedata('par@56-1','sa',0);
+	storedata('par@56.1','sa',0);
 }
 /* vivikz patch for overcoming skoH saMyogAdyorante ca */
 if (arr($text,'/vivikz+/') && $pada==='pada')
@@ -13194,7 +13194,7 @@ if (  ( arr($text,'/N([+]*)[kKgGN]\+/') || arr($text,'/Y([+]*)[cCjJY]\+/') || ar
     $text = three(array("R"),$Tu,array("+"),array("n"),blank(count($Tu)),array("+"),0);
     $text = three(array("m"),$pu,array("+"),array("n"),blank(count($pu)),array("+"),0);
 	storedata('8.2.23','sa',0);
-	storedata('par@56-1','sa',0);
+	storedata('par@56.1','sa',0);
 }
 elseif ( arr($text,'/['.pc('hl').']([+]*)['.pc('hl').']\+/') && $bham===0 && $pada==="pada" && $ratsasya===0 && $vriddhireci===0 && !arr($text,'/['.pc('hl').']['.pc('hl').'][+]['.pc('ac').']/'))
 {
@@ -13215,7 +13215,7 @@ elseif ( (arr($text,'/s\+/') && sub(array("M"),array("s"),array("+"),0) && $pada
     $text = three(array("M"),array("s+"),$pu,array("m+"),blank(count($hl)),$pu,0);
     $text = three(array("M"),array("s"),array("+"),array("m"),blank(count($hl)),array("+"),0);
 	storedata('8.2.23','sa',0);
-	storedata('par@56-1','sa',0);
+	storedata('par@56.1','sa',0);
 }
 elseif ( (arr($text,'/M([+]*)['.pc('hl').']\+/') && $pada==="pada" && $vriddhireci===0) )
 {
@@ -13229,7 +13229,7 @@ elseif ( (arr($text,'/M([+]*)['.pc('hl').']\+/') && $pada==="pada" && $vriddhire
     $text = three(array("M"),array("+"),$tu,array("n"),array("+"),$tu,0);
     $text = three(array("M"),array("+"),$pu,array("m"),array("+"),$pu,0);
     $text = two(array("M"),array("+"),array("m"),array("+"),0);
-	storedata('par@56-1','sa',0);
+	storedata('par@56.1','sa',0);
     }
 }
 /* jhalo jhali (8.2.26) */
@@ -13440,7 +13440,7 @@ if ($dhatu===1 && $lakAra!=="liw" && (arr($text,'/[rv]['.pc('hl').']/')|| arr($t
 	storedata('8.2.77','sa',0);
     if ($allopo===1)
     {
-		storedata('allopsTan','pa',0);
+		storedata('allopsTAn','pa',0);
 	}
 }
 /* eta Idbahuvacane (8.2.81) */
@@ -14452,7 +14452,12 @@ $derivation = array();
 $sanAdi="";
 $sanAdi=$_GET['sanAdi'];
 $TAp=0; $DAp=0; $cAp=0; $GIp=0; $GIn=0; $GIS=0; $kGiti=0; $abhyasta=0; $ajAdyataSTAp=0; $tusma=0; $upasarga_joined=0; $sicivRddhi=0; $atolopa=0; $caG=0; $aG=0; $zluvat=0; $aniditAm=0; $kGiti=0; $uzca=0; $abhyAsa=0; $Adezapratyaya=0; $jherjus=0; $sijabhyastavidibhyazca=0; $ciN=0; $Nit=0;
+if($frontend===1){
 $us = $_GET['upasarga'];
+}
+else{
+$us = '';
+}
 $temp = scrape2($first,0,2,1);
 $verb_without_anubandha=$temp[0];
 $storedata=array();
@@ -14561,40 +14566,71 @@ elseif ($type==="subanta")
 	//fputs($outfile,"</body></html>");
 	//fclose($outfile);
 }
+
 /* Displaying back the JSON with all information. */
-if ($jsonmode===1)
+if ($jsonmode==1)
 {
 	$lastforms = array();
-	$result = array();
+	$resulttoprint = array();
 	$fullformofverbtypes = array('p' => 'parasmEpaxI', 'A' => 'AwmanepaxI', 'u' => 'uBayapaxI');
 	$verbpadaforUohyd = $fullformofverbtypes[$verbpada];
+	$result = array();
 	// Create a JSON readable derivation steps from $storestore.
-	$vmgn['input'] = $fo;
-	$vmgn['lakAra'] = $lakAra;
-	$vmgn['UoHyd'] = $vmgn['UoHyd'].$verbpadaforUohyd;
-	$vmgn['upasarga'] = $us;
-	$vmgn['padadecider_id'] = $padadecider_id;
-	$vmgn['padadecider_sutra'] = $padadecider_sutra;
-	$vmgn['it_sutra'] = $it_sutra;
-	$vmgn['it_id'] = $it_id;
-	$vmgn['it_status'] = $id_dhAtu;
-	$vmgn['derivation'] = $derivation;
-	$vmgn['upasarga'] = $ups;
+	$result['verbaccent'] = $vmgn['verb'];
+	$result['meaning'] = $vmgn['meaning'];
+	$result['gana'] = $vmgn['gana'];
+	$result['number'] = $vmgn['number'];
+	$result['madhaviya'] = $vmgn['mAdhavIya'];
+	$result['kshiratarangini'] = $vmgn['kzIratarangiNI'];
+	$result['dhatupradipa'] = $vmgn['dhAtupradIpa'];
+	$result['uohyd'] = $vmgn['UoHyd'].$verbpadaforUohyd;
+	$result['jnu'] = $vmgn['jnu'];
+	$result['verb'] = str_replace('!', '~', $first);
+	$result['lakara'] = $lakAra;
+	$result['padadecider_id'] = $padadecider_id;
+	$result['padadecider_sutra'] = $padadecider_sutra;
+	$result['it_sutra'] = $it_sutra;
+	$result['it_id'] = $it_id;
+	$result['it_status'] = $id_dhAtu;
+	//$vmgn['derivation'] = $derivation;
 	foreach($storestore as $storedata){
-		$suffx = $storedata[0]['suffix'];
-		$ups = $storedata[0]['upasarga'];
+		$result['suffix'] = $storedata[0]['suffix'];
+		$purushavacana = decidepurushavachana($result['suffix']);
+		$result['purusha'] = $purushavacana['purusha'];
+		$result['vachana'] = $purushavacana['vachana'];
+		$result['upasarga'] = $storedata[0]['upasarga'];
 		$stor = array();
 		foreach($storedata as $step){
+			$stp = array();
 			unset($step['suffix']);
 			unset($step['upasarga']);
 			unset($step['input']);
+			unset($step['note']);
+			unset($step['style']);
+			$candrabinducorrectedforms = array();
+			foreach($step['text'] as $individualform){
+				$individualform = str_replace('!', '~', $individualform);
+				$candrabinducorrectedforms[] = $individualform;
+				}
+			$lastforms = $candrabinducorrectedforms;
+			$step['form'] = implode(',', $candrabinducorrectedforms);
+			unset($step['text']);
 			$stor[] = $step;
-			$lastforms = $step['text'];
 			}
-		$vmgn['derivation'] = $stor;
+		$result['derivation'] = $stor;
 		foreach($lastforms as $lastform){
-			$jsondata = json_encode($vmgn, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES);
-			$result[$lastform] = $vmgn;
+			$resultfilename = 'json/'.$lastform.'.json';
+			if(file_exists($resultfilename) && isset($argv[0])){
+				$readdata = file_get_contents($resultfilename);
+				$existingdata = json_decode($readdata);
+				$resultdata = $existingdata;
+				$resultdata[] = $result;
+				$jsondata = json_encode($resultdata, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES);
+				}
+			else{
+				$resulttoprint[$lastform] = $result;
+				$jsondata = json_encode(array($result), JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES);
+				}
 			// If called via CLI, write to file
 			if (isset($argv[0])){
 				file_put_contents('json/'.$lastform.'.json', $jsondata);
@@ -14603,10 +14639,9 @@ if ($jsonmode===1)
 		}
 	// else print to screen.
 	if(!isset($argv[0])){
-		$resultjson = json_encode($result, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES);
-		echo '<pre>';
-		print_r($resultjson);
-		echo '</pre>';
+		echo "<pre>";
+		echo json_encode($resulttoprint, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES);
+		echo "</pre>";
 		}
 	}
 /* Displaying the sUtras and sequential changes of $frontend is not set to 0. */
