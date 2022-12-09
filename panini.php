@@ -31,8 +31,8 @@ include "scripts/slp-dev.php"; // includes code for conversion from SLP to devan
 include "scripts/dev-slp.php"; // includes code for devanagari to SLP.
 /* hides error reports. */
 // If the warning is shown with line number of function.php and you are not able to trace the line which called it, turn the all error reporting on. It will help you locate the wrong entries in a reasonably narrow space, because there are so many notices around.
-error_reporting(E_ERROR | E_WARNING | E_PARSE);
-//error_reporting(0);
+//error_reporting(E_ERROR | E_WARNING | E_PARSE);
+error_reporting(0);
 
 /* set execution time to an hour */
 ini_set('max_execution_time', 36000);
@@ -1109,7 +1109,7 @@ elseif (in_array($so,$tiG) && !in_array($fo,array("mavya!")) && arr(array($verb_
 	storedata('3.1.24','sa',0);
 }
 /* dhAtorekAco halAdeH kriyAsamabhivyAhAre yaG (3.1.22) */
-elseif (in_array($so,$tiG) && arr(array($verb_without_anubandha),'/^['.pc(hl).']+['.pc('ac').'][^'.pc('ac').']*$/') && $pada==="pratyaya" && $lakAra!=="" && in_array($sanAdi,array("yaN","yaNluk")) && $verbset!=="curAdi")
+elseif (in_array($so,$tiG) && arr(array($verb_without_anubandha),'/^['.pc('hl').']+['.pc('ac').'][^'.pc('ac').']*$/') && $pada==="pratyaya" && $lakAra!=="" && in_array($sanAdi,array("yaN","yaNluk")) && $verbset!=="curAdi")
 {
 	$text = change('/([^+])$/','$1+yaN');
 	storedata('3.1.22','sa',0);
